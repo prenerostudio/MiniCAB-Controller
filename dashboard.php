@@ -1,116 +1,274 @@
 <?php
 include('header.php');
-?>			            
-<div class="row row-deck row-cards">                            
-	<div class="col-lg-6">    
-		<div class="card">        
-			<div class="card-body">            
-				<h3 class="card-title">Locations</h3>                
-				<div class="ratio ratio-21x9">                
-					<div>                    
-						<div id="map-world" class="w-100 h-100"></div>                      
-					</div>
-				</div>        
-			</div>                
-		</div>            
-	</div>
-                              
-	<div class="col-lg-3">    
-		<div class="card">        
-			<div class="card-body">            
-				<h3 class="card-title">Drivers Onboard</h3>                
-				<div id="chart-mentions" class="chart-lg"></div>                
-			</div>            
-		</div>        
-	</div>
-			
-	<div class="col-lg-3">    
-		<div class="card">        
-			<div class="card-body">            
-				<h3 class="card-title">Drivers Waiting</h3>                
-				<div id="chart-mentions" class="chart-lg"></div>                
-			</div>            
-		</div>        
-	</div>    	    	                                                                                    
-    
-	<div class="col-12">    
-		<div class="card">        
-			<div class="card-header">            
-				<h3 class="card-title">Invoices</h3>                
-			</div>            						                  
-			<div class="table-responsive">                   
-				<table class="table card-table table-vcenter text-nowrap datatable">                   
-					<thead>                   
-						<tr>                          
-							<th class="w-1">
-								<input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select all invoices">
-							</th>                         
-							<th class="w-1">
-								No. 
+?>		
+<div class="col-md-12">                
+		<div class="card">                  		
+			<div class="card-header">                   			
+				<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">                    				
+					<li class="nav-item" style="background: #163B8F;">                      					
+						<a href="#tabs-dasboard" class="nav-link active" data-bs-toggle="tab">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>                          							
+							Dashboard
+						</a>                     
+					</li>                      
+					<li class="nav-item">                       
+						<a href="#tabs-tracking" class="nav-link" data-bs-toggle="tab">							                         
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>                          
+							Driver Tracking
+						</a>                     
+					</li>                     					                  
+				</ul>                
+			</div>
+                 			
+			<div class="card-body">                  			
+				<div class="tab-content">                   				
+					<div class="tab-pane active show" id="tabs-dasboard">                    
+						<div class="row row-deck row-cards"> 							
+							<div class="col-lg-6" style="float: left;">    		
+								<div class="card">        			
+									<div class="card-body">            				
+										<h3 class="card-title">Locations</h3>                				
+										<div class="ratio ratio-21x9">                					
+											<div>                    												
+												<?php																							
+												$query = "SELECT `longitude`, `latitude` FROM `drivers`";						
+												$result = mysqli_query($connect, $query);						
+												if ($result) { 																			
+													$userLocations = array();														
+													while ($row = mysqli_fetch_assoc($result)) {													
+														$location = array(									
+															'lat' => $row['latitude'],
+															'lng' => $row['longitude']										
+														);  										
+														$userLocations[] = $location;							
+													}							
+													mysqli_free_result($result);										
+												} else { 											
+													echo "Error executing the query: " . mysqli_error($connect);						
+												}																												
+												?>																											
+												<div id="map"></div>																
+												<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  						
+												<script>  																
+													var map = L.map('map');   								    							
+													L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {     								
+														attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+														maxZoom: 25    							
+													}).addTo(map);    							    							
+													var firstLocation = <?php echo json_encode($userLocations[0]); ?>;    							
+													var initialLatLng = L.latLng(firstLocation.lat, firstLocation.lng);							
+													map.setView(initialLatLng, 12);    							    							
+													var userLocations = <?php echo json_encode($userLocations); ?>;    							
+													userLocations.forEach(function(user) {     								
+														var marker = L.marker([user.lat, user.lng]).addTo(map);							
+													});  						
+												</script>						                    										
+											</div>				
+										</div>        			
+									</div>                		
+								</div>            	
+							</div>							
+	
+							<div class="col-lg-3" style="float: left;">    
+								<div class="card">        
+									<div class="card-body">            				
+										<h3 class="card-title">Drivers Onboard</h3>                
+										<div class="table-responsive">                   				
+											<table class="table card-table table-vcenter text-nowrap datatable">                   					
+												<thead>                   						
+													<tr>                          							
+														<th class="w-1">ID</th>                         						       
+														<th>Driver</th>                							
+														<th>Status</th>	                     
+													</tr>                     
+												</thead>                    
+												<tbody> 
+													<?php																		
+													$drsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");
+													while($drrow = mysqli_fetch_array($drsql)){														
+													?>													
+													<tr>                         							
+														<td>								
+															<?php echo $drrow['d_id']; ?>							
+														</td>                          							
+														<td>								
+															<span class="text-secondary">									
+																<?php echo $drrow['d_name']; ?>								
+															</span>							
+														</td>                        							
+														<td>								
+															<span class="badge bg-success me-1"></span> Online							
+														</td>                        							                      						
+													</tr>																			
+													<?php									
+													}										
+													?>					
+												</tbody>                    				
+											</table>                 			
+										</div>              			
+									</div>            		
+								</div>        	
+							</div>
 								
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>                          
-							</th>                          
-							<th>Invoice Subject</th>                         
-							<th>Client</th>                         
-							<th>VAT No.</th>                         
-							<th>Created</th>                         
-							<th>Status</th>                        
-							<th>Price</th>                       
-							<th></th>                       
-						</tr>                     
-					</thead>                    
-					<tbody>                        
-						<tr>                         
-							<td>
-								<input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice">
-							</td>                          
-							<td>
-								<span class="text-secondary">
-									001401
-								</span>
-							</td>                        
-							<td>
-								<a href="invoice.html" class="text-reset" tabindex="-1">
-									Design Works
-								</a>
-							</td>                        
-							<td>                           
-								<span class="flag flag-xs flag-country-us me-2"></span>                           
-								Carlson Limited                         
-							</td>                         
-							<td>                          
-								87956621                        
-							</td>                         
-							<td>                           
-								15 Dec 2017                          
-							</td>                          
-							<td>                            
-								<span class="badge bg-success me-1"></span> 
-								Paid                          
-							</td>                          
-							<td>$887</td>                         
-							<td class="text-end">                            
-								<span class="dropdown">                              
-									<button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>                              
-									<div class="dropdown-menu dropdown-menu-end">                              
-										<a class="dropdown-item" href="#">                                
-											Action                               
-										</a>                               
-										<a class="dropdown-item" href="#">                                 
-											Another action                               
-										</a>                              
-									</div>                           
-								</span>                         
-							</td>                       
-						</tr>
-                                                                                                                                                                                             
-					
-					</tbody>                    
-				</table>                 
-			</div>                                 
+							<div class="col-lg-3" style="float: left;">    		
+								<div class="card">        			
+									<div class="card-body">            				
+										<h3 class="card-title">Drivers Waiting</h3>                				
+										<div class="table-responsive">                   				
+											<table class="table card-table table-vcenter text-nowrap datatable">                   					
+												<thead>                   						
+													<tr>                          							
+														<th class="w-1">ID</th>                         						       
+														<th>Driver</th>                							
+														<th>Status</th>		
+													</tr>                     					
+												</thead>                    					
+												<tbody> 												
+													<?php						
+													$drvsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");							
+													while($drvrow = mysqli_fetch_array($drvsql)){	
+													?>													
+													<tr>                         						
+														<td>								
+															<?php echo $drvrow['d_id']; ?>							
+														</td>                          							
+														<td>								
+															<span class="text-secondary">									
+																<?php echo $drvrow['d_name']; ?>								
+															</span>							
+														</td>                        							
+														<td>								
+															<span class="badge bg-success me-1"></span> Online							
+														</td>                        							                      						
+													</tr>                              
+													<?php									
+													}										
+													?>										
+												</tbody>                    				
+											</table>                 			
+										</div>              			
+									</div>            		
+								</div>        	
+							</div>   						
+						</div>				
+					</div>
+                    										
+					<div class="tab-pane" id="tabs-tracking">
+                    
+																		                      
+					</div>                                          
+				</div>                  			
+			</div>                	
+	</div>              
+</div>
+<div class="row">
+<div class="row row-deck row-cards"> 	 	    	                                                                                       
+	<div class="col-md-12">                	
+		<div class="card">                  		
+			<div class="card-header">                  			
+				<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">                    				
+					<li class="nav-item" style="background: #3046CC;">                      					
+						<a href="#tabs-today" class="nav-link active" data-bs-toggle="tab">							                          						
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>                          							
+							Today's Booking						
+						</a>                     
+					</li>                      					
+					<li class="nav-item">                       					
+						<a href="#tabs-pre" class="nav-link" data-bs-toggle="tab">							                         						
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+							Pre Booking						
+						</a>                     					
+					</li>                     					                  				
+				</ul>                			
+			</div>                 			
+			<div class="card-body">                  			
+				<div class="tab-content">                   				
+					<div class="tab-pane active show" id="tabs-today">                    
+						<div class="table-responsive">                   				
+							<table class="table card-table table-vcenter text-nowrap datatable" id="table-default">                   					
+								<thead>                   						
+									<tr>                          							
+										<th class="w-1">ID</th>                         							
+										<th class="w-1">Date</th>                          							
+										<th style="background:rgba(227,136,137,0.61);">Time</th>                         							
+										<th style="background:rgba(227,136,137,0.61);">Passenger</th>                         							
+										<th style="width: 15%;">Pickup</th>                         							
+										<th style="width: 15%;">Destination</th>                         							
+										<th style="background:rgba(227,136,137,0.61);">Fare</th>                        							
+										<th>Vehicle</th>                       							
+										<th>Note</th>                       							
+										<th>Status</th>                       							
+										<th style="background:rgba(227,136,137,0.61);">Driver</th>                       							
+										<th>Action</th>                       						
+									</tr>                     					
+								</thead>                    					
+								<tbody> 						
+									<?php																											
+									$jsql=mysqli_query($connect,"SELECT * FROM `jobs` WHERE `status`='Waiting'");
+									while($jrow = mysqli_fetch_array($jsql)){																	
+										$book_id = $jrow['book_id'];														
+										$bsql = mysqli_query($connect,"SELECT * FROM `bookings` WHERE `book_id`='$book_id'");
+										$brow = mysqli_fetch_array($bsql);														
+										$c_id = $jrow['c_id'];														
+										$csql = mysqli_query($connect,"SELECT * FROM `clients` WHERE `c_id`='$c_id'");							
+										$crow = mysqli_fetch_array($csql);
+										$d_id = $jrow['d_id'];														
+										$dsql = mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
+										$drow = mysqli_fetch_array($dsql);															
+									?>													
+									<tr>                         						
+										<td>							
+											<?php echo $jrow['job_id']; ?>						
+										</td>                          							
+										<td>								
+											<span class="text-secondary">									
+												<?php echo $brow['book_date']; ?>								
+											</span>						
+										</td>                        							
+										<td style="background:rgba(227,136,137,0.61);">								
+											<?php echo $brow['book_time']; ?>							
+										</td>                        							
+										<td style="background:rgba(227,136,137,0.61);">                           								
+											<?php echo $crow['c_name']; ?>                     							
+										</td>                         							
+										<td>                          								
+											<?php echo $brow['pickup']; ?>                     							
+										</td>                         							
+										<td>                           								
+											<?php echo $brow['destination']; ?>                      							
+										</td>                          							
+										<td style="background:rgba(227,136,137,0.61);">                            								
+											<?php echo $brow['fare']; ?>                        							
+										</td>                          							
+										<td>Car</td>   							
+										<td><?php echo $jrow['note']; ?>  </td>							
+										<td><?php echo $jrow['status']; ?>  </td>							
+										<td style="background:rgba(227,136,137,0.61);"><?php echo $drow['d_name']; ?> </td>
+										<td class="text-end">                            								
+											<span class="dropdown">                              									
+												<button class="btn align-text-top">Dispatch</button>								
+											</span>                         							
+										</td>                       						
+									</tr>                              						
+									<?php									
+									}									
+									?>										
+								</tbody>                    				
+							</table>    
+						
+						</div>											
+					</div>                    
+					<div class="tab-pane" id="tabs-pre">
+                    
+						
+                      
+					</div>                                          
+				</div>                  
+			</div>                
 		</div>             
-	</div>            
-</div>                 			
+	</div>           
+</div>   
+	</div>
 <?php		
 include('footer.php');		
 ?>
