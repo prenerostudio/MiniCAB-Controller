@@ -338,6 +338,322 @@
 
 
 
+<!-------------------------------
+----------Add Booking-------------
+-------------------------------->
+
+
+
+<div class="modal modal-blur fade" id="modal-booking" tabindex="-1" role="dialog" aria-hidden="true">
+
+	<div class="modal-dialog modal-lg" role="document" >    
+	
+		<div class="modal-content">        
+		
+			<div class="modal-header">            
+			
+				<h5 class="modal-title">Add New Booking</h5>            
+				
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          
+			
+			</div> 
+			
+			<form method="post" action="#" enctype="multipart/form-data">
+
+				<div class="modal-body">
+				
+				
+					<div class="row">              
+					
+						<div class="col-lg-6">
+				
+							<div class="mb-3">              
+					
+								<label class="form-label">Pickup </label>              
+					
+								<input type="text" class="form-control" name="pickup">            
+				
+							</div> 
+						
+						</div>              
+					
+						<div class="col-lg-6">                
+
+							<div class="mb-3">                  
+							
+								<label class="form-label">Destination</label>              
+					
+								<input type="text" class="form-control" name="destination">      
+						
+							</div>             
+					
+						</div>            
+				
+					</div>
+				
+				
+					<div class="row">              
+
+						<div class="col-lg-6">
+				
+							<div class="mb-3">              
+					
+								<label class="form-label">Vehicle</label>              
+					
+								<select class="form-select" name="vt">                    														
+								
+									<option value="" selected>Select Vehicle</option>  
+						
+									<?php						
+								
+									$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");									
+								
+									while($vrow = mysqli_fetch_array($vsql)){										
+								
+									?>																											
+								
+									<option>
+									
+										<?php echo $vrow['v_desc'] ?>
+								
+									</option>
+								
+									<?php									
+								
+									}										
+								
+									?>	
+								 												
+							
+								</select>            
+				
+							</div> 
+						
+						
+							<div class="mb-3">
+                            
+								<div class="form-label">Journey Type</div>
+                            
+								<div>
+                              
+									<label class="form-check form-check-inline">
+                                
+										<input class="form-check-input" type="radio" name="radios-inline" checked="">
+                                
+										<span class="form-check-label">One Way</span>
+                              
+									</label>
+                              
+									<label class="form-check form-check-inline">
+                                
+										<input class="form-check-input" type="radio" name="radios-inline">
+                                
+										<span class="form-check-label">Return</span>
+                              
+									</label>
+                             
+
+								</div>
+                          
+							</div>
+						
+						
+							<div class="row">              					
+					
+								<div class="col-lg-6">			
+						
+									<div class="mb-3">              					
+							
+										<label class="form-label">No. of Passenger</label>              												
+							
+										<input type="number" class="form-control" name="pc">				 
+						
+									</div> 						
+					
+								</div>              					
+					
+								<div class="col-lg-6">                					
+						
+									<div class="mb-3">                  						
+							
+										<label class="form-label">Luggage</label>              					
+							
+										<input type="number" class="form-control" name="cpic">      						
+						
+									</div>             					
+					
+								</div>            				
+				
+							</div>
+					
+							<div class="mb-3">                 							
+
+								<label class="form-label">Address</label>                  							
+								
+								<textarea class="form-control" rows="3" name="caddress"></textarea>               						
+							
+							</div>  	
+						
+						
+						
+						
+						</div>              
+					
+						<div class="col-lg-6"> 
+
+							<h4>Passenger Details:</h4>
+						
+							<div class="mb-3">                  
+
+								<label class="form-label">Name</label>              
+					
+							
+								<input type="text" class="form-control" name="cphone">      
+						
+							</div> 
+						
+						
+							<div class="row">
+							
+								<div class="col-md-6">
+						
+									<div class="mb-3">                  
+							
+										<label class="form-label">Phone</label>              
+					
+							
+										<input type="text" class="form-control" name="cphone">      
+						
+									</div> 
+								
+								</div>
+						
+								<div class="col-md-6">
+						
+									<div class="mb-3">                  
+							
+										<label class="form-label">Email:</label>              
+					
+							
+										<input type="text" class="form-control" name="cphone">      
+						
+									</div> 
+							
+								</div>
+							
+							</div>
+						
+							<div class="row">
+
+								<div class="col-md-6">
+						
+									<div class="mb-3">                  
+							
+										<label class="form-label">Pickup Date</label>              
+
+										
+							
+										<input type="date" class="form-control" name="cphone">      
+						
+									</div>
+							
+								</div>
+
+								<div class="col-md-6">
+						
+									<div class="mb-3">                  
+							
+										<label class="form-label">Pickup Time</label>              
+					
+
+										<input type="time" class="form-control" name="cphone">      
+						
+									</div>
+								
+								
+								
+							
+								</div>
+							
+							</div>
+						
+							<div class="mb-3">
+
+								<div class="form-label">Bidding</div>
+                            
+								<div>
+                              
+									<label class="form-check form-check-inline">
+                                
+										<input class="form-check-input" type="checkbox">
+                                
+										<span class="form-check-label">Yes</span>
+                              
+									</label>
+                              
+									
+									<label class="form-check form-check-inline">
+                                
+									
+										<input class="form-check-input" type="checkbox" disabled="">
+                                
+										<span class="form-check-label">No</span>
+                              
+									</label>
+                              
+
+								</div>
+                          
+							</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						</div>            
+				
+					</div>
+								
+																	          				          															
+
+				</div>          			
+				
+			      			
+				
+				<div class="modal-footer">           				
+					
+					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">             					
+						
+						Cancel           				
+					
+					</a>           				
+				
+						
+					
+					<button type="submit" class="btn ms-auto" data-bs-dismiss="modal">
+						
+						
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+						
+						Add New Booking  
+						
+					
+					</button>
+					     			
+				
+				</div> 				
+			
+			</form>		
+		</div>      	
+	</div>    
+</div>
+
 
 
 

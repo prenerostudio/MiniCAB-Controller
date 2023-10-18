@@ -33,7 +33,7 @@ include('config.php');
     #map {
       height: 100%;
     }
-	 #mapb {
+	 #mapd {
       height: 700px;
     }
   </style>
@@ -98,7 +98,7 @@ include('config.php');
 										</li>
 										
 										<li class="nav-item">                      
-											<a class="nav-link" href="#" >                        
+											<a class="nav-link" href="driver-map.php" >                        
 												<span class="nav-link-icon d-md-none d-lg-inline-block">
 													<i class="fa fa-map" aria-hidden="true"></i>
 												</span>                       
