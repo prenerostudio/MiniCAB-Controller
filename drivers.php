@@ -10,7 +10,7 @@ include('header.php');
 			
 			<h2 class="page-title">
               
-				Clients List
+				Drivers List
              
 			</h2>
 				<div class="col-auto ms-auto d-print-none">
@@ -33,7 +33,7 @@ include('header.php');
             
 				<table class="table card-table table-vcenter text-nowrap datatable">                   					
 								<thead>                   						
-									<tr>                          							
+									<tr align="center">                          							
 										<th class="w-1">ID</th>                         							
 										<th class="w-1">Pic</th>                          							
 										<th style="background:rgba(227,136,137,0.61);">Name</th>                         							
@@ -51,14 +51,25 @@ include('header.php');
 									while($drow = mysqli_fetch_array($dsql)){																	
 																								
 									?>													
-									<tr>                         						
+									<tr align="center">                         						
 										<td>							
 											<?php echo $drow['d_id']; ?>						
 										</td>                          							
-										<td>								
-											<span class="text-secondary">									
-												<?php echo $drow['d_pic']; ?>								
-											</span>						
+										<td style="width: 10%;">	
+											<?php
+											if (!$drow['d_pic']) {										
+											?>										
+											<img src="img/drivers/user-1.jpg" alt="Driver dp" style="width: 60px; border-radius: 30px;">
+											<?php
+										} else{                                            
+											?>                                         
+											<img src="img/drivers/<?php echo $drow['d_pic'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">										
+											<?php                                         									
+										}                                          										
+											?>
+																				
+																		
+																
 										</td>                        							
 										<td style="background:rgba(227,136,137,0.61);">								
 											<?php echo $drow['d_name']; ?>							
@@ -78,9 +89,11 @@ include('header.php');
 										 							
 										
 										<td class="text-end">                            								
-											<span class="dropdown">                              									
-												<button class="btn align-text-top">Dispatch</button>								
-											</span>                         							
+											                             									
+												<button class="btn align-text-top">View</button>
+											
+											<button class="btn btn-danger align-text-top">Delete</button>
+											                       							
 										</td>                       						
 									</tr>                              						
 									<?php									
