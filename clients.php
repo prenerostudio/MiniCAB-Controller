@@ -33,67 +33,67 @@ include('header.php');
             
 				<table class="table card-table table-vcenter text-nowrap datatable">                   					
 								<thead>                   						
-									<tr>                          							
+									<tr align="center">                          							
 										<th class="w-1">ID</th>                         							
-										<th class="w-1">Date</th>                          							
-										<th style="background:rgba(227,136,137,0.61);">Time</th>                         							
-										<th style="background:rgba(227,136,137,0.61);">Passenger</th>                         							
-										<th style="width: 15%;">Pickup</th>                         							
-										<th style="width: 15%;">Destination</th>                         							
-										<th style="background:rgba(227,136,137,0.61);">Fare</th>                        							
-										<th>Vehicle</th>                       							
-										<th>Note</th>                       							
-										<th>Status</th>                       							
-										<th style="background:rgba(227,136,137,0.61);">Driver</th>                       							
+										<th class="w-1">Pic</th>                          							
+										<th style="background:rgba(227,136,137,0.61);">Name</th>                         							
+										<th style="background:rgba(227,136,137,0.61);">Phone</th>                         							
+										<th style="width: 15%;">Gender</th>                         							
+										<th style="width: 15%;">Language</th>                         							
+										<th style="background:rgba(227,136,137,0.61);">Licence</th>                        							
+							                     							
 										<th>Action</th>                       						
 									</tr>                     					
 								</thead>                    					
 								<tbody> 						
 									<?php																											
-									$jsql=mysqli_query($connect,"SELECT * FROM `jobs` WHERE `status`='Waiting'");
-									while($jrow = mysqli_fetch_array($jsql)){																	
-										$book_id = $jrow['book_id'];														
-										$bsql = mysqli_query($connect,"SELECT * FROM `bookings` WHERE `book_id`='$book_id'");
-										$brow = mysqli_fetch_array($bsql);														
-										$c_id = $jrow['c_id'];														
-										$csql = mysqli_query($connect,"SELECT * FROM `clients` WHERE `c_id`='$c_id'");							
-										$crow = mysqli_fetch_array($csql);
-										$d_id = $jrow['d_id'];														
-										$dsql = mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
-										$drow = mysqli_fetch_array($dsql);															
+									$csql=mysqli_query($connect,"SELECT * FROM `clients`");
+									while($crow = mysqli_fetch_array($csql)){																	
+																								
 									?>													
-									<tr>                         						
+									<tr align="center">                         						
 										<td>							
-											<?php echo $jrow['job_id']; ?>						
+											<?php echo $crow['c_id']; ?>						
 										</td>                          							
-										<td>								
-											<span class="text-secondary">									
-												<?php echo $brow['book_date']; ?>								
-											</span>						
+										<td style="width: 10%;">	
+											<?php
+											if (!$crow['c_pic']) {										
+											?>										
+											<img src="img/clients/user-1.jpg" alt="Driver dp" style="width: 60px; border-radius: 30px;">
+											<?php
+										} else{                                            
+											?>                                         
+											<img src="<?php echo $crow['c_pic'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">										
+											<?php                                         									
+										}                                          										
+											?>
+																				
+																		
+																
 										</td>                        							
 										<td style="background:rgba(227,136,137,0.61);">								
-											<?php echo $brow['book_time']; ?>							
+											<?php echo $crow['c_name']; ?>							
 										</td>                        							
 										<td style="background:rgba(227,136,137,0.61);">                           								
-											<?php echo $crow['c_name']; ?>                     							
+											<?php echo $crow['c_phone']; ?>                     							
 										</td>                         							
 										<td>                          								
-											<?php echo $brow['pickup']; ?>                     							
+											<?php echo $crow['c_gender']; ?>                     							
 										</td>                         							
 										<td>                           								
-											<?php echo $brow['destination']; ?>                      							
+											<?php echo $crow['c_language']; ?>                      							
 										</td>                          							
 										<td style="background:rgba(227,136,137,0.61);">                            								
-											<?php echo $brow['fare']; ?>                        							
+											<?php echo $crow['c_ni']; ?>                        							
 										</td>                          							
-										<td>Car</td>   							
-										<td><?php echo $jrow['note']; ?>  </td>							
-										<td><?php echo $jrow['status']; ?>  </td>							
-										<td style="background:rgba(227,136,137,0.61);"><?php echo $drow['d_name']; ?> </td>
+										 							
+										
 										<td class="text-end">                            								
-											<span class="dropdown">                              									
-												<button class="btn align-text-top">Dispatch</button>								
-											</span>                         							
+											                             									
+												<button class="btn align-text-top">View</button>
+											
+											<button class="btn btn-danger align-text-top">Delete</button>
+											                       							
 										</td>                       						
 									</tr>                              						
 									<?php									
