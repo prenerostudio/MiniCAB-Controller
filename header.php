@@ -37,11 +37,23 @@ include('config.php');
       height: 500px;
     }
 	
-	.navigation { width: 100%;
-				height: 110px;
-	float: left;
-	background:#F16A02 ;}
-  </style>
+	/* Center icon and text vertically */
+        .nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+			color: white;
+			
+        }
+		
+	.nav_icon { 
+				width: 50px;
+	}
+		
+		
+		
+		</style>
 		
 
 	</head>  
@@ -51,123 +63,156 @@ include('config.php');
 		<div class="page">         		
 		
 			<header class="navbar-expand-md">  
-				<nav class="navigation">
-				<ul>
-					<li><a href="">Home</a></li>
+				
+				    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+       
+            <!-- Add a brand/logo if needed -->
+            <!--<a class="navbar-brand" href="#">Your Brand</a>-->
+            
+            <!-- Add a button to toggle the navigation items on smaller screens -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Create a div to hold your navigation items -->
+            <div class="collapse navbar-collapse " id="navbarNav" style="background: #051650">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">
+							<img src="img/icons/home.png"  alt="" class="nav_icon">
+                            <br><strong>Dashboard</strong>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.php">
+                           <img src="img/icons/booking.png" alt="" class="nav_icon">
+							<br><strong>Bookings</strong>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/company.png" alt="" class="nav_icon">
+							<br><strong>Company</strong>
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/reservation.png" alt="" class="nav_icon">
+							<br><strong>Reservations</strong>
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="clients.php">
+                            <img src="img/icons/client.png" alt="" class="nav_icon">
+							<br><strong>Clients</strong>
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="drivers.php">
+                            <img src="img/icons/drivers.png" alt="" class="nav_icon">
+							<br><strong>Drivers</strong>
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="driver-map.php">
+                            <img src="img/icons/map.png" alt="" class="nav_icon">
+							<br><strong>Driver Map</strong>
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/vehicles.png" alt="" class="nav_icon">
+							<br><strong>Vehicles</strong>
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/affilliate.png" alt="" class="nav_icon">
+							<br>Affiliate
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/zones.png" alt="" class="nav_icon">
+							<br>Zones
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/airport.png" alt="" class="nav_icon">
+							<br>Airports
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/destinations.png" alt="" class="nav_icon">
+							<br>Destinations
+                        </a>
+                    </li>
 					
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/special-dates.png" alt="" class="nav_icon">
+							<br>Special Dates
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/promotions.png" alt="" class="nav_icon">
+							<br>Promotions
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/coupons.png" alt="" class="nav_icon">
+							<br>Coupons
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/calendar.png" alt="" class="nav_icon">
+							<br>Calender
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/frontend.png" alt="" class="nav_icon">
+							<br>Frontend
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/payment.png" alt="" class="nav_icon">
+							<br>Payments
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/statistics.png" alt="" class="nav_icon">
+							<br>Statistics
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/icons/reviews.png" alt="" class="nav_icon">
+							<br>Reviews
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="logout.php">
+                            <img src="img/icons/logout.png" alt="" class="nav_icon">
+							<br>Logout
+                        </a>
+                    </li>
 					
-					
-					
-					</ul>
-				
-				
-				
-				</nav>
-				
-				
+                </ul>
+            </div>
+        
+    </nav>
+
 				
 			
-				<div class="collapse navbar-collapse" id="navbar-menu">          
-					<div class="navbar">            
-						<div class="container-xl">              
-							<div class="row flex-fill align-items-center">                
-								<div class="col">                  
-									<ul class="navbar-nav">                    
-										<li class="nav-item active">                      
-											<a class="#" href="dashboard.php" >                        
-												<!--<span class="nav-link-icon d-md-none d-lg-inline-block">
-													<i class="fa fa-home" aria-hidden="true"></i>                        
-												</span> -->  
-												<img src="img/drivers/user-1.jpg" style="width: 50px;">
-												           
-													Home                        
-												
-											</a>                    
-										</li>
-                    
-										<li class="nav-item">                      
-											<a class="nav-link" href="booking.php">                        
-												<span class="nav-link-icon d-md-none d-lg-inline-block">
-													<i class="fa fa-book" aria-hidden="true"></i>                        
-												</span>                        
-												<span class="nav-link-title">                          
-													Bookings                        
-												</span>                      
-											</a>                      
-										</li>
-                    
-										<li class="nav-item">                      
-											<a class="nav-link" href="clients.php" >                        
-												<span class="nav-link-icon d-md-none d-lg-inline-block">
-													<i class="fa fa-users" aria-hidden="true"></i>
-												</span>                       
-												<span class="nav-link-title">                         
-													Clients                        
-												</span>                     
-											</a>                   
-										</li>
-										
-										<li class="nav-item">                      
-											<a class="nav-link" href="drivers.php" >                        
-												<span class="nav-link-icon d-md-none d-lg-inline-block">
-													<i class="fa fa-users" aria-hidden="true"></i>
-												</span>                       
-												<span class="nav-link-title">                         
-													Drivers                        
-												</span>                     
-											</a>                   
-										</li>
-										
-										<li class="nav-item">                      
-											<a class="nav-link" href="driver-map.php" >                        
-												<span class="nav-link-icon d-md-none d-lg-inline-block">
-													<i class="fa fa-map" aria-hidden="true"></i>
-												</span>                       
-												<span class="nav-link-title">                         
-													Drivers Map                       
-												</span>                     
-											</a>                   
-										</li>
-										
-										<li class="nav-item">                      
-											<a class="nav-link" href="#" >                        
-												<span class="nav-link-icon d-md-none d-lg-inline-block">
-													<i class="fa fa-car" aria-hidden="true"></i>
-												</span>                       
-												<span class="nav-link-title">                         
-													Vehicles                       
-												</span>                     
-											</a>                   
-										</li>
-										
-										<li class="nav-item">                      
-											<a class="nav-link" href="#" >                        
-												<span class="nav-link-icon d-md-none d-lg-inline-block">
-													<i class="fa fa-money-o" aria-hidden="true"></i>
-												</span>                       
-												<span class="nav-link-title">                         
-													Payments                      
-												</span>                     
-											</a>                   
-										</li> 					
-									</ul>              
-								</div>             				
-								<div class="col-2 d-none d-xxl-block">              								
-									<div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
-										<div class="nav-item d-none d-md-flex me-3">              
-											<div class="btn-list">                
-												<a href="logout.php" class="btn">
-													<i class="fa fa-sign-out" aria-hidden="true"></i>                  
-													Sign Out                
-												</a>												              
-											</div>            
-										</div>					                    									
-									</div>               								
-								</div>             							
-							</div>           						
-						</div>          					
-					</div>       				
-				</div>     			
+				     			
 			</header>      		
 			<div class="page-wrapper">        			     
 				<div class="page-body">         

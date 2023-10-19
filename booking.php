@@ -31,14 +31,14 @@ include('header.php');
 			<div id="table-default" class="table-responsive">
             
 				<table class="table card-table table-vcenter text-nowrap datatable">                   					
-								<thead>                   						
-									<tr>                          							
+								<thead style="background: #051650; color: white;">                   						
+									<tr >                          							
 										<th class="w-1">ID</th>                         							
 										<th class="w-1">Date</th>                          							
-										<th style="background:rgba(227,136,137,0.61);">Time</th>                         							
-										<th style="background:rgba(227,136,137,0.61);">Passenger</th>                         							
-										<th style="width: 15%;">Pickup</th>                         							
-										<th style="width: 15%;">Destination</th>                         							
+										<th>Time</th>                         							
+										<th>Passenger</th>                         							
+										<th>Pickup</th>                         							
+										<th>Destination</th>                         							
 										                      							
 										<th>Vehicle</th>                       							
 										<th>Note</th>                       							
@@ -66,14 +66,14 @@ include('header.php');
 											<?php echo $bookrow['book_id']; ?>						
 										</td>                          							
 										<td>								
-											<span class="text-secondary">									
+											<span class=" btn btn-instagram">									
 												<?php echo $bookrow['book_date']; ?>								
 											</span>						
 										</td>                        							
-										<td style="background:rgba(227,136,137,0.61);">								
+										<td>								
 											<?php echo $bookrow['book_time']; ?>							
 										</td>                        							
-										<td style="background:rgba(227,136,137,0.61);">                           								
+										<td>                           								
 											<?php echo $cusrow['c_name']; ?>                     							
 										</td>                         							
 										<td>                          								
@@ -89,7 +89,9 @@ include('header.php');
 										
 										<td class="text-end">                            								
 											<span class="dropdown">                              									
-												<button class="btn align-text-top">Dispatch</button>								
+												<button class="btn btn-indigo align-text-top">Booking Details</button>	
+												<button class="btn align-text-top">Dispatch</button>	
+												
 											</span>                         							
 										</td>                       						
 									</tr>                              						
