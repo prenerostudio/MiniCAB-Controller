@@ -438,7 +438,7 @@
                               
 									<label class="form-check form-check-inline">
                                 
-										<input class="form-check-input" type="radio" name="radios-inline" checked="">
+										<input class="form-check-input" type="radio" name="journey_type" checked="" value="One Way">
                                 
 										<span class="form-check-label">One Way</span>
                               
@@ -446,7 +446,7 @@
                               
 									<label class="form-check form-check-inline">
                                 
-										<input class="form-check-input" type="radio" name="radios-inline">
+										<input class="form-check-input" type="radio" name="journey_type" value="Return">
                                 
 										<span class="form-check-label">Return</span>
                               
@@ -466,7 +466,7 @@
 							
 										<label class="form-label">No. of Passenger</label>              												
 							
-										<input type="number" class="form-control" name="pc">				 
+										<input type="number" class="form-control" name="passenger">				 
 						
 									</div> 						
 					
@@ -478,7 +478,7 @@
 							
 										<label class="form-label">Luggage</label>              					
 							
-										<input type="number" class="form-control" name="cpic">      						
+										<input type="number" class="form-control" name="luggage">      						
 						
 									</div>             					
 					
@@ -488,9 +488,9 @@
 					
 							<div class="mb-3">                 							
 
-								<label class="form-label">Address</label>                  							
+								<label class="form-label">Special Note</label>                  							
 								
-								<textarea class="form-control" rows="3" name="caddress"></textarea>               						
+								<textarea class="form-control" rows="3" name="note"></textarea>               						
 							
 							</div>  	
 						
@@ -508,7 +508,7 @@
 								<label class="form-label">Name</label>              
 					
 							
-								<input type="text" class="form-control" name="cphone">      
+								<input type="text" class="form-control" name="cname">      
 						
 							</div> 
 						
@@ -535,7 +535,7 @@
 										<label class="form-label">Email:</label>              
 					
 							
-										<input type="text" class="form-control" name="cphone">      
+										<input type="text" class="form-control" name="cemail">      
 						
 									</div> 
 							
@@ -553,7 +553,7 @@
 
 										
 							
-										<input type="date" class="form-control" name="cphone">      
+										<input type="date" class="form-control" name="pdate">      
 						
 									</div>
 							
@@ -566,7 +566,7 @@
 										<label class="form-label">Pickup Time</label>              
 					
 
-										<input type="time" class="form-control" name="cphone">      
+										<input type="time" class="form-control" name="ctime">      
 						
 									</div>
 								
@@ -585,7 +585,7 @@
                               
 									<label class="form-check form-check-inline">
                                 
-										<input class="form-check-input" type="checkbox">
+										<input class="form-check-input" type="checkbox" name="bidding" value="Yes">
                                 
 										<span class="form-check-label">Yes</span>
                               
@@ -595,7 +595,7 @@
 									<label class="form-check form-check-inline">
                                 
 									
-										<input class="form-check-input" type="checkbox" disabled="">
+										<input class="form-check-input" type="checkbox" name="bidding" value="No">
                                 
 										<span class="form-check-label">No</span>
                               

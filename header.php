@@ -34,8 +34,13 @@ include('config.php');
       height: 100%;
     }
 	 #mapd {
-      height: 700px;
+      height: 500px;
     }
+	
+	.navigation { width: 100%;
+				height: 110px;
+	float: left;
+	background:#F16A02 ;}
   </style>
 		
 
@@ -45,7 +50,22 @@ include('config.php');
 		
 		<div class="page">         		
 		
-			<header class="navbar-expand-md">        
+			<header class="navbar-expand-md">  
+				<nav class="navigation">
+				<ul>
+					<li><a href="">Home</a></li>
+					
+					
+					
+					
+					</ul>
+				
+				
+				
+				</nav>
+				
+				
+				
 			
 				<div class="collapse navbar-collapse" id="navbar-menu">          
 					<div class="navbar">            
@@ -54,13 +74,14 @@ include('config.php');
 								<div class="col">                  
 									<ul class="navbar-nav">                    
 										<li class="nav-item active">                      
-											<a class="nav-link" href="dashboard.php" >                        
-												<span class="nav-link-icon d-md-none d-lg-inline-block">
+											<a class="#" href="dashboard.php" >                        
+												<!--<span class="nav-link-icon d-md-none d-lg-inline-block">
 													<i class="fa fa-home" aria-hidden="true"></i>                        
-												</span>                        
-												<span class="nav-link-title">                          
+												</span> -->  
+												<img src="img/drivers/user-1.jpg" style="width: 50px;">
+												           
 													Home                        
-												</span>                      
+												
 											</a>                    
 										</li>
                     

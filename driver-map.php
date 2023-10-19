@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 ?>
-<div class="container-xl">         
+         
 	<div class="card">				
 		<div class="card-header">								
 			<h2 class="page-title">              			
@@ -48,7 +48,7 @@ include('header.php');
 			</div>			            
 		</div>
 	</div>
-</div>
+
 <?php
 include('footer.php');
 ?>
