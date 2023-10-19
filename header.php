@@ -150,36 +150,36 @@ include('config.php');
                         </a>
                     </li>
 					
-					<li class="nav-item">
+					<!--<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/special-dates.png" alt="" class="nav_icon">
 							<br>Special Dates
                         </a>
-                    </li>
-					<li class="nav-item">
+                    </li>-->
+					<!--<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/promotions.png" alt="" class="nav_icon">
 							<br>Promotions
                         </a>
-                    </li>
-					<li class="nav-item">
+                    </li>-->
+					<!--<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/coupons.png" alt="" class="nav_icon">
 							<br>Coupons
                         </a>
-                    </li>
+                    </li>-->
 					<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/calendar.png" alt="" class="nav_icon">
 							<br>Calender
                         </a>
                     </li>
-					<li class="nav-item">
+					<!--<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/frontend.png" alt="" class="nav_icon">
 							<br>Frontend
                         </a>
-                    </li>
+                    </li>-->
 					<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/payment.png" alt="" class="nav_icon">
