@@ -21881,7 +21881,7 @@ a.step-item:hover {
 }
 .markdown > table thead th,
 .table thead th {
-    color:white;
+    color:#FFFFFF;
     background:#051650;
     font-size: 0.925rem;
     font-weight:600;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2023 at 05:06 PM
+-- Generation Time: Oct 19, 2023 at 05:13 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -76,11 +76,9 @@ CREATE TABLE `bookings` (
   `passenger` int(55) NOT NULL,
   `luggage` varchar(255) NOT NULL,
   `note` text NOT NULL,
-  `book_date` varchar(255) NOT NULL,
+  `book_date` date NOT NULL,
   `book_time` time NOT NULL,
   `journey_type` varchar(55) NOT NULL,
-  `fare` int(11) NOT NULL,
-  `payment_method` varchar(55) NOT NULL,
   `v_id` int(11) NOT NULL,
   `status` varchar(55) NOT NULL,
   `date_added` datetime NOT NULL
@@ -90,13 +88,13 @@ CREATE TABLE `bookings` (
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`book_id`, `c_id`, `pickup`, `destination`, `passenger`, `luggage`, `note`, `book_date`, `book_time`, `journey_type`, `fare`, `payment_method`, `v_id`, `status`, `date_added`) VALUES
-(1, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-11', '15:00:00', 'Economy', 8000, 'Bank Transfer', 0, 'Pending', '2023-10-10 05:55:48'),
-(2, 1, 'Faisalabad', 'Lahore', 4, 'No', 'N/A', '2023-10-12', '18:06:00', 'Business', 12000, 'Cash', 0, 'Pending', '2023-10-10 05:56:36'),
-(3, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-12', '17:05:00', 'Luxury', 6000, 'Bank Transfer', 0, 'Pending', '2023-10-10 05:57:54'),
-(4, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'Be on time', '5:00 PM', '00:00:00', 'Business', 12000, 'Bank Transfer', 0, 'Pending', '0000-00-00 00:00:00'),
-(5, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-07', '05:25:00', 'Luxury', 8000, 'Cash', 0, 'Pending', '2023-10-07 08:23:29'),
-(7, 1, 'Faisalabad', 'Lahore', 4, 'Yes', 'N/A', '2023-10-26', '22:40:00', 'Business', 12000, 'Bank Tranfer', 0, 'Pending', '2023-10-11 12:39:10');
+INSERT INTO `bookings` (`book_id`, `c_id`, `pickup`, `destination`, `passenger`, `luggage`, `note`, `book_date`, `book_time`, `journey_type`, `v_id`, `status`, `date_added`) VALUES
+(1, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-11', '15:00:00', 'Economy', 5, 'Pending', '2023-10-10 05:55:48'),
+(2, 1, 'Faisalabad', 'Lahore', 4, 'No', 'N/A', '2023-10-12', '18:06:00', 'Business', 3, 'Pending', '2023-10-10 05:56:36'),
+(3, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-12', '17:05:00', 'Luxury', 3, 'Pending', '2023-10-10 05:57:54'),
+(4, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'Be on time', '2023-10-27', '05:00:00', 'Business', 3, 'Pending', '0000-00-00 00:00:00'),
+(5, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-07', '05:25:00', 'Luxury', 3, 'Pending', '2023-10-07 08:23:29'),
+(7, 1, 'Faisalabad', 'Lahore', 4, 'Yes', 'N/A', '2023-10-26', '22:40:00', 'Business', 3, 'Pending', '2023-10-11 12:39:10');
 
 -- --------------------------------------------------------
 
@@ -128,7 +126,8 @@ CREATE TABLE `clients` (
 INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `company_name`, `others`, `c_ni`, `reg_date`) VALUES
 (1, 'Atiq Ramzan', 'hello@prenero.com', '+923157524000', 'b743c33627755c255938a992d3480cab', 'Faisalabad, Punjab, Pakistan.', '', '', '', '38000', 'Prenero Solutions', 'N/A', '33102-1457353-9', '2023-10-13 07:58:46'),
 (2, 'Azib Ali', 'azib@gmail.com', '+4123456523', '', 'London', 'Male', 'English', '', '2J53', '', '', '', '2023-10-17 19:54:17'),
-(3, 'Mahtab', 'Mahtab@prenero.com', '+923346452312', '', 'Faisalabad', 'Male', 'Urdu', '', '44000', '', '', '', '2023-10-17 19:55:19');
+(3, 'Mahtab', 'Mahtab@prenero.com', '+923346452312', '', 'Faisalabad', 'Male', 'Urdu', '', '44000', '', '', '', '2023-10-17 19:55:19'),
+(4, 'Ismail', 'ismail@prenero.com', '+4456896523', '$2y$10$VnYYMqxDHaWUCaZtGBfB9.ZCwv9bm1kYV36yt5Nl975xnpjgPaUhi', 'fsd', 'Male', 'Italian', 'img/clients/IMG_8567.JPG', '44000', 'Prenero', '', '3310214573539', '2023-10-18 16:22:15');
 
 -- --------------------------------------------------------
 
@@ -164,8 +163,9 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_password`, `d_phone`, `d_address`, `d_pic`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `skype_acount`, `d_remarks`, `latitude`, `longitude`, `status`, `reg_date`) VALUES
-(1, 'Atiq Ramzan', 'hello@prenero.com', 'b743c33627755c255938a992d3480cab', '+923157524000', 'FSD ', 'api-app.png', '33102-1457353-9', '', 0, '', '', '', '', '', '', '51.52145727821898', '-0.12723122456155755', 'online', '2023-10-17 01:25:51'),
-(2, 'Mahtab Mukhtar', 'nahtab@prenero.com', '25d55ad283aa400af464c76d713c07ad', '03241524624', 'Faisalabad, Punjab, Pakistan.', '', '33102-1457353-9', '', 0, '', '', '', '', '', '', '51.512474660272886', '-0.10759970050199483', 'online', '2023-10-10 04:40:14');
+(1, 'Atiq Ramzan', 'hello@prenero.com', 'b743c33627755c255938a992d3480cab', '+923157524000', 'FSD ', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 1, '123456789', '2023-10-28', '123456789', '2023-10-31', '', 'N/A', '51.52145727821898', '-0.12723122456155755', 'online', '2023-10-17 01:25:51'),
+(2, 'Mahtab Mukhtar', 'nahtab@prenero.com', '25d55ad283aa400af464c76d713c07ad', '03241524624', 'Faisalabad, Punjab, Pakistan.', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 1, '123456789', '2023-10-28', '123456789', '2023-10-31', '', 'N/A', '51.512474660272886', '-0.10759970050199483', 'online', '2023-10-10 04:40:14'),
+(4, 'Shahzib', 'shazaib@prenero.com', '$2y$10$CfNmmVlmMeLt6S/F2/Q9IuZvsfXNf./4StlhOEPjiQ2NYtcaljKGC', '+44125364585', '', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 10, '123456789', '2023-10-28', '123456789', '2023-10-31', '', 'N/A', '51.512474660272886', '-0.13759970050199483', 'New', '2023-10-19 19:08:18');
 
 -- --------------------------------------------------------
 
@@ -257,6 +257,25 @@ INSERT INTO `language` (`lang_id`, `language`, `date_added`) VALUES
 (22, 'Romanian', '0000-00-00'),
 (23, 'Czech', '0000-00-00'),
 (24, 'Urdu', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `p_id` int(55) NOT NULL,
+  `job_id` int(55) NOT NULL,
+  `driver_id` int(55) NOT NULL,
+  `p_method` varchar(255) NOT NULL,
+  `parking_charges` varchar(255) NOT NULL,
+  `extra_drop_charges` varchar(255) NOT NULL,
+  `driver_waiting` varchar(255) NOT NULL,
+  `fare` varchar(55) NOT NULL,
+  `status` varchar(55) NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -385,6 +404,12 @@ ALTER TABLE `language`
   ADD PRIMARY KEY (`lang_id`);
 
 --
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`p_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -416,19 +441,19 @@ ALTER TABLE `bid_rides`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `c_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `c_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
-  MODIFY `d_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `d_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `driver_location`
@@ -447,6 +472,12 @@ ALTER TABLE `jobs`
 --
 ALTER TABLE `language`
   MODIFY `lang_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `p_id` int(55) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

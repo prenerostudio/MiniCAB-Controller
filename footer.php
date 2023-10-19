@@ -52,13 +52,13 @@
 				<h5 class="modal-title">Add New Driver</h5>            				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
 			</div> 
-			<form method="post" action="">			
+			<form method="post" enctype="multipart/form-data" action="driver-process.php">			
 				<div class="modal-body">								
 					<div class="row">              					
 						<div class="col-lg-6">				
 							<div class="mb-3">              					
 								<label class="form-label">Driver Name</label>              					
-								<input type="text" class="form-control" name="dname" placeholder="Passenger Name">            				
+								<input type="text" class="form-control" name="dname" placeholder="Driver Name">            				
 							</div> 						
 						</div>              					
 						<div class="col-lg-6">                
@@ -177,22 +177,19 @@
 								<textarea class="form-control" rows="3" name="remarks"></textarea>               						
 							</div>              					
 						</div>   					
-						<div class="col-lg-12">               
-							<div>                 
-								<label class="form-label">Address</label>                  							
-								<textarea class="form-control" rows="3" name="address"></textarea>               						
-							</div>              					
-						</div>   				
+						 				
 					</div>          			
 				</div>        			
 				<div class="modal-footer">           
 					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">             					
 						Cancel           				
 					</a>           				
-					<a href="#" class="btn ms-auto" data-bs-dismiss="modal">             					             
-						<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>              					
-						Add New Driver           				
-					</a>          			
+					<button type="submit" class="btn ms-auto" data-bs-dismiss="modal">
+						
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+						Add New Driver  
+						
+					</button>       			
 				</div> 								
 			</form>		
 		</div>      	
