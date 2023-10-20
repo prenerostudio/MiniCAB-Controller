@@ -71,7 +71,24 @@ if ($email_count > 0) {
 
         $stmt->close();
     } else {
-        echo 'Sorry, only JPG, JPEG, PNG, GIF files are allowed for the image.';
+		
+		 $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_password`, `d_phone`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `status`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("ssssssssssssss", $dname, $demail, $cp, $dphone, $dgender, $dlang, $dv, $licence, $lexp, $pco, $pcoexp, $remarks, $status, $date); 
+
+        if ($stmt->execute()) {
+            // Redirect on successful insertion
+            header('Location: drivers.php');
+            exit();
+        } else {
+            // Handle the error
+            echo 'Error: ' . $stmt->error;
+        }
+		
+		
+        //echo 'Sorry, only JPG, JPEG, PNG, GIF files are allowed for the image.';
     }
 }
 
