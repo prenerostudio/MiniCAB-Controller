@@ -35,25 +35,19 @@ include('config.php');
     }
 	 #mapd {
       height: 500px;
-    }
-	
+    }	
 	/* Center icon and text vertically */
         .nav-link {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-			color: white;
-			
-        }
-		
+			color: white;			
+        }		
 	.nav_icon { 
 				width: 50px;
 	}
-		
-		
-		
-		</style>
+</style>
 		
 
 	</head>  
@@ -120,7 +114,7 @@ include('config.php');
                         </a>
                     </li>
 					<li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="vehicle.php">
                             <img src="img/icons/vehicles.png" alt="" class="nav_icon">
 							<br><strong>Vehicles</strong>
                         </a>

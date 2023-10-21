@@ -27,7 +27,6 @@ $dlang = $_POST['dlang'];
 $dv = $_POST['dv'];
 $licence = $_POST['licence'];
 $lexp = $_POST['lexp'];
-
 $pco = $_POST['pco'];
 $pcoexp = $_POST['pcoexp'];
 $remarks = $_POST['remarks'];
