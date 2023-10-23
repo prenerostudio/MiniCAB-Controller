@@ -71,7 +71,8 @@ include('header.php');
 							<a href="driver-details.php?id=<?php echo $drow['d_id']; ?>">
 							<button class="btn align-text-top">View</button>	
 							</a>
-							<button class="btn btn-danger align-text-top">Delete</button>																			
+							<a href="del-driver.php?id=<?php echo $drow['d_id']; ?>">
+								<button class="btn btn-danger align-text-top">Delete</button>											</a>								
 						</td>                       																			
 					</tr>                              																	
 					<?php																				

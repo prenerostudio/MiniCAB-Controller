@@ -25,7 +25,6 @@ $date = date("Y-m-d H:i:s");
 									`d_name`='$dname',
 									`d_email`='$demail',
 									`d_phone`='$dphone',
-									`d_pic`='$dpic',
 									`d_gender`='$dgender',
 									`d_language`='$dlang',
 									`v_id`='$dv',

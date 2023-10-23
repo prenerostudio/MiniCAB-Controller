@@ -13,7 +13,7 @@ $d_password=$_POST['d_password'];
 
 if(isset($_POST['d_email'])){		
 	
-	 $sql="SELECT * FROM `drivers` WHERE `d_email`='$d_email' AND `d_password` = MD5('$d_password')";	
+	 $sql="SELECT * FROM `drivers` WHERE `d_email`='$d_email' AND `d_password` = '$d_password'";	
 	$r=mysqli_query($connect,$sql);
 	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
 	

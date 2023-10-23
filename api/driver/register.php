@@ -20,7 +20,7 @@ if(isset($_POST['d_email'])){
 	if(count($datacheck)>0){     		
 		echo json_encode(array('message'=>"This User Already Exist! Try to Signin",'status'=>false));	
 	}else{
-        $final_pass= md5($pass);		
+        		
 		$sql="INSERT INTO `drivers`(
 									`d_name`,
 									`d_email`,
@@ -30,7 +30,7 @@ if(isset($_POST['d_email'])){
 									) VALUES (
 									'$d_name',
 									'$d_email',
-									'$final_pass',
+									'$pass',
 									'$d_phone',
 									'$date')";				
 		

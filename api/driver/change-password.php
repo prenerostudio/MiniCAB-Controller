@@ -15,11 +15,10 @@ $date = date("Y-m-d h:i:s");
 if(isset($_POST['d_id'])){ 	 	
 
 	
-	$final_pass = md5($new_pass);
 			
 		
 	$sql="UPDATE `drivers` SET 
-								`d_password`='$final_pass',
+								`d_password`='$new_pass',
 								`reg_date`='$date' WHERE `d_id`='$d_id'";				
 		
 	$r=mysqli_query($connect,$sql);
