@@ -1,28 +1,50 @@
 <?php
+
 header('Content-Type: application/json');
+
 header('Access-Control-Allow-Origin: *');
+
 header('Access-Control-Allow-Methods:POST');
+
 header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authoization, x-Requested-with');
+
 header('Cache-Control: max-age=3600');
+
 
 include("../../config.php");
 
 // Function to handle image upload
-function uploadImage() {
-    $targetDir = "img/drivers/";
-    $targetFilePath = $targetDir . basename($_FILES["d_img"]["name"]);
-    $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
-    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
-    if (in_array($fileType, $allowTypes)) {
-        if (move_uploaded_file($_FILES["d_img"]["tmp_name"], $targetFilePath)) {
-            return $targetFilePath;
-        } else {
-            return false;
-        }
-    }
-    return false;
+function uploadImage() {
+
+	$targetDir = "img/drivers/";
+    
+	$targetFilePath = $targetDir . basename($_FILES["d_img"]["name"]);
+    
+	$fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+    
+	$allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+
+    
+	if (in_array($fileType, $allowTypes)) {
+    
+		if (move_uploaded_file($_FILES["d_img"]["tmp_name"], $targetFilePath)) {
+        
+			return $targetFilePath;
+        
+		} else {
+
+			return false;
+        
+		}
+    
+	}
+
+	return false;
+
 }
+
+
 
 $d_id = $_POST['d_id'];
 $dname = $_POST['dname'];
@@ -51,7 +73,6 @@ if(isset($_POST['d_id'])){
 									`d_pic`='$d_img',
 									`d_gender`='$dgender',
 									`d_language`='$dlang',
-									`v_id`='$dv',
 									`d_licence`='$licence',
 									`d_licence_exp`='$lexp',
 									`pco_licence`='$pco',

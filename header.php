@@ -90,9 +90,9 @@ include('config.php');
                         </a>
                     </li>
 					<li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="bids.php">
                             <img src="img/icons/reservation.png" alt="" class="nav_icon">
-							<br><strong>Reservations</strong>
+							<br><strong>Bids</strong>
                         </a>
                     </li>
 					<li class="nav-item">

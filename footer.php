@@ -366,7 +366,7 @@
 									while($vrow = mysqli_fetch_array($vsql)){																		
 									?>
 									<option>									
-										<?php echo $vrow['v_desc'] ?>								
+										<?php echo $vrow['v_name'] ?>								
 									</option>								
 									<?php																	
 									}																		
