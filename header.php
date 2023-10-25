@@ -43,7 +43,10 @@ include('config.php');
             align-items: center;
             text-align: center;
 			color: white;			
-        }		
+        }	
+	.nav-link:hover{
+		color: #F16A02;
+	}
 	.nav_icon { 
 				width: 50px;
 	}
