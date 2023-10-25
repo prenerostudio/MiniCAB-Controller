@@ -31,7 +31,7 @@
 			<div class="container container-tight py-4">        
 				<div class="text-center mb-4">          
 					<a href="index.php" class="navbar-brand navbar-brand-autodark">            
-						<img src="img/logo.png" width="200"  alt="Minicab" class="navbar-brand-image">          
+						<img src="img/logo.png" width="170"  alt="Minicab" class="navbar-brand-image">          
 					</a>        
 				</div>        
 				<div class="card card-md">          
