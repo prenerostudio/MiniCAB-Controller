@@ -1,20 +1,35 @@
 <?php
 include('header.php');
 ?>		
+
 <div class="col-md-12">                
+
 	<div class="card">                  			
+	
 		<div class="card-header">                  					
+		
 			<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">                    							
+			
 				<li class="nav-item" style="background: #163B8F;">                      									
+				
 					<a href="#tabs-dasboard" class="nav-link active" data-bs-toggle="tab">					
+					
 						<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+						
 						Bookings for Bids						
+					
 					</a>                     					
+				
 				</li>                      				
+				
 				<li class="nav-item">                       				
+				
 					<a href="#tabs-tracking" class="nav-link" data-bs-toggle="tab">							                         					
+					
 						<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>                          						
+						
 						All Bids From Drivers						
+					
 					</a>                     					
 				</li>                     					                  				
 			</ul>                			
@@ -31,7 +46,7 @@ include('header.php');
 		</h2>		
 		<div class="col-auto ms-auto d-print-none">        
 			<div class="btn-list">            				                
-				<a href="#" class="btn d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-booking">
+				<a href="#" class="btn d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-bid">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>      
 					Add New Bid                  
 				</a>                                 
@@ -85,7 +100,7 @@ include('header.php');
 										                         							
 										<td><?php echo $bookrow['v_name']; ?> </td>   							
 										<td>
-											<?php echo $bookrow['note']; ?>  </td>							
+											<?php echo $bookrow['bid_note']; ?>  </td>							
 										<td><div class="btn btn-success"><?php echo $bookrow['bid_status']; ?> </div> </td>							
 										
 										                  						
@@ -158,6 +173,70 @@ include('header.php');
 	</div>              
 </div>
 
+
+
+
+
+
+<div class="modal modal-blur fade" id="modal-bid" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">    	
+		<div class="modal-content">        		
+			<div class="modal-header">            			
+				<h5 class="modal-title">Add New Bid</h5>            				
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
+			</div> 
+			<form method="post" enctype="multipart/form-data" action="bid-process.php">			
+				<div class="modal-body">								
+				
+									
+					<div class="row">   
+						<div class="col-lg-12">                						
+							<div class="mb-3">                  							
+								<label class="form-label">Booking Available for Bids</label>              				
+								<select class="form-select" name="book_id">                     								
+									<option value="" selected>Select Bookings</option>                    								    
+									<?php						
+									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings,	clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status = 'Pending'");
+									while($brow = mysqli_fetch_array($bsql)){									
+									?>																											
+									<option value="<?php echo $brow['book_id'] ?>"><?php echo $brow['pickup'] ?> | <?php echo $brow['destination'] ?> | <?php echo $brow['book_date'] ?> | <?php echo $brow['book_time'] ?></option>
+									<?php
+									}									
+									?>												
+								</select> 						
+							</div>             					
+						</div>  
+					             					
+						          				
+					</div>
+							          				          
+				</div>          			
+				<div class="modal-body">
+					<div class="row">              					             
+						<div class="col-lg-12">               						
+							<div>                 							
+								<label class="form-label">Bid Note</label>                  							
+								<textarea class="form-control" rows="3" name="bid_note"></textarea>               						
+							</div>              					
+						</div>   					
+						 				
+					</div>          			
+				</div>        			
+				<div class="modal-footer">           
+					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">             					
+						Cancel           				
+					</a>           				
+					<button type="submit" class="btn ms-auto" data-bs-dismiss="modal">
+						
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+						Add Bid 
+						
+					</button>       			
+				</div> 								
+			</form>		
+		</div>      	
+	</div>    
+</div>
 <?php		
 include('footer.php');		
 ?>
