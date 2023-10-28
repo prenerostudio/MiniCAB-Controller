@@ -38,7 +38,7 @@ $crow = mysqli_fetch_array($csql);
 						<div class="col-md-4">					
 							<div class="mb-3">                    						
 								<div class="form-label">Customer Name</div>                        						
-								<input type="text" class="form-control" value="<?php echo $crow['c_id']; ?>" name="c_id">  
+								<input type="hidden" class="form-control" value="<?php echo $crow['c_id']; ?>" name="c_id">  
 								<input type="text" class="form-control" value="<?php echo $crow['c_name']; ?>" name="cname">  
 							</div>                    					
 							<div class="mb-3">                    						

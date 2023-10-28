@@ -37,7 +37,7 @@ $dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
 						<div class="col-md-4">					
 							<div class="mb-3">                    						
 								<div class="form-label">Driver Name</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['d_id']; ?>" name="d_id">  
+								<input type="hidden" class="form-control" value="<?php echo $drow['d_id']; ?>" name="d_id">  
 								<input type="text" class="form-control" value="<?php echo $drow['d_name']; ?>" name="dname">  
 							</div>                    					
 							<div class="mb-3">                    						
@@ -58,7 +58,7 @@ $dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
 										$vhsql=mysqli_query($connect,"SELECT * FROM `vehicles` WHERE `v_id`='$vid'");											
 					$vhrow = mysqli_fetch_array($vhsql);
 										
-										echo $vhrow['v_desc'];
+										echo $vhrow['v_name'];
 										
 										?></option>
 								
@@ -67,7 +67,7 @@ $dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
 					
 									while($vrow = mysqli_fetch_array($vsql)){		
 									?>
-									<option value="<?php echo $vrow['v_id']; ?>"><?php echo $vrow['v_desc']; ?></option>
+									<option value="<?php echo $vrow['v_id']; ?>"><?php echo $vrow['v_name']; ?></option>
 								<?php
 									}
 										?>

@@ -80,7 +80,7 @@ include('header.php');
 							<?php echo $vrow['v_pricing']; ?>															
 						</td>	
 						<td class="text-end">	
-							<a href="driver-details.php?id=<?php echo $vrow['v_id']; ?>">
+							<a href="vehicle-details.php?id=<?php echo $vrow['v_id']; ?>">
 							<button class="btn align-text-top">View</button>	
 							</a>
 							<button class="btn btn-danger align-text-top">Delete</button>																			
