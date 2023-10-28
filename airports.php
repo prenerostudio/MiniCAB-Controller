@@ -52,10 +52,10 @@ include('header.php');
 						</td>                         																				
 																								
 						<td class="text-end">	
-							<a href="zone-detail.php?id=<?php echo $arow['ap_id']; ?>">
+							<a href="airport-detail.php?id=<?php echo $arow['ap_id']; ?>">
 							<button class="btn align-text-top">View</button>	
 							</a>
-							<a href="del-zone.php?id=<?php echo $arow['ap_id']; ?>">
+							<a href="del-airport.php?id=<?php echo $arow['ap_id']; ?>">
 								<button class="btn btn-danger align-text-top">Delete</button>											</a>								
 
 						</td>                       																			
@@ -107,7 +107,7 @@ include('header.php');
 						<div class="col-lg-6">                
 							<div class="mb-3">                  
 								<label class="form-label">Code</label>              					
-								<input type="number" class="form-control" name="ap_code" placeholder=" Air-0004">
+								<input type="text" class="form-control" name="ap_code" placeholder=" Air-0004">
 							</div>             					
 						</div>            				
 					</div>						

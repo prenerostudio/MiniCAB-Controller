@@ -26,7 +26,7 @@ if(isset($_POST['d_email'])){
 									`d_email`,
 									`d_password`,
 									`d_phone`,
-									`reg_date`
+									`driver_reg_date`
 									) VALUES (
 									'$d_name',
 									'$d_email',

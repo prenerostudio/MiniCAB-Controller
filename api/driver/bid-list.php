@@ -10,7 +10,7 @@ include("../../config.php");
 
 
 $sql="SELECT booking_bid.*, clients.c_name, clients.c_email, clients.c_phone, bookings.* FROM booking_bid, bookings, clients
-WHERE booking_bid.book_id = bookings.book_id AND bookings.c_id = clients.c_id AND booking_bid.`status` = 'Open'";	
+WHERE booking_bid.book_id = bookings.book_id AND bookings.c_id = clients.c_id AND booking_bid.`bid_status` = 'Open'";	
 
 $r=mysqli_query($connect,$sql);
 

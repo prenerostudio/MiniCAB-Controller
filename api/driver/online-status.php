@@ -10,34 +10,19 @@ include("../../config.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['d_id'])) {
 		$d_id = $_POST['d_id'];
-        $latitude = $_POST['latitude'];
-        $longitude = $_POST['longitude'];       
-        $date = date("Y-m-d h:i:s");
-        
-       
-        $sql = "INSERT INTO `driver_location`(
-												`d_id`, 
-												`latitude`, 
-												`longitude`, 
-												`time`
-												) VALUES (
-												'$d_id',
-												'$latitude',
-												'$longitude',												
-												'$date')";
+        $status = $_POST['status'];               
+       // $date = date("Y-m-d h:i:s");
+               
+        $sql = "UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";
         
 		
         $result = mysqli_query($connect, $sql);
         if ($result) {  
 			
-			$updatesql="UPDATE `drivers` SET `latitude`='$latitude',`longitude`='$longitude' WHERE `d_id`='$d_id'";
-			$uresult = mysqli_query($connect, $updatesql);
-			
-			
-            $response = array('message' => "Location Updated Successfully", 'status' => true);
+			$response = array('message' => "Status Update Successfully", 'status' => true);
             echo json_encode($response);
         } else {    
-            $response = array('message' => "Error In updating Location", 'status' => false);
+            $response = array('message' => "Error In updating Status", 'status' => false);
             echo json_encode($response);
         }
     } else {

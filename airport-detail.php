@@ -1,11 +1,11 @@
 <?php
 include('header.php');
 
-$zone_id = $_GET['id'];
+$ap_id = $_GET['id'];
 
-$zsql=mysqli_query($connect,"SELECT * FROM `zones` WHERE `zone_id`='$zone_id'");											
+$asql=mysqli_query($connect,"SELECT * FROM `airports` WHERE `ap_id`='$ap_id'");											
 					
-$zrow = mysqli_fetch_array($zsql);		
+$arow = mysqli_fetch_array($asql);		
 
 
 ?> 
@@ -14,33 +14,33 @@ $zrow = mysqli_fetch_array($zsql);
 		<div class="row g-0">                    		
 			<div class="col-12 col-md-12 d-flex flex-column">        			
 				<div class="card-body">            				
-					<h2 class="mb-4">Zone Details</h2>                				
+					<h2 class="mb-4">Airport Details</h2>                				
 					               				
 					
 					
-					<form method="post" action="update-zone.php" enctype="multipart/form-data">
+					<form method="post" action="update-airport.php" enctype="multipart/form-data">
 					<div class="row g-3">                
 						<div class="col-md-6">					
 							<div class="mb-3">                    						
-								<div class="form-label">Starting Point</div>                        						
-								<input type="hidden" class="form-control" value="<?php echo $zrow['zone_id']; ?>" name="zone_id">  
-								<input type="text" class="form-control" value="<?php echo $zrow['starting_point']; ?>" name="sp">  
+								<div class="form-label">Airport Name</div>                        						
+								<input type="hidden" class="form-control" value="<?php echo $arow['ap_id']; ?>" name="ap_id">  
+								<input type="text" class="form-control" value="<?php echo $arow['ap_name']; ?>" name="ap_name">  
 							</div>                    					
 							<div class="mb-3">                    						
-								<div class="form-label">Distance</div>                        						
-								<input type="text" class="form-control" value="<?php echo $zrow['distance']; ?>" name="dis">
+								<div class="form-label">City</div>                        						
+								<input type="text" class="form-control" value="<?php echo $arow['ap_city']; ?>" name="ap_city">
 							</div>                    					
 														
 																	
 						</div>																
 						<div class="col-md-6">					
 							<div class="mb-3">                    					
-								<div class="form-label">Ending Point</div>                        						
-								<input type="text" class="form-control" value="<?php echo $zrow['end_point']; ?>" name="ep">  
+								<div class="form-label">Address</div>                        						
+								<input type="text" class="form-control" value="<?php echo $arow['ap_address']; ?>" name="ap_address">  
 							</div>                    					
 							<div class="mb-3">                    						
-								<div class="form-label">Fare</div>                        						
-								<input type="text" class="form-control" value="<?php echo $zrow['fare']; ?>" name="fare">
+								<div class="form-label">Code</div>                        						
+								<input type="text" class="form-control" value="<?php echo $arow['ap_code']; ?>" name="ap_code">
 							</div>														
 															
 																						
@@ -51,7 +51,7 @@ $zrow = mysqli_fetch_array($zsql);
 				</div>                 
 				<div class="card-footer bg-transparent mt-auto">                 
 					<div class="btn-list justify-content-end">                 
-						<a href="zones.php" class="btn">                  
+						<a href="airports.php" class="btn">                  
 							Cancel                  
 						</a>                  
 						 
