@@ -11,7 +11,7 @@ $d_id=$_POST['d_id'];
 
 if(isset($_POST['d_id'])){		
 	
-	 $sql="SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, clients.c_address, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.* FROM jobs, drivers, clients, bookings WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.d_id = '$d_id' AND jobs.STATUS IN ( 'completed', 'cancelled' );";	
+	 $sql="SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, clients.c_address, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.* FROM jobs, drivers, clients, bookings WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.d_id = '$d_id' AND jobs.job_status IN ( 'completed', 'cancelled' );";	
 	$r=mysqli_query($connect,$sql);
 	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
 	
