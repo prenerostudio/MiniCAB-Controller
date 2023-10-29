@@ -191,56 +191,48 @@ include('header.php');
 										<th>Note</th>                       							
 										<th>Status</th>                       							
 										<th style="background:rgba(227,136,137,0.61);">Driver</th>                       							
-										<th>Action</th>                       						
+										<!--<th>Action</th>-->                       						
 									</tr>                     					
 								</thead>                    					
 								<tbody> 						
 									<?php																											
-									$jsql=mysqli_query($connect,"SELECT * FROM `jobs` WHERE `status`='Waiting'");
-									while($jrow = mysqli_fetch_array($jsql)){																	
-										$book_id = $jrow['book_id'];														
-										$bsql = mysqli_query($connect,"SELECT * FROM `bookings` WHERE `book_id`='$book_id'");
-										$brow = mysqli_fetch_array($bsql);														
-										$c_id = $jrow['c_id'];														
-										$csql = mysqli_query($connect,"SELECT * FROM `clients` WHERE `c_id`='$c_id'");							
-										$crow = mysqli_fetch_array($csql);
-										$d_id = $jrow['d_id'];														
-										$dsql = mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
-										$drow = mysqli_fetch_array($dsql);															
+									$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.book_id, bookings.pickup, bookings.destination, bookings.passenger, bookings.luggage, bookings.book_date, bookings.book_time, bookings.journey_type, bookings.v_id, drivers.d_name, vehicles.v_name FROM jobs, clients, bookings, drivers, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND bookings.v_id = vehicles.v_id AND	jobs.job_status = 'waiting'");
+									while($jobrow = mysqli_fetch_array($jobsql)){																	
+																								
 									?>													
 									<tr>                         						
 										<td>							
-											<?php echo $jrow['job_id']; ?>						
+											<?php echo $jobrow['job_id']; ?>						
 										</td>                          							
 										<td>								
 											<span class="text-secondary">									
-												<?php echo $brow['book_date']; ?>								
+												<?php echo $jobrow['book_date']; ?>								
 											</span>						
 										</td>                        							
 										<td style="background:rgba(227,136,137,0.61);">								
-											<?php echo $brow['book_time']; ?>							
+											<?php echo $jobrow['book_time']; ?>							
 										</td>                        							
 										<td style="background:rgba(227,136,137,0.61);">                           								
-											<?php echo $crow['c_name']; ?>                     							
+											<?php echo $jobrow['c_name']; ?>                     							
 										</td>                         							
 										<td>                          								
-											<?php echo $brow['pickup']; ?>                     							
+											<?php echo $jobrow['pickup']; ?>                     							
 										</td>                         							
 										<td>                           								
-											<?php echo $brow['destination']; ?>                      							
+											<?php echo $jobrow['destination']; ?>                      							
 										</td>                          							
 										<td style="background:rgba(227,136,137,0.61);">                            								
-											<?php echo $brow['fare']; ?>                        							
+											<?php echo $jobrow['fare']; ?>                        							
 										</td>                          							
 										<td>Car</td>   							
-										<td><?php echo $jrow['note']; ?>  </td>							
-										<td><?php echo $jrow['status']; ?>  </td>							
-										<td style="background:rgba(227,136,137,0.61);"><?php echo $drow['d_name']; ?> </td>
-										<td class="text-end">                            								
+										<td><?php echo $jobrow['note']; ?>  </td>							
+										<td><?php echo $jobrow['job_status']; ?>  </td>							
+										<td style="background:rgba(227,136,137,0.61);"><?php echo $jobrow['d_name']; ?> </td>
+										<!--<td class="text-end">                            								
 											<span class="dropdown">                              									
 												<button class="btn align-text-top">Dispatch</button>								
 											</span>                         							
-										</td>                       						
+										</td>  -->                     						
 									</tr>                              						
 									<?php									
 									}									
