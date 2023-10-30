@@ -177,7 +177,7 @@ include('header.php');
 				<div class="tab-content">                   				
 					<div class="tab-pane active show" id="tabs-today">                    
 						<div class="table-responsive">                   				
-							<table class="table card-table table-vcenter text-nowrap datatable" id="table-default">                   					
+							<table class="table card-table table-vcenter text-nowrap datatable" id="jobs_table">                   					
 								<thead>                   						
 									<tr>                          							
 										<th class="w-1">ID</th>                         							
@@ -253,6 +253,15 @@ include('header.php');
 	</div>           
 </div>   
 	</div>
+
+
+<script>  
+	$(document).ready(function(){       
+		$('#jobs_table').DataTable();   
+	});   
+	
+		
+</script> 
 <?php		
 include('footer.php');		
 ?>

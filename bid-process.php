@@ -7,22 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$status = 'Open';
 	$date = date("Y-m-d h:i:s");
 
-	$sql = "INSERT INTO `booking_bid`( 
-										`book_id`, 
-										`bid_note`, 
-										`bid_status`, 
-										`date_added`
-										) VALUES (										
-										'$book_id',
-										'$bid_note',
-										'$status',
-										'$date')";
+	$sql = "UPDATE `bookings` SET 
+								`bid_status`='$status',
+								`bid_note`='$bid_note' WHERE `book_id`='$book_id'";
     
 	if (mysqli_query($connect, $sql)) {
-		
-		$bsql = "UPDATE `bookings` SET `booking_status`='On Bid',`date_added`='$date' WHERE `book_id`='$book_id'";
-		$result = mysqli_query($connect, $bsql);
-		
+			
 		echo "Bid added successfully!";
 		header('location: bids.php');
 	} else {

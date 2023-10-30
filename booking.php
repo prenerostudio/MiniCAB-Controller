@@ -17,7 +17,7 @@ include('header.php');
 	</div>    		
 	<div class="card-body">            			
 		<div id="table-default" class="table-responsive">    				
-			<table class="table card-table table-vcenter text-nowrap datatable">                   								
+			<table class="table card-table table-vcenter text-nowrap datatable" id="booking_table">                   								
 				<thead style="background: #051650; color: white;">                   										
 					<tr >                          												
 						<th class="w-1">ID</th>                         													
@@ -230,7 +230,13 @@ include('header.php');
 	</div>    
 </div>
 
-
+<script>  
+	$(document).ready(function(){       
+		$('#booking_table').DataTable();   
+	});   
+	
+		
+</script>
 
 <?php
 include('footer.php');

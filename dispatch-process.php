@@ -37,7 +37,16 @@ $sql = "INSERT INTO `jobs`(
 						'$status',
 						'$date')";                
 $result = mysqli_query($connect, $sql);       
-if ($result) {         
+if ($result) {  
+	
+	$updatesql = "UPDATE `bookings` SET 
+										`booking_status`='Booked',
+										`book_add_date`='$date' WHERE `book_id`='$book_id'";                
+$ur = mysqli_query($connect, $updatesql);  
+	
+	
+	
+	
 	header('Location: dashboard.php');    
 	exit();    
 } else {		

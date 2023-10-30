@@ -42,11 +42,11 @@ $dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
 							</div>                    					
 							<div class="mb-3">                    						
 								<div class="form-label">Gender</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['d_gender']; ?>" name="dgender" readonly>
+								<input type="text" class="form-control" value="<?php echo $drow['d_gender']; ?>" name="dgender">
 							</div>                    					
 							<div class="mb-3">                    						
 								<div class="form-label">Language</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['d_language']; ?>" name="dlang" readonly>                      
+								<input type="text" class="form-control" value="<?php echo $drow['d_language']; ?>" name="dlang">                      
 							</div>							
 							<div class="mb-3">                    						
 								<div class="form-label">Vehicle</div>         
@@ -112,7 +112,7 @@ $dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
 							</div>
 							<div class="mb-3">                    					
 								<div class="form-label">Date Registered</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['reg_date'] ?>" disabled>                     
+								<input type="text" class="form-control" value="<?php echo $drow['driver_reg_date'] ?>" disabled>                     
 							</div>
 						</div>                    
 					</div>                                       

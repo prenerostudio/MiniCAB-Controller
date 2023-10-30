@@ -73,12 +73,13 @@ include('header.php');
 								</thead>                    													
 								<tbody> 														
 									<?php					
-									$booksql=mysqli_query($connect,"SELECT booking_bid.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, vehicles.v_name FROM booking_bid, bookings, clients, vehicles WHERE booking_bid.book_id = bookings.book_id AND bookings.c_id = clients.c_id AND booking_bid.bid_status = 'Open' AND bookings.v_id = vehicles.v_id");									
+									$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.* FROM bookings, clients,	vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.bid_status = 'Open'
+");									
 									while($bookrow = mysqli_fetch_array($booksql)){
 									?>																						
 									<tr>                         															
 										<td>																	
-											<?php echo $bookrow['bid_book_id']; ?>						
+											<?php echo $bookrow['book_id']; ?>						
 										</td>                          							
 										<td>								
 											<span class=" btn btn-instagram">									
@@ -135,7 +136,7 @@ include('header.php');
 								</thead>                    					
 								<tbody> 						
 									<?php																											
-									$bidsql=mysqli_query($connect,"SELECT bids.*, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.*, booking_bid.* FROM bids, drivers, booking_bid, bookings WHERE bids.bid_book_id = booking_bid.bid_book_id AND bids.d_id = drivers.d_id AND booking_bid.book_id = bookings.book_id");
+									$bidsql=mysqli_query($connect,"SELECT bids.*, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.*, clients.c_name, clients.c_email, clients.c_phone FROM bids, drivers, bookings, clients WHERE bids.book_id = bookings.book_id AND bids.d_id = drivers.d_id AND bookings.c_id = clients.c_id");
 									while($bidrow = mysqli_fetch_array($bidsql)){																			
 									?>													
 									<tr>                         						
@@ -196,7 +197,7 @@ include('header.php');
 								<select class="form-select" name="book_id">                     								
 									<option value="" selected>Select Bookings</option>                    								    
 									<?php						
-									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings,	clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status = 'Pending'");
+									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings, clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.bid_status = ' '");
 									while($brow = mysqli_fetch_array($bsql)){									
 									?>																											
 									<option value="<?php echo $brow['book_id'] ?>"><?php echo $brow['pickup'] ?> | <?php echo $brow['destination'] ?> | <?php echo $brow['book_date'] ?> | <?php echo $brow['book_time'] ?></option>

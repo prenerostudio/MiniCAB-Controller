@@ -34,7 +34,7 @@ $date = date("Y-m-d H:i:s");
 									`pco_exp`='$pcoexp',
 									`skype_acount`='$skype',
 									`d_remarks`='$remarks',							
-									`reg_date`='$date' WHERE `d_id`='$d_id'";
+									`driver_reg_date`='$date' WHERE `d_id`='$d_id'";
         
         $result = mysqli_query($connect, $sql);
        

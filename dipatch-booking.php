@@ -106,8 +106,8 @@ $brow = mysqli_fetch_array($bsql);
 								<h3>Payment Details</h3>
 								<div class="mb-3">                    														
 									
-									<input type="text" class="form-control" name="book_id" value="<?php echo $brow['book_id'] ?>">
-									<input type="text" class="form-control" name="c_id" value="<?php echo $brow['c_id'] ?>">
+									<input type="hidden" class="form-control" name="book_id" value="<?php echo $brow['book_id'] ?>">
+									<input type="hidden" class="form-control" name="c_id" value="<?php echo $brow['c_id'] ?>">
 									
 									
 								</div>	
