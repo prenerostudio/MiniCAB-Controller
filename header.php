@@ -77,17 +77,7 @@ include('config.php');
   border: 1px solid #4CAF50;
 }
 		</style>	
-		 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: { lat: INITIAL_LATITUDE, lng: INITIAL_LONGITUDE }
-            });
-
-            // Fetch driver locations from the backend (explained in next steps)
-        }
-    </script>
+		
 	</head>  	
 	<body >    					
 		<div class="page">         						
@@ -117,7 +107,7 @@ include('config.php');
 								</a>                    
 							</li>                    
 							<li class="nav-item">                        
-								<a class="nav-link" href="#">                            
+								<a class="nav-link" href="company.php">                            
 									<img src="img/icons/company.png" alt="" class="nav_icon">							
 									<br><strong>Company</strong>                        
 								</a>                    
@@ -199,12 +189,12 @@ include('config.php');
                         </a>
                     </li>-->
 					
-							<li class="nav-item">                        
+							<!--<li class="nav-item">                        
 								<a class="nav-link" href="calender.php">                            
 									<img src="img/icons/calendar.png" alt="" class="nav_icon">							
 									<br>Calender                        
 								</a>                    
-							</li>
+							</li>-->
 					<!--<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/frontend.png" alt="" class="nav_icon">
@@ -214,7 +204,7 @@ include('config.php');
 					
 							<li class="nav-item">
                      
-								<a class="nav-link" href="#">
+								<a class="nav-link" href="payments.php">
                        
 									<img src="img/icons/payment.png" alt="" class="nav_icon">
 						
@@ -224,7 +214,7 @@ include('config.php');
                   
 							</li>
 					
-							<li class="nav-item">
+							<!--<li class="nav-item">
                       
 								<a class="nav-link" href="#">
                          
@@ -234,11 +224,11 @@ include('config.php');
                        
 								</a>
                   
-							</li>
+							</li>-->
 					
 							<li class="nav-item">
                         
-								<a class="nav-link" href="#">
+								<a class="nav-link" href="reviews.php">
                             
 									<img src="img/icons/reviews.png" alt="" class="nav_icon">
 							

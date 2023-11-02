@@ -4,48 +4,53 @@ include('header.php');
 <div class="card">					
 	<div class="card-header">						
 		<h2 class="page-title">              					
-			Destination List             						
-		</h2>					
-										
+			Invoice Details           						
+		</h2>	
+		
+		
+									
 	</div>            			
 	<div class="card-body">            			
 		<div id="table-default" class="table-responsive">            					
-			<table class="table card-table table-vcenter text-nowrap datatable" id="rev_table">                   												
+			<table class="table card-table table-vcenter text-nowrap datatable" id="pay-tbl">                   												
 				<thead>                   															
 					<tr align="center">                          																		
 						<th class="w-1">ID</th>                         																				
-						<th class="w-1">Customer Name</th>                          																				
-						<th>Booking </th>  
-						<th>Driver </th>
-						<th>Reviews</th>
+						<th class="w-1">Booking # </th>                          																				
+						<th >Driver</th>                         																				
+						<th>Payment Method</th>                         																				
+						<th>Total Fare</th>                         																				
+						
 						<th></th>                       																			
 					</tr>                     																
 				</thead>                    														
 				<tbody> 															
 					<?php
-					$asql=mysqli_query($connect,"SELECT reviews.*, bookings.pickup, bookings.destination, bookings.journey_type, bookings.book_time, bookings.book_date, drivers.d_name, clients.c_name FROM jobs, reviews, bookings, clients, drivers WHERE reviews.job_id = jobs.job_id AND jobs.book_id = bookings.book_id AND reviews.d_id = drivers.d_id AND reviews.c_id = clients.c_id");											
-					while($arow = mysqli_fetch_array($asql)){																
+					$isql=mysqli_query($connect,"SELECT invoice.*, drivers.d_name, bookings.pickup, bookings.destination, bookings.book_date, bookings.book_time, bookings.journey_type, jobs.job_id  FROM invoice, drivers, jobs, bookings WHERE invoice.job_id = jobs.job_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id");											
+					while($irow = mysqli_fetch_array($isql)){																
 					?>																								
 					<tr align="center">                         																	
 						<td>																				
-							<?php echo $arow['rev_id']; ?>																					
+							<?php echo $irow['invoice_id']; ?>																					
 						</td>                          																				
-						<td >														
-								<?php echo $arow['c_name']; ?>								
+						<td style="width: 10%;">														
+								<?php echo $irow['job_id']; ?> <br>	<?php echo $irow['pickup']; ?> | <?php echo $irow['destination']; ?>						
 						</td>                        																				
 						<td>																					
-							<?php echo $arow['pickup']; ?> | <?php echo $arow['destination']; ?> | <?php echo $arow['book_date']; ?> | <?php echo $arow['book_time']; ?>																						
+							<?php echo $irow['d_name']; ?>																						
 						</td>                        																				
 						<td>                           																					
-							<?php echo $arow['d_name']; ?>
+							<?php echo $irow['p_method']; ?>
 						</td>                         																				
-						<td style="width: 10%;">                          																					
-							<?php echo $arow['rev_msg']; ?>
+						<td>                          																					
+							<?php echo $irow['total_pay']; ?>
 						</td>                         																				
 																								
 						<td class="text-end">	
-							
-							<a href="del-review.php?id=<?php echo $arow['rev_id']; ?>">
+							<a href="airport-detail.php?id=<?php echo $irow['invoice_id']; ?>">
+							<button class="btn align-text-top">View</button>	
+							</a>
+							<a href="del-airport.php?id=<?php echo $irow['invoice_id']; ?>">
 								<button class="btn btn-danger align-text-top">Delete</button>											</a>								
 
 						</td>                       																			
@@ -59,11 +64,11 @@ include('header.php');
 	</div>        	
 </div>    
 
+
 <script>  
 	$(document).ready(function(){       
-		$('#rev_table').DataTable();   
+		$('#pay-tbl').DataTable();   
 	});   
-	
 		
 </script> 
 <?php
