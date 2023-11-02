@@ -55,9 +55,39 @@ include('config.php');
 				color: #F16A02;	
 			}	
 			.nav_icon { 				
-				width: 50px;	
+				width: 50px;
+				
 			}
-		</style>			
+			.paginate_button {
+  display: inline-block;
+}
+
+.paginate_button a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+			.pagination_button a:active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+		</style>	
+		 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: { lat: INITIAL_LATITUDE, lng: INITIAL_LONGITUDE }
+            });
+
+            // Fetch driver locations from the backend (explained in next steps)
+        }
+    </script>
 	</head>  	
 	<body >    					
 		<div class="page">         						
@@ -143,7 +173,7 @@ include('config.php');
 								</a>                    
 							</li>					
 							<li class="nav-item">                        
-								<a class="nav-link" href="#">                            
+								<a class="nav-link" href="destinations.php">                            
 									<img src="img/icons/destinations.png" alt="" class="nav_icon">							
 									<br>Destinations                        
 								</a>                    

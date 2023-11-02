@@ -57,7 +57,7 @@ include('header.php');
 						
 						
 						<div id="table-default" class="table-responsive">            				
-							<table class="table card-table table-vcenter text-nowrap datatable">                   												
+							<table class="table card-table table-vcenter text-nowrap datatable" id="bid-tbl">                   												
 								<thead style="background: #051650; color: white;">                   														
 									<tr>                          																
 										<th class="w-1">ID</th>                         																	
@@ -120,7 +120,7 @@ include('header.php');
                     
 								<div id="table-default" class="table-responsive">
             
-				<table class="table card-table table-vcenter text-nowrap datatable">                   					
+				<table class="table card-table table-vcenter text-nowrap datatable" id="amt-tbl">                   					
 								<thead style="background: #051650; color: white;">                   						
 									<tr >                          							
 										<th class="w-1">ID</th>                         							
@@ -238,6 +238,19 @@ include('header.php');
 		</div>      	
 	</div>    
 </div>
+
+
+<script>  
+	$(document).ready(function(){       
+		$('#bid-tbl').DataTable();   
+	});   
+	$(document).ready(function(){       
+		$('#amt-tbl').DataTable();   
+	});   
+	
+		
+</script> 
+
 <?php		
 include('footer.php');		
 ?>

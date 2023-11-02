@@ -25,39 +25,23 @@ include('header.php');
 										<h3 class="card-title">Locations</h3>                				
 										<div class="ratio ratio-21x9">                					
 											<div>                    												
-												<?php																							
-												$query = "SELECT `longitude`, `latitude` FROM `drivers`";						
-												$result = mysqli_query($connect, $query);						
-												if ($result) { 																			
-													$userLocations = array();														
-													while ($row = mysqli_fetch_assoc($result)) {													
-														$location = array(									
-															'lat' => $row['latitude'],
-															'lng' => $row['longitude']										
-														);  										
-														$userLocations[] = $location;							
-													}							
-													mysqli_free_result($result);										
-												} else { 											
-													echo "Error executing the query: " . mysqli_error($connect);						
-												}																												
-												?>																											
-												<div id="map"></div>																
-												<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  						
-												<script>  																
-													var map = L.map('map');   								    							
-													L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {     								
-														attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-														maxZoom: 25    							
-													}).addTo(map);    							    							
-													var firstLocation = <?php echo json_encode($userLocations[0]); ?>;    							
-													var initialLatLng = L.latLng(firstLocation.lat, firstLocation.lng);							
-													map.setView(initialLatLng, 12);    							    							
-													var userLocations = <?php echo json_encode($userLocations); ?>;    							
-													userLocations.forEach(function(user) {     								
-														var marker = L.marker([user.lat, user.lng]).addTo(map);							
-													});  						
-												</script>						                    										
+																																						
+												  <div id="map" style="height: 500px;"></div>
+
+    <script>
+        var conn = new WebSocket('ws://localhost:8080'); // Change the URL to match your WebSocket server
+
+        conn.onopen = function(e) {
+            console.log("Connection established!");
+        };
+
+        conn.onmessage = function(e) {
+            // Handle incoming messages (likely driver location updates)
+            var data = JSON.parse(e.data);
+            // Update the map with the new location data
+            // Example: Update marker positions on the map
+        };
+    </script>
 											</div>				
 										</div>        			
 									</div>                		

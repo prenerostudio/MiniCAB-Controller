@@ -53,7 +53,7 @@ if ($email_count > 0) {
     $dpic = uploadImage();
 
     if ($dpic) {
-        $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_password`, `d_phone`, `d_pic`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `status`, `reg_date`)
+        $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_password`, `d_phone`, `d_pic`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `status`, `driver_reg_date`)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $connect->prepare($sql);
@@ -71,7 +71,7 @@ if ($email_count > 0) {
         $stmt->close();
     } else {
 		
-		 $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_password`, `d_phone`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `status`, `reg_date`)
+		 $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_password`, `d_phone`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `status`, `driver_reg_date`)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $connect->prepare($sql);
