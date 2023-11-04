@@ -57,7 +57,7 @@ include('header.php');
 						</td>                         																				
 																								
 						<td class="text-end">	
-							<a href="airport-detail.php?id=<?php echo $irow['invoice_id']; ?>">
+							<a href="view-invoice.php?id=<?php echo $irow['invoice_id']; ?>">
 							<button class="btn align-text-top">View</button>	
 							</a>
 							<a href="del-airport.php?id=<?php echo $irow['invoice_id']; ?>">

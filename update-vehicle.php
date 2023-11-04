@@ -36,13 +36,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	mysqli_close($connect); 
 }
 ?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-</body>
-</html>

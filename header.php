@@ -1,5 +1,19 @@
 <?php
+session_start(); 
 include('config.php');
+ini_set("display_errors","off");
+$myId = $_SESSION['user_id'];
+	
+if (!isset($_SESSION['email'])) {	
+	$_SESSION['first_name'] = $fname;
+	$_SESSION['last_name'] = $lname;
+	$_SESSION['msg'] = "You must log in first";
+	header('location: index.php');
+}
+
+
+
+
 ?>
 <!doctype html>
 <html lang="en">  
@@ -77,7 +91,11 @@ include('config.php');
   border: 1px solid #4CAF50;
 }
 		</style>	
-		
+		 <script>
+        function printInvoice() {
+            window.print();
+        }
+    </script>
 	</head>  	
 	<body >    					
 		<div class="page">         						

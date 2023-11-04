@@ -1,10 +1,9 @@
 <?php
 include('header.php');
 
-///$d_id = $_GET['id'];
 
-//$dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");											
-//$drow = mysqli_fetch_array($dsql);		
+$usql=mysqli_query($connect,"SELECT * FROM `company` WHERE `user_id`='$myId'");											
+$urow = mysqli_fetch_array($usql);		
 
 
 ?> 
@@ -17,12 +16,17 @@ include('header.php');
 					<h3 class="card-title">Company Logo</h3>                				
 					<div class="row align-items-center">                
 						<div class="col-auto">
-							<span class="avatar avatar-xl" style="background-image: url(<?php echo $drow['d_pic'];  ?>)"></span>							
+							<span class="avatar avatar-xl" style="background-image: url('img/companies/<?php echo $urow['com_logo']; ?>')"></span>							
 						</div>                    					
-						<div class="col-auto">						
-							<a href="#" class="btn">                    						
-								Change Logo                        						
-							</a>					
+						<div class="col-auto">		
+							<form action="update-logo.php" method="post" enctype="multipart/form-data">
+								<input type="hidden" value="<?php echo $urow['company_id']; ?>" name="company_id">
+							
+								<input type="file" name="fileToUpload" id="fileToUpload" class="btn">
+								
+								<button type="submit" class="btn btn-info">Upload Image </button>                       						
+								
+							  </form>
 						</div>                      					
 						<div class="col-auto">						
 							<a href="#" class="btn btn-ghost-danger">                         
@@ -32,56 +36,56 @@ include('header.php');
 					</div>                				
 				
 					
-					<form method="post" action="update-driver.php" enctype="multipart/form-data">
+					<form method="post" action="update-company.php" enctype="multipart/form-data">
 					<div class="row g-3">                
 						<div class="col-md-4">
 							<h3 class="card-title mt-4">Company Profile</h3> 
 							<div class="mb-3">                    						
 								<div class="form-label">Company Name</div>                        						
-								<input type="hidden" class="form-control" value="<?php echo $drow['company_id']; ?>" name="company_id">  
-								<input type="text" class="form-control" value="<?php echo $drow['com_name']; ?>" name="cname">  
+								<input type="hidden" class="form-control" value="<?php echo $urow['company_id']; ?>" name="company_id">  
+								<input type="text" class="form-control" value="<?php echo $urow['com_name']; ?>" name="cname">  
 							</div>                    					
 							<div class="mb-3">                    						
 								<div class="form-label">Company Phone</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_phone']; ?>" name="cphone">
+								<input type="text" class="form-control" value="<?php echo $urow['com_phone']; ?>" name="cphone">
 							</div>                    					
 							<div class="mb-3">                    						
 								<div class="form-label">Company Contact Email</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_c_email']; ?>" name="cemail">                      
+								<input type="text" class="form-control" value="<?php echo $urow['com_c_email']; ?>" name="cemail">                      
 							</div>							
 							<div class="mb-3">                    						
 								<div class="form-label">Company Admin Email</div>         
 															
-								<input type="text" class="form-control" value="<?php echo $drow['com_a_email']; ?>" name="aemail">               
+								<input type="text" class="form-control" value="<?php echo $urow['com_a_email']; ?>" name="aemail">               
 							</div>
 							<div class="mb-3">                    						
 								<div class="form-label">Company Admin Phone</div>         
 															
-								<input type="text" class="form-control" value="<?php echo $drow['com_a_phone']; ?>" name="aphone">               
+								<input type="text" class="form-control" value="<?php echo $urow['com_a_phone']; ?>" name="aphone">               
 							</div>	
 							<div class="mb-3">                    						
 								<div class="form-label">Company Web</div>         
 															
-								<input type="text" class="form-control" value="<?php echo $drow['com_web']; ?>" name="cweb">               
+								<input type="text" class="form-control" value="<?php echo $urow['com_web']; ?>" name="cweb">               
 							</div>
 						</div>																
 						<div class="col-md-4">	
 							<h3 class="card-title mt-4">Fiscal Data</h3> 
 							<div class="mb-3">                    					
 								<div class="form-label">Company Licence</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_licence']; ?>" name="clicence">  
+								<input type="text" class="form-control" value="<?php echo $urow['com_licence']; ?>" name="clicence">  
 							</div>                    					
 							<div class="mb-3">                    						
 								<div class="form-label">VAT </div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_vat']; ?>" name="cvat">
+								<input type="text" class="form-control" value="<?php echo $urow['com_vat']; ?>" name="cvat">
 							</div>														
 							<div class="mb-3">                    						
 								<div class="form-label">Company Register Number</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_r_num'] ?>" name="cnum">                     
+								<input type="text" class="form-control" value="<?php echo $urow['com_r_num'] ?>" name="cnum">                     
 							</div>								
 							<div class="mb-3">                    						
 								<div class="form-label">Client Tax By Default in %</div>
-								<input type="text" class="form-control" value="<?php echo $drow['com_tax'] ?>" name="ctax">
+								<input type="text" class="form-control" value="<?php echo $urow['com_tax'] ?>" name="ctax">
 															             
 							</div>															
 						</div>												
@@ -89,31 +93,31 @@ include('header.php');
 							<h3 class="card-title mt-4">Company Profile</h3> 
 							<div class="mb-3">                    						
 								<div class="form-label">Company Address</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_address']; ?>" name="caddress">
+								<input type="text" class="form-control" value="<?php echo $urow['com_address']; ?>" name="caddress">
 							</div>                    					
 							<div class="mb-3">                    						
 								<div class="form-label">Zip Code</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_zip'] ?>" name="czip">                      					
+								<input type="text" class="form-control" value="<?php echo $urow['com_zip'] ?>" name="czip">                      					
 							</div>                    					
 							<div class="mb-3">                    					
 								<div class="form-label">City</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_city'] ?>" name="city">                     
+								<input type="text" class="form-control" value="<?php echo $urow['com_city'] ?>" name="city">                     
 							</div>							
 							<div class="mb-3">                    					
 								<div class="form-label">Country</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_country'] ?>" name="country">                     
+								<input type="text" class="form-control" value="<?php echo $urow['com_country'] ?>" name="country">                     
 							</div>
 							<div class="mb-3">                    					
 								<div class="form-label">Language</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_language'] ?>" name="clang">                     
+								<input type="text" class="form-control" value="<?php echo $urow['com_language'] ?>" name="clang">                     
 							</div>
 							<div class="mb-3">                    					
 								<div class="form-label">Currency</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_currency'] ?>" name="currency">                     
+								<input type="text" class="form-control" value="<?php echo $urow['com_currency'] ?>" name="currency">                     
 							</div>
 							<div class="mb-3">                    					
 								<div class="form-label">TimeZone</div>                        						
-								<input type="text" class="form-control" value="<?php echo $drow['com_time_zone'] ?>" name="time_zone">                     
+								<input type="text" class="form-control" value="<?php echo $urow['com_time_zone'] ?>" name="time_zone">                     
 							</div>
 						</div>                    
 					</div>                                       
