@@ -17,7 +17,8 @@ $vsql=mysqli_query($connect,"SELECT * FROM `vehicles` WHERE `v_id`='$v_id'");
 					             				
 					<div class="row align-items-center">                
 						<div class="col-auto">
-							<span class="avatar avatar-xl" style="background-image: url(<?php echo $vrow['v_img'];  ?>)"></span>							
+							<span class="avatar avatar-xl" style="background-image: url(<?php echo $vrow['v_img'];?>); background-size:contain; width: 220px;
+    height: 160px;"></span>							
 						</div>                    					
 						<div class="col-auto">						
 							<a href="#" class="btn">                    						

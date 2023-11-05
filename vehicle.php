@@ -77,7 +77,7 @@ include('header.php');
 							<?php echo $vrow['v_baby']; ?>															
 						</td>	
 						<td>                            																					
-							<?php echo $vrow['v_pricing']; ?>															
+							<p class="btn btn-success">£ <?php echo $vrow['v_pricing']; ?></p>															
 						</td>	
 						<td class="text-end">	
 							<a href="vehicle-details.php?id=<?php echo $vrow['v_id']; ?>">

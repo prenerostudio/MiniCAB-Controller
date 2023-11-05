@@ -17,7 +17,8 @@ $dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
 					<h3 class="card-title">Profile Details</h3>                				
 					<div class="row align-items-center">                
 						<div class="col-auto">
-							<span class="avatar avatar-xl" style="background-image: url(<?php echo $drow['d_pic'];  ?>)"></span>							
+							<span class="avatar avatar-xl" style="background-image: url(<?php echo $drow['d_pic'];?>); background-size:cover; width: 220px;
+    height: 160px;"></span>							
 						</div>                    					
 						<div class="col-auto">						
 							<a href="#" class="btn">                    						
