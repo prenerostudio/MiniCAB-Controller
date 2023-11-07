@@ -8,12 +8,22 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 
-$bid_book_id = $_POST['bid_book_id'];
+$book_id = $_POST['book_id'];
 
-if(isset($_POST['bid_book_id'])){		
+if(isset($_POST['book_id'])){		
 	
-	 $sql="SELECT booking_bid.*, clients.c_name, clients.c_email, clients.c_phone, bookings.* FROM booking_bid, bookings, clients
-WHERE booking_bid.book_id = bookings.book_id AND bookings.c_id = clients.c_id AND booking_bid.bid_status = 'Open' AND booking_bid.bid_book_id = '$bid_book_id'";	
+	 $sql="SELECT
+	bookings.*, 
+	vehicles.*, 
+	clients.*
+FROM
+	bookings,
+	vehicles,
+	clients
+WHERE
+	bookings.c_id = clients.c_id AND
+	bookings.v_id = vehicles.v_id AND
+	bookings.book_id  = '$book_id'";	
 
 	$r=mysqli_query($connect,$sql);
 	
