@@ -13,7 +13,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       
         
        
-       $sql="SELECT bids.*, booking_bid.*, bookings.*, drivers.* FROM bids, booking_bid, bookings, drivers WHERE bids.bid_book_id = booking_bid.bid_book_id AND booking_bid.book_id = bookings.book_id AND bids.d_id = drivers.d_id AND bids.d_id = '$d_id'";	
+       $sql="SELECT
+	bids.*, 
+	bookings.*, 
+	drivers.d_name, 
+	drivers.d_email, 
+	drivers.d_phone, 
+	clients.c_name, 
+	clients.c_email, 
+	clients.c_phone, 
+	vehicles.v_name, 
+	vehicles.v_pricing, 
+	vehicles.v_img
+FROM
+	bids,
+	bookings,
+	drivers,
+	clients,
+	vehicles
+WHERE
+	bids.book_id = bookings.book_id AND
+	bids.d_id = drivers.d_id AND
+	bookings.c_id = clients.c_id AND
+	bookings.v_id = vehicles.v_id AND
+	bids.d_id = '$d_id'
+ORDER BY
+	bids.bid_id DESC";	
         
         $r = mysqli_query($connect, $sql);
 		$output=mysqli_fetch_all($r,MYSQLI_ASSOC);

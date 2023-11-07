@@ -46,11 +46,11 @@ include('header.php');
 							<?php															
 						if (!$vrow['v_img']) {																							
 							?>																									
-							<img src="img/drivers/user-1.jpg" alt="Driver dp" style="width: 60px; border-radius: 30px;">
+							<img src="img/drivers/user-1.jpg" alt="Driver dp" style="width: 100px; border-radius: 30px;">
 							<?php															
 						} else{                                            													
 							?>                                         															
-							<img src="<?php echo $vrow['v_img'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">
+							<img src="<?php echo $vrow['v_img'];?>" alt="Driver dp" style="width: 100px; border-radius: 30px;">
 							<?php
 						}                                          																							
 							?>										
@@ -62,22 +62,73 @@ include('header.php');
 							<?php echo $vrow['v_seat']; ?>
 						</td>                         																				
 						<td>                          																					
-							<?php echo $vrow['v_bags']; ?>
+							<?php
+if ($vrow['v_bags'] === 'yes') {
+?>
+    <p style="color: yellowgreen; font-size: 18px; font-weight: 700;">Yes</p>
+<?php
+} else {
+?>
+    <p style="color: red; font-size: 18px; font-weight: 700;">No</p>
+<?php
+}
+?>
+
 						</td>                         																				
-						<td>                           																					
-							<?php echo $vrow['v_wchair']; ?>															
+						<td>                           																					<?php
+if ($vrow['v_wchair'] === 'yes') {
+?>
+    <p style="color: yellowgreen; font-size: 18px; font-weight: 700;">Yes</p>
+<?php
+} else {
+?>
+    <p style="color: red; font-size: 18px; font-weight: 700;">No</p>
+<?php
+}
+?>	
+																						
 						</td>                          																				
-						<td>                            																					
-							<?php echo $vrow['v_trailer']; ?>															
+						<td>                            																							<?php
+if ($vrow['v_trailer'] === 'yes') {
+?>
+    <p style="color: yellowgreen; font-size: 18px; font-weight: 700;">Yes</p>
+<?php
+} else {
+?>
+    <p style="color: red; font-size: 18px; font-weight: 700;">No</p>
+<?php
+}
+?>		
+																						
+						</td>	
+						<td>                            																					<?php
+if ($vrow['v_booster'] === 'yes') {
+?>
+    <p style="color: yellowgreen; font-size: 18px; font-weight: 700;">Yes</p>
+<?php
+} else {
+?>
+    <p style="color: red; font-size: 18px; font-weight: 700;">No</p>
+<?php
+}
+?>	
+																					
+						</td>	
+						<td>                            																				<?php
+if ($vrow['v_baby'] === 'yes') {
+?>
+    <p style="color: yellowgreen; font-size: 18px; font-weight: 700;">Yes</p>
+<?php
+} else {
+?>
+    <p style="color: red; font-size: 18px; font-weight: 700;">No</p>
+<?php
+}
+?>		
+																				
 						</td>	
 						<td>                            																					
-							<?php echo $vrow['v_booster']; ?>															
-						</td>	
-						<td>                            																					
-							<?php echo $vrow['v_baby']; ?>															
-						</td>	
-						<td>                            																					
-							<p class="btn btn-success">£ <?php echo $vrow['v_pricing']; ?></p>															
+							<button class="btn btn-pinterest" style="font-size: 22px;">£ <?php echo $vrow['v_pricing']; ?></button>															
 						</td>	
 						<td class="text-end">	
 							<a href="vehicle-details.php?id=<?php echo $vrow['v_id']; ?>">

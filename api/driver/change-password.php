@@ -17,9 +17,7 @@ if(isset($_POST['d_id'])){
 	
 			
 		
-	$sql="UPDATE `drivers` SET 
-								`d_password`='$new_pass',
-								`reg_date`='$date' WHERE `d_id`='$d_id'";				
+	$sql="UPDATE `drivers` SET `d_password`='$new_pass', `driver_reg_date`='$date' WHERE `d_id`='$d_id'";				
 		
 	$r=mysqli_query($connect,$sql);
 		
