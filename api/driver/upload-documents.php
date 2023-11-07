@@ -7,7 +7,7 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 // Function to handle image upload
-function uploadImage() {
+function dlfront() {
 	$targetDir = "img/drivers/";    
 	$targetFilePath = $targetDir . basename($_FILES["d_img"]["name"]);    
 	$fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));    
