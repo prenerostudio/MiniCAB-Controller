@@ -68,10 +68,11 @@ include('header.php');
 						<td>                            														
 							<?php echo $crow['c_ni']; ?>                        														
 						</td>                 									
-						<td class="text-end">                            								
+						<td class="text-end"> 
+							
 						
 							<a href="client-details.php?id=<?php echo $crow['c_id']; ?>">							
-							<button class="btn align-text-top">View</button>
+							<button class="btn align-text-top">View Details</button>
 							</a>
 							
 							<a href="del-client.php?id=<?php echo $crow['c_id']; ?>">

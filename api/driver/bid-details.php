@@ -12,18 +12,7 @@ $book_id = $_POST['book_id'];
 
 if(isset($_POST['book_id'])){		
 	
-	 $sql="SELECT
-	bookings.*, 
-	vehicles.*, 
-	clients.*
-FROM
-	bookings,
-	vehicles,
-	clients
-WHERE
-	bookings.c_id = clients.c_id AND
-	bookings.v_id = vehicles.v_id AND
-	bookings.book_id  = '$book_id'";	
+	 $sql="SELECT bookings.*, vehicles.*, clients.* FROM bookings, vehicles, clients WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.book_id  = '$book_id'";	
 
 	$r=mysqli_query($connect,$sql);
 	
