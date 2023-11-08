@@ -10,18 +10,18 @@ include("../../config.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['d_id'])) {
 		$d_id = $_POST['d_id'];
-        $bid_book_id = $_POST['bid_book_id'];
+        $book_id = $_POST['book_id'];
         $bid_amount = $_POST['bid_amount'];       
         $date = date("Y-m-d h:i:s");
         
        
         $sql = "INSERT INTO `bids`(
-									`bid_book_id`, 
+									`book_id`, 
 									`d_id`, 
 									`bid_amount`, 
 									`bid_date`
 									) VALUES (
-									'$bid_book_id',
+									'$book_id',
 									'$d_id',
 									'$bid_amount',
 									'$date')";

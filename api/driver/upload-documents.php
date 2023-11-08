@@ -7,7 +7,7 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-// Function to handle image upload
+
 function uploadFile($file, $targetDirectory) {
     $targetFilePath = $targetDirectory . basename($file["name"]);
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
@@ -19,6 +19,7 @@ function uploadFile($file, $targetDirectory) {
         }
     }
     return false;
+
 }
 
 // Verify if the 'd_id' is set in the POST request

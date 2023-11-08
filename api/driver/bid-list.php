@@ -9,8 +9,22 @@ include("../../config.php");
 
 
 
-$sql="SELECT booking_bid.*, clients.c_name, clients.c_email, clients.c_phone, bookings.* FROM booking_bid, bookings, clients
-WHERE booking_bid.book_id = bookings.book_id AND bookings.c_id = clients.c_id AND booking_bid.`bid_status` = 'Open'";	
+$sql="SELECT
+	bookings.*, 
+	clients.c_name, 
+	clients.c_email, 
+	clients.c_phone, 
+	vehicles.v_name, 
+	vehicles.v_pricing, 
+	vehicles.v_img
+FROM
+	bookings,
+	clients,
+	vehicles
+WHERE
+	bookings.c_id = clients.c_id AND
+	bookings.v_id = vehicles.v_id AND
+	bookings.bid_status = 'open'";	
 
 $r=mysqli_query($connect,$sql);
 
