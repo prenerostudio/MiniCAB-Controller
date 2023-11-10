@@ -79,6 +79,7 @@ if ($email_count > 0) {
 
         if ($stmt->execute()) {
             // Redirect on successful insertion
+			
             header('Location: drivers.php');
             exit();
         } else {

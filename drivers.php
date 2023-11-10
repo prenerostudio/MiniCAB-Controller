@@ -68,7 +68,7 @@ include('header.php');
 							<?php echo $drow['d_licence']; ?>															
 						</td>																			
 						<td class="text-end">	
-							<a href="driver-documents.php?id=<?php echo $crow['c_id']; ?>">							
+							<a href="driver-documents.php?id=<?php echo $drow['d_id']; ?>">							
 							<button class="btn btn-instagram align-text-top">View Documents</button>
 							</a>
 							<a href="driver-details.php?id=<?php echo $drow['d_id']; ?>">
@@ -172,7 +172,7 @@ include('header.php');
 									$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");									
 									while($vrow = mysqli_fetch_array($vsql)){									
 									?>																											
-									<option value="<?php echo $vrow['v_id'] ?>"><?php echo $vrow['v_desc'] ?></option>
+									<option value="<?php echo $vrow['v_id'] ?>"><?php echo $vrow['v_name'] ?></option>
 									<?php
 									}									
 									?>												

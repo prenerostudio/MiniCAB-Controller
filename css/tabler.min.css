@@ -21880,6 +21880,7 @@ a.step-item:hover {
     transform: translateY(0);
 }
 .markdown > table thead th,
+
 .table thead th {
     color:#FFFFFF;
     background:#051650;
@@ -21888,7 +21889,7 @@ a.step-item:hover {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     line-height: 1rem;
-    color: var(--tblr-secondary);
+    
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     white-space: nowrap;

@@ -26,7 +26,7 @@ include('header.php');
 				<thead>                   															
 					<tr align="center">                          																		
 						<th class="w-1">ID</th>                         																				
-						<th class="w-1">Booking # </th>                          																				
+						<th class="w-1">Booking </th>                          																				
 						<th >Driver</th>                         																				
 						<th>Payment Method</th>                         																				
 						<th>Total Fare</th>                         																				
@@ -44,7 +44,7 @@ include('header.php');
 							<?php echo $irow['invoice_id']; ?>																					
 						</td>                          																				
 						<td style="width: 10%;">														
-								<?php echo $irow['job_id']; ?> <br>	<?php echo $irow['pickup']; ?> | <?php echo $irow['destination']; ?>						
+								Booking # <?php echo $irow['job_id']; ?> <br>	<?php echo $irow['pickup']; ?> | <?php echo $irow['destination']; ?>						
 						</td>                        																				
 						<td>																					
 							<?php echo $irow['d_name']; ?>																						
