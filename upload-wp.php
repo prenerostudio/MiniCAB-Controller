@@ -7,16 +7,16 @@ if(isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
 
     // Process the uploaded image
-    $targetDir = "img/drivers/Driving-Licence/";
-    $targetFilePath = $targetDir . basename($_FILES["dl_front"]["name"]);
+    $targetDir = "img/drivers/Work-Proof/";
+    $targetFilePath = $targetDir . basename($_FILES["wp"]["name"]);
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-    $dl_front = ($_FILES["dl_front"]["name"]);
+    $wp = ($_FILES["wp"]["name"]);
 
     if (in_array($fileType, $allowTypes)) {
-        if (move_uploaded_file($_FILES["dl_front"]["tmp_name"], $targetFilePath)) {
+        if (move_uploaded_file($_FILES["wp"]["tmp_name"], $targetFilePath)) {
             // Insert image data into database
-            $insert = $connect->query("UPDATE `drivers` SET `dl_front`='$dl_front' WHERE `d_id`='$d_id'");
+            $insert = $connect->query("UPDATE `drivers` SET `work_proof`='$wp'  WHERE `d_id`='$d_id'");
 
             if($insert) {
                 echo "File uploaded successfully.";

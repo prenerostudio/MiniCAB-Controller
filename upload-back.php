@@ -8,15 +8,15 @@ if(isset($_POST['submit'])) {
 
     // Process the uploaded image
     $targetDir = "img/drivers/Driving-Licence/";
-    $targetFilePath = $targetDir . basename($_FILES["dl_front"]["name"]);
+    $targetFilePath = $targetDir . basename($_FILES["dl_back"]["name"]);
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-    $dl_front = ($_FILES["dl_front"]["name"]);
+    $dl_back = ($_FILES["dl_back"]["name"]);
 
     if (in_array($fileType, $allowTypes)) {
-        if (move_uploaded_file($_FILES["dl_front"]["tmp_name"], $targetFilePath)) {
+        if (move_uploaded_file($_FILES["dl_back"]["tmp_name"], $targetFilePath)) {
             // Insert image data into database
-            $insert = $connect->query("UPDATE `drivers` SET `dl_front`='$dl_front' WHERE `d_id`='$d_id'");
+            $insert = $connect->query("UPDATE `drivers` SET  `dl_back`='$dl_back'  WHERE `d_id`='$d_id'");
 
             if($insert) {
                 echo "File uploaded successfully.";

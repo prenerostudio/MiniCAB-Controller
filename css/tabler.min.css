@@ -4668,8 +4668,8 @@ body[data-bs-theme="dark"] [data-bs-theme="light"] .navbar-toggler-icon {
     border-bottom: 0;
 }
 .card-header-tabs .nav-link.active {
-    background-color:#3046CC;
-	border: #3046CC;
+   background: url(../img/header_bg.jpg);
+	/*border: #3046CC;*/
 	color: white;
 }
 .card-header-pills {
@@ -21883,7 +21883,7 @@ a.step-item:hover {
 
 .table thead th {
     color:#FFFFFF;
-    background:#051650;
+    background: url(../img/header_bg.jpg);
     font-size: 0.925rem;
     font-weight:600;
     text-transform: uppercase;
