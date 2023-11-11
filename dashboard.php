@@ -25,44 +25,52 @@ include('header.php');
 										<h3 class="card-title">Locations</h3>                				
 										<div class="ratio ratio-21x9">                					
 											<div>                    												
-												<?php																											
-				$query = "SELECT `longitude`, `latitude` FROM `drivers`";										
-				$result = mysqli_query($connect, $query);										
-				if ($result) { 																							
-					$userLocations = array();																			
-					while ($row = mysqli_fetch_assoc($result)) {																		
-						$location = array(															
-							'lat' => $row['latitude'],							
-							'lng' => $row['longitude']																	
-						);  																
-						$userLocations[] = $location;													
-					}												
-					mysqli_free_result($result);															
-				} else { 															
-					echo "Error executing the query: " . mysqli_error($connect);											
-				}																																
-				?>			
-												<div id="map"></div>																				
-				<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  										
-				<script>  				
-					document.addEventListener('DOMContentLoaded', function () {					
-						var map = L.map('mapd');   								    													
-						L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {     														
-							attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',							
-							maxZoom: 25    														
-						}).addTo(map);    							    													
-						var firstLocation = <?php echo json_encode($userLocations[0]); ?>;    													
-						var initialLatLng = L.latLng(firstLocation.lat, firstLocation.lng);													
-						map.setView(initialLatLng, 12);    							    													
-						var userLocations = <?php echo json_encode($userLocations); ?>;    													
-						userLocations.forEach(function(user) {     														
-							var marker = L.marker([user.lat, user.lng]).addTo(map);														
-						});  							
-					});					
-				</script>	
-												
-												
-												
+											<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    // Initialize the map with an initial center based on the average location of drivers
+    var map = L.map('map').setView([0, 0], 10); // Default center and zoom level
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Define the car icon
+    var carIcon = L.icon({
+        iconUrl: 'img/icon.png',
+        iconSize: [60, 60], // Adjust the size of the icon
+        iconAnchor: [30, 30],
+        popupAnchor: [0, -30]
+    });
+
+    // Fetch user locations from the PHP script
+    $.getJSON('retrieve_user_locations.php', function (data) {
+        if (data.length > 0) {
+            // Calculate the average latitude and longitude
+            var avgLat = 0;
+            var avgLng = 0;
+
+            data.forEach(function (location) {
+                avgLat += parseFloat(location.latitude);
+                avgLng += parseFloat(location.longitude);
+            });
+
+            avgLat /= data.length;
+            avgLng /= data.length;
+
+            // Set the map center to the average location
+            map.setView([avgLat, avgLng], 10); // Adjust the zoom level as needed
+
+            // Add markers for each user location with the car icon
+            data.forEach(function (location) {
+                L.marker([location.latitude, location.longitude], { icon: carIcon }).addTo(map)
+                    .bindPopup('Driver Location: ' + location.latitude + ', ' + location.longitude);
+            });
+        }
+    });
+</script>
 												
 									</div>				
 										</div>        			
