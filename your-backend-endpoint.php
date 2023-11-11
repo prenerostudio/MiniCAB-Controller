@@ -1,9 +1,21 @@
 <?php
 // Replace these values with your actual database credentials
-$servername = "localhost";
+
+
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+	$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "minicab";
+} else { 
+	$servername  = "localhost";
+	$username = "euroqzwc_prenero";
+	$password = "Prenero1102/*";
+	$dbname = "euroqzwc_minicaboffice";
+}
+
+
+
 
 try {
     // Create connection
