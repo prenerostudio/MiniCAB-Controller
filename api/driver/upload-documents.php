@@ -42,59 +42,23 @@ if(isset($_POST['d_id'])) {
     if (in_array(false, $uploadedFiles)) {
         echo json_encode(array('message' => "Error in uploading files", 'status' => false));
     } else {
-        $checkQuery = "SELECT * FROM `driver_documents` WHERE `d_id`='$d_id'";
-        $checkResult = mysqli_query($connect, $checkQuery);
-        $checkRowCount = mysqli_num_rows($checkResult);
-
-        if ($checkRowCount > 0) {
             // Perform update operation
-            $updateQuery = "UPDATE `driver_documents` SET 
+            $updateQuery = "UPDATE `drivers` SET 
                             `dl_front`='$uploadedFiles[dl_front]',
                             `dl_back`='$uploadedFiles[dl_back]',
                             `national_insurance`='$uploadedFiles[ni]',
                             `basic_disclosure`='$uploadedFiles[bd]',
                             `work_proof`='$uploadedFiles[wp]',
                             `passport`='$uploadedFiles[pass]',
-                            `dvla`='$uploadedFiles[dvla]',
-                            `upload_date`='$date' WHERE `d_id`='$d_id'";
+                            `dvla`='$uploadedFiles[dvla]' WHERE `d_id`='$d_id'";
             $updateResult = mysqli_query($connect, $updateQuery);
 
             if ($updateResult) {
-                echo json_encode(array('message' => "Documents replaced successfully", 'status' => true));
+                echo json_encode(array('message' => "Documents uploaded successfully", 'status' => true));
             } else {
                 echo json_encode(array('message' => "Error in replacing documents", 'status' => false));
             }
-        } else {
-            // Perform insert operation
-            $insertQuery = "INSERT INTO `driver_documents`(
-                            `d_id`, 
-                            `dl_front`, 
-                            `dl_back`, 
-                            `national_insurance`, 
-                            `basic_disclosure`,
-                            `work_proof`, 
-                            `passport`, 
-                            `dvla`, 
-                            `upload_date`
-                        ) VALUES (
-                            '$d_id',
-                            '$uploadedFiles[dl_front]',
-                            '$uploadedFiles[dl_back]',
-                            '$uploadedFiles[ni]',
-                            '$uploadedFiles[bd]',
-                            '$uploadedFiles[wp]',
-                            '$uploadedFiles[pass]',
-                            '$uploadedFiles[dvla]',
-                            '$date'
-                        )";
-            $insertResult = mysqli_query($connect, $insertQuery);
-
-            if ($insertResult) {
-                echo json_encode(array('message' => "Documents added successfully", 'status' => true));
-            } else {
-                echo json_encode(array('message' => "Error in adding documents", 'status' => false));
-            }
-        }
+       
     }
 } else {
     echo json_encode(array('message' => "Some fields are missing", 'status' => false));
