@@ -23,15 +23,8 @@ function uploadImage() {
     }
     return false;
 }
-
-$vname = $_POST['vname'];
-$seats = $_POST['seats'];
-$bag = $_POST['bags'];
-$wchair = $_POST['wchair'];
-$trailer = $_POST['trailer'];
-$booster = $_POST['booster'];
-$babyc = $_POST['babyc'];
-$pricing = $_POST['pricing'];
+$d_id  = $_POST['d_id'];
+$v_id = $_POST['v_id'];
 $date = date("Y-m-d H:i:s");
 
 // Handle image upload
@@ -40,31 +33,20 @@ $date = date("Y-m-d H:i:s");
 
 
 if(isset($_POST['vname'])){ 	 	        		
-		$sql="INSERT INTO `vehicles`(
-									`v_name`, 
-									`v_seat`, 
-									`v_bags`, 
-									`v_wchair`, 
-									`v_trailer`, 
-									`v_booster`, 
-									`v_baby`, 
-									`v_pricing`, 
-									`v_img`, 
-									`date_added`
-									) VALUES (
-									'$vname',
-									'$seats',
-									'$bag',
-									'$wchair',
-									'$trailer',
-									'$booster',
-									'$babyc',
-									'$pricing',
-									'$v_img',
-									'$date')";				
+		$sql="INSERT INTO `driver_vehicle`(
+													`v_id`, 
+													`d_id`, 
+													`date_v_add`
+													) VALUES (
+													'[value-1]',
+													'[value-2]',
+													'[value-3]',
+													'[value-4]')";				
 		
 		$r=mysqli_query($connect,$sql);
 		if($r){    
+		
+			
 			echo json_encode(array('message'=>"Vehicle Added Successfully",'status'=>true));
 		}else{    
 			echo json_encode(array('message'=>"Error In Adding Vehicle",'status'=>false));

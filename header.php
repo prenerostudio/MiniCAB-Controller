@@ -50,6 +50,10 @@ if (!isset($_SESSION['email'])) {
 		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>           
 		<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>                     
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />  
+		
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
 		<style>   
 			#map {    
 				height: 100%;  
