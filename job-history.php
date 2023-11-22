@@ -4,14 +4,14 @@ include('header.php');
 <div class="card">			
 	<div class="card-header">				
 		<h2 class="page-title">              		
-			Bookings List             			
+			Bookings History          			
 		</h2>		
 		<div class="col-auto ms-auto d-print-none">        
 			<div class="btn-list">            				                
 				<a href="booking-history.php" class="btn d-none btn-danger d-sm-inline-block">
 					<i class="ti ti-history"></i>    
 					Job History                  
-				</a>   
+				</a>    
 				<a href="#" class="btn d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-booking">
 					<i class="ti ti-message-plus"></i>
 					Add New Booking                  
@@ -33,12 +33,12 @@ include('header.php');
 						<th>Vehicle</th>                       													
 						<th>Note</th>                       													
 						<th>Status</th>
-						<th>Action</th>                       												
+						                												
 					</tr>                     										
 				</thead>                    									
 				<tbody> 										
 					<?php										
-					$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings, clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status = 'Pending'");
+					$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings, clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status != 'Pending'");
 					while($bookrow = mysqli_fetch_array($booksql)){										
 					?>																		
 					<tr>                         											
@@ -71,19 +71,7 @@ include('header.php');
 						<td>
 							<?php echo $bookrow['booking_status']; ?> 
 						</td>		
-						<td class="text-end">						
-							
-								<div class="btn-group">
-								<a href="booking-details.php?id=<?php echo $bookrow['book_id'] ?>" class="btn d-none btn-instagram d-sm-inline-block">
-    Booking Details
-</a>
-
-								<a href="dipatch-booking.php?id=<?php echo $bookrow['book_id'] ?>" class="btn btn-facebook d-none d-sm-inline-block">						
-									Dispatch									
-								</a>	
-								</div>
-							                       														
-						</td>                       												
+						                   												
 					</tr>                              											
 					<?php														
 					}														

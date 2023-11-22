@@ -48,6 +48,14 @@ if(isset($_POST['job_id'])){
 		
 		$r=mysqli_query($connect,$sql);
 		if($r){    
+			$job_status = 'Completed';
+			$usql="UPDATE `jobs` SET 
+									`job_status`='$job_status',
+									`date_job_add`='$date' WHERE `job_id`='$job_id'";
+			$ur=mysqli_query($connect,$usql);
+			
+			
+			
 			echo json_encode(array('message'=>"Invoice Generated Successfully",'status'=>true));
 		}else{    
 			echo json_encode(array('message'=>"Error In Generating Invoice",'status'=>false));
