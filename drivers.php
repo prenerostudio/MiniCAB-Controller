@@ -9,7 +9,7 @@ include('header.php');
 		<div class="col-auto ms-auto d-print-none">										
 			<div class="btn-list">                                 			
 				<a href="#" class="btn d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">
-					<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>                   					
+					<i class="ti ti-user-plus"></i>                  					
 					Add New Driver                  					
 				</a>                 				
 			</div>              			
@@ -17,7 +17,7 @@ include('header.php');
 	</div>            			
 	<div class="card-body">            			
 		<div id="table-default" class="table-responsive">            					
-			<table class="table card-table table-vcenter text-nowrap datatable" id="drv-table">                   												
+			<table class="table table-responsive" id="drv-table">                   												
 				<thead>                   															
 					<tr align="center">                          																		
 						<th class="w-1">ID</th>                         																				
@@ -47,7 +47,7 @@ include('header.php');
 							<?php															
 						} else{                                            													
 							?>                                         															
-							<img src="<?php echo $drow['d_pic'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">
+							<img src="img/drivers/<?php echo $drow['d_pic'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">
 							<?php
 						}                                          																							
 							?>										
@@ -68,9 +68,7 @@ include('header.php');
 							<?php echo $drow['d_licence']; ?>															
 						</td>																			
 						<td class="text-end">	
-							<a href="driver-documents.php?id=<?php echo $drow['d_id']; ?>">							
-							<button class="btn btn-instagram align-text-top">View Documents</button>
-							</a>
+							
 							<a href="driver-details.php?id=<?php echo $drow['d_id']; ?>">
 							<button class="btn align-text-top">View Details</button>	
 							</a>

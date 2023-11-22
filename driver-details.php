@@ -1,7 +1,7 @@
 <?php
 
 include('header.php');
-<<<<<<< Updated upstream
+
 $d_id = $_GET['id'];
 $dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
 $drow = mysqli_fetch_array($dsql);		
@@ -30,66 +30,68 @@ $drow = mysqli_fetch_array($dsql);
 				<div class="tab-content">                   				
 					<div class="tab-pane active show" id="tabs-today">                    
 						
-						<div class="container-xl">           
-=======
-
-
-$d_id = $_GET['id'];
-
-
-$dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");											
-
-$drow = mysqli_fetch_array($dsql);		
-
-
-
-?> 
-
-<div class="container-xl">           
->>>>>>> Stashed changes
-
-	<div class="card">	
-	
-		<div class="row g-0">                    		
-		
-			<div class="col-12 col-md-12 d-flex flex-column">        			
-			
-				<div class="card-body">            				
-				
-<<<<<<< Updated upstream
-					<h2 class="mb-4">Driver Profile</h2>                				
-					
-					<h3 class="card-title">Profile Details</h3>                				
-=======
-					<h2 class="mb-4">Driver Profile</h2>                						
->>>>>>> Stashed changes
-					
-					<div class="row align-items-center">                
-					
-						<div class="col-auto">
 						
-<<<<<<< Updated upstream
-							
-=======
->>>>>>> Stashed changes
+						<div class="container-xl">           
+
+
+	
+							<div class="card">	
+	
+		
+								<div class="row g-0">                    		
+		
+			
+									<div class="col-12 col-md-12 d-flex flex-column">        			
+			
+				
+										<div class="card-body">            				
+
+					
+											<h2 class="mb-4">Driver Profile</h2>                						
+
+					
+					
+											<div class="row align-items-center">                
+					
+						
+												<div class="col-auto">
+						
+
+													
 							<span class="avatar avatar-xl" style="background-image: url(<?php echo $drow['d_pic'];?>); background-size:cover; width: 220px;
    height: 160px;"></span>							
 	
-						</div>                    					
 						
-						<div class="col-auto">						
+												</div>                    					
 						
-							<a href="#" class="btn">                    						
-								Change avatar                        						
-							</a>					
-						</div>                      					
-						<div class="col-auto">						
-							<a href="#" class="btn btn-ghost-danger">                         
-								Delete avatar                       
-							</a>					
-						</div>                   				
-					</div>                				
-					<h3 class="card-title mt-4">Profile Details</h3> 
+						
+												<div class="col-auto">						
+						
+						
+													<form action="update-driver-img.php" method="post" enctype="multipart/form-data">
+								<input type="hidden" value="<?php echo $drow['d_id']; ?>" name="d_id">
+							
+								<input type="file" name="fileToUpload" id="fileToUpload" class="btn">
+								
+								<button type="submit" class="btn btn-info">Upload Image </button>                       						
+								
+							  </form>				
+					
+												</div>                      					
+					
+												<div class="col-auto">						
+							
+													<a href="#" class="btn btn-ghost-danger">                         
+								
+														Delete avatar                       
+							
+													</a>					
+						
+												</div>                   				
+					
+											</div>                				
+					
+											<h3 class="card-title mt-4">Profile Details</h3> 
 					
 					<form method="post" action="update-driver.php" enctype="multipart/form-data">
 					<div class="row g-3">                
