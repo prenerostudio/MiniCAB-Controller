@@ -164,13 +164,13 @@ if (!isset($_SESSION['email'])) {
 									<br><strong>Vehicles</strong>                        
 								</a>                    
 							</li>
-					
-							<!--<li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <img src="img/icons/affilliate.png" alt="" class="nav_icon">
-							<br>Affiliate
-                        </a>
-                    </li>-->
+												
+							<li class="nav-item">                       
+								<a class="nav-link" href="pricing.php">                           
+									<img src="img/icons/affilliate.png" alt="" class="nav_icon">							
+									<br>Pricing                       
+								</a>                   
+							</li>
 					
 							<li class="nav-item">                        
 								<a class="nav-link" href="zones.php">                            
