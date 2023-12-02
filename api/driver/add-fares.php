@@ -9,7 +9,6 @@ include("../../config.php");
 
 $job_id = $_POST['job_id'];
 $d_id = $_POST['d_id'];
-$fare = $_POST['fare'];
 $parking = $_POST['parking'];
 $extra = $_POST['extra'];
 $tolls = $_POST['tolls'];

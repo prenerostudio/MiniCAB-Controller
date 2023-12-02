@@ -15,15 +15,28 @@ $drow = mysqli_fetch_array($dsql);
 					<li class="nav-item" style="background: #3046CC;">                      					
 						<a href="#tabs-today" class="nav-link active" data-bs-toggle="tab">							                          						
 							<i class="ti ti-database-heart"></i>                          							
-							Driver Details					
+							Price Per Mile				
 						</a>                     
 					</li>                      					
 					<li class="nav-item">                       					
 						<a href="#tabs-pre" class="nav-link" data-bs-toggle="tab">							                         						
 							<i class="ti ti-license"></i>
-							Driver Documents					
+							Location Prices					
 						</a>                     					
-					</li>                     					                  				
+					</li>  
+					<li class="nav-item">                       					
+						<a href="#tabs-pre" class="nav-link" data-bs-toggle="tab">							                         						
+							<i class="ti ti-license"></i>
+							Postcode Area Prices					
+						</a>                     					
+					</li>  
+					
+					<li class="nav-item">                       					
+						<a href="#tabs-pre" class="nav-link" data-bs-toggle="tab">							                         						
+							<i class="ti ti-license"></i>
+							Meet & Greet Charges					
+						</a>                     					
+					</li>  
 				</ul>                			
 			</div>                 			
 			<div class="card-body">                  			
