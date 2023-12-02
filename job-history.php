@@ -8,7 +8,7 @@ include('header.php');
 		</h2>		
 		<div class="col-auto ms-auto d-print-none">        
 			<div class="btn-list">            				                
-				<a href="booking-history.php" class="btn d-none btn-danger d-sm-inline-block">
+				<a href="job-history.php" class="btn d-none btn-danger d-sm-inline-block">
 					<i class="ti ti-history"></i>    
 					Job History                  
 				</a>    
@@ -38,12 +38,39 @@ include('header.php');
 				</thead>                    									
 				<tbody> 										
 					<?php										
-					$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings, clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status != 'Pending'");
+					$booksql=mysqli_query($connect,"SELECT
+	jobs.*, 
+	clients.c_name, 
+	clients.c_email, 
+	clients.c_phone, 
+	clients.c_address, 
+	drivers.d_name, 
+	drivers.d_email, 
+	drivers.d_phone, 
+	bookings.*, 
+	vehicles.v_name, 
+	vehicles.v_pricing, 
+	vehicles.v_img
+FROM
+	jobs,
+	drivers,
+	clients,
+	bookings,
+	vehicles
+WHERE
+	jobs.book_id = bookings.book_id AND
+	jobs.c_id = clients.c_id AND
+	jobs.d_id = drivers.d_id AND
+	jobs.d_id = '$d_id' AND
+	jobs.job_status IN ('completed','cancelled') AND
+	bookings.v_id = vehicles.v_id
+ORDER BY
+	jobs.job_id DESC");
 					while($bookrow = mysqli_fetch_array($booksql)){										
 					?>																		
 					<tr>                         											
 						<td>																				
-							<?php echo $bookrow['book_id']; ?>													
+							<?php echo $bookrow['job_id']; ?>													
 						</td>                          													
 						<td>														
 							<span class=" btn btn-instagram">																
