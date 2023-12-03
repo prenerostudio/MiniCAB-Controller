@@ -9,6 +9,7 @@ include("../../config.php");
 
 $job_id = $_POST['job_id'];
 $d_id = $_POST['d_id'];
+$fare = $_POST['fare'];
 $parking = $_POST['parking'];
 $extra = $_POST['extra'];
 $tolls = $_POST['tolls'];
@@ -23,7 +24,7 @@ if(isset($_POST['job_id'])){
 								`journey_fare`, 
 								`extra_waiting`, 
 								`parking`, 
-								`Tolls`, 
+								`tolls`, 
 								`fare_status`, 
 								`apply_date`
 								) VALUES ( 
