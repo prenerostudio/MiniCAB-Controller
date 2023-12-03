@@ -8,7 +8,7 @@ include('header.php');
 		</h2>		
 		<div class="col-auto ms-auto d-print-none">        
 			<div class="btn-list">            				                
-				<a href="booking-history.php" class="btn d-none btn-danger d-sm-inline-block">
+				<a href="job-history.php" class="btn d-none btn-danger d-sm-inline-block">
 					<i class="ti ti-history"></i>    
 					Job History                  
 				</a>   
