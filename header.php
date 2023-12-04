@@ -164,7 +164,8 @@ if (!isset($_SESSION['email'])) {
 									<br><strong>Vehicles</strong>                        
 								</a>                    
 							</li>
-												
+
+													
 							<li class="nav-item">                       
 								<a class="nav-link" href="pricing.php">                           
 									<img src="img/icons/affilliate.png" alt="" class="nav_icon">							
