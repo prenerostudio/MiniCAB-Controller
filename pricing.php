@@ -48,7 +48,7 @@ $drow = mysqli_fetch_array($dsql);
 											<hr>
 											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>
 											<hr>
-											<table  class="table table-responsive">									  
+											<table  class="table table-responsive" id="myTable">									  
 												<thead>									   										
 													<tr>     										   											
 														<th><p>From</p></th>
@@ -67,78 +67,68 @@ $drow = mysqli_fetch_array($dsql);
 												<tbody>
     
 													<tr>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
+													  <td><input type="text" class="form-control" name="from"></td>
+													  <td><input type="text" class="form-control" name="to"></td>
+													  <td><input type="text" class="form-control" name="1-4p"></td>
+													  <td><input type="text" class="form-control" name="1-4e"></td>
+													  <td><input type="text" class="form-control" name="5-6p"></td>
+													  <td><input type="text" class="form-control" name="7p"></td>
+													  <td><input type="text" class="form-control" name="8p"></td>
+													  <td><input type="text" class="form-control" name="9p"></td>
+													  <td><input type="text" class="form-control" name="10-14p"></td>
+													  <td><input type="text" class="form-control" name="15-16p"></td>
 													</tr>
+													<tfoot>
 													<tr>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
+													  <td></td>
+													  <td></td>
+													  <td></td>
+													  <td></td>
+													  <td></td>
+													  <td></td>
+													  <td></td>
+													  <td></td>
+													  <td><button onclick="addRow()" class="btn btn-danger">Add Row</button></td>
+													  <td><button type="submit" class="btn btn-danger">Save Records</button></td>
 													</tr>
-													<tr>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													</tr>
-													<tr>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													</tr>
-													<tr>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													  <td><input type="text" class="form-control"></td>
-													</tr>
-													<tr>
-													  <td colspan="2">Minimum Fare (£)</td>
-													  <td><p> 10.25</p></td>
-													  <td><p> 10.25</p></td>
-													  <td><p> 10.25</p></td>
-													  <td><p> 10.25</p></td>
-													  <td><p> 10.25</p></td>
-													  <td><p> 10.25</p></td>
-													  <td><p> 10.25</p></td>
-													  <td><p> 10.25</p></td>
-													</tr>  
+													</tfoot>
+													
+													  
 												</tbody>
-											</table>											
+											</table>		
+											
+											
+											
+											
+											
+											
+											<script>
+    function addRow() {
+      var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+      var newRow = table.insertRow(table.rows.length);
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+		 var cell3 = newRow.insertCell(2);
+		 var cell4 = newRow.insertCell(3);
+		 var cell5 = newRow.insertCell(4);
+		 var cell6 = newRow.insertCell(5);
+		 var cell7 = newRow.insertCell(6);
+		 var cell8 = newRow.insertCell(7);
+		 var cell9 = newRow.insertCell(8);
+		 var cell10 = newRow.insertCell(9);
+      cell1.innerHTML = "<input type='text' class='form-control' name='from'>";
+      cell2.innerHTML = "<input type='text' class='form-control' name='to'>";
+		cell3.innerHTML = "<input type='text' class='form-control' name='1-4p'>";
+      cell4.innerHTML = "<input type='text' class='form-control' name='1-4e'>";
+		cell5.innerHTML = "<input type='text' class='form-control' name='5-6p'>";
+      cell6.innerHTML = "<input type='text' class='form-control' name='7p'>";
+		cell7.innerHTML = "<input type='text' class='form-control' name='8p'>";
+      cell8.innerHTML = "<input type='text' class='form-control' name='9p'>";
+		cell9.innerHTML = "<input type='text' class='form-control' name='10-14p'>";
+      cell10.innerHTML = "<input type='text' class='form-control' name='15-16p'>";
+		
+    }
+  </script>
 											<p>The minimum price you charge for each vehicle size, regardless of how short the trip is. Please contact admin@minicaboffice.com if you want to change your minimum fares. </p>
 											
 											
