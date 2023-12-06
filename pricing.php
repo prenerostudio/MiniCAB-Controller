@@ -1,10 +1,7 @@
 <?php
 
 include('header.php');
-
-$d_id = $_GET['id'];
-$dsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `d_id`='$d_id'");
-$drow = mysqli_fetch_array($dsql);		
+		
 ?> 
 <div class="row row-deck row-cards"> 	 	    	                                                                                       
 	<div class="col-md-12">                	
@@ -48,87 +45,146 @@ $drow = mysqli_fetch_array($dsql);
 											<hr>
 											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>
 											<hr>
-											<table  class="table table-responsive" id="myTable">									  
-												<thead>									   										
-													<tr>     										   											
-														<th><p>From</p></th>
-														<th><p>TO</p></th>
-														<th><p align="center"><span>1-4</span><br>Passenger</p></th>	   
-														<th><p align="center"><span>1-4</span><br>ESTATE</p></th>
-														<th><p align="center"><span>5-6</span><br>Passenger</p></th>											  
-														<th><p align="center"><span>7</span><br>Passenger</p></th>											  
-														<th><p align="center"><span>8</span><br>Passenger</p></th>
-														<th><p align="center"><span>9</span><br>Passenger</p></th>
-														<th><p align="center"><span>10-14</span><br>Passenger</p></th>
-														<th><p align="center"><span>15-16</span><br>Passenger</p></th> 										   
-													</tr>
-												</thead>
+											
+											<button onclick="addRow()" class="btn btn-danger">Add Row</button>
   
-												<tbody>
-    
-													<tr>
-													  <td><input type="text" class="form-control" name="from"></td>
-													  <td><input type="text" class="form-control" name="to"></td>
-													  <td><input type="text" class="form-control" name="1-4p"></td>
-													  <td><input type="text" class="form-control" name="1-4e"></td>
-													  <td><input type="text" class="form-control" name="5-6p"></td>
-													  <td><input type="text" class="form-control" name="7p"></td>
-													  <td><input type="text" class="form-control" name="8p"></td>
-													  <td><input type="text" class="form-control" name="9p"></td>
-													  <td><input type="text" class="form-control" name="10-14p"></td>
-													  <td><input type="text" class="form-control" name="15-16p"></td>
-													</tr>
-													<tfoot>
-													<tr>
-													  <td></td>
-													  <td></td>
-													  <td></td>
-													  <td></td>
-													  <td></td>
-													  <td></td>
-													  <td></td>
-													  <td></td>
-													  <td><button onclick="addRow()" class="btn btn-danger">Add Row</button></td>
-													  <td><button type="submit" class="btn btn-danger">Save Records</button></td>
-													</tr>
-													</tfoot>
+  
+											<form method="post" action="mp_process.php" enctype="multipart/form-data">
+  
+												<table class="table table-responsive" id="myTable">
+  
+													<thead>
+        
+														<tr>
+          
+															<th><p>From</p></th>
+          
+															<th><p>To</p></th>
+          
+															<th><p align="center"><span>1-4</span><br>Passenger</p></th>
+          
+															<th><p align="center"><span>1-4</span><br>Estate</p></th>
+          
+															<th><p align="center"><span>5-6</span><br>Passenger</p></th>
+          
+															<th><p align="center"><span>7</span><br>Passenger</p></th>
+          
+															<th><p align="center"><span>8</span><br>Passenger</p></th>
+          
+															<th><p align="center"><span>9</span><br>Passenger</p></th>
+          
+															<th><p align="center"><span>10-14</span><br>Passenger</p></th>
+          
+															<th><p align="center"><span>15-16</span><br>Passenger</p></th>
+        
+														</tr>
+      
+													</thead>
+
+      
+													<tbody>
+        
+														<tr>
+          
+															<td><input type="text" class="form-control" name="from[]"></td>
+          
+															<td><input type="text" class="form-control" name="to[]"></td>
+          
+															<td><input type="text" class="form-control" name="1-4p[]"></td>
+          
+															<td><input type="text" class="form-control" name="1-4e[]"></td>
+          
+															<td><input type="text" class="form-control" name="5-6p[]"></td>
+          
+															<td><input type="text" class="form-control" name="7p[]"></td>
+          
+															<td><input type="text" class="form-control" name="8p[]"></td>
+          
+															<td><input type="text" class="form-control" name="9p[]"></td>
+          
+															<td><input type="text" class="form-control" name="10-14p[]"></td>
+          
+															<td><input type="text" class="form-control" name="15-16p[]"></td>
+        
+														</tr>
+      
+													</tbody>
+
 													
-													  
-												</tbody>
-											</table>		
-											
-											
-											
-											
-											
-											
+      
+													<tfoot>
+        
+														<tr>
+          
+															<td colspan="10" class="text-right">
+            
+																<button type="submit" class="btn btn-danger">Save Records</button>
+          
+															</td>
+        
+														</tr>
+      
+													</tfoot>
+    
+												</table>
+  
+											</form>
+
+  
 											<script>
-    function addRow() {
-      var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
-      var newRow = table.insertRow(table.rows.length);
-      var cell1 = newRow.insertCell(0);
-      var cell2 = newRow.insertCell(1);
-		 var cell3 = newRow.insertCell(2);
-		 var cell4 = newRow.insertCell(3);
-		 var cell5 = newRow.insertCell(4);
-		 var cell6 = newRow.insertCell(5);
-		 var cell7 = newRow.insertCell(6);
-		 var cell8 = newRow.insertCell(7);
-		 var cell9 = newRow.insertCell(8);
-		 var cell10 = newRow.insertCell(9);
-      cell1.innerHTML = "<input type='text' class='form-control' name='from'>";
-      cell2.innerHTML = "<input type='text' class='form-control' name='to'>";
-		cell3.innerHTML = "<input type='text' class='form-control' name='1-4p'>";
-      cell4.innerHTML = "<input type='text' class='form-control' name='1-4e'>";
-		cell5.innerHTML = "<input type='text' class='form-control' name='5-6p'>";
-      cell6.innerHTML = "<input type='text' class='form-control' name='7p'>";
-		cell7.innerHTML = "<input type='text' class='form-control' name='8p'>";
-      cell8.innerHTML = "<input type='text' class='form-control' name='9p'>";
-		cell9.innerHTML = "<input type='text' class='form-control' name='10-14p'>";
-      cell10.innerHTML = "<input type='text' class='form-control' name='15-16p'>";
-		
-    }
-  </script>
+    
+												function addRow() {
+      
+													var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+      
+													var newRow = table.insertRow(table.rows.length);
+      
+													var cell1 = newRow.insertCell(0);
+      
+													var cell2 = newRow.insertCell(1);
+      
+													var cell3 = newRow.insertCell(2);
+      
+													var cell4 = newRow.insertCell(3);
+      
+													var cell5 = newRow.insertCell(4);
+      
+													var cell6 = newRow.insertCell(5);
+      
+													var cell7 = newRow.insertCell(6);
+      
+													var cell8 = newRow.insertCell(7);
+      
+													var cell9 = newRow.insertCell(8);
+      
+													var cell10 = newRow.insertCell(9);
+
+													
+      
+													cell1.innerHTML = "<input type='text' class='form-control' name='from[]'>";
+      
+													cell2.innerHTML = "<input type='text' class='form-control' name='to[]'>";
+      
+													cell3.innerHTML = "<input type='text' class='form-control' name='1-4p[]'>";
+      
+													cell4.innerHTML = "<input type='text' class='form-control' name='1-4e[]'>";
+      
+													cell5.innerHTML = "<input type='text' class='form-control' name='5-6p[]'>";
+      
+													cell6.innerHTML = "<input type='text' class='form-control' name='7p[]'>";
+      
+													cell7.innerHTML = "<input type='text' class='form-control' name='8p[]'>";
+      
+													cell8.innerHTML = "<input type='text' class='form-control' name='9p[]'>";
+      
+													cell9.innerHTML = "<input type='text' class='form-control' name='10-14p[]'>";
+      
+													cell10.innerHTML = "<input type='text' class='form-control' name='15-16p[]'>";
+    
+												}
+  
+											</script>
+											
 											<p>The minimum price you charge for each vehicle size, regardless of how short the trip is. Please contact admin@minicaboffice.com if you want to change your minimum fares. </p>
 											
 											
