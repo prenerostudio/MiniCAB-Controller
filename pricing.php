@@ -3,6 +3,43 @@
 include('header.php');
 		
 ?> 
+
+ <script>
+        function updateValues() {
+            // Get the input values
+            var input1_4p = parseFloat(document.getElementsByName("1-4p")[0].value);
+
+            // Define percentages
+            var percentage_1_4e = 0.2;  // 20%
+            var percentage_5_6p = 0.3;  // 30%
+            var percentage_7p = 0.4;    // 10%
+			var percentage_8p = 0.5;    // 10%
+			var percentage_9p = 0.6;    // 10%
+			var percentage_10_14p = 0.7;
+			var percentage_15_16p = 0.8;// 10%
+            // Add more percentages as needed
+
+            // Perform calculations
+            var result_1_4e = input1_4p * percentage_1_4e;
+            var result_5_6p = input1_4p * percentage_5_6p;
+            var result_7p = input1_4p * percentage_7p;
+			 var result_8p = input1_4p * percentage_8p;
+			 var result_9p = input1_4p * percentage_9p;
+			 var result_10_14p = input1_4p * percentage_10_14p;
+			 var result_15_16p = input1_4p * percentage_15_16p;
+            // Add more calculations as needed
+
+            // Update readonly input fields
+            document.getElementsByName("1-4e")[0].value = result_1_4e.toFixed(2);
+            document.getElementsByName("5-6p")[0].value = result_5_6p.toFixed(2);
+            document.getElementsByName("7p")[0].value = result_7p.toFixed(2);
+			 document.getElementsByName("8p")[0].value = result_8p.toFixed(2);
+			 document.getElementsByName("9p")[0].value = result_9p.toFixed(2);
+			 document.getElementsByName("10_14p")[0].value = result_10_14p.toFixed(2);
+			 document.getElementsByName("15_16p")[0].value = result_15_16p.toFixed(2);
+            // Update more readonly input fields as needed
+        }
+    </script>
 <div class="row row-deck row-cards"> 	 	    	                                                                                       
 	<div class="col-md-12">                	
 		<div class="card">                  		
@@ -44,10 +81,7 @@ include('header.php');
 											<h2 class="mb-4">Mileage rate</h2>  
 											<hr>
 											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>
-											<hr>
-											
-											<button onclick="addRow()" class="btn btn-danger">Add Row</button>
-  
+											<hr>																			
   
 											<form method="post" action="mp_process.php" enctype="multipart/form-data">
   
@@ -86,25 +120,25 @@ include('header.php');
         
 														<tr>
           
-															<td><input type="text" class="form-control" name="from[]"></td>
+															<td><input type="text" class="form-control" name="from"></td>
           
-															<td><input type="text" class="form-control" name="to[]"></td>
+															<td><input type="text" class="form-control" name="to"></td>
           
-															<td><input type="text" class="form-control" name="1-4p[]"></td>
+															<td><input type="text" class="form-control" name="1-4p" oninput="updateValues()"></td>
           
-															<td><input type="text" class="form-control" name="1-4e[]"></td>
+															<td><input type="text" class="form-control" name="1-4e" readonly></td>
           
-															<td><input type="text" class="form-control" name="5-6p[]"></td>
+															<td><input type="text" class="form-control" name="5-6p" readonly></td>
           
-															<td><input type="text" class="form-control" name="7p[]"></td>
+															<td><input type="text" class="form-control" name="7p" readonly></td>
           
-															<td><input type="text" class="form-control" name="8p[]"></td>
+															<td><input type="text" class="form-control" name="8p" readonly></td>
           
-															<td><input type="text" class="form-control" name="9p[]"></td>
+															<td><input type="text" class="form-control" name="9p" readonly></td>
           
-															<td><input type="text" class="form-control" name="10-14p[]"></td>
+															<td><input type="text" class="form-control" name="10_14p" readonly></td>
           
-															<td><input type="text" class="form-control" name="15-16p[]"></td>
+															<td><input type="text" class="form-control" name="15_16p" readonly></td>
         
 														</tr>
       
@@ -115,8 +149,18 @@ include('header.php');
 													<tfoot>
         
 														<tr>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															
+															<td></td>
           
-															<td colspan="10" class="text-right">
+															<td>
             
 																<button type="submit" class="btn btn-danger">Save Records</button>
           
@@ -129,61 +173,72 @@ include('header.php');
 												</table>
   
 											</form>
+											
+											
+											<table class="table table-responsive">
+												<thead>
+        
+														<tr>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p>From</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p>To</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Passenger</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Estate</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>5-6</span><br>Passenger</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>7</span><br>Passenger</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>8</span><br>Passenger</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>9</span><br>Passenger</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>10-14</span><br>Passenger</p></th>
+          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>15-16</span><br>Passenger</p></th>
+        
+														</tr>
+      
+													</thead>
+											  <tbody>
+												<?php
+												  $pmsql=mysqli_query($connect,"SELECT * FROM `price_mile` ");
+					while($pmrow = mysqli_fetch_array($pmsql)){	
+												  ?>
+												<tr align="center">
+												  <td><?php echo $pmrow['start_from'];?></td>
+												  <td><?php echo $pmrow['end_to'];?></td>
+												  <td><?php echo $pmrow['1_4p'];?></td>
+												  <td><?php echo $pmrow['1_4e'];?></td>
+												  <td><?php echo $pmrow['5_6p'];?></td>
+												  <td><?php echo $pmrow['7p'];?></td>
+												  <td><?php echo $pmrow['8p'];?></td>
+												  <td><?php echo $pmrow['9p'];?></td>
+												  <td><?php echo $pmrow['10_14p'];?></td>
+												  <td><?php echo $pmrow['15_16p'];?></td>
+												</tr>
+												  <?php
+					}
+						?>
+												  
+											  </tbody>
+											</table>
+
 
   
-											<script>
-    
-												function addRow() {
-      
-													var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
-      
-													var newRow = table.insertRow(table.rows.length);
-      
-													var cell1 = newRow.insertCell(0);
-      
-													var cell2 = newRow.insertCell(1);
-      
-													var cell3 = newRow.insertCell(2);
-      
-													var cell4 = newRow.insertCell(3);
-      
-													var cell5 = newRow.insertCell(4);
-      
-													var cell6 = newRow.insertCell(5);
-      
-													var cell7 = newRow.insertCell(6);
-      
-													var cell8 = newRow.insertCell(7);
-      
-													var cell9 = newRow.insertCell(8);
-      
-													var cell10 = newRow.insertCell(9);
-
-													
-      
-													cell1.innerHTML = "<input type='text' class='form-control' name='from[]'>";
-      
-													cell2.innerHTML = "<input type='text' class='form-control' name='to[]'>";
-      
-													cell3.innerHTML = "<input type='text' class='form-control' name='1-4p[]'>";
-      
-													cell4.innerHTML = "<input type='text' class='form-control' name='1-4e[]'>";
-      
-													cell5.innerHTML = "<input type='text' class='form-control' name='5-6p[]'>";
-      
-													cell6.innerHTML = "<input type='text' class='form-control' name='7p[]'>";
-      
-													cell7.innerHTML = "<input type='text' class='form-control' name='8p[]'>";
-      
-													cell8.innerHTML = "<input type='text' class='form-control' name='9p[]'>";
-      
-													cell9.innerHTML = "<input type='text' class='form-control' name='10-14p[]'>";
-      
-													cell10.innerHTML = "<input type='text' class='form-control' name='15-16p[]'>";
-    
-												}
-  
-											</script>
+										
+											
+											
+			
+										</div>  
+										<div class="card-body">            									
+											<h2 class="mb-4">Mileage rate</h2>  
+											<hr>
+											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>
+											<hr>	
 											
 											<p>The minimum price you charge for each vehicle size, regardless of how short the trip is. Please contact admin@minicaboffice.com if you want to change your minimum fares. </p>
 											
@@ -385,17 +440,28 @@ include('header.php');
                                                 </div>											
 											<p>The minimum price you charge for each vehicle size, regardless of how short the trip is. Please contact admin@minicaboffice.com if you want to change your minimum fares. </p>
 											
+					
+  
+											
+
+  
+										
 											
 											
 			
-										</div>              		
+										</div> 
+										
+										
+										
+										
 									</div>            	
 								</div>         
 							</div>																													
 					      																		
 					</div> 
-					
-					
+						
+											
+											
 						
 					
 					
