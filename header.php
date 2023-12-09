@@ -53,6 +53,12 @@ if (!isset($_SESSION['email'])) {
 		
 		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+		
+		
+		
+		 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB-AZa456v6psuXAws1WA822K2ckaL1O4&libraries=places"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 		<style>   
 			#map {    
@@ -60,7 +66,13 @@ if (!isset($_SESSION['email'])) {
 			}	
 			#mapd {    
 				height: 500px; 
-			}		
+			}	
+			
+			#post_map {
+    width: 100%;
+    height: 300px;
+}
+
 			/* Center icon and text vertically */     
 			.nav-link {         
 				display: flex;        
@@ -168,7 +180,7 @@ if (!isset($_SESSION['email'])) {
 													
 							<li class="nav-item">                       
 								<a class="nav-link" href="pricing.php">                           
-									<img src="img/icons/affilliate.png" alt="" class="nav_icon">							
+									<img src="img/icons/pricing.png" alt="" class="nav_icon">							
 									<br>Pricing                       
 								</a>                   
 							</li>
@@ -193,12 +205,12 @@ if (!isset($_SESSION['email'])) {
 							</li>
 
 							
-					<!--<li class="nav-item">
+					<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/special-dates.png" alt="" class="nav_icon">
 							<br>Special Dates
                         </a>
-                    </li>-->
+                    </li>
 					<!--<li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="img/icons/promotions.png" alt="" class="nav_icon">

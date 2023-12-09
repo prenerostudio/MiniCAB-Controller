@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 04:50 PM
+-- Generation Time: Dec 09, 2023 at 04:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -260,8 +260,8 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_password`, `d_phone`, `d_address`, `d_pic`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `skype_acount`, `dl_front`, `dl_back`, `national_insurance`, `basic_disclosure`, `work_proof`, `passport`, `dvla`, `d_remarks`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
-(1, 'Atiq Ramzan', 'hello@prenero.com', '6266a', '+923157524000', 'FSD ', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 1, '123456789', '2023-10-28', '123456789', '2023-10-31', '', 'driving-licence.jpeg', 'licence-back.jpg', 'national_insurance.jpg', 'Basic-Disclosure.jpg', 'work-proof.png', 'british-passport.jpg', 'DVLA-Check.jpg', 'N/A', '51.52145727821898', '-0.12723122456155755', 'Waiting for Passenger!', 0, '2023-12-04 11:44:25'),
-(3, 'Shahzib', 'shazaib@prenero.com', 'asdf1234', '+44125364585', '', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 16, '12345678', '2023-10-28', '123456789', '2023-10-31', 'atiq.ramzan98', '', '', '', '', '', '', '', 'N.A', '51.512474660272886', '-0.13759970050199483', 'online', 0, '2023-10-20 13:52:41'),
+(1, 'Atiq Ramzan', 'hello@prenero.com', '6266a', '+923157524000', 'FSD ', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 1, '123456789', '2023-10-28', '123456789', '2023-10-31', '', 'driving-licence.jpeg', 'licence-back.jpg', 'national_insurance.jpg', 'Basic-Disclosure.jpg', 'work-proof.png', 'british-passport.jpg', 'DVLA-Check.jpg', 'N/A', '51.52145727821898', '-0.12723122456155755', 'Waiting for Passenger!', 1, '2023-12-07 19:21:16'),
+(3, 'Shahzib', 'shazaib@prenero.com', 'asdf1234', '+44125364585', '', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 16, '12345678', '2023-10-28', '123456789', '2023-10-31', 'atiq.ramzan98', '', '', '', '', '', '', '', 'N.A', '51.512474660272886', '-0.13759970050199483', 'online', 1, '2023-12-07 19:37:44'),
 (5, 'Mahtab Mukhtar', 'mahtab@prenero.com', '12345678', '032415246242', '', '', 'Male', 'English', 2, '12345678', '02-2024', '123456789', '02-2024', 'prenero', '', '', '', '', '', '', '', '', '51.512474660272886', '-0.14759970050199483', 'online', 0, '2023-10-30 13:06:50'),
 (6, 'Nauman Naseer', 'nauman@prenero.com', '12345678', '03241524624', '', '', '', '', 8, '', '', '', '', '', '', '', '', '', '', '', '', '', '51.512474660272886', '-0.15759970050199483', 'online', 1, '2023-10-30 12:24:43');
 
@@ -430,6 +430,19 @@ INSERT INTO `language` (`lang_id`, `language`, `date_lang_add`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mg_charges`
+--
+
+CREATE TABLE `mg_charges` (
+  `mg_id` int(55) NOT NULL,
+  `pickup_location` varchar(255) NOT NULL,
+  `pickup_charges` int(11) NOT NULL,
+  `date_add_mg` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payment_history`
 --
 
@@ -440,6 +453,32 @@ CREATE TABLE `payment_history` (
   `pay_month` date NOT NULL,
   `pay_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `price_by_location`
+--
+
+CREATE TABLE `price_by_location` (
+  `pbl_id` int(55) NOT NULL,
+  `vehicle_type` varchar(255) NOT NULL,
+  `st_post` varchar(255) NOT NULL,
+  `st_mile` varchar(255) NOT NULL,
+  `fn_post` varchar(255) NOT NULL,
+  `fn_mile` varchar(255) NOT NULL,
+  `single_price` int(255) NOT NULL,
+  `date_add_pbl` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `price_by_location`
+--
+
+INSERT INTO `price_by_location` (`pbl_id`, `vehicle_type`, `st_post`, `st_mile`, `fn_post`, `fn_mile`, `single_price`, `date_add_pbl`) VALUES
+(1, '1-4 Passengers', '', '1', '123456', '1', 25, '2023-12-09'),
+(2, '1-4 Passengers', 'we234', '1', 'inp24', '1', 15, '2023-12-09'),
+(3, '1-4 Passengers', 'E1 7HT', '', 'E14 5NP', '', 0, '2023-12-09');
 
 -- --------------------------------------------------------
 
@@ -461,6 +500,45 @@ CREATE TABLE `price_mile` (
   `15_16p` int(10) NOT NULL,
   `date_add_pm` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `price_mile`
+--
+
+INSERT INTO `price_mile` (`pm_id`, `start_from`, `end_to`, `1_4p`, `1_4e`, `5_6p`, `7p`, `8p`, `9p`, `10_14p`, `15_16p`, `date_add_pm`) VALUES
+(1, 1, 10, 10, 10, 15, 20, 25, 30, 35, 40, '2023-12-05'),
+(2, 10, 20, 15, 20, 25, 30, 35, 40, 45, 50, '2023-12-05'),
+(3, 1, 10, 10, 10, 15, 20, 25, 30, 35, 40, '2023-12-05'),
+(4, 10, 20, 15, 20, 25, 30, 35, 40, 45, 50, '2023-12-05'),
+(5, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, '2023-12-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `price_postcode`
+--
+
+CREATE TABLE `price_postcode` (
+  `pp_id` int(55) NOT NULL,
+  `pickup` varchar(55) NOT NULL,
+  `dropoff` varchar(55) NOT NULL,
+  `1_4p` int(10) NOT NULL,
+  `1_4e` int(10) NOT NULL,
+  `5_6p` int(10) NOT NULL,
+  `7p` int(10) NOT NULL,
+  `8p` int(10) NOT NULL,
+  `9p` int(10) NOT NULL,
+  `10_14p` int(10) NOT NULL,
+  `15_16p` int(10) NOT NULL,
+  `date_add_pp` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `price_postcode`
+--
+
+INSERT INTO `price_postcode` (`pp_id`, `pickup`, `dropoff`, `1_4p`, `1_4e`, `5_6p`, `7p`, `8p`, `9p`, `10_14p`, `15_16p`, `date_add_pp`) VALUES
+(1, 'E1 7HT', 'E14 5NP', 15, 3, 5, 6, 8, 9, 11, 12, '2023-12-09');
 
 -- --------------------------------------------------------
 
@@ -660,16 +738,34 @@ ALTER TABLE `language`
   ADD PRIMARY KEY (`lang_id`);
 
 --
+-- Indexes for table `mg_charges`
+--
+ALTER TABLE `mg_charges`
+  ADD PRIMARY KEY (`mg_id`);
+
+--
 -- Indexes for table `payment_history`
 --
 ALTER TABLE `payment_history`
   ADD PRIMARY KEY (`pay_id`);
 
 --
+-- Indexes for table `price_by_location`
+--
+ALTER TABLE `price_by_location`
+  ADD PRIMARY KEY (`pbl_id`);
+
+--
 -- Indexes for table `price_mile`
 --
 ALTER TABLE `price_mile`
   ADD PRIMARY KEY (`pm_id`);
+
+--
+-- Indexes for table `price_postcode`
+--
+ALTER TABLE `price_postcode`
+  ADD PRIMARY KEY (`pp_id`);
 
 --
 -- Indexes for table `reviews`
@@ -778,16 +874,34 @@ ALTER TABLE `language`
   MODIFY `lang_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
+-- AUTO_INCREMENT for table `mg_charges`
+--
+ALTER TABLE `mg_charges`
+  MODIFY `mg_id` int(55) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `payment_history`
 --
 ALTER TABLE `payment_history`
   MODIFY `pay_id` int(55) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `price_by_location`
+--
+ALTER TABLE `price_by_location`
+  MODIFY `pbl_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `price_mile`
 --
 ALTER TABLE `price_mile`
-  MODIFY `pm_id` int(55) NOT NULL AUTO_INCREMENT;
+  MODIFY `pm_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `price_postcode`
+--
+ALTER TABLE `price_postcode`
+  MODIFY `pp_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reviews`

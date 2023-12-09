@@ -102,7 +102,7 @@ include('header.php');
 												</thead>                    
 												<tbody> 
 													<?php																		
-													$drsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");
+													$drsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='pob'");
 													while($drrow = mysqli_fetch_array($drsql)){														
 													?>													
 													<tr>                         							
@@ -142,13 +142,15 @@ include('header.php');
 													</tr>                     					
 												</thead>                    					
 												<tbody> 												
-													<?php						
+													<?php			
+													$n=0;
 													$drvsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");							
-													while($drvrow = mysqli_fetch_array($drvsql)){	
+													while($drvrow = mysqli_fetch_array($drvsql)){
+														$n++;
 													?>													
 													<tr>                         						
 														<td>								
-															<?php echo $drvrow['d_id']; ?>							
+															<?php echo $n ?>							
 														</td>                          							
 														<td>								
 															<span class="text-secondary">									

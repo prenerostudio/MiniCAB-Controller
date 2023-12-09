@@ -81,73 +81,38 @@ include('header.php');
 											<h2 class="mb-4">Mileage rate</h2>  
 											<hr>
 											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>
-											<hr>																			
-  
-											<form method="post" action="mp_process.php" enctype="multipart/form-data">
-  
-												<table class="table table-responsive" id="myTable">
-  
-													<thead>
-        
-														<tr>
-          
-															<th><p>From</p></th>
-          
-															<th><p>To</p></th>
-          
-															<th><p align="center"><span>1-4</span><br>Passenger</p></th>
-          
-															<th><p align="center"><span>1-4</span><br>Estate</p></th>
-          
-															<th><p align="center"><span>5-6</span><br>Passenger</p></th>
-          
-															<th><p align="center"><span>7</span><br>Passenger</p></th>
-          
-															<th><p align="center"><span>8</span><br>Passenger</p></th>
-          
-															<th><p align="center"><span>9</span><br>Passenger</p></th>
-          
-															<th><p align="center"><span>10-14</span><br>Passenger</p></th>
-          
-															<th><p align="center"><span>15-16</span><br>Passenger</p></th>
-        
-														</tr>
-      
-													</thead>
-
-      
-													<tbody>
-        
-														<tr>
-          
-															<td><input type="text" class="form-control" name="from"></td>
-          
-															<td><input type="text" class="form-control" name="to"></td>
-          
-															<td><input type="text" class="form-control" name="1-4p" oninput="updateValues()"></td>
-          
-															<td><input type="text" class="form-control" name="1-4e" readonly></td>
-          
-															<td><input type="text" class="form-control" name="5-6p" readonly></td>
-          
-															<td><input type="text" class="form-control" name="7p" readonly></td>
-          
-															<td><input type="text" class="form-control" name="8p" readonly></td>
-          
-															<td><input type="text" class="form-control" name="9p" readonly></td>
-          
-															<td><input type="text" class="form-control" name="10_14p" readonly></td>
-          
-															<td><input type="text" class="form-control" name="15_16p" readonly></td>
-        
-														</tr>
-      
-													</tbody>
-
-													
-      
-													<tfoot>
-        
+											<hr>																			  											
+											<form method="post" action="mp_process.php" enctype="multipart/form-data">  											
+												<table class="table table-responsive" id="myTable">  
+													<thead>        
+														<tr>          
+															<th><p>From</p></th>          
+															<th><p>To</p></th>          
+															<th><p align="center"><span>1-4</span><br>Passenger</p></th>          
+															<th><p align="center"><span>1-4</span><br>Estate</p></th>          
+															<th><p align="center"><span>5-6</span><br>Passenger</p></th>          
+															<th><p align="center"><span>7</span><br>Passenger</p></th>          
+															<th><p align="center"><span>8</span><br>Passenger</p></th>          
+															<th><p align="center"><span>9</span><br>Passenger</p></th>          
+															<th><p align="center"><span>10-14</span><br>Passenger</p></th>          
+															<th><p align="center"><span>15-16</span><br>Passenger</p></th>        
+														</tr>      
+													</thead>      
+													<tbody>        
+														<tr>          
+															<td><input type="text" class="form-control" name="from" required></td>          
+															<td><input type="text" class="form-control" name="to" required></td>          
+															<td><input type="text" class="form-control" name="1-4p" oninput="updateValues()" required></td>          
+															<td><input type="text" class="form-control" name="1-4e" readonly></td>          
+															<td><input type="text" class="form-control" name="5-6p" readonly></td>          
+															<td><input type="text" class="form-control" name="7p" readonly></td>          
+															<td><input type="text" class="form-control" name="8p" readonly></td>          
+															<td><input type="text" class="form-control" name="9p" readonly></td>          
+															<td><input type="text" class="form-control" name="10_14p" readonly></td>          
+															<td><input type="text" class="form-control" name="15_16p" readonly></td>        
+														</tr>      
+													</tbody>													      
+													<tfoot>        
 														<tr>
 															<td></td>
 															<td></td>
@@ -156,615 +121,382 @@ include('header.php');
 															<td></td>
 															<td></td>
 															<td></td>
-															<td></td>
-															
-															<td></td>
-          
-															<td>
-            
-																<button type="submit" class="btn btn-danger">Save Records</button>
-          
-															</td>
-        
-														</tr>
-      
-													</tfoot>
-    
-												</table>
-  
-											</form>
-											
-											
+															<td></td>															
+															<td></td>          
+															<td>            
+																<button type="submit" class="btn btn-danger">Save Records</button>          
+															</td>        
+														</tr>      
+													</tfoot>    
+												</table>  
+											</form>																						
 											<table class="table table-responsive">
-												<thead>
-        
-														<tr>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p>From</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p>To</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Passenger</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Estate</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>5-6</span><br>Passenger</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>7</span><br>Passenger</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>8</span><br>Passenger</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>9</span><br>Passenger</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>10-14</span><br>Passenger</p></th>
-          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>15-16</span><br>Passenger</p></th>
-        
-														</tr>
-      
-													</thead>
-											  <tbody>
-												<?php
-												  $pmsql=mysqli_query($connect,"SELECT * FROM `price_mile` ");
-					while($pmrow = mysqli_fetch_array($pmsql)){	
-												  ?>
-												<tr align="center">
-												  <td><?php echo $pmrow['start_from'];?></td>
-												  <td><?php echo $pmrow['end_to'];?></td>
-												  <td><?php echo $pmrow['1_4p'];?></td>
-												  <td><?php echo $pmrow['1_4e'];?></td>
-												  <td><?php echo $pmrow['5_6p'];?></td>
-												  <td><?php echo $pmrow['7p'];?></td>
-												  <td><?php echo $pmrow['8p'];?></td>
-												  <td><?php echo $pmrow['9p'];?></td>
-												  <td><?php echo $pmrow['10_14p'];?></td>
-												  <td><?php echo $pmrow['15_16p'];?></td>
-												</tr>
-												  <?php
-					}
-						?>
-												  
-											  </tbody>
-											</table>
-
-
-  
-										
-											
-											
-			
-										</div>  
-										<div class="card-body">            									
-											<h2 class="mb-4">Mileage rate</h2>  
-											<hr>
-											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>
-											<hr>	
-											
-											<p>The minimum price you charge for each vehicle size, regardless of how short the trip is. Please contact admin@minicaboffice.com if you want to change your minimum fares. </p>
-											
-											
-											
-											<h3>Uplift pricing</h3>
-											<hr>
-											<p>The pricing for your larger sized vehicles is based on your 4-seater saloon car pricing and will be applied to the your mileage, Location Price and Postcode Area Price rates. <br> Below you can choose if this uplift is based on either:</p>
-											<ol>
-												<li>A (£) flat fee more than your saloon car pricing</li>
-												<li>A (%) uplift over your saloon prices</li>
-											
-											
-											
-											</ol> 
-											<div class="uplift__pricing">
-                                                    <div class="d-flex border-bottom mt-3">
-                                                        <div class="text-center grow-1">
-                                                            <h2>1-4</h2>
-                                                            <p>ESTATE</p>
-                                                        </div>
-
-                                                        <div class="text-center grow-1">
-                                                            <h2>5-6</h2>
-                                                            <p>PASSENGERS</p>
-                                                        </div>
-
-                                                        <div class="text-center grow-1">
-                                                            <h2>7</h2>
-                                                            <p>PASSENGERS</p>
-                                                        </div>
-
-                                                        <div class="text-center grow-1">
-                                                            <h2>8</h2>
-                                                            <p>PASSENGERS</p>
-                                                        </div>
-
-                                                        <div class="text-center grow-1">
-                                                            <h2>9</h2>
-                                                            <p>PASSENGERS</p>
-                                                        </div>
-
-                                                        <div class="text-center grow-1">
-                                                            <h2>10-14</h2>
-                                                            <p>PASSENGERS</p>
-                                                        </div>
-
-                                                        <div class="text-center grow-1">
-                                                            <h2>15-16</h2>
-                                                            <p>PASSENGERS</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex mt-3">
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][estate_luggage_multiplayer_type]" value="1" checked="" data-gtm-form-interact-field-id="1">
-
-                                                            <input type="text" name="per_mile_prices[1][1][estate_luggage_multiplayer]" class="form-control mx-2 price" data-capacity="4" data-type="%" value="10">
-
-                                                            <p class="fs-14-600">%</p>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_6]" value="1" checked="">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_6]" class="form-control mx-2 price" data-capacity="6" data-type="%" value="25">
-
-                                                            <p class="fs-14-600">%</p>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_7]" value="1" checked="">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_7]" class="form-control mx-2 price" data-capacity="7" data-type="%" value="40">
-
-                                                            <p class="fs-14-600">%</p>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_8]" value="1" checked="">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_8]" class="form-control mx-2 price" data-capacity="8" data-type="%" value="50">
-
-                                                            <p class="fs-14-600">%</p>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_9]" value="1" checked="">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_9]" class="form-control mx-2 price" data-capacity="9" data-type="%" value="75">
-
-                                                            <p class="fs-14-600">%</p>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_14]" value="1" checked="">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_14]" class="form-control mx-2 price" data-capacity="14" data-type="%" value="100">
-
-                                                            <p class="fs-14-600">%</p>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_16]" value="1" checked="">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_16]" class="form-control mx-2 price" data-capacity="16" data-type="%" value="150">
-
-                                                            <p class="fs-14-600">%</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex ">
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][estate_luggage_multiplayer_type]" value="2" data-gtm-form-interact-field-id="0">
-
-                                                            <input type="text" name="per_mile_prices[1][1][estate_luggage_multiplayer]" class="form-control mx-2 price" data-capacity="4" data-type="+" value="10" disabled="disabled">
-
-                                                            <h3 class="fs-14-600">£</h3>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_6]" value="2">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_6]" class="form-control mx-2 price" data-capacity="6" data-type="+" disabled="disabled" value="25">
-
-                                                            <h3 class="fs-14-600">£</h3>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_7]" value="2">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_7]" class="form-control mx-2 price" data-capacity="7" data-type="+" disabled="disabled" value="40">
-
-                                                            <h3 class="fs-14-600">£</h3>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_8]" value="2">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_8]" class="form-control mx-2 price" data-capacity="8" data-type="+" disabled="disabled" value="50">
-
-                                                            <h3 class="fs-14-600">£</h3>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_9]" value="2">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_9]" class="form-control mx-2 price" data-capacity="9" data-type="+" disabled="disabled" value="75">
-
-                                                            <h3 class="fs-14-600">£</h3>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_14]" value="2">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_14]" class="form-control mx-2 price" data-capacity="14" data-type="+" disabled="disabled" value="100">
-
-                                                            <h3 class="fs-14-600">£</h3>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 multiplayers">
-                                                            <input type="radio" name="per_mile_prices[1][1][multiplayer_type_16]" value="2">
-
-                                                            <input type="text" name="per_mile_prices[1][1][multiplayer_16]" class="form-control mx-2 price" data-capacity="16" data-type="+" disabled="disabled" value="150">
-
-                                                            <h3 class="fs-14-600">£</h3>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex ">
-                                                        <div class="form-group d-flex grow-1 mr-3 justify-content-center align-items-start">
-                                                            <div class="invalid-feedback d-block" id="err_uplift_4e_1_1"></div>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center">
-                                                            <div class="invalid-feedback d-block" id="err_uplift_6_1_1"></div>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center">
-                                                            <div class="invalid-feedback d-block" id="err_uplift_7_1_1"></div>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center">
-                                                            <div class="invalid-feedback d-block" id="err_uplift_8_1_1"></div>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center">
-                                                            <div class="invalid-feedback d-block" id="err_uplift_9_1_1"></div>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1 mr-3 justify-content-center">
-                                                            <div class="invalid-feedback d-block" id="err_uplift_14_1_1"></div>
-                                                        </div>
-
-                                                        <div class="form-group d-flex align-items-center grow-1">
-                                                            <div class="invalid-feedback d-block" id="err_uplift_16_1_1"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>											
-											<p>The minimum price you charge for each vehicle size, regardless of how short the trip is. Please contact admin@minicaboffice.com if you want to change your minimum fares. </p>
-											
-					
-  
-											
-
-  
-										
-											
-											
-			
-										</div> 
-										
-										
-										
-										
-									</div>            	
-								</div>         
-							</div>																													
-					      																		
+												<thead>        
+														<tr>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p>From</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p>To</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Passenger</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Estate</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>5-6</span><br>Passenger</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>7</span><br>Passenger</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>8</span><br>Passenger</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>9</span><br>Passenger</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>10-14</span><br>Passenger</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>15-16</span><br>Passenger</p></th>        
+														</tr>      
+													</thead>											  
+												<tbody>												
+													<?php												  
+													$pmsql=mysqli_query($connect,"SELECT * FROM `price_mile` ");					
+													while($pmrow = mysqli_fetch_array($pmsql)){													  
+													?>												
+													<tr align="center">												  
+														<td><?php echo $pmrow['start_from'];?></td>												  
+														<td><?php echo $pmrow['end_to'];?></td>												  
+														<td><?php echo $pmrow['1_4p'];?></td>												  
+														<td><?php echo $pmrow['1_4e'];?></td>												  
+														<td><?php echo $pmrow['5_6p'];?></td>												  
+														<td><?php echo $pmrow['7p'];?></td>												  
+														<td><?php echo $pmrow['8p'];?></td>												  
+														<td><?php echo $pmrow['9p'];?></td>												  
+														<td><?php echo $pmrow['10_14p'];?></td>												  
+														<td><?php echo $pmrow['15_16p'];?></td>												
+													</tr>												  
+													<?php					
+													}						
+													?>												  											  
+												</tbody>											
+											</table>											
+										</div>
+									</div>            									
+								</div>         							
+						</div>
 					</div> 
 						
-											
-											
-						
-					
-					
-					<div class="tab-pane" id="tabs-loc">
-                    
-					
-						<div class="card-body">            												
-					
-							<h2 class="mb-4">Driver Profile</h2>      																
-					
-							<div class="row">														
-						
-								<div style="width: 50%; float: left;">																	
-							
-									<h3 class="card-title">														
-								
-										Driver Licence Photo Card (Front)													
-							
-									</h3>                									
-							
-									<div class="row align-items-center">                																		
+					<!--Price by Locations-->
 										
-								<div class="col-auto">																							
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_front'];?>); background-size:cover; width: 220px; height: 160px;"></span>														
-								</div>                    																										
-								<div class="col-auto">		
-									<form action="upload-front.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dl_front" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>
-								</div>
-							</div>				
-						</div>														
-						<div style="width: 50%; float: left;">										
-							<h3 class="card-title">						
-								Driver Licence Photo Card (Back)					
-							</h3>                																					
-							<div class="row align-items-center">                														
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_back'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
-							
-								</div>                    											
-							
-								<div class="col-auto">									
-									<form action="upload-back.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dl_back" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																										
-								</div>													
-							</div>  																
-						</div>					
-					</div>
-																			
-					<div class="row" style="padding-top: 25px;">														
-						<div style="width: 50%; float: left;">															
-							<h3 class="card-title">														
-								Proof of National Insurance											
-							</h3>                																				
-							<div class="row align-items-center">                													
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/National-Insurance/<?php echo $drow['national_insurance'];?>); background-size:cover; width: 220px; height: 160px;"></span>
-								</div>                    																									
-								<div class="col-auto">																												
-									<form action="upload-ni.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="ni" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																			
-								</div>								
-							</div>  										
-						</div>																												
-						<div style="width: 50%; float: left;">											
-							<h3 class="card-title">							
-								Proof of Basic Disclosure						
-							</h3>                															
-							<div class="row align-items-center">                							
-								<div class="col-auto">																						
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Basic-Disclosure/<?php echo $drow['basic_disclosure'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-bd.php" method="post" enctype="multipart/form-data">									
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-										<input type="file" name="bd" accept="image/*"  class="form-control">										
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																		
-								</div>							
-							</div>  										
-						</div>										
-					</div>
-																		
-					<div class="row" style="padding-top: 25px;">				
-						<div style="width: 50%; float: left;">										
-							<h3 class="card-title">							
-								Proof of Right To Work in the UK						
-							</h3>                																					
-							<div class="row align-items-center">                														
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Work-Proof/<?php echo $drow['work_proof'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																										
-								<div class="col-auto">																				
-									<form action="upload-wp.php" method="post" enctype="multipart/form-data">									
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-										<input type="file" name="wp" accept="image/*"  class="form-control">										
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																			
-								</div>											
-							</div>  										
-						</div>
-					
-					
-					
-						<div style="width: 50%; float: left;">					
-							<h3 class="card-title">
-								Passport						
-							</h3>                															
-							<div class="row align-items-center">                
-								<div class="col-auto">															
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Passport/<?php echo $drow['passport'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-passport.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="pass" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																		
-								</div>													              															
-							</div>  										
-						</div>					
-					</div>					
-																			
-					<div class="row" style="padding-top: 25px;">					
-						<div style="width: 50%; float: left;">											
-							<h3 class="card-title">							
-								DVLA Check Results						
-							</h3>                															
-							<div class="row align-items-center">                							
-								<div class="col-auto">																							
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-dvla.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dvla" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																				
-								</div>											
-							</div>  										
-						</div>															
-					</div>																
-				</div>   
+					<div class="tab-pane" id="tabs-loc">                    										
+						<div class="card-body">            																											
+							<h2 class="mb-4">Add a location price for a 4-seater</h2>						
+							<div class="row">							
+								<form method="post" action="pbl-process.php">								
+									<table class="table table-responsive">								
+										<tbody>									
+											<tr>									  
+												<td>
+													<strong> Vehicle Type </strong> 
+												</td>									  												
+												<td>
+													<strong> Start Postcode </strong>
+												</td>										 
+												<td>&nbsp;</td>									  
+												<td style="width: 8%;">
+													<strong>Radius</strong>
+												</td>										
+												<td>&nbsp;</td>									  
+												<td>
+													<strong>Finish Postcode</strong>
+												</td>										
+												<td>&nbsp;</td>									  
+												<td style="width: 8%;">
+													<strong>Radius</strong>
+												</td>										 
+												<td>&nbsp;</td>									 
+												<td>
+													<strong>Single Price</strong>
+												</td>																			
+											</tr>									
+											<tr>									  
+												<td>1-4 Passenger</td>									  
+												<td>
+													<input type="text" class="form-control" name="st_post" required>
+												</td>									  
+												<td>Within</td>									  
+												<td>
+													<input type="text" class="form-control" name="st_mile" required>
+												</td>									  
+												<td>Miles</td>									  
+												<td>
+													<input type="text" class="form-control" name="fn_code" required>
+												</td>										
+												<td>Within</td>									  
+												<td>
+													<input type="text" class="form-control" name="fn_mile" required>
+												</td>										
+												<td>Miles</td>									  
+												<td>
+													<input type="text" class="form-control" name="single_price" required>
+												</td>									
+											</tr>									
+											<tr>
+									  												
+												<td colspan="10" style="height: 250px;">
+													
+													<div id="post_map"> </div>
+												
+												</td>
+																																									
+											</tr>									
+											<tr>									
+												<td>&nbsp;</td>									
+												<td>&nbsp;</td>									
+												<td>&nbsp;</td>									
+												<td>&nbsp;</td>									
+												<td>&nbsp;</td>									 										
+												<td>&nbsp;</td>										
+												<td>&nbsp;</td>									 
+												<td>&nbsp;</td>										
+												<td>&nbsp;</td>									 
+												<td>
+													<button class="btn btn-info">
+														<i class="ti ti-plus"></i>   Add
+													</button>
+												</td>									
+											</tr>								
+										</tbody>								
+									</table>							
+								</form>												
+							</div>										
+						</div>   	
 						
+						      <script>
+        // Function to initialize the map
+        function initMap() {
+            // Create an initial map with default coordinates
+            var map = new google.maps.Map(document.getElementById('post_map'), {
+                center: { lat: 0, lng: 0 },
+                zoom: 10
+            });
+
+            // Function to update the map based on input values
+            function updateMap() {
+                var stPostcode = $('input[name="st_post"]').val();
+                var fnCode = $('input[name="fn_code"]').val();
+
+                // Geocode the postcodes to get coordinates
+                geocodeAddress(stPostcode, function(stCoordinates) {
+                    geocodeAddress(fnCode, function(fnCoordinates) {
+                        // Update the map center and redraw circles
+                        map.setCenter(stCoordinates);
+                        drawCircle(map, stCoordinates);
+                        drawCircle(map, fnCoordinates);
+                    });
+                });
+            }
+
+            // Function to geocode a postcode to get coordinates
+            function geocodeAddress(postcode, callback) {
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address': postcode }, function (results, status) {
+                    if (status === 'OK') {
+                        var location = results[0].geometry.location;
+                        var coordinates = { lat: location.lat(), lng: location.lng() };
+                        callback(coordinates);
+                    } else {
+                        console.error('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
+
+            // Function to draw a circle on the map
+            function drawCircle(map, coordinates) {
+                var circle = new google.maps.Circle({
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: '#FF0000',
+                    fillOpacity: 0.35,
+                    map: map,
+                    center: coordinates,
+                    radius: 10000
+                });
+            }
+
+            // Call updateMap when input values change
+            $('input[name="st_post"], input[name="fn_code"]').on('input', updateMap);
+        }
+
+        // Call the initMap function when the page is loaded
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
 						
-						
-                      
+						<div class="card-body">            																								
+							<h2 class="mb-4">Locations</h2>					
+							<div class="row">															
+								<table class="table table-responsive">								
+									<tbody>								
+										<tr>										
+											<td>
+												<strong>ID</strong>
+											</td>									 
+											<td>
+												<strong>Vehicle Type</strong> 
+											</td>									  
+											<td>
+												<strong>Start Postcode</strong>
+											</td>																			 									  
+											<td>
+												<strong>Finish Postcode</strong>
+											</td>																			 
+											<td>
+												<strong>Single Price</strong>
+											</td>									
+										</tr>									
+										<?php										
+										$n=0;										
+										$pblsql=mysqli_query($connect,"SELECT * FROM `price_by_location`");																
+										while($pblrow = mysqli_fetch_array($pblsql)){										
+											$n++;										
+										?>										  									  									
+										<tr>									 
+											<td><?php echo $n ?></td>									 									 
+											<td><?php echo $pblrow['vehicle_type']; ?></td>									 									  
+											<td><?php echo $pblrow['st_post']; ?></td>									  										
+											<td><?php echo $pblrow['fn_post']; ?></td>																			
+											<td><?php echo $pblrow['single_price']; ?></td>									  									
+										</tr>									
+										<?php										
+										}											
+										?>									  									  																	  
+									</tbody>								
+								</table>							
+							</div>										
+						</div> 																	
 					</div>   
 					
-					<div class="tab-pane" id="tabs-post">
-                    
-						<div class="card-body">            												
-					<h2 class="mb-4">Driver Profile</h2>      																
-					<div class="row">														
-						<div style="width: 50%; float: left;">																	
-							<h3 class="card-title">														
-								Driver Licence Photo Card (Front)													
-							</h3>                									
-							<div class="row align-items-center">                																				
-								<div class="col-auto">																							
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_front'];?>); background-size:cover; width: 220px; height: 160px;"></span>														
-								</div>                    																										
-								<div class="col-auto">		
-									<form action="upload-front.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dl_front" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>
-								</div>
-							</div>				
-						</div>														
-						<div style="width: 50%; float: left;">										
-							<h3 class="card-title">						
-								Driver Licence Photo Card (Back)					
-							</h3>                																					
-							<div class="row align-items-center">                														
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_back'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
-							
-								</div>                    											
-							
-								<div class="col-auto">									
-									<form action="upload-back.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dl_back" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																										
-								</div>													
-							</div>  																
-						</div>					
+					<!--Price by Postcodes-->					
+					<div class="tab-pane" id="tabs-post">                    																		
+						<script>       
+							function updateprice() {           
+								// Get the input values          
+								var input1_4pass = parseFloat(document.getElementsByName("1-4pass")[0].value);            
+								// Define percentages            
+								var percentage_1_4es = 0.2;  // 20%            
+								var percentage_5_6pass = 0.3;  // 30%            
+								var percentage_7pass = 0.4;    // 10%			
+								var percentage_8pass = 0.5;    // 10%			
+								var percentage_9pass = 0.6;    // 10%			
+								var percentage_10_14pass = 0.7;			
+								var percentage_15_16pass = 0.8;// 10%            
+								// Add more percentages as needed            
+								// Perform calculations            
+								var result_1_4es = input1_4pass * percentage_1_4es;            
+								var result_5_6pass = input1_4pass * percentage_5_6pass;            
+								var result_7pass = input1_4pass * percentage_7pass;			 
+								var result_8pass = input1_4pass * percentage_8pass;			 
+								var result_9pass = input1_4pass * percentage_9pass;			 
+								var result_10_14pass = input1_4pass * percentage_10_14pass;			 
+								var result_15_16pass = input1_4pass * percentage_15_16pass;            
+								// Add more calculations as needed								
+            
+								// Update readonly input fields            
+								document.getElementsByName("1-4es")[0].value = result_1_4es.toFixed(2);            
+								document.getElementsByName("5-6pass")[0].value = result_5_6pass.toFixed(2);            
+								document.getElementsByName("7pass")[0].value = result_7pass.toFixed(2);			 
+								document.getElementsByName("8pass")[0].value = result_8pass.toFixed(2);			 
+								document.getElementsByName("9pass")[0].value = result_9pass.toFixed(2);			 
+								document.getElementsByName("10_14pass")[0].value = result_10_14pass.toFixed(2);			 
+								document.getElementsByName("15_16pass")[0].value = result_15_16pass.toFixed(2);
+            
+								// Update more readonly input fields as needed        
+							}    
+						</script>
+						<div class="card-body">            															
+							<h2 class="mb-4">Postcode Area Prices (PAPs)</h2>  							
+							<hr>																					
+							<form method="post" action="pp_process.php" enctype="multipart/form-data">  																		
+								<table class="table">  																										
+									<tbody>  									
+										<tr>          										
+											<td><p>Pickup (Postcode)</p></td>          											
+											<td><p>Dropoff (Postcode)</p></td>          											
+											<td><p align="center"><span>1-4</span><br>Passenger</p></td>          											
+											<td><p align="center"><span>1-4</span><br>Estate</p></td>          											
+											<td><p align="center"><span>5-6</span><br>Passenger</p></td>          											
+											<td><p align="center"><span>7</span><br>Passenger</p></td>          											
+											<td><p align="center"><span>8</span><br>Passenger</p></td>          											
+											<td><p align="center"><span>9</span><br>Passenger</p></td>          											
+											<td><p align="center"><span>10-14</span><br>Passenger</p></td>          											
+											<td><p align="center"><span>15-16</span><br>Passenger</p></td>        											
+										</tr> 										
+										<tr>          										
+											<td><input type="text" class="form-control" name="pickup"></td>          											
+											<td><input type="text" class="form-control" name="dropoff"></td>          											
+											<td><input type="text" class="form-control" name="1-4pass" oninput="updateprice()"></td>          											
+											<td><input type="text" class="form-control" name="1-4es" readonly></td>          											
+											<td><input type="text" class="form-control" name="5-6pass" readonly></td>          											
+											<td><input type="text" class="form-control" name="7pass" readonly></td>          											
+											<td><input type="text" class="form-control" name="8pass" readonly></td>          											
+											<td><input type="text" class="form-control" name="9pass" readonly></td>          											
+											<td><input type="text" class="form-control" name="10_14pass" readonly></td>          											
+											<td><input type="text" class="form-control" name="15_16pass" readonly></td>        											
+										</tr>      										
+									</tbody>													      									
+									<tfoot>        									
+										<tr>										
+											<td></td>											
+											<td></td>											
+											<td></td>											
+											<td></td>											
+											<td></td>											
+											<td></td>											
+											<td></td>											
+											<td></td>																										
+											<td></td>          											
+											<td>            											
+												<button type="submit" class="btn btn-danger">Save Records</button>          												
+											</td>        											
+										</tr>      										
+									</tfoot>    									
+								</table>  								
+							</form>																													
+							<table class="table table-responsive">							
+								<thead>        								
+									<tr>          									
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p>Pickup</p></th>          										
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p>Dropoff</p></th>          										
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Passenger</p></th>
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Estate</p></th>
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>5-6</span><br>Passenger</p></th>										
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>7</span><br>Passenger</p></th>										
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>8</span><br>Passenger</p></th>										
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>9</span><br>Passenger</p></th>          								
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>10-14</span><br>Passenger</p></th>										
+										<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>15-16</span><br>Passenger</p></th>										
+									</tr>      									
+								</thead>											  								
+								<tbody>																				
+									<?php												  									
+									$pmsql=mysqli_query($connect,"SELECT * FROM `price_postcode`");														
+									while($pmrow = mysqli_fetch_array($pmsql)){
+									?>																					
+									<tr align="center">												  									
+										<td><?php echo $pmrow['pickup'];?></td>												  										
+										<td><?php echo $pmrow['dropoff'];?></td>												  										
+										<td><?php echo $pmrow['1_4p'];?></td>												  										
+										<td><?php echo $pmrow['1_4e'];?></td>												  										
+										<td><?php echo $pmrow['5_6p'];?></td>												  										
+										<td><?php echo $pmrow['7p'];?></td>												  										
+										<td><?php echo $pmrow['8p'];?></td>												  										
+										<td><?php echo $pmrow['9p'];?></td>												  										
+										<td><?php echo $pmrow['10_14p'];?></td>												  										
+										<td><?php echo $pmrow['15_16p'];?></td>																						
+									</tr>												  									
+									<?php														
+									}															
+									?>												  											  									
+								</tbody>																			
+							</table>																		
+						</div>				
 					</div>
-																			
-					<div class="row" style="padding-top: 25px;">														
-						<div style="width: 50%; float: left;">															
-							<h3 class="card-title">														
-								Proof of National Insurance											
-							</h3>                																				
-							<div class="row align-items-center">                													
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/National-Insurance/<?php echo $drow['national_insurance'];?>); background-size:cover; width: 220px; height: 160px;"></span>
-								</div>                    																									
-								<div class="col-auto">																												
-									<form action="upload-ni.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="ni" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																			
-								</div>								
-							</div>  										
-						</div>																												
-						<div style="width: 50%; float: left;">											
-							<h3 class="card-title">							
-								Proof of Basic Disclosure						
-							</h3>                															
-							<div class="row align-items-center">                							
-								<div class="col-auto">																						
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Basic-Disclosure/<?php echo $drow['basic_disclosure'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-bd.php" method="post" enctype="multipart/form-data">									
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-										<input type="file" name="bd" accept="image/*"  class="form-control">										
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																		
-								</div>							
-							</div>  										
-						</div>										
-					</div>
-																		
-					<div class="row" style="padding-top: 25px;">				
-						<div style="width: 50%; float: left;">										
-							<h3 class="card-title">							
-								Proof of Right To Work in the UK						
-							</h3>                																					
-							<div class="row align-items-center">                														
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Work-Proof/<?php echo $drow['work_proof'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																										
-								<div class="col-auto">																				
-									<form action="upload-wp.php" method="post" enctype="multipart/form-data">									
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-										<input type="file" name="wp" accept="image/*"  class="form-control">										
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																			
-								</div>											
-							</div>  										
-						</div>
 					
 					
 					
-						<div style="width: 50%; float: left;">					
-							<h3 class="card-title">
-								Passport						
-							</h3>                															
-							<div class="row align-items-center">                
-								<div class="col-auto">															
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Passport/<?php echo $drow['passport'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-passport.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="pass" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																		
-								</div>													              															
-							</div>  										
-						</div>					
-					</div>					
-																			
-					<div class="row" style="padding-top: 25px;">					
-						<div style="width: 50%; float: left;">											
-							<h3 class="card-title">							
-								DVLA Check Results						
-							</h3>                															
-							<div class="row align-items-center">                							
-								<div class="col-auto">																							
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-dvla.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dvla" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																				
-								</div>											
-							</div>  										
-						</div>															
-					</div>																
-				</div>   
-						
-						
-						
-                      
-					</div>
+					
+					
+					
+					
+					
 					
 					<div class="tab-pane" id="tabs-meet">
                     
