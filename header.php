@@ -56,7 +56,8 @@ if (!isset($_SESSION['email'])) {
 		
 		
 		
-		 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB-AZa456v6psuXAws1WA822K2ckaL1O4&libraries=places"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB-AZa456v6psuXAws1WA822K2ckaL1O4&libraries=places&callback=initMap" async defer></script>
+
 		
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -66,7 +67,12 @@ if (!isset($_SESSION['email'])) {
 			}	
 			#mapd {    
 				height: 500px; 
-			}	
+			}
+			
+			#map_b {    
+				height: 200px; 
+			}
+			
 			
 			#post_map {
     width: 100%;
@@ -155,9 +161,15 @@ if (!isset($_SESSION['email'])) {
 							<li class="nav-item">                        
 								<a class="nav-link" href="clients.php">                            
 									<img src="img/icons/client.png" alt="" class="nav_icon">							
-									<br><strong>Clients</strong>                        
+									<br><strong>Customers</strong>                        
 								</a>                    
-							</li>					
+							</li>	
+							<li class="nav-item">                        
+								<a class="nav-link" href="bookers.php">                            
+									<img src="img/icons/client.png" alt="" class="nav_icon">							
+									<br><strong>Bookers</strong>                        
+								</a>                    
+							</li>
 							<li class="nav-item">                        
 								<a class="nav-link" href="drivers.php">                            
 									<img src="img/icons/drivers.png" alt="" class="nav_icon">							

@@ -47,32 +47,34 @@ include('header.php');
 				<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">                    				
 					<li class="nav-item" style="background: #3046CC;">                      					
 						<a href="#tabs-mile" class="nav-link active" data-bs-toggle="tab">							                          					
-							<i class="ti ti-brand-speedtest" style="width: 32px; height: 32px;"></i>                         							
+							<i class="ti ti-brand-speedtest" style="font-size: 28px;"></i>                         							
 							Price Per Mile				
 						</a>                     
 					</li>                      					
 					<li class="nav-item">                       					
-						<a href="#tabs-loc" class="nav-link" data-bs-toggle="tab">							                         						
-							<i class="ti ti-license" style="width: 32px; height: 32px;"></i>
+						<a href="#tabs-loc" class="nav-link" data-bs-toggle="tab">	
+							<i class="ti ti-map-pin" style="font-size: 28px;"></i>
+							
 							Location Prices					
 						</a>                     					
 					</li>  
 					<li class="nav-item">                       					
 						<a href="#tabs-post" class="nav-link" data-bs-toggle="tab">							                         						
-							<i class="ti ti-license" style="width: 32px; height: 32px;"></i>
+							<i class="ti ti-map-search" style="font-size: 28px;"></i>
 							Postcode Area Prices					
 						</a>                     					
 					</li>  					
 					<li class="nav-item">                       					
 						<a href="#tabs-meet" class="nav-link" data-bs-toggle="tab">							                         						
-							<i class="ti ti-license" style="width: 32px; height: 32px;"></i>
+							<i class="ti ti-route-alt-left" style="font-size: 28px;"></i>
 							Meet & Greet Charges					
 						</a>                     					
 					</li>  
 				</ul>                			
 			</div>                 			
 			<div class="card-body">                  			
-				<div class="tab-content">                   				
+				<div class="tab-content"> 					
+					<!--Price by Miles-->
 					<div class="tab-pane active show" id="tabs-mile">						           	
 							<div class="card">				
 								<div class="row g-0">                    							
@@ -80,9 +82,11 @@ include('header.php');
 										<div class="card-body">            									
 											<h2 class="mb-4">Mileage rate</h2>  
 											<hr>
-											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>
-											<hr>																			  											
-											<form method="post" action="mp_process.php" enctype="multipart/form-data">  											
+											<h3>Mile range: £ per mile rate incl. 12% MiniCAB commission (and VAT)</h3>							
+											<p align="justify">Enter your mileage rates for each Petrol, Diesel & Hybrid vehicle type<br><br>
+												Note that Per Mile Price mileage rates apply to the total distance from your office to the pickup point to the drop-off point unless you have set a Free Pickup Postcode Area. When you edit the mileage ranges and rates, the Price Per Mile Calculator will show you how your pricing relates to typical distances, factoring in any uplifts for larger vehicle sizes, so you can evaluate how competitive you are.
+											</p>
+											<form method="post" action="mp_process.php" enctype="multipart/form-data">
 												<table class="table table-responsive" id="myTable">  
 													<thead>        
 														<tr>          
@@ -171,13 +175,15 @@ include('header.php');
 									</div>            									
 								</div>         							
 						</div>
-					</div> 
-						
-					<!--Price by Locations-->
-										
+					</div> 						
+					<!--Price by Locations-->										
 					<div class="tab-pane" id="tabs-loc">                    										
-						<div class="card-body">            																											
-							<h2 class="mb-4">Add a location price for a 4-seater</h2>						
+						<div class="card-body">				
+							<h2 class="mb-4">Add a location price for a 4-seater</h2>
+							<p align="justify">Enter your Location Prices for each Petrol, Diesel & Hybrid vehicle type<br><br>
+								Location Prices lets you define fixed prices between any 2 zones within the UK, regardless of your base location or mileage rates. So if you want to offer a competitive, fixed rate to customers between other cities & towns and your area, just enter 2 full postcodes and how many miles - as the crow flies - around each one the price would apply. For instance, you could enter the full postcode for a rail station in both a nearby city and one in the centre of your own city/town.<br><br>
+								Note that any Location Prices covering a particular route will take priority over any existing Per Mile Price (PMP) and minimum fare for that same route. However, it will be overridden by any Postcode Area Price for that route.<br><br>Enter your price for a 4 passenger saloon vehicle below and we will automatically create prices for other vehicles sizes based upon your % or £ uplifts for each vehicle size
+							</p>
 							<div class="row">							
 								<form method="post" action="pbl-process.php">								
 									<table class="table table-responsive">								
@@ -362,8 +368,7 @@ include('header.php');
 								</table>							
 							</div>										
 						</div> 																	
-					</div>   
-					
+					</div>   					
 					<!--Price by Postcodes-->					
 					<div class="tab-pane" id="tabs-post">                    																		
 						<script>       
@@ -402,7 +407,16 @@ include('header.php');
 							}    
 						</script>
 						<div class="card-body">            															
-							<h2 class="mb-4">Postcode Area Prices (PAPs)</h2>  							
+							<h2 class="mb-4">Postcode Area Prices (PAPs)</h2>  
+							<p>Postcode Area Pricing lets you define fixed prices between any 2 or more postcode areas within the UK, regardless of your base location or mileage rates. So if you want to offer a competitive, fixed rate to minicabit customers to/from/between popular base postcode areas, just enter the first section of any single or group of postcodes.<br><br>
+							<ul>							
+								<li>From one postcode to another (eg. NW5 to SE11)</li>
+								<li>From one postcode to many postcodes (eg. NW5 to SE10, SE11)</li>
+								<li>From many postcodes to many postcodes (eg. NW5, NW6 to SE10, SE11)</li>							
+							</ul><br><br>
+							Enter your price for a 4 passenger saloon vehicle below and prices will automatically be created for other vehicle sizes based upon your % or £ uplifts.<br><br>
+							Note that any Postcode Area Prices covering a particular route will take priority over any existing Location Price, Per Mile Price (PMP) and minimum fare for that same route.
+							</p>
 							<hr>																					
 							<form method="post" action="pp_process.php" enctype="multipart/form-data">  																		
 								<table class="table">  																										
@@ -488,168 +502,112 @@ include('header.php');
 								</tbody>																			
 							</table>																		
 						</div>				
-					</div>
+					</div>										
+					<!--Meet & Greet Charges-->
 					
-					
-					
-					
-					
-					
-					
-					
-					
-					<div class="tab-pane" id="tabs-meet">
-                    
-						<div class="card-body">            												
-					<h2 class="mb-4">Driver Profile</h2>      																
-					<div class="row">														
-						<div style="width: 50%; float: left;">																	
-							<h3 class="card-title">														
-								Driver Licence Photo Card (Front)													
-							</h3>                									
-							<div class="row align-items-center">                																				
-								<div class="col-auto">																							
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_front'];?>); background-size:cover; width: 220px; height: 160px;"></span>														
-								</div>                    																										
-								<div class="col-auto">		
-									<form action="upload-front.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dl_front" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>
-								</div>
-							</div>				
-						</div>														
-						<div style="width: 50%; float: left;">										
-							<h3 class="card-title">						
-								Driver Licence Photo Card (Back)					
-							</h3>                																					
-							<div class="row align-items-center">                														
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_back'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
+					<div class="tab-pane" id="tabs-meet">                    						
+						<div class="card-body">            																	
+							<h2 class="mb-4">
+								Meet & Greet Charges
+							</h2>    														
+							<p align="justify">
+								When picking up a <strong>MiniCAB</strong> customer at the airport, we expect that the driver is available to meet & greet the customer as they arrive and direct them to the car. The price that you appear for on the site should therefore include any meet and greet charges you may have. Using the below tool you can add any fees you may have and these will automatically be added on top of any price you appear for on the minicaboffice.com website regardless of whether this has been calculated via by mileage, location or postcode area pricing.<br><br>
+								This flat fee will apply for your selected location as well as 0.2 miles around the location to ensure that the charge still applies for nearby locations also.<br><br>
+								If you charge a meet and greet charge for a location that you can’t find below, please request this via email to admin@minicaboffice.com.<br><br>
+								Please add reasonable pickup charges for these airports, as relevant. Any requests to add reasonable pickup charges for other venues can be sent to admin@minicaboffice.com, for the MiniCAB  team to consider.</p>					
+							<div class="row">												
+								<table class="table">						
+									<tbody>						
+										<tr>							
+											<td>Pickup Locations</td>							
+											<td>Pickup Charges</td>							  
+											<td></td>							
+										</tr>										
+										<form action="mg_process.php" method="post">																
+											<tr>							 										
+												<td style="width: 50%;">
+													<input type="text" name="pickup" class="form-control">
+												</td>							 											
+												<td>												
+													<div class="input-group mb-3">  												
+														<div class="input-group-prepend">    													
+															<span class="input-group-text">£</span>  												
+														</div>  												
+														<input type="text" name="price" class="form-control" aria-label="Amount (to the nearest pound)">
+																									
+													</div>											
+												</td>							  											
+												<td>												
+													<button type="submit" class="btn btn-success" style="width: 100%;">
+														<i class="ti ti-plus"></i>
+														Add
+													</button>											
+												</td>																	
+											</tr>																					
+										</form>						 									
+									</tbody>														
+								</table>							
+							</div>
 							
-								</div>                    											
-							
-								<div class="col-auto">									
-									<form action="upload-back.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dl_back" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																										
-								</div>													
-							</div>  																
-						</div>					
-					</div>
+							<div class="row">												
+								<table class="table table-responsive">						
+									<tbody>						
+										<tr>	
+											<td>ID</td>
+											<td>Pickup Locations</td>							
+											<td>Pickup Charges</td>							  
+											<td></td>							
+										</tr>																						
+										<?php																				
+										$n=0;																				
+										$mgsql=mysqli_query($connect,"SELECT * FROM `mg_charges`");													
+										while($mgrow = mysqli_fetch_array($mgsql)){										
+											$n++;										
+										?>																											
+										<tr>	
+											<td style="width: 4%;">											
+												<?php echo $n; ?>											
+											</td>
+											<td style="width: 50%;">											
+												<?php echo $mgrow['pickup_location'] ?>											
+											</td>											
+											<td>													
+												<?php echo $mgrow['pickup_charges'] ?>											
+											</td>												
+											<td>													
+												<a href="del-mg.php?id=<?php echo $mgrow['mg_id'];?>">														
+													<button class="btn btn-danger">Delete</button>													
+												</a>												
+											</td>											
+										</tr>																					
+										<?php										
+										}											
+										?>				
+									</tbody>														
+								</table>							
+							</div>
 																			
-					<div class="row" style="padding-top: 25px;">														
-						<div style="width: 50%; float: left;">															
-							<h3 class="card-title">														
-								Proof of National Insurance											
-							</h3>                																				
-							<div class="row align-items-center">                													
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/National-Insurance/<?php echo $drow['national_insurance'];?>); background-size:cover; width: 220px; height: 160px;"></span>
-								</div>                    																									
-								<div class="col-auto">																												
-									<form action="upload-ni.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="ni" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																			
-								</div>								
-							</div>  										
-						</div>																												
-						<div style="width: 50%; float: left;">											
-							<h3 class="card-title">							
-								Proof of Basic Disclosure						
-							</h3>                															
-							<div class="row align-items-center">                							
-								<div class="col-auto">																						
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Basic-Disclosure/<?php echo $drow['basic_disclosure'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-bd.php" method="post" enctype="multipart/form-data">									
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-										<input type="file" name="bd" accept="image/*"  class="form-control">										
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																		
-								</div>							
-							</div>  										
-						</div>										
-					</div>
-																		
-					<div class="row" style="padding-top: 25px;">				
-						<div style="width: 50%; float: left;">										
-							<h3 class="card-title">							
-								Proof of Right To Work in the UK						
-							</h3>                																					
-							<div class="row align-items-center">                														
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Work-Proof/<?php echo $drow['work_proof'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																										
-								<div class="col-auto">																				
-									<form action="upload-wp.php" method="post" enctype="multipart/form-data">									
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-										<input type="file" name="wp" accept="image/*"  class="form-control">										
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																			
-								</div>											
-							</div>  										
-						</div>
-					
-					
-					
-						<div style="width: 50%; float: left;">					
-							<h3 class="card-title">
-								Passport						
-							</h3>                															
-							<div class="row align-items-center">                
-								<div class="col-auto">															
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Passport/<?php echo $drow['passport'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-passport.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="pass" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																		
-								</div>													              															
-							</div>  										
-						</div>					
-					</div>					
 																			
-					<div class="row" style="padding-top: 25px;">					
-						<div style="width: 50%; float: left;">											
-							<h3 class="card-title">							
-								DVLA Check Results						
-							</h3>                															
-							<div class="row align-items-center">                							
-								<div class="col-auto">																							
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
-								</div>                    																		
-								<div class="col-auto">																				
-									<form action="upload-dvla.php" method="post" enctype="multipart/form-data">
-										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-										<input type="file" name="dvla" accept="image/*"  class="form-control">
-										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-									</form>																				
-								</div>											
-							</div>  										
-						</div>															
-					</div>																
-				</div>   
+				
+						</div>   
 						
 						
 						
                       
+					
 					</div>
 					
 					
 					
-			</div>                
-		</div>             
-	</div>           
-</div>
+			
+				</div>                
+		
+			</div>             
+	
+		</div>           
+
+	</div>
+
 
 </div>
 

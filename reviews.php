@@ -4,7 +4,7 @@ include('header.php');
 <div class="card">					
 	<div class="card-header">						
 		<h2 class="page-title">              					
-			Destination List             						
+			Customer Reviews List             						
 		</h2>					
 										
 	</div>            			
@@ -14,7 +14,7 @@ include('header.php');
 				<thead>                   															
 					<tr align="center">                          																		
 						<th class="w-1">ID</th>                         																				
-						<th class="w-1">Customer Name</th>                          																				
+						<th class="w-1">Customer Name</th>		
 						<th>Booking </th>  
 						<th>Driver </th>
 						<th>Reviews</th>

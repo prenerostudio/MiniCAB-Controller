@@ -9,8 +9,8 @@ include('header.php');
 		<div class="col-auto ms-auto d-print-none">										
 			<div class="btn-list">                                 			
 				<a href="#" class="btn d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-zone">
-					<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>                   					
-					Add New Zone                  					
+					<i class="ti ti-map-plus" style="font-size: 16px; margin-right: 10px;"></i>                 					
+					Add New Zone                  					 
 				</a>                 				
 			</div>              			
 		</div>								
@@ -23,8 +23,8 @@ include('header.php');
 						<th class="w-1">ID</th>                         																				
 						<th class="w-1">Starting Point</th>                          																				
 						<th >Ending Point</th>                         																				
-						<th>Distance</th>                         																				
-						<th>Fare</th>                         																				
+						<th>Distance (KM)</th>                         																				
+						<th>Fare (£)</th>                         																				
 						
 						<th></th>                       																			
 					</tr>                     																
@@ -49,16 +49,21 @@ include('header.php');
 						</td>                         																				
 						<td>                          																					
 							<?php echo $zrow['fare']; ?>
-						</td>                         																				
-																								
-						<td class="text-end">	
-							<a href="zone-detail.php?id=<?php echo $zrow['zone_id']; ?>">
-							<button class="btn align-text-top">View</button>	
-							</a>
-							<a href="del-zone.php?id=<?php echo $zrow['zone_id']; ?>">
-								<button class="btn btn-danger align-text-top">Delete</button>											</a>								
-
-						</td>                       																			
+						</td>																								
+						<td class="text-end">								
+							<a href="zone-detail.php?id=<?php echo $zrow['zone_id']; ?>">							
+								<button class="btn align-text-top">
+									<i class="ti ti-eye" style="font-size: 16px; margin-right: 10px;"></i>
+									View
+								</button>								
+							</a>							
+							<a href="del-zone.php?id=<?php echo $zrow['zone_id']; ?>">								
+								<button class="btn btn-danger align-text-top">
+									<i class="ti ti-trash-x" style="font-size: 16px; margin-right: 10px;"></i>
+									Delete
+								</button>											
+							</a>														
+						</td>                       																								
 					</tr>                              																	
 					<?php																				
 					}																				
@@ -115,12 +120,13 @@ include('header.php');
 				</div>          			
 				        			
 				<div class="modal-footer">           
-					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">             					
+					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal"> 
+						<i class="ti ti-circle-x" style="margin-right: 10px; font-size: 20px;"></i>
 						Cancel           				
 					</a>           				
 					<button type="submit" class="btn ms-auto" data-bs-dismiss="modal">
 						
-						<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+						<i class="ti ti-message-plus" style="margin-right: 10px; font-size: 20px;"></i>
 						Add Zone  
 						
 					</button>       			

@@ -90,10 +90,12 @@ $brow = mysqli_fetch_array($bsql);
 						</div>                 									
 					<div class="card-footer bg-transparent mt-auto">                 					
 						<div class="btn-list justify-content-end">                 						
-							<a href="booking.php" class="btn">                  						
+							<a href="booking.php" class="btn">  
+								<i class="ti ti-circle-x" style="font-size: 16px; margin-right: 10px;"></i>
 								Cancel                  						
 							</a>                  						 							
 							<button type="submit" class="btn btn-primary">
+								<i class="ti ti-brand-telegram" style="font-size: 16px; margin-right: 10px;"></i>
 								Dispatch Booking
 							</button>						                    					                  					
 						</div>                 			

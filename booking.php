@@ -73,17 +73,32 @@ include('header.php');
 						</td>		
 						<td class="text-end">						
 							
-								<div class="btn-group">
-								<a href="booking-details.php?id=<?php echo $bookrow['book_id'] ?>" class="btn d-none btn-instagram d-sm-inline-block">
-    Booking Details
-</a>
+								
+							<div class="btn-group">
+								
+									<a href="booking-details.php?id=<?php echo $bookrow['book_id'] ?>" class="btn d-none btn-instagram d-sm-inline-block">
+										<i class="ti ti-eye" style="font-size: 16px; margin-right: 10px;"></i>
+    
+									
+										Booking Details
 
-								<a href="dipatch-booking.php?id=<?php echo $bookrow['book_id'] ?>" class="btn btn-facebook d-none d-sm-inline-block">						
-									Dispatch									
-								</a>	
-								</div>
+									
+									</a>
+
+								
+									
+									<a href="dipatch-booking.php?id=<?php echo $bookrow['book_id'] ?>" class="btn btn-facebook d-none d-sm-inline-block" style="margin-left: 10px;">						
+									<i class="ti ti-brand-telegram" style="font-size: 16px; margin-right: 10px;"></i>
+										Dispatch									
+								
+									</a>	
+								
+							
+							</div>
 							                       														
+						
 						</td>                       												
+					
 					</tr>                              											
 					<?php														
 					}														
