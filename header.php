@@ -59,7 +59,7 @@ if (!isset($_SESSION['email'])) {
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB-AZa456v6psuXAws1WA822K2ckaL1O4&libraries=places&callback=initMap" async defer></script>
 
 		
-		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		
 
 		<style>   
 			#map {    
@@ -145,7 +145,13 @@ if (!isset($_SESSION['email'])) {
 									<img src="img/icons/booking.png" alt="" class="nav_icon">							
 									<br><strong>Bookings</strong>                        
 								</a>                    
-							</li>                    
+							</li> 
+							<li class="nav-item">                        
+								<a class="nav-link" href="fare-correction.php">                           
+									<img src="img/icons/correct.png" alt="" class="nav_icon">							
+									<br><strong>Fare Corrections</strong>                        
+								</a>                    
+							</li>
 							<li class="nav-item">                        
 								<a class="nav-link" href="company.php">                            
 									<img src="img/icons/company.png" alt="" class="nav_icon">							
@@ -166,7 +172,7 @@ if (!isset($_SESSION['email'])) {
 							</li>	
 							<li class="nav-item">                        
 								<a class="nav-link" href="bookers.php">                            
-									<img src="img/icons/client.png" alt="" class="nav_icon">							
+									<img src="img/icons/booker.png" alt="" class="nav_icon">							
 									<br><strong>Bookers</strong>                        
 								</a>                    
 							</li>

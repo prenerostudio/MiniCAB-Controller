@@ -48,7 +48,7 @@ include('header.php');
 							<?php							
 						} else{                                            						
 							?>                                         							
-							<img src="<?php echo $brow['b_pic'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">				
+							<img src="img/bookers/<?php echo $brow['b_pic'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">				
 							<?php                                         																						
 						}                                          																							
 							?>							
@@ -71,7 +71,7 @@ include('header.php');
 						<td class="text-end"> 
 							
 						
-							<a href="client-details.php?id=<?php echo $brow['b_id']; ?>">							
+							<a href="booker-details.php?id=<?php echo $brow['b_id']; ?>">							
 							<button class="btn align-text-top">View Details</button>
 							</a>
 							
@@ -112,20 +112,20 @@ include('header.php');
 				<h5 class="modal-title">Add New Booker</h5>            
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          
 			</div> 
-			<form method="post" action="client-process.php" enctype="multipart/form-data">
+			<form method="post" action="booker-process.php" enctype="multipart/form-data">
 			<div class="modal-body">
 				
 				<div class="row">              
 					<div class="col-lg-6">
 				<div class="mb-3">              
 					<label class="form-label">Booker Name</label>              
-					<input type="text" class="form-control" name="cname" placeholder="Passenger Name">            
+					<input type="text" class="form-control" name="bname" placeholder="Booker Name">            
 				</div> 
 						</div>              
 					<div class="col-lg-6">                
 						<div class="mb-3">                  
 							<label class="form-label">Email</label>              
-					<input type="text" class="form-control" name="cemail" placeholder="hello@example.com">      
+					<input type="text" class="form-control" name="bemail" placeholder="hello@example.com">      
 						</div>             
 					</div>            
 				</div>
@@ -134,13 +134,13 @@ include('header.php');
 					<div class="col-lg-6">
 				<div class="mb-3">              
 					<label class="form-label">Password</label>              
-					<input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx">            
+					<input type="password" class="form-control" name="bpass" placeholder="xxxxxxxx">            
 				</div> 
 						</div>              
 					<div class="col-lg-6">                
 						<div class="mb-3">                  
 							<label class="form-label">Phone</label>              
-					<input type="text" class="form-control" name="cphone" placeholder="+44 xx xxxx xxxx">      
+					<input type="text" class="form-control" name="bphone" placeholder="+44 xx xxxx xxxx">      
 						</div>             
 					</div>            
 				</div>
@@ -149,7 +149,7 @@ include('header.php');
 					<div class="col-lg-6">										
 						<div class="mb-3">              									
 							<label class="form-label">Gender</label>              					                  												
-							<select class="form-select" name="cgender">                    														
+							<select class="form-select" name="bgender">                    														
 								<option value="" selected>Select Gender</option>                    														
 								<option>Male</option>                    														
 								<option>Female</option>  														
@@ -160,7 +160,7 @@ include('header.php');
 					<div class="col-lg-6">                						
 						<div class="mb-3">                  							
 							<label class="form-label">Language</label>              					
-							<select class="form-select" name="clang">                    								
+							<select class="form-select" name="blang">                    								
 								<option value="" selected>Select Language</option>                    								      
 								<?php						
 								$lsql=mysqli_query($connect,"SELECT * FROM `language`");									
@@ -186,7 +186,7 @@ include('header.php');
 					<div class="col-lg-6">                					
 						<div class="mb-3">                  						
 							<label class="form-label">Picture</label>              					
-							<input type="file" class="form-control" name="cpic">      						
+							<input type="file" class="form-control" name="bpic">      						
 						</div>             					
 					</div>            				
 				</div>
@@ -195,13 +195,13 @@ include('header.php');
 					<div class="col-lg-6">				
 						<div class="mb-3">              					
 							<label class="form-label">Company Name</label>              					
-							<input type="text" class="form-control" name="ccn" placeholder="Your Company Name">            				
+							<input type="text" class="form-control" name="bcn" placeholder="Your Company Name">            				
 						</div> 
 					</div>              
 					<div class="col-lg-6">                
 						<div class="mb-3">                  						
 							<label class="form-label">National ID</label>              					
-							<input type="text" class="form-control" name="cni">        						
+							<input type="text" class="form-control" name="bni">        						
 						</div>             									
 					</div>            								
 				</div>
@@ -210,13 +210,13 @@ include('header.php');
 					<div class="col-lg-6">				
 						<div class="mb-3">              					
 							<label class="form-label">Commission</label>              					
-							<input type="text" class="form-control" name="ccn" placeholder="%">            				
+							<input type="text" class="form-control" name="com_percent" placeholder="%">            				
 						</div> 
 					</div>              
 					<div class="col-lg-6">                
 						<div class="mb-3">                  						
 							<label class="form-label">Fix Commission</label>              					
-							<input type="text" class="form-control" name="amount" placeholder="xxxx">        						
+							<input type="text" class="form-control" name="com_fixed" placeholder="xxxx">        						
 						</div>             									
 					</div>            								
 				</div>
@@ -225,10 +225,18 @@ include('header.php');
 						<div class="col-lg-12">               						
 							<div>                 							
 								<label class="form-label">Address</label>                  							
-								<textarea class="form-control" rows="3" name="caddress"></textarea>               						
+								<textarea class="form-control" rows="3" name="baddress"></textarea>               						
 							</div>              					
 						</div>   				
-					</div>   
+					</div>  
+				<div class="row">              					             					
+						<div class="col-lg-12">               						
+							<div>                 							
+								<label class="form-label">Others</label>                  							
+								<textarea class="form-control" rows="3" name="others"></textarea>               						
+							</div>              					
+						</div>   				
+					</div>  
 				</div>          			
 				<div class="modal-body">				
 					       			
