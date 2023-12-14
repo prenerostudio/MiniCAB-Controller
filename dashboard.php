@@ -7,7 +7,7 @@ include('header.php');
 				<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">                    				
 					<li class="nav-item" style="background: #163B8F;">                      					
 						<a href="#tabs-dasboard" class="nav-link active" data-bs-toggle="tab">
-							<i class="ti ti-home-down"></i>                    							
+							<i class="ti ti-home-down" style="font-size: 24px;"></i>                    							
 							Dashboard
 						</a>                     
 					</li>                      
@@ -186,7 +186,7 @@ include('header.php');
 				<ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">                    				
 					<li class="nav-item" style="background: #3046CC;">                      					
 						<a href="#tabs-today" class="nav-link active" data-bs-toggle="tab">							                          						
-							<i class="ti ti-book-upload"></i>                       							
+							<i class="ti ti-book-upload" style="font-size: 24px;"></i>                       							
 							Today's Booking						
 						</a>                     
 					</li>                      					

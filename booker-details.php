@@ -17,21 +17,44 @@ $brow = mysqli_fetch_array($bsql);
 					<h2 class="mb-4">Booker Profile</h2>                				
 					<h3 class="card-title">Profile Image</h3>                				
 					<div class="row align-items-center">                
-						<div class="col-auto">
-							<span class="avatar avatar-xl" style="background-image: url(<?php echo $brow['b_pic'];?>); background-size:cover; width: 220px;
-    height: 160px;"></span>							
-						</div>                    					
-						<div class="col-auto">						
-							<a href="#" class="btn">                    						
-								Change avatar                        						
-							</a>					
-						</div>                      					
-						<div class="col-auto">						
-							<a href="#" class="btn btn-ghost-danger">                         
-								Delete avatar                       
-							</a>					
-						</div>                   				
-					</div>                				
+					
+						
+												<div class="col-auto">
+						
+
+													
+							<span class="avatar avatar-xl" style="background-image: url(img/bookers/<?php echo $brow['b_pic'];?>); background-size:cover; width: 220px;
+   height: 160px;"></span>							
+	
+						
+												</div>                    					
+						
+						
+												<div class="col-auto">						
+						
+						
+													<form action="update-booker-img.php" method="post" enctype="multipart/form-data">
+								<input type="hidden" value="<?php echo $brow['b_id']; ?>" name="b_id">
+							
+								<input type="file" name="fileToUpload" id="fileToUpload" class="btn" required>
+								
+								<button type="submit" class="btn btn-info">Upload Image </button>                       						
+								
+							  </form>				
+					
+												</div>                      					
+					
+												<div class="col-auto">						
+							
+													<a href="del-booker-img.php?id=<?php echo $brow['b_id']; ?>" class="btn btn-ghost-danger">                         
+								
+														Delete avatar                       
+							
+													</a>					
+						
+												</div>                   				
+					
+											</div>                				
 					<h3 class="card-title mt-4">Profile Details</h3> 
 					
 					<form method="post" action="update-booker.php" enctype="multipart/form-data">

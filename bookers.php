@@ -75,7 +75,7 @@ include('header.php');
 							<button class="btn align-text-top">View Details</button>
 							</a>
 							
-							<a href="del-client.php?id=<?php echo $brow['b_id']; ?>">
+							<a href="del-booker.php?id=<?php echo $brow['b_id']; ?>">
 							<button class="btn btn-danger align-text-top">Delete</button>
 							</a>
 							

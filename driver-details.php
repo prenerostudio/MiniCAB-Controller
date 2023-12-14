@@ -14,13 +14,13 @@ $drow = mysqli_fetch_array($dsql);
 				<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">                    				
 					<li class="nav-item" style="background: #3046CC;">                      					
 						<a href="#tabs-today" class="nav-link active" data-bs-toggle="tab">							                          						
-							<i class="ti ti-database-heart"></i>                          							
+							<i class="ti ti-database-heart" style="font-size: 24px;"></i>                          							
 							Driver Details					
 						</a>                     
 					</li>                      					
 					<li class="nav-item">                       					
 						<a href="#tabs-pre" class="nav-link" data-bs-toggle="tab">							                         						
-							<i class="ti ti-license"></i>
+							<i class="ti ti-license" style="font-size: 24px;"></i>
 							Driver Documents					
 						</a>                     					
 					</li>                     					                  				
