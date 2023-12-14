@@ -9,11 +9,11 @@ include('header.php');
 		<div class="col-auto ms-auto d-print-none">        
 			<div class="btn-list">            				                
 				<a href="job-history.php" class="btn d-none btn-danger d-sm-inline-block">
-					<i class="ti ti-history"></i>    
+					<i class="ti ti-history" style="font-size: 24px;"></i>    
 					Job History                  
 				</a>   
 				<a href="#" class="btn d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-booking">
-					<i class="ti ti-message-plus"></i>
+					<i class="ti ti-message-plus" style="font-size: 24px;"></i>
 					Add New Booking                  
 				</a>    
 			</div>            
@@ -30,20 +30,23 @@ include('header.php');
 						<th>Passenger</th>                         													
 						<th>Pickup</th>                         													
 						<th>Destination</th>
-						<th>Vehicle</th>                       													
+						<th>Distance</th>
+						<th>Fare</th>						                    													
 						<th>Note</th>                       													
 						<th>Status</th>
 						<th>Action</th>                       												
 					</tr>                     										
 				</thead>                    									
 				<tbody> 										
-					<?php										
-					$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings, clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status = 'Pending'");
-					while($bookrow = mysqli_fetch_array($booksql)){										
+					<?php	
+					$n=0;
+					$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone FROM bookings, clients WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Pending' ORDER BY bookings.book_id DESC");
+					while($bookrow = mysqli_fetch_array($booksql)){	
+						$n++;
 					?>																		
 					<tr>                         											
 						<td>																				
-							<?php echo $bookrow['book_id']; ?>													
+							<?php echo $n; ?>													
 						</td>                          													
 						<td>														
 							<span class=" btn btn-instagram">																
@@ -61,10 +64,14 @@ include('header.php');
 						</td>                         													
 						<td>                           															
 							<?php echo $bookrow['destination']; ?>														
-						</td>                          																	
-						<td>
-							<?php echo $bookrow['v_name']; ?> 
-						</td>   													
+						</td> 
+						<td>                           															
+							<?php echo $bookrow['journey_distance']; ?>														
+						</td>
+						<td>                           															
+							<?php echo $bookrow['journey_fare']; ?>														
+						</td>
+						  													
 						<td>
 							<?php echo $bookrow['note']; ?>  
 						</td>													

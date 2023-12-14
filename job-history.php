@@ -61,7 +61,6 @@ WHERE
 	jobs.book_id = bookings.book_id AND
 	jobs.c_id = clients.c_id AND
 	jobs.d_id = drivers.d_id AND
-	jobs.d_id = '$d_id' AND
 	jobs.job_status IN ('completed','cancelled') AND
 	bookings.v_id = vehicles.v_id
 ORDER BY
@@ -96,7 +95,7 @@ ORDER BY
 							<?php echo $bookrow['note']; ?>  
 						</td>													
 						<td>
-							<?php echo $bookrow['booking_status']; ?> 
+							<?php echo $bookrow['job_status']; ?> 
 						</td>		
 						                   												
 					</tr>                              											

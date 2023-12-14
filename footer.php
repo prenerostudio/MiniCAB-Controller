@@ -61,22 +61,7 @@
 								<label class="form-label">Pickup </label>              					
 								<input type="text" class="form-control" name="pickup" id="pickup" oninput="updateMap()">            				
 							</div>
-							<div class="mb-3">              					
-								<label class="form-label">Vehicle</label>              					
-								<select class="form-select" name="v_id">			
-									<option value="" selected>Select Vehicle</option>  						
-									<?php														
-									$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");																	
-									while($vrow = mysqli_fetch_array($vsql)){																		
-									?>
-									<option value="<?php echo $vrow['v_id']; ?>">									
-										<?php echo $vrow['v_name'] ?>								
-									</option>								
-									<?php																	
-									}																		
-									?>									 																			
-								</select>            				
-							</div>
+							
 							<div class="mb-3">              												
 										<label class="form-label">No. of Passenger</label>				
 										<input type="number" class="form-control" name="passenger">				 						
@@ -85,6 +70,11 @@
 								<label class="form-label">Special Note</label>                  															
 								<textarea class="form-control" rows="3" name="note"></textarea>               													
 							</div> 
+							
+							<div class="mb-3">                  							
+										<label class="form-label">Pickup Date</label>							
+										<input type="date" class="form-control" name="pdate">      						
+									</div>	
 							
 							
 							
@@ -115,10 +105,7 @@
 										<input type="text" class="form-control" name="luggage">      												
 									</div>   
 							
-							<div class="mb-3">                  							
-										<label class="form-label">Pickup Date</label>							
-										<input type="date" class="form-control" name="pdate">      						
-									</div>	
+							
 							<div class="mb-3">                  							
 										<label class="form-label">Pickup Time</label>              					
 										<input type="time" class="form-control" name="ptime">      						
@@ -129,6 +116,21 @@
 						</div>  
 						<div class="col-lg-4">  
 							
+							<div class="mb-3">                  							
+										
+								<label class="form-label">Distance </label>              					
+										
+								<input type="text" class="form-control" name="dis">      						
+									
+							</div>	
+							
+							<div class="mb-3">                  							
+										
+								<label class="form-label">Jouney Fare</label>              					
+										
+								<input type="text" class="form-control" name="fare">      						
+									
+							</div>	
 							
 							
 						</div>

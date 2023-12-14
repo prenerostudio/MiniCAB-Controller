@@ -14,7 +14,7 @@ include('header.php');
 				
 					<a href="#tabs-dasboard" class="nav-link active" data-bs-toggle="tab">					
 					
-						<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+						<i class="ti ti-id-badge-2"  style="font-size: 24px;"></i>
 						
 						Bookings for Bids						
 					
@@ -26,7 +26,7 @@ include('header.php');
 				
 					<a href="#tabs-tracking" class="nav-link" data-bs-toggle="tab">							                         					
 					
-						<svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>                          						
+						<i class="ti ti-users"  style="font-size: 24px;"></i>                       						
 						
 						All Bids From Drivers						
 					
@@ -47,7 +47,7 @@ include('header.php');
 		<div class="col-auto ms-auto d-print-none">        
 			<div class="btn-list">            				                
 				<a href="#" class="btn d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-bid">
-					<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>      
+					<i class="ti ti-message-plus" style="font-size: 24px;"></i>     
 					Add New Bid                  
 				</a>                                 
 			</div>            
@@ -65,16 +65,14 @@ include('header.php');
 										<th>Time</th>                         																	
 										<th>Passenger</th>                         																	
 										<th>Pickup</th>                         																	
-										<th>Destination</th>																	
-										<th>Vehicle</th>                       																	
+										<th>Destination</th>                     																	
 										<th>Note</th>                       																	
 										<th>Status</th>
 									</tr>                     													
 								</thead>                    													
 								<tbody> 														
 									<?php					
-									$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.* FROM bookings, clients,	vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.bid_status = 'Open'
-");									
+									$booksql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone FROM bookings, clients WHERE bookings.c_id = clients.c_id AND bookings.bid_status = 'Open'");									
 									while($bookrow = mysqli_fetch_array($booksql)){
 									?>																						
 									<tr>                         															
@@ -99,7 +97,7 @@ include('header.php');
 											<?php echo $bookrow['destination']; ?>                      							
 										</td>                          							
 										                         							
-										<td><?php echo $bookrow['v_name']; ?> </td>   							
+															
 										<td>
 											<?php echo $bookrow['bid_note']; ?>  </td>							
 										<td><div class="btn btn-success"><?php echo $bookrow['bid_status']; ?> </div> </td>							

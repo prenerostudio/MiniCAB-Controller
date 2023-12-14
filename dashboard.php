@@ -215,14 +215,17 @@ include('header.php');
 									</tr>                     					
 								</thead>                    					
 								<tbody> 						
-									<?php																											
-									$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.book_id, bookings.pickup, bookings.destination, bookings.passenger, bookings.luggage, bookings.book_date, bookings.book_time, bookings.journey_type, bookings.v_id, drivers.d_name, vehicles.v_name FROM jobs, clients, bookings, drivers, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND bookings.v_id = vehicles.v_id AND	jobs.job_status = 'waiting'");
-									while($jobrow = mysqli_fetch_array($jobsql)){																	
+									<?php		
+									$n=0;
+									$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.book_id, bookings.pickup, bookings.destination, bookings.passenger, bookings.luggage, bookings.book_date, bookings.book_time, bookings.journey_type, drivers.d_name, 
+	vehicles.v_name FROM jobs, clients, bookings, drivers, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND drivers.v_id = vehicles.v_id ORDER BY jobs.job_id DESC");
+									while($jobrow = mysqli_fetch_array($jobsql)){	
+										$n++;
 																								
 									?>													
 									<tr>                         						
 										<td>							
-											<?php echo $jobrow['job_id']; ?>						
+											<?php echo $n; ?>						
 										</td>                          							
 										<td>								
 											<span class="text-secondary">									

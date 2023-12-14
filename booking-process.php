@@ -3,7 +3,6 @@ require 'config.php';
 
 $pickup = $_POST['pickup'];
 $destination = $_POST['destination'];
-$v_id = $_POST['v_id'];
 $journey_type = $_POST['journey_type'];
 $passenger = $_POST['passenger'];
 $luggage = $_POST['luggage'];
@@ -11,21 +10,24 @@ $note = $_POST['note'];
 $c_id = $_POST['c_id'];
 $pdate = $_POST['pdate'];
 $ptime = $_POST['ptime'];
+$distance= $_POST['dis'];
+$fare = $_POST['fare'];
 $status = 'Pending';
 $date = date("Y-m-d H:i:s");
 
-$sql = "INSERT INTO `bookings`( 
+$sql = "INSERT INTO `bookings`(
 								`c_id`, 
 								`pickup`, 
 								`destination`, 
 								`passenger`, 
-								`luggage`,
+								`luggage`, 
 								`note`, 
 								`book_date`, 
 								`book_time`, 
-								`journey_type`,
-								`v_id`,
-								`booking_status`, 
+								`journey_type`, 
+								`journey_fare`,
+								`journey_distance`, 
+								`booking_status`, 							 
 								`book_add_date`
 								) VALUES (							
 								'$c_id',
@@ -37,7 +39,8 @@ $sql = "INSERT INTO `bookings`(
 								'$pdate',
 								'$ptime',
 								'$journey_type',
-								'$v_id',
+								'$fare',
+								'$distance',
 								'$status',
 								'$date')";                
 $result = mysqli_query($connect, $sql);       

@@ -3,7 +3,10 @@ require 'config.php';
 $book_id = $_POST['book_id'];
 $c_id = $_POST['c_id'];
 $d_id = $_POST['d_id'];
+$distance = $_POST['journey_distance'];
+$fare = $_POST['journey_fare'];
 $note = $_POST['note'];
+$pay_method = $_POST['pay_method'];
 $status = 'Waiting';
 $date = date("Y-m-d H:i:s");
 
@@ -11,15 +14,21 @@ $sql = "INSERT INTO `jobs`(
 							`book_id`, 
 							`c_id`, 
 							`d_id`, 
+							`distance`, 
+							`pay_method`, 
+							`fare`, 
 							`note`, 
-							`job_status`,
+							`job_status`, 
 							`date_job_add`
 							) VALUES (
 							'$book_id',
 							'$c_id',
 							'$d_id',
+							'$distance',
+							'$pay_method',
+							'$fare',
 							'$note',
-							'$status',							
+							'$status',
 							'$date')";                
 $result = mysqli_query($connect, $sql);       
 if ($result) {  
