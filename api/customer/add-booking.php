@@ -10,35 +10,54 @@ include("../../config.php");
 $c_id = $_POST['c_id'];
 $pickup = $_POST['pickup'];
 $dropoff = $_POST['dropoff'];
-$book_id = $_POST['distance'];
-$rev_msg = $_POST['fare'];
-$book_id = $_POST['passenger'];
-$rev_msg = $_POST['luggage'];
-$rev_msg = $_POST['journey_type'];
-$book_id = $_POST['pickup'];
-$rev_msg = $_POST['rev_msg'];
-$book_id = $_POST['pickup'];
-$rev_msg = $_POST['rev_msg'];
+$distance = $_POST['distance'];
+$fare = $_POST['fare'];
+$passenger = $_POST['passenger'];
+$luggage = $_POST['luggage'];
+$journey_type = $_POST['journey_type'];
+$note = $_POST['note'];
+$pdate = $_POST['pdate'];
+$ptime = $_POST['ptime'];
+$status = 'Pending';
 $date = date("Y-m-d h:i:s");
 
 if(isset($_POST['c_id'])){ 	 	
 	        		
-		$sql="INSERT INTO `reviews`(
-									`book_id`, 
+		$sql="INSERT INTO `bookings`(
 									`c_id`, 
-									`rev_msg`, 
-									`rev_date`
+									`pickup`, 
+									`destination`, 
+									`passenger`,
+									`luggage`, 
+									`note`, 
+									`book_date`, 
+									`book_time`, 
+									`journey_type`, 
+									`journey_fare`, 
+									`journey_distance`, 
+									`booking_status`,
+									`book_add_date`
 									) VALUES (
-									'$book_id',
 									'$c_id',
-									'$rev_msg',
-									'$date')";				
+									'$pickup',
+									'$dropoff',
+									'$passenger',
+									'$luggage',
+									'$note',
+									'$pdate',
+									'$ptime',
+									'$journey_type',
+									'$fare',
+									'$distance',
+									'$status',
+									'$date'
+									)";				
 		
 		$r=mysqli_query($connect,$sql);
 		if($r){    
-			echo json_encode(array('message'=>"Review Posted Successfully",'status'=>true));
+			echo json_encode(array('message'=>"Booking Posted Successfully",'status'=>true));
 		}else{    
-			echo json_encode(array('message'=>"Error In Posting Review",'status'=>false));
+			echo json_encode(array('message'=>"Error In Posting Booking",'status'=>false));
 		}
 	       
 }else{
