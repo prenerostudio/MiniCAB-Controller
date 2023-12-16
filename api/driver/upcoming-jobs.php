@@ -20,25 +20,21 @@ if(isset($_POST['d_id'])){
 	drivers.d_name, 
 	drivers.d_email, 
 	drivers.d_phone, 
-	bookings.*, 
-	vehicles.v_name, 
-	vehicles.v_pricing, 
-	vehicles.v_img
+	bookings.*
 FROM
 	jobs,
 	drivers,
 	clients,
-	bookings,
-	vehicles
+	bookings
 WHERE
 	jobs.book_id = bookings.book_id AND
 	jobs.c_id = clients.c_id AND
 	jobs.d_id = drivers.d_id AND
 	jobs.d_id = '$d_id' AND
-	jobs.job_status = 'Waiting' AND
-	bookings.v_id = vehicles.v_id
-ORDER BY
+	jobs.job_status = 'Waiting'
+	ORDER BY
 	jobs.job_id DESC";	
+	
 	$r=mysqli_query($connect,$sql);
 	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
 	
@@ -46,7 +42,7 @@ ORDER BY
 	if(count($output)>0){    				    		
 		echo json_encode(array('data'=>$output, 'status'=>true, 'message'=>"Job List Fetch Successfully"));
 	}else{    
-		echo json_encode(array('message'=>'User Does Not Exist','status'=>false));
+		echo json_encode(array('message'=>'No Job is Available','status'=>false));
 	}
 }else{    
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));

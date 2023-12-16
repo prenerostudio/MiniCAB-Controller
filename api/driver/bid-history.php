@@ -21,21 +21,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	drivers.d_phone, 
 	clients.c_name, 
 	clients.c_email, 
-	clients.c_phone, 
-	vehicles.v_name, 
-	vehicles.v_pricing, 
-	vehicles.v_img
+	clients.c_phone
 FROM
 	bids,
 	bookings,
 	drivers,
-	clients,
-	vehicles
+	clients
 WHERE
 	bids.book_id = bookings.book_id AND
 	bids.d_id = drivers.d_id AND
 	bookings.c_id = clients.c_id AND
-	bookings.v_id = vehicles.v_id AND
 	bids.d_id = '$d_id'
 ORDER BY
 	bids.bid_id DESC";	
