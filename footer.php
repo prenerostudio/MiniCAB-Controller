@@ -54,7 +54,16 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
 			</div> 			
 			<form method="post" action="booking-process.php" enctype="multipart/form-data">
-				<div class="modal-body">								
+				<div class="modal-body">
+					<div class="row">
+					
+					
+					
+					
+					
+					</div>
+					
+					
 					<div class="row">              					
 						<div class="col-lg-4">				
 							<div class="mb-3">              					
@@ -226,10 +235,10 @@
 	</div>    
 </div>
 <!-- Libs JS -->    
-<script src="libs/apexcharts/dist/apexcharts.min6a55.js?1695847769" defer></script>  
-<script src="libs/jsvectormap/dist/js/jsvectormap.min6a55.js?1695847769" defer></script>  
-<script src="libs/jsvectormap/dist/maps/world6a55.js?1695847769" defer></script> 
-<script src="libs/jsvectormap/dist/maps/world-merc6a55.js?1695847769" defer></script>
+<script src="libs/apexcharts/dist/apexcharts.min.js" defer></script>  
+<script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>  
+<script src="libs/jsvectormap/dist/maps/world.js" defer></script> 
+<script src="libs/jsvectormap/dist/maps/world-merc.js" defer></script>
 <!-- Tabler Core -->
 <script src="js/tabler.min.js" defer></script> 
 <script src="js/demo.min.js" defer></script> 
