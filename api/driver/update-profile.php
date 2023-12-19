@@ -8,7 +8,7 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 // Function to handle image upload
 function uploadImage() {
-	$targetDir = "img/drivers/";    
+	$targetDir = "../../img/drivers/";    
 	$targetFilePath = $targetDir . basename($_FILES["d_img"]["name"]);    
 	$fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));    
 	$allowTypes = array('jpg', 'png', 'jpeg', 'gif');    
@@ -25,10 +25,9 @@ function uploadImage() {
 $d_id = $_POST['d_id'];
 $dname = $_POST['dname'];
 $demail = $_POST['demail'];
-$dphone = $_POST['dphone'];
+$d_address = $_POST['d_address'];
 $dgender = $_POST['dgender'];
 $dlang = $_POST['dlang'];
-$dv = $_POST['v_id'];
 $licence = $_POST['dlicence'];
 $lexp = $_POST['lexp'];
 $pco = $_POST['pco'];
@@ -43,20 +42,19 @@ $d_img = uploadImage();
 if(isset($_POST['d_id'])){ 	 	        		
 		
 	$sql = "UPDATE `drivers` SET 
-							
-							`d_name`='$dname',
-							`d_email`='$demail',																
-							`d_phone`='$dphone',
-							`d_pic`='$d_img',
-							`d_gender`='$dgender',
-							`d_language`='$dlang',
-							`d_licence`='$licence',
-							`d_licence_exp`='$lexp',
-							`pco_licence`='$pco',
-							`pco_exp`='$pcoexp',
-							`skype_acount`='$skype',
-							`d_remarks`='$remarks',							
-							`driver_reg_date`='$date' WHERE `d_id`='$d_id'";
+								`d_name`='$dname',
+								`d_email`='$demail',
+								`d_address`='$d_address',
+								`d_pic`='$d_img',
+								`d_gender`='$dgender',
+								`d_language`='$dlang',
+								`d_licence`='$licence',
+								`d_licence_exp`='$lexp',
+								`pco_licence`='$pco',
+								`pco_exp`='$pcoexp',
+								`skype_acount`='$skype',
+								`d_remarks`='$remarks',
+								`driver_reg_date`='$date' WHERE `d_id`='$d_id'";
         
         $r = mysqli_query($connect, $sql);
        
