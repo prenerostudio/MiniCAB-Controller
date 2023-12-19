@@ -9,39 +9,40 @@ include("../../config.php");
 
 $job_id = $_POST['job_id'];
 $d_id = $_POST['d_id'];
-$p_method = $_POST['p_method'];
-$fare = $_POST['fare'];
-$parking = $_POST['parking'];
+$p_method = 'Cash';
+
+$journey_fare = $_POST['journey_fare'];
 $extra = $_POST['extra'];
-$waiting = $_POST['waiting'];
+$parking = $_POST['parking'];
+$tolls = $_POST['tolls'];
 $status = 'unpaid';
 $date = date("Y-m-d h:i:s");
 
 if(isset($_POST['job_id'])){ 
 	
 	
-	$total_pay = $fare + $parking + $extra + $waiting;
+	$total_pay = $journey_fare + $parking + $extra + $tolls;
 	
 	        		
 		$sql="INSERT INTO `invoice`(
 									`job_id`, 
-									`d_id`, 
+									`d_id`,  
 									`p_method`, 
-									`parking_charges`, 
-									`extra_drop_charges`, 
-									`driver_waiting`, 
-									`fare`, 
+									`journey_fare`, 
+									`extra_waiting`, 
+									`parking`, 
+									`tolls`, 
 									`total_pay`, 
 									`status`, 
 									`invoice_date`
 									) VALUES (
 									'$job_id',
-									'$d_id',
+									'$d_id',									
 									'$p_method',
-									'$parking',
+									'$journey_fare',
 									'$extra',
-									'$waiting',
-									'$fare',
+									'$parking',
+									'$tolls',
 									'$total_pay',
 									'$status',
 									'$date')";				
