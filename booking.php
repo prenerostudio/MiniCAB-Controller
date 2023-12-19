@@ -19,9 +19,70 @@ include('header.php');
 			</div>            
 		</div>		
 	</div>    		
-	<div class="card-body">            			
-		<div id="table-default" class="table-responsive">    				
-			<table class="table table-responsive" id="booking_table">                   								
+	<div class="card-body">     
+		<div class="row">
+		<div class="col-md-4">
+			<form method="post" class="search_form">
+				<input type="date" class="form-control" name="start">
+				
+				<input type="date" class="form-control" name="from">
+				
+				<button class="btn btn-info">Search</button>
+		
+			
+			</form>
+			
+			
+			</div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				
+				<div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+			<!--<form>
+				<select class="form-control">
+					<option>Select</option>
+					<option>All Bookings In next 3 Hours</option>
+<option>All Bookings In next 6 Hours</option>
+<option>All Bookings In next 9 Hours</option>
+<option>All Bookings In next 12  Hours</option>
+<option>All Bookings In next 24 Hours</option>
+<option>All Bookings In next 3 Days</option>
+<option>All Bookings In next 7 Days</option>
+<option>All Bookings In next 14 Days</option>
+<option>All Bookings In next 30 Days</option>
+<option>All Bookings In next 3 Months</option>
+<option>All Bookings In next 6 Months</option>
+<option>All Bookings In next 12 Months</option>
+				
+					
+				
+				
+				
+				
+				</select>
+				
+				
+				
+				
+				</form>-->
+			
+			</div>
+		
+		
+		</div>
+		<div id="table-default"> 
+			
+			<table class="table" id="booking_table">                   								
 				<thead style="background: #051650; color: white;">                   										
 					<tr >                          												
 						<th class="w-1">ID</th>                         													

@@ -297,5 +297,6 @@
 <script src="js/tabler.min.js" defer></script> 
 <script src="js/demo.min.js" defer></script> 
 <script src="js/simple-datatables/simple-datatables.js"></script>  
+
 </body>
 </html>

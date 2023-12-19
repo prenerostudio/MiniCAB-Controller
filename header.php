@@ -39,6 +39,8 @@ if (!isset($_SESSION['email'])) {
    	
 		<!-- CSS files -->    
 		
+		<link href="css/style.css" rel="stylesheet"/> 
+		
 		<link href="css/tabler.min.css" rel="stylesheet"/>    		
 		<link href="css/tabler-flags.min.css" rel="stylesheet"/>    		
 		<link href="css/tabler-payments.min.css" rel="stylesheet"/>    		
@@ -54,6 +56,7 @@ if (!isset($_SESSION['email'])) {
 		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 		
+	
 		
 		
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB-AZa456v6psuXAws1WA822K2ckaL1O4&libraries=places&callback=initMap" async defer></script>
