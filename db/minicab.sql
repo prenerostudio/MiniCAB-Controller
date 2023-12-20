@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2023 at 04:06 PM
+-- Generation Time: Dec 20, 2023 at 04:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -83,21 +83,71 @@ INSERT INTO `bids` (`bid_id`, `book_id`, `d_id`, `bid_amount`, `bid_date`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bookers`
+--
+
+CREATE TABLE `bookers` (
+  `b_id` int(55) NOT NULL,
+  `b_name` varchar(255) NOT NULL,
+  `b_email` varchar(255) NOT NULL,
+  `b_phone` varchar(255) NOT NULL,
+  `b_password` varchar(255) NOT NULL,
+  `b_address` varchar(255) NOT NULL,
+  `b_gender` varchar(55) NOT NULL,
+  `b_language` varchar(55) NOT NULL,
+  `b_pic` varchar(255) NOT NULL,
+  `postal_code` varchar(255) NOT NULL,
+  `company_name` varchar(255) NOT NULL,
+  `others` varchar(255) NOT NULL,
+  `b_ni` varchar(255) NOT NULL,
+  `com_percentage` varchar(10) NOT NULL,
+  `com_fixed` varchar(10) NOT NULL,
+  `booker_reg_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `bookers`
+--
+
+INSERT INTO `bookers` (`b_id`, `b_name`, `b_email`, `b_phone`, `b_password`, `b_address`, `b_gender`, `b_language`, `b_pic`, `postal_code`, `company_name`, `others`, `b_ni`, `com_percentage`, `com_fixed`, `booker_reg_date`) VALUES
+(1, 'Atiq Ramzan', 'hello@prenero.com', '+923157524000', 'b743c33627755c255938a992d3480cab', 'Sargodha Road Faisalabad, Punjab, Pakistan.  38000', 'Male', 'English', '', '', '', 'Other Details', '33102-1457353-9', '', '', '2023-12-13 20:00:29'),
+(2, 'Azib Ali', 'azib@gmail.com', '+4123456523', '25d55ad283aa400af464c76d713c07ad', 'London', 'Male', 'English', '', '2J53', 'Euro Data Tech', '', '3310214573539', '', '', '2023-10-20 14:48:17'),
+(3, 'Mahtab', 'Mahtab@prenero.com', '+923346452312', '25d55ad283aa400af464c76d713c07ad', 'Faisalabad', 'Male', 'Urdu', '', '44000', 'Prenero Studio', '', '3310214573539', '', '', '2023-10-20 14:48:29'),
+(4, 'Azib Ali', 'azib@prenero.com', '+44123456789', '6266a', 'N/A', 'Male', 'English', '', 'WJ 123', 'Prenero Studio', '', '33102-1457353-9', '10', '150', '2023-12-13 15:28:48'),
+(5, 'Azib Ali', 'azib@prenero.com', '+44123456789', '123456', '', 'Male', 'English', 'IMG-20230922-WA0064.jpg', 'WJ 123', '', '', '', '', '', '2023-12-13 19:04:18'),
+(6, 'Azib Ali', 'azib@prenero.com', '+44123456789', '123456', '', 'Male', 'English', 'IMG-20230922-WA0073.jpg', '', '', 'Other Details', '33102-1457353-9', '', '', '2023-12-13 20:00:49');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `bookings`
 --
 
 CREATE TABLE `bookings` (
-  `book_id` int(11) NOT NULL,
+  `book_id` int(11) UNSIGNED ZEROFILL NOT NULL,
+  `b_type_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
   `pickup` varchar(255) NOT NULL,
   `destination` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `postal_code` varchar(255) NOT NULL,
   `passenger` int(55) NOT NULL,
-  `luggage` varchar(255) NOT NULL,
-  `note` text NOT NULL,
-  `book_date` date NOT NULL,
-  `book_time` time NOT NULL,
+  `pick_date` date NOT NULL,
+  `pick_time` time NOT NULL,
   `journey_type` varchar(55) NOT NULL,
   `v_id` int(11) NOT NULL,
+  `luggage` varchar(255) NOT NULL,
+  `child_seat` varchar(255) NOT NULL,
+  `flight_number` varchar(255) NOT NULL,
+  `delay_time` time NOT NULL,
+  `note` text NOT NULL,
+  `journey_fare` int(55) NOT NULL,
+  `journey_distance` int(55) NOT NULL,
+  `booking_fee` int(11) NOT NULL,
+  `car_parking` int(11) NOT NULL,
+  `waiting` int(11) NOT NULL,
+  `tolls` int(11) NOT NULL,
+  `extra` int(11) DEFAULT NULL,
   `booking_status` varchar(55) NOT NULL,
   `bid_status` varchar(255) NOT NULL,
   `bid_note` varchar(255) NOT NULL,
@@ -108,15 +158,41 @@ CREATE TABLE `bookings` (
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`book_id`, `c_id`, `pickup`, `destination`, `passenger`, `luggage`, `note`, `book_date`, `book_time`, `journey_type`, `v_id`, `booking_status`, `bid_status`, `bid_note`, `book_add_date`) VALUES
-(1, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-11', '15:00:00', 'One Way', 5, 'Pending', 'Open', '', '2023-10-27 02:10:09'),
-(2, 1, 'Faisalabad', 'Lahore', 4, 'No', 'N/A', '2023-10-12', '18:06:00', 'One Way', 3, 'Pending', '', '', '2023-10-27 02:11:43'),
-(3, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-12', '17:05:00', 'One Way', 3, 'Pending', '', '', '2023-10-27 02:11:52'),
-(4, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'Be on time', '2023-10-27', '05:00:00', 'Return', 3, 'Pending', '', '', '2023-10-27 02:12:05'),
-(5, 1, 'Faisalabad', 'Lahore', 2, 'Yes', 'N/A', '2023-10-07', '05:25:00', 'Return', 3, 'Pending', '', '', '2023-10-27 02:12:18'),
-(7, 1, 'Faisalabad', 'Lahore', 6, 'Yes', 'N/A', '2023-10-26', '22:40:00', 'Return', 3, 'Pending', '', '', '2023-10-29 20:03:30'),
-(9, 2, 'Model Town', 'Lahore Airport', 4, 'Yes', 'NA', '2023-10-30', '10:00:00', 'Return', 5, 'Pending', 'Open', '', '2023-10-29 18:16:49'),
-(10, 2, 'Model Town G Block', 'Lahore Airport', 4, 'Yes', 'NA', '2023-10-31', '07:19:00', 'One Way', 13, 'Booked', 'Open', '', '2023-10-30 12:26:18');
+INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booking_status`, `bid_status`, `bid_note`, `book_add_date`) VALUES
+(00000000001, 0, 1, 'Faisalabad', 'Lahore', '', '', 2, '2023-10-11', '15:00:00', 'One Way', 0, 'Yes', '', '', '00:00:00', 'N/A', 230, 26, 0, 0, 0, 0, NULL, 'Booked', 'Open', '', '2023-10-27 02:10:09'),
+(00000000002, 0, 1, 'Faisalabad', 'Lahore', '', '', 4, '2023-10-12', '18:06:00', 'One Way', 0, 'No', '', '', '00:00:00', 'N/A', 230, 26, 0, 0, 0, 0, NULL, 'Pending', '', '', '2023-10-27 02:11:43'),
+(00000000003, 0, 1, 'Faisalabad', 'Lahore', '', '', 2, '2023-10-12', '17:05:00', 'One Way', 0, 'Yes', '', '', '00:00:00', 'N/A', 230, 26, 0, 0, 0, 0, NULL, 'Booked', '', '', '2023-10-27 02:11:52'),
+(00000000004, 0, 1, 'Faisalabad', 'Lahore', '', '', 2, '2023-10-27', '05:00:00', 'Return', 0, 'Yes', '', '', '00:00:00', 'Be on time', 230, 26, 0, 0, 0, 0, NULL, 'Pending', '', '', '2023-10-27 02:12:05'),
+(00000000005, 0, 1, 'Faisalabad', 'Lahore', '', '', 2, '2023-10-07', '05:25:00', 'Return', 0, 'Yes', '', '', '00:00:00', 'N/A', 230, 26, 0, 0, 0, 0, NULL, 'Pending', '', '', '2023-10-27 02:12:18'),
+(00000000007, 0, 1, 'Faisalabad', 'Lahore', '', '', 6, '2023-10-26', '22:40:00', 'Return', 0, 'Yes', '', '', '00:00:00', 'N/A', 230, 26, 0, 0, 0, 0, NULL, 'Pending', '', '', '2023-10-29 20:03:30'),
+(00000000009, 0, 2, 'Model Town', 'Lahore Airport', '', '', 4, '2023-10-30', '10:00:00', 'Return', 0, 'Yes', '', '', '00:00:00', 'NA', 230, 26, 0, 0, 0, 0, NULL, 'Pending', 'Open', '', '2023-10-29 18:16:49'),
+(00000000010, 0, 2, 'Model Town G Block', 'Lahore Airport', '', '', 4, '2023-10-31', '07:19:00', 'One Way', 0, 'Yes', '', '', '00:00:00', 'NA', 230, 26, 0, 0, 0, 0, NULL, 'Booked', 'Open', '', '2023-10-30 12:26:18'),
+(00000000014, 0, 3, 'London Airport', 'Central London', '', '', 4, '2023-12-21', '20:09:00', 'Return', 0, 'yes', '', '', '00:00:00', 'N/A', 230, 26, 0, 0, 0, 0, NULL, 'Booked', '', '', '2023-12-14 19:33:19'),
+(00000000015, 0, 1, 'Heatherow Airport', 'Central London', '', '', 2, '2023-12-18', '14:00:00', 'One Way', 0, 'Yes', '', '', '00:00:00', 'N/A', 500, 22, 0, 0, 0, 0, NULL, 'Pending', '', '', '2023-12-16 04:27:27'),
+(00000000016, 0, 1, 'Heatherow Airport', 'Central London', '', '', 2, '2023-12-18', '14:00:00', 'One Way', 0, 'Yes', '', '', '00:00:00', 'N/A', 500, 22, 0, 0, 0, 0, NULL, 'Pending', '', '', '2023-12-16 04:29:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking_type`
+--
+
+CREATE TABLE `booking_type` (
+  `b_type_id` int(11) NOT NULL,
+  `b_type_name` varchar(255) NOT NULL,
+  `b_added_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking_type`
+--
+
+INSERT INTO `booking_type` (`b_type_id`, `b_type_name`, `b_added_date`) VALUES
+(1, 'Cash/Card', '2023-12-20 19:35:58'),
+(2, 'Account', '2023-12-20 19:35:58'),
+(3, 'Booker', '2023-12-20 19:35:58'),
+(4, 'Parcel Delivery', '2023-12-20 19:35:58'),
+(5, 'Online App/Website', '2023-12-20 19:35:58');
 
 -- --------------------------------------------------------
 
@@ -138,6 +214,8 @@ CREATE TABLE `clients` (
   `company_name` varchar(255) NOT NULL,
   `others` varchar(255) NOT NULL,
   `c_ni` varchar(255) NOT NULL,
+  `status` int(5) NOT NULL,
+  `acount_status` int(5) NOT NULL,
   `reg_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -145,10 +223,10 @@ CREATE TABLE `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `company_name`, `others`, `c_ni`, `reg_date`) VALUES
-(1, 'Atiq Ramzan', 'hello@prenero.com', '+923157524000', 'b743c33627755c255938a992d3480cab', 'Sargodha Road Faisalabad, Punjab, Pakistan. ', 'Male', 'English', '', '38000', 'Prenero Studio', 'N/A', '33102-1457353-9', '2023-10-20 14:47:31'),
-(2, 'Azib Ali', 'azib@gmail.com', '+4123456523', '25d55ad283aa400af464c76d713c07ad', 'London', 'Male', 'English', '', '2J53', 'Euro Data Tech', '', '3310214573539', '2023-10-20 14:48:17'),
-(3, 'Mahtab', 'Mahtab@prenero.com', '+923346452312', '25d55ad283aa400af464c76d713c07ad', 'Faisalabad', 'Male', 'Urdu', '', '44000', 'Prenero Studio', '', '3310214573539', '2023-10-20 14:48:29');
+INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `company_name`, `others`, `c_ni`, `status`, `acount_status`, `reg_date`) VALUES
+(1, 'Atiq Ramzan', 'hello@prenero.com', '+923157524000', 'b743c33627755c255938a992d3480cab', 'Islam Nager', 'Male', 'Urdu', 'whatsapp-cover.png', '38000', 'Prenero Studio', 'N/A', '33102-1457353-9', 1, 1, '2023-12-20 18:15:18'),
+(2, 'Azib Ali', 'azib@gmail.com', '+4123456523', '25d55ad283aa400af464c76d713c07ad', 'London', 'Male', 'English', '', '2J53', 'Euro Data Tech', '', '3310214573539', 0, 0, '2023-10-20 14:48:17'),
+(3, 'Mahtab', 'Mahtab@prenero.com', '+923346452312', '25d55ad283aa400af464c76d713c07ad', 'Faisalabad', 'Male', 'Urdu', '', '44000', 'Prenero Studio', '', '3310214573539', 0, 0, '2023-10-20 14:48:29');
 
 -- --------------------------------------------------------
 
@@ -234,6 +312,7 @@ CREATE TABLE `drivers` (
   `d_pic` varchar(255) NOT NULL,
   `d_gender` varchar(55) NOT NULL,
   `d_language` varchar(55) NOT NULL,
+  `licence_authority` varchar(255) NOT NULL,
   `v_id` int(55) NOT NULL,
   `d_licence` varchar(55) NOT NULL,
   `d_licence_exp` varchar(55) NOT NULL,
@@ -259,11 +338,11 @@ CREATE TABLE `drivers` (
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_password`, `d_phone`, `d_address`, `d_pic`, `d_gender`, `d_language`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `skype_acount`, `dl_front`, `dl_back`, `national_insurance`, `basic_disclosure`, `work_proof`, `passport`, `dvla`, `d_remarks`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
-(1, 'Atiq Ramzan', 'hello@prenero.com', '6266a', '+923157524000', 'FSD ', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 1, '123456789', '2023-10-28', '123456789', '2023-10-31', '', 'driving-licence.jpeg', 'licence-back.jpg', 'national_insurance.jpg', 'Basic-Disclosure.jpg', 'work-proof.png', 'british-passport.jpg', 'DVLA-Check.jpg', 'N/A', '51.52145727821898', '-0.12723122456155755', 'Waiting for Passenger!', 1, '2023-12-07 19:21:16'),
-(3, 'Shahzib', 'shazaib@prenero.com', 'asdf1234', '+44125364585', '', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', 16, '12345678', '2023-10-28', '123456789', '2023-10-31', 'atiq.ramzan98', '', '', '', '', '', '', '', 'N.A', '51.512474660272886', '-0.13759970050199483', 'online', 1, '2023-12-07 19:37:44'),
-(5, 'Mahtab Mukhtar', 'mahtab@prenero.com', '12345678', '032415246242', '', '', 'Male', 'English', 2, '12345678', '02-2024', '123456789', '02-2024', 'prenero', '', '', '', '', '', '', '', '', '51.512474660272886', '-0.14759970050199483', 'online', 0, '2023-10-30 13:06:50'),
-(6, 'Nauman Naseer', 'nauman@prenero.com', '12345678', '03241524624', '', '', '', '', 8, '', '', '', '', '', '', '', '', '', '', '', '', '', '51.512474660272886', '-0.15759970050199483', 'online', 1, '2023-10-30 12:24:43');
+INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_password`, `d_phone`, `d_address`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `skype_acount`, `dl_front`, `dl_back`, `national_insurance`, `basic_disclosure`, `work_proof`, `passport`, `dvla`, `d_remarks`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
+(1, 'Atiq Ramzan', 'hello@prenero.com', '6266a', '+923157524000', 'FSD ', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', '', 1, '123456789', '2023-10-28', '123456789', '2023-10-31', '', 'driving-licence.jpeg', 'licence-back.jpg', 'national_insurance.jpg', 'Basic-Disclosure.jpg', 'work-proof.png', 'british-passport.jpg', 'DVLA-Check.jpg', 'N/A', '51.52145727821898', '-0.12723122456155755', 'Waiting for Passenger!', 1, '2023-12-07 19:21:16'),
+(3, 'Shahzib', 'shazaib@prenero.com', 'asdf1234', '+44125364585', '', 'img/drivers/20181017165737_IMG_6166.png', 'Male', 'English', '', 16, '12345678', '2023-10-28', '123456789', '2023-10-31', 'atiq.ramzan98', '', '', '', '', '', '', '', 'N.A', '51.512474660272886', '-0.13759970050199483', 'online', 1, '2023-12-07 19:37:44'),
+(5, 'Mahtab Mukhtar', 'mahtab@prenero.com', '12345678', '032415246242', '', '', 'Male', 'English', '', 2, '12345678', '02-2024', '123456789', '02-2024', 'prenero', '', '', '', '', '', '', '', '', '51.512474660272886', '-0.14759970050199483', 'online', 0, '2023-10-30 13:06:50'),
+(6, 'Nauman Naseer', 'nauman@prenero.com', '12345678', '03241524624', '', '', '', '', '', 8, '', '', '', '', '', '', '', '', '', '', '', '', '', '51.512474660272886', '-0.15759970050199483', 'online', 1, '2023-10-30 12:24:43');
 
 -- --------------------------------------------------------
 
@@ -322,7 +401,7 @@ CREATE TABLE `fares` (
 --
 
 INSERT INTO `fares` (`fare_id`, `job_id`, `d_id`, `journey_fare`, `extra_waiting`, `parking`, `tolls`, `fare_status`, `apply_date`) VALUES
-(1, 1, 1, 250, 20, 15, 15, 'Pending', '2023-12-03');
+(1, 1, 1, 250, 200, 150, 1500, 'Corrected', '2023-12-13');
 
 -- --------------------------------------------------------
 
@@ -364,10 +443,7 @@ CREATE TABLE `jobs` (
   `book_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
   `d_id` int(11) NOT NULL,
-  `distance` int(55) NOT NULL,
-  `pay_method` varchar(255) NOT NULL,
-  `fare` varchar(255) NOT NULL,
-  `note` varchar(255) NOT NULL,
+  `note` text NOT NULL,
   `job_status` varchar(255) NOT NULL,
   `date_job_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -376,14 +452,11 @@ CREATE TABLE `jobs` (
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`job_id`, `book_id`, `c_id`, `d_id`, `distance`, `pay_method`, `fare`, `note`, `job_status`, `date_job_add`) VALUES
-(1, 1, 1, 1, 0, '', '5000', 'N/A', 'Completed', '2023-10-07 06:28:54'),
-(2, 1, 1, 1, 0, '', '5000', 'N/A', 'Completed', '2023-10-07 06:33:09'),
-(3, 1, 1, 1, 0, '', '5000', 'N/A', 'Waiting', '2023-10-11 12:22:39'),
-(4, 1, 1, 1, 0, '', '2500', 'N/A', 'Cancelled', '2023-10-11 12:22:00'),
-(5, 10, 2, 3, 0, 'Cash', '400', 'N/A', 'Waiting', '2023-10-29 19:43:22'),
-(6, 7, 1, 3, 0, 'Cash', '400', '', 'Completed', '2023-10-29 20:03:56'),
-(7, 10, 2, 5, 0, 'Cash', '400', '', 'Waiting', '2023-10-30 12:26:18');
+INSERT INTO `jobs` (`job_id`, `book_id`, `c_id`, `d_id`, `note`, `job_status`, `date_job_add`) VALUES
+(1, 1, 1, 1, 'N/A', 'Completed', '2023-10-07 06:28:54'),
+(6, 7, 1, 3, '', 'Completed', '2023-10-29 20:03:56'),
+(7, 10, 2, 5, '', 'Waiting', '2023-10-30 12:26:18'),
+(8, 14, 3, 6, '', 'Waiting', '2023-12-14 19:33:19');
 
 -- --------------------------------------------------------
 
@@ -439,6 +512,13 @@ CREATE TABLE `mg_charges` (
   `pickup_charges` int(11) NOT NULL,
   `date_add_mg` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mg_charges`
+--
+
+INSERT INTO `mg_charges` (`mg_id`, `pickup_location`, `pickup_charges`, `date_add_mg`) VALUES
+(2, 'London International Airport', 50, '2023-12-10');
 
 -- --------------------------------------------------------
 
@@ -500,17 +580,6 @@ CREATE TABLE `price_mile` (
   `15_16p` int(10) NOT NULL,
   `date_add_pm` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `price_mile`
---
-
-INSERT INTO `price_mile` (`pm_id`, `start_from`, `end_to`, `1_4p`, `1_4e`, `5_6p`, `7p`, `8p`, `9p`, `10_14p`, `15_16p`, `date_add_pm`) VALUES
-(1, 1, 10, 10, 10, 15, 20, 25, 30, 35, 40, '2023-12-05'),
-(2, 10, 20, 15, 20, 25, 30, 35, 40, 45, 50, '2023-12-05'),
-(3, 1, 10, 10, 10, 15, 20, 25, 30, 35, 40, '2023-12-05'),
-(4, 10, 20, 15, 20, 25, 30, 35, 40, 45, 50, '2023-12-05'),
-(5, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, '2023-12-09');
 
 -- --------------------------------------------------------
 
@@ -617,10 +686,10 @@ INSERT INTO `vehicles` (`v_id`, `v_name`, `v_seat`, `v_bags`, `v_wchair`, `v_tra
 (1, 'Toyota Prius', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/toyota-prius.png', '2023-10-17 19:39:57'),
 (2, 'Hackney carriage', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/hackney-carriage.png', '2023-10-17 19:39:57'),
 (3, 'Ford Galaxy', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Ford-Galaxy.png', '2023-10-17 19:39:57'),
-(4, 'Škoda Octavia', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Skoda_Octavia.png', '2023-10-17 19:39:57'),
+(4, 'Skoda Octavia', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Skoda_Octavia.png', '2023-10-17 19:39:57'),
 (5, 'Ford Crown Victoria', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Ford-Crown-Victoria.png', '2023-10-17 19:39:57'),
 (6, 'Ford Mondeo', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Ford-Mondeo.png', '2023-10-17 19:39:57'),
-(7, 'Škoda Superb', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Škoda-Superb.png', '2023-10-17 19:39:57'),
+(7, 'Skoda Superb', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Skoda-Superb.png', '2023-10-17 19:39:57'),
 (8, 'Toyota Camry', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '40', 'img/vehicles/Toyota-Camry.png', '2023-10-17 19:39:57'),
 (9, 'Citroen Berlingo', '4', 'yes', 'yes', 'yes', 'yes', 'yes', '50', 'img/vehicles/Citroen-Berlingo.png', '2023-10-17 19:39:57'),
 (10, 'Mercedes C', '8', 'yes', 'yes', 'yes', 'yes', 'yes', '250', 'img/vehicles/Mercedes-C.png', '2023-10-17 19:39:57'),
@@ -672,10 +741,22 @@ ALTER TABLE `bids`
   ADD PRIMARY KEY (`bid_id`);
 
 --
+-- Indexes for table `bookers`
+--
+ALTER TABLE `bookers`
+  ADD PRIMARY KEY (`b_id`);
+
+--
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`book_id`) USING BTREE;
+
+--
+-- Indexes for table `booking_type`
+--
+ALTER TABLE `booking_type`
+  ADD PRIMARY KEY (`b_type_id`);
 
 --
 -- Indexes for table `clients`
@@ -808,10 +889,22 @@ ALTER TABLE `bids`
   MODIFY `bid_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `bookers`
+--
+ALTER TABLE `bookers`
+  MODIFY `b_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `book_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `booking_type`
+--
+ALTER TABLE `booking_type`
+  MODIFY `b_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `clients`
@@ -865,7 +958,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `language`
@@ -877,7 +970,7 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `mg_charges`
 --
 ALTER TABLE `mg_charges`
-  MODIFY `mg_id` int(55) NOT NULL AUTO_INCREMENT;
+  MODIFY `mg_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payment_history`
@@ -895,7 +988,7 @@ ALTER TABLE `price_by_location`
 -- AUTO_INCREMENT for table `price_mile`
 --
 ALTER TABLE `price_mile`
-  MODIFY `pm_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `pm_id` int(55) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `price_postcode`

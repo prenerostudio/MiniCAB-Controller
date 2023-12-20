@@ -56,10 +56,19 @@ if (!isset($_SESSION['email'])) {
 		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 		
-	
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		
 		
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB-AZa456v6psuXAws1WA822K2ckaL1O4&libraries=places&callback=initMap" async defer></script>
+	<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Use a callback function to load the Google Maps JavaScript API -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initMap"></script>
+
 
 		
 		
@@ -76,7 +85,9 @@ if (!isset($_SESSION['email'])) {
 				height: 200px; 
 			}
 			
-			
+			.pac-container {
+    z-index: 1000;
+}
 			#post_map {
     width: 100%;
     height: 300px;

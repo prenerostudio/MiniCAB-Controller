@@ -60,12 +60,17 @@
 							<div class="mb-3">    
 								<label class="form-label">Booking Type</label>
 								<select class="form-control" name="book_type">       
-									<option value="">Select Booking Type</option>       
-									<option> Cash/Card</option> 
-									<option> Account</option> 
-									<option>Booker</option>
-									<option>Parcel Delivery</option>
-									<option>Online App/Website</option>                          
+									<option value="">Select Booking Type</option> 
+									<?php        
+									$btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");        
+									while ($btrow = mysqli_fetch_array($btsql)) {           
+									?>           
+									<option value="<?php echo $btrow['b_type_id'] ?>">
+										<?php echo $btrow['b_type_name'] ?>
+									</option>           
+									<?php       
+									}        
+									?>  									                         
 								</select>
 							</div>												
 						</div>
@@ -123,13 +128,46 @@
 						<div class="row">						
 							<h4>Journey Details:</h4>						
 							<div class="mb-3 col-lg-4">
-								<label class="form-label">Pickup </label>
-								<input type="text" class="form-control" name="pickup" id="pickup" oninput="updateMap()">
-							</div>														
-							<div class="mb-3 col-lg-4">							
-								<label class="form-label">Destination</label>								
-								<input type="text" class="form-control" name="destination" id="dropoff" oninput="updateMap()">
-							</div>
+    <label class="form-label">Pickup</label>
+    <input type="text" class="form-control" name="pickup" id="pickup">
+</div>
+
+<div class="mb-3 col-lg-4">
+    <label class="form-label">Destination</label>
+    <input type="text" class="form-control" name="destination" id="dropoff">
+</div>
+
+<script>
+    function initMap() {
+        // Wait for the DOM to be ready
+        $(document).ready(function () {
+            if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+                console.error('Google Maps API not loaded. Check your API key and network connection.');
+                return;
+            }
+
+            // Initialize Google Places Autocomplete for pickup and dropoff fields
+            var pickupAutocomplete = new google.maps.places.Autocomplete(document.getElementById('pickup'));
+            var dropoffAutocomplete = new google.maps.places.Autocomplete(document.getElementById('dropoff'));
+
+            // Optionally, you can set additional options for the Autocomplete instances
+
+            // Handle place changed event for pickup field
+            google.maps.event.addListener(pickupAutocomplete, 'place_changed', function () {
+                var place = pickupAutocomplete.getPlace();
+                console.log(place);
+                // You can access place details and perform actions
+            });
+
+            // Handle place changed event for dropoff field
+            google.maps.event.addListener(dropoffAutocomplete, 'place_changed', function () {
+                var place = dropoffAutocomplete.getPlace();
+                console.log(place);
+                // You can access place details and perform actions
+            });
+        });
+    }
+</script>
 							<div class="mb-3 col-lg-4">												
 								<label class="form-label">Address</label>
 								<input type="number" class="form-control" name="address">
@@ -289,10 +327,10 @@
 	</div>    
 </div>
 <!-- Libs JS -->    
-<script src="libs/apexcharts/dist/apexcharts.min6a55.js?1695847769" defer></script>  
-<script src="libs/jsvectormap/dist/js/jsvectormap.min6a55.js?1695847769" defer></script>  
-<script src="libs/jsvectormap/dist/maps/world6a55.js?1695847769" defer></script> 
-<script src="libs/jsvectormap/dist/maps/world-merc6a55.js?1695847769" defer></script>
+<script src="libs/apexcharts/dist/apexcharts.min.js" defer></script>  
+<script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>  
+<script src="libs/jsvectormap/dist/maps/world.js" defer></script> 
+<script src="libs/jsvectormap/dist/maps/world-merc.js" defer></script>
 <!-- Tabler Core -->
 <script src="js/tabler.min.js" defer></script> 
 <script src="js/demo.min.js" defer></script> 
