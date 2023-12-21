@@ -1,340 +1,165 @@
+ <footer class="footer footer-transparent d-print-none">
+          <div class="container-xl">
+            <div class="row text-center align-items-center flex-row-reverse">
+              <div class="col-lg-auto ms-lg-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item"><a href="https://tabler.io/docs" target="_blank" class="link-secondary" rel="noopener">Documentation</a></li>
+                  <li class="list-inline-item"><a href="license.html" class="link-secondary">License</a></li>
+                  <li class="list-inline-item"><a href="https://github.com/tabler/tabler" target="_blank" class="link-secondary" rel="noopener">Source code</a></li>
+                  <li class="list-inline-item">
+                    <a href="https://github.com/sponsors/codecalm" target="_blank" class="link-secondary" rel="noopener">
+                      <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon text-pink icon-filled icon-inline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                      Sponsor
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item">
+                    Copyright &copy; 2023
+                    <a href="error-404.html" class="link-secondary">Tabler</a>.
+                    All rights reserved.
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="changelog.html" class="link-secondary" rel="noopener">
+                      v1.0.0-beta20
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>  
 </div>
-<footer class="footer footer-transparent d-print-none">
-	<div class="container-xl">    
-		<div class="row text-center align-items-center flex-row-reverse">        
-			<div class="col-lg-auto ms-lg-auto">            
-				<ul class="list-inline list-inline-dots mb-0">                
-					<li class="list-inline-item">
-						<a href="#" target="_blank" class="link-secondary" rel="noopener">
-							Documentation
-						</a>
-					</li>                  
-					<li class="list-inline-item">
-						<a href="#" class="link-secondary">
-							License
-						</a>
-					</li>                 
-					<li class="list-inline-item">
-						<a href="#" target="_blank" class="link-secondary" rel="noopener">
-							Source code
-						</a>					
-					</li>                 										               				
-				</ul>             
-			</div>              
-			<div class="col-12 col-lg-auto mt-3 mt-lg-0">              
-				<ul class="list-inline list-inline-dots mb-0">                
-					<li class="list-inline-item">                    
-						Copyright &copy; 2023                    
-						<a href="#" class="link-secondary">Euro Data Technologies</a>.                    
-						All rights reserved.                  
-					</li>                  
-					<li class="list-inline-item">
-						<a href="#" class="link-secondary" rel="noopener">                      
-							v1.0.0-beta20                    
-						</a>                  
-					</li>                
-				</ul>              
-			</div>            
-		</div>        
-	</div>    
-</footer>
-</div>	
-</div>
+    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New report</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="example-text-input" placeholder="Your report name">
+            </div>
+            <label class="form-label">Report type</label>
+            <div class="form-selectgroup-boxes row mb-3">
+              <div class="col-lg-6">
+                <label class="form-selectgroup-item">
+                  <input type="radio" name="report-type" value="1" class="form-selectgroup-input" checked>
+                  <span class="form-selectgroup-label d-flex align-items-center p-3">
+                    <span class="me-3">
+                      <span class="form-selectgroup-check"></span>
+                    </span>
+                    <span class="form-selectgroup-label-content">
+                      <span class="form-selectgroup-title strong mb-1">Simple</span>
+                      <span class="d-block text-secondary">Provide only basic data needed for the report</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label class="form-selectgroup-item">
+                  <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                  <span class="form-selectgroup-label d-flex align-items-center p-3">
+                    <span class="me-3">
+                      <span class="form-selectgroup-check"></span>
+                    </span>
+                    <span class="form-selectgroup-label-content">
+                      <span class="form-selectgroup-title strong mb-1">Advanced</span>
+                      <span class="d-block text-secondary">Insert charts and additional advanced analyses to be inserted in the report</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="mb-3">
+                  <label class="form-label">Report url</label>
+                  <div class="input-group input-group-flat">
+                    <span class="input-group-text">
+                      https://tabler.io/reports/
+                    </span>
+                    <input type="text" class="form-control ps-0"  value="report-01" autocomplete="off">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="mb-3">
+                  <label class="form-label">Visibility</label>
+                  <select class="form-select">
+                    <option value="1" selected>Private</option>
+                    <option value="2">Public</option>
+                    <option value="3">Hidden</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Client name</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Reporting period</label>
+                  <input type="date" class="form-control">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div>
+                  <label class="form-label">Additional information</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+              Cancel
+            </a>
+            <a href="#" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
+              <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+              Create new report
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Libs JS -->
+    <script src="libs/apexcharts/dist/apexcharts.min.js" defer></script>
+    <script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>
+    <script src="libs/jsvectormap/dist/maps/world.js" defer></script>
+    <script src="libs/jsvectormap/dist/maps/world-merc.js" defer></script>
+    <!-- Tabler Core -->
+    <script src="js/tabler.min.js" defer></script>
+    <script src="js/demo.min.js" defer></script>
 
+<script src="libs/list.js/dist/list.min.js" defer></script>
 
+   <script>
+      document.addEventListener("DOMContentLoaded", function() {
+      const list = new List('table-default', {
+      	sortClass: 'table-sort',
+      	listClass: 'table-tbody',
+      	valueNames: [ 'sort-name', 'sort-type', 'sort-city', 'sort-score',
+      		{ attr: 'data-date', name: 'sort-date' },
+      		{ attr: 'data-progress', name: 'sort-progress' },
+      		'sort-quantity'
+      	]
+      });
+      })
+    </script>
 
-<!-------------------------------
-----------Add Booking-------------
--------------------------------->
-<div class="modal modal-blur fade" id="modal-booking" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document" >    	
-		<div class="modal-content">        		
-			<div class="modal-header">            			
-				<h5 class="modal-title">Add New Booking</h5>            				
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div> 			
-			<form method="post" action="booking-process.php" enctype="multipart/form-data">
-				<div class="modal-body">								
-					<div class="row">  
-						<div class="col-lg-12">													
-							<div class="mb-3">    
-								<label class="form-label">Booking Type</label>
-								<select class="form-control" name="book_type">       
-									<option value="">Select Booking Type</option> 
-									<?php        
-									$btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");        
-									while ($btrow = mysqli_fetch_array($btsql)) {           
-									?>           
-									<option value="<?php echo $btrow['b_type_id'] ?>">
-										<?php echo $btrow['b_type_name'] ?>
-									</option>           
-									<?php       
-									}        
-									?>  									                         
-								</select>
-							</div>												
-						</div>
-						
-						<div class="row">												
-							<h4>Passenger Details:</h4>													
-							<div class="mb-3 col-lg-4">    
-								<label class="form-label">Name</label>   
-								<select class="form-control" name="c_id" id="clientSelect">       
-									<option value="">Select Customer</option>       
-									<?php        
-									$clsql = mysqli_query($connect, "SELECT * FROM `clients`");        
-									while ($clrow = mysqli_fetch_array($clsql)) {           
-									?>           
-									<option value="<?php echo $clrow['c_id'] ?>">
-										<?php echo $clrow['c_name'] ?>
-									</option>           
-									<?php       
-									}        
-									?>    
-								</select>
-							</div>
-							<div class="mb-3 col-lg-4">  
-								<label class="form-label">Customer Phone</label>  
-								<input type="text" class="form-control" name="cphone" id="customerPhone" readonly>
-							</div>
-
-							<div class="mb-3 col-lg-4">   
-								<label class="form-label">Customer Email</label>   
-								<input type="text" class="form-control" name="cemail" id="customerEmail" readonly>
-							</div>
-							<script>   
-								var clientSelect = document.getElementById('clientSelect');   
-								var customerPhoneInput = document.getElementById('customerPhone');   
-								var customerEmailInput = document.getElementById('customerEmail');   
-								clientSelect.addEventListener('change', function () {    
-									var selectedClientId = clientSelect.value;     
-									$.ajax({          
-										type: 'POST',          
-										url: 'get_customer_details.php',         
-										data: { c_id: selectedClientId },          
-										success: function (response) {           
-											var data = JSON.parse(response);            
-											customerPhoneInput.value = data.phone;              
-											customerEmailInput.value = data.email;        
-										},          
-										error: function () {              
-											// Handle error if needed           
-										}       
-									});   
-								});
-							</script>											
-						</div>
-												
-						<div class="row">						
-							<h4>Journey Details:</h4>						
-							<div class="mb-3 col-lg-4">
-    <label class="form-label">Pickup</label>
-    <input type="text" class="form-control" name="pickup" id="pickup">
-</div>
-
-<div class="mb-3 col-lg-4">
-    <label class="form-label">Destination</label>
-    <input type="text" class="form-control" name="destination" id="dropoff">
-</div>
-
-<script>
-    function initMap() {
-        // Wait for the DOM to be ready
-        $(document).ready(function () {
-            if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
-                console.error('Google Maps API not loaded. Check your API key and network connection.');
-                return;
-            }
-
-            // Initialize Google Places Autocomplete for pickup and dropoff fields
-            var pickupAutocomplete = new google.maps.places.Autocomplete(document.getElementById('pickup'));
-            var dropoffAutocomplete = new google.maps.places.Autocomplete(document.getElementById('dropoff'));
-
-            // Optionally, you can set additional options for the Autocomplete instances
-
-            // Handle place changed event for pickup field
-            google.maps.event.addListener(pickupAutocomplete, 'place_changed', function () {
-                var place = pickupAutocomplete.getPlace();
-                console.log(place);
-                // You can access place details and perform actions
-            });
-
-            // Handle place changed event for dropoff field
-            google.maps.event.addListener(dropoffAutocomplete, 'place_changed', function () {
-                var place = dropoffAutocomplete.getPlace();
-                console.log(place);
-                // You can access place details and perform actions
-            });
-        });
-    }
-</script>
-							<div class="mb-3 col-lg-4">												
-								<label class="form-label">Address</label>
-								<input type="number" class="form-control" name="address">
-							</div>
-							<div class="mb-3 col-lg-4">												
-								<label class="form-label">Postal Code</label>
-								<input type="number" class="form-control" name="pcode">
-							</div>
-							<div class="mb-3 col-lg-4">												
-								<label class="form-label">No. of Passenger</label>
-								<input type="number" class="form-control" name="passenger">
-							</div> 														
-							<div class="mb-3 col-lg-4">
-								<label class="form-label">Pickup Date</label>								
-								<input type="date" class="form-control" name="pdate">
-							</div>							
-							<div class="mb-3 col-lg-4">
-								<label class="form-label">Pickup Time</label>
-								<input type="time" class="form-control" name="ptime">
-							</div>									
-							<div class="mb-3 col-lg-4">								
-								<div class="form-label">Journey Type</div>								
-								<div>                              									
-									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="journey_type" checked="" value="One Way">									
-										<span class="form-check-label">One Way</span>
-									</label>                              									
-									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="journey_type" value="Return">									
-										<span class="form-check-label">Return</span>			
-									</label>                             								
-								</div>                          							
-							</div>
-						</div>
-						
-						<div class="row">	
-							<div class="mb-3 col-lg-4">    
-								<label class="form-label">Vehicle Type</label>   
-								<select class="form-control" name="v_id">       
-									<option value="">Select Vehicle</option>       
-									<?php        
-									$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");        
-									while ($vrow = mysqli_fetch_array($vsql)) {           
-									?>           
-									<option value="<?php echo $vrow['v_id'] ?>">
-										<?php echo $vrow['v_name'] ?>
-									</option>           
-									<?php       
-									}        
-									?>    
-								</select>
-							</div>
-															
-							<div class="mb-3 col-lg-4">				
-								<label class="form-label">Luggage</label>
-								<input type="text" class="form-control" name="luggage">			
-							</div> 
-							
-							<div class="mb-3 col-lg-4">								
-								<div class="form-label">Child Seat</div>								
-								<div>                              									
-									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="child_seat" checked="" value="Yes">									
-										<span class="form-check-label">Yes</span>
-									</label>                              									
-									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="child_seat" value="No">									
-										<span class="form-check-label">No</span>			
-									</label>                             								
-								</div>                          							
-							</div>
-							
-							<div class="mb-3 col-lg-4">          
-								<label class="form-label">Flight Number </label>
-								<input type="text" class="form-control" name="flight_no">      						
-									
-							</div>	
-							
-							<div class="mb-3 col-lg-4">          
-								<label class="form-label">Delay Time </label>
-								<input type="text" class="form-control" name="delay_time">
-							</div>							
-						</div>
-						
-						<div class="row">
-							<div class="mb-3">                 							
-								<label class="form-label">Special Note</label>
-								<textarea class="form-control" rows="3" name="note"></textarea>	
-							</div> 	
-						</div>    
-						
-						<div class="row">
-						
-							<h4>Pricing Section</h4>
-						
-							<div class="mb-3 col-lg-4">          
-								<label class="form-label">Bookinng Fee </label>
-								<input type="text" class="form-control" name="book_fee">
-							</div>
-							
-							<div class="mb-3 col-lg-4">          
-								<label class="form-label">Car Park </label>
-								<input type="text" class="form-control" name="car_park">
-							</div>
-							<div class="mb-3 col-lg-4">          
-								<label class="form-label">Waiting Charges </label>
-								<input type="text" class="form-control" name="waiting_charge">
-							</div>
-							<div class="mb-3 col-lg-4">          
-								<label class="form-label">Tolls </label>
-								<input type="text" class="form-control" name="tolls">
-							</div>
-							<div class="mb-3 col-lg-4">          
-								<label class="form-label">Extra </label>
-								<input type="text" class="form-control" name="extra">
-							</div>															
-							<div class="mb-3 col-lg-4">          							
-								<label class="form-label">Distance </label>								
-								<input type="text" class="form-control" name="dis">				
-							</div>								
-							<div class="mb-3 col-lg-4">										
-								<label class="form-label">Jouney Fare</label>
-								<input type="text" class="form-control" name="fare">
-							</div>							
-							
-							<div class="col-lg-4">                							
-								<h4>Send Online Payment Link</h4>		
-								<p>							   									
-									<label>							     
-										<input type="checkbox" name="Payment Link" value="checkbox" id="PaymentLink_0">							     
-										Phone Number
-									</label>							   
-									<br>							   
-									<label>							      
-										<input type="checkbox" name="Payment Link" value="checkbox" id="PaymentLink_1">							      
-										Email Address
-									</label>							    
-									<br>						      								
-								</p>                          						
-							</div>				
-						</div>					  					
-					</div>
-				</div>          			
-							      							
-				<div class="modal-footer">           									
-					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal"> 
-						<i class="ti ti-circle-x" style="margin-right: 10px; font-size: 20px;"></i>
-						Cancel           									
-					</a>           																			
-					<button type="submit" class="btn btn-success ms-auto" data-bs-dismiss="modal">
-						<i class="ti ti-message-plus" style="margin-right: 10px; font-size: 20px;"></i>
-						Save Booking  											
-					</button>					     							
-				</div> 							
-			</form>		
-		</div>      	
-	</div>    
-</div>
-<!-- Libs JS -->    
-<script src="libs/apexcharts/dist/apexcharts.min.js" defer></script>  
-<script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>  
-<script src="libs/jsvectormap/dist/maps/world.js" defer></script> 
-<script src="libs/jsvectormap/dist/maps/world-merc.js" defer></script>
-<!-- Tabler Core -->
-<script src="js/tabler.min.js" defer></script> 
-<script src="js/demo.min.js" defer></script> 
-<script src="js/simple-datatables/simple-datatables.js"></script>  
-
-</body>
+  </body>
 </html>

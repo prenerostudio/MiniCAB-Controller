@@ -1,30 +1,52 @@
 <?php
 include('header.php');
-?>		
-<div class="col-md-12">                
-		<div class="card">                  		
-			<div class="card-header">                   			
-				<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">                    				
-					<li class="nav-item" style="background: #163B8F;">                      					
-						<a href="#tabs-dasboard" class="nav-link active" data-bs-toggle="tab">
-							<i class="ti ti-home-down" style="font-size: 24px;"></i>                    							
-							Dashboard
-						</a>                     
-					</li>                      
-					                					                  
-				</ul>                
-			</div>
-                 			
-			<div class="card-body">                  			
-				<div class="tab-content">                   				
-					<div class="tab-pane active show" id="tabs-dasboard">                    
-						<div class="row row-deck row-cards"> 							
-							<div class="col-lg-6" style="float: left;">    		
-								<div class="card">        			
-									<div class="card-body">            				
-										<h3 class="card-title">Locations</h3>                				
-										<div class="ratio ratio-21x9">                					
-											<div>                    												
+?>     
+
+        <!-- Page header -->
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                  Overview
+                </div>
+                <h2 class="page-title">
+                  Dashboard
+                </h2>
+              </div>
+              <!-- Page title actions -->
+              <div class="col-auto ms-auto d-print-none">
+                <div class="btn-list">
+                  <span class="d-none d-sm-inline">
+                    <a href="#" class="btn">
+                      New view
+                    </a>
+                  </span>
+                  <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                    Create new report
+                  </a>
+                  <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Page body -->
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-deck row-cards">
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title">Locations</h3>
+                    <div class="ratio ratio-21x9">
+                      <div>                    												
 											
 												<div id="map"></div>
 
@@ -81,17 +103,20 @@ include('header.php');
     });
 </script>
 												
-									</div>				
-										</div>        			
-									</div>                		
-								</div>            	
-							</div>							
-	
-							<div class="col-lg-3" style="float: left;">    
-								<div class="card">        
-									<div class="card-body">            				
-										<h3 class="card-title">Drivers Onboard</h3>                
-										<div class="table-responsive">                   				
+									</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center">
+                      <div class="subheader">Driver Onboard</div>
+                      
+                    </div>
+                    <div class="table-responsive">                   				
 											<table class="table card-table table-vcenter text-nowrap datatable">                   					
 												<thead>                   						
 													<tr>                          							
@@ -123,17 +148,18 @@ include('header.php');
 													?>					
 												</tbody>                    				
 											</table>                 			
-										</div>              			
-									</div>            		
-								</div>        	
-							</div>
-								
-							<div class="col-lg-3" style="float: left;">    		
-								<div class="card">        			
-									<div class="card-body">            				
-										<h3 class="card-title">Drivers Waiting</h3>                				
-										<div class="table-responsive">                   				
-											<table class="table card-table table-vcenter text-nowrap datatable">                   					
+										</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center">
+                      <div class="subheader">Active users</div>
+                      
+                    </div>
+                    <table class="table card-table table-vcenter text-nowrap datatable">                   					
 												<thead>                   						
 													<tr>                          							
 														<th class="w-1">ID</th>                         						       
@@ -165,122 +191,82 @@ include('header.php');
 													}										
 													?>										
 												</tbody>                    				
-											</table>                 			
-										</div>              			
-									</div>            		
-								</div>        	
-							</div>   						
-						</div>				
-					</div>
-                    										
-				                                     
-				</div>                  			
-			</div>                	
-	</div>              
-</div>
-<div class="row">
-<div class="row row-deck row-cards"> 	 	    	                                                                                       
-	<div class="col-md-12">                	
-		<div class="card">                  		
-			<div class="card-header">                  			
-				<ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">                    				
-					<li class="nav-item" style="background: #3046CC;">                      					
-						<a href="#tabs-today" class="nav-link active" data-bs-toggle="tab">							                          						
-							<i class="ti ti-book-upload" style="font-size: 24px;"></i>                       							
-							Today's Booking						
-						</a>                     
-					</li>                      					
-					                					                  				
-				</ul>                			
-			</div>                 			
-			<div class="card-body">                  			
-				<div class="tab-content">                   				
-					<div class="tab-pane active show" id="tabs-today">                    
-						<div class="table-responsive">                   				
-							<table class="table card-table table-vcenter text-nowrap datatable" id="jobs_table">                   					
-								<thead>                   						
-									<tr>                          							
-										<th class="w-1">ID</th>                         							
-										<th class="w-1">Date</th>                          							
-										<th style="background:rgba(227,136,137,0.61);">Time</th>                         							
-										<th style="background:rgba(227,136,137,0.61);">Passenger</th>                         							
-										<th style="width: 15%;">Pickup</th>                         							
-										<th style="width: 15%;">Destination</th>                         							
-										<th style="background:rgba(227,136,137,0.61);">Fare</th>                        							
-										<th>Vehicle</th>                       							
-										<th>Note</th>                       							
-										<th>Status</th>                       							
-										<th style="background:rgba(227,136,137,0.61);">Driver</th>                       							
-										<!--<th>Action</th>-->                       						
-									</tr>                     					
-								</thead>                    					
-								<tbody> 						
-									<?php		
+											</table>
+                  </div>
+                </div>
+              </div>
+              
+ 
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Today's Jobs	</h3>
+                  </div>
+                  <div class="card-body border-bottom py-3">
+                    <div id="table-default" class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th><button class="table-sort" data-sort="sort-id">ID</button></th>
+                        <th><button class="table-sort" data-sort="sort-date">Date</button></th>
+                        <th><button class="table-sort" data-sort="sort-time">Time</button></th>
+                        <th><button class="table-sort" data-sort="sort-passenger">Passenger</button></th>
+                        <th><button class="table-sort" data-sort="sort-pickup">Pickup</button></th>
+                        <th><button class="table-sort" data-sort="sort-dropoff">Dropoff</button></th>
+                        <th><button class="table-sort" data-sort="sort-fare">Fare</button></th>
+						   <th><button class="table-sort" data-sort="sort-vehicle">Vehicle</button></th>
+						   <th><button class="table-sort" data-sort="sort-status">Status</button></th>
+						   <th><button class="table-sort" data-sort="sort-driver">Driver</button></th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-tbody">
+						<?php		
 									$n=0;
 									$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.book_id, bookings.pickup, bookings.destination, bookings.passenger, bookings.luggage, bookings.book_date, bookings.book_time, bookings.journey_type, drivers.d_name, 
 	vehicles.v_name FROM jobs, clients, bookings, drivers, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND drivers.v_id = vehicles.v_id ORDER BY jobs.job_id DESC");
 									while($jobrow = mysqli_fetch_array($jobsql)){	
 										$n++;
 																								
-									?>													
-									<tr>                         						
-										<td>							
-											<?php echo $n; ?>						
-										</td>                          							
-										<td>								
-											<span class="text-secondary">									
-												<?php echo $jobrow['book_date']; ?>								
-											</span>						
-										</td>                        							
-										<td style="background:rgba(227,136,137,0.61);">								
-											<?php echo $jobrow['book_time']; ?>							
-										</td>                        							
-										<td style="background:rgba(227,136,137,0.61);">                           								
-											<?php echo $jobrow['c_name']; ?>                     							
-										</td>                         							
-										<td>                          								
-											<?php echo $jobrow['pickup']; ?>                     							
-										</td>                         							
-										<td>                           								
-											<?php echo $jobrow['destination']; ?>                      							
-										</td>                          							
-										<td style="background:rgba(227,136,137,0.61);">                            								
-											<?php echo $jobrow['fare']; ?>                        							
-										</td>                          							
-										<td>Car</td>   							
-										<td><?php echo $jobrow['note']; ?>  </td>							
-										<td><?php echo $jobrow['job_status']; ?>  </td>							
-										<td style="background:rgba(227,136,137,0.61);"><?php echo $jobrow['d_name']; ?> </td>
-										<!--<td class="text-end">                            								
-											<span class="dropdown">                              									
-												<button class="btn align-text-top">Dispatch</button>								
-											</span>                         							
-										</td>  -->                     						
-									</tr>                              						
-									<?php									
-									}									
-									?>										
-								</tbody>                    				
-							</table>    
+									?>		
 						
-						</div>											
-					</div>                    
-					                                        
-				</div>                  
-			</div>                
-		</div>             
-	</div>           
-</div>   
-	</div>
-
-
-<script>  
-	$(document).ready(function(){       
-		$('#jobs_table').DataTable();   
-	});   
-	
-		
-</script> 
-<?php		
-include('footer.php');		
+						
+                      <tr>
+                        <td class="sort-name">Steel Vengeance</td>
+                        <td class="sort-city">Cedar Point, United States</td>
+                        <td class="sort-type">RMC Hybrid</td>
+                        <td class="sort-score">100,0%</td>
+                        <td class="sort-date" data-date="1628122643">August 05, 2021</td>
+                        <td class="sort-quantity">74</td>
+                        <td class="sort-progress" data-progress="30">
+                          <div class="row align-items-center">
+                            <div class="col-12 col-lg-auto">30%</div>
+                            <div class="col">
+                              <div class="progress" style="width: 5rem">
+                                <div class="progress-bar" style="width: 30%" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="30% Complete">
+                                  <span class="visually-hidden">30% Complete</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+						
+						<?php
+									}
+										?>
+                    
+                    </tbody>
+                  </table>
+                </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+<?php	
+include('footer.php');	
 ?>
