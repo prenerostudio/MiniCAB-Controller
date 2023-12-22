@@ -1,13 +1,7 @@
 <?php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods:POST');
-header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authoization, x-Requested-with');
-header('Cache-Control: max-age=3600');
+include('config.php');
 
-include("../../config.php");
-
-$b_type_id = 1;
+$b_type_id = $_POST['b_type_id'];
 $c_id  = $_POST['c_id'];
 $pickup = $_POST['pickup'];
 $dropoff = $_POST['dropoff'];
@@ -33,9 +27,7 @@ $extra  = $_POST['extra'];
 $booking_status  = 'Pending';
 $date = date("Y-m-d H:i:s");
 
-if(isset($_POST['c_id'])){ 	 	
-	        		
-		$sql = "INSERT INTO `bookings`(
+$sql = "INSERT INTO `bookings`(
 								`b_type_id`,
 								`c_id`, 
 								`pickup`, 
@@ -86,16 +78,13 @@ if(isset($_POST['c_id'])){
 								'$tolls',
 								'$extra',								
 								'$booking_status',
-								'$date')";
-		$r=mysqli_query($connect,$sql);
-		if($r){    
-			echo json_encode(array('message'=>"Booking Posted Successfully",'status'=>true));
-		}else{    
-			echo json_encode(array('message'=>"Error In Posting Booking",'status'=>false));
-		}
-	       
-}else{
-   
-	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
+								'$date')";                
+$result = mysqli_query($connect, $sql);       
+if ($result) {         
+	header('Location: booking.php');    
+	exit();    
+} else {		
+	header('Location: booking.php');    
 }
+$connect->close();
 ?>

@@ -175,7 +175,7 @@ if (!isset($_SESSION['email'])) {
 												</a>
                       
 												<div class="dropdown-menu">                        
-													<a class="dropdown-item" href="#"> 
+													<a class="dropdown-item" href="all-bookings.php"> 
 														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i>
 														All Bookings                        
 													</a>                        
@@ -204,7 +204,7 @@ if (!isset($_SESSION['email'])) {
 												</a>
                       
 												<div class="dropdown-menu">                        
-													<a class="dropdown-item" href="#"> 
+													<a class="dropdown-item" href="customers.php"> 
 														<i class="ti ti-users-group" style="margin-right: 10px;"></i>
 														Customers                        
 													</a>                        

@@ -44,6 +44,265 @@
 </div>  
 </div>
 
+<!-------------------------------
+----------Add Booking-------------
+-------------------------------->
+<div class="modal modal-blur fade" id="modal-booking" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document" >    	
+		<div class="modal-content">        		
+			<div class="modal-header">            			
+				<h5 class="modal-title">Add New Booking</h5>            				
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div> 			
+			<form method="post" action="booking-process.php" enctype="multipart/form-data">
+				<div class="modal-body">								
+					<div class="row">  
+						<div class="col-lg-12">													
+							<div class="mb-3">    
+								<label class="form-label">Booking Type</label>
+								<select class="form-control" name="b_type_id">       
+									<option value="">Select Booking Type</option> 
+									<?php        
+									$btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");        
+									while ($btrow = mysqli_fetch_array($btsql)) {           
+									?>           
+									<option value="<?php echo $btrow['b_type_id'] ?>">
+										<?php echo $btrow['b_type_name'] ?>
+									</option>           
+									<?php       
+									}        
+									?>  									                         
+								</select>
+							</div>												
+						</div>
+						
+						<div class="row">												
+							<h4>Passenger Details:</h4>													
+							<div class="mb-3 col-lg-4">    
+								<label class="form-label">Name</label>   
+								<select class="form-control" name="c_id" id="clientSelect">       
+									<option value="">Select Customer</option>       
+									<?php        
+									$clsql = mysqli_query($connect, "SELECT * FROM `clients`");        
+									while ($clrow = mysqli_fetch_array($clsql)) {           
+									?>           
+									<option value="<?php echo $clrow['c_id'] ?>">
+										<?php echo $clrow['c_name'] ?>
+									</option>           
+									<?php       
+									}        
+									?>    
+								</select>
+							</div>
+							<div class="mb-3 col-lg-4">  
+								<label class="form-label">Customer Phone</label>  
+								<input type="text" class="form-control" name="cphone" id="customerPhone" readonly>
+							</div>
+
+							<div class="mb-3 col-lg-4">   
+								<label class="form-label">Customer Email</label>   
+								<input type="text" class="form-control" name="cemail" id="customerEmail" readonly>
+							</div>
+							<script>   
+								var clientSelect = document.getElementById('clientSelect');   
+								var customerPhoneInput = document.getElementById('customerPhone');   
+								var customerEmailInput = document.getElementById('customerEmail');   
+								clientSelect.addEventListener('change', function () {    
+									var selectedClientId = clientSelect.value;     
+									$.ajax({          
+										type: 'POST',          
+										url: 'get_customer_details.php',         
+										data: { c_id: selectedClientId },          
+										success: function (response) {           
+											var data = JSON.parse(response);            
+											customerPhoneInput.value = data.phone;              
+											customerEmailInput.value = data.email;        
+										},          
+										error: function () {              
+											// Handle error if needed           
+										}       
+									});   
+								});
+							</script>											
+						</div>
+												
+						<div class="row">						
+							<h4>Journey Details:</h4>						
+					
+<div class="mb-3 col-lg-4"> 
+    <label class="form-label">Pickup Location:</label>
+    <input type="text" id="pickup" name="pickup" class="form-control" placeholder="Select pickup location">
+</div>
+    
+<div class="mb-3 col-lg-4"> 
+    <label class="form-label">Drop-off Location:</label>
+    <input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location">
+</div>
+   
+
+							
+							
+    
+
+							<div class="mb-3 col-lg-4">												
+								<label class="form-label">Address</label>
+								<input type="number" class="form-control" name="address">
+							</div>
+							<div class="mb-3 col-lg-4">												
+								<label class="form-label">Postal Code</label>
+								<input type="number" class="form-control" name="postal_code">
+							</div>
+							<div class="mb-3 col-lg-4">												
+								<label class="form-label">No. of Passenger</label>
+								<input type="number" class="form-control" name="passenger">
+							</div> 														
+							<div class="mb-3 col-lg-4">
+								<label class="form-label">Pickup Date</label>								
+								<input type="date" class="form-control" name="pick_date">
+							</div>							
+							<div class="mb-3 col-lg-4">
+								<label class="form-label">Pickup Time</label>
+								<input type="time" class="form-control" name="pick_time">
+							</div>									
+							<div class="mb-3 col-lg-4">								
+								<div class="form-label">Journey Type</div>								
+								<div>                              									
+									<label class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="journey_type" checked="" value="One Way">									
+										<span class="form-check-label">One Way</span>
+									</label>                              									
+									<label class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="journey_type" value="Return">									
+										<span class="form-check-label">Return</span>			
+									</label>                             								
+								</div>                          							
+							</div>
+						</div>
+						
+						<div class="row">	
+							<div class="mb-3 col-lg-4">    
+								<label class="form-label">Vehicle Type</label>   
+								<select class="form-control" name="v_id">       
+									<option value="">Select Vehicle</option>       
+									<?php        
+									$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");        
+									while ($vrow = mysqli_fetch_array($vsql)) {           
+									?>           
+									<option value="<?php echo $vrow['v_id'] ?>">
+										<?php echo $vrow['v_name'] ?>
+									</option>           
+									<?php       
+									}        
+									?>    
+								</select>
+							</div>
+															
+							<div class="mb-3 col-lg-4">				
+								<label class="form-label">Luggage</label>
+								<input type="text" class="form-control" name="luggage">			
+							</div> 
+							
+							<div class="mb-3 col-lg-4">								
+								<div class="form-label">Child Seat</div>								
+								<div>                              									
+									<label class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="child_seat" checked="" value="Yes">									
+										<span class="form-check-label">Yes</span>
+									</label>                              									
+									<label class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="child_seat" value="No">									
+										<span class="form-check-label">No</span>			
+									</label>                             								
+								</div>                          							
+							</div>
+							
+							<div class="mb-3 col-lg-4">          
+								<label class="form-label">Flight Number </label>
+								<input type="text" class="form-control" name="flight_number">      						
+									
+							</div>	
+							
+							<div class="mb-3 col-lg-4">          
+								<label class="form-label">Delay Time </label>
+								<input type="text" class="form-control" name="delay_time">
+							</div>							
+						</div>
+						
+						<div class="row">
+							<div class="mb-3">                 							
+								<label class="form-label">Special Note</label>
+								<textarea class="form-control" rows="3" name="note"></textarea>	
+							</div> 	
+						</div>    
+						
+						<div class="row">
+						
+							<h4>Pricing Section</h4>
+						
+							<div class="mb-3 col-lg-4">          
+								<label class="form-label">Bookinng Fee </label>
+								<input type="text" class="form-control" name="booking_fee">
+							</div>
+							
+							<div class="mb-3 col-lg-4">          
+								<label class="form-label">Car Park </label>
+								<input type="text" class="form-control" name="car_parking">
+							</div>
+							<div class="mb-3 col-lg-4">          
+								<label class="form-label">Waiting Charges </label>
+								<input type="text" class="form-control" name="waiting">
+							</div>
+							<div class="mb-3 col-lg-4">          
+								<label class="form-label">Tolls </label>
+								<input type="text" class="form-control" name="tolls">
+							</div>
+							<div class="mb-3 col-lg-4">          
+								<label class="form-label">Extra </label>
+								<input type="text" class="form-control" name="extra">
+							</div>															
+							<div class="mb-3 col-lg-4">          							
+								<label class="form-label">Distance </label>								
+								<input type="text" class="form-control" name="journey_distance">				
+							</div>								
+							<div class="mb-3 col-lg-4">										
+								<label class="form-label">Jouney Fare</label>
+								<input type="text" class="form-control" name="journey_fare">
+							</div>							
+							
+							<div class="col-lg-4">                							
+								<h4>Send Online Payment Link</h4>		
+								<p>							   									
+									<label>							     
+										<input type="checkbox" name="Payment Link" value="checkbox" id="PaymentLink_0">							     
+										Phone Number
+									</label>							   
+									<br>							   
+									<label>							      
+										<input type="checkbox" name="Payment Link" value="checkbox" id="PaymentLink_1">							      
+										Email Address
+									</label>							    
+									<br>						      								
+								</p>                          						
+							</div>				
+						</div>					  					
+					</div>
+				</div>          			
+							      							
+				<div class="modal-footer">           									
+					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal"> 
+						<i class="ti ti-circle-x" style="margin-right: 10px; font-size: 20px;"></i>
+						Cancel           									
+					</a>           																			
+					<button type="submit" class="btn btn-success ms-auto" data-bs-dismiss="modal">
+						<i class="ti ti-message-plus" style="margin-right: 10px; font-size: 20px;"></i>
+						Save Booking  											
+					</button>					     							
+				</div> 							
+			</form>		
+		</div>      	
+	</div>    
+</div>
+
 <!-- Libs JS -->
 <script src="libs/apexcharts/dist/apexcharts.min.js" defer></script>
 <script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>
@@ -55,18 +314,6 @@
 <script src="js/demo.min.js" defer></script>
 <script src="libs/list.js/dist/list.min.js" defer></script>
 
-<script>
-	document.addEventListener("DOMContentLoaded", function() {    
-		const list = new List('table-default', {      	
-			sortClass: 'table-sort',      	
-			listClass: 'table-tbody',      	
-			valueNames: [ 'sort-name', 'sort-type', 'sort-city', 'sort-score',
-						 { attr: 'data-date', name: 'sort-date' },      		
-						 { attr: 'data-progress', name: 'sort-progress' },      		
-						 'sort-quantity'      	
-						]      
-		});      
-	})
-</script>
+
 </body>
 </html>
