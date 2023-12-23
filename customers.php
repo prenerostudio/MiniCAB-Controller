@@ -97,7 +97,7 @@ include('header.php');
 						
 											?>                                         							
 						
-											<img src="img/clients/<?php echo $crow['c_pic'];?>" alt="Driver dp" style="width: 60px; border-radius: 30px;">				
+											<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 60px; border-radius: 30px;">				
 						
 											<?php                                         																						
 					
@@ -141,7 +141,9 @@ include('header.php');
 										</td>
 										
 										<td> 
+											<a href="view-customer.php?c_id=<?php echo $crow['c_id'] ?>">
 											<button class="btn btn-info">View</button>
+												</a>
 											<button class="btn btn-success">Dispatch</button>
 											<button class="btn btn-danger">Cancel</button> </td>
 									</tr>											
