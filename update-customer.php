@@ -8,9 +8,8 @@ $cphone = $_POST['cphone'];
 $cgender = $_POST['cgender'];
 $clang = $_POST['clang'];
 $pc = $_POST['postal_code'];
-$ccn = $_POST['company'];
 $cni = $_POST['cni'];
-$others = $_POST['others'];
+$others = $_POST['cothers'];
 $caddress = $_POST['caddress'];
 $date = date("Y-m-d H:i:s");
 
@@ -25,7 +24,6 @@ $sql = "UPDATE `clients` SET
 							`c_gender`='$cgender',
 							`c_language`='$clang',
 							`postal_code`='$pc',
-							`company_name`='$ccn',
 							`others`='$others',
 							`c_ni`='$cni',
 							`reg_date`='$date' WHERE `c_id`='$c_id'";
@@ -38,7 +36,7 @@ $sql = "UPDATE `clients` SET
             exit();
         } else {
            
-			header('Location: view-customer.php');
+			header('Location: customers.php');
         }
 
 

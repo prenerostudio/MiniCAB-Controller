@@ -208,7 +208,7 @@ if (!isset($_SESSION['email'])) {
 														<i class="ti ti-users-group" style="margin-right: 10px;"></i>
 														Customers                        
 													</a>                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="bookers.php">
 														<i class="ti ti-users-group" style="margin-right: 10px;"></i>
 														Bookers                        
 													</a>

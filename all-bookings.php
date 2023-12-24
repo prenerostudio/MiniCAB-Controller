@@ -86,15 +86,20 @@ include('header.php');
 										<td class="sort-date"><?php echo $brow['pick_date'] ?></td>                       
 										<td class="sort-time"><?php echo $brow['pick_time'] ?></td>                       
 										<td class="sort-passenger"><?php echo $brow['passenger'] ?></td>  
-										<td class="sort-pickup"><?php echo $brow['pickup'] ?></td>                       
-										<td class="sort-drpoff"><?php echo $brow['destination'] ?></td>
+										<td class="sort-pickup" style="width: 15%;"><?php echo $brow['pickup'] ?></td>                       
+										<td class="sort-drpoff" style="width: 15%;"><?php echo $brow['destination'] ?></td>
 										<td class="sort-fare"> <?php echo $brow['journey_fare'] ?> </td>
 										<td class="sort-vehicle"> <?php echo $brow['v_name'] ?> </td>
 										
 										<td> 
-											<button class="btn btn-info">View</button>
-											<button class="btn btn-success">Dispatch</button>
-											<button class="btn btn-danger">Cancel</button> </td>
+										<a href="view-customer.php?c_id=<?php echo $crow['c_id'] ?>">
+											<button class="btn btn-info"><i class="ti ti-eye"></i>View</button>
+												</a>
+											<button class="btn btn-success"><i class="ti ti-plane-tilt"></i>Dispatch</button>
+											<button class="btn btn-danger"><i class="ti ti-square-rounded-x"></i>Cancel</button>	
+										
+										
+										</td>
 									</tr>											
 									<?php																	
 									}																
