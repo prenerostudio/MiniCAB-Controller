@@ -19,6 +19,10 @@ if (!isset($_SESSION['email'])) {
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     
 		<title>Dashboard - MiniCAB Taxi Booking Service.</title>
+		
+		<link rel="icon" href="img/car-icon.png" type="image/x-icon"/>
+    
+		<link rel="shortcut icon" href="img/car-icon.png" type="image/x-icon"/>
     
 		<!-- CSS files -->    
 		<link href="css/tabler.min.css" rel="stylesheet"/>    
@@ -229,7 +233,7 @@ if (!isset($_SESSION['email'])) {
 													</span>                     
 												</a>                     
 												<div class="dropdown-menu">                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="active-drivers.php">
 														<i class="ti ti-steering-wheel" style="margin-right: 10px;"></i>
 														Active Drivers                        
 													</a>                        
