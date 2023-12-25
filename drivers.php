@@ -51,202 +51,140 @@ include('header.php');
 			</div>               
 			<div class="card-body">              
 				<div class="tab-content">              
-					<div class="tab-pane active show" id="drivers">                                             
-						<div class="col-12">            								
-							<div class="card">                										
-								<div class="card-header">
-									<h3 class="card-title">Active Drivers List</h3>				
-								</div>                  								
-								<div class="card-body border-bottom py-3">								
-									<div id="table-adriver" class="table-responsive">				
-										<table class="table">                    											
-											<thead>      
-												<tr>																		
-													<th>
-														<button class="table-sort" data-sort="sort-id">ID</button>
-													</th>                        									
-									
-													<th>									
-										
-														<button class="table-sort" data-sort="sort-date">Image</button>
-									
-													</th>                        									
-									
-													<th>									
-										
-														<button class="table-sort" data-sort="sort-time">Name</button>
-									
-													</th>                       									
-									
-													<th>									
-										
-														<button class="table-sort" data-sort="sort-passenger">Email</button>
-									
-													</th>                        									
-									
-													<th>									
-										
-														<button class="table-sort" data-sort="sort-pickup">Phone</button>
-									
-													</th>                        									
-									
-													<th>									
-										
-														<button class="table-sort" data-sort="sort-dropoff">Gender</button>
-									
-													</th>									
-									
-													<th>									
-										
-														<button class="table-sort" data-sort="sort-dropoff">Licence 
-															Authority</button>
-									
-													</th>							
-									
-													<th>									
-										
-														<button class="table-sort">Actions</button>
-									
-													</th>                      									
-								
-												</tr>                   								
+					<div class="tab-pane active show" id="drivers">
+   
+						<div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Active Drivers List</h3>
+            </div>
+            <div class="card-body border-bottom py-3">
+                <div id="table-adriver" class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><button class="table-sort" data-sort="sort-id">ID</button></th>
+                                <th><button class="table-sort" data-sort="sort-date">Image</button></th>
+                                <th><button class="table-sort" data-sort="sort-time">Name</button></th>
+                                <th><button class="table-sort" data-sort="sort-passenger">Email</button></th>
+                                <th><button class="table-sort" data-sort="sort-pickup">Phone</button></th>
+                                <th><button class="table-sort" data-sort="sort-dropoff">Gender</button></th>
+                                <th><button class="table-sort" data-sort="sort-dropoff">Licence Authority</button></th>
+                                <th><button class="table-sort">Actions</button></th>
+                            </tr>
+                        </thead>
+                       
+						<tbody class="table-tbody">
+                        
+							<?php
+                            
+							$x = 0;
+                            
+							$adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
+                            
+							while ($adrow = mysqli_fetch_array($adsql)) :
+                            
+							$x++;
+                            
+							?>
+                            
 							
-											</thead>                  							
-							
-											<tbody class="table-tbody">												
+							<tr>
+                            
+								<td class="sort-id">
+									<?php echo $x; ?>
+								</td>
+                                   
+								<td class="sort-date">
+                                       
+									<?php if (!$adrow['d_pic']) : ?>
+                                          
+									<img src="img/clients/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                        
+									<?php else : ?>
+                                           
+									<img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                       
+									<?php endif; ?>
+                                    
+								</td>
+                                   
+								<td class="sort-time">
+									<?php echo $adrow['d_name']; ?>
+								</td>
+                                  
+								<td class="sort-passenger">
+									<?php echo $adrow['d_email']; ?>
+								</td>
+                                 
+								<td class="sort-pickup">
+									<?php echo $adrow['d_phone']; ?>
+								</td>
+                                 
+								<td class="sort-drpoff">
+									<?php echo $adrow['d_gender']; ?>
+								</td>
+                                   
+								<td class="sort-drpoff">
+									<?php echo $adrow['licence_authority']; ?>
+								</td>
+                                  
 								
-												<?php																		
-								
-												$x=0;																
-								
-												$adsql=mysqli_query($connect,"SELECT drivers.* FROM drivers WHERE 
-												drivers.acount_status = 1 ORDER BY drivers.d_id DESC");						
-												
-								
-												$adrow = mysqli_fetch_array($adsql);
-												
-												if($adrow){
-																			
-												
-													while($adrow){
+								<td>
+                                        
+									<a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>">
+                                            
+										<button class="btn btn-info">
+											<i class="ti ti-eye"></i>
+											View
+										</button>
+                                        
+									</a>
+                                       
+									<a href="del-customer.php?c_id=<?php echo $adrow['c_id']; ?>">
+                                           
+										<button class="btn btn-danger">
+											<i class="ti ti-square-rounded-x"></i>
+											Delete
+										</button>
+                                        
 									
-													
-														$x++;								
-								
-												
-												?>								
-								
-												<tr>                        								
-									
-													<td class="sort-id">
-										
-														<?php echo $x; ?>
-									
-													</td>
-									
-													<td class="sort-date">									
-										
-														<?php																
-									
-													if (!$adrow['d_pic']) {
-										
-														?>																	
-										
-														<img src="img/clients/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">	
-										
-														<?php
-									
-													} else{															
-									
-														?>																
-										
-														<img src="img/drivers/<?php echo $adrow['d_pic'];?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
-										
-														<?php
-								
-													}			
-										
-														?>											
-									
-													</td>                       										
-									
-													<td class="sort-time">
-										
-														<?php echo $adrow['d_name']; ?>
-								
-													</td>                       										
-								
-													<td class="sort-passenger">
-										
-														<?php echo $adrow['d_email']; ?>
-									
-													</td>  										
-									
-													<td class="sort-pickup">
-										
-														<?php echo $adrow['d_phone']; ?>
-									
-													</td>                       										
-									
-													<td class="sort-drpoff">
-										
-														<?php echo $adrow['d_gender']; ?>
-									
-													</td>										
-									
-													<td class="sort-drpoff">											
-										
-														<?php echo $adrow['licence_authority'] ?>							
-														
-									
-													</td>	
-									
-													<td> 									
-										
-														<a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>">
-											
-															<button class="btn btn-info">
-												
-																<i class="ti ti-eye"></i>View
-											
-															</button>												
-										
-														</a>
-
-										
-														<a href="del-customer.php?c_id=<?php echo $adrow['c_id']; ?>">
-											
-															<button class="btn btn-danger">
-												
-																<i class="ti ti-square-rounded-x"></i>Delete
-											
-															</button>				
-										
-														</a>										
-									
-													</td>									
-								
-												</tr>								
-								
-												<?php								
-								
-												}								
-								
-												?>                                       								
-							
-											</tbody>                 							
-						
-										</table>                						
-					
-									</div>                  					
-				
-								</div>                                                    				
-			
-							</div>              			
-		
+									</a>
+                                   
+								</td>
+                               
+							</tr>
+                          
+							<?php endwhile; ?>
+                         
+							<?php if ($x === 0) : ?>
+                             
+							<tr>
+                                   
+								<td colspan="8">
+									<p align="center">No Driver Found!</p>
+								</td>
+                              
+							</tr>
+                           
+							<?php endif; ?>
+                        
+						</tbody>
+                   
+					</table>
+               
+				</div>
+           
+			</div>
+       
+		</div>
+   
 						</div>
-                      
+
 					</div>
+
+
+
 
 					<div class="tab-pane" id="new-drivers">
                     
@@ -323,121 +261,43 @@ include('header.php');
 							
 											</thead>                  							
 							
-											<tbody class="table-tbody">												
-								
-												<?php																		
-								
-												$x=0;																
-								
-												$dsql=mysqli_query($connect,"SELECT drivers.* FROM drivers WHERE 
-												drivers.acount_status = 0 ORDER BY drivers.d_id DESC");								
-								$drow = mysqli_fetch_array($dsql);
-												if($drow){
-																			
-												while($drow){
-									
-													$y++;								
-							
-												?>								
-							
-												<tr>                        								
-								
-													<td class="sort-id">
-									
-														<?php echo $x; ?>
-								
-													</td>
-									
-													<td class="sort-date">									
-										
-														<?php																
-								
-													if (!$drow['d_pic']) {
-										
-														?>																	
-										
-														<img src="img/clients/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">	
-										
-														<?php
-									
-													} else{															
-										
-														?>																
-										
-														<img src="img/drivers/<?php echo $drow['d_pic'];?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
-										
-														<?php
-									
-													}			
-										
-														?>											
-									
-													</td>                       										
-									
-													<td class="sort-time">
-										
-														<?php echo $drow['d_name']; ?>
-									
-													</td>                       										
-									
-													<td class="sort-passenger">
-										
-														<?php echo $drow['d_email']; ?>
-									
-													</td>  										
-									
-													<td class="sort-pickup">
-										
-														<?php echo $drow['d_phone']; ?>
-									
-													</td>                       										
-									
-													<td class="sort-drpoff">
-										
-														<?php echo $drow['d_gender']; ?>
-									
-													</td>										
-									
-													<td class="sort-drpoff">											
-										
-														<?php echo $drow['licence_authority'] ?>									
-									
-													</td>	
-									
-													<td> 									
-										
-														<a href="view-driver.php?d_id=<?php echo $drow['d_id']; ?>">
-											
-															<button class="btn btn-info">
-											
-																<i class="ti ti-eye"></i>View
-											
-															</button>												
-										
-														</a>
-
-										
-														<a href="del-customer.php?c_id=<?php echo $drow['c_id']; ?>">
-											
-															<button class="btn btn-danger">
-											
-																<i class="ti ti-square-rounded-x"></i>Delete
-											
-															</button>				
-										
-														</a>										
-									
-													</td>									
-								
-												</tr>								
-								
-												<?php								
-								
-												}								
-								
-												?>                                       								
-						
-											</tbody>                 							
+											<tbody class="table-tbody">
+                            <?php
+                            $y = 0;
+                            $ndsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 0 ORDER BY drivers.d_id DESC");
+                            while ($ndrow = mysqli_fetch_array($ndsql)) :
+                                $y++;
+                            ?>
+                                <tr>
+                                    <td class="sort-id"><?php echo $y; ?></td>
+                                    <td class="sort-date">
+                                        <?php if (!$ndrow['d_pic']) : ?>
+                                            <img src="img/clients/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                        <?php else : ?>
+                                            <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                        <?php endif; ?>
+                                    </td>
+                                    <td class="sort-time"><?php echo $ndrow['d_name']; ?></td>
+                                    <td class="sort-passenger"><?php echo $ndrow['d_email']; ?></td>
+                                    <td class="sort-pickup"><?php echo $ndrow['d_phone']; ?></td>
+                                    <td class="sort-drpoff"><?php echo $ndrow['d_gender']; ?></td>
+                                    <td class="sort-drpoff"><?php echo $ndrow['licence_authority']; ?></td>
+                                    <td>
+                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>">
+                                            <button class="btn btn-info"><i class="ti ti-eye"></i>View</button>
+                                        </a>
+                                        <a href="del-customer.php?c_id=<?php echo $ndrow['c_id']; ?>">
+                                            <button class="btn btn-danger"><i class="ti ti-square-rounded-x"></i>Delete</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                            <?php if ($y === 0) : ?>
+                                <tr>
+                                    <td colspan="8"><p align="center">No Driver Found!</p></td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>                 							
 						
 										</table>                						
 					
@@ -525,131 +385,43 @@ include('header.php');
 							
 											</thead>                  							
 							
-											<tbody class="table-tbody">												
-								
-												<?php																		
-								
-												$x=0;																
-								
-												$dsql=mysqli_query($connect,"SELECT drivers.* FROM drivers WHERE 
-												drivers.acount_status = 2 ORDER BY drivers.d_id DESC");	
-												$drow = mysqli_fetch_array($dsql);
-												if($drow){
-																			
-												while($drow){
-									
-													$x++;									
-								
-												?>								
-								
-												<tr>                        								
-									
-													<td class="sort-id">
-										
-														<?php echo $x; ?>
-									
-													</td>
-									
-													<td class="sort-date">									
-										
-														<?php																
-									
-													if (!$drow['d_pic']) {
-										
-														?>																	
-										
-														<img src="img/clients/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">	
-										
-														<?php
-									
-													} else{															
-										
-														?>																
-										
-														<img src="img/drivers/<?php echo $drow['d_pic'];?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
-										
-														<?php
-									
-													}			
-										
-														?>											
-									
-													</td>                       										
-									
-													<td class="sort-time">
-										
-														<?php echo $drow['d_name']; ?>
-									
-													</td>                       										
-									
-													<td class="sort-passenger">
-										
-														<?php echo $drow['d_email']; ?>
-									
-													</td>  										
-									
-													<td class="sort-pickup">
-										
-														<?php echo $drow['d_phone']; ?>
-									
-													</td>                       										
-									
-													<td class="sort-drpoff">
-										
-														<?php echo $drow['d_gender']; ?>
-									
-													</td>										
-									
-													<td class="sort-drpoff">											
-										
-														<?php echo $drow['licence_authority'] ?>							
-														
-									
-													</td>	
-									
-													<td> 									
-										
-														<a href="view-driver.php?d_id=<?php echo $drow['d_id']; ?>">
-											
-															<button class="btn btn-info">
-												
-																<i class="ti ti-eye"></i>View
-											
-															</button>												
-										
-														</a>
-
-														
-										
-														<a href="del-customer.php?c_id=<?php echo $drow['c_id']; ?>">
-											
-															<button class="btn btn-danger">
-												
-																<i class="ti ti-square-rounded-x"></i>Delete
-											
-															</button>				
-										
-														</a>										
-									
-													</td>									
-								
-												</tr>								
-								
-												<?php								
-								
-												}	} else{
-													?>
-												<tr>
-												<td colspan="8"><p align="center">No Driver Found!</p></td>
-												
-												</tr>
-												<?php
-													
-												}							
-								
-												?>                                       								
-							
-											</tbody>                 							
+											<tbody class="table-tbody">
+                            <?php
+                            $z = 0;
+                            $idsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 2 ORDER BY drivers.d_id DESC");
+                            while ($idsql = mysqli_fetch_array($idsql)) :
+                                $z++;
+                            ?>
+                                <tr>
+                                    <td class="sort-id"><?php echo $z; ?></td>
+                                    <td class="sort-date">
+                                        <?php if (!$idrow['d_pic']) : ?>
+                                            <img src="img/clients/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                        <?php else : ?>
+                                            <img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                        <?php endif; ?>
+                                    </td>
+                                    <td class="sort-time"><?php echo $idrow['d_name']; ?></td>
+                                    <td class="sort-passenger"><?php echo $idrow['d_email']; ?></td>
+                                    <td class="sort-pickup"><?php echo $idrow['d_phone']; ?></td>
+                                    <td class="sort-drpoff"><?php echo $idrow['d_gender']; ?></td>
+                                    <td class="sort-drpoff"><?php echo $idrow['licence_authority']; ?></td>
+                                    <td>
+                                        <a href="view-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
+                                            <button class="btn btn-info"><i class="ti ti-eye"></i>View</button>
+                                        </a>
+                                        <a href="del-customer.php?c_id=<?php echo $idrow['c_id']; ?>">
+                                            <button class="btn btn-danger"><i class="ti ti-square-rounded-x"></i>Delete</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                            <?php if ($x === 0) : ?>
+                                <tr>
+                                    <td colspan="8"><p align="center">No Driver Found!</p></td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>                 							
 						
 										</table>                						
 					
