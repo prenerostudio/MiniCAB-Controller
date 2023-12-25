@@ -17,9 +17,9 @@ $brow = mysqli_fetch_array($bsql);
 		<div class="col-auto ms-auto d-print-none">            		
 			<div class="btn-list">                			
 				<?php
-				if($brow['acount_status']=0){
+				if($brow['acount_status']==0){
 					?>				
-				<a href="update-customer-status.php?id=<?php echo $b_id ?>" class="btn btn-primary d-none d-sm-inline-block">				
+				<a href="update-booker-status.php?b_id=<?php echo $b_id ?>" class="btn btn-primary d-none d-sm-inline-block">				
 					<i class="ti ti-checks"></i>                    					
 					Approve Customer                 					
 				</a>   
@@ -50,7 +50,7 @@ $brow = mysqli_fetch_array($bsql);
    height: 160px;"></span>
 						</div>					
 						<div class="col-auto">					
-							<form action="update-customer-img.php" method="post" enctype="multipart/form-data">
+							<form action="update-booker-img.php" method="post" enctype="multipart/form-data">
 								<input type="hidden" value="<?php echo $brow['b_id']; ?>" name="b_id">
 								<input type="file" name="fileToUpload" id="fileToUpload" class="btn">
 								<button type="submit" class="btn btn-info">Upload Image </button>
@@ -121,14 +121,34 @@ $brow = mysqli_fetch_array($bsql);
 							<div class="mb-3">                    						
 								<div class="form-label">Other Details</div>  
 								<textarea class="form-control" rows="3" name="bothers"><?php echo $brow['others'] ?></textarea>								             
-							</div>															
+							</div>
+								<div class="mb-3">                    						
+								<div class="form-label">National ID</div>                        						
+								<input type="text" class="form-control" value="<?php echo $brow['b_ni'] ?>" name="bni">                      					
+							</div>
 						</div>												
 						<div class="col-md-4">					
 							
+							       
+							
 							<div class="mb-3">                    						
-								<div class="form-label">National ID</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['b_ni'] ?>" name="bni">                      					
-							</div>                    																
+								<div class="form-label">Company Name</div>                        						
+								<input type="text" class="form-control" value="<?php echo $brow['company_name'] ?>" name="com_name">                      					
+							</div> 
+							
+							<div class="mb-3">                    						
+								<div class="form-label">Commission Type</div>                        						
+								<input type="text" class="form-control" value="<?php echo $brow['commision_type'] ?>" name="com_type">                      					
+							</div> 
+							
+							<div class="mb-3">                    						
+								<div class="form-label">% Commission</div>                        						
+								<input type="text" class="form-control" value="<?php echo $brow['percent'] ?>" name="percent">                      					
+							</div>
+							<div class="mb-3">                    						
+								<div class="form-label">Fixed</div>                        						
+								<input type="text" class="form-control" value="<?php echo $brow['fixed'] ?>" name="fixed">                      					
+							</div> 
 							
 							<div class="mb-3">                    					
 								<div class="form-label">Date Registered</div>                        						
