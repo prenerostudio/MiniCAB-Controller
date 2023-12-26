@@ -17,7 +17,7 @@ $drow = mysqli_fetch_array($dsql);
 		<div class="col-auto ms-auto d-print-none">            		
 			<div class="btn-list">                			
 				<?php
-				if($drow['acount_status']=0){
+				if($drow['acount_status'] == 0){
 					?>				
 				<a href="update-customer-status.php?id=<?php echo $d_id ?>" class="btn btn-primary d-none d-sm-inline-block">									
 					<i class="ti ti-checks"></i>                    

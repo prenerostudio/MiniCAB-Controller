@@ -77,7 +77,7 @@ include('header.php');
 										<?php																
 									if (!$brow['b_pic']) {
 										?>																	
-										<img src="img/clients/user-1.jpg" alt="Booker Img" style="width: 60px; height: 60px; border-radius: 30px;">	
+										<img src="img/user-1.jpg" alt="Booker Img" style="width: 60px; height: 60px; border-radius: 30px;">	
 										<?php
 									} else{															
 										?>																
