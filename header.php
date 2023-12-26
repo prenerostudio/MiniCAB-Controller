@@ -237,20 +237,20 @@ if (!isset($_SESSION['email'])) {
 														<i class="ti ti-steering-wheel" style="margin-right: 10px;"></i>
 														Active Drivers                        
 													</a>                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="new-drivers.php">
 														<i class="ti ti-user-shield" style="margin-right: 10px;"></i>
 														New Comer Drivers                        
 													</a>
                         
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="inactive-drivers.php">
 														<i class="ti ti-car-off" style="margin-right: 10px;"></i>
 														Inactive Driver                        
 													</a>                        
-													<a class="dropdown-item text-pink" href="#">                         
+													<a class="dropdown-item text-pink" href="driver-tracker.php">                         
 														<i class="ti ti-user-search" style="margin-right: 10px;"></i>
 														Driver Tracker                        
 													</a>													
-													<a class="dropdown-item text-pink" href="#">                         
+													<a class="dropdown-item text-pink" href="fare-corrections.php">                         
 														<i class="ti ti-credit-card-refund" style="margin-right: 10px;"></i>
 														Fare Corrections                        
 													</a>						  						  
@@ -262,7 +262,7 @@ if (!isset($_SESSION['email'])) {
 											</li>
 																					
 											<li class="nav-item">                      
-												<a class="nav-link" href="#" >                        
+												<a class="nav-link" href="vehicles.php" >                        
 													<span class="nav-link-icon d-md-none d-lg-inline-block">
 														<i class="ti ti-car-garage"></i>                        
 													</span>                        
@@ -273,7 +273,7 @@ if (!isset($_SESSION['email'])) {
 											</li>
 																						
 											<li class="nav-item">                      
-												<a class="nav-link" href="#" >                        
+												<a class="nav-link" href="pricing.php" >                        
 													<span class="nav-link-icon d-md-none d-lg-inline-block">
 														<i class="ti ti-coin-pound"></i>                        
 													</span>                        
@@ -293,15 +293,15 @@ if (!isset($_SESSION['email'])) {
 													</span>                      
 												</a>                      
 												<div class="dropdown-menu">                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="zones.php">
 														<i class="ti ti-map-pins" style="margin-right: 10px;"></i>
 														Zones                        
 													</a>                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="airports.php">
 														<i class="ti ti-plane-tilt" style="margin-right: 10px;"></i>
 														Airports                        
 													</a>                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="destinations.php">
 														<i class="ti ti-map-2" style="margin-right: 10px;"></i>
 														Destinations                        
 													</a>                                              

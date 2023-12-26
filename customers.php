@@ -234,9 +234,10 @@ include('header.php');
 						</div>          							
 					</div>        							
 					<div class="modal-footer">           				
-						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">						
-							Cancel           									
-						</a>           																					
+						<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 
+						<i class="ti ti-circle-x"></i>
+						Cancel           				
+					</a>           																					
 						<button type="submit" class="btn ms-auto btn-success" data-bs-dismiss="modal">
 							<i class="ti ti-user-plus"></i> 						
 							Add Customer  											
