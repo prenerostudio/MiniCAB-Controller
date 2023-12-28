@@ -14,9 +14,9 @@ include('header.php');
 			<div class="col-auto ms-auto d-print-none">            
 				<div class="btn-list">                
 					<span class="d-none d-sm-inline">
-						<a href="booking-history.php" class="btn">						
+						<a href="all-bookings.php" class="btn">						
 							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
-							Booking History                   
+							All Booking                   
 						</a>                  
 					</span> 
 					<span class="d-none d-sm-inline">
@@ -24,28 +24,6 @@ include('header.php');
 							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
 							Cancelled History                   
 						</a>                  
-					</span> 
-					<span class="d-none d-sm-inline">
-						<span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Search Bookings</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                
-                                
-								 <a class="dropdown-item" href="#"> All Bookings In 3 Hours</a>
-<a class="dropdown-item" href="#">All Bookings In 6 Hours</a>
-<a class="dropdown-item" href="#">All Bookings In 9 Hours</a>
-<a class="dropdown-item" href="#">All Bookings In 12 Hours</a>
-<a class="dropdown-item" href="#">All Bookings In 24 Hours</a>
-<a class="dropdown-item" href="#">All Bookings In 3 Days</a>
-<a class="dropdown-item" href="#">All Bookings In 7 Days</a>
-<a class="dropdown-item" href="#">All Bookings In 14 Days</a>
-<a class="dropdown-item" href="#">All Bookings In 30 Days</a>
-<a class="dropdown-item" href="#">All Bookings In 3 Months</a>
-<a class="dropdown-item" href="#">All Bookings In 6 Months</a>
-<a class="dropdown-item" href="#">All Bookings In 12 Months</a>
-
-                              </div>
-                            </span>                 
 					</span> 
 					            
 				</div>              
@@ -57,7 +35,7 @@ include('header.php');
 			<div class="col-12">            			
 				<div class="card">                				
 					<div class="card-header">                    					
-						<h3 class="card-title">All Bookings List</h3>                  					
+						<h3 class="card-title">Completed Bookings List</h3>                  					
 					</div>                  
 					<div class="card-body border-bottom py-3">
 						<div id="table-default" class="table-responsive">                  
@@ -90,14 +68,14 @@ include('header.php');
 										</th>						  
 																   
 										<th>
-											<button class="table-sort">Actions</button>
+											<button class="table-sort">Status</button>
 										</th>                      
 									</tr>                   
 								</thead>                  
 								<tbody class="table-tbody">					
 									<?php										
 									$y=0;								
-									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.v_name FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Pending' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");									
+									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.v_name FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Booked' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");									
 									while($brow = mysqli_fetch_array($bsql)){											
 										$y++;
 									?>														                     
@@ -107,47 +85,25 @@ include('header.php');
 										<td class="sort-time"><?php echo $brow['pick_time'] ?></td>                       
 										<td class="sort-passenger"><?php echo $brow['passenger'] ?></td>  
 										<td class="sort-pickup" style="width: 15%;"><?php echo $brow['pickup'] ?></td>                       
+
 										<td class="sort-drpoff" style="width: 15%;"><?php echo $brow['destination'] ?></td>
 										<td class="sort-fare"> <?php echo $brow['journey_fare'] ?> </td>
 										<td class="sort-vehicle"> <?php echo $brow['v_name'] ?> </td>
 										
 										<td> 
-											<?php
-										if($brow['bid_status']==0){
-											?>
-											<a href="open-bid.php?book_id=<?php echo $brow['book_id'] ?>">
-												<button class="btn btn-instagram">
-													<i class="ti ti-aspect-ratio"></i>Open Bid
-												</button>
-											</a>
 											
-											<?php
-										}else{
-											?>
-											
-											<a href="#">
-												<button class="btn" disabled>
-													<i class="ti ti-aspect-ratio"></i>on Bid
-												</button>
-											</a>
-											<?php
-										}
-										?>
 											
 										
-											<a href="view-booking.php?book_id=<?php echo $brow['book_id'] ?>">
 											
-												<button class="btn btn-info">
-													<i class="ti ti-eye"></i>View
+											
+												<button class="btn btn-info" disabled>
+													<i class="ti ti-eye"></i>Booked
 												</button>
 												
-											</a>
-											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>">
-												<button class="btn btn-success"><i class="ti ti-plane-tilt"></i>Dispatch</button>
-											</a>
-											<button class="btn btn-danger"><i class="ti ti-square-rounded-x"></i>Cancel</button>	
-										
-										
+											
+											
+											
+											
 										</td>
 									</tr>											
 									<?php																	

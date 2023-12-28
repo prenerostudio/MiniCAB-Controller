@@ -81,10 +81,10 @@ $sql = "INSERT INTO `bookings`(
 								'$date')";                
 $result = mysqli_query($connect, $sql);       
 if ($result) {         
-	header('Location: booking.php');    
+	header('Location: all-booking.php');    
 	exit();    
 } else {		
-	header('Location: booking.php');    
+	header('Location: all-booking.php');    
 }
 $connect->close();
 ?>

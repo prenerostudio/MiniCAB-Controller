@@ -14,7 +14,7 @@ include('header.php');
 				</h2>              
 			</div>
 			<div class="col-auto ms-auto d-print-none">            
-				<div class="btn-list">                
+				<!--<div class="btn-list">                
 					<span class="d-none d-sm-inline">
 						<a href="#" class="btn">						
 							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
@@ -28,7 +28,7 @@ include('header.php');
 					<a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-booking" aria-label="Create new report">                    
 						<i class="ti ti-bookmark-plus"></i>                  
 					</a>                
-				</div>              
+				</div>    -->          
 			</div>
 		</div>
 	</div>

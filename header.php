@@ -34,7 +34,8 @@ if (!isset($_SESSION['email'])) {
 	
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-    		
+		
+		
 	</head>  
 	<body>
 		<script src="js/demo-theme.min.js"></script>    		
@@ -53,23 +54,27 @@ if (!isset($_SESSION['email'])) {
 						</h1>          
 						<div class="navbar-nav flex-row order-md-last">         
 							<div class="nav-item d-none d-md-flex me-3">         
-								<div class="btn-list">          
-									<a href="#" class="btn">           
-										<i class="ti ti-brand-github"></i>            
-										Source code           
+								<div class="btn-list"> 
+									<a href="upcoming-jobs.php" class="btn btn-instagram">           
+										<i class="ti ti-user-search"></i>            
+										Upcoming Jobs          
+									</a> 
+									<a href="driver-tracker.php" class="btn btn-cyan">           
+										<i class="ti ti-user-search"></i>            
+										Driver Tracker          
 									</a>              
-									<a href="#" class="btn">               
-										<i class="ti ti-heart"></i>                  
-										Sponsor               
+									<a href="add-booking.php" class="btn btn-indigo">               
+										<i class="ti ti-bookmark-plus"></i>                  
+										Create New Booking              
 									</a>              
 								</div>            
 							</div>           
 							<div class="d-none d-md-flex">              
-								<a href="dashbboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip"
+								<a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip"
 		   data-bs-placement="bottom">               
 									<i class="ti ti-moon"></i>            
 								</a>            
-								<a href="dashbboard.php?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip"
+								<a href="dashboard.php?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip"
 		   data-bs-placement="bottom">               
 									<i class="ti ti-sun"></i>            
 								</a>             
@@ -183,15 +188,15 @@ if (!isset($_SESSION['email'])) {
 														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i>
 														All Bookings                        
 													</a>                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="bid-bookings.php">
 														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i>
 														Bid Bookings                        
 													</a>                        
-													<a class="dropdown-item" href="#">
+													<a class="dropdown-item" href="drivers-bid.php">
 														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i> 
 														Bids From Drivers                        
 													</a>                        
-													<a class="dropdown-item text-pink" href="#">                         
+													<a class="dropdown-item text-pink" href="job-history.php">                         
 														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i>                        
 														Job History                        
 													</a>                      
