@@ -40,11 +40,11 @@ $sql = "UPDATE `drivers` SET
        
         if ($result) {
          
-            header('Location: drivers.php');
+            header('Location: view-driver.php?d_id='.$d_id);
             exit();
         } else {
            
-			header('Location: drivers.php');
+			header('Location: view-driver.php?d_id='.$d_id);
         }
 
 

@@ -7,10 +7,11 @@ function uploadImage() {
     $targetFilePath = $targetDir . basename($_FILES["dpic"]["name"]);
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+	 $uniqueId = uniqid();  // Generate a unique identifier
 
     if (in_array($fileType, $allowTypes)) {
         if (move_uploaded_file($_FILES["dpic"]["tmp_name"], $targetFilePath)) {
-            return $targetFilePath;
+            return $driver_img = $uniqueId . "_" . basename($_FILES["dpic"]["name"]);
         } else {
             return false;
         }

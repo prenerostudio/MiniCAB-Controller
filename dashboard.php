@@ -152,7 +152,7 @@ include('header.php');
 								?>																							
 								<tr>                         														
 									<td>																	
-										<?php echo $n ?>																	
+										<?php echo $x ?>																	
 									</td>
 									<td>																	
 										<span class="text-secondary">										

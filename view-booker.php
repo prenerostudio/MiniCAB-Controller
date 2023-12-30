@@ -21,7 +21,7 @@ $brow = mysqli_fetch_array($bsql);
 					?>				
 				<a href="update-booker-status.php?b_id=<?php echo $b_id ?>" class="btn btn-primary d-none d-sm-inline-block">				
 					<i class="ti ti-checks"></i>                    					
-					Approve Customer                 					
+					Approve Booker               					
 				</a>   
 					<?php
 				}else {					

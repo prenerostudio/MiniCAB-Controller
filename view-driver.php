@@ -173,7 +173,7 @@ $drow = mysqli_fetch_array($dsql);
 													<div class="mb-3">
 														<div class="form-label">Vehicle</div>
 														<select name="v_id" class="form-control">									
-															<option value="<?php $drow['v_id'] ?>"> 
+															<option value="<?php echo $drow['v_id'] ?>"> 
 																<?php echo $drow['v_name'] ?>
 															</option>								
 															<?php															
