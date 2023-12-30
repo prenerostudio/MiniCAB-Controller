@@ -39,6 +39,7 @@ $irow = mysqli_fetch_array($sql);
                     </address>
                   </div>
                   <div class="col-6 text-end">
+					  <h2 style="text-transform: uppercase;">Status: <?php echo $irow['invoice_status'] ?></h2>
                     <p class="h3">Customer Details:</p>
                     <address>
                       <?php echo $irow['c_name']; ?><br>

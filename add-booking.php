@@ -124,7 +124,7 @@ include('header.php');
 							<div class="row">	
 								<div class="mb-3 col-lg-4">    								
 									<label class="form-label">Vehicle Type</label>   									
-									<select class="form-control" name="v_id" id="vehicleSelect" onchange="updateFare()">
+									<select class="form-control" name="v_id" id="vehicleSelect" onchange="updateJourneyFare()">
 										<option value="">Select Vehicle</option>       									
 										<?php        									
 										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");        									
@@ -237,95 +237,136 @@ include('header.php');
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
     async defer></script>
 <script>
+	
+function updateJourneyFare() {
+    var vehicleSelect = document.getElementById('vehicleSelect');
+    var journeyDistanceInput = document.getElementById('journeyDistance');
+    var journeyFareInput = document.getElementById('journeyFare');
+    var selectedVehicleId = vehicleSelect.value;
+
+    // Make an AJAX request to get the per mile price for the selected vehicle
+    $.ajax({
+        type: 'POST',
+        url: 'get_vehicle_pricing.php',
+        data: { v_id: selectedVehicleId },
+        success: function (response) {
+            try {
+                var data = JSON.parse(response);
+                if (data.success) {
+                    var perMilePrice = parseFloat(data.price);
+                    var distanceValue = parseFloat(journeyDistanceInput.value);
+
+                    if (!isNaN(perMilePrice) && !isNaN(distanceValue)) {
+                        var journeyFare = perMilePrice * distanceValue;
+                        journeyFareInput.value = journeyFare.toFixed(2);
+                    } else {
+                        console.error('Invalid per mile price or journey distance');
+                    }
+                } else {
+                    console.error('Invalid per mile price: ' + response);
+                }
+            } catch (error) {
+                console.error('Error parsing JSON response: ' + error);
+            }
+        },
+        error: function (error) {
+            console.error('Error fetching per mile price: ' + JSON.stringify(error));
+        }
+    });
+}
+
+
 	function initAutocomplete() {    
-		var pickupInput = document.getElementById('pickup');        
-		var dropoffInput = document.getElementById('dropoff');        
-		var journeyDistanceInput = document.getElementById('journeyDistance');		        
-		var autocompleteOptions = {        
-			types: ['geocode'],            
-			componentRestrictions: {country: 'GB'}
-        };				        
-		var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);        
-		var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);		        
-		// Add event listeners to update distance on place change        
-		autocompletePickup.addListener('place_changed', updateDistance);        
-		autocompleteDropoff.addListener('place_changed', updateDistance);		        
-		// Callback function for handling address suggestions        
-		function handleSuggestions(predictions, inputField) {        
-			var addresses = predictions.map(function(prediction) {            
-				return prediction.description;
-            });			            
-			updateAutocompleteSuggestions(inputField, addresses);
-        }				        
-		// Function to update input field with autocomplete suggestions        
-		function updateAutocompleteSuggestions(inputField, suggestions) {        
-			// You can use a library like jQuery UI Autocomplete or any other method to display suggestions to users            
-			// For simplicity, I'll use a basic example using a datalist element            
-			var datalistId = inputField.id + '_datalist';            
-			var datalist = document.getElementById(datalistId);			            
-			if (!datalist) {            
-				datalist = document.createElement('datalist');                
-				datalist.id = datalistId;                
-				document.body.appendChild(datalist);
-            }						            
-			// Clear previous suggestions            
-			datalist.innerHTML = '';			            
-			// Add new suggestions            
-			suggestions.forEach(function(suggestion) {            
-				var option = document.createElement('option');                
-				option.value = suggestion;                
-				datalist.appendChild(option);
-            });						            
-			// Link the datalist to the input field            
-			inputField.setAttribute('list', datalistId);
-        }				        
-		function updateDistance() {        
-			var pickupPlace = autocompletePickup.getPlace();            
-			var dropoffPlace = autocompleteDropoff.getPlace();			            
-			if (pickupPlace.geometry && dropoffPlace.geometry) {            
-				calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);
-            }			
-        }				        
-		function calculateDistance(pickupLocation, dropoffLocation) {        
-			var service = new google.maps.DistanceMatrixService();            
-			service.getDistanceMatrix({            
-				origins: [pickupLocation],                
-				destinations: [dropoffLocation],                
-				travelMode: 'DRIVING',
-            }, 									  
-									  function(response, status) {                
-				if (status === 'OK' && response.rows.length > 0) {                
-					var distanceText = response.rows[0].elements[0].distance.text;                    
-					journeyDistanceInput.value = distanceText;                
-				} else {
-					// Handle error if needed                    
-					console.error('Error calculating distance:', status);                
-				}            
-			});        
-		}    
-	}				
-	function updateFare() {    
-		var vehicleSelect = document.getElementById('vehicleSelect');        
-		var journeyDistanceInput = document.getElementById('journeyDistance');        
-		var journeyFareInput = document.getElementById('journeyFare');		        
-		var selectedVehicleId = vehicleSelect.value;        
-		var journeyDistance = parseFloat(journeyDistanceInput.value);		        
-		// Make an AJAX request to get the pricing of the selected vehicle        
-		$.ajax({        
-			type: 'POST',            
-			url: 'get_vehicle_pricing.php', // Replace with the actual URL to fetch vehicle pricing            
-			data: { v_id: selectedVehicleId },            
-			success: function(response) {            
-				var vehiclePricing = parseFloat(response);                
-				var journeyFare = vehiclePricing * journeyDistance;				                
-				// Update the journey fare input field                
-				journeyFareInput.value = journeyFare.toFixed(2);
-            },			            
-			error: function() {            
-				// Handle error if needed            
-			}        
-		});    
-	}
+    var pickupInput = document.getElementById('pickup');        
+    var dropoffInput = document.getElementById('dropoff');        
+    var journeyDistanceInput = document.getElementById('journeyDistance');		        
+    var autocompleteOptions = {        
+        types: ['geocode'],            
+        componentRestrictions: {country: 'GB'}
+    };				        
+    var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);        
+    var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);		        
+
+    // Add event listeners to update distance on place change        
+    autocompletePickup.addListener('place_changed', function () {
+        updateDistance();
+        updateJourneyFare();
+    });        
+    autocompleteDropoff.addListener('place_changed', function () {
+        updateDistance();
+        updateJourneyFare();
+    });		        
+
+    // Callback function for handling address suggestions        
+    function handleSuggestions(predictions, inputField) {        
+        var addresses = predictions.map(function(prediction) {            
+            return prediction.description;
+        });			            
+        updateAutocompleteSuggestions(inputField, addresses);
+    }				        
+
+    // Function to update input field with autocomplete suggestions        
+    function updateAutocompleteSuggestions(inputField, suggestions) {        
+        // You can use a library like jQuery UI Autocomplete or any other method to display suggestions to users            
+        // For simplicity, I'll use a basic example using a datalist element            
+        var datalistId = inputField.id + '_datalist';            
+        var datalist = document.getElementById(datalistId);			            
+        if (!datalist) {            
+            datalist = document.createElement('datalist');                
+            datalist.id = datalistId;                
+            document.body.appendChild(datalist);
+        }						            
+
+        // Clear previous suggestions            
+        datalist.innerHTML = '';			            
+        // Add new suggestions            
+        suggestions.forEach(function(suggestion) {            
+            var option = document.createElement('option');                
+            option.value = suggestion;                
+            datalist.appendChild(option);
+        });						            
+        // Link the datalist to the input field            
+        inputField.setAttribute('list', datalistId);
+    }
+
+    function updateDistance() {        
+        var pickupPlace = autocompletePickup.getPlace();            
+        var dropoffPlace = autocompleteDropoff.getPlace();			            
+        if (pickupPlace.geometry && dropoffPlace.geometry) {            
+            calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);
+        }
+    }		
+
+    function calculateDistance(pickupLocation, dropoffLocation) {
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+        origins: [pickupLocation],
+        destinations: [dropoffLocation],
+        travelMode: 'DRIVING',
+    }, function(response, status) {
+        if (status === 'OK' && response.rows.length > 0) {
+            var distanceText = response.rows[0].elements[0].distance.text;
+            var distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));
+
+            if (!isNaN(distanceValue)) {
+                // Update the journey distance input field only if it's a valid number
+                journeyDistanceInput.value = distanceValue.toFixed(2);
+                updateJourneyFare(distanceValue);
+            } else {
+                console.error('Invalid distance value:', distanceText);
+            }
+        } else {
+            // Handle error if needed
+            console.error('Error calculating distance:', status);
+        }
+    });
+}
+
+
+   
+
+}
+
     google.maps.event.addDomListener(window, 'load', initAutocomplete);  
 </script>	
 <?php

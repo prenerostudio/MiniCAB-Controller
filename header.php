@@ -34,7 +34,7 @@ if (!isset($_SESSION['email'])) {
 	
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-		
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		
 	</head>  
 	<body>
@@ -54,7 +54,11 @@ if (!isset($_SESSION['email'])) {
 						</h1>          
 						<div class="navbar-nav flex-row order-md-last">         
 							<div class="nav-item d-none d-md-flex me-3">         
-								<div class="btn-list"> 
+								<div class="btn-list">
+									<a href="fare-corrections.php" class="btn btn-danger">           
+										<i class="ti ti-user-search"></i>            
+										Fare Corrections          
+									</a> 
 									<a href="upcoming-jobs.php" class="btn btn-instagram">           
 										<i class="ti ti-user-search"></i>            
 										Upcoming Jobs          
@@ -314,7 +318,7 @@ if (!isset($_SESSION['email'])) {
 											</li>				
 											
 											<li class="nav-item">                      
-												<a class="nav-link" href="#" >                        
+												<a class="nav-link" href="payments.php" >                        
 													<span class="nav-link-icon d-md-none d-lg-inline-block">
 														<i class="ti ti-credit-card-pay"></i>                        
 													</span>                        

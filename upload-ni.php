@@ -1,40 +1,30 @@
 <?php
-
 include('config.php');
-
-// Check if form is submitted
 if(isset($_POST['submit'])) {
-    $d_id = $_POST['d_id'];
-
-    // Process the uploaded image
+    $d_id = $_POST['d_id'];		
     $targetDir = "img/drivers/National-Insurance/";
-    $targetFilePath = $targetDir . basename($_FILES["ni"]["name"]);
-    $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+    $fileExtension = strtolower(pathinfo($_FILES["ni"]["name"], PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-    $ni = ($_FILES["ni"]["name"]);
-
-    if (in_array($fileType, $allowTypes)) {
-        if (move_uploaded_file($_FILES["ni"]["tmp_name"], $targetFilePath)) {
-            // Insert image data into database
+    $uniqueId = uniqid();  // Generate a unique identifier
+    $ni = $uniqueId . "." . $fileExtension;  // Append the unique identifier to the file name
+    $targetFilePath = $targetDir . $ni;
+    if (in_array($fileExtension, $allowTypes)) {								
+        if (move_uploaded_file($_FILES["ni"]["tmp_name"], $targetFilePath)) {            
             $insert = $connect->query("UPDATE `drivers` SET  `national_insurance`='$ni'  WHERE `d_id`='$d_id'");
-
             if($insert) {
                 echo "File uploaded successfully.";
-                header('location: drivers.php');
+                header('location: view-driver.php?d_id='.$d_id.'#tabs-document');
             } else {
                 echo "Database update failed.";
-                header('location: drivers.php');
+                header('location: view-driver.php?d_id='.$d_id.'#tabs-document');
             }
         } else {
             echo "File upload failed, please try again.";
-            header('location: drivers.php');
+            header('location: view-driver.php?d_id='.$d_id.'#tabs-document');
         }
     } else {
         echo "Invalid file type.";
-        header('location: drivers.php');
+        header('location: view-driver.php?d_id='.$d_id.'#tabs-document');
     }
-
-    // Terminate script execution
-   // die;
 }
 ?>

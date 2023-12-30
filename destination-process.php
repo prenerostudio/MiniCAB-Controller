@@ -1,13 +1,10 @@
 <?php
 require 'config.php';
-
-
 $des_name = $_POST['des_name'];
 $des_address = $_POST['des_address'];
 $des_city = $_POST['des_city'];
 $des_code = $_POST['des_code'];
 $date = date("Y-m-d H:i:s");
-
 $sql = "INSERT INTO `destinations`(
 									`des_name`, 
 									`des_address`, 

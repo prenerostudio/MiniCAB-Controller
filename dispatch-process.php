@@ -11,7 +11,7 @@ $car_parking  = $_POST['car_parking'];
 $waiting = $_POST['waiting'];
 $tolls  = $_POST['tolls'];
 $extra  = $_POST['extra'];
-$job_status  = 'Pending';
+$job_status  = 'waiting';
 $date = date("Y-m-d H:i:s");
 
 $sql = "INSERT INTO `jobs`(
