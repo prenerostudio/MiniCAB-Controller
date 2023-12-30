@@ -109,8 +109,26 @@ include('header.php');
 											
 											$x = 0;
 											
-											$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, 
-											booking_type.*, clients.* FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id AND invoice.d_id = $d_id");
+											$isql = mysqli_query($connect, "SELECT
+	invoice.*,
+	jobs.book_id,
+	drivers.*,
+	bookings.*,
+	booking_type.*,
+	clients.* 
+FROM
+	invoice,
+	jobs,
+	drivers,
+	bookings,
+	clients,
+	booking_type 
+WHERE
+	invoice.job_id = jobs.job_id 
+	AND invoice.d_id = drivers.d_id 
+	AND jobs.book_id = bookings.book_id 
+	AND bookings.b_type_id = booking_type.b_type_id 
+	AND jobs.c_id = clients.c_id");
 														
 											while ($irow = mysqli_fetch_array($isql)) :											
 														
@@ -128,21 +146,29 @@ include('header.php');
 															
 												<td class="sort-time">
 																
-													<?php echo $irow['invoice_date']; ?>
+													<?php echo $irow['d_name']; ?>
 															
 												</td>                                  							
 															
 												<td class="sort-passenger">
 															
-													Booking ID: <?php echo $irow['book_id']; ?> <br>
+													<?php echo $irow['d_phone']; ?> 
 															
-													<?php echo $irow['pickup']; ?> - <?php echo $irow['destination']; ?>
+													
 														
 												</td>
 															
 												<td class="sort-pickup">
 															
-													<?php echo $irow['total_pay']; ?>
+													
+													<?php
+													
+													$dr_id= $irow['d_id'];
+													$drsql=mysqli_query($connect, "SELECT jobs.* FROM jobs WHERE jobs.d_id = '$dr_id' AND jobs.job_status = 'completed'");
+													$rowcount=mysqli_num_rows($drsql);
+													echo $rowcount;
+													
+													?>
 														
 												</td> 
 												
