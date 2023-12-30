@@ -1,5 +1,8 @@
 <?php
 include('header.php');	
+$d_id= $_GET['d_id'];
+$acsql=mysqli_query($connect, "SELECT invoice.*, jobs.book_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, clients.c_name, drivers.d_name, booking_type.b_type_name FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND jobs.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND invoice.d_id = '$d_id' AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id");
+$r=mysqli_num_rows($acsql);
 ?>
 <div class="page-header d-print-none page_padding">		   		
 	<div class="row g-2 align-items-center">        			
@@ -37,24 +40,24 @@ include('header.php');
 												
 												<th>													
 												
-													<button class="table-sort" data-sort="sort-date">Driver Name</button>
+													<button class="table-sort" data-sort="sort-date">Booking </button>
 													
 												</th>
 												
 												<th>													
 												
-													<button class="table-sort" data-sort="sort-time">Phone</button>
+													<button class="table-sort" data-sort="sort-time">Completion Time</button>
 													
 												</th>
 												
 												<th>													
 												
-													<button class="table-sort" data-sort="sort-passenger">Total Jobs</button>
+													<button class="table-sort" data-sort="sort-passenger">Total Payment</button>
 													
 												</th> 
 												<th>													
 												
-													<button class="table-sort" data-sort="sort-passenger">Total Payment Due</button>
+													<button class="table-sort" data-sort="sort-passenger">Driver Commission</button>
 													
 												</th> 
 												
@@ -121,13 +124,13 @@ include('header.php');
 															
 												<td>				
 															
-													<a href="view-account.php?d_id=<?php $irow['d_id']; ?>">
+													<a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
 															
 														<button class="btn btn-info">
 															
 															<i class="ti ti-eye"></i>
 																
-															View Statement
+															View Invoice
 																
 														</button>
 															
