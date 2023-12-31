@@ -25,14 +25,16 @@ FROM
 	jobs,
 	drivers,
 	clients,
-	bookings
+	bookings,
+	booking_type
 WHERE
 	jobs.book_id = bookings.book_id AND
 	jobs.c_id = clients.c_id AND
 	jobs.d_id = drivers.d_id AND
 	jobs.d_id = '$d_id' AND
-	jobs.job_status = 'Waiting'
-	ORDER BY
+	jobs.job_status = 'Waiting' AND
+	bookings.b_type_id = booking_type.b_type_id
+ORDER BY
 	jobs.job_id DESC";	
 	
 	$r=mysqli_query($connect,$sql);
