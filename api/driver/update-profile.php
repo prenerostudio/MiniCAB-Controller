@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Content-Type,A
 header('Cache-Control: max-age=3600');
 
 include("../../config.php");
-// Function to handle image upload
+
 function uploadImage() {
 	$targetDir = "../../img/drivers/";    
 	$targetFilePath = $targetDir . basename($_FILES["d_img"]["name"]);    
@@ -39,8 +39,7 @@ $date = date("Y-m-d H:i:s");
 // Handle image upload
 $d_img = uploadImage();
 
-if(isset($_POST['d_id'])){ 	 	        		
-		
+if(isset($_POST['d_id'])){ 	 	        			
 	$sql = "UPDATE `drivers` SET 
 								`d_name`='$dname',
 								`d_email`='$demail',
@@ -55,19 +54,13 @@ if(isset($_POST['d_id'])){
 								`skype_acount`='$skype',
 								`d_remarks`='$remarks',
 								`driver_reg_date`='$date' WHERE `d_id`='$d_id'";
-        
-        $r = mysqli_query($connect, $sql);
-       
-      
-         
-           if($r){    
-			echo json_encode(array('message'=>"Profile Update Successfully",'status'=>true));
-		}else{    
-			echo json_encode(array('message'=>"Error In Updating Profile",'status'=>false));
-		}	 
-    
+	$r = mysqli_query($connect, $sql);
+	if($r){    
+		echo json_encode(array('message'=>"Profile Update Successfully",'status'=>true));
+	}else{    
+		echo json_encode(array('message'=>"Error In Updating Profile",'status'=>false));
+	}	 
 }else{
-   
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

@@ -7,24 +7,12 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-
-
 $sql="SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone FROM bookings, clients WHERE bookings.c_id = clients.c_id AND bookings.bid_status = 'open'";	
-
 $r=mysqli_query($connect,$sql);
-
 $output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-	
-	
-
 if(count($output)>0){    				    		
-
 	echo json_encode(array('data'=>$output, 'status'=>true));
-	
 }else{    
-
-	echo json_encode(array('message'=>'Bid Rides Does Not Exist','status'=>false));
-	
+	echo json_encode(array('message'=>'No Bid Found','status'=>false));
 }
-
 ?>

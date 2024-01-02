@@ -12,9 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$d_id = $_POST['d_id'];
         $latitude = $_POST['latitude'];
         $longitude = $_POST['longitude'];       
-        $date = date("Y-m-d h:i:s");
-        
-       
+        $date = date("Y-m-d h:i:s");       
         $sql = "INSERT INTO `driver_location`(
 												`d_id`, 
 												`latitude`, 
@@ -25,15 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 												'$latitude',
 												'$longitude',												
 												'$date')";
-        
-		
         $result = mysqli_query($connect, $sql);
         if ($result) {  
-			
 			$updatesql="UPDATE `drivers` SET `latitude`='$latitude',`longitude`='$longitude' WHERE `d_id`='$d_id'";
 			$uresult = mysqli_query($connect, $updatesql);
-			
-			
             $response = array('message' => "Location Updated Successfully", 'status' => true);
             echo json_encode($response);
         } else {    

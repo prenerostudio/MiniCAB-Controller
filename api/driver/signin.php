@@ -8,7 +8,8 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 if (isset($_POST['d_phone'])) {
-    $d_phone = $_POST['d_phone'];
+
+	$d_phone = $_POST['d_phone'];
 
     // Using prepared statements to prevent SQL injection
     $stmt = $connect->prepare("SELECT * FROM drivers WHERE d_phone = ?");

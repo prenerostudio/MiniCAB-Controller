@@ -9,44 +9,46 @@ include("../../config.php");
 
 $job_id = $_POST['job_id'];
 $d_id = $_POST['d_id'];
-$p_method = 'Cash';
-
 $journey_fare = $_POST['journey_fare'];
-$extra = $_POST['extra'];
-$parking = $_POST['parking'];
+$car_parking = $_POST['car_parking'];
+$waiting = $_POST['waiting'];
 $tolls = $_POST['tolls'];
+$extra = $_POST['extra'];
 $status = 'unpaid';
 $date = date("Y-m-d h:i:s");
 
-if(isset($_POST['job_id'])){ 
-	
-	
-	$total_pay = $journey_fare + $parking + $extra + $tolls;
-	
-	        		
-		$sql="INSERT INTO `invoice`(
+if(isset($_POST['job_id'])){ 	
+	$checksql = "SELECT * FROM `invoice` WHERE `job_id`='$job_id'";
+	$chkr=mysqli_query($connect,$checksql);	
+	if($chkr){
+		echo json_encode(array('message'=>"Invoice Already Created",'status'=>false));		
+	}else{	
+		$total_pay = $journey_fare + $car_parking + $waiting + $tolls + $extra;	
+		$driver_commission = $total_pay * 0.20;	   
+		$sql="INSERT INTO `invoice`( 
 									`job_id`, 
-									`d_id`,  
-									`p_method`, 
-									`journey_fare`, 
-									`extra_waiting`, 
-									`parking`, 
+									`d_id`, 
+									`journey_fare`,
+									`car_parking`, 
+									`waiting`, 
 									`tolls`, 
+									`extra`, 
 									`total_pay`, 
-									`status`, 
+									`driver_commission`, 
+									`invoice_status`, 
 									`invoice_date`
 									) VALUES (
 									'$job_id',
-									'$d_id',									
-									'$p_method',
+									'$d_id',
 									'$journey_fare',
-									'$extra',
-									'$parking',
+									'$car_parking',
+									'$waiting',
 									'$tolls',
+									'$extra',
 									'$total_pay',
+									'$driver_commission',
 									'$status',
-									'$date')";				
-		
+									'$date')";						
 		$r=mysqli_query($connect,$sql);
 		if($r){    
 			$job_status = 'Completed';
@@ -54,16 +56,12 @@ if(isset($_POST['job_id'])){
 									`job_status`='$job_status',
 									`date_job_add`='$date' WHERE `job_id`='$job_id'";
 			$ur=mysqli_query($connect,$usql);
-			
-			
-			
 			echo json_encode(array('message'=>"Invoice Generated Successfully",'status'=>true));
 		}else{    
 			echo json_encode(array('message'=>"Error In Generating Invoice",'status'=>false));
 		}
-	       
+	  }     
 }else{
-   
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

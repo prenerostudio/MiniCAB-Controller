@@ -9,43 +9,48 @@ include("../../config.php");
 
 $job_id = $_POST['job_id'];
 $d_id = $_POST['d_id'];
-$fare = $_POST['fare'];
-$parking = $_POST['parking'];
+$journey_fare = $_POST['journey_fare'];
+$car_parking = $_POST['car_parking'];
 $extra = $_POST['extra'];
 $tolls = $_POST['tolls'];
+$waiting = $_POST['waiting'];
 $fare_status = 'Pending';
 $date = date("Y-m-d h:i:s");
 
 if(isset($_POST['job_id'])){ 
-	      		
-		$sql="INSERT INTO `fares`( 
-								`job_id`, 
-								`d_id`, 
-								`journey_fare`, 
-								`extra_waiting`, 
-								`parking`, 
-								`tolls`, 
-								`fare_status`, 
-								`apply_date`
-								) VALUES ( 
-								'$job_id',
-								'$d_id',
-								'$fare',
-								'$extra',
-								'$parking',
-								'$tolls',
-								'$fare_status',
-								'$date')";				
-		
-		$r=mysqli_query($connect,$sql);
-		if($r){    	
-			echo json_encode(array('message'=>"Fare Details Submitted Successfully",'status'=>true));
-		}else{    
-			echo json_encode(array('message'=>"Error In Submitting Fare Details",'status'=>false));
-		}
-	       
-}else{
-   
+	$chksql = "SELECT * FROM `fares` WHERE `job_id`='$job_id'";	
+	$chkr=mysqli_query($connect,$chksql);		
+	if($chkr) {			
+		echo json_encode(array('message'=>"Fares Already Submitted!",'status'=>false));		
+	}else{					
+		$sql="INSERT INTO `fares`(
+									`job_id`,
+									`d_id`, 
+									`journey_fare`, 
+									`car_parking`, 
+									`waiting`, 
+									`tolls`, 
+									`extras`, 
+									`fare_status`, 
+									`apply_date`
+									) VALUES (
+									'$job_id',
+									'$d_id',
+									'$journey_fare',
+									'$car_parking',
+									'$waiting',
+									'$tolls',
+									'$extra',
+									'$fare_status',
+									'$date')";								
+		$r=mysqli_query($connect,$sql);		
+		if($r){    			
+			echo json_encode(array('message'=>"Fare Details Submitted Successfully",'status'=>true));		
+		}else{    		
+			echo json_encode(array('message'=>"Error In Submitting Fare Details",'status'=>false));		
+		}				
+	}	
+}else{   
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

@@ -11,19 +11,15 @@ function uploadFile($file, $targetDirectory)
 {
     $fileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
     $allowedTypes = array('jpg', 'png', 'jpeg', 'gif');
-
     if (in_array($fileType, $allowedTypes)) {
         $fileName = uniqid() . '_' . basename($file["name"]);
         $targetFilePath = $targetDirectory . $fileName;
-
         if (move_uploaded_file($file["tmp_name"], $targetFilePath)) {
             return $fileName;
         }
     }
-
     return false;
 }
-
 if (isset($_POST['d_phone'])) {
     $d_email = $_POST['d_email'];
     $d_phone = $_POST['d_phone'];
@@ -49,7 +45,6 @@ if (isset($_POST['d_phone'])) {
         $checksql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone'";
         $checkr = mysqli_query($connect, $checksql);
         $datacheck = mysqli_fetch_all($checkr, MYSQLI_ASSOC);
-
         if (count($datacheck) > 0) {
             echo json_encode(array('message' => "This User Already Exists! Try to Sign in", 'status' => false));
         } else {
@@ -81,7 +76,6 @@ if (isset($_POST['d_phone'])) {
                         '$date')";
             
             $r = mysqli_query($connect, $sql);
-
             if ($r) {
                 echo json_encode(array('message' => "Driver Registered Successfully", 'status' => true));
             } else {

@@ -10,15 +10,10 @@ include("../../config.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['d_id'])) {
 		$d_id = $_POST['d_id'];
-        $status = $_POST['status'];               
-       // $date = date("Y-m-d h:i:s");
-               
-        $sql = "UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";
-        
-		
+        $status = $_POST['status'];                              
+        $sql = "UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";        		
         $result = mysqli_query($connect, $sql);
-        if ($result) {  
-			
+        if ($result) {  	
 			$response = array('message' => "Status Update Successfully", 'status' => true);
             echo json_encode($response);
         } else {    

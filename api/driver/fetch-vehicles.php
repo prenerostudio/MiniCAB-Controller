@@ -7,27 +7,13 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-
-	
-		
 $sql="SELECT * FROM `vehicles`";				
-		
-
 $r=mysqli_query($connect,$sql);
 
-
-
 if($r){    
-		
-$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-	
-	
+	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
 	echo json_encode(array('data'=>$output,'status'=>true));
-	
 }else{    
-
 	echo json_encode(array('message'=>"No Vehicle Found",'status'=>false));
-	
 }	        
-
 ?>

@@ -12,22 +12,17 @@ function uploadFile($file, $targetDirectory) {
     $targetFilePath = $targetDirectory . basename($file["name"]);
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
     $allowedTypes = array('jpg', 'png', 'jpeg', 'gif');
-
     if (in_array($fileType, $allowedTypes)) {
         if (move_uploaded_file($file["tmp_name"], $targetFilePath)) {
             return $targetFilePath;
         }
     }
     return false;
-
 }
-
-// Verify if the 'd_id' is set in the POST request
 if(isset($_POST['d_id'])) {
     $d_id = $_POST['d_id'];
     $date = date("Y-m-d H:i:s");
-
-    // Array to hold uploaded file paths
+   // Array to hold uploaded file paths
     $uploadedFiles = array(
         'dl_front' => uploadFile($_FILES["dl_front"], "../../img/drivers/Driving-Licence/"),
         'dl_back' => uploadFile($_FILES["dl_back"], "../../img/drivers/Driving-Licence/"),
@@ -37,7 +32,6 @@ if(isset($_POST['d_id'])) {
         'pass' => uploadFile($_FILES["pass_img"], "../../img/drivers/Passport/"),
         'dvla' => uploadFile($_FILES["dv_img"], "../../img/drivers/DVLA/")
     );
-
     // Check if any file uploads failed
     if (in_array(false, $uploadedFiles)) {
         echo json_encode(array('message' => "Error in uploading files", 'status' => false));
@@ -57,8 +51,7 @@ if(isset($_POST['d_id'])) {
                 echo json_encode(array('message' => "Documents uploaded successfully", 'status' => true));
             } else {
                 echo json_encode(array('message' => "Error in replacing documents", 'status' => false));
-            }
-       
+            } 
     }
 } else {
     echo json_encode(array('message' => "Some fields are missing", 'status' => false));
