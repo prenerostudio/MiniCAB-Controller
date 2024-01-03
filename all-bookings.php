@@ -151,7 +151,7 @@ include('header.php');
 								<tbody class="table-tbody" id="tableBody">					
 									<?php										
 									$y=0;								
-									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.v_name FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Pending' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");									
+									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.* FROM bookings, clients, booking_type WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Pending' AND bookings.b_type_id = booking_type.b_type_id ORDER BY bookings.book_id DESC");									
 									while($brow = mysqli_fetch_array($bsql)){											
 										$y++;
 									?>														                     
