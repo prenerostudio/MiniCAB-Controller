@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 $d_id = $_GET['d_id'];
-$dsql=mysqli_query($connect,"SELECT drivers.*, vehicles.* FROM drivers, vehicles WHERE drivers.v_id = vehicles.v_id AND drivers.d_id ='$d_id'");
+$dsql=mysqli_query($connect,"SELECT drivers.* FROM drivers WHERE drivers.d_id ='$d_id'");
 $drow = mysqli_fetch_array($dsql);		
 ?>
 <div class="page-header d-print-none page_padding">		   		
@@ -53,6 +53,12 @@ $drow = mysqli_fetch_array($dsql);
 							<a href="#tabs-document" class="nav-link" data-bs-toggle="tab">							
 								<i class="ti ti-calendar-user"></i>                          
 								Driver Documents
+							</a>                      
+						</li>
+						<li class="nav-item">
+							<a href="#tabs-vehicle" class="nav-link" data-bs-toggle="tab">							
+								<i class="ti ti-car-garage"></i>                          
+								Driver Vehicles
 							</a>                      
 						</li>
 						<li class="nav-item">
@@ -170,23 +176,7 @@ $drow = mysqli_fetch_array($dsql);
 															?>																				
 														</select> 								
 													</div>														
-													<div class="mb-3">
-														<div class="form-label">Vehicle</div>
-														<select name="v_id" class="form-control">									
-															<option value="<?php echo $drow['v_id'] ?>"> 
-																<?php echo $drow['v_name'] ?>
-															</option>								
-															<?php															
-																$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");					while($vrow = mysqli_fetch_array($vsql)){									
-															?>																
-															<option value="<?php echo $vrow['v_id'] ?>">
-																<?php echo $vrow['v_name'] ?>
-															</option>				
-															<?php					
-																	}						
-															?>			
-														</select>							
-													</div>														
+																											
 													<div class="mb-3">
 														<div class="form-label">Skype ID</div>								
 														<input type="text" class="form-control" value="<?php echo $drow['skype_acount'] ?>" name="sa">                      												
@@ -380,6 +370,121 @@ $drow = mysqli_fetch_array($dsql);
 					</div>																
 				</div>
                       </div>
+						
+						<div class="tab-pane" id="tabs-vehicle">						
+							<div class="card-body">						
+								<div class="row g-2 align-items-center">        			
+									<div class="col">            								
+										<div class="page-pretitle">                					
+											Overview                				
+										</div>                				
+										<h2 class="page-title">                					
+											Vehicle Section                				
+										</h2>              
+									</div>			
+										
+								</div>								
+								<div class="row mb-3">								
+									<div class="card">            															
+										<div class="card-header">
+										</div>            																
+										<div class="card-body border-bottom py-3">
+											<div id="table-adriver" class="table-responsive">
+												<table class="table">													
+													<thead>                            										
+														<tr>				
+															<th>														
+																<button class="table-sort" data-sort="sort-id">ID</button>
+															</th>
+															<th>													
+																<button class="table-sort" data-sort="sort-date">Vehicle Type</button>
+															</th>
+															<th>													
+																<button class="table-sort" data-sort="sort-time">Make & Model, Color</button>
+															</th>
+															<th>													
+																<button class="table-sort" data-sort="sort-passenger">Registration #</button>
+															</th> 													
+																											
+															<th>														
+																<button class="table-sort">Actions</button>
+															</th>                            												
+														</tr>                       											
+													</thead>
+													<tbody class="table-tbody">
+														<?php											
+														$x = 0;
+														$vhsql = mysqli_query($connect, "SELECT driver_vehicle.*, vehicles.* FROM driver_vehicle, vehicles WHERE driver_vehicle.v_id = vehicles.v_id AND driver_vehicle.d_id = $d_id");
+														while ($vhrow = mysqli_fetch_array($vhsql)) :											
+														$x++;
+														?>
+														<tr>
+															<td class="sort-id">
+																<?php echo $x; ?>												
+															</td>									
+															<td class="sort-time">
+																<?php echo $vhrow['v_name']; ?>
+															</td>                                  							
+															<td class="sort-passenger">
+																<?php echo $vhrow['v_make']; ?> -
+																<?php echo $vhrow['v_model']; ?> - 
+																<?php echo $vhrow['v_color']; ?>
+															</td>
+															<td class="sort-pickup">
+																<?php echo $vhrow['v_reg_num']; ?>
+															</td> 
+																													
+															<td>				
+																<a href="vehicle-details.php?dv_id=<?php echo $vhrow['dv_id']; ?>">
+																	<button class="btn btn-info">
+																		<i class="ti ti-eye"></i>
+																		View
+																	</button>
+																</a>
+															</td>
+														</tr>                          						
+														<?php endwhile; ?>                         							
+														<?php if ($x === 0) : ?>
+														<tr>                                   							
+															<td colspan="8">							
+																<p align="center">
+																	<a href="add-vehicle.php?d_id=<?php echo $d_id; ?>" class="btn btn-primary d-none d-sm-inline-block">  
+																		
+												
+																		<i class="ti ti-car"></i>                    						
+												
+																		Add Vehicle                 					
+											
+																	</a> 
+															</td>
+															
+													</td>
+													</tr>												
+													<?php endif; ?>       				
+													</tbody>                   					
+										
+												</table>               							
+									
+											</div>           						
+								
+										</div>       							
+							
+									</div>
+
+
+										
+								
+								</div>																								
+								
+								
+																		
+										
+																			
+																					
+			
+							</div>
+                      
+						</div>
 						
 						<div class="tab-pane" id="tabs-statement">
 							<div class="card-body">
