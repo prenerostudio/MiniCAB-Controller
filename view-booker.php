@@ -11,7 +11,7 @@ $brow = mysqli_fetch_array($bsql);
 				Overview                				
 			</div>                			
 			<h2 class="page-title">                			
-				View Customer Details              				
+				View Booker Details              				
 			</h2>              			
 		</div>		
 		<div class="col-auto ms-auto d-print-none">            		
@@ -28,7 +28,7 @@ $brow = mysqli_fetch_array($bsql);
 					?>				
 				<button class="btn btn-disable d-none d-sm-inline-block" disabled>									
 					<i class="ti ti-checks"></i>                    					
-					Verified Customer                 					
+					Verified Booker               					
 				</button>  
 					<?php					
 				}				
@@ -42,11 +42,11 @@ $brow = mysqli_fetch_array($bsql);
 		<div class="col-12">            					
 			<div class="card">                															
 				<div class="card-body border-bottom py-3">				
-					<h2 class="mb-4">Customer Profile</h2>                									
+					<h2 class="mb-4">Booker Profile</h2>                									
 					<h3 class="card-title">Profile Details</h3>					
 					<div class="row align-items-center">		
 						<div class="col-auto">	
-							<span class="avatar avatar-xl" style="background-image: url(img/bookers/<?php echo $brow['b_pic'];?>); background-size:cover; width: 220px;
+							<span class="avatar avatar-xl" style="background-image: url(img/bookers/<?php echo $brow['b_pic'];?>); background-size:contain; width: 220px;
    height: 160px;"></span>
 						</div>					
 						<div class="col-auto">					
@@ -57,7 +57,7 @@ $brow = mysqli_fetch_array($bsql);
 							</form>																						
 						</div>
 						<div class="col-auto">	
-							<a href="#" class="btn btn-ghost-danger">					
+							<a href="del-booker-img.php?b_id=<?php echo $b_id ?>" class="btn btn-ghost-danger">					
 								Delete avatar
 							</a>					
 						</div>                   				
@@ -66,7 +66,7 @@ $brow = mysqli_fetch_array($bsql);
 					<h3 class="card-title mt-4">Business Profile</h3> 
 					
 					
-					<form method="post" action="update-customer.php" enctype="multipart/form-data">
+					<form method="post" action="update-booker.php" enctype="multipart/form-data">
 					
 						<div class="row g-3">                
 						
@@ -74,7 +74,7 @@ $brow = mysqli_fetch_array($bsql);
 							
 								<div class="mb-3">                    						
 								
-									<div class="form-label">Customer Name</div>                        						
+									<div class="form-label">Booker Name</div>                        						
 								
 									<input type="hidden" class="form-control" value="<?php echo $brow['b_id']; ?>" name="b_id">  
 								
@@ -107,16 +107,39 @@ $brow = mysqli_fetch_array($bsql);
 							<div class="col-md-4">					
 							
 								<div class="mb-3">                    					
-								<div class="form-label">Gender</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['b_gender']; ?>" name="bgender">  
+								<div class="form-label">Gender</div> 
+									<select class="form-select" name="bgender">												
+								<option><?php echo $brow['b_gender']; ?></option>
+								<option>Male</option>																
+								<option>Female</option>								
+								<option>Transgender</option>							
+							</select>
+									
+									
+									
+								
 							</div>                    					
 							<div class="mb-3">                    						
-								<div class="form-label">Language </div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['b_language']; ?>" name="blang">
+								<div class="form-label">Language </div>  
+								
+								<select class="form-select" name="blang">							
+								<option><?php echo $brow['b_language']; ?></option>		      								
+								<?php														
+								$lsql=mysqli_query($connect,"SELECT * FROM `language`");								
+								while($lrow = mysqli_fetch_array($lsql)){								
+								?>			
+								<option>								
+									<?php echo $lrow['language'] ?>								
+								</option>
+								<?php																	
+								}																		
+								?>																			
+							</select> 	
+								
 							</div>														
 							<div class="mb-3">                    						
 								<div class="form-label">Postal Code</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['postal_code'] ?>" name="postal_code">                     
+								<input type="text" class="form-control" value="<?php echo $brow['postal_code'] ?>" name="pc">                     
 							</div>								
 							<div class="mb-3">                    						
 								<div class="form-label">Other Details</div>  
@@ -138,16 +161,16 @@ $brow = mysqli_fetch_array($bsql);
 							
 							<div class="mb-3">                    						
 								<div class="form-label">Commission Type</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['commision_type'] ?>" name="com_type">                      					
+								<input type="text" class="form-control" value="<?php echo $brow['commision_type'] ?>" name="com_type" readonly>                      					
 							</div> 
 							
 							<div class="mb-3">                    						
 								<div class="form-label">% Commission</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['percent'] ?>" name="percent">                      					
+								<input type="text" class="form-control" value="<?php echo $brow['percent'] ?>" name="percent" readonly>                      					
 							</div>
 							<div class="mb-3">                    						
 								<div class="form-label">Fixed</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['fixed'] ?>" name="fixed">                      					
+								<input type="text" class="form-control" value="<?php echo $brow['fixed'] ?>" name="fixed" readonly>                      					
 							</div> 
 							
 							<div class="mb-3">                    					

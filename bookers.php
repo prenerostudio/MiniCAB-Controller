@@ -124,7 +124,7 @@ include('header.php');
 											</button>												
 										</a>
 
-										<a href="del-customer.php?b_id=<?php echo $brow['b_id']; ?>">
+										<a href="del-booker.php?b_id=<?php echo $brow['b_id']; ?>">
 											<button class="btn btn-danger">
 												<i class="ti ti-square-rounded-x"></i>Delete
 											</button>				
@@ -165,7 +165,7 @@ include('header.php');
 				<h5 class="modal-title">Add New Booker</h5>            				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div> 			
-			<form method="post" action="booker-process.php" enctype="multipart/form-data">
+			<form method="post" action="booker-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
 				<div class="modal-body">								
 					<div class="row">				
 						<div class="mb-3 col-md-4">              					
@@ -207,7 +207,7 @@ include('header.php');
 						</div>						
 						<div class="mb-3 col-md-4">              											
 							<label class="form-label">Postal Code:</label>									
-							<input type="text" class="form-control" name="pc" placeholder="xx xxx">						
+							<input type="text" class="form-control" name="pc" placeholder="xx xxx" required>						
 						</div> 					              											
 						<div class="mb-3 col-md-4">                  												
 							<label class="form-label">Picture:</label>							
@@ -285,12 +285,32 @@ include('header.php');
 						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">						
 							Cancel           									
 						</a>           																					
-						<button type="submit" class="btn ms-auto btn-success" data-bs-dismiss="modal">
+						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
 							Add Customer  											
 						</button>					     							
 					</div> 							
-					</form>								
+					</form>	
+				<script>
+    function validateForm() {
+        // Perform your form validation here
+        var bnameInput = document.getElementsByName("bname")[0].value;
+        var bemailInput = document.getElementsByName("bemail")[0].value;
+        var bphoneInput = document.getElementsByName("bphone")[0].value;
+		var pcInput = document.getElementsByName("pc")[0].value;
+
+        if (bnameInput === "" || bemailInput === "" || bphoneInput === "" || pcInput === "") {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
+				
+				
 				</div>      				
 		</div>    
 	</div>

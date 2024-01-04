@@ -166,24 +166,24 @@ include('header.php');
 				<h5 class="modal-title">Add New Customer</h5>            				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div> 			
-			<form method="post" action="customer-process.php" enctype="multipart/form-data">
+			<form method="post" action="customer-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
 				<div class="modal-body">								
 					<div class="row">				
 						<div class="mb-3 col-md-4">              					
 							<label class="form-label">Full Name</label>              					
-							<input type="text" class="form-control" name="cname" placeholder="Customer Name"> 				
+							<input type="text" class="form-control" name="cname" placeholder="Customer Name" required> 				
 						</div> 						               
 						<div class="mb-3 col-md-4">                  
 							<label class="form-label">Email</label>              					
-							<input type="text" class="form-control" name="cemail" placeholder="hello@example.com">
+							<input type="text" class="form-control" name="cemail" placeholder="hello@example.com" required>
 						</div>			
 						<div class="mb-3 col-md-4">                  						
 							<label class="form-label">Phone</label>              					
-							<input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567">
+							<input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>
 						</div>							
 						<div class="mb-3 col-md-4">              															
 							<label class="form-label">Gender</label>
-							<select class="form-select" name="cgender">												
+							<select class="form-select" name="cgender" required>
 								<option value="" selected>Select Gender</option>
 								<option>Male</option>																
 								<option>Female</option>								
@@ -208,7 +208,7 @@ include('header.php');
 						</div>						
 						<div class="mb-3 col-md-4">              											
 							<label class="form-label">Postal Code</label>									
-							<input type="text" class="form-control" name="pc" placeholder="xx xxx">						
+							<input type="text" class="form-control" name="pc" placeholder="xx xxx" required>
 						</div> 					              											
 						<div class="mb-3 col-md-4">                  												
 							<label class="form-label">Picture</label>							
@@ -238,12 +238,32 @@ include('header.php');
 						<i class="ti ti-circle-x"></i>
 						Cancel           				
 					</a>           																					
-						<button type="submit" class="btn ms-auto btn-success" data-bs-dismiss="modal">
+						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
 							Add Customer  											
 						</button>					     							
 					</div> 							
-					</form>								
+					</form>		
+				
+				<script>
+    function validateForm() {
+        // Perform your form validation here
+        var cnameInput = document.getElementsByName("cname")[0].value;
+        var cemailInput = document.getElementsByName("cemail")[0].value;
+        var cphoneInput = document.getElementsByName("cphone")[0].value;
+		var cgenderInput = document.getElementsByName("cgender")[0].value;
+		var pcInput = document.getElementsByName("pc")[0].value;
+
+        if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
 				</div>      				
 		</div>    
 	</div>

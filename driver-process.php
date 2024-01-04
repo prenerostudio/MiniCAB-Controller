@@ -25,7 +25,6 @@ $dphone = $_POST['dphone'];
 $dauth = $_POST['dauth'];
 $dgender = $_POST['dgender'];
 $dlang = $_POST['dlang'];
-$dv = $_POST['dv'];
 $licence = $_POST['licence'];
 $lexp = $_POST['lexp'];
 $pco = $_POST['pco'];
@@ -53,11 +52,11 @@ if ($phone_count > 0) {
     $dpic = uploadImage();
 
     if ($dpic) {
-        $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_phone`, `d_address`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `acount_status`, `driver_reg_date`) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_phone`, `d_address`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `acount_status`, `driver_reg_date`) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssssssssssss", $dname, $demail, $dphone, $address,  $dpic, $dgender, $dlang, $dauth, $dv, $licence, $lexp, $pco, $pcoexp, $remarks, $status, $date); 
+        $stmt->bind_param("sssssssssssssss", $dname, $demail, $dphone, $address,  $dpic, $dgender, $dlang, $dauth, $licence, $lexp, $pco, $pcoexp, $remarks, $status, $date); 
 
         if ($stmt->execute()) {
             // Redirect on successful insertion
@@ -65,17 +64,17 @@ if ($phone_count > 0) {
             exit();
         } else {
             // Handle the error
-            echo 'Error: ' . $stmt->error;
+            header('Location: drivers.php');
         }
 
         $stmt->close();
     } else {
 		
-		 $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_phone`, `d_address`, `d_gender`, `d_language`, `licence_authority`, `v_id`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `acount_status`, `driver_reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		 $sql = "INSERT INTO `drivers`( `d_name`, `d_email`, `d_phone`, `d_address`, `d_gender`, `d_language`, `licence_authority`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `d_remarks`, `acount_status`, `driver_reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssssssssss", $dname, $demail, $dphone, $address, $dgender, $dlang, $dauth, $dv, $licence, $lexp, $pco, $pcoexp, $remarks, $status, $date); 
+        $stmt->bind_param("ssssssssssssss", $dname, $demail, $dphone, $address, $dgender, $dlang, $dauth, $licence, $lexp, $pco, $pcoexp, $remarks, $status, $date); 
 
         if ($stmt->execute()) {
             // Redirect on successful insertion
@@ -84,7 +83,7 @@ if ($phone_count > 0) {
             exit();
         } else {
             // Handle the error
-            echo 'Error: ' . $stmt->error;
+             header('Location: drivers.php');
         }
 		
 		

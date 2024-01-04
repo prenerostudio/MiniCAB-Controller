@@ -31,19 +31,19 @@ include('header.php');
 				<ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">                
 					<li class="nav-item">                    
 						<a href="#drivers" class="nav-link active" data-bs-toggle="tab">								
-							<i class="ti ti-steering-wheel" style="margin-right: 10px;"></i>                        
+							<i class="ti ti-steering-wheel"></i>                        
 							Active Drivers
 						</a>                      
 					</li>                      
 					<li class="nav-item">                       
 						<a href="#new-drivers" class="nav-link" data-bs-toggle="tab">						
-							<i class="ti ti-user-shield" style="margin-right: 10px;"></i>                        
+							<i class="ti ti-user-shield"></i>                        
 							New Driver Requests
 						</a>                   
 					</li>						
 					<li class="nav-item">                      
 						<a href="#inactive" class="nav-link" data-bs-toggle="tab">						
-							<i class="ti ti-car-off" style="margin-right: 10px;"></i>                         
+							<i class="ti ti-car-off"></i>                         
 							Inactive Drivers
 						</a>                     
 					</li>                   
@@ -439,19 +439,19 @@ include('header.php');
 				<h5 class="modal-title">Add New Driver</h5>            				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
 			</div> 
-			<form method="post" enctype="multipart/form-data" action="driver-process.php">			
+			<form method="post" enctype="multipart/form-data" action="driver-process.php" onsubmit="return validateForm();">			
 				<div class="modal-body">								
 					<div class="row">              					
 								
 							<div class="mb-3 col-lg-6">              					
 								<label class="form-label">Driver Name</label>              					
-								<input type="text" class="form-control" name="dname" placeholder="Driver Name">            				
+								<input type="text" class="form-control" name="dname" placeholder="Driver Name" required>            				
 							</div> 						
 					             					
 						             
 							<div class="mb-3 col-lg-6">                  							
 								<label class="form-label">Email</label>              					
-								<input type="text" class="form-control" name="demail" placeholder="hello@example.com">
+								<input type="text" class="form-control" name="demail" placeholder="hello@example.com" required>
 							</div>             				
 						           				
 					              					
@@ -459,13 +459,13 @@ include('header.php');
 						               
 							<div class="mb-3 col-lg-6">                  
 								<label class="form-label">Phone</label>              					
-								<input type="text" class="form-control" name="dphone" placeholder="+44 20 7123 4567">
+								<input type="text" class="form-control" name="dphone" placeholder="+44 20 7123 4567" required>
 							</div> 
 						
 						
 						<div class="mb-3 col-lg-6">              					
 								<label class="form-label">Licence Authority</label>              					                  
-								<select class="form-select" name="dauth">                    								
+								<select class="form-select" name="dauth" required>                    								
 									<option value="" selected>Select Authority</option>                    								
 									<option>London</option>                    								
 									<option>Bermingham</option> 									
@@ -501,22 +501,7 @@ include('header.php');
 								</select> 						
 							</div>             					
 					           				
-					             					
-										
-							<div class="mb-3 col-lg-6">              					
-								<label class="form-label">Vehicle</label>              												
-								<select class="form-select" name="dv">                    								
-									<option value="" selected>Select Vehicle</option>
-									<?php						
-									$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");									
-									while($vrow = mysqli_fetch_array($vsql)){									
-									?>																											
-									<option value="<?php echo $vrow['v_id'] ?>"><?php echo $vrow['v_name'] ?></option>
-									<?php
-									}									
-									?>												
-								</select>              				
-							</div> 						
+					 					
 					                  
 							<div class="mb-3 col-lg-6">                  							
 								<label class="form-label">Picture</label>              					
@@ -571,14 +556,35 @@ include('header.php');
 						<i class="ti ti-circle-x"></i>
 						Cancel           				
 					</a>           				
-					<button type="submit" class="btn ms-auto btn-success" data-bs-dismiss="modal">
+					<button type="submit" class="btn ms-auto btn-success">
 						
 						<i class="ti ti-user-plus"></i> 
 						Add Driver  
 						
 					</button>       			
 				</div> 								
-			</form>		
+			</form>	
+			
+			<script>
+    function validateForm() {
+        // Perform your form validation here
+        var dnameInput = document.getElementsByName("dname")[0].value;
+        var demailInput = document.getElementsByName("demail")[0].value;
+        var dphoneInput = document.getElementsByName("dphone")[0].value;
+		var dauthInput = document.getElementsByName("dauth")[0].value;
+		
+
+        if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
+			
 		</div>      	
 	</div>    
 </div>   

@@ -25,14 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (file_exists($targetFile)) {
         echo "Sorry, file already exists.";
         $uploadOk = 0;
-		header('Location: bookers.php');
+		  header('location: view-booker.php?b_id='.$b_id);
     }
 
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 5000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
-		header('Location: bookers.php');
+		  header('location: view-booker.php?b_id='.$b_id);
     }
 
     // Allow certain file formats
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         && $imageFileType != "gif") {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
-		header('Location: bookers.php');
+		  header('location: view-booker.php?b_id='.$b_id);
     }
 
     // Check if $uploadOk is set to 0 by an error
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              $result = mysqli_query($connect, $sql);
 
             echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
-			header('Location: bookers.php');
+			  header('location: view-booker.php?b_id='.$b_id);
         } else {
             echo "Sorry, there was an error uploading your file.";
         }

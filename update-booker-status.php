@@ -12,9 +12,9 @@ if($result){
 	echo'<br>'; 	
 	echo ' '; 	
 	echo "<script>alert('Booker has been Updates from the record')</script>";	
-	header('location: bookers.php');	
+	  header('location: view-booker.php?b_id='.$b_id);	
 } else {	
 	echo "<script>alert('Some error occurred. Try again')</script>";	
-	header('location: bookers.php');
+	  header('location: view-booker.php?b_id='.$b_id);
 }
 ?>

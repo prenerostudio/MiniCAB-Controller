@@ -9,12 +9,12 @@ include('header.php');
 					<h3 class="card-title">Create New Booking</h3>                  										
 				</div>                  				
 				<div class="card-body border-bottom py-3">														
-					<form method="post" action="booking-process.php" enctype="multipart/form-data">				
+					<form method="post" action="booking-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">				
 						<div class="modal-body">													
 							<div class="row">							
 								<div class="mb-3 col-md-4">    																	
 									<label class="form-label">Booking Type</label>
-									<select class="form-control" name="b_type_id">
+									<select class="form-control" name="b_type_id" required>
 										<option value="">Select Booking Type</option>
 										<?php        																			
 										$btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
@@ -33,7 +33,7 @@ include('header.php');
 								<h4>Passenger Details:</h4>
 								<div class="mb-3 col-lg-4">    																	
 									<label class="form-label">Name</label>
-									<select class="form-control" name="c_id" id="clientSelect">
+									<select class="form-control" name="c_id" id="clientSelect" required>
 										<option value="">Select Customer</option>
 										<?php        																			
 										$clsql = mysqli_query($connect, "SELECT * FROM `clients`");
@@ -81,11 +81,11 @@ include('header.php');
 								<h4>Journey Details:</h4>																	
 								<div class="mb-3 col-lg-4">    								
 									<label class="form-label">Pickup Location:</label>    									
-									<input type="text" id="pickup" name="pickup" class="form-control" placeholder="Select pickup location">
+									<input type="text" id="pickup" name="pickup" class="form-control" placeholder="Select pickup location" required>
 								</div>																	
 								<div class="mb-3 col-lg-4">    								
 									<label class="form-label">Drop-off Location:</label>    									
-									<input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location">									
+									<input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location" required>									
 								</div>							
 								<div class="mb-3 col-lg-4">																				
 									<label class="form-label">Address</label>								
@@ -97,15 +97,15 @@ include('header.php');
 								</div>							
 								<div class="mb-3 col-lg-4">												
 									<label class="form-label">No. of Passenger</label>								
-									<input type="number" class="form-control" name="passenger">							
+									<input type="number" class="form-control" name="passenger" required>							
 								</div> 																				
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">Pickup Date</label>								
-									<input type="date" class="form-control" name="pick_date">							
+									<input type="date" class="form-control" name="pick_date" required>							
 								</div>														
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">Pickup Time</label>								
-									<input type="time" class="form-control" name="pick_time">							
+									<input type="time" class="form-control" name="pick_time" required>							
 								</div>																
 								<div class="mb-3 col-lg-4">								
 									<div class="form-label">Journey Type</div>																
@@ -171,7 +171,13 @@ include('header.php');
 								</div> 							
 							</div>    												
 							<div class="row">						
-								<h4>Pricing Section</h4>													
+								<h4>Pricing Section</h4>	
+								
+								<div class="mb-3 col-lg-4">										
+									<label class="form-label">Jouney Fare</label>								
+									<input type="text" class="form-control"  name="journey_fare" id="journeyFare"  required>	
+									<button class="btn btn-instagram" id="calculateFareBtn">Calculate Fare</button>
+								</div>
 								<div class="mb-3 col-lg-4">          
 									<label class="form-label">Bookinng Fee </label>								
 									<input type="text" class="form-control" name="booking_fee">							
@@ -196,10 +202,7 @@ include('header.php');
 									<label class="form-label">Distance (Auto-calculated)</label>                                
 									<input type="text" class="form-control" name="journey_distance" id="journeyDistance" readonly>
 								</div>							
-								<div class="mb-3 col-lg-4">										
-									<label class="form-label">Jouney Fare</label>								
-									<input type="text" class="form-control"  name="journey_fare" id="journeyFare" >							
-								</div>																					
+																													
 								<div class="col-lg-4">                															
 									<h4>Send Online Payment Link</h4>										
 									<p>							   																		
@@ -218,16 +221,105 @@ include('header.php');
 							</div>					  												
 						</div>          										      											
 						<div class="modal-footer">           														
-							<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 						
-								<i class="ti ti-circle-x" style="margin-right: 10px; font-size: 20px;"></i>						
+							<a href="all-bookings.php" class="btn btn-danger"> 						
+								<i class="ti ti-circle-x"></i>						
 								Cancel           														
 							</a>           																								
-							<button type="submit" class="btn btn-success ms-auto" data-bs-dismiss="modal">						
-								<i class="ti ti-message-plus" style="margin-right: 10px; font-size: 20px;"></i>						
+							<button type="submit" class="btn btn-success ms-auto">						
+								<i class="ti ti-message-plus"></i>						
 								Save Booking  																
 							</button>					     											
 						</div> 										
-					</form>																		
+					</form>	
+					<script>
+    $(document).ready(function() {
+        // Other existing code...
+
+        // Add a click event listener for the "Calculate Fare" button
+        $('#calculateFareBtn').on('click', function(e) {
+            e.preventDefault(); // Prevent the form from submitting
+
+            // Fetch required values for calculations
+            var distance = parseFloat($('#journeyDistance').val());
+            var pickDate = new Date($('input[name="pick_date"]').val());
+            var pickTime = $('input[name="pick_time"]').val();
+            var vehicleId = $('#vehicleSelect').val();
+
+            // Fetch vehicle pricing from the database (you need to implement this)
+            var vehiclePricing = parseFloat(fetchVehiclePricing(vehicleId));
+
+            // Calculate base fare: distance * per mile price
+            var baseFare = distance * vehiclePricing;
+
+            // Check if pick date is a holiday, increase fare by 10%
+            if (isHoliday(pickDate)) {
+                baseFare *= 1.1;
+            }
+
+            // Check if pick time is between 8 PM and 9 AM, increase fare by 5%
+            var pickHour = parseInt(pickTime.split(':')[0], 10);
+            if (pickHour < 9 || pickHour >= 20) {
+                baseFare *= 1.05;
+            }
+
+            // Update the fare field with the calculated fare
+            $('#journeyFare').val(baseFare.toFixed(2));
+        });
+
+        // Function to fetch vehicle pricing from the server (you need to implement this)
+        function fetchVehiclePricing(vehicleId) {
+             // Make an AJAX request to the server
+        $.ajax({
+            type: 'POST',
+            url: 'fetch_vehicle_pricing.php', // Create a separate PHP file for this function
+            data: { vehicleId: vehicleId },
+            success: function(response) {
+                // Parse the JSON response
+                var data = JSON.parse(response);
+
+                // Callback with the result
+                callback(data);
+            },
+            error: function() {
+                // Handle error if needed
+            }
+        });
+            return 15.0; // Replace with actual pricing logic
+        }
+
+        // Function to check if a given date is a holiday (you need to implement this)
+        function isHoliday(date) {
+            // Implement the logic to check if the date is a holiday
+            // ...
+
+            // For now, return a placeholder value (false)
+            return false;
+        }
+    });
+
+    function validateForm() {
+        // Perform your form validation here
+        var typeInput = document.getElementsByName("b_type_id")[0].value;
+        var cidInput = document.getElementsByName("c_id")[0].value;
+        var pickupInput = document.getElementsByName("pickup")[0].value;
+		
+        var dropoffInput = document.getElementsByName("dropoff")[0].value;
+        var pdateInput = document.getElementsByName("pick_date")[0].value;
+        var ptimeInput = document.getElementsByName("pick_time")[0].value;
+		
+        var fareInput = document.getElementsByName("journey_fare")[0].value;
+		
+
+        if (typeInput === "" || cidInput === "" || pickupInput === "" || dropoffInput === "" || pdateInput === "" || ptimeInput === "" || fareInput === "") {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
 				</div>                                                    				
 			</div>              			
 		</div>		
@@ -238,44 +330,6 @@ include('header.php');
     async defer></script>
 <script>
 	
-function updateJourneyFare() {
-    var vehicleSelect = document.getElementById('vehicleSelect');
-    var journeyDistanceInput = document.getElementById('journeyDistance');
-    var journeyFareInput = document.getElementById('journeyFare');
-    var selectedVehicleId = vehicleSelect.value;
-
-    // Make an AJAX request to get the per mile price for the selected vehicle
-    $.ajax({
-        type: 'POST',
-        url: 'get_vehicle_pricing.php',
-        data: { v_id: selectedVehicleId },
-        success: function (response) {
-            try {
-                var data = JSON.parse(response);
-                if (data.success) {
-                    var perMilePrice = parseFloat(data.price);
-                    var distanceValue = parseFloat(journeyDistanceInput.value);
-
-                    if (!isNaN(perMilePrice) && !isNaN(distanceValue)) {
-                        var journeyFare = perMilePrice * distanceValue;
-                        journeyFareInput.value = journeyFare.toFixed(2);
-                    } else {
-                        console.error('Invalid per mile price or journey distance');
-                    }
-                } else {
-                    console.error('Invalid per mile price: ' + response);
-                }
-            } catch (error) {
-                console.error('Error parsing JSON response: ' + error);
-            }
-        },
-        error: function (error) {
-            console.error('Error fetching per mile price: ' + JSON.stringify(error));
-        }
-    });
-}
-
-
 	function initAutocomplete() {    
     var pickupInput = document.getElementById('pickup');        
     var dropoffInput = document.getElementById('dropoff');        

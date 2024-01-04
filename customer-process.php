@@ -1,7 +1,6 @@
 <?php
 require 'config.php';
 
-// Function to handle image upload
 function uploadImage() {
     $targetDir = "img/customers/";
     $targetFilePath = $targetDir . basename($_FILES["cpic"]["name"]);
@@ -10,8 +9,7 @@ function uploadImage() {
 
     if (in_array($fileType, $allowTypes)) {
         if (move_uploaded_file($_FILES["cpic"]["tmp_name"], $targetFilePath)) {
-            // Return only the image name
-            return basename($targetFilePath);
+            return basename($targetFilePath); // Return only the image name
         } else {
             return false;
         }
@@ -39,34 +37,35 @@ $stmt_check->fetch();
 $stmt_check->close();
 
 if ($email_count > 0) {
-    // The email already exists, handle the error
     echo 'Email already exists. Please use a different email address.';
 } else {
-	
     // Handle image upload
     $cpic = uploadImage();
 
-    if ($cpic) {
+    if ($cpic !== false) {
+        // Insert image name along with other data
         $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `reg_date`)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
         $stmt = $connect->prepare($sql);
         $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $date);
-
-        if ($stmt->execute()) {
-            // Redirect on successful insertion
-            header('Location: customers.php');
-            exit();
-        } else {
-            // Handle the error
-            echo 'Error: ' . $stmt->error;
-        }
-
-        $stmt->close();
     } else {
-        echo 'Sorry, only JPG, JPEG, PNG, GIF files are allowed for the image.';
+        // Insert only name without image name
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("ssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $pc, $cothers, $cni, $date);
     }
+
+    if ($stmt->execute()) {
+        header('Location: customers.php'); // Redirect on successful insertion
+        exit();
+    } else {
+        header('Location: customers.php'); // Handle the error
+    }
+
+    $stmt->close();
 }
 
 $connect->close();
 ?>
+

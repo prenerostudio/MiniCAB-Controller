@@ -1,5 +1,39 @@
 <?php
 include('config.php');
+// Function to fetch vehicle pricing from the database
+function fetchVehiclePricingFromDatabase($vehicleId) {
+    global $connect;
+
+    // Sanitize input to prevent SQL injection
+    $vehicleId = mysqli_real_escape_string($connect, $vehicleId);
+
+    // Your SQL query to fetch vehicle pricing based on the provided vehicle ID
+    $query = "SELECT v_pricing FROM vehicles WHERE v_id = '$vehicleId'";
+
+    // Execute the query
+    $result = mysqli_query($connect, $query);
+
+    // Check if the query was successful
+    if ($result) {
+        // Fetch the result row
+        $row = mysqli_fetch_assoc($result);
+
+        // Check if a valid row was fetched
+        if ($row) {
+            // Return the fetched vehicle pricing
+            return $row['v_pricing'];
+        } else {
+            // Handle the case where no row was fetched
+            return 0; // Return a default value or handle it based on your requirements
+        }
+    } else {
+        // Handle the case where the query was not successful
+        return 0; // Return a default value or handle it based on your requirements
+    }
+}
+
+
+
 
 $b_type_id = $_POST['b_type_id'];
 $c_id  = $_POST['c_id'];
@@ -26,6 +60,37 @@ $tolls  = $_POST['tolls'];
 $extra  = $_POST['extra'];
 $booking_status  = 'Pending';
 $date = date("Y-m-d H:i:s");
+
+
+
+echo $b_type_id.'<br>';
+echo $c_id .'<br>';
+echo $pickup.'<br>';
+echo $dropoff.'<br>';
+echo $address.'<br>';
+echo $postal_code.'<br>';
+echo $passenger.'<br>';
+echo $pick_date .'<br>';
+echo $pick_time .'<br>';
+echo $journey_type.'<br>';
+echo $v_id .'<br>';
+echo $luggage.'<br>';
+echo $child_seat.'<br>';
+echo $flight_number.'<br>';
+echo $delay_time.'<br>';
+echo $note .'<br>';
+echo $journey_fare.'<br>';
+echo $journey_distance.'<br>';
+echo $booking_fee.'<br>';
+echo $car_parking .'<br>';
+echo $waiting.'<br>';
+echo $tolls.'<br>';
+echo $extra .'<br>';
+echo $booking_status.'<br>';
+echo $date .'<br>';
+
+//die;
+
 
 $sql = "INSERT INTO `bookings`(
 								`b_type_id`,

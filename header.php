@@ -180,7 +180,7 @@ if (!isset($_SESSION['email'])) {
 											<li class="nav-item dropdown">                      
 												<a class="nav-link dropdown-toggle" href="#navbar-booking" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >                       
 													<span class="nav-link-icon d-md-none d-lg-inline-block">
-														<i class="ti ti-bookmarks"></i>                       
+														<i class="ti ti-book"></i>                       
 													</span>                      
 													<span class="nav-link-title">                        
 														Bookings Section                        
@@ -189,19 +189,19 @@ if (!isset($_SESSION['email'])) {
                       
 												<div class="dropdown-menu">                        
 													<a class="dropdown-item" href="all-bookings.php"> 
-														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i>
+														<i class="ti ti-bookmarks"></i>
 														All Bookings                        
 													</a>                        
 													<a class="dropdown-item" href="bid-bookings.php">
-														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i>
+														<i class="ti ti-address-book"></i>
 														Bid Bookings                        
 													</a>                        
 													<a class="dropdown-item" href="drivers-bid.php">
-														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i> 
+														<i class="ti ti-bookmarks"></i> 
 														Bids From Drivers                        
 													</a>                        
 													<a class="dropdown-item text-pink" href="job-history.php">                         
-														<i class="ti ti-bookmarks" style="margin-right: 10px;"></i>                        
+														<i class="ti ti-bookmarks"></i>                        
 														Job History                        
 													</a>                      
 												</div>                    
@@ -218,15 +218,15 @@ if (!isset($_SESSION['email'])) {
                       
 												<div class="dropdown-menu">                        
 													<a class="dropdown-item" href="customers.php"> 
-														<i class="ti ti-users-group" style="margin-right: 10px;"></i>
+														<i class="ti ti-users-group"></i>
 														Customers                        
 													</a>                        
 													<a class="dropdown-item" href="bookers.php">
-														<i class="ti ti-users-group" style="margin-right: 10px;"></i>
+														<i class="ti ti-users-group"></i>
 														Bookers                        
 													</a>
 													<a class="dropdown-item text-pink" href="#">
-														<i class="ti ti-building" style="margin-right: 10px;"></i>
+														<i class="ti ti-building"></i>
 														Company Accounts                        
 													</a>                      
 												</div>                    
@@ -243,28 +243,28 @@ if (!isset($_SESSION['email'])) {
 												</a>                     
 												<div class="dropdown-menu">                        
 													<a class="dropdown-item" href="drivers.php">
-														<i class="ti ti-steering-wheel" style="margin-right: 10px;"></i>
+														<i class="ti ti-steering-wheel"></i>
 														Active Drivers                        
 													</a>                        
 													<a class="dropdown-item" href="new-drivers.php">
-														<i class="ti ti-user-shield" style="margin-right: 10px;"></i>
+														<i class="ti ti-user-shield"></i>
 														New Comer Drivers                        
 													</a>
                         
 													<a class="dropdown-item" href="inactive-drivers.php">
-														<i class="ti ti-car-off" style="margin-right: 10px;"></i>
+														<i class="ti ti-car-off"></i>
 														Inactive Driver                        
 													</a>                        
 													<a class="dropdown-item text-pink" href="driver-tracker.php">                         
-														<i class="ti ti-user-search" style="margin-right: 10px;"></i>
+														<i class="ti ti-user-search"></i>
 														Driver Tracker                        
 													</a>													
 													<a class="dropdown-item text-pink" href="fare-corrections.php">                         
-														<i class="ti ti-credit-card-refund" style="margin-right: 10px;"></i>
+														<i class="ti ti-credit-card-refund"></i>
 														Fare Corrections                        
 													</a>						  						  
 													<a class="dropdown-item text-pink" href="#">                         
-														<i class="ti ti-receipt" style="margin-right: 10px;"></i>
+														<i class="ti ti-receipt"></i>
 														Reviews                        
 													</a>                      
 												</div>                    
@@ -303,19 +303,30 @@ if (!isset($_SESSION['email'])) {
 												</a>                      
 												<div class="dropdown-menu">                        
 													<a class="dropdown-item" href="zones.php">
-														<i class="ti ti-map-pins" style="margin-right: 10px;"></i>
+														<i class="ti ti-map-pins"></i>
 														Zones                        
 													</a>                        
 													<a class="dropdown-item" href="airports.php">
-														<i class="ti ti-plane-tilt" style="margin-right: 10px;"></i>
+														<i class="ti ti-plane-tilt"></i>
 														Airports                        
 													</a>                        
 													<a class="dropdown-item" href="destinations.php">
-														<i class="ti ti-map-2" style="margin-right: 10px;"></i>
+														<i class="ti ti-map-2"></i>
 														Destinations                        
 													</a>                                              
 												</div>                    
-											</li>				
+											</li>	
+											
+											<li class="nav-item">                      
+												<a class="nav-link" href="special-dates.php" >                        
+													<span class="nav-link-icon d-md-none d-lg-inline-block">
+														<i class="ti ti-clock"></i>                        
+													</span>                        
+													<span class="nav-link-title">                          
+														Special Dates                       
+													</span>                      
+												</a>                    
+											</li>  
 											
 											<li class="nav-item">                      
 												<a class="nav-link" href="payments.php" >                        

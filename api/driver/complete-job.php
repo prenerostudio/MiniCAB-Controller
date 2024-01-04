@@ -8,6 +8,7 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 $job_id = $_POST['job_id'];
+$c_id = $_POST['c_id'];
 $d_id = $_POST['d_id'];
 $journey_fare = $_POST['journey_fare'];
 $car_parking = $_POST['car_parking'];
@@ -27,7 +28,8 @@ if(isset($_POST['job_id'])){
 		$driver_commission = $total_pay * 0.20;	   
 		$sql="INSERT INTO `invoice`( 
 									`job_id`, 
-									`d_id`, 
+									`c_id`, 
+									`d_id`,
 									`journey_fare`,
 									`car_parking`, 
 									`waiting`, 
@@ -39,6 +41,7 @@ if(isset($_POST['job_id'])){
 									`invoice_date`
 									) VALUES (
 									'$job_id',
+									'$c_id',
 									'$d_id',
 									'$journey_fare',
 									'$car_parking',

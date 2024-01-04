@@ -71,7 +71,7 @@ $crow = mysqli_fetch_array($csql);
 						<div class="col-auto">
 							<span class="avatar avatar-xl" 
 								  style="background-image: url(img/customers/<?php echo $crow['c_pic'];?>); 
-										 background-size:cover; width: 220px; height: 160px;"></span>	
+										 background-size:contain; width: 220px; height: 160px;"></span>	
 						</div>					
 						<div class="col-auto">						
 							<form action="update-customer-img.php" method="post" enctype="multipart/form-data">
@@ -81,7 +81,7 @@ $crow = mysqli_fetch_array($csql);
 							</form>
 						</div>
 						<div class="col-auto">
-							<a href="#" class="btn btn-ghost-danger">	
+							<a href="del-customer-img.php?c_id=<?php echo $c_id ?>" class="btn btn-ghost-danger">	
 								Delete avatar
 							</a>
 						</div>			
@@ -111,11 +111,35 @@ $crow = mysqli_fetch_array($csql);
 							<div class="col-md-4">
 								<div class="mb-3">
 									<div class="form-label">Gender</div>
-									<input type="text" class="form-control" value="<?php echo $crow['c_gender']; ?>" name="cgender">
+									<select class="form-select" name="cgender" required>												
+								<option><?php echo $crow['c_gender']; ?></option>
+								<option>Male</option>																
+								<option>Female</option>								
+								<option>Transgender</option>							
+							</select>        
+									
+									
+									
+									
 								</div>                    												
 								<div class="mb-3">                    						
 									<div class="form-label">Language </div>
-									<input type="text" class="form-control" value="<?php echo $crow['c_language']; ?>" name="clang">
+									
+									<select class="form-select" name="clang">							
+								<option><?php echo $crow['c_language']; ?></option>		      								
+								<?php														
+								$lsql=mysqli_query($connect,"SELECT * FROM `language`");								
+								while($lrow = mysqli_fetch_array($lsql)){								
+								?>			
+								<option>								
+									<?php echo $lrow['language'] ?>								
+								</option>
+								<?php																	
+								}																		
+								?>																			
+							</select> 	
+								
+								
 								</div>																					
 								<div class="mb-3">                    						
 									<div class="form-label">Postal Code</div>
@@ -123,7 +147,7 @@ $crow = mysqli_fetch_array($csql);
 								</div>															
 								<div class="mb-3">                    														
 									<div class="form-label">Other Details</div>  								
-									<textarea class="form-control" rows="3" name="others"><?php echo $crow['others'] ?></textarea>
+									<textarea class="form-control" rows="3" name="cothers"><?php echo $crow['others'] ?></textarea>
 								</div>																					
 							</div>																		
 							<div class="col-md-4">																			
@@ -140,7 +164,7 @@ $crow = mysqli_fetch_array($csql);
 						</div>                 				
 					<div class="card-footer bg-transparent mt-auto">                 
 						<div class="btn-list justify-content-end">                 
-							<a href="drivers.php" class="btn">                  
+							<a href="customers.php" class="btn">                  
 								Cancel                  						
 							</a>                  						 
 							<button type="submit" class="btn btn-primary">
@@ -191,10 +215,10 @@ $crow = mysqli_fetch_array($csql);
 													</thead>
 													<tbody class="table-tbody">
 														<?php											
-														//$x = 0;
-														//$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id AND invoice.d_id = $d_id");
-														//while ($irow = mysqli_fetch_array($isql)) :											
-														//$x++;
+														$x = 0;
+														$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, bookings.b_type_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, clients.c_name, clients.c_phone, booking_type.b_type_name, drivers.d_name, drivers.d_phone FROM invoice, jobs, clients, bookings, booking_type, drivers WHERE invoice.job_id = jobs.job_id AND invoice.c_id = clients.c_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND invoice.c_id = '$c_id'");
+														while ($irow = mysqli_fetch_array($isql)) :				
+														$x++;
 														?>
 														<tr>
 															<td class="sort-id">
@@ -222,14 +246,14 @@ $crow = mysqli_fetch_array($csql);
 																</a>
 															</td>
 														</tr>                          						
-														<?php//endwhile; ?>                         							
-														<?php //if ($x === 0) : ?>
+														<?php endwhile; ?>                         							
+														<?php if ($x === 0) : ?>
 														<tr>                                   							
 															<td colspan="8">							
 																<p align="center">No Invoice Found!</td>
 															</td>
 													</tr>												
-													<?php // endif; ?>       				
+													<?php  endif; ?>       				
 													</tbody>                   					
 										
 												</table>               							

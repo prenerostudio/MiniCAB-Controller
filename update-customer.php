@@ -32,11 +32,11 @@ $sql = "UPDATE `clients` SET
        
         if ($result) {
          
-            header('Location: customers.php');
+            header('location: view-customer.php?c_id='.$c_id);
             exit();
         } else {
            
-			header('Location: customers.php');
+			header('location: view-customer.php?c_id='.$c_id);
         }
 
 

@@ -11,7 +11,7 @@ function uploadImage() {
     if (in_array($fileType, $allowTypes)) {
         if (move_uploaded_file($_FILES["bpic"]["tmp_name"], $targetFilePath)) {
             // Return only the image name
-            return basename($targetFilePath);
+             return basename($targetFilePath); // Return only the image name
         } else {
             return false;
         }
@@ -69,7 +69,22 @@ if ($bphone_count > 0) {
 
         $stmt->close();
     } else {
-        echo 'Sorry, only JPG, JPEG, PNG, GIF files are allowed for the image.';
+        $sql = "INSERT INTO `bookers`(`b_name`, `b_email`, `b_phone`, `b_address`, `b_gender`, `b_language`, `postal_code`, `company_name`, `others`, `b_ni`, `commision_type`, `percent`, `fixed`, `booker_reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("ssssssssssssss", $bname, $bemail, $bphone, $baddress, $bgender, $blang, $pc, $bcn, $bothers, $bni, $com_type, $percent, $fixed, $date);
+
+        if ($stmt->execute()) {
+            // Redirect on successful insertion
+            header('Location: Bookers.php');
+            exit();
+        } else {
+            // Handle the error
+            echo 'Error: ' . $stmt->error;
+        }
+
+        $stmt->close();
     }
 }
 
