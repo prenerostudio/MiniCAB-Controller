@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = mysqli_query($connect, $sql);
 
             echo "Success: The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
-            header('Location: vehicles.php');
+            header('Location: view-vehicle.php?v_id='.$v_id);
         } else {
             echo "Error: There was an error uploading your file.";
         }

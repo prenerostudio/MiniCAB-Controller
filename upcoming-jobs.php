@@ -8,7 +8,7 @@ include('header.php');
 				Overview                				
 			</div>                			
 			<h2 class="page-title">                			
-				Dashboard                				
+				Upcoming Jobs List             				
 			</h2>              			
 		</div>		
 		<div class="col-auto ms-auto d-print-none">            		
@@ -73,7 +73,7 @@ include('header.php');
 							<tbody class="table-tbody">												
 								<?php																		
 								$y=0;																
-								$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, vehicles.v_name, booking_type.* FROM jobs, clients, bookings, drivers, vehicles, booking_type WHERE jobs.book_id = bookings.book_id  AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND drivers.v_id = vehicles.v_id AND bookings.b_type_id = booking_type.b_type_id ORDER BY jobs.job_id DESC");									
+								$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.* FROM jobs, clients, bookings, drivers, booking_type WHERE jobs.book_id = bookings.book_id  AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND bookings.b_type_id = booking_type.b_type_id ORDER BY jobs.job_id DESC");									
 								while($jobrow = mysqli_fetch_array($jobsql)){
 									$y++;									
 								?>														                     								

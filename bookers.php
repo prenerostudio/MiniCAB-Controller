@@ -287,7 +287,7 @@ include('header.php');
 						</a>           																					
 						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
-							Add Customer  											
+							Add Booker											
 						</button>					     							
 					</div> 							
 					</form>	

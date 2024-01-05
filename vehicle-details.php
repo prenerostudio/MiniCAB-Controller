@@ -16,8 +16,8 @@ $vhrow = mysqli_fetch_array($vhsql);
 						<div class="modal-body">														
 							<div class="row">								
 								<div class="mb-3 col-lg-4">
-									<input type="text" class="form-control" name="dv_id" value="<?php echo $dv_id; ?>">
-									<input type="text" class="form-control" name="d_id" value="<?php echo $vhrow['d_id']; ?>">
+									<input type="hidden" class="form-control" name="dv_id" value="<?php echo $dv_id; ?>">
+									<input type="hidden" class="form-control" name="d_id" value="<?php echo $vhrow['d_id']; ?>">
 									<label class="form-label">Vehicle Type</label>
 									<select class="form-control" name="v_id">										
 										<option value="<?php echo $vhrow['v_id'] ?>"><?php echo $vhrow['v_name'] ?></option>

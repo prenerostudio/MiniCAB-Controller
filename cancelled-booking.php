@@ -82,12 +82,10 @@ include('header.php');
 										<td class="sort-date"><?php echo $brow['pick_date'] ?></td>                       
 										<td class="sort-time"><?php echo $brow['pick_time'] ?></td>                       
 										<td class="sort-passenger"><?php echo $brow['passenger'] ?></td>  
-										<td class="sort-pickup" style="width: 15%;"><?php echo $brow['pickup'] ?></td>                       
+										<td class="sort-pickup" style="width: 15%;"><?php echo $brow['pickup'] ?></td>        
 										<td class="sort-drpoff" style="width: 15%;"><?php echo $brow['destination'] ?></td>
 										<td class="sort-fare"> <?php echo $brow['journey_fare'] ?> </td>
 										<td class="sort-vehicle"> <?php echo $brow['v_name'] ?> </td>
-										
-										
 									</tr>											
 									<?php																	
 									}																

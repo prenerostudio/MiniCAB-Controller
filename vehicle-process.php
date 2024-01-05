@@ -49,9 +49,25 @@ if ($v_img !== false) {
 
     $stmt->close();
 } else {
-    // Handle the case where image upload fails
-    // Consider redirecting to an error page or displaying a user-friendly message
-    echo 'Sorry, there was an error uploading the image.';
+   $sql = "INSERT INTO `vehicles`(`v_name`, `v_seat`, `v_airbags`, `v_wchair`, `v_babyseat`, `v_pricing`, `date_added`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $connect->prepare($sql);
+   // $stmt->bind_param("siiiiiss", $vname, $seats, $bag, $wchair, $babyc, $pricing, $v_img, $date);
+
+	
+	$stmt->bind_param("ssiisis", $vname, $seats, $bags, $wchair, $babyc, $pricing, $date);
+
+    if ($stmt->execute()) {
+        // Redirect on successful insertion
+        header('Location: vehicles.php');
+        exit();
+    } else {
+        // Handle the error
+        // Consider redirecting to an error page or displaying a user-friendly message
+        echo 'Error: ' . $stmt->error;
+    }
+
+    $stmt->close();
 }
 
 $connect->close();

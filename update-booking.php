@@ -55,7 +55,7 @@ $sql = "UPDATE `bookings` SET
 							`book_add_date`='$date' WHERE `book_id`='$book_id'";                
 $result = mysqli_query($connect, $sql);       
 if ($result) {         
-	header('Location: all-bookings.php');    
+	header('Location: view-booking.php?book_id='.$book_id);    
 	exit();    
 } else {		
 	header('Location: view-booking.php?book_id='.$book_id);    

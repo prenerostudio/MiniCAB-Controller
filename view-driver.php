@@ -75,7 +75,7 @@ $drow = mysqli_fetch_array($dsql);
 							<div class="col-12">            								
 								<div class="card">				
 									<div class="card-body border-bottom py-3">									
-										<h2 class="mb-4">Customer Profile</h2>						
+										<h2 class="mb-4">Driver Profile</h2>						
 										<h3 class="card-title">Profile Details</h3>
 										<div class="row align-items-center">								
 											<div class="col-auto">							
@@ -92,7 +92,7 @@ $drow = mysqli_fetch_array($dsql);
 												</form>					
 											</div>						
 											<div class="col-auto">							
-												<a href="#" class="btn btn-ghost-danger">													
+												<a href="del-driver-img.php?d_id=<?php echo $d_id; ?>" class="btn btn-ghost-danger">													
 													Delete avatar                       							
 												</a>							
 											</div>
@@ -212,7 +212,7 @@ $drow = mysqli_fetch_array($dsql);
 						</div>                      																		
 						<div class="tab-pane" id="tabs-document">
 							<div class="card-body">
-								<h2 class="mb-4">Driver Profile</h2>
+								<h2 class="mb-4">Driver Document Section</h2>
 								<div class="row mb-3">
 									<div class="col-md-6">
 										<h3 class="card-title">
@@ -220,7 +220,7 @@ $drow = mysqli_fetch_array($dsql);
 										</h3>                																
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_front'];?>); background-size:cover; width: 220px; height: 160px;"></span>
+												<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_front'];?>); background-size:contain; width: 220px; height: 160px;"></span>
 											</div>															
 											<div class="col-auto">
 												<form action="upload-front.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">    
@@ -247,7 +247,7 @@ $drow = mysqli_fetch_array($dsql);
     </h3>                																					
     <div class="row align-items-center">                														
         <div class="col-auto">
-            <span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_back'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
+            <span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_back'];?>); background-size:contain; width: 220px; height: 160px;"></span>													
         </div>                    											
         <div class="col-auto">									
             <form action="upload-back.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dl_back')">
@@ -279,7 +279,7 @@ $drow = mysqli_fetch_array($dsql);
 							</h3>                																				
 							<div class="row align-items-center">                													
 								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/National-Insurance/<?php echo $drow['national_insurance'];?>); background-size:cover; width: 220px; height: 160px;"></span>
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/National-Insurance/<?php echo $drow['national_insurance'];?>); background-size:contain; width: 220px; height: 160px;"></span>
 								</div>                    																									
 								<div class="col-auto">																												
 									<form action="upload-ni.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('ni')">
@@ -296,7 +296,7 @@ $drow = mysqli_fetch_array($dsql);
 							</h3>                															
 							<div class="row align-items-center">                							
 								<div class="col-auto">																						
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Basic-Disclosure/<?php echo $drow['basic_disclosure'];?>); background-size:cover; width: 220px; height: 160px;"></span>													
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Basic-Disclosure/<?php echo $drow['basic_disclosure'];?>); background-size:contain; width: 220px; height: 160px;"></span>													
 								</div>                    																		
 								<div class="col-auto">																				
 									<form action="upload-bd.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('bd')">									
@@ -316,7 +316,7 @@ $drow = mysqli_fetch_array($dsql);
 							</h3>                																					
 							<div class="row align-items-center">                														
 								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Work-Proof/<?php echo $drow['work_proof'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Work-Proof/<?php echo $drow['work_proof'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
 								</div>                    																										
 								<div class="col-auto">																				
 									<form action="upload-wp.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('wp')">									
@@ -336,7 +336,7 @@ $drow = mysqli_fetch_array($dsql);
 							</h3>                															
 							<div class="row align-items-center">                
 								<div class="col-auto">															
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Passport/<?php echo $drow['passport'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Passport/<?php echo $drow['passport'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
 								</div>                    																		
 								<div class="col-auto">																				
 									<form action="upload-passport.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('pass')">
@@ -356,7 +356,7 @@ $drow = mysqli_fetch_array($dsql);
 							</h3>                															
 							<div class="row align-items-center">                							
 								<div class="col-auto">																							
-									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:cover; width: 220px; height: 160px;"></span>																				
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
 								</div>                    																		
 								<div class="col-auto">																				
 									<form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">
@@ -449,41 +449,19 @@ $drow = mysqli_fetch_array($dsql);
 															<td colspan="8">							
 																<p align="center">
 																	<a href="add-vehicle.php?d_id=<?php echo $d_id; ?>" class="btn btn-primary d-none d-sm-inline-block">  
-																		
-												
-																		<i class="ti ti-car"></i>                    						
-												
+																		<i class="ti ti-car"></i>	
 																		Add Vehicle                 					
-											
 																	</a> 
-															</td>
-															
-													</td>
-													</tr>												
+															</td>										
+														</tr>												
 													<?php endif; ?>       				
-													</tbody>                   					
-										
-												</table>               							
-									
-											</div>           						
-								
-										</div>       							
-							
-									</div>
-
-
-										
-								
-								</div>																								
-								
-								
-																		
-										
-																			
-																					
-			
-							</div>
-                      
+													</tbody>
+												</table>               														
+											</div>           														
+										</div>       														
+									</div>																		
+								</div>
+							</div>                      
 						</div>
 						
 						<div class="tab-pane" id="tabs-statement">

@@ -197,10 +197,19 @@ include('header.php');
 												</button>
 												
 											</a>
-											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>">
-												<button class="btn btn-success"><i class="ti ti-plane-tilt"></i>Dispatch</button>
+											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>"  
+											   class="btn btn-success">
+												
+													<i class="ti ti-plane-tilt"></i>
+													Dispatch
+												
 											</a>
-											<button class="btn btn-danger"><i class="ti ti-square-rounded-x"></i>Cancel</button>	
+											
+											<a class="btn btn-danger" href="cancel-booking.php?book_id=<?php echo $brow['book_id'] ?>">
+												<i class="ti ti-square-rounded-x"></i>
+												Cancel
+											
+											</a>	
 										
 										
 										</td>

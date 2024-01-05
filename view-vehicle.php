@@ -19,7 +19,7 @@ $vrow = mysqli_fetch_array($vsql);
 					             				
 						<div class="row align-items-center">		
 						<div class="col-auto">
-							<span class="avatar avatar-xl" style="background-image: url(img/vehicles/<?php echo $vrow['v_img'];?>); background-size:cover; width: 220px;
+							<span class="avatar avatar-xl" style="background-image: url(img/vehicles/<?php echo $vrow['v_img'];?>); background-size:contain; width: 220px;
    height: 160px;"></span>							
 						</div>						
 						<div class="col-auto">					
@@ -30,7 +30,7 @@ $vrow = mysqli_fetch_array($vsql);
 							</form>
 						</div>
 						<div class="col-auto">	
-							<a href="#" class="btn btn-ghost-danger">					
+							<a href="del-vehicle-img.php?v_id=<?php echo $v_id; ?>" class="btn btn-ghost-danger">					
 								Delete Vehicle Image                      
 							</a>	
 						</div>                   																	
@@ -49,7 +49,7 @@ $vrow = mysqli_fetch_array($vsql);
 							<div class="mb-3">                    						
 								<div class="form-label">Wheel Chair</div>   
 								<select class="form-control" name="vchair">
-								<option><?php 
+								<option value="<?php echo $vrow['w_chair'] ?>"><?php 
 									if ($vrow['v_wchair'] == 1) {
 										?>    
 										Yes
@@ -69,7 +69,7 @@ $vrow = mysqli_fetch_array($vsql);
 							<div class="mb-3">                    						
 								<div class="form-label">Baby Sitter</div>   
 								<select class="form-control" name="vbaby">
-								<option><?php 
+								<option value="<?php echo $vrow['v_babyseat'] ?>"><?php 
 									if ($vrow['v_babyseat'] == 1) {
 										?>    
 										Yes
@@ -105,7 +105,7 @@ $vrow = mysqli_fetch_array($vsql);
 							<div class="mb-3">                    						
 								<div class="form-label">Air Bags</div>   
 								<select class="form-control" name="vbags">
-								<option><?php 
+								<option value="<?php echo $vrow['v_airbags']; ?>"><?php 
 									if ($vrow['v_airbags'] == 1) {
 										?>    
 										

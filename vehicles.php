@@ -80,7 +80,7 @@ include('header.php');
 										<?php																
 									if (!$vrow['v_img']) {
 										?>																	
-										<img src="img/user-1.jpg" alt="Vehicle Img" style="width: 60px; height: 60px; border-radius: 30px;">	
+										<img src="img/car-icon.png" alt="Vehicle Img" style="width: 60px; height: 60px; border-radius: 30px;">	
 										<?php
 									} else{															
 										?>																
@@ -178,75 +178,148 @@ include('header.php');
 <!-------------------------------
 ----------Add Vehicle-------------
 -------------------------------->
+
 <div class="modal modal-blur fade" id="modal-vehicle" tabindex="-1" role="dialog" aria-hidden="true">
+
 	<div class="modal-dialog modal-lg" role="document">    	
+	
 		<div class="modal-content">        		
+		
 			<div class="modal-header">            			
+			
 				<h5 class="modal-title">Add New Vehicle</h5>            				
+				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
+			
 			</div> 
-			<form method="post" enctype="multipart/form-data" action="vehicle-process.php">			
+			
+			<form method="post" enctype="multipart/form-data" action="vehicle-process.php" onsubmit="return validateForm();">			
+			
 				<div class="modal-body">								
+				
 					<div class="row">              					
 								
-							<div class="mb-3">              					
-								<label class="form-label">Vehicle Name</label>              					
-								<input type="text" class="form-control" name="vname" placeholder="Vehicle Name">            				
-							</div> 						
+					
+						<div class="mb-3">              					
+						
+							<label class="form-label">Vehicle Name</label>              					
+							
+							<input type="text" class="form-control" name="vname" placeholder="Vehicle Name">            				
+							
+						</div> 						
 						                
-							<div class="mb-3">                  							
-								<label class="form-label">No. of Seats</label>              					
-								<input type="number" class="form-control" name="seats">
-							</div>             				
+						
+						<div class="mb-3">                  							
+						
+							<label class="form-label">No. of Seats</label>              					
+							
+							<input type="number" class="form-control" name="seats">
+							
+						</div>             				
 					           				
 					             					
 										
-							<div class="mb-3">
-    <label class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" name="bags" value="1">
-        <span class="form-check-label">Air Bags</span>
-    </label>
-</div>
+							
+						
+						<div class="mb-3">
+    
+							<label class="form-check form-switch">
+        
+								<input class="form-check-input" type="checkbox" name="bags" value="1">
+        
+								<span class="form-check-label">Air Bags</span>
+    
+							</label>
 
-<div class="mb-3">
-    <label class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" name="wchair" value="1">
-        <span class="form-check-label">Wheel Chair</span>
-    </label>
-</div>
+						</div>
 
-<div class="mb-3">
-    <label class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" name="babyc" value="1">
-        <span class="form-check-label">Baby Carriers</span>
-    </label>
-</div>         					
+
+						<div class="mb-3">
+    
+							<label class="form-check form-switch">
+        
+								<input class="form-check-input" type="checkbox" name="wchair" value="1">
+        
+								<span class="form-check-label">Wheel Chair</span>
+    
+							</label>
+
+						</div>
+
+
+						<div class="mb-3">
+    
+							<label class="form-check form-switch">
+        
+								<input class="form-check-input" type="checkbox" name="babyc" value="1">
+        
+								<span class="form-check-label">Baby Carriers</span>
+    
+							</label>
+
+						</div>         					
 					          				
 				             					
 									
-							<div class="mb-3">                  							
-								<label class="form-label">Pricing </label>              					
-								<input type="number" class="form-control" name="pricing">      						
-							</div> 					
+							
+						<div class="mb-3">                  							
+
+						
+							<label class="form-label">Pricing </label>              					
+							
+							<input type="number" class="form-control" name="pricing">      						
+							
+						</div> 					
 					                
-							<div class="mb-3">                  							
-								<label class="form-label">Image</label>              					
-								<input type="file" class="form-control" name="v_img">      						
-							</div>             					
+						
+						<div class="mb-3">                  							
+						
+							<label class="form-label">Image</label>              					
+							
+							<input type="file" class="form-control" name="v_img">      						
+							
+						</div>             					
 					           				
+					
 					</div>														          				          
+				
 				</div>          							        			
+				
 				<div class="modal-footer">           
+				
 					<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 
+					
 						<i class="ti ti-circle-x"></i>
+						
 						Cancel           				
+					
 					</a>           				
-					<button type="submit" class="btn ms-auto btn-success" data-bs-dismiss="modal">						
+					
+					<button type="submit" class="btn ms-auto btn-success">						
 						<i class="ti ti-car-garage"></i>
 						Add Vehicles						
 					</button>       			
 				</div> 								
 			</form>		
+			<script>
+    function validateForm() {
+        // Perform your form validation here
+        var vnameInput = document.getElementsByName("vname")[0].value;
+        var seatsInput = document.getElementsByName("seats")[0].value;
+        var pricingInput = document.getElementsByName("pricing")[0].value;
+		
+		
+
+        if (vnameInput === "" || seatsInput === "" || pricingInput === "") {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
 		</div>      	
 	</div>    
 </div>   

@@ -10,7 +10,7 @@ $d_id = $_GET['d_id'];
 					<h3 class="card-title">Add Vehicle</h3>
 				</div>                  								
 				<div class="card-body border-bottom py-3">
-					<form method="post" action="dv_process.php" enctype="multipart/form-data">	
+					<form method="post" action="dv_process.php" enctype="multipart/form-data" onsubmit="return validateForm();">	
 						<div class="modal-body">														
 							<div class="row">								
 								<div class="mb-3 col-lg-4">
@@ -82,7 +82,27 @@ $d_id = $_GET['d_id'];
 								Save Vehicle							
 							</button>
 						</div> 															
-					</form>																						
+					</form>																				
+							<script>
+    function validateForm() {
+        // Perform your form validation here
+        var vidInput = document.getElementsByName("v_id")[0].value;
+        var makeInput = document.getElementsByName("make")[0].value;
+        var modelInput = document.getElementsByName("model")[0].value;
+		var colorInput = document.getElementsByName("color")[0].value;
+		var regInput = document.getElementsByName("reg_num")[0].value;
+		
+
+        if (vidInput === "" || makeInput === "" || modelInput === "" || colorInput === "" || regInput === "" ) {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
 				</div>                                                    							
 			</div>              					
 		</div>			

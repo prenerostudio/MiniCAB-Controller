@@ -77,7 +77,7 @@ if ($bphone_count > 0) {
 
         if ($stmt->execute()) {
             // Redirect on successful insertion
-            header('Location: Bookers.php');
+            header('Location: bookers.php');
             exit();
         } else {
             // Handle the error

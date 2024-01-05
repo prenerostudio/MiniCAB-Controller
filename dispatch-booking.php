@@ -13,21 +13,20 @@ $bookrow = mysqli_fetch_array($booksql);
 					<h3 class="card-title">Dispatch Booking</h3>                  										
 				</div>                  				
 				<div class="card-body border-bottom py-3">														
-					<form method="post" action="dispatch-process.php" id="jobform" enctype="multipart/form-data">				
+					<form method="post" action="dispatch-process.php" id="jobform" enctype="multipart/form-data">
 						<div class="modal-body">													
 							<div class="row">							
-								<div class="mb-3 col-md-4">    																	
+								<div class="mb-3 col-md-4">
 									<label class="form-label">Booking Type</label>
 									<input type="hidden" class="form-control" name="book_id" value="<?php echo $bookrow['book_id'] ?>">
 									<select class="form-control readonly" name="b_type_id">
 										<option value="<?php echo $bookrow['b_type_id'] ?>"><?php echo $bookrow['b_type_name'] ?></option>
-										
 									</select>																
 								</div>																										
 							</div>																						
 							<div class="row">
 								<h4>Passenger Details:</h4>
-								<div class="mb-3 col-lg-4">    																	
+								<div class="mb-3 col-lg-4">
 									<label class="form-label">Customer Name</label>
 									<input type="hidden" class="form-control readonly" name="c_id" value="<?php echo $bookrow['c_id'] ?>"  readonly>
 									<input type="text" class="form-control readonly" name="cphone" value="<?php echo $bookrow['c_name'] ?>"  readonly>

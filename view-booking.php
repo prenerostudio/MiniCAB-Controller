@@ -225,13 +225,15 @@ $bookrow = mysqli_fetch_array($booksql);
 						<div class="modal-footer">           														
 							
 							<button type="submit" class="btn btn-success ms-auto">						
-								<i class="ti ti-message-plus" style="margin-right: 10px; font-size: 20px;"></i>						
-								Save Booking  																
+								<i class="ti ti-message-plus"></i>						
+								Update Booking  																
 							</button>
-							<button type="submit" class="btn btn-success ms-auto">						
-								<i class="ti ti-plane-tilt" style="margin-right: 10px; font-size: 20px;"></i>						
+							<a href="dispatch-booking.php?book_id=<?php echo $bookrow['book_id'] ?>"class="btn btn-instagram" style="margin-left: 20px;">
+												
+								<i class="ti ti-plane-tilt"></i>						
 								Dispatch Booking  																
-							</button>					     											
+												     									
+							</a>
 						</div> 										
 					</form>																		
 				</div>                                                    				
