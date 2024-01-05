@@ -175,7 +175,7 @@ include('header.php');
 						</div> 						               
 						<div class="mb-3 col-md-4">                  
 							<label class="form-label">Email</label>              					
-							<input type="text" class="form-control" name="cemail" placeholder="hello@example.com" required>
+							<input type="email" class="form-control" name="cemail" placeholder="hello@example.com" required>
 						</div>			
 						<div class="mb-3 col-md-4">                  						
 							<label class="form-label">Phone</label>              					
