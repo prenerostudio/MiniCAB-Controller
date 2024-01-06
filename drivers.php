@@ -101,9 +101,9 @@ include('header.php');
 													</td>                                   							
 													<td class="sort-date">
 														<?php if (!$adrow['d_pic']) : ?>   									
-														<img src="img/user-1.jpg" alt="Driver Img" style="width: 80px; height: 100px; border-radius: 5px;">									
+														<img src="img/user-1.jpg" alt="Driver Img" style="width: 80px; height: 80px; border-radius: 5px;">									
 														<?php else : ?>
-														<img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 80px; height: 100px; border-radius: 5px;">
+														<img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
 														<?php endif; ?>
 													</td>                                   							
 													<td class="sort-time">								

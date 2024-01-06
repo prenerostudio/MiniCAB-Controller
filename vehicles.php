@@ -80,11 +80,11 @@ include('header.php');
 										<?php																
 									if (!$vrow['v_img']) {
 										?>																	
-										<img src="img/car-icon.png" alt="Vehicle Img" style="width: 60px; height: 60px; border-radius: 30px;">	
+										<img src="img/car-icon.png" alt="Vehicle Img" style="width: 80px; height: 80px; border-radius: 50px;">	
 										<?php
 									} else{															
 										?>																
-										<img src="img/vehicles/<?php echo $vrow['v_img'];?>" alt="Vehicle Img" style="width: 60px; height: 60px; border-radius: 30px;">
+										<img src="img/vehicles/<?php echo $vrow['v_img'];?>" alt="Vehicle Img" style="width: 80px; height: 80px; border-radius: 50px;">
 										<?php
 									}			
 										?>											

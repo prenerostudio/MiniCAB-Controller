@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$isValidImage) {
             echo "Error: File is not a valid image.";
             $uploadOk = 0;
+			header('Location: view-vehicle.php?v_id='.$v_id);
         }
     }
 
@@ -27,12 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (file_exists($targetFile)) {
         echo "Error: Sorry, file already exists.";
         $uploadOk = 0;
+		header('Location: view-vehicle.php?v_id='.$v_id);
     }
 
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 5000000) {
         echo "Error: Sorry, your file is too large.";
         $uploadOk = 0;
+		header('Location: view-vehicle.php?v_id='.$v_id);
     }
 
     // Allow certain file formats
@@ -40,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!in_array($imageFileType, $allowedFileTypes)) {
         echo "Error: Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
+		header('Location: view-vehicle.php?v_id='.$v_id);
     }
 
     // Check if $uploadOk is set to 0 by an error

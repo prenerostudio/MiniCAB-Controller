@@ -78,11 +78,11 @@ include('header.php');
 										<?php																
 									if (!$crow['c_pic']) {
 										?>																	
-										<img src="img/user-1.jpg" alt="Customer Img" style="width: 70px; height: 100px; border-radius: 5px;">	
+										<img src="img/user-1.jpg" alt="Customer Img" style="width: 80px; height: 80px; border-radius: 5px;">	
 										<?php
 									} else{															
 										?>																
-										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 70px; height: 100px; border-radius: 5px;">
+										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
 										<?php
 									}			
 										?>											

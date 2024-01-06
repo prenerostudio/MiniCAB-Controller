@@ -19,8 +19,8 @@ $vrow = mysqli_fetch_array($vsql);
 					             				
 						<div class="row align-items-center">		
 						<div class="col-auto">
-							<span class="avatar avatar-xl" style="background-image: url(img/vehicles/<?php echo $vrow['v_img'];?>); background-size:contain; width: 220px;
-   height: 160px;"></span>							
+							<span class="avatar avatar-xl" style="background-image: url(img/vehicles/<?php echo $vrow['v_img'];?>); background-size:100% 100%; width: 220px;
+   							height: 160px;"></span>							
 						</div>						
 						<div class="col-auto">					
 							<form action="update-vehicle-img.php" method="post" enctype="multipart/form-data">

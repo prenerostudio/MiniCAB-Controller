@@ -112,9 +112,9 @@ include('header.php');
                                     <td class="sort-id"><?php echo $y; ?></td>
                                     <td class="sort-date">
                                         <?php if (!$ndrow['d_pic']) : ?>
-                                            <img src="img/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                            <img src="img/user-1.jpg" alt="Driver Img" style="width: 80px; height: 80px; border-radius: 50px;">
                                         <?php else : ?>
-                                            <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                            <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 80px; height: 80px; border-radius: 50px;">
                                         <?php endif; ?>
                                     </td>
                                     <td class="sort-time"><?php echo $ndrow['d_name']; ?></td>
@@ -124,10 +124,16 @@ include('header.php');
                                     <td class="sort-drpoff"><?php echo $ndrow['licence_authority']; ?></td>
                                     <td>
                                         <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>">
-                                            <button class="btn btn-info"><i class="ti ti-eye"></i>View</button>
+                                            <button class="btn btn-info">
+												<i class="ti ti-eye"></i>
+												View
+											</button>
                                         </a>
-                                        <a href="del-customer.php?c_id=<?php echo $ndrow['c_id']; ?>">
-                                            <button class="btn btn-danger"><i class="ti ti-square-rounded-x"></i>Delete</button>
+                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id']; ?>">
+                                            <button class="btn btn-danger">
+												<i class="ti ti-square-rounded-x"></i>
+												Delete
+											</button>
                                         </a>
                                     </td>
                                 </tr>

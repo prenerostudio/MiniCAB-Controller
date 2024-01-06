@@ -104,9 +104,9 @@ include('header.php');
                                     <td class="sort-id"><?php echo $z; ?></td>
                                     <td class="sort-date">
                                         <?php if (!$idrow['d_pic']) : ?>
-                                            <img src="img/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                            <img src="img/user-1.jpg" alt="Driver Img" style="width: 80px; height: 80px; border-radius: 50px;">
                                         <?php else : ?>
-                                            <img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                            <img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 80px; height: 80px; border-radius: 50px;">
                                         <?php endif; ?>
                                     </td>
                                     <td class="sort-time"><?php echo $idrow['d_name']; ?></td>
