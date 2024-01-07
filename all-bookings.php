@@ -15,7 +15,7 @@ include('header.php');
 				<div class="btn-list">                
 					<span class="d-none d-sm-inline">
 						<a href="booking-history.php" class="btn">						
-							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
+							<i class="ti ti-user-search" style="margin-right: 10px;"></i>
 							Booking History                   
 						</a>                  
 					</span> 
@@ -45,9 +45,11 @@ include('header.php');
                               </div>
                             </span>                 
 					</span> 
+
 					<script>
-						$(document).ready(function () {
-    $(".dropdown-item").click(function (event) {
+					
+						$(document).ready(function() {
+    $(".dropdown-item").click(function(event) {
         event.preventDefault();
 
         var selectedInterval = $(this).data("filter");
@@ -58,11 +60,11 @@ include('header.php');
                 type: "GET",
                 url: "fetch_data.php",
                 data: { timeInterval: selectedInterval },
-                success: function (data) {
+                success: function(data) {
                     console.log("Ajax Success:", data);
                     $("#tableBody").html(data);
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error("Ajax Error:", error);
                 }
             });

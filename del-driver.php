@@ -9,9 +9,9 @@ include('config.php');
 		echo'<br>'; 
 		echo ' '; 
 		echo "<script>alert('Driver has been deleted from the record')</script>";
-		header('location: new-drivers.php');
+		header('location: drivers.php');
 	} else {
 		echo "<script>alert('Some error occurred. Try again')</script>";
-		header('location: new-drivers.php');
+		header('location: drivers.php');
 	}
 ?>

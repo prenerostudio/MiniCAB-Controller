@@ -126,13 +126,44 @@ include('header.php');
 															<button class="btn btn-info">
 																<i class="ti ti-eye"></i>
 																View
-															</button>                                        
-														</a>                                       
+															</button>  
+														</a>  
+<!--Delete Modal-->
+<div class="modal modal-blur fade" id="modal-driver-delete" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Driver</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete driver ?</p>
+<!--					with ID: <span id="driverId"></span> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn ms-auto btn-danger"  id="deleteDriverBtn">
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Delete Modal-->
+<button class="btn btn-danger delete_btn" data-d_id="<?php echo $adrow['d_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-driver-delete">
+    <i class="ti ti-square-rounded-x"></i>
+    Delete
+</button>
+
+<!--
 														<a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>">
-															<button class="btn btn-danger">
+															<button class="btn btn-danger delete_btn">
 																<i class="ti ti-square-rounded-x"></i>
 																Delete
 															</button>														
+-->
 														</a> 
 														<a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>">
 															<button class="btn btn-instagram">
@@ -426,12 +457,36 @@ include('header.php');
 						 'sort-driver'						
 						]					
 		}); 			
-	})	
+	})
+	
+	
+	$(document).ready(function() {
+    $('#modal-driver-delete').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var driverId = button.data('d_id');
+        var modal = $(this);
+
+        $('#deleteDriverBtn').click(function() {
+            $.ajax({
+                url: 'del-driver.php',
+                type: 'GET', // or 'POST' based on your server-side handling
+                data: { d_id: driverId },
+                success: function(response) {
+                    console.log('Deletion successful');
+                    $('#modal-driver-delete').modal('hide');
+                    location.reload(); // Refresh the page after successful deletion
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
+});
+
+
 </script>
 
-<!-------------------------------
-----------Add Driver-------------
--------------------------------->
 <div class="modal modal-blur fade" id="modal-driver" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">    	
 		<div class="modal-content">        		
