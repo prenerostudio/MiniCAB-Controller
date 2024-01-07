@@ -83,21 +83,21 @@ include('header.php');
 								<tbody class="table-tbody">					
 									<?php										
 									$y=0;								
-									$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, vehicles.v_name, booking_type.* FROM jobs, clients, bookings, drivers, vehicles, booking_type WHERE jobs.book_id = bookings.book_id  AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'completed' AND drivers.v_id = vehicles.v_id AND bookings.b_type_id = booking_type.b_type_id ORDER BY jobs.job_id DESC");									
+									$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, vehicles.v_name, booking_type.* FROM jobs, clients, bookings, drivers, vehicles, booking_type WHERE jobs.book_id = bookings.book_id  AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'Completed' AND drivers.v_id = vehicles.v_id AND bookings.b_type_id = booking_type.b_type_id ORDER BY jobs.job_id DESC");									
 									while($jobrow = mysqli_fetch_array($jobsql)){											
 										$y++;
 									?>														                     
 									<tr>                        
 										<td class="sort-id"><?php echo $y; ?></td>                        
-										<td class="sort-date"><?php echo $jobrow['pick_date'] ?></td>                       
-										<td class="sort-time"><?php echo $jobrow['pick_time'] ?></td>                       
-										<td class="sort-passenger"><?php echo $jobrow['passenger'] ?></td>  
-										<td class="sort-pickup"><?php echo $jobrow['pickup'] ?></td>                       
-										<td class="sort-drpoff"><?php echo $jobrow['destination'] ?></td>
-										<td class="sort-fare"> <?php echo $jobrow['journey_fare'] ?> </td>
-										<td class="sort-vehicle"> <?php echo $jobrow['v_name'] ?> </td>
-										<td class="sort-status"> <?php echo $jobrow['job_status'] ?> </td>
-										<td class="sort-driver"> <?php echo $jobrow['d_name'] ?> </td>
+										<td class="sort-date"><?php echo $jobrow['pick_date']; ?></td>                       
+										<td class="sort-time"><?php echo $jobrow['pick_time']; ?></td>                       
+										<td class="sort-passenger"><?php echo $jobrow['passenger']; ?></td>  
+										<td class="sort-pickup"><?php echo $jobrow['pickup']; ?></td>                       
+										<td class="sort-drpoff"><?php echo $jobrow['destination']; ?></td>
+										<td class="sort-fare"> <?php echo $jobrow['journey_fare']; ?> </td>
+										<td class="sort-vehicle"> <?php echo $jobrow['v_name']; ?> </td>
+										<td class="sort-status"> <?php echo $jobrow['job_status']; ?> </td>
+										<td class="sort-driver"> <?php echo $jobrow['d_name']; ?> </td>
 										
 										
 									</tr>											
