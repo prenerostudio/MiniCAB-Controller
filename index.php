@@ -52,12 +52,14 @@
                         </span>
                       </label>
                       <div class="input-group input-group-flat">
-                        <input type="password" class="form-control"  placeholder="Your password" name="password"  autocomplete="off" required>
-                        <span class="input-group-text">
-                          <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip"><i class="ti ti-eye"></i>
-                          </a>
-                        </span>
-                      </div>
+    <input type="password" class="form-control" placeholder="Your password" name="password" autocomplete="off" required>
+    <span class="input-group-text">
+        <a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">
+            <i class="ti ti-eye"></i>
+        </a>
+    </span>
+</div>
+
                     </div>
                     <div class="mb-2">
                       <label class="form-check">
@@ -93,6 +95,21 @@
     <!-- Tabler Core -->
     <script src="js/tabler.min.js" defer></script>
     <script src="js/demo.min.js" defer></script>
+	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.toggle-password').click(function() {
+        $(this).toggleClass('active');
+        var input = $($(this).closest('.input-group').find('input'));
+        if (input.attr('type') == 'password') {
+            input.attr('type', 'text');
+        } else {
+            input.attr('type', 'password');
+        }
+    });
+});
+</script>
+
   </body>
 
 </html>

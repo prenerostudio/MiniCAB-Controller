@@ -71,7 +71,7 @@ $crow = mysqli_fetch_array($csql);
 						<div class="col-auto">
 							<span class="avatar avatar-xl" 
 								  style="background-image: url(img/customers/<?php echo $crow['c_pic'];?>); 
-										 background-size:contain; width: 220px; height: 160px;"></span>	
+										 background-size:100% 100% ; width: 150px; height: 150px;"></span>	
 						</div>					
 						<div class="col-auto">						
 							<form action="update-customer-img.php" method="post" enctype="multipart/form-data">
