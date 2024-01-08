@@ -20,7 +20,7 @@ $date = date("Y-m-d h:i:s");
 if(isset($_POST['job_id'])){ 
 	$chksql = "SELECT * FROM `fares` WHERE `job_id`='$job_id'";	
 	$chkr=mysqli_query($connect,$chksql);		
-	if($chkr) {			
+	if($chkr && mysqli_num_rows($chkr) > 0) {			
 		echo json_encode(array('message'=>"Fares Already Submitted!",'status'=>false));		
 	}else{					
 		$sql="INSERT INTO `fares`(

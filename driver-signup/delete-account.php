@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Sign up - MiniCAB Taxi Service.</title>
-    <script defer data-api="/stats/api/event" data-domain="register.minicaboffice.com" src="js/script.js"></script>
+    <script defer data-api="/stats/api/event" data-domain="preview.tabler.io" src="js/script.js"></script>
     
     <link rel="icon" href="img/icon.png" type="image/x-icon"/>
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon"/>
@@ -25,7 +25,7 @@
     
   </head>
   <body  class=" d-flex flex-column">
-    <script src="js/demo-theme.min.js"></script>
+    <script src="js/demo-theme.min6a55.js?1695847769"></script>
     <div class="page page-center">
       <div class="container container-tight py-4">
         <div class="text-center mb-4">
@@ -55,12 +55,7 @@
 			   <div class="mb-3">
               <label class="form-label">Email address</label>
               <input type="email" class="form-control" name="d_email" placeholder="Enter Email">
-            </div>
-			   <div class="mb-3">
-              <label class="form-label">Post Code</label>
-              <input type="email" class="form-control" name="post_code" placeholder="Enter Post Code" required>
-            </div>
-            
+            </div>            
             <div class="mb-3">
               <label class="form-check">
                 <input type="checkbox" class="form-check-input"/ required>
@@ -68,7 +63,7 @@
               </label>
             </div>
             <div class="form-footer">
-              <button type="submit" class="btn btn-primary w-100">Create new account</button>
+              <button type="submit" class="btn btn-primary w-100">Request to Delete account</button>
             </div>
           </div>
         </form>

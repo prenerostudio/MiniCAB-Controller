@@ -21,7 +21,7 @@ $date = date("Y-m-d h:i:s");
 if(isset($_POST['job_id'])){ 	
 	$checksql = "SELECT * FROM `invoice` WHERE `job_id`='$job_id'";
 	$chkr=mysqli_query($connect,$checksql);	
-	if($chkr){
+	if($chkr && mysqli_num_rows($chkr) > 0){
 		echo json_encode(array('message'=>"Invoice Already Created",'status'=>false));		
 	}else{	
 		$total_pay = $journey_fare + $car_parking + $waiting + $tolls + $extra;	
