@@ -132,7 +132,7 @@ if (!isset($_SESSION['email'])) {
 									<a href="#" class="dropdown-item">Feedback</a>                
 									<div class="dropdown-divider"></div>                
 									<a href="#" class="dropdown-item">Settings</a>                
-									<a href="#" class="dropdown-item">Logout</a>              
+									<a href="logout.php" class="dropdown-item">Logout</a>              
 								</div>            
 							</div>          
 						</div>        
@@ -241,15 +241,15 @@ if (!isset($_SESSION['email'])) {
 														Drivers                       
 													</span>                     
 												</a>                     
-												<div class="dropdown-menu">                        
-													<a class="dropdown-item" href="drivers.php">
-														<i class="ti ti-steering-wheel"></i>
-														Active Drivers                        
-													</a>                        
+												<div class="dropdown-menu">                         
 													<a class="dropdown-item" href="new-drivers.php">
 														<i class="ti ti-user-shield"></i>
 														New Comer Drivers                        
-													</a>
+													</a>                      
+													<a class="dropdown-item" href="drivers.php">
+														<i class="ti ti-steering-wheel"></i>
+														Active Drivers                        
+													</a> 
                         
 													<a class="dropdown-item" href="inactive-drivers.php">
 														<i class="ti ti-car-off"></i>

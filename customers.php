@@ -78,11 +78,11 @@ include('header.php');
 										<?php																
 									if (!$crow['c_pic']) {
 										?>																	
-										<img src="img/user-1.jpg" alt="Customer Img" style="width: 70px; height: 100px; border-radius: 5px;">	
+										<img src="img/user-1.jpg" alt="Customer Img" style="width: 80px; height: 80px; border-radius: 5px;">	
 										<?php
 									} else{															
 										?>																
-										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 70px; height: 100px; border-radius: 5px;">
+										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
 										<?php
 									}			
 										?>											
@@ -124,12 +124,41 @@ include('header.php');
 												<i class="ti ti-eye"></i>View
 											</button>												
 										</a>
-
+<!--Delete Modal-->
+<div class="modal modal-blur fade" id="modal-customer-delete" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete Customer ?</p>
+<!--					with ID: <span id="driverId"></span> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn ms-auto btn-danger"  id="deleteCustomerBtn">
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Delete Modal-->
+<button class="btn btn-danger delete_btn" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-customer-delete">
+    <i class="ti ti-square-rounded-x"></i>
+    Delete
+</button>
+<!--
 										<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>">
 											<button class="btn btn-danger">
 												<i class="ti ti-square-rounded-x"></i>Delete
 											</button>				
 										</a>										
+-->
 									</td>									
 								</tr>								
 								<?php								
@@ -153,6 +182,29 @@ include('header.php');
 						]					
 		}); 			
 	})	
+	$(document).ready(function() {
+    $('#modal-customer-delete').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var driverId = button.data('c_id');
+        var modal = $(this);
+
+        $('#deleteCustomerBtn').click(function() {
+            $.ajax({
+                url: 'del-customer.php',
+                type: 'GET', // or 'POST' based on your server-side handling
+                data: { c_id: driverId },
+                success: function(response) {
+                    console.log('Deletion successful');
+                    $('#modal-customer-delete').modal('hide');
+                    location.reload(); // Refresh the page after successful deletion
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
+});
 </script>
 
 
@@ -175,7 +227,7 @@ include('header.php');
 						</div> 						               
 						<div class="mb-3 col-md-4">                  
 							<label class="form-label">Email</label>              					
-							<input type="text" class="form-control" name="cemail" placeholder="hello@example.com" required>
+							<input type="email" class="form-control" name="cemail" placeholder="hello@example.com" required>
 						</div>			
 						<div class="mb-3 col-md-4">                  						
 							<label class="form-label">Phone</label>              					

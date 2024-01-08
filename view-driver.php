@@ -81,8 +81,8 @@ $drow = mysqli_fetch_array($dsql);
 											<div class="col-auto">							
 												<span class="avatar avatar-xl" 
 													  style="background-image: url(img/drivers/<?php echo $drow['d_pic'];?>);
-															 background-size:contain; width: 200px;
-															 height: 250px;"></span>
+															 background-size:100% 100%; width: 150px;
+															 height: 150px;"></span>
 											</div>
 											<div class="col-auto">
 												<form action="update-driver-img.php" method="post" enctype="multipart/form-data">
@@ -197,7 +197,7 @@ $drow = mysqli_fetch_array($dsql);
 				
 										<div class="card-footer bg-transparent mt-auto">                 					
 											<div class="btn-list justify-content-end">                 					
-												<a href="drivers.php" class="btn btn-danger">                  							
+												<a href="new-drivers.php" class="btn btn-danger">                  							
 													Cancel                  						
 												</a>                  						 						
 												<button type="submit" class="btn btn-success">

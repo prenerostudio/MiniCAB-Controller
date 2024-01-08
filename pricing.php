@@ -100,8 +100,8 @@ include('header.php');
 												<table class="table table-responsive" id="myTable">  
 													<thead>        
 														<tr>          
-															<th><p>From</p></th>          
-															<th><p>To</p></th>          
+															<th><p>From (miles)</p></th>          
+															<th><p>To (miles)</p></th>          
 															<th><p align="center"><span>1-4</span><br>Passenger</p></th>          
 															<th><p align="center"><span>1-4</span><br>Estate</p></th>          
 															<th><p align="center"><span>5-6</span><br>Passenger</p></th>          
@@ -147,8 +147,8 @@ include('header.php');
 											<table class="table table-responsive">
 												<thead>        
 														<tr>          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p>From</p></th>          
-															<th style="background: #FFFFFF; color: #3A3A3A;"><p>To</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p>From (miles)</p></th>          
+															<th style="background: #FFFFFF; color: #3A3A3A;"><p>To (miles)</p></th>          
 															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Passenger</p></th>          
 															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>1-4</span><br>Estate</p></th>          
 															<th style="background: #FFFFFF; color: #3A3A3A;"><p align="center"><span>5-6</span><br>Passenger</p></th>          
@@ -444,16 +444,36 @@ include('header.php');
 											<td><p align="center"><span>15-16</span><br>Passenger</p></td>        											
 										</tr> 										
 										<tr>          										
-											<td><input type="text" class="form-control" name="pickup"></td>          											
-											<td><input type="text" class="form-control" name="dropoff"></td>          											
-											<td><input type="text" class="form-control" name="1-4pass" oninput="updateprice()"></td>          											
-											<td><input type="text" class="form-control" name="1-4es" readonly></td>          											
-											<td><input type="text" class="form-control" name="5-6pass" readonly></td>          											
-											<td><input type="text" class="form-control" name="7pass" readonly></td>          											
-											<td><input type="text" class="form-control" name="8pass" readonly></td>          											
-											<td><input type="text" class="form-control" name="9pass" readonly></td>          											
-											<td><input type="text" class="form-control" name="10_14pass" readonly></td>          											
-											<td><input type="text" class="form-control" name="15_16pass" readonly></td>        											
+											<td>
+												<input type="text" class="form-control" name="pickup" required />
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="dropoff" required />
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="1-4pass" oninput="updateprice()" required />
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="1-4es" readonly>
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="5-6pass" readonly>
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="7pass" readonly>
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="8pass" readonly>
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="9pass" readonly>
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="10_14pass" readonly>
+											</td>          											
+											<td>
+												<input type="text" class="form-control" name="15_16pass" readonly>
+											</td>        											
 										</tr>      										
 									</tbody>													      									
 									<tfoot>        									
@@ -468,7 +488,9 @@ include('header.php');
 											<td></td>																										
 											<td></td>          											
 											<td>            											
-												<button type="submit" class="btn btn-danger">Save Records</button>          												
+												<button type="submit" class="btn btn-danger">
+													Save Records
+												</button>          												
 											</td>        											
 										</tr>      										
 									</tfoot>    									
@@ -534,16 +556,18 @@ include('header.php');
 											<td></td>							
 										</tr>										
 										<form action="mg_process.php" method="post">																
-											<tr>							 										
+											<tr>				
 												<td style="width: 50%;">
-													<input type="text" name="pickup" class="form-control">
-												</td>							 											
+													<input type="text" name="pickup" class="form-control" required />
+												</td>					
 												<td>												
-													<div class="input-group mb-3">  												
-														<div class="input-group-prepend">    													
-															<span class="input-group-text">£</span>  												
-														</div>  												
-														<input type="text" name="price" class="form-control" aria-label="Amount (to the nearest pound)">
+													<div class="input-group mb-3"> 
+														<div class="input-group-prepend"> 		
+															<span class="input-group-text">
+																£
+															</span>  		
+														</div> 		
+														<input type="text" name="price" class="form-control" aria-label="Amount (to the nearest pound)" required />
 																									
 													</div>											
 												</td>							  											
@@ -585,7 +609,7 @@ include('header.php');
 												<?php echo $mgrow['pickup_charges'] ?>											
 											</td>												
 											<td>													
-												<a href="del-mg.php?id=<?php echo $mgrow['mg_id'];?>">														
+												<a href="del-mg.php?mg_id=<?php echo $mgrow['mg_id'];?>">														
 													<button class="btn btn-danger">Delete</button>													
 												</a>												
 											</td>											

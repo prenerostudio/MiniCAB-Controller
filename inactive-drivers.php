@@ -104,9 +104,9 @@ include('header.php');
                                     <td class="sort-id"><?php echo $z; ?></td>
                                     <td class="sort-date">
                                         <?php if (!$idrow['d_pic']) : ?>
-                                            <img src="img/user-1.jpg" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                            <img src="img/user-1.jpg" alt="Driver Img" style="width: 80px; height: 80px; border-radius: 50px;">
                                         <?php else : ?>
-                                            <img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 60px; height: 60px; border-radius: 30px;">
+                                            <img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 80px; height: 80px; border-radius: 50px;">
                                         <?php endif; ?>
                                     </td>
                                     <td class="sort-time"><?php echo $idrow['d_name']; ?></td>
@@ -118,9 +118,34 @@ include('header.php');
                                         <a href="view-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
                                             <button class="btn btn-info"><i class="ti ti-eye"></i>View</button>
                                         </a>
-                                        <a href="del-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
-                                            <button class="btn btn-danger"><i class="ti ti-square-rounded-x"></i>Delete</button>
-                                        </a> 
+                                        <!--Delete Modal-->
+<div class="modal modal-blur fade" id="modal-driver-delete" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Driver</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete driver ?</p>
+<!--					with ID: <span id="driverId"></span> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn ms-auto btn-danger"  id="deleteDriverBtn">
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Delete Modal-->
+<button class="btn btn-danger delete_btn" data-d_id="<?php echo $idrow['d_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-driver-delete">
+    <i class="ti ti-square-rounded-x"></i>
+    Delete
+</button>
 										<a href="activate-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
                                             <button class="btn btn-success"><i class="ti ti-user-check"></i>Activate Driver</button>
                                         </a>
@@ -158,6 +183,29 @@ include('header.php');
 						]					
 		}); 			
 	})	
+	$(document).ready(function() {
+    $('#modal-driver-delete').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var driverId = button.data('d_id');
+        var modal = $(this);
+
+        $('#deleteDriverBtn').click(function() {
+            $.ajax({
+                url: 'del-driver.php',
+                type: 'GET', // or 'POST' based on your server-side handling
+                data: { d_id: driverId },
+                success: function(response) {
+                    console.log('Deletion successful');
+                    $('#modal-driver-delete').modal('hide');
+                    location.reload(); // Refresh the page after successful deletion
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
+});
 </script>
 
 
