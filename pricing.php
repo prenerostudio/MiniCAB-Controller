@@ -20,13 +20,13 @@ include('header.php');
             var input1_4p = parseFloat(document.getElementsByName("1-4p")[0].value);
 
             // Define percentages
-            var percentage_1_4e = 0.2;  // 20%
-            var percentage_5_6p = 0.3;  // 30%
-            var percentage_7p = 0.4;    // 10%
-			var percentage_8p = 0.5;    // 10%
-			var percentage_9p = 0.6;    // 10%
-			var percentage_10_14p = 0.7;
-			var percentage_15_16p = 0.8;// 10%
+            var percentage_1_4e = 1.2;  // 20%
+            var percentage_5_6p = 1.3;  // 30%
+            var percentage_7p = 1.4;    // 10%
+			var percentage_8p = 1.5;    // 10%
+			var percentage_9p = 1.6;    // 10%
+			var percentage_10_14p = 1.7;
+			var percentage_15_16p = 1.8;// 10%
             // Add more percentages as needed
 
             // Perform calculations
@@ -416,7 +416,30 @@ include('header.php');
 								// Update more readonly input fields as needed        
 							}    
 						</script>
-						<div class="card-body">            															
+						<div class="card-body">   
+							 <style>
+    
+
+        #suggestions-container {
+            display: none;
+            position: absolute;
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            width: 298px;
+            margin-top: 2px;
+			background: #FFFFFF;
+        }
+
+        .suggestion {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .suggestion:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 							<h2 class="mb-4">Postcode Area Prices (PAPs)</h2>  
 							<p>Postcode Area Pricing lets you define fixed prices between any 2 or more postcode areas within the UK, regardless of your base location or mileage rates. So if you want to offer a competitive, fixed rate to minicabit customers to/from/between popular base postcode areas, just enter the first section of any single or group of postcodes.<br><br>
 							<ul>							
@@ -445,7 +468,79 @@ include('header.php');
 										</tr> 										
 										<tr>          										
 											<td>
-												<input type="text" class="form-control" name="pickup" required />
+												<input type="text" class="form-control" name="pickup" required id="postcode-input" autocomplete="off" />
+												 
+    
+												<div id="suggestions-container"></div>
+
+    
+												<script>
+        
+													// Dummy data for postal code suggestions (replace this with your actual data)
+
+													const postalCodeSuggestions = [
+			"W8", "NW6", "W5", "TW3", "TW4", "TW9", "UB10", "WC1", "W9", "EN1", "EN2", "EN5", "IG11", "HA2", "BR1", "GL1", "E5", "E6", "E7", "E8", "E9", "EC1", "EC4", "E15", "E17", "E2", "E3", "E4", "E1", "E10", "E11", "E12", "E13", "E14", "CR0", "SE13", "SE14", "SE15", "SE16", "SE17", "SE18", "SE19", "SE2", "SE21", "SE22", "SW16", "SW18", "SW19", "SW2", "SW11", "SW12", "SW13", "SW14", "SW15", "SW3", "SW4", "SW6", "SW7", "SW8", "SW9", "NW10", "NW11", "NW2", "NW3", "NW4", "N2", "N20", "N21", "N22", "N3", "N4", "N5", "N6", "N7", "N8", "M60", "SE1", "SE10", "SE12", "SE23", "SE24", "SE25", "SE26", "SE3", "SE4", "SE6", "SE7", "SE8", "SE9", "N1", "N10", "N11", "N12", "N13", "N14", "N15", "N16", "N17", "N18", "N19", "TW10", "TW12", "TW13", "NW5", "NW7", "NW8", "W1", "W10", "W11", "W13", "W14", "W2", "W3", "W4", "W6", "W7", "TW5", "TW7", "TW8", "TW9", "UB1", "UB2", "UB3", "UB4", "UB5", "UB6", "WC1", "WC2", "EN3", "EN4", "IG1", "IG3", "IG6", "IG8", "IG8", "GU8", "HA0", "HA1", "HA3", "HA4", "HA5", "BN2", "BR2", "BR3", "BR4", "BR5", "BR6", "BR7", "GU16", "GU22", "GU27", "GU1", "GU12", "HA6", "HA7", "HA8", "HA9", "GU29", "GU3", "GU30", "GU32", "GU34", "GU35", "GU5", "G2", "EC2", "EC3", "E16", "E18", "E1", "CR4", "CR5", "CR8", "DA14", "DA15", "DA16", "DA17", "SE17", "SE19", "SE20", "SE20", "SW19", "SW1"					
+        ];
+
+        
+													const postcodeInput = document.getElementById("postcode-input");
+        
+													const suggestionsContainer = document.getElementById("suggestions-container");
+
+        
+													// Event listener for input changes
+        
+													postcodeInput.addEventListener("input", function() {
+            
+														const inputText = this.value.trim();
+            
+														filterSuggestions(inputText);
+        
+													});
+
+        
+													// Function to filter and display suggestions
+        
+													function filterSuggestions(input) {
+            
+														const filteredSuggestions = postalCodeSuggestions.filter(suggestion =>
+                
+																				suggestion.startsWith(input)
+            
+																												);
+
+            displaySuggestions(filteredSuggestions);
+														
+        }
+
+        // Function to display suggestions in the container
+        function displaySuggestions(suggestions) {
+            if (suggestions.length > 0) {
+                const suggestionHTML = suggestions.map(suggestion =>
+                    `<div class="suggestion" onclick="selectSuggestion('${suggestion}')">${suggestion}</div>`
+                ).join('');
+
+                suggestionsContainer.innerHTML = suggestionHTML;
+                suggestionsContainer.style.display = "block";
+            } else {
+                suggestionsContainer.innerHTML = "";
+                suggestionsContainer.style.display = "none";
+            }
+        }
+
+        // Function to select a suggestion and fill the input field
+        function selectSuggestion(suggestion) {
+            postcodeInput.value = suggestion;
+            suggestionsContainer.style.display = "none";
+        }
+
+        // Close suggestions container when clicking outside of it
+        document.addEventListener("click", function(event) {
+            if (!event.target.matches("#postcode-input") && !event.target.matches(".suggestion")) {
+                suggestionsContainer.style.display = "none";
+            }
+        });
+    </script>
 											</td>          											
 											<td>
 												<input type="text" class="form-control" name="dropoff" required />
