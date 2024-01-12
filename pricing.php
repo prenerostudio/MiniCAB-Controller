@@ -386,13 +386,13 @@ include('header.php');
 								// Get the input values          
 								var input1_4pass = parseFloat(document.getElementsByName("1-4pass")[0].value);            
 								// Define percentages            
-								var percentage_1_4es = 0.2;  // 20%            
-								var percentage_5_6pass = 0.3;  // 30%            
-								var percentage_7pass = 0.4;    // 10%			
-								var percentage_8pass = 0.5;    // 10%			
-								var percentage_9pass = 0.6;    // 10%			
-								var percentage_10_14pass = 0.7;			
-								var percentage_15_16pass = 0.8;// 10%            
+								var percentage_1_4es = 1.2;  // 20%            
+								var percentage_5_6pass = 1.3;  // 30%            
+								var percentage_7pass = 1.4;    // 10%			
+								var percentage_8pass = 01.5;    // 10%			
+								var percentage_9pass = 1.6;    // 10%			
+								var percentage_10_14pass = 1.7;			
+								var percentage_15_16pass = 1.8;// 10%            
 								// Add more percentages as needed            
 								// Perform calculations            
 								var result_1_4es = input1_4pass * percentage_1_4es;            
