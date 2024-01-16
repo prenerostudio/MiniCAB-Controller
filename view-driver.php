@@ -64,7 +64,7 @@ $drow = mysqli_fetch_array($dsql);
 						<li class="nav-item">
 							<a href="#tabs-statement" class="nav-link" data-bs-toggle="tab">							
 								<i class="ti ti-calendar-user"></i>                          
-								Driver Bookings Statement
+								Driver Account Statement
 							</a>                      
 						</li>
 					</ul>                  

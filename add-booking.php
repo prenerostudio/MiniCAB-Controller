@@ -31,7 +31,17 @@ include('header.php');
 							</div>																						
 							<div class="row">
 								<h4>Passenger Details:</h4>
-								<div class="mb-3 col-lg-4">    																	
+								<div class="mb-3 col-lg-3">    																	
+									<label class="form-label">Customer Type</label>
+									<select class="form-control" name="c_type" id="c_type" required>
+										<option value="">Select Customer Type</option>
+										    																			
+										<option value="">Customer </option>           										
+										<option value="">Booker </option>           										
+																											
+									</select>																								
+								</div>
+								<div class="mb-3 col-lg-3">    																	
 									<label class="form-label">Name</label>
 									<select class="form-control" name="c_id" id="clientSelect" required>
 										<option value="">Select Customer</option>
@@ -47,11 +57,11 @@ include('header.php');
 										?>    																	
 									</select>																								
 								</div>																							
-								<div class="mb-3 col-lg-4">  																
+								<div class="mb-3 col-lg-3">  																
 									<label class="form-label">Customer Phone</label>
 									<input type="text" class="form-control" name="cphone" id="customerPhone" readonly>
 								</div>				
-								<div class="mb-3 col-lg-4">   																	
+								<div class="mb-3 col-lg-3">   																	
 									<label class="form-label">Customer Email</label>
 									<input type="text" class="form-control" name="cemail" id="customerEmail" readonly>
 								</div>															
