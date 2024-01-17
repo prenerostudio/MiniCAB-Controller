@@ -65,8 +65,7 @@ include('header.php');
 							<tbody class="table-tbody">												
 								<?php																		
 								$x=0;																
-								$csql=mysqli_query($connect,"SELECT clients.* FROM clients ORDER BY 
-								clients.c_id DESC");								
+								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 ORDER BY clients.c_id DESC");								
 								while($crow = mysqli_fetch_array($csql)){
 									$x++;									
 								?>								
@@ -124,53 +123,102 @@ include('header.php');
 												<i class="ti ti-eye"></i>View
 											</button>												
 										</a>
-<!--Delete Modal-->
-<div class="modal modal-blur fade" id="modal-customer-delete" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Delete Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Are you sure you want to delete Customer ?</p>
-<!--					with ID: <span id="driverId"></span> -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">
-                    Cancel
-                </button>
-                <button type="button" class="btn ms-auto btn-danger"  id="deleteCustomerBtn">
-                    Yes
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End Delete Modal-->
-<button class="btn btn-danger delete_btn" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-customer-delete">
-    <i class="ti ti-square-rounded-x"></i>
-    Delete
-</button>
-<!--
-										<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>">
-											<button class="btn btn-danger">
-												<i class="ti ti-square-rounded-x"></i>Delete
-											</button>				
-										</a>										
+
+										<!--Delete Modal-->
+
+										<div class="modal modal-blur fade" id="modal-customer-delete" tabindex="-1" role="dialog" aria-hidden="true">
+    
+											<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        
+												<div class="modal-content">
+            
+													<div class="modal-header">
+                
+														<h5 class="modal-title">Delete Customer</h5>
+                
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            
+													</div>
+            
+													<div class="modal-body">
+                
+														<p>Are you sure you want to delete Customer ?</p>
+
+														<!--					with ID: <span id="driverId"></span> -->
+            
+													</div>
+            
+													<div class="modal-footer">
+                
+														<button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                    
+															Cancel
+                
+														</button>
+                
+														<button type="button" class="btn ms-auto btn-danger"  id="deleteCustomerBtn">
+                    
+															Yes
+                
+														</button>
+            
+													</div>
+        
+												</div>
+    
+											</div>
+
+										</div>
+
+										<!--End Delete Modal-->
+
+										<button class="btn btn-danger delete_btn" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-
+												target="#modal-customer-delete">
+    
+											<i class="ti ti-square-rounded-x"></i>
+    
+											Delete
+
+										</button>
+
+										<!--
+
+<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>">
+
+<button class="btn btn-danger">
+
+<i class="ti ti-square-rounded-x"></i>Delete
+
+</button>				
+
+</a>										
+
 -->
+
 									</td>									
+								
 								</tr>								
+
 								<?php								
+								
 								}								
+								
 								?>                                       								
+							
 							</tbody>                 							
+						
 						</table>                						
+					
 					</div>                  					
+				
 				</div>                                                    				
+			
 			</div>              			
+		
 		</div>		
+	
 	</div>
+
 </div>        
 <script>	
 	document.addEventListener("DOMContentLoaded", function() {    		

@@ -65,8 +65,8 @@ include('header.php');
 							<tbody class="table-tbody">												
 								<?php																		
 								$x=0;																
-								$bsql=mysqli_query($connect,"SELECT bookers.* FROM bookers ORDER BY bookers.b_id DESC");								
-								while($brow = mysqli_fetch_array($bsql)){
+								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 2 ORDER BY clients.c_id DESC");								
+								while($crow = mysqli_fetch_array($csql)){
 									$x++;									
 								?>								
 								<tr>                        								
@@ -75,32 +75,32 @@ include('header.php');
 									</td>
 									<td class="sort-date">									
 										<?php																
-									if (!$brow['b_pic']) {
+									if (!$crow['c_pic']) {
 										?>																	
-										<img src="img/user-1.jpg" alt="Booker Img" style="width: 80px; height: 100px; border-radius: 5px;">	
+										<img src="img/user-1.jpg" alt="Customer Img" style="width: 80px; height: 80px; border-radius: 5px;">	
 										<?php
 									} else{															
 										?>																
-										<img src="img/bookers/<?php echo $brow['b_pic'];?>" alt="Booker Img" style="width: 80px; height: 100px; border-radius: 5px;">
+										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
 										<?php
 									}			
 										?>											
 									</td>                       										
 									<td class="sort-time">
-										<?php echo $brow['b_name']; ?>
+										<?php echo $crow['c_name']; ?>
 									</td>                       										
 									<td class="sort-passenger">
-										<?php echo $brow['b_email']; ?>
+										<?php echo $crow['c_email']; ?>
 									</td>  										
 									<td class="sort-pickup">
-										<?php echo $brow['b_phone']; ?>
+										<?php echo $crow['c_phone']; ?>
 									</td>                       										
 									<td class="sort-drpoff">
-										<?php echo $brow['b_gender']; ?>
+										<?php echo $crow['c_gender']; ?>
 									</td>										
 									<td class="sort-drpoff">											
 										<?php 											
-									if($brow['acount_status']==0){
+									if($crow['acount_status']==0){
 										?>												
 										<div class="col-auto status">
 											<span class="status-dot status-dot-animated bg-red d-block"></span>															
@@ -118,7 +118,7 @@ include('header.php');
 										?>									
 									</td>	
 									<td> 									
-										<a href="view-booker.php?b_id=<?php echo $brow['b_id']; ?>">
+										<a href="view-customer.php?c_id=<?php echo $crow['c_id']; ?>">
 											<button class="btn btn-info">
 												<i class="ti ti-eye"></i>View
 											</button>												
@@ -128,18 +128,18 @@ include('header.php');
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Delete Booker</h5>
+                <h5 class="modal-title">Delete Customer</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete Booker ?</p>
-<!--					with ID: <span id="customerId"></span> -->
+                <p>Are you sure you want to delete Customer ?</p>
+<!--					with ID: <span id="driverId"></span> -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-bs-dismiss="modal">
                     Cancel
                 </button>
-                <button type="button" class="btn ms-auto btn-danger"  id="deleteDriverBtn">
+                <button type="button" class="btn ms-auto btn-danger"  id="deleteCustomerBtn">
                     Yes
                 </button>
             </div>
@@ -147,15 +147,14 @@ include('header.php');
     </div>
 </div>
 <!--End Delete Modal-->
-<button class="btn btn-danger delete_btn" data-b_id="<?php echo $brow['b_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-customer-delete">
+<button class="btn btn-danger delete_btn" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-customer-delete">
     <i class="ti ti-square-rounded-x"></i>
     Delete
 </button>
 <!--
-										<a href="del-booker.php?b_id=<?php echo $brow['b_id']; ?>">
+										<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>">
 											<button class="btn btn-danger">
-												<i class="ti ti-square-rounded-x"></i>
-												Delete
+												<i class="ti ti-square-rounded-x"></i>Delete
 											</button>				
 										</a>										
 -->
@@ -209,33 +208,33 @@ include('header.php');
 
 
 <!-------------------------------
-----------Add Booker-------------
+----------Add Customer-------------
 -------------------------------->
-<div class="modal modal-blur fade" id="modal-booker" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal modal-blur fade" id="modal-customer" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">    	
 		<div class="modal-content">        		
 			<div class="modal-header">            			
 				<h5 class="modal-title">Add New Booker</h5>            				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div> 			
-			<form method="post" action="booker-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
+			<form method="post" action="customer-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
 				<div class="modal-body">								
 					<div class="row">				
 						<div class="mb-3 col-md-4">              					
-							<label class="form-label">Full Name:</label>              					
-							<input type="text" class="form-control" name="bname" placeholder="Customer Name" required> 				
+							<label class="form-label">Full Name</label>              					
+							<input type="text" class="form-control" name="cname" placeholder="Customer Name" required> 				
 						</div> 						               
 						<div class="mb-3 col-md-4">                  
-							<label class="form-label">Email:</label>              					
-							<input type="email" class="form-control" name="bemail" placeholder="hello@example.com" required>
+							<label class="form-label">Email</label>              					
+							<input type="email" class="form-control" name="cemail" placeholder="hello@example.com" required>
 						</div>			
 						<div class="mb-3 col-md-4">                  						
-							<label class="form-label">Phone:</label>              					
-							<input type="text" class="form-control" name="bphone" placeholder="+44 20 7123 4567" required>
+							<label class="form-label">Phone</label>              					
+							<input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>
 						</div>							
 						<div class="mb-3 col-md-4">              															
-							<label class="form-label">Gender:</label>
-							<select class="form-select" name="bgender">												
+							<label class="form-label">Gender</label>
+							<select class="form-select" name="cgender" required>
 								<option value="" selected>Select Gender</option>
 								<option>Male</option>																
 								<option>Female</option>								
@@ -243,8 +242,8 @@ include('header.php');
 							</select>             																
 						</div>					               												
 						<div class="mb-3 col-md-4">                  													
-							<label class="form-label">Language:</label>							
-							<select class="form-select" name="blang">							
+							<label class="form-label">Language</label>							
+							<select class="form-select" name="clang">							
 								<option value="" selected>Select Language</option>		      								
 								<?php														
 								$lsql=mysqli_query($connect,"SELECT * FROM `language`");								
@@ -259,113 +258,63 @@ include('header.php');
 							</select> 												
 						</div>						
 						<div class="mb-3 col-md-4">              											
-							<label class="form-label">Postal Code:</label>									
-							<input type="text" class="form-control" name="pc" placeholder="xx xxx" required>						
+							<label class="form-label">Postal Code</label>									
+							<input type="text" class="form-control" name="pc" placeholder="xx xxx" required>
 						</div> 					              											
 						<div class="mb-3 col-md-4">                  												
-							<label class="form-label">Picture:</label>							
-							<input type="file" class="form-control" name="bpic">						
+							<label class="form-label">Picture</label>							
+							<input type="file" class="form-control" name="cpic">						
 						</div>
 						<div class="mb-3 col-md-4">                  												
-							<label class="form-label">National ID:</label>							
-							<input type="text" class="form-control" name="bni" placeholder="xxxxx xxxxxxx x">						
-						</div>     
-						<div class="mb-3 col-md-4">                  												
-							<label class="form-label">Company Name:</label>							
-							<input type="text" class="form-control" name="bcn">						
-						</div> 
+							<label class="form-label">National ID</label>							
+							<input type="text" class="form-control" name="cni">						
+						</div>             																					
 					</div>						         												
 					<div class="modal-body">									
 						<div class="row">
-							<div class="col-12">												
-								<div class="form-group mb-3">								
-									<h3>									
-										Booker Commision:										
-									</h3>									
-									<div class="d-flex align-items-center">									
-										<div class="d-flex align-items-center">										
-											<input type="radio" class="form-check-inline" id="radio" name="com_type" value="Percentage" onclick="showTextField()" required>
-											<label for="radio" class="mb-0">											
-												Percentage												
-											</label>											
-										</div>										
-										<div class="d-flex align-items-center ms-4">										
-											<input type="radio" id="radio2" class="form-check-inline" name="com_type" value="Fixed" onclick="showMessage()" >											
-											<label for="radio2" class="mb-0">											
-												Fixed												
-											</label>											
-										</div>										
-									</div>									
-								</div>								
-							</div>							
-							<div id="text-field" class="col-md-12" style="display: none;">							
-								<div class="mb-3">								
-									<input type="text" placeholder="% Percentage" name="percent" class="form-control">
-								</div>								
-							</div>							
-							<div id="message" class="col-md-12" style="display: none;">							
-								<div class="mb-3">								
-									<input type="text" placeholder="00000" name="fixed" class="form-control">
-								</div>								
-							</div>							
-							<script>							
-								function showTextField() {								
-									var textField = document.getElementById("text-field");									
-									textField.style.display = "block"; 									
-									var message = document.getElementById("message");									
-									message.style.display = "none";									
-								}								
-								function showMessage() {								
-									var textField = document.getElementById("text-field");									
-									textField.style.display = "none";									
-									var message = document.getElementById("message");									
-									message.style.display = "block";									
-								}								
-							</script>							
-							<div class="col-lg-12">
-								<div class="mb-3">								
-									<label class="form-label">Address</label>									
-									<textarea class="form-control" rows="3" name="baddress"></textarea>
-								</div> 																
+							<div class="col-lg-12">               													
+								<div class="mb-3">                 															
+									<label class="form-label">Address</label>								
+									<textarea class="form-control" rows="3" name="caddress"></textarea>
+								</div>     							
 								<div class="mb-3">                 							
 									<label class="form-label">Others</label>								
-									<textarea class="form-control" rows="3" name="bothers"></textarea>	
+									<textarea class="form-control" rows="3" name="cothers"></textarea>	
 								</div> 						
 							</div>   									
 						</div>          							
 					</div>        							
 					<div class="modal-footer">           				
-						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">						
-							Cancel           									
-						</a>           																					
+						<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 
+						<i class="ti ti-circle-x"></i>
+						Cancel           				
+					</a>           																					
 						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
-							Add Booker											
+							Add Booker  											
 						</button>					     							
 					</div> 							
-					</form>	
-				<script>
-    function validateForm() {
-        // Perform your form validation here
-        var bnameInput = document.getElementsByName("bname")[0].value;
-        var bemailInput = document.getElementsByName("bemail")[0].value;
-        var bphoneInput = document.getElementsByName("bphone")[0].value;
-		var pcInput = document.getElementsByName("pc")[0].value;
-
-        if (bnameInput === "" || bemailInput === "" || bphoneInput === "" || pcInput === "") {
-            // Display an error message or prevent the form submission
-            alert("Please fill in all required fields.");
-            return false;
-        }
-
-        // If validation passes, you can proceed with the form submission
-        return true;
-    }
-</script>
-				
-				
-				</div>      				
-		</div>    
+					
+					</form>										
+				<script>    
+					function validateForm() {      
+						// Perform your form validation here       
+						var cnameInput = document.getElementsByName("cname")[0].value;       
+						var cemailInput = document.getElementsByName("cemail")[0].value;       
+						var cphoneInput = document.getElementsByName("cphone")[0].value;		
+						var cgenderInput = document.getElementsByName("cgender")[0].value;		
+						var pcInput = document.getElementsByName("pc")[0].value;        
+						if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {           
+							// Display an error message or prevent the form submission          
+							alert("Please fill in all required fields.");           
+							return false;       
+						}       
+						// If validation passes, you can proceed with the form submission       
+						return true;  
+					}
+				</script>			
+				</div>      						
+		</div>    	
 	</div>
 <?php
 include('footer.php');

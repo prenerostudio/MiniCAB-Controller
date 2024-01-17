@@ -1,17 +1,15 @@
 <?php
 require 'config.php';
 
-// Function to handle image upload
 function uploadImage() {
-    $targetDir = "img/bookers/";
-    $targetFilePath = $targetDir . basename($_FILES["bpic"]["name"]);
+    $targetDir = "img/customers/";
+    $targetFilePath = $targetDir . basename($_FILES["cpic"]["name"]);
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
     if (in_array($fileType, $allowTypes)) {
-        if (move_uploaded_file($_FILES["bpic"]["tmp_name"], $targetFilePath)) {
-            // Return only the image name
-             return basename($targetFilePath); // Return only the image name
+        if (move_uploaded_file($_FILES["cpic"]["tmp_name"], $targetFilePath)) {
+            return basename($targetFilePath); // Return only the image name
         } else {
             return false;
         }
@@ -19,74 +17,56 @@ function uploadImage() {
     return false;
 }
 
-$bname = $_POST['bname'];
-$bemail = $_POST['bemail'];
-$bphone = $_POST['bphone'];
-$bgender = $_POST['bgender'];
-$blang = $_POST['blang'];
+$cname = $_POST['cname'];
+$cemail = $_POST['cemail'];
+$cphone = $_POST['cphone'];
+$cgender = $_POST['cgender'];
+$clang = $_POST['clang'];
 $pc = $_POST['pc'];
-$bcn = $_POST['bcn'];
-$bni = $_POST['bni'];
-$com_type = $_POST['com_type'];
-$percent = $_POST['percent'];
-$fixed = $_POST['fixed'];
-$baddress = $_POST['baddress'];
-$bothers = $_POST['bothers'];
+$cni = $_POST['cni'];
+$caddress = $_POST['caddress'];
+$cothers = $_POST['cothers'];
+$account_type = 2;
 $date = date("Y-m-d H:i:s");
 
 // Check if the email already exists
-$stmt_check = $connect->prepare("SELECT COUNT(*) FROM `bookers` WHERE `b_phone` = ?");
-$stmt_check->bind_param("s", $bphone);
+$stmt_check = $connect->prepare("SELECT COUNT(*) FROM `clients` WHERE `c_email` = ?");
+$stmt_check->bind_param("s", $cemail);
 $stmt_check->execute();
-$stmt_check->bind_result($bphone_count);
+$stmt_check->bind_result($email_count);
 $stmt_check->fetch();
 $stmt_check->close();
 
-if ($bphone_count > 0) {
-    // The email already exists, handle the error
-    echo 'Phone already exists. Please use a different Phone Number
-	.';
+if ($email_count > 0) {
+    echo 'Email already exists. Please use a different email address.';
 } else {
-	
     // Handle image upload
-    $bpic = uploadImage();
+    $cpic = uploadImage();
 
-    if ($bpic) {
-        $sql = "INSERT INTO `bookers`(`b_name`, `b_email`, `b_phone`, `b_address`, `b_gender`, `b_language`, `b_pic`, `postal_code`, `company_name`, `others`, `b_ni`, `commision_type`, `percent`, `fixed`, `booker_reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+    if ($cpic !== false) {
+        // Insert image name along with other data
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssssssssss", $bname, $bemail, $bphone, $baddress, $bgender, $blang, $bpic, $pc, $bcn, $bothers, $bni, $com_type, $percent, $fixed, $date);
-
-        if ($stmt->execute()) {
-            // Redirect on successful insertion
-            header('Location: Bookers.php');
-            exit();
-        } else {
-            // Handle the error
-            echo 'Error: ' . $stmt->error;
-        }
-
-        $stmt->close();
+        $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type, $date);
     } else {
-        $sql = "INSERT INTO `bookers`(`b_name`, `b_email`, `b_phone`, `b_address`, `b_gender`, `b_language`, `postal_code`, `company_name`, `others`, `b_ni`, `commision_type`, `percent`, `fixed`, `booker_reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+        // Insert only name without image name
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssssssssss", $bname, $bemail, $bphone, $baddress, $bgender, $blang, $pc, $bcn, $bothers, $bni, $com_type, $percent, $fixed, $date);
-
-        if ($stmt->execute()) {
-            // Redirect on successful insertion
-            header('Location: bookers.php');
-            exit();
-        } else {
-            // Handle the error
-            echo 'Error: ' . $stmt->error;
-        }
-
-        $stmt->close();
+        $stmt->bind_param("ssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type, $date);
     }
+
+    if ($stmt->execute()) {
+        header('Location: bookers.php'); // Redirect on successful insertion
+        exit();
+    } else {
+        header('Location: bookers.php'); // Handle the error
+    }
+
+    $stmt->close();
 }
 
 $connect->close();
 ?>
+

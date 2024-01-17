@@ -26,6 +26,7 @@ $pc = $_POST['pc'];
 $cni = $_POST['cni'];
 $caddress = $_POST['caddress'];
 $cothers = $_POST['cothers'];
+$account_type = 1;
 $date = date("Y-m-d H:i:s");
 
 // Check if the email already exists
@@ -42,18 +43,18 @@ if ($email_count > 0) {
     // Handle image upload
     $cpic = uploadImage();
 
-    if ($cpic !== false) {
+      if ($cpic !== false) {
         // Insert image name along with other data
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $date);
+        $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type, $date);
     } else {
         // Insert only name without image name
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $pc, $cothers, $cni, $date);
+        $stmt->bind_param("ssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type, $date);
     }
 
     if ($stmt->execute()) {
