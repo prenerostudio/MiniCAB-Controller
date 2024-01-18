@@ -9,14 +9,10 @@ include("../../config.php");
 
 $c_id=$_POST['c_id'];
 
-if(isset($_POST['c_id'])){		
-	
-	 $sql="SELECT bookings.* FROM bookings WHERE bookings.c_id = '$c_id' AND bookings.booking_status = 'Pending' ORDER BY
-	bookings.book_id DESC";	
+if(isset($_POST['c_id'])){				 
+	$sql="SELECT bookings.* FROM bookings WHERE bookings.c_id = '$c_id' AND bookings.booking_status = 'Pending' ORDER BY bookings.book_id DESC";	
 	$r=mysqli_query($connect,$sql);
-	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-	
-	
+	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);		
 	if(count($output)>0){    				    		
 		echo json_encode(array('data'=>$output, 'status'=>true,));
 	}else{    
