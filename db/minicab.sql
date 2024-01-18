@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2024 at 12:03 PM
+-- Generation Time: Jan 18, 2024 at 02:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -102,6 +102,20 @@ INSERT INTO `bookers` (`b_id`, `b_name`, `b_email`, `b_phone`, `b_address`, `b_g
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `booker_account`
+--
+
+CREATE TABLE `booker_account` (
+  `acc_id` int(55) NOT NULL,
+  `c_id` int(55) NOT NULL,
+  `book_id` int(55) NOT NULL,
+  `comission_amount` int(11) NOT NULL,
+  `commission_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `bookings`
 --
 
@@ -187,8 +201,12 @@ CREATE TABLE `clients` (
   `others` text NOT NULL,
   `c_ni` varchar(255) NOT NULL,
   `status` int(5) NOT NULL,
-  `acount_status` int(5) NOT NULL,
-  `account_type` int(10) NOT NULL,
+  `company_name` varchar(255) NOT NULL,
+  `commission_type` varchar(55) NOT NULL,
+  `percentage` int(10) NOT NULL,
+  `fixed` int(10) NOT NULL,
+  `acount_status` int(11) NOT NULL,
+  `account_type` int(11) NOT NULL,
   `reg_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -196,9 +214,10 @@ CREATE TABLE `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `status`, `acount_status`, `account_type`, `reg_date`) VALUES
-(1, 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', 'Faisalabad Pakistan', 'Male', 'English', 'IMG_web.jpg', 'WJ123', 'N/A', '33102-1457353-9', 0, 1, 1, '2023-12-30 21:40:23'),
-(2, 'Mahtab Mukhtar', 'Mahtab@prenero.com', '+923346452312', 'Faisalabad Pakistan', 'Male', 'English', 'IMG_web.jpg', 'WJ123', 'N/A', '33102-1457353-9', 0, 1, 2, '2023-12-30 21:40:23');
+INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `status`, `company_name`, `commission_type`, `percentage`, `fixed`, `acount_status`, `account_type`, `reg_date`) VALUES
+(1, 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', 'Faisalabad Pakistan', 'Male', 'English', 'IMG_web.jpg', 'WJ123', 'N/A', '33102-1457353-9', 0, '', '', 0, 0, 1, 1, '2023-12-30 21:40:23'),
+(2, 'Mahtab Mukhtar', 'Mahtab@prenero.com', '+923346452312', 'Faisalabad Pakistan', 'Male', 'English', 'IMG_web.jpg', 'WJ123', 'N/A', '33102-1457353-9', 0, '', '', 0, 0, 1, 2, '2023-12-30 21:40:23'),
+(3, 'Muhammad Atiq Ramzan', 'prenero12@gmail.com', '+923127346634', 'Islam Nagir Faisalabad, Pakistan.', 'Male', 'English', 'Atiq-Ramzan.png', '38000', 'N/A', '33102-1457353-9', 0, '', '', 0, 0, 0, 2, '2024-01-18 11:08:21');
 
 -- --------------------------------------------------------
 
@@ -744,6 +763,12 @@ ALTER TABLE `bookers`
   ADD PRIMARY KEY (`b_id`);
 
 --
+-- Indexes for table `booker_account`
+--
+ALTER TABLE `booker_account`
+  ADD PRIMARY KEY (`acc_id`);
+
+--
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
@@ -904,6 +929,12 @@ ALTER TABLE `bookers`
   MODIFY `b_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `booker_account`
+--
+ALTER TABLE `booker_account`
+  MODIFY `acc_id` int(55) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
@@ -919,7 +950,7 @@ ALTER TABLE `booking_type`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `c_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `c_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `company`
