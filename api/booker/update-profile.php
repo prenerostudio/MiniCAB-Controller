@@ -9,7 +9,7 @@ include("../../config.php");
 
 // Function to handle image upload and return the image name
 function uploadImage() {
-    $targetDir = "../../img/clients/";
+    $targetDir = "../../img/bookers/";
     $targetFileName = basename($_FILES["c_img"]["name"]);
     $targetFilePath = $targetDir . $targetFileName;
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
@@ -28,7 +28,6 @@ function uploadImage() {
 $c_id = $_POST['c_id'];
 $c_name = $_POST['c_name'];
 $c_email = $_POST['c_email'];
-$c_phone = $_POST['c_phone'];
 $c_address = $_POST['c_address'];
 $c_gender = $_POST['c_gender'];
 $c_lang = $_POST['c_lang'];
@@ -43,8 +42,7 @@ $c_img = uploadImage();
 if (isset($_POST['c_id'])) {
     $sql = "UPDATE `clients` SET 
                                 `c_name`='$c_name',
-                                `c_email`='$c_email',
-                                `c_phone`='$c_phone',
+                                `c_email`='$c_email',                                
                                 `c_address`='$c_address',
                                 `c_gender`='$c_gender',
                                 `c_language`='$c_lang',

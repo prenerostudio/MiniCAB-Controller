@@ -28,7 +28,6 @@ function uploadImage() {
 $c_id = $_POST['c_id'];
 $c_name = $_POST['c_name'];
 $c_email = $_POST['c_email'];
-$c_phone = $_POST['c_phone'];
 $c_address = $_POST['c_address'];
 $c_gender = $_POST['c_gender'];
 $c_lang = $_POST['c_lang'];
@@ -44,7 +43,6 @@ if (isset($_POST['c_id'])) {
     $sql = "UPDATE `clients` SET 
                                 `c_name`='$c_name',
                                 `c_email`='$c_email',
-                                `c_phone`='$c_phone',
                                 `c_address`='$c_address',
                                 `c_gender`='$c_gender',
                                 `c_language`='$c_lang',

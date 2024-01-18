@@ -6,38 +6,45 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 header('Cache-Control: max-age=3600');
 
 include("../../config.php");
-if (isset($_POST['b_phone'])) {
-	$b_name = $_POST['b_name'];
-    $b_email = $_POST['b_email'];
-    $b_phone = $_POST['b_phone'];
-    $acount_status = 0;
-    $date = date("Y-m-d h:i:s");
-	$checksql = "SELECT * FROM `bookers` WHERE `b_phone`='$b_phone'";
-	$checkr = mysqli_query($connect, $checksql);
+
+$c_name = $_POST['c_name'];
+$c_email = $_POST['c_email'];
+$c_phone = $_POST['c_phone'];
+$account_type = 2;
+$acount_status = 0;
+$date = date("Y-m-d h:i:s");
+
+if (isset($_POST['c_phone'])) {	   
+	$checksql = "SELECT * FROM `clients` WHERE `c_phone`='$c_phone'";    		
+	$checkr = mysqli_query($connect, $checksql);    	
 	$datacheck = mysqli_fetch_all($checkr, MYSQLI_ASSOC);
-        
-	if (count($datacheck) > 0) {    	
-		echo json_encode(array('message' => "This User Already Exists! Try to Sign in", 'status' => false));        
+        	
+	if (count($datacheck) > 0) {    		
+		echo json_encode(array('message' => "This User Already Exists! Try to Sign in", 'status' => false));        	
 	} else {    
-		$sql = "INSERT INTO `bookers`(
-										`b_name`, 
-										`b_email`, 
-										`b_phone`, 
-										`booker_reg_date`
-										) VALUES (
-										'$b_name',
-										'$b_email',
-										'$b_phone',
-										'$date')";
-            
-            $r = mysqli_query($connect, $sql);
-            if ($r) {
-                echo json_encode(array('message' => "Booker Registered Successfully", 'status' => true));
-            } else {
-                echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));
-            }
-        }    
+		$sql = "INSERT INTO `clients`( 
+									`c_name`, 
+									`c_email`, 
+									`c_phone`, 
+									`acount_status`,
+									`account_type`,
+									`reg_date`
+									) VALUES (
+									'$c_name',
+									'$c_email',
+									'$c_phone',
+									'$acount_status',
+									'$account_type',
+									'$date')";
+                    
+		$r = mysqli_query($connect, $sql);        
+		if ($r) {        
+			echo json_encode(array('message' => "Booker Registered Successfully", 'status' => true));            
+		} else {        
+			echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));            
+		}        
+	}    
 } else {
-    echo json_encode(array('message' => "Some Fields are missing", 'status' => false));
+	echo json_encode(array('message' => "Some Fields are missing", 'status' => false));
 }
 ?>

@@ -9,8 +9,7 @@ include("../../config.php");
 			
 $sql="SELECT * FROM `vehicles`";		
 $r=mysqli_query($connect,$sql);	
-$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-			
+$output=mysqli_fetch_all($r,MYSQLI_ASSOC);			
 if(count($output)>0){    				    				
 	echo json_encode(array('data'=>$output, 'status'=>true,));	
 }else{    		
