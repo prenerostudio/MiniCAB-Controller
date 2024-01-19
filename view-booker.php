@@ -1,7 +1,7 @@
 <?php
 include('header.php');
-$b_id = $_GET['b_id'];
-$bsql=mysqli_query($connect,"SELECT * FROM `bookers` WHERE `b_id`='$b_id'");
+$c_id = $_GET['c_id'];
+$bsql=mysqli_query($connect,"SELECT * FROM `clients` WHERE `c_id`='$c_id'");
 $brow = mysqli_fetch_array($bsql);		
 ?>
 <div class="page-header d-print-none page_padding">		   		
@@ -19,7 +19,7 @@ $brow = mysqli_fetch_array($bsql);
 				<?php
 				if($brow['acount_status']==0){
 					?>				
-				<a href="update-booker-status.php?b_id=<?php echo $b_id ?>" class="btn btn-primary d-none d-sm-inline-block">				
+				<a href="update-booker-status.php?c_id=<?php echo $c_id ?>" class="btn btn-primary d-none d-sm-inline-block">				
 					<i class="ti ti-checks"></i>                    					
 					Approve Booker               					
 				</a>   
@@ -46,12 +46,12 @@ $brow = mysqli_fetch_array($bsql);
 					<h3 class="card-title">Profile Details</h3>					
 					<div class="row align-items-center">		
 						<div class="col-auto">	
-							<span class="avatar avatar-xl" style="background-image: url(img/bookers/<?php echo $brow['b_pic'];?>); background-size:contain; width: 220px;
+							<span class="avatar avatar-xl" style="background-image: url(img/bookers/<?php echo $brow['c_pic'];?>); background-size:contain; width: 220px;
    height: 160px;"></span>
 						</div>					
 						<div class="col-auto">					
 							<form action="update-booker-img.php" method="post" enctype="multipart/form-data">
-								<input type="hidden" value="<?php echo $brow['b_id']; ?>" name="b_id">
+								<input type="hidden" value="<?php echo $brow['c_id']; ?>" name="c_id">
 								<input type="file" name="fileToUpload" id="fileToUpload" class="btn">
 								<button type="submit" class="btn btn-info">Upload Image </button>
 							</form>																						
@@ -76,9 +76,9 @@ $brow = mysqli_fetch_array($bsql);
 								
 									<div class="form-label">Booker Name</div>                        						
 								
-									<input type="hidden" class="form-control" value="<?php echo $brow['b_id']; ?>" name="b_id">  
+									<input type="hidden" class="form-control" value="<?php echo $brow['c_id']; ?>" name="b_id">  
 								
-									<input type="text" class="form-control" value="<?php echo $brow['b_name']; ?>" name="bname">  
+									<input type="text" class="form-control" value="<?php echo $brow['c_name']; ?>" name="bname">  
 							
 								</div>                    					
 							
@@ -86,7 +86,7 @@ $brow = mysqli_fetch_array($bsql);
 								
 									<div class="form-label">Email Address</div>                        						
 								
-									<input type="text" class="form-control" value="<?php echo $brow['b_email']; ?>" name="bemail" readonly>
+									<input type="text" class="form-control" value="<?php echo $brow['c_email']; ?>" name="bemail" readonly>
 							
 								</div>                    					
 							
@@ -94,12 +94,12 @@ $brow = mysqli_fetch_array($bsql);
 								
 									<div class="form-label">Phone</div>                        						
 								
-									<input type="text" class="form-control" value="<?php echo $brow['b_phone']; ?>" name="bphone" readonly>                      
+									<input type="text" class="form-control" value="<?php echo $brow['c_phone']; ?>" name="bphone" readonly>                      
 							
 								</div>	
 								<div class="mb-3">                    						
 								<div class="form-label">Address</div>  
-								<textarea class="form-control" rows="3" name="baddress"><?php echo $brow['b_address'] ?></textarea>								             
+								<textarea class="form-control" rows="3" name="baddress"><?php echo $brow['c_address'] ?></textarea>								             
 							</div>
 						
 							</div>																
@@ -109,7 +109,7 @@ $brow = mysqli_fetch_array($bsql);
 								<div class="mb-3">                    					
 								<div class="form-label">Gender</div> 
 									<select class="form-select" name="bgender">												
-								<option><?php echo $brow['b_gender']; ?></option>
+								<option><?php echo $brow['c_gender']; ?></option>
 								<option>Male</option>																
 								<option>Female</option>								
 								<option>Transgender</option>							
@@ -123,7 +123,7 @@ $brow = mysqli_fetch_array($bsql);
 								<div class="form-label">Language </div>  
 								
 								<select class="form-select" name="blang">							
-								<option><?php echo $brow['b_language']; ?></option>		      								
+								<option><?php echo $brow['c_language']; ?></option>		      								
 								<?php														
 								$lsql=mysqli_query($connect,"SELECT * FROM `language`");								
 								while($lrow = mysqli_fetch_array($lsql)){								
@@ -147,7 +147,7 @@ $brow = mysqli_fetch_array($bsql);
 							</div>
 								<div class="mb-3">                    						
 								<div class="form-label">National ID</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['b_ni'] ?>" name="bni">                      					
+								<input type="text" class="form-control" value="<?php echo $brow['c_ni'] ?>" name="cni">                      					
 							</div>
 						</div>												
 						<div class="col-md-4">					
@@ -161,12 +161,12 @@ $brow = mysqli_fetch_array($bsql);
 							
 							<div class="mb-3">                    						
 								<div class="form-label">Commission Type</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['commision_type'] ?>" name="com_type" readonly>                      					
+								<input type="text" class="form-control" value="<?php echo $brow['commission_type'] ?>" name="com_type" readonly>                      					
 							</div> 
 							
 							<div class="mb-3">                    						
 								<div class="form-label">% Commission</div>                        						
-								<input type="text" class="form-control" value="<?php echo $brow['percent'] ?>" name="percent" readonly>                      					
+								<input type="text" class="form-control" value="<?php echo $brow['percentage'] ?>" name="percent" readonly>                      					
 							</div>
 							<div class="mb-3">                    						
 								<div class="form-label">Fixed</div>                        						
