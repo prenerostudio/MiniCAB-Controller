@@ -13,79 +13,161 @@ include('header.php');
 						<div class="modal-body">													
 							<div class="row">							
 								<div class="mb-3 col-md-4">    																	
+   
 									<label class="form-label">Booking Type</label>
-									<select class="form-control" name="b_type_id" required>
+    
+									<select class="form-control" name="b_type_id" id="bookingType" required>
+        
 										<option value="">Select Booking Type</option>
-										<?php        																			
+        
+										<?php
+        
 										$btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
+        
 										while ($btrow = mysqli_fetch_array($btsql)) {										
-										?>           																			
-										<option value="<?php echo $btrow['b_type_id'] ?>">
-											<?php echo $btrow['b_type_name'] ?>										
-										</option>           																			
-										<?php       																			
-										}        																			
+        
 										?>
-									</select>																
-								</div>																										
+        
+										<option value="<?php echo $btrow['b_type_id'] ?>">
+            
+											<?php echo $btrow['b_type_name'] ?>										
+        
+										</option>
+        
+										<?php
+        
+										}				
+        
+										?>
+    
+									</select>
+
+								</div>																								
 							</div>																						
 							<div class="row">
 								<h4>Passenger Details:</h4>
+							
 								<div class="mb-3 col-lg-3">    																	
-									<label class="form-label">Customer Type</label>
-									<select class="form-control" name="c_type" id="c_type" required>
-										<option value="">Select Customer Type</option>
-										    																			
-										<option value="">Customer </option>           										
-										<option value="">Booker </option>           										
-																											
-									</select>																								
-								</div>
-								<div class="mb-3 col-lg-3">    																	
+    
+								
 									<label class="form-label">Name</label>
+    
+
 									<select class="form-control" name="c_id" id="clientSelect" required>
-										<option value="">Select Customer</option>
-										<?php        																			
-										$clsql = mysqli_query($connect, "SELECT * FROM `clients`");
-										while ($clrow = mysqli_fetch_array($clsql)) {
-										?>           																			
-										<option value="<?php echo $clrow['c_id'] ?>">
-											<?php echo $clrow['c_name'] ?>
-										</option>           																			
-										<?php       																			
-										}				
-										?>    																	
-									</select>																								
-								</div>																							
+        
+									
+										<!--<option value="">Select Customer</option>-->
+    
+								
+									</select>
+
+								
+								
+								</div>
+
+								
+
+								
 								<div class="mb-3 col-lg-3">  																
+    
+								
 									<label class="form-label">Customer Phone</label>
+    
+									
 									<input type="text" class="form-control" name="cphone" id="customerPhone" readonly>
-								</div>				
+ 
+								</div>
+
+
 								<div class="mb-3 col-lg-3">   																	
+    
 									<label class="form-label">Customer Email</label>
+    
 									<input type="text" class="form-control" name="cemail" id="customerEmail" readonly>
-								</div>															
+
+								</div>
+
+								
+
 								<script>   																	
+    
+									var bookingTypeSelect = document.getElementById('bookingType');
+    
 									var clientSelect = document.getElementById('clientSelect');
+    
 									var customerPhoneInput = document.getElementById('customerPhone');
+    
 									var customerEmailInput = document.getElementById('customerEmail');
-									clientSelect.addEventListener('change', function () {
-										var selectedClientId = clientSelect.value;
-										$.ajax({          																				
+
+    
+									bookingTypeSelect.addEventListener('change', function () {
+        
+										// Fetch clients based on booking type
+        
+										var selectedBookingType = bookingTypeSelect.value;
+        
+										$.ajax({
+            
 											type: 'POST',
-											url: 'get_customer_details.php',
-											data: { c_id: selectedClientId },
+            
+											url: 'get_clients.php', // Create a new PHP file to handle this request
+            
+											data: { b_type_id: selectedBookingType },
+            
 											success: function (response) {
-												var data = JSON.parse(response);
-												customerPhoneInput.value = data.phone;
-												customerEmailInput.value = data.email;
-											},          																					
+                
+												// Populate client list
+                
+												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
+            
+											},
+            
 											error: function () {
+                
 												// Handle error if needed
-											}       																				
-										});   																		
-									});																							
+            
+											}
+        
+										});
+    
+									});
+
+									
+    
+									clientSelect.addEventListener('change', function () {
+        
+										var selectedClientId = clientSelect.value;
+        
+										$.ajax({
+            
+											type: 'POST',
+            
+											url: 'get_customer_details.php',
+            
+											data: { c_id: selectedClientId },
+            
+											success: function (response) {
+                
+												var data = JSON.parse(response);
+                
+												customerPhoneInput.value = data.phone;
+                
+												customerEmailInput.value = data.email;
+            
+											},
+            
+											error: function () {
+                
+												// Handle error if needed
+            
+											}
+        
+										});
+    
+									});
+
 								</script>																									
+							
 							</div>																								
 							<div class="row">																				
 								<h4>Journey Details:</h4>																	
@@ -121,7 +203,7 @@ include('header.php');
 									<div class="form-label">Journey Type</div>																
 									<div class="mb-3">
 										<label class="form-check form-check-inline">										
-											<input class="form-check-input" type="radio" name="journey_type" checked="" value="One Way">
+											<input class="form-check-input" type="radio" name="journey_type" value="One Way">
 											<span class="form-check-label">One Way</span>									
 										</label>
 										<label class="form-check form-check-inline">
@@ -156,7 +238,7 @@ include('header.php');
 									<div class="form-label">Child Seat</div>																
 									<div>                              																		
 										<label class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="child_seat" checked="" value="Yes">
+											<input class="form-check-input" type="radio" name="child_seat" value="Yes">
 											<span class="form-check-label">Yes</span>									
 										</label>
 										<label class="form-check form-check-inline">

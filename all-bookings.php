@@ -74,27 +74,7 @@ include('header.php');
     });
 });
 
-    //$(document).ready(function () {
-//        // Handle dropdown item click event
-//        $(".dropdown-item").click(function () {
-//            // Fetch the selected time interval from the data-filter attribute
-//            var selectedInterval = $(this).data("filter");
-//
-//            // Make an Ajax request to fetch data based on the selected time interval
-//            $.ajax({
-//                type: "GET",
-//                url: "fetch_data.php", // Update with the actual server-side script to handle the request
-//                data: { timeInterval: selectedInterval },
-//                success: function (data) {
-//                    // Update the table body with the fetched data
-//                    $("#tableBody").html(data);
-//                },
-//                error: function () {
-//                    console.error("Error fetching data");
-//                }
-//            });
-//        });
-//    });
+   
 </script>
 
 				
@@ -114,8 +94,22 @@ include('header.php');
 					</div>                  
 					<div class="card-body border-bottom py-3">
 						<div id="table-default" class="table-responsive">                  
-							<table class="table">                    
-								<thead>                      
+						                  
+								                 
+								<tbody class="table-tbody" id="tableBody">					
+									     
+									<?php
+        
+									$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Pending' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");
+
+        
+									if (mysqli_num_rows($bsql) > 0) {
+       
+									?>
+           
+									<table class="table">
+              
+										<thead>                      
 									<tr> 																				
 										<th>
 											<button class="table-sort" data-sort="sort-id">ID</button>
@@ -149,14 +143,13 @@ include('header.php');
 											<button class="table-sort">Actions</button>
 										</th>                      
 									</tr>                   
-								</thead>                  
-								<tbody class="table-tbody" id="tableBody">					
-									<?php										
-									$y=0;								
-									$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.* FROM bookings, clients, booking_type WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Pending' AND bookings.b_type_id = booking_type.b_type_id ORDER BY bookings.book_id DESC");									
-									while($brow = mysqli_fetch_array($bsql)){											
-										$y++;
-									?>														                     
+								</thead> 
+                <tbody class="table-tbody" id="tableBody">
+                    <?php
+                    $y = 0;
+                    while ($brow = mysqli_fetch_array($bsql)) {
+                        $y++;
+                    ?>											                     
 									<tr>                        
 										<td class="sort-id"><?php echo $brow['book_id']; ?></td>                        
 										<td class="sort-date"><?php echo $brow['pick_date'] ?></td>                       
@@ -220,7 +213,12 @@ include('header.php');
 									}																
 									?>                                       
 								</tbody>                 
-							</table>                
+							</table>
+									 <?php
+        } else {
+            echo '<p>No booking found.</p>';
+        }
+        ?>
 						</div>                  
 					</div>                                                    
 				</div>              

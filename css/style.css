@@ -6,18 +6,28 @@ i{
 	padding-right: 10px;
 }
 
-.readonly { background:#DBDBDB;}
+.readonly { 
+	background:#DBDBDB;
+}
 #map {    
+	
 	width: 100%;
-				height: 250px;  
-			}	
+	
+	height: 100%;  
+	
+}	
 
-.page_padding { padding-left: 20px;
+
+.page_padding { 
+	padding-left: 20px;
 	padding-right: 20px;
 
 }
 
-.status span { display: inline-block;
+.status span { 
+	display: inline-block;
 
 }
-a:hover { text-decoration: none;}
+a:hover { 
+	text-decoration: none;
+}
