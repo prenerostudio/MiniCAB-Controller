@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 02:05 PM
+-- Generation Time: Jan 19, 2024 at 01:57 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -69,39 +69,6 @@ CREATE TABLE `bids` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bookers`
---
-
-CREATE TABLE `bookers` (
-  `b_id` int(55) NOT NULL,
-  `b_name` varchar(255) NOT NULL,
-  `b_email` varchar(255) NOT NULL,
-  `b_phone` varchar(255) NOT NULL,
-  `b_address` varchar(255) NOT NULL,
-  `b_gender` varchar(55) NOT NULL,
-  `b_language` varchar(55) NOT NULL,
-  `b_pic` varchar(255) NOT NULL,
-  `postal_code` varchar(255) NOT NULL,
-  `company_name` varchar(255) NOT NULL,
-  `others` varchar(255) NOT NULL,
-  `b_ni` varchar(255) NOT NULL,
-  `commision_type` varchar(10) NOT NULL,
-  `percent` int(10) NOT NULL,
-  `fixed` int(10) NOT NULL,
-  `acount_status` int(10) NOT NULL,
-  `booker_reg_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `bookers`
---
-
-INSERT INTO `bookers` (`b_id`, `b_name`, `b_email`, `b_phone`, `b_address`, `b_gender`, `b_language`, `b_pic`, `postal_code`, `company_name`, `others`, `b_ni`, `commision_type`, `percent`, `fixed`, `acount_status`, `booker_reg_date`) VALUES
-(1, 'Arshad Ali', 'arshad@prenero.com', '+4452123568', '', 'Male', 'Urdu', 'atiqramzan.png', 'WJ123', '', '', '', 'Percentage', 20, 0, 1, '2023-12-30 22:09:21');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `booker_account`
 --
 
@@ -112,6 +79,14 @@ CREATE TABLE `booker_account` (
   `comission_amount` int(11) NOT NULL,
   `commission_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booker_account`
+--
+
+INSERT INTO `booker_account` (`acc_id`, `c_id`, `book_id`, `comission_amount`, `commission_date`) VALUES
+(4, 3, 9, 50, '2024-01-18 19:48:31'),
+(5, 3, 10, 50, '2024-01-18 19:49:10');
 
 -- --------------------------------------------------------
 
@@ -157,7 +132,9 @@ CREATE TABLE `bookings` (
 INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booking_status`, `bid_status`, `bid_note`, `book_add_date`) VALUES
 (00000000001, 1, 1, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', 'Central London, London, UK', 'London', 'WJ123', 2, '2023-12-30', '17:30:00', 'One Way', 2, 'yes', 'Yes', 'LN856', '00:00:30', 'N/A', 250, 28, 30, 0, 0, 0, 0, 'Booked', 0, '', '2023-12-30 22:04:55'),
 (00000000004, 1, 1, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', 'Central London, London, UK', '', 'WJ123', 2, '2024-01-05', '23:03:00', 'One Way', 4, '', 'Yes', '', '00:00:00', '', 450, 28, 0, 0, 0, 0, 0, 'Cancelled', 0, '', '2024-01-04 21:30:10'),
-(00000000005, 1, 1, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', 'Eastbourne, UK', '', 'WJ123', 3, '2024-01-18', '15:16:00', 'One Way', 4, 'yes', 'Yes', '', '00:30:00', '', 2115, 141, 50, 0, 0, 0, 0, 'Booked', 0, '', '2024-01-04 21:13:06');
+(00000000005, 1, 1, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', 'Eastbourne, UK', '', 'WJ123', 3, '2024-01-18', '15:16:00', 'One Way', 4, 'yes', 'Yes', '', '00:30:00', '', 2115, 141, 50, 0, 0, 0, 0, 'Booked', 0, '', '2024-01-04 21:13:06'),
+(00000000009, 3, 3, 'Jail Road', 'General Bus Stand', 'Sargodha Road', '38000', 3, '2024-01-18', '07:43:00', 'return', 2, 'yes', 'no', 'PK365', '00:00:20', 'N/A', 500, 25, 0, 0, 0, 0, 0, 'Pending', 0, '', '2024-01-18 19:48:31'),
+(00000000010, 3, 3, 'Jail Road', 'General Bus Stand', 'Sargodha Road', '38000', 3, '2024-01-18', '07:43:00', 'return', 2, 'yes', 'no', 'PK365', '00:20:00', 'N/A', 500, 25, 0, 0, 0, 0, 0, 'Pending', 0, '', '2024-01-18 19:49:10');
 
 -- --------------------------------------------------------
 
@@ -217,7 +194,7 @@ CREATE TABLE `clients` (
 INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `status`, `company_name`, `commission_type`, `percentage`, `fixed`, `acount_status`, `account_type`, `reg_date`) VALUES
 (1, 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', 'Faisalabad Pakistan', 'Male', 'English', 'IMG_web.jpg', 'WJ123', 'N/A', '33102-1457353-9', 0, '', '', 0, 0, 1, 1, '2023-12-30 21:40:23'),
 (2, 'Mahtab Mukhtar', 'Mahtab@prenero.com', '+923346452312', 'Faisalabad Pakistan', 'Male', 'English', 'IMG_web.jpg', 'WJ123', 'N/A', '33102-1457353-9', 0, '', '', 0, 0, 1, 2, '2023-12-30 21:40:23'),
-(3, 'Muhammad Atiq Ramzan', 'prenero12@gmail.com', '+923127346634', 'Islam Nagir Faisalabad, Pakistan.', 'Male', 'English', 'Atiq-Ramzan.png', '38000', 'N/A', '33102-1457353-9', 0, '', '', 0, 0, 0, 2, '2024-01-18 11:08:21');
+(3, 'Muhammad Atiq Ramzan', 'prenero12@gmail.com', '+923127346634', 'Islam Nagir Faisalabad, Pakistan.', 'Male', 'English', 'Atiq-Ramzan.png', '38000', 'N/A', '33102-1457353-9', 0, '', 'percentage', 10, 0, 1, 2, '2024-01-18 18:32:32');
 
 -- --------------------------------------------------------
 
@@ -644,6 +621,13 @@ CREATE TABLE `reviews` (
   `rev_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`rev_id`, `job_id`, `d_id`, `c_id`, `rev_msg`, `rev_date`) VALUES
+(1, 1, 1, 3, 'N/A', '2024-01-18 07:55:05');
+
 -- --------------------------------------------------------
 
 --
@@ -755,12 +739,6 @@ ALTER TABLE `airports`
 --
 ALTER TABLE `bids`
   ADD PRIMARY KEY (`bid_id`);
-
---
--- Indexes for table `bookers`
---
-ALTER TABLE `bookers`
-  ADD PRIMARY KEY (`b_id`);
 
 --
 -- Indexes for table `booker_account`
@@ -923,22 +901,16 @@ ALTER TABLE `bids`
   MODIFY `bid_id` int(55) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `bookers`
---
-ALTER TABLE `bookers`
-  MODIFY `b_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `booker_account`
 --
 ALTER TABLE `booker_account`
-  MODIFY `acc_id` int(55) NOT NULL AUTO_INCREMENT;
+  MODIFY `acc_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `book_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `booking_type`
@@ -1046,7 +1018,7 @@ ALTER TABLE `price_postcode`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `rev_id` int(55) NOT NULL AUTO_INCREMENT;
+  MODIFY `rev_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `special_dates`
