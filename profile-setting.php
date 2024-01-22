@@ -19,33 +19,32 @@ $urow = mysqli_fetch_array($usql);
 <div class="page-body">
 	<div class="container-xl">    
 		<div class="card">        
-			<div class="row g-0">            				
-										
-				<form method="post" action="#">                
-					<div class="col-12 col-md-12 d-flex flex-column">                 
-						<div class="card-body">                  
-							<h2 class="mb-4">My Account</h2>                  
-							<h3 class="card-title">Profile Details</h3>                  
-							<div class="row align-items-center">                    
-								<div class="col-auto">
-									<span class="avatar avatar-xl" style="background-image: url(static/avatars/000m.jpg)"></span>                      
-								</div>                     
-								<div class="col-auto">
-									<a href="#" class="btn">                          									
-										Change avatar                       									
-									</a>								
-								</div>                      
-								<div class="col-auto">									
-									<a href="#" class="btn btn-ghost-danger">                         
-										Delete avatar                       
-									</a>
-								</div>                    
-							</div>                   
-							<h3 class="card-title mt-4">Business Profile</h3>                   
+			<div class="row g-0">            																		            					
+				<div class="col-12 col-md-12 d-flex flex-column">                 					
+					<div class="card-body">                  					
+						<h2 class="mb-4">My Account</h2>                  						
+						<h3 class="card-title">Profile Details</h3>                  						
+						<div class="row align-items-center">                    						
+							<div class="col-auto">						
+								<span class="avatar avatar-xl" style="background-image: url(img/users/<?php echo $user_pic;?>)"></span>
+							</div>                     						
+							<div class="col-auto">						
+								<a href="#" class="btn">                          															
+									Change avatar                       															
+								</a>														
+							</div>                      								
+							<div class="col-auto">																									
+								<a href="#" class="btn btn-ghost-danger">                         									
+									Delete avatar                       									
+								</a>								
+							</div>                    							
+						</div>                   							
+						<h3 class="card-title mt-4">Business Profile</h3>      							
+						<form method="post" action="update-user.php">    							
 							<div class="row g-3">                   
 								<div class="col-md">                     
 									<div class="form-label">First Name</div>  
-									<input type="text" class="form-control" value="<?php echo $urow['user_id'] ?>" name="user_id"> 
+									<input type="hidden" class="form-control" value="<?php echo $urow['user_id'] ?>" name="user_id"> 
 									<input type="text" class="form-control" value="<?php echo $urow['first_name'] ?>" name="fname">                     
 								</div>                      
 								<div class="col-md">                       
@@ -346,7 +345,7 @@ $urow = mysqli_fetch_array($usql);
 								</div>                      
 								<div class="col-md-4">                        
 									<div class="form-label">Post Code</div>                        
-									<input type="text" class="form-control" value="<?php echo $urow['post_code'] ?>">                      
+									<input type="text" class="form-control" value="<?php echo $urow['post_code'] ?>" name="pc">                      
 								</div>								                    
 							</div>							                    
 						</div>                                

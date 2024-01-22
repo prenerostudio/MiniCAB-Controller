@@ -1,46 +1,40 @@
 <?php
 require 'config.php';
 
-$c_id = $_POST['c_id'];
-$cname = $_POST['cname'];
-$cemail = $_POST['cemail'];
-$cphone = $_POST['cphone'];
-$cgender = $_POST['cgender'];
-$clang = $_POST['clang'];
-$pc = $_POST['postal_code'];
-$cni = $_POST['cni'];
-$others = $_POST['cothers'];
-$caddress = $_POST['caddress'];
+$user_id = $_POST['user_id'];
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$uemail = $_POST['uemail'];
+$uphone = $_POST['uphone'];
+$desig = $_POST['desig'];
+$nid = $_POST['nid'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$country = $_POST['country'];
+$pc = $_POST['pc'];
 $date = date("Y-m-d H:i:s");
-
-
-   
-        
+     
 $sql = "UPDATE `users` SET 
-						`user_email`='[value-2]',
-						`first_name`='[value-5]',
-						`last_name`='[value-6]',
-						`user_phone`='[value-7]',
-						`designation`='[value-8]',
-						`address`='[value-9]',
-						`city`='[value-10]',
-						`state`='[value-11]',
-						`country`='[value-12]',
-						`post_code`='[value-13]',
-						`nid`='[value-14]',
-						`reg_date`='[value-15]' WHERE `user_id`=''";
+						`user_email`='$uemail',
+						`first_name`='$fname',
+						`last_name`='$lname',
+						`user_phone`='$uphone',
+						`designation`='$desig',
+						`address`='$address',
+						`city`='$city',
+						`state`='$state',
+						`country`='$country',
+						`post_code`='$pc',
+						`nid`='$nid',
+						`reg_date`='$date' WHERE `user_id`='$user_id'";
         
-        $result = mysqli_query($connect, $sql);
-       
-        if ($result) {
-         
-            header('location: view-customer.php?c_id='.$c_id);
-            exit();
-        } else {
-           
-			header('location: view-customer.php?c_id='.$c_id);
-        }
-
-
+$result = mysqli_query($connect, $sql);       
+if ($result) {	    
+	header('location: profile-setting.php');    
+	exit();    
+} else {           
+	header('location: profile-setting.php');    
+}
 $connect->close();
 ?>
