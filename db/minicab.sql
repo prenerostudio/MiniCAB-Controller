@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2024 at 01:57 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jan 22, 2024 at 03:14 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -658,6 +658,10 @@ CREATE TABLE `users` (
   `user_phone` varchar(255) NOT NULL,
   `designation` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `post_code` varchar(255) NOT NULL,
   `nid` varchar(255) NOT NULL,
   `reg_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -666,8 +670,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_email`, `user_password`, `user_pic`, `first_name`, `last_name`, `user_phone`, `designation`, `address`, `nid`, `reg_date`) VALUES
-(1, 'admin@prenero.com', 'b743c33627755c255938a992d3480cab', '', 'Atiq', 'Ramzan', '+923157524000', 'Administrator', 'Faisalabad, Punjab, Pakistan', '33102-1457353-9', '2023-10-13 05:35:09');
+INSERT INTO `users` (`user_id`, `user_email`, `user_password`, `user_pic`, `first_name`, `last_name`, `user_phone`, `designation`, `address`, `city`, `state`, `country`, `post_code`, `nid`, `reg_date`) VALUES
+(1, 'admin@prenero.com', 'b743c33627755c255938a992d3480cab', 'Atiq-Ramzan.jpg', 'Atiq', 'Ramzan', '+923157524000', 'Administrator', 'Faisalabad, Punjab, Pakistan', 'Faisalabad', '', '', '', '33102-1457353-9', '2023-10-13 05:35:09');
 
 -- --------------------------------------------------------
 
