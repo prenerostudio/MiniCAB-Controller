@@ -2,15 +2,14 @@
 session_start(); 
 include('config.php');
 ini_set("display_errors","off");
-$myId = $_SESSION['user_id'];
 
+$myId = $_SESSION['user_id'];
 $email = $_SESSION['email'];                		
 $fname=	$_SESSION['first_name'];                		
-		$lname= $_SESSION['last_name'];               		
-		$userphone = $_SESSION['user_phone'];                            			                		
-		
-		$user_pic = $_SESSION['user_pic'];		
-		$designation = $_SESSION['designation'];
+$lname= $_SESSION['last_name'];               		
+$userphone = $_SESSION['user_phone'];                            			                		
+$user_pic = $_SESSION['user_pic'];		
+$designation = $_SESSION['designation'];
 	
 if (!isset($_SESSION['email'])) {	
 	$_SESSION['first_name'] = $fname;
@@ -139,7 +138,7 @@ if (!isset($_SESSION['email'])) {
 									<a href="#" class="dropdown-item">Profile</a>                
 									<a href="#" class="dropdown-item">Feedback</a>                
 									<div class="dropdown-divider"></div>                
-									<a href="#" class="dropdown-item">Settings</a>                
+									<a href="profile-setting.php" class="dropdown-item">Settings</a>                
 									<a href="logout.php" class="dropdown-item">Logout</a>              
 								</div>            
 							</div>          
