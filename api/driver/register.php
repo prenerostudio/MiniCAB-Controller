@@ -23,6 +23,8 @@ function uploadFile($file, $targetDirectory)
 if (isset($_POST['d_phone'])) {
     $d_email = $_POST['d_email'];
     $d_phone = $_POST['d_phone'];
+
+	$d_password = $_POST['d_password'];
     $licence_authority = $_POST['licence_authority'];
     $acount_status = 0;
     $date = date("Y-m-d h:i:s");
@@ -51,6 +53,7 @@ if (isset($_POST['d_phone'])) {
             $sql = "INSERT INTO `drivers`(
                         `d_email`, 
                         `d_phone`, 
+						`d_password`,
                         `licence_authority`, 
                         `dl_front`, 
                         `dl_back`, 
@@ -64,6 +67,7 @@ if (isset($_POST['d_phone'])) {
                     ) VALUES (
                         '$d_email',
                         '$d_phone',
+						'$d_password',
                         '$licence_authority',
                         '$uploadedFiles[dl_front]',
                         '$uploadedFiles[dl_back]',

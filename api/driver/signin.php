@@ -7,34 +7,25 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-if (isset($_POST['d_phone'])) {
+$d_phone = $_POST['d_phone'];
+$d_password=$_POST['d_password'];
 
-	$d_phone = $_POST['d_phone'];
 
-    // Using prepared statements to prevent SQL injection
-    $stmt = $connect->prepare("SELECT * FROM drivers WHERE d_phone = ?");
-    $stmt->bind_param("s", $d_phone);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
+if(isset($_POST['d_phone'])){	
+	//$final_pass= md5($user_password);
+	$sql="SELECT * FROM `drivers` WHERE `d_phone`='$d_phone' AND `d_password`='$d_password'";
+	$r=mysqli_query($connect,$sql);
+	if($r){    
+		$output=$r->fetch_assoc();      
+		echo json_encode(array('data'=>$output, 'message'=>'User Logged in Successfully','status'=>true));
+	}else{    
+		echo json_encode(array('message'=>'User Does Not Exist','status'=>false));
+	}
+}else{
+    
+	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 
-    if ($result->num_rows > 0) {
-        // Phone number exists, now check the account status
-        $driver = $result->fetch_assoc();
-        $account_status = $driver['acount_status'];
-
-        if ($account_status == 1) {
-            // Account status is 1, meaning the driver is logged in successfully
-            echo json_encode(array('data' => $driver, 'status' => true, 'message' => "Driver Logged-in Successfully"));
-        } else {
-            // Account status is not 1, meaning the driver account is not active
-            echo json_encode(array('message' => 'User Account is not active, Please Contact to admin for approval!', 'status' => false));
-        }
-    } else {
-        // Phone number does not exist
-        echo json_encode(array('message' => 'User Does Not Exist', 'status' => false));
-    }
-} else {
-    echo json_encode(array('message' => "Some Fields are missing", 'status' => false));
 }
+
+
 ?>

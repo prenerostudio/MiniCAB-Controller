@@ -11,6 +11,7 @@ if (isset($_POST['c_phone'])) {
 	$c_name = $_POST['c_name'];
     $c_email = $_POST['c_email'];
     $c_phone = $_POST['c_phone'];
+	$c_password = $_POST['c_password'];
     $acount_status = 0;
     $date = date("Y-m-d h:i:s");
 
@@ -35,19 +36,21 @@ if (isset($_POST['c_phone'])) {
 									`c_name`, 
 									`c_email`, 
 									`c_phone`, 
+									`c_password`,
 									`acount_status`,
 									`reg_date`
 									) VALUES (
 									'$c_name',
 									'$c_email',
 									'$c_phone',
+									'$c_password',
 									'$acount_status',
 									'$date')";
             
             $r = mysqli_query($connect, $sql);
 
             if ($r) {
-                echo json_encode(array('message' => "Driver Registered Successfully", 'status' => true));
+                echo json_encode(array('message' => "Customer Registered Successfully", 'status' => true));
             } else {
                 echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));
             }

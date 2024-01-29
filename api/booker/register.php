@@ -10,6 +10,7 @@ include("../../config.php");
 $c_name = $_POST['c_name'];
 $c_email = $_POST['c_email'];
 $c_phone = $_POST['c_phone'];
+$c_password = $_POST['c_password'];
 $account_type = 2;
 $acount_status = 0;
 $date = date("Y-m-d h:i:s");
@@ -26,6 +27,7 @@ if (isset($_POST['c_phone'])) {
 									`c_name`, 
 									`c_email`, 
 									`c_phone`, 
+									`c_password`,
 									`acount_status`,
 									`account_type`,
 									`reg_date`
@@ -33,6 +35,7 @@ if (isset($_POST['c_phone'])) {
 									'$c_name',
 									'$c_email',
 									'$c_phone',
+									'$c_password',
 									'$acount_status',
 									'$account_type',
 									'$date')";
