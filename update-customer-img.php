@@ -1,63 +1,52 @@
 <?php
 include('config.php');
-// Check if form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	
-	$c_id = $_POST['c_id'];		
-    $targetDir = "img/customers/"; // Directory where the logos will be stored
-    $targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-    // Check if the file is an actual image or fake image
-    if (isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-        if ($check !== false) {
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $c_id = $_POST['c_id'];
+
+    // Directory where the images will be stored
+    $targetDir = "img/customers/";
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION));
+
+    // Generate a unique filename
+    $uniqueFilename = uniqid() . '_' . time() . '.' . $imageFileType;
+    $targetFile = $targetDir . $uniqueFilename;
 
     // Check if file already exists
     if (file_exists($targetFile)) {
         echo "Sorry, file already exists.";
         $uploadOk = 0;
-		//header('Location: customers.php');
     }
 
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 5000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
-		///header('Location: customers.php');
     }
 
-    // Allow certain file formats
-    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif") {
+    // Allow only specific file formats
+    $allowedExtensions = array("jpg", "jpeg", "png", "gif");
+    if (!in_array($imageFileType, $allowedExtensions)) {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
-		//header('Location: customers.php');
     }
 
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    } else {
+    // Proceed if everything is fine
+    if ($uploadOk == 1) {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
             // If the file has been successfully uploaded, update the database
-            $logoName = basename($_FILES["fileToUpload"]["name"]);
+            $logoName = $uniqueFilename;
 
-            // Perform the database update query here
-            // Establish a MySQL connection and execute an UPDATE query to update the logo information in your database
-            // Example: 
-             $sql = "UPDATE `clients` SET `c_pic`='$logoName' WHERE `c_id`='$c_id'";
-             $result = mysqli_query($connect, $sql);
+            $sql = "UPDATE `clients` SET `c_pic`='$logoName' WHERE `c_id`='$c_id'";
+            $result = mysqli_query($connect, $sql);
 
-            echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
-			header('Location: customers.php');
+            if ($result) {
+                echo "The file " . htmlspecialchars($logoName) . " has been uploaded.";
+                header('Location: customers.php');
+            } else {
+                echo "Sorry, there was an error updating your file.";
+            }
         } else {
             echo "Sorry, there was an error uploading your file.";
         }

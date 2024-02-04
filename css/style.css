@@ -31,3 +31,16 @@ i{
 a:hover { 
 	text-decoration: none;
 }
+
+.button_padding {
+	margin-top: 5px; 
+	margin-left: 5px;
+}
+
+.filter-item{display:block;width:100%;padding:var(--tblr-dropdown-item-padding-y) var(--tblr-dropdown-item-padding-x);clear:both;font-weight:400;color:var(--tblr-dropdown-link-color);text-align:inherit;white-space:nowrap;background-color:transparent;border:0;border-radius:var(--tblr-dropdown-item-border-radius,0)}
+
+.filter-item:focus,.filter-item:hover{color:var(--tblr-dropdown-link-hover-color);text-decoration:none;background-color:var(--tblr-dropdown-link-hover-bg)}
+
+.filter-item.active,.filter-item:active{color:var(--tblr-dropdown-link-active-color);text-decoration:none;background-color:var(--tblr-dropdown-link-active-bg)}
+
+.filter-item.disabled,.filter-item:disabled{color:var(--tblr-dropdown-link-disabled-color);pointer-events:none;background-color:transparent}

@@ -45,7 +45,7 @@ if ($result) {
 	$book_status='Booked';
 	$bsql="UPDATE `bookings` SET `booking_status`='$book_status', `book_add_date`='$date' WHERE `book_id`='$book_id'";
 	$r = mysqli_query($connect, $bsql); 
-	header('Location: upcoming-jobs.php');    
+	header('Location: upcoming-bookings.php');    
 	exit();    
 } else {		
 	header('Location: view-booking.php?book_id='.$book_id);    

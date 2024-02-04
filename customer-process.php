@@ -3,13 +3,14 @@ require 'config.php';
 
 function uploadImage() {
     $targetDir = "img/customers/";
-    $targetFilePath = $targetDir . basename($_FILES["cpic"]["name"]);
-    $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+    $fileExtension = strtolower(pathinfo($_FILES["cpic"]["name"], PATHINFO_EXTENSION));
+    $uniqueFilename = uniqid() . '_' . time() . '.' . $fileExtension; // Generate unique filename
+    $targetFilePath = $targetDir . $uniqueFilename;
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
-    if (in_array($fileType, $allowTypes)) {
+    if (in_array($fileExtension, $allowTypes)) {
         if (move_uploaded_file($_FILES["cpic"]["tmp_name"], $targetFilePath)) {
-            return basename($targetFilePath); // Return only the image name
+            return $uniqueFilename; // Return the unique filename
         } else {
             return false;
         }
@@ -17,9 +18,11 @@ function uploadImage() {
     return false;
 }
 
+
 $cname = $_POST['cname'];
 $cemail = $_POST['cemail'];
 $cphone = $_POST['cphone'];
+$cpass = $_POST['cpass'];
 $cgender = $_POST['cgender'];
 $clang = $_POST['clang'];
 $pc = $_POST['pc'];
@@ -30,31 +33,32 @@ $account_type = 1;
 $date = date("Y-m-d H:i:s");
 
 // Check if the email already exists
-$stmt_check = $connect->prepare("SELECT COUNT(*) FROM `clients` WHERE `c_email` = ?");
-$stmt_check->bind_param("s", $cemail);
+$stmt_check = $connect->prepare("SELECT COUNT(*) FROM `clients` WHERE `c_phone` = ?");
+$stmt_check->bind_param("s", $cphone);
 $stmt_check->execute();
-$stmt_check->bind_result($email_count);
+$stmt_check->bind_result($phone_count);
 $stmt_check->fetch();
 $stmt_check->close();
 
-if ($email_count > 0) {
-    echo 'Email already exists. Please use a different email address.';
+if ($phone_count > 0) {
+     echo '<script>alert("Phone already exists. Please use a different Phone Number.");';
+    echo 'window.location.href = "customers.php";</script>';
 } else {
     // Handle image upload
     $cpic = uploadImage();
 
       if ($cpic !== false) {
         // Insert image name along with other data
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type, $date);
+        $stmt->bind_param("sssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type, $date);
     } else {
         // Insert only name without image name
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssssss", $cname, $cemail, $cphone, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type, $date);
+        $stmt->bind_param("ssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type, $date);
     }
 
     if ($stmt->execute()) {
@@ -69,4 +73,3 @@ if ($email_count > 0) {
 
 $connect->close();
 ?>
-

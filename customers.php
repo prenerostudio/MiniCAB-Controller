@@ -37,25 +37,25 @@ include('header.php');
 							<thead>                      							
 								<tr>									
 									<th>									
-										<button class="table-sort" data-sort="sort-id">ID</button>
+										<button class="table-sort">ID</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-date">Image</button>
+										<button class="table-sort">Image</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-time">Name</button>
+										<button class="table-sort" data-sort="sort-name">Name</button>
 									</th>                       									
 									<th>									
-										<button class="table-sort" data-sort="sort-passenger">Email</button>
+										<button class="table-sort" data-sort="sort-email">Email</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-pickup">Phone</button>
+										<button class="table-sort" data-sort="sort-phone">Phone</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Gender</button>
+										<button class="table-sort" data-sort="sort-gender">Gender</button>
 									</th>									
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Status</button>
+										<button class="table-sort">Status</button>
 									</th>							
 									<th>									
 										<button class="table-sort">Actions</button>
@@ -222,11 +222,10 @@ include('header.php');
 </div>        
 <script>	
 	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-default', {      					
+		const list = new List('table-customer', {      					
 			sortClass: 'table-sort',      							
 			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',						 
-						 'sort-driver'						
+			valueNames: [ 'sort-name', 'sort-email', 'sort-phone', 'sort-gender'						
 						]					
 		}); 			
 	})	
@@ -280,7 +279,11 @@ include('header.php');
 						<div class="mb-3 col-md-4">                  						
 							<label class="form-label">Phone</label>              					
 							<input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>
-						</div>							
+						</div>	
+						<div class="mb-3 col-md-4">              					
+							<label class="form-label">Password</label>              					
+							<input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required> 				
+						</div> 	
 						<div class="mb-3 col-md-4">              															
 							<label class="form-label">Gender</label>
 							<select class="form-select" name="cgender" required>

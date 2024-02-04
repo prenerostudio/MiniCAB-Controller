@@ -39,6 +39,20 @@ $b_type_id = $_POST['b_type_id'];
 $c_id  = $_POST['c_id'];
 $pickup = $_POST['pickup'];
 $dropoff = $_POST['dropoff'];
+
+// Array to hold stop locations
+    $stops = array();
+
+    // Loop through all stop fields
+    foreach ($_POST as $key => $value) {
+        // Check if the field starts with 'stop_'
+        if (substr($key, 0, 5) === 'stop_') {
+            // Add stop location to the stops array
+            $stops[] = $value;
+        }
+    }
+
+
 $address = $_POST['address'];
 $postal_code = $_POST['postal_code'];
 $passenger = $_POST['passenger'];
@@ -89,6 +103,8 @@ echo $extra .'<br>';
 echo $booking_status.'<br>';
 echo $date .'<br>';
 
+echo  implode(',', $stops);
+
 //die;
 
 
@@ -96,6 +112,7 @@ $sql = "INSERT INTO `bookings`(
 								`b_type_id`,
 								`c_id`, 
 								`pickup`, 
+								`stops`,
 								`destination`, 
 								`address`, 
 								`postal_code`,
@@ -122,6 +139,7 @@ $sql = "INSERT INTO `bookings`(
 								'$b_type_id',
 								'$c_id',
 								'$pickup',
+								'" . implode(',', $stops) . "',
 								'$dropoff',
 								'$address',
 								'$postal_code',

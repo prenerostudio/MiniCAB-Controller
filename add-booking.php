@@ -47,7 +47,7 @@ include('header.php');
 							<div class="row">
 								<h4>Passenger Details:</h4>
 							
-								<div class="mb-3 col-lg-3">    																	
+								<div class="mb-3 col-lg-4">    																	
     
 								
 									<label class="form-label">Name</label>
@@ -68,7 +68,7 @@ include('header.php');
 								
 
 								
-								<div class="mb-3 col-lg-3">  																
+								<div class="mb-3 col-lg-4">  																
     
 								
 									<label class="form-label">Customer Phone</label>
@@ -79,7 +79,7 @@ include('header.php');
 								</div>
 
 
-								<div class="mb-3 col-lg-3">   																	
+								<div class="mb-3 col-lg-4">   																	
     
 									<label class="form-label">Customer Email</label>
     
@@ -170,15 +170,56 @@ include('header.php');
 							
 							</div>																								
 							<div class="row">																				
-								<h4>Journey Details:</h4>																	
-								<div class="mb-3 col-lg-4">    								
-									<label class="form-label">Pickup Location:</label>    									
+								<h4>Journey Details:</h4>
+								<div class="col-lg-12">
+									
+								<div class="row">
+									
+									
+								<div class="mb-3 col-lg-4">
+   
+									<label class="form-label">Pickup Location:</label>
+    
 									<input type="text" id="pickup" name="pickup" class="form-control" placeholder="Select pickup location" required>
-								</div>																	
-								<div class="mb-3 col-lg-4">    								
-									<label class="form-label">Drop-off Location:</label>    									
-									<input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location" required>									
-								</div>							
+
+								</div>
+
+
+								
+
+
+								<div class="mb-3 col-lg-4">
+   
+									<label class="form-label">Drop-off Location:</label>
+   
+									<input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location" required>
+
+								</div>
+									
+								<div class="col-lg-4">
+									
+									<div id="stops-container" >
+   
+									<!-- Additional stops will be dynamically added here -->
+
+								</div>
+
+								<div class="mb-3 col-lg-2">
+
+									<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;"><i class="ti ti-plus"></i> Add Stop</button>
+	
+								</div>
+									
+									
+									
+									</div>
+									
+									
+								
+									</div>
+								</div>
+								
+								
 								<div class="mb-3 col-lg-4">																				
 									<label class="form-label">Address</label>								
 									<input type="text" class="form-control" name="address">							
@@ -265,11 +306,7 @@ include('header.php');
 							<div class="row">						
 								<h4>Pricing Section</h4>	
 								
-								<div class="mb-3 col-lg-4">										
-									<label class="form-label">Jouney Fare</label>								
-									<input type="text" class="form-control"  name="journey_fare" id="journeyFare"  required>	
-									<button class="btn btn-instagram" id="calculateFareBtn">Calculate Fare</button>
-								</div>
+								
 								<div class="mb-3 col-lg-4">          
 									<label class="form-label">Bookinng Fee </label>								
 									<input type="text" class="form-control" name="booking_fee">							
@@ -293,7 +330,17 @@ include('header.php');
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">Distance (Auto-calculated)</label>                                
 									<input type="text" class="form-control" name="journey_distance" id="journeyDistance" readonly>
-								</div>							
+								</div>	
+								
+								<div class="mb-3 col-lg-4">										
+									<label class="form-label">Jouney Fare</label>								
+									<input type="text" class="form-control"  name="journey_fare" id="journeyFare"  required>	
+									
+								</div>
+								<div class="mb-3 col-lg-4">										
+										
+									<button class="btn btn-instagram" style="margin-top:25px;" id="calculateFareBtn">Calculate Fare</button>
+								</div>
 																													
 								<div class="col-lg-4">                															
 									<h4>Send Online Payment Link</h4>										

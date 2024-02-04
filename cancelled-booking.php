@@ -11,23 +11,80 @@ include('header.php');
 					Booking Section                
 				</h2>              
 			</div>
-			<div class="col-auto ms-auto d-print-none">            
-				<div class="btn-list">                
-					<span class="d-none d-sm-inline">
-						<a href="all-bookings.php" class="btn">						
-							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
-							All Bookings                  
-						</a>                  
-					</span> 
-					<span class="d-none d-sm-inline">
-						<a href="booking-history.php" class="btn">						
-							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
-							Booking History                   
-						</a>                  
-					</span> 
-					            
-				</div>              
-			</div>
+		
+		<div class="col-auto ms-auto d-print-none">            		
+			<div class="btn-list">                			
+				<span class="d-none d-sm-inline">				
+					<a href="upcoming-bookings.php" class="btn">											
+						<i class="ti ti-user-search"></i>                     						
+						Upcoming Booking                   						
+					</a>                  					
+				</span> 
+				<span class="d-none d-sm-inline">				
+					<a href="inprocess-bookings.php" class="btn btn-instagram">											
+						<i class="ti ti-user-search"></i>                     						
+						Bookings InProcess                  						
+					</a>                  					
+				</span>
+				<span class="d-none d-sm-inline">				
+					<a href="completed-booking.php" class="btn btn-success">											
+						<i class="ti ti-user-search"></i>                     						
+						Completed Bookings                   						
+					</a>                  					
+				</span>
+				<span class="d-none d-sm-inline">				
+					<a href="cancelled-booking.php" class="btn btn-danger">											
+						<i class="ti ti-user-search"></i>                     						
+						Cancelled Bookings                   						
+					</a>                  					
+				</span>
+				
+				<span class="d-none d-sm-inline">									
+						<span class="dropdown">                    
+							<button class="btn dropdown-toggle align-text-top" id="filterDropdown" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+								Search Bookings
+							</button>                            
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="filter-item" href="#" data-filter="3"> All Bookings In 3 Hours</a>
+								<a class="filter-item" href="#" data-filter="6">All Bookings In 6 Hours</a>
+								<a class="filter-item" href="#" data-filter="9">All Bookings In 9 Hours</a>
+								<a class="filter-item" href="#" data-filter="12">All Bookings In 12 Hours</a>
+								<a class="filter-item" href="#" data-filter="24">All Bookings In 24 Hours</a>
+								<a class="filter-item" href="#" data-filter="72">All Bookings In 3 Days</a>
+								<a class="filter-item" href="#" data-filter="168">All Bookings In 7 Days</a>
+								<a class="filter-item" href="#" data-filter="336">All Bookings In 14 Days</a>
+								<a class="filter-item" href="#" data-filter="720">All Bookings In 30 Days</a>
+								<a class="filter-item" href="#" data-filter="2160">All Bookings In 3 Months</a>
+								<a class="filter-item" href="#" data-filter="4320">All Bookings In 6 Months</a>
+								<a class="filter-item" href="#" data-filter="8760">All Bookings In 12 Months</a>
+							</div>                            
+					</span>           					
+				</span> 				
+				<script>					
+					$(document).ready(function() {    
+						$(".filter-item").click(function(event) {        
+							event.preventDefault();        
+							var selectedInterval = $(this).data("filter");        
+							console.log("Selected Interval:", selectedInterval);        
+							// No need to check if selectedInterval is undefined or null        
+							$.ajax({            
+								type: "GET",            
+								url: "fetch-cancelled-booking.php",            
+								data: { timeInterval: selectedInterval },            
+								success: function(data) {                
+									console.log("Ajax Success:", data);                
+									$("#tableBody").html(data);            
+								},            
+								error: function(xhr, status, error) {                
+									console.error("Ajax Error:", error);            
+								}        
+							});    
+						});
+					});					   
+				</script>	
+			</div>		
+		</div>
+		
 		</div>	
 </div>
 <div class="page-body page_padding">          
@@ -65,7 +122,11 @@ include('header.php');
 										</th>						   
 										<th>
 											<button class="table-sort" data-sort="sort-vehicle">Vehicle</button>
-										</th>						  
+										</th>
+										
+										<th>
+											<button class="table-sort" data-sort="sort-vehicle">Status</button>
+										</th>
 																   
 										                      
 									</tr>                   
@@ -86,6 +147,7 @@ include('header.php');
 										<td class="sort-drpoff" style="width: 15%;"><?php echo $brow['destination'] ?></td>
 										<td class="sort-fare"> <?php echo $brow['journey_fare'] ?> </td>
 										<td class="sort-vehicle"> <?php echo $brow['v_name'] ?> </td>
+										<td class="sort-vehicle"> <button class="btn btn-danger"><?php echo $brow['booking_status'] ?></button> </td>
 									</tr>											
 									<?php																	
 									}																

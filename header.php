@@ -43,6 +43,31 @@ if (!isset($_SESSION['email'])) {
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		
+		
+		
+		
+		
+		<script>
+		document.addEventListener("DOMContentLoaded", function() {
+    const addStopButton = document.getElementById('add-stop-btn');
+    const stopsContainer = document.getElementById('stops-container');
+    let stopCount = 0;
+
+    addStopButton.addEventListener('click', function() {
+        stopCount++;
+        const newStopInput = document.createElement('input');
+        newStopInput.type = 'text';
+        newStopInput.className = 'form-control mb-3 col-lg-3';
+        newStopInput.placeholder = 'Enter stop location';
+        newStopInput.name = 'stop_' + stopCount; // Assigning unique name
+        stopsContainer.appendChild(newStopInput);
+    });
+});
+
+		
+		
+		</script>
+		
 	</head>  
 	<body>
 		<script src="js/demo-theme.min.js"></script>    		
@@ -66,7 +91,7 @@ if (!isset($_SESSION['email'])) {
 										<i class="ti ti-user-search"></i>            
 										Fare Corrections          
 									</a> 
-									<a href="upcoming-jobs.php" class="btn btn-instagram">           
+									<a href="upcoming-bookings.php" class="btn btn-instagram">           
 										<i class="ti ti-user-search"></i>            
 										Upcoming Jobs          
 									</a> 
@@ -134,9 +159,9 @@ if (!isset($_SESSION['email'])) {
 									</div>             
 								</a>             
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">                
-									<a href="#" class="dropdown-item">Status</a>                
-									<a href="#" class="dropdown-item">Profile</a>                
-									<a href="#" class="dropdown-item">Feedback</a>                
+									<a href="all-users.php" class="dropdown-item">All Users</a>                
+									<a href="#" class="dropdown-item">Add New User</a>                
+									<!--<a href="#" class="dropdown-item">Feedback</a>    -->            
 									<div class="dropdown-divider"></div>                
 									<a href="profile-setting.php" class="dropdown-item">Settings</a>                
 									<a href="logout.php" class="dropdown-item">Logout</a>              
@@ -153,16 +178,7 @@ if (!isset($_SESSION['email'])) {
 								<div class="row flex-fill align-items-center">                
 									<div class="col">                  
 										<ul class="navbar-nav">                    
-											<!--<li class="nav-item">                      
-												<a class="nav-link" href="#" >                        
-													<span class="nav-link-icon d-md-none d-lg-inline-block">
-														<i class="ti ti-library-plus"></i>                        
-													</span>                        
-													<span class="nav-link-title">                         
-														Add Booking                        
-													</span>                      
-												</a>                    
-											</li>	-->				  
+													  
 											<li class="nav-item">                      
 												<a class="nav-link" href="dashboard.php" >                        
 													<span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -195,22 +211,30 @@ if (!isset($_SESSION['email'])) {
 												</a>
                       
 												<div class="dropdown-menu">                        
+													<a class="dropdown-item" href="add-booking.php"> 
+														<i class="ti ti-bookmarks"></i>
+														Add New Booking                        
+													</a>   
 													<a class="dropdown-item" href="all-bookings.php"> 
 														<i class="ti ti-bookmarks"></i>
 														All Bookings                        
+													</a>
+													<a class="dropdown-item" href="upcoming-bookings.php">
+														<i class="ti ti-bookmarks"></i>
+														Upcoming Bookings                        
 													</a>                        
-													<a class="dropdown-item" href="bid-bookings.php">
-														<i class="ti ti-address-book"></i>
-														Bid Bookings                        
-													</a>                        
-													<a class="dropdown-item" href="drivers-bid.php">
+													<a class="dropdown-item" href="inprocess-bookings.php">
 														<i class="ti ti-bookmarks"></i> 
-														Bids From Drivers                        
+														Booking InProcess                        
 													</a>                        
-													<a class="dropdown-item text-pink" href="job-history.php">                         
+													<a class="dropdown-item" href="completed-booking.php">                         
 														<i class="ti ti-bookmarks"></i>                        
-														Job History                        
-													</a>                      
+														Completed Bookings                        
+													</a> 
+													<a class="dropdown-item" href="cancelled-booking.php">                         
+														<i class="ti ti-bookmarks"></i>                        
+														Cancelled Bookings                        
+													</a> 
 												</div>                    
 											</li>			                    																	
 											<li class="nav-item dropdown">                      
@@ -226,16 +250,13 @@ if (!isset($_SESSION['email'])) {
 												<div class="dropdown-menu">                        
 													<a class="dropdown-item" href="customers.php"> 
 														<i class="ti ti-users-group"></i>
-														Customers                        
+														Customers Accounts                        
 													</a>                        
 													<a class="dropdown-item" href="bookers.php">
 														<i class="ti ti-users-group"></i>
-														Bookers                        
+														Bookers Accounts                      
 													</a>
-													<a class="dropdown-item text-pink" href="#">
-														<i class="ti ti-building"></i>
-														Company Accounts                        
-													</a>                      
+													                   
 												</div>                    
 											</li>																
 
@@ -262,15 +283,15 @@ if (!isset($_SESSION['email'])) {
 														<i class="ti ti-car-off"></i>
 														Inactive Driver                        
 													</a>                        
-													<a class="dropdown-item text-pink" href="driver-tracker.php">                         
+													<a class="dropdown-item" href="driver-tracker.php">                         
 														<i class="ti ti-user-search"></i>
 														Driver Tracker                        
 													</a>													
-													<a class="dropdown-item text-pink" href="fare-corrections.php">                         
+													<a class="dropdown-item" href="fare-corrections.php">                         
 														<i class="ti ti-credit-card-refund"></i>
 														Fare Corrections                        
 													</a>						  						  
-													<a class="dropdown-item text-pink" href="#">                         
+													<a class="dropdown-item" href="#">                         
 														<i class="ti ti-receipt"></i>
 														Reviews                        
 													</a>                      

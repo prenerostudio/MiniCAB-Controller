@@ -1,18 +1,39 @@
 <?php
 // Include your database connection file
 include "config.php";
+
+// Set up error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Get the selected time interval from the Ajax request
-$selectedInterval = $_GET['timeInterval'];
+// Sanitize user input for timeInterval
+$selectedInterval = isset($_GET['timeInterval']) ? intval($_GET['timeInterval']) : 0;
 
-// Modify your SQL query to fetch data based on the selected time interval
-// For example, you can use this value in the WHERE clause of your SQL query
-// Ensure to add appropriate validation and security measures
-$bsql = mysqli_query($connect, "SELECT * FROM bookings WHERE pick_date >= NOW() AND pick_date <= NOW() + INTERVAL $selectedInterval HOUR");
+// Validate selected interval (ensure it's a positive integer or handle other validation logic)
+if ($selectedInterval <= 0) {
+    // Handle invalid input (e.g., display error message)
+    echo "<tr><td colspan='9'>Invalid time interval selected</td></tr>";
+    exit; // Stop further execution
+}
 
-// Generate HTML for the updated table rows
+// Construct SQL query to fetch bookings based on the selected time interval
+$bsql = mysqli_query($connect, "SELECT * FROM bookings WHERE book_add_date >= NOW() - INTERVAL $selectedInterval HOUR AND book_add_date <= NOW();");
+
+// Check if query was successful
+if (!$bsql) {
+    // Handle SQL error (e.g., display error message)
+    echo "<tr><td colspan='9'>Error fetching bookings</td></tr>";
+    exit; // Stop further execution
+}
+
+// Check if any bookings were found
+if (mysqli_num_rows($bsql) == 0) {
+    // Handle no bookings found (e.g., display message)
+    echo "<tr><td colspan='9'>No bookings found for the selected interval</td></tr>";
+    exit; // Stop further execution
+}
+
+// Generate HTML for the updated table rows based on fetched bookings
 while ($brow = mysqli_fetch_array($bsql)) {
     // Output table row HTML based on the fetched data
     echo "<tr>";
@@ -61,4 +82,7 @@ while ($brow = mysqli_fetch_array($bsql)) {
     // Add other columns
     echo "</tr>";
 }
+
+// Close the database connection (if necessary)
+mysqli_close($connect);
 ?>
