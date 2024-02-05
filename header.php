@@ -236,7 +236,38 @@ if (!isset($_SESSION['email'])) {
 														Cancelled Bookings                        
 													</a> 
 												</div>                    
-											</li>			                    																	
+											</li>	
+											
+											<li class="nav-item dropdown">                      
+												<a class="nav-link dropdown-toggle" href="#navbar-booking" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >                       
+													<span class="nav-link-icon d-md-none d-lg-inline-block">
+														<i class="ti ti-book"></i>                       
+													</span>                      
+													<span class="nav-link-title">                        
+														Bids Section                        
+													</span>                      
+												</a>
+                      
+												<div class="dropdown-menu">                        
+													<a class="dropdown-item" href="add-bid.php"> 
+														<i class="ti ti-bookmarks"></i>
+														Add New Bid                       
+													</a>   
+													<a class="dropdown-item" href="#"> 
+														<i class="ti ti-bookmarks"></i>
+														Requested Bookings for Bids                        
+													</a>
+													<a class="dropdown-item" href="#">
+														<i class="ti ti-bookmarks"></i>
+														Accepted Bids for Bookings                     
+													</a>                        
+													<a class="dropdown-item" href="#">
+														<i class="ti ti-bookmarks"></i> 
+														All Bids From Drivers                      
+													</a>                        
+													
+												</div>                    
+											</li>
 											<li class="nav-item dropdown">                      
 												<a class="nav-link dropdown-toggle" href="#navbar-client" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >                        
 													<span class="nav-link-icon d-md-none d-lg-inline-block">
