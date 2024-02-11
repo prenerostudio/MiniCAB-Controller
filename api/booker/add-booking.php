@@ -59,9 +59,7 @@ if ($c_id) {
 
     if ($r) {
         // Fetch the last inserted ID (book_id)
-        $book_id = mysqli_insert_id($connect);
-
-       
+        $book_id = mysqli_insert_id($connect);      
 
        
        

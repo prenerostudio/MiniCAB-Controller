@@ -2,7 +2,7 @@
 include('config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $c_id = $_POST['c_id'];
+    $user_id = $_POST['user_id'];
 
     // Directory where the images will be stored
     $targetDir = "img/users/";
@@ -38,12 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // If the file has been successfully uploaded, update the database
             $logoName = $uniqueFilename;
 
-            $sql = "UPDATE `clients` SET `c_pic`='$logoName' WHERE `c_id`='$c_id'";
+            $sql = "UPDATE `users` SET `user_pic`='$logoName' WHERE `user_id`='$user_id'";
             $result = mysqli_query($connect, $sql);
 
             if ($result) {
                 echo "The file " . htmlspecialchars($logoName) . " has been uploaded.";
-                header('Location: customers.php');
+                header('Location: profile-setting.php');
             } else {
                 echo "Sorry, there was an error updating your file.";
             }

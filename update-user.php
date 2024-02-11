@@ -16,7 +16,6 @@ $pc = $_POST['pc'];
 $date = date("Y-m-d H:i:s");
      
 $sql = "UPDATE `users` SET 
-						`user_email`='$uemail',
 						`first_name`='$fname',
 						`last_name`='$lname',
 						`user_phone`='$uphone',
@@ -24,8 +23,8 @@ $sql = "UPDATE `users` SET
 						`address`='$address',
 						`city`='$city',
 						`state`='$state',
-						`country`='$country',
-						`post_code`='$pc',
+						`country_id`='$country',
+						`pc`='$pc',
 						`nid`='$nid',
 						`reg_date`='$date' WHERE `user_id`='$user_id'";
         

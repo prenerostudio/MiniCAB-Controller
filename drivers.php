@@ -107,7 +107,7 @@ include('header.php');
 														<?php endif; ?>
 													</td>                                   							
 													<td class="sort-time">								
-														<?php echo $adrow['d_name']; ?>							
+														<strong style="text-transform: capitalize;"><?php echo $adrow['d_name']; ?>	</strong>						
 													</td>                                  							
 													<td class="sort-passenger">									
 														<?php echo $adrow['d_email']; ?>								
