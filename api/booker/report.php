@@ -24,7 +24,7 @@ if (isset($_POST['c_id'])) {
     }
 
     if (count($output) > 0) {
-        echo json_encode(array('data' => $output, 'total_pay_amount' => $total_pay_amount, 'status' => true, 'message' => "Invoice List Fetch Successfully"));
+        echo json_encode(array('data' => $output, 'grand_total' => $total_pay_amount, 'status' => true, 'message' => "Invoice List Fetch Successfully"));
     } else {
         echo json_encode(array('message' => 'No Invoice Found!', 'status' => false));
     }

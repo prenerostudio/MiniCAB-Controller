@@ -3,83 +3,58 @@ include('header.php');
 ?>  
 <div class="page-body page_padding">
 	<div class="row row-deck row-cards">			      				
-		<div class="col-12">            								
+		<div class="col-6">            								
 			<div class="card">                										
 				<div class="card-header">                    												
-					<h3 class="card-title">Add Vehicle</h3>
+					<h3 class="card-title">Add New Bid </h3>
 				</div>                  								
 				<div class="card-body border-bottom py-3">
-					<form method="post" action="dv_process.php" enctype="multipart/form-data" onsubmit="return validateForm();">	
+					<form method="post" action="bid-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">	
 						<div class="modal-body">														
-							<div class="row">								
-								<div class="mb-3 col-lg-4">
-									<input type="hidden" class="form-control" name="d_id" value="<?php echo $d_id; ?>">
-									<label class="form-label">Vehicle Type</label>
-									<select class="form-control" name="v_id">										
-										<option value="">Select Vehicle</option>
-										<?php
-										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
-										while ($vrow = mysqli_fetch_array($vsql)) {										
-										?>										
-										<option value="<?php echo $vrow['v_id'] ?>">										
-											<?php echo $vrow['v_name'] ?>										
-										</option>										
-										<?php       									
-										}        																			
-										?>    																	
-									</select>															
-								</div>																						
-								<div class="mb-3 col-lg-4">												
-									<label class="form-label">Make</label>
-									<input type="text" class="form-control" name="make">									
-								</div>							
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">Model </label>
-									<input type="text" class="form-control" name="model">						
-								</div>								
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">Color </label>
-									<input type="text" class="form-control" name="color">
-								</div>									
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">Registration Number </label>
-									<input type="text" class="form-control" name="reg_num">
-								</div>									
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">PHV Licence  </label>
-									<input type="text" class="form-control" name="phv">
-								</div>									
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">PHV Expiry </label>									
-									<input type="date" class="form-control" name="phv_exp">
-								</div>																	
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">Taxi Insurance  </label>								
-									<input type="text" class="form-control" name="taxi_ins">
-								</div>									
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">Taxi Insurance Expiry </label>
-									<input type="date" class="form-control" name="taxi_exp">								
-								</div>																	
-								<div class="mb-3 col-lg-4">          								
-									<label class="form-label">MOT Number </label>								
-									<input type="text" class="form-control" name="mot">								
-								</div>									
-								<div class="mb-3 col-lg-4">								
-									<label class="form-label">MOT Expiry </label>
-									<input type="date" class="form-control" name="mot_exp">
-								</div>
-							</div>													
+							<div class="row">   
+						<div class="col-lg-12">                						
+							<div class="mb-3">                  							
+								<label class="form-label">Booking Available for Bids</label>              				
+								<select class="form-select" name="book_id">                     								
+									<option value="" selected>Select Bookings</option>                    								    
+									<?php						
+									$bsql=mysqli_query($connect,"SELECT	bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings, clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.bid_status = 0 AND bookings.booking_status = 'Pending'");
+									while($brow = mysqli_fetch_array($bsql)){									
+									?>																											
+									<option value="<?php echo $brow['book_id'] ?>"><?php echo $brow['book_id'] ?> | <?php echo $brow['pickup'] ?> | <?php echo $brow['destination'] ?> | <?php echo $brow['pick_date'] ?> | <?php echo $brow['pick_time'] ?></option>
+									<?php
+									}									
+									?>												
+								</select> 						
+							</div>             					
+						</div>  
+					             					
+						          				
+					</div>
+						<div class="row">              					             
+						<div class="col-lg-12">               						
+							<div>                 							
+								<label class="form-label">Bid Note</label>                  							
+								<textarea class="form-control" rows="3" name="bid_note"></textarea>               						
+							</div>              					
+						</div>   					
+						 				
+					</div>  	
+							
+							
+							
 						</div>          										      										
 						<div class="modal-footer">
 							<a href="view-driver.php?d_id=''" class="btn btn-danger">
 								<i class="ti ti-circle-x"></i>														
 								Cancel
 							</a>
-							<button type="submit" class="btn btn-success ms-auto">
-								<i class="ti ti-message-plus"></i>						
-								Save Vehicle							
-							</button>
+							<button type="submit" class="btn btn-success" data-bs-dismiss="modal">
+						
+						<i class="ti ti-copy-plus"></i>
+						Add Booking for Bid 
+						
+					</button>   
 						</div> 															
 					</form>																				
 							<script>

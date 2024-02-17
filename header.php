@@ -198,15 +198,15 @@ if (!isset($_SESSION['email'])) {
 												<i class="ti ti-file-plus"></i>
 												Add New Bid	
 											</a>   											
-											<a class="dropdown-item" href="#"> 											
+											<!--<a class="dropdown-item" href="#"> 											
 												<i class="ti ti-bookmark-question"></i>
 												Requested Bookings for Bids												
-											</a>													
-											<a class="dropdown-item" href="#">											
+											</a>-->													
+											<a class="dropdown-item" href="bid-bookings.php">											
 												<i class="ti ti-file-check"></i>
 												Accepted Bids for Bookings                     					
 											</a>		
-											<a class="dropdown-item" href="#">											
+											<a class="dropdown-item" href="drivers-bid.php">											
 												<i class="ti ti-users"></i> 												
 												All Bids From Drivers
 											</a>				
@@ -333,15 +333,15 @@ if (!isset($_SESSION['email'])) {
 										</a>                      										
 										<div class="dropdown-menu">
 											<a class="dropdown-item" href="driver-reports.php">											
-												<i class="ti ti-map-pins"></i>												
+												<i class="ti ti-report"></i>												
 												Driver Reports												
 											</a>                        											
 											<a class="dropdown-item" href="customer-report.php">											
-												<i class="ti ti-plane-tilt"></i>
+												<i class="ti ti-report"></i>
 												Customer Reports												
 											</a>                        											
 											<a class="dropdown-item" href="booker-report.php">											
-												<i class="ti ti-map-2"></i>												
+												<i class="ti ti-report"></i>												
 												Booker Reports	
 											</a>											
 										</div>                    										

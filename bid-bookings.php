@@ -2,34 +2,16 @@
 include('header.php');
 ?>  
 <div class="page-header d-print-none page_padding">		   		
-	<div class="row g-2 align-items-center">        
-			<div class="col">            
-				<!-- Page pre-title -->                
-				<div class="page-pretitle">                
-					Overview                
-				</div>                
-				<h2 class="page-title">                
-					Booking For Bids Section                
-				</h2>              
-			</div>
-			<div class="col-auto ms-auto d-print-none">            
-				<div class="btn-list">                
-					<span class="d-none d-sm-inline">
-						<a href="#" class="btn">						
-							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
-							Booking History                   
-						</a>                  
-					</span>     
-					<span class="d-none d-sm-inline">
-						<a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#modal-bid">						
-							<i class="ti ti-user-search" style="margin-right: 10px;"></i>                     
-							Add Booking for Bid                  
-						</a>                  
-					</span>
-					            
-				</div>              
-			</div>
-		</div>	
+	<div class="row g-2 align-items-center">        	
+		<div class="col">            							
+			<div class="page-pretitle">                			
+				Overview                				
+			</div>                			
+			<h2 class="page-title">                			
+				Booking For Bids Section                				
+			</h2>              			
+		</div>						
+	</div>	
 </div>
 <div class="page-body page_padding">          
 
