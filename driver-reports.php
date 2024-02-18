@@ -41,14 +41,14 @@ include('header.php');
 							<select name="d_id" class="form-select" required>                      
 								<option>Select Driver </option>
 								<?php						
-								$dsql = mysqli_query($connect, "SELECT * FROM `drivers`");						
-								while ($drow = mysqli_fetch_array($dsql)) {						
-								?>        																
-								<option value="<?php echo $drow['d_id'];?>">
-									<?php echo $drow['d_name']; ?>						
-								</option>        															
-								<?php        																
-								}				        																
+									$dsql = mysqli_query($connect, "SELECT * FROM `drivers`");						
+									while ($drow = mysqli_fetch_array($dsql)) {						
+									?>        																
+									<option value="<?php echo $drow['d_id'];?>">
+										<?php echo $drow['d_name']; ?>						
+									</option>        															
+									<?php        																
+									}				        																
 								?>                   					  
 							</select>                  
 						</div>					  						
