@@ -13,7 +13,7 @@ include('header.php');
 		</div>		
 		<div class="col-auto ms-auto d-print-none">            		
 			<div class="btn-list">                			
-				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">  											
+				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">
 					<i class="ti ti-user-plus"></i>                    					
 					Add New Driver                  					
 				</a>                  				
