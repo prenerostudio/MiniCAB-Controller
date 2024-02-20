@@ -177,10 +177,7 @@ $drow = mysqli_fetch_array($dsql);
 														</select> 								
 													</div>														
 																											
-													<div class="mb-3">
-														<div class="form-label">Skype ID</div>								
-														<input type="text" class="form-control" value="<?php echo $drow['skype_acount'] ?>" name="sa">                      												
-													</div>						
+																		
 													<div class="mb-3">								
 														<div class="form-label">Remarks</div>  								
 														<textarea class="form-control" rows="3" name="dr">

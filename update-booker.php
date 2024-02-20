@@ -18,8 +18,6 @@ $fixed = $_POST['fixed'];
 $date = date("Y-m-d H:i:s");
 
 
-   
-        
 $sql = "UPDATE `bookers` SET 
 							`b_name`='$bname',
 							`b_email`='$bemail',

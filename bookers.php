@@ -13,11 +13,11 @@ include('header.php');
 		</div>		
 		<div class="col-auto ms-auto d-print-none">            		
 			<div class="btn-list">                			
-				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-booker">  											
+				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-booker">
 					<i class="ti ti-user-plus"></i>                    					
 					Add New Booker                  					
 				</a>                  				
-				<a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-booker" aria-label="Create new report">                    				
+				<a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-booker" aria-label="Create new report">
 					<i class="ti ti-bookmark-plus"></i>                  					
 				</a>                				
 			</div>              			
@@ -268,9 +268,42 @@ include('header.php');
 							<input type="text" class="form-control" name="cni">						
 						</div>             																					
 					</div>						         												
-					<div class="modal-body">									
-						<div class="row">
-							<div class="col-lg-12">               													
+					<div class="modal-body">															
+						<div class="row">												
+							<div class="mb-3 col-md-4">    
+								<label class="form-label">Commission Type</label>    
+								<select class="form-control" name="com_type" id="commission_type">        
+									<option value="" selected>Select Commission Type</option>        
+									<option value="1">Percentage</option>        
+									<option value="2">Fixed</option>    
+								</select>
+							</div>
+							<div class="mb-3 col-md-4" id="percentage_field" style="display:none;">    
+								<label class="form-label">Percentage</label>    
+								<input type="text" class="form-control" name="percent" placeholder="%">
+							</div>
+							<div class="mb-3 col-md-4" id="fixed_field" style="display:none;">    
+								<label class="form-label">Fixed</label>    
+								<input type="text" class="form-control" name="fixed" placeholder="£">
+							</div>
+							<script>    
+								document.getElementById('commission_type').addEventListener('change', function() {        
+									var selectedValue = this.value;        
+									var percentageField = document.getElementById('percentage_field');        
+									var fixedField = document.getElementById('fixed_field');        
+									if (selectedValue === '1') {            
+										percentageField.style.display = 'block';            
+										fixedField.style.display = 'none';        
+									} else if (selectedValue === '2') {            
+										percentageField.style.display = 'none';            
+										fixedField.style.display = 'block';        
+									} else {            
+										percentageField.style.display = 'none';            
+										fixedField.style.display = 'none';        
+									}    
+								});
+							</script>							
+							<div class="col-lg-12">
 								<div class="mb-3">                 															
 									<label class="form-label">Address</label>								
 									<textarea class="form-control" rows="3" name="caddress"></textarea>
@@ -289,7 +322,7 @@ include('header.php');
 					</a>           																					
 						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
-							Add Customer  											
+							Add Booker 											
 						</button>					     							
 					</div> 							
 					</form>		

@@ -29,6 +29,9 @@ $pc = $_POST['pc'];
 $cni = $_POST['cni'];
 $caddress = $_POST['caddress'];
 $cothers = $_POST['cothers'];
+$com_type = $_POST['com_type'];
+$percent = $_POST['percent'];
+$fixed = $_POST['fixed'];
 $account_type = 2;
 $date = date("Y-m-d H:i:s");
 
@@ -49,23 +52,23 @@ if ($phone_count > 0) {
 
       if ($cpic !== false) {
         // Insert image name along with other data
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `commission_type`, `percentage`, `fixed`,`account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type, $date);
+        $stmt->bind_param("ssssssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $com_type, $percent, $fixed, $account_type, $date);
     } else {
         // Insert only name without image name
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`, `reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `commission_type`, `percentage`, `fixed`,`account_type`, `reg_date`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type, $date);
+        $stmt->bind_param("sssssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $com_type, $percent, $fixed, $account_type, $date);
     }
 
     if ($stmt->execute()) {
-        header('Location: customers.php'); // Redirect on successful insertion
+        header('Location: bookers.php'); // Redirect on successful insertion
         exit();
     } else {
-        header('Location: customers.php'); // Handle the error
+        header('Location: bookers.php'); // Handle the error
     }
 
     $stmt->close();

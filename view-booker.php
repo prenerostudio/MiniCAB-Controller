@@ -161,7 +161,22 @@ $brow = mysqli_fetch_array($bsql);
 												</div> 
 												<div class="mb-3">
 													<div class="form-label">Commission Type</div>
-													<input type="text" class="form-control" value="<?php echo $brow['commission_type'] ?>" name="com_type" readonly>
+													<select class="form-control" name="com_type">
+														<?php
+															if($brow['commission_type']==1) {
+														?>															
+														<option> Percentage</option>			
+														<?php																	
+															}else{		
+														?>														
+														<option> Fixed</option>														
+														<?php			
+															}
+														?>
+														<option> Percentage</option>			
+														<option> Fixed</option>												
+													</select>
+													
 												</div> 
 												<div class="mb-3">                    						
 													<div class="form-label">% Commission</div>
@@ -242,43 +257,24 @@ $brow = mysqli_fetch_array($bsql);
 															<td class="sort-pickup">															
 																<?php echo $irow['comission_amount']; ?>															
 															</td>
-															<td class="sort-pickup">
-																
-																<?php 											
-									
-																if($irow['comission_status']=='Unpaid'){
-										
-																?>												
-									
-																<div class="col-auto status">
-										
-																	<span class="status-dot status-dot-animated bg-red d-block"></span>															
-											
-																	<span>Unpaid</span>									
-										
-																</div>
-										
-																<?php											
-								
-																} else{											
-										
-																?>
-										
-																<div class="col-auto status">
-											
-																	<span class="status-dot status-dot-animated bg-green d-block"></span>											
-											
+															<td class="sort-pickup">																
+																<?php 																				
+																if($irow['comission_status']=='Unpaid'){										
+																?>																					
+																<div class="col-auto status">										
+																	<span class="status-dot status-dot-animated bg-red d-block"></span>
+																	<span>Unpaid</span>
+																</div>										
+																<?php																			
+																} else{																					
+																?>										
+																<div class="col-auto status">											
+																	<span class="status-dot status-dot-animated bg-green d-block"></span>
 																	<span>Paid</span>											
-										
-																</div>			
-										
-																<?php
-									
-																}
-										
-																?>				
-																
-															
+																</div>												
+																<?php									
+																}										
+																?>						
 															</td>					
 															<td>																			
 																<a href="booker-invoice.php?acc_id=<?php echo $irow['acc_id']; ?>">
