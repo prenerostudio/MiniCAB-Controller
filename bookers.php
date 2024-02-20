@@ -204,14 +204,14 @@ include('header.php');
 <!-------------------------------
 ----------Add Customer-------------
 -------------------------------->
-<div class="modal modal-blur fade" id="modal-customer" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal modal-blur fade" id="modal-booker" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">    	
 		<div class="modal-content">        		
 			<div class="modal-header">            			
 				<h5 class="modal-title">Add New Booker</h5>            				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div> 			
-			<form method="post" action="customer-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
+			<form method="post" action="booker-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
 				<div class="modal-body">								
 					<div class="row">				
 						<div class="mb-3 col-md-4">              					
@@ -225,7 +225,11 @@ include('header.php');
 						<div class="mb-3 col-md-4">                  						
 							<label class="form-label">Phone</label>              					
 							<input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>
-						</div>							
+						</div>	
+						<div class="mb-3 col-md-4">              					
+							<label class="form-label">Password</label>              					
+							<input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required> 				
+						</div> 	
 						<div class="mb-3 col-md-4">              															
 							<label class="form-label">Gender</label>
 							<select class="form-select" name="cgender" required>
@@ -285,30 +289,32 @@ include('header.php');
 					</a>           																					
 						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
-							Add Booker  											
+							Add Customer  											
 						</button>					     							
 					</div> 							
-					
-					</form>										
-				<script>    
-					function validateForm() {      
-						// Perform your form validation here       
-						var cnameInput = document.getElementsByName("cname")[0].value;       
-						var cemailInput = document.getElementsByName("cemail")[0].value;       
-						var cphoneInput = document.getElementsByName("cphone")[0].value;		
-						var cgenderInput = document.getElementsByName("cgender")[0].value;		
-						var pcInput = document.getElementsByName("pc")[0].value;        
-						if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {           
-							// Display an error message or prevent the form submission          
-							alert("Please fill in all required fields.");           
-							return false;       
-						}       
-						// If validation passes, you can proceed with the form submission       
-						return true;  
-					}
-				</script>			
-				</div>      						
-		</div>    	
+					</form>		
+				
+				<script>
+    function validateForm() {
+        // Perform your form validation here
+        var cnameInput = document.getElementsByName("cname")[0].value;
+        var cemailInput = document.getElementsByName("cemail")[0].value;
+        var cphoneInput = document.getElementsByName("cphone")[0].value;
+		var cgenderInput = document.getElementsByName("cgender")[0].value;
+		var pcInput = document.getElementsByName("pc")[0].value;
+
+        if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
+				</div>      				
+		</div>    
 	</div>
 <?php
 include('footer.php');
