@@ -35,9 +35,7 @@ if ($c_id) {
 
     $sql = "INSERT INTO `bookings`(
 									`b_type_id`, 
-									`c_id`, 
-									`c_name`, 
-									`c_phone`, 
+									`c_id`, 									 
 									`pickup`, 
 									`stops`,
 									`destination`,
@@ -54,9 +52,7 @@ if ($c_id) {
 									`book_add_date`
 									) VALUES (
 									'3',
-									'$c_id',
-									'$c_name',
-									'$c_phone',
+									'$c_id',									
 									'$pickup',
 									'$stops',
 									'$dropoff',

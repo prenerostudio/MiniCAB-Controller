@@ -94,31 +94,7 @@ include('header.php');
 							<tbody class="table-tbody">												
 								<?php																		
 								$y=0;																
-								$jobsql=mysqli_query($connect,"SELECT
-	jobs.*, 
-	clients.c_name, 
-	clients.c_email, 
-	clients.c_phone, 
-	bookings.*, 
-	drivers.*, 
-	booking_type.*, 
-	vehicles.*
-FROM
-	jobs,
-	clients,
-	bookings,
-	drivers,
-	booking_type,
-	vehicles
-WHERE
-	jobs.book_id = bookings.book_id AND
-	jobs.c_id = clients.c_id AND
-	jobs.d_id = drivers.d_id AND
-	jobs.job_status = 'Pending' AND
-	bookings.b_type_id = booking_type.b_type_id AND
-	bookings.v_id = vehicles.v_id
-ORDER BY
-	jobs.job_id DESC");									
+								$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs, clients, bookings, drivers, booking_type, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY jobs.job_id DESC");									
 								while($jobrow = mysqli_fetch_array($jobsql)){
 									$y++;									
 								?>														                     								
