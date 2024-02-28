@@ -257,24 +257,43 @@ $brow = mysqli_fetch_array($bsql);
 															<td class="sort-pickup">															
 																<?php echo $irow['comission_amount']; ?>															
 															</td>
-															<td class="sort-pickup">																
-																<?php 																				
-																if($irow['comission_status']=='Unpaid'){										
-																?>																					
-																<div class="col-auto status">										
-																	<span class="status-dot status-dot-animated bg-red d-block"></span>
-																	<span>Unpaid</span>
-																</div>										
-																<?php																			
-																} else{																					
-																?>										
-																<div class="col-auto status">											
-																	<span class="status-dot status-dot-animated bg-green d-block"></span>
+															<td class="sort-pickup">
+																
+																<?php 											
+									
+																if($irow['comission_status']=='Unpaid'){
+										
+																?>												
+									
+																<div class="col-auto status">
+										
+																	<span class="status-dot status-dot-animated bg-red d-block"></span>															
+											
+																	<span>Unpaid</span>									
+										
+																</div>
+										
+																<?php											
+								
+																} else{											
+										
+																?>
+										
+																<div class="col-auto status">
+											
+																	<span class="status-dot status-dot-animated bg-green d-block"></span>											
+											
 																	<span>Paid</span>											
-																</div>												
-																<?php									
-																}										
-																?>						
+										
+																</div>			
+										
+																<?php
+									
+																}
+										
+																?>				
+																
+															
 															</td>					
 															<td>																			
 																<a href="booker-invoice.php?acc_id=<?php echo $irow['acc_id']; ?>">

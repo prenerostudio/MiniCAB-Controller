@@ -16,7 +16,7 @@ if(isset($_POST['d_phone'])){
 	$sql="SELECT * FROM `drivers` WHERE `d_phone`='$d_phone' AND `d_password`='$d_password'";
 	$r=mysqli_query($connect,$sql);
 	if($r){    
-		$output=$r->fetch_assoc();      
+		$output=$r->fetch_assoc();    
 		echo json_encode(array('data'=>$output, 'message'=>'User Logged in Successfully','status'=>true));
 	}else{    
 		echo json_encode(array('message'=>'User Does Not Exist','status'=>false));

@@ -30,52 +30,36 @@ include('header.php');
 						
 		<div class="col-12">            					
 			
-							
-			<div class="card">                							
+							<div class="card">                							
 				
-				
-								
-				<div class="card-header">                    									
+								<div class="card-header">                    									
 					
-								
-					<h3 class="card-title">New Drivers Request List</h3>
+									<h3 class="card-title">New Drivers Request List</h3>
 				
-							
-				</div>                  				
+								</div>                  				
 				
 								
-								
-				<div class="card-body border-bottom py-3">				
+								<div class="card-body border-bottom py-3">				
 					
-								
-					<div id="table-ndriver" class="table-responsive">                  					
+									<div id="table-ndriver" class="table-responsive">                  					
 						
-									
-						<table class="table">                    						
+										<table class="table">                    						
 							
-										
-							<thead>                      							
+											<thead>                      							
 								
-							
-								<tr>									
+												<tr>									
 									
-								
-									<th>									
+													<th>									
 										
+														<button class="table-sort" data-sort="sort-id">ID</button>
 									
-										<button class="table-sort" data-sort="sort-id">ID</button>
+													</th>                        									
 									
+													<th>									
 										
-									</th>                        									
+														<button class="table-sort" data-sort="sort-date">Image</button>
 									
-									
-									<th>									
-										
-									
-										<button class="table-sort" data-sort="sort-date">Image</button>
-									
-										
-									</th>                        									
+													</th>                        									
 									
 													<th>									
 										

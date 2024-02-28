@@ -76,7 +76,7 @@ if ($c_id) {
        
 		$book_id = mysqli_insert_id($connect);      
 
-       
+     //  $output=mysqli_fetch_all($book_id,MYSQLI_ASSOC);
        
            
 		$bsql = "INSERT INTO `booker_account`(`c_id`, `book_id`, `comission_amount`, `commission_date`) VALUES ('$c_id','$book_id','$commission','$date')";
@@ -85,7 +85,7 @@ if ($c_id) {
        
 
         
-		echo json_encode(array('message' => "Booking Posted Successfully", 'status' => true));
+		echo json_encode(array('message' => "Booking Posted Successfully", 'data'=>$book_id, 'status' => true));
     } else {
         echo json_encode(array('message' => "Error In Posting Booking", 'status' => false));
     }

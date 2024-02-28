@@ -230,6 +230,10 @@ if (!isset($_SESSION['email'])) {
 												<i class="ti ti-users-group"></i>
 												Bookers Accounts												
 											</a>
+											<a class="dropdown-item" href="#">
+												<i class="ti ti-users-group"></i>
+												Delete Accounts Requests
+											</a>
 										</div>                    										
 									</li>
 									<li class="nav-item dropdown">                      									

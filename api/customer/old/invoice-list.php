@@ -7,19 +7,16 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-$book_id=$_POST['book_id'];
+$c_id=$_POST['c_id'];
 
-if(isset($_POST['book_id'])){		
-	
-	 $sql="SELECT * FROM `bookings` WHERE `book_id`='$book_id'";	
+if(isset($_POST['c_id'])){		
+	$sql=" SELECT invoice.*, jobs.*, bookings.*, drivers.* FROM invoice, jobs, drivers, bookings, clients WHERE invoice.job_id = jobs.job_id AND jobs.book_id = bookings.book_id AND invoice.d_id = drivers.d_id AND jobs.c_id = clients.c_id AND invoice.c_id = '$c_id' ORDER BY invoice.invoice_id DESC";	
 	$r=mysqli_query($connect,$sql);
 	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-	
-	
 	if(count($output)>0){    				    		
-		echo json_encode(array('data'=>$output, 'status'=>true,));
+		echo json_encode(array('data'=>$output, 'status'=>true, 'message'=>"Invoice List Fetch Successfully"));
 	}else{    
-		echo json_encode(array('message'=>'User Does Not Exist','status'=>false));
+		echo json_encode(array('message'=>'No Invoice Found!','status'=>false));
 	}
 }else{    
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
