@@ -41,44 +41,26 @@ if (isset($_POST['d_id'])) {
     if (in_array(false, $uploadedFiles)) {
         echo json_encode(array('message' => "Error in uploading files", 'status' => false));
     } else {
-        $checksql = "SELECT * FROM `vehicle_documents` WHERE `d_id`='$d_id'";
-        $checkr = mysqli_query($connect, $checksql);
-        $datacheck = mysqli_fetch_all($checkr, MYSQLI_ASSOC);
-        if (count($datacheck) > 0) {
-            echo json_encode(array('message' => "Document Already Exist! Try to Update Documents", 'status' => false));
-        } else {
-            $sql = "INSERT INTO `vehicle_documents`(
-													`d_id`, 
-													`log_book`, 
-													`mot_certificate`, 
-													`pco`, 
-													`insurance`, 
-													`road_tax`, 
-													`vehicle_picture`, 
-													`rental_agreement`, 
-													`insurance_schedule`, 
-													`extra`, 
-													`date_upload`
-													) VALUES (
-													'$d_id',
-													'$uploadedFiles[log_book]',
-													'$uploadedFiles[mot_certificate]',
-													'$uploadedFiles[pco]',
-													'$uploadedFiles[insurance]',
-													'$uploadedFiles[road_tax]',
-													'$uploadedFiles[vehicle_picture]',
-													'$uploadedFiles[rental_agreement]',
-													'$uploadedFiles[insurance_schedule]',
-													'$uploadedFiles[extra]',
-													'$date')";
+       
+            $sql = "UPDATE `vehicle_documents` SET 												
+												`log_book`='$uploadedFiles[log_book]',
+												`mot_certificate`='$uploadedFiles[mot_certificate]',
+												`pco`='$uploadedFiles[pco]',
+												`insurance`='$uploadedFiles[insurance]',
+												`road_tax`='$uploadedFiles[road_tax]',
+												`vehicle_picture`='$uploadedFiles[vehicle_picture]',
+												`rental_agreement`='$uploadedFiles[rental_agreement]',
+												`insurance_schedule`='$uploadedFiles[insurance_schedule]',
+												`extra`='$uploadedFiles[extra]',
+												`date_upload`='$date' WHERE `d_id`='$d_id'";
             
             $r = mysqli_query($connect, $sql);
             if ($r) {
-                echo json_encode(array('message' => "Documents Uploaded Successfully", 'status' => true));
+                echo json_encode(array('message' => "Documents Updated Successfully", 'status' => true));
             } else {
-                echo json_encode(array('message' => "Error In Uploading Documents", 'status' => false));
+                echo json_encode(array('message' => "Error In Updating Documents", 'status' => false));
             }
-        }
+        
     }
 } else {
     echo json_encode(array('message' => "Some Fields are missing", 'status' => false));

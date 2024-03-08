@@ -16,7 +16,7 @@ if (isset($_POST['c_id'])) {
 
 	$r=mysqli_query($connect,$sql);
 	if($r){    
-		$output=$r->fetch_assoc();   
+		$output=mysqli_fetch_all($r,MYSQLI_ASSOC);	
 		echo json_encode(array('data'=>$output, 'message'=>'Addresses in Successfully','status'=>true));	
 	}else{    		
 		echo json_encode(array('message'=>"Error In Fetching Home Address",'status'=>false));			

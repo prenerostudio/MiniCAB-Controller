@@ -23,7 +23,6 @@ function uploadFile($file, $targetDirectory)
 if (isset($_POST['d_phone'])) {
     $d_email = $_POST['d_email'];
     $d_phone = $_POST['d_phone'];
-
 	$d_password = $_POST['d_password'];
     $licence_authority = $_POST['licence_authority'];
     $acount_status = 0;
