@@ -7,19 +7,7 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-function uploadFile($file, $targetDirectory)
-{
-    $fileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
-    $allowedTypes = array('jpg', 'png', 'jpeg', 'gif');
-    if (in_array($fileType, $allowedTypes)) {
-        $fileName = uniqid() . '_' . basename($file["name"]);
-        $targetFilePath = $targetDirectory . $fileName;
-        if (move_uploaded_file($file["tmp_name"], $targetFilePath)) {
-            return $fileName;
-        }
-    }
-    return false;
-}
+
 if (isset($_POST['d_phone'])) {
     $d_email = $_POST['d_email'];
     $d_phone = $_POST['d_phone'];
@@ -28,58 +16,49 @@ if (isset($_POST['d_phone'])) {
     $acount_status = 0;
     $date = date("Y-m-d h:i:s");
 
-    // Array to hold uploaded file names
-    $uploadedFiles = array(
-        'dl_front' => uploadFile($_FILES["dl_front"], "../../img/drivers/Driving-Licence/"),
-        'dl_back' => uploadFile($_FILES["dl_back"], "../../img/drivers/Driving-Licence/"),
-        'ni' => uploadFile($_FILES["ni_img"], "../../img/drivers/National-Insurance/"),
-        'bd' => uploadFile($_FILES["bd_img"], "../../img/drivers/Basic-Disclosure/"),
-        'wp' => uploadFile($_FILES["wp_img"], "../../img/drivers/Work-Proof/"),
-        'pass' => uploadFile($_FILES["pass_img"], "../../img/drivers/Passport/"),
-        'dvla' => uploadFile($_FILES["dv_img"], "../../img/drivers/DVLA/")
-    );
-
     // Check if any file uploads failed
     if (in_array(false, $uploadedFiles)) {
         echo json_encode(array('message' => "Error in uploading files", 'status' => false));
-    } else {
-        $checksql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone'";
-        $checkr = mysqli_query($connect, $checksql);
-        $datacheck = mysqli_fetch_all($checkr, MYSQLI_ASSOC);
-        if (count($datacheck) > 0) {
-            echo json_encode(array('message' => "This User Already Exists! Try to Sign in", 'status' => false));
+    } else {        
+		$checksql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone'";
+		$checkr = mysqli_query($connect, $checksql);        
+		$datacheck = mysqli_fetch_all($checkr, MYSQLI_ASSOC);
+        
+		if (count($datacheck) > 0) {
+            
+			echo json_encode(array('message' => "This User Already Exists! Try to Sign in", 'status' => false));
         } else {
-            $sql = "INSERT INTO `drivers`(
+
+			$sql = "INSERT INTO `drivers`(
                         `d_email`, 
                         `d_phone`, 
 						`d_password`,
-                        `licence_authority`, 
-                        `dl_front`, 
-                        `dl_back`, 
-                        `national_insurance`, 
-                        `basic_disclosure`, 
-                        `work_proof`, 
-                        `passport`, 
-                        `dvla`, 
+                        `licence_authority`,                        
                         `acount_status`,
                         `driver_reg_date`
                     ) VALUES (
                         '$d_email',
                         '$d_phone',
 						'$d_password',
-                        '$licence_authority',
-                        '$uploadedFiles[dl_front]',
-                        '$uploadedFiles[dl_back]',
-                        '$uploadedFiles[ni]',
-                        '$uploadedFiles[bd]',
-                        '$uploadedFiles[wp]',
-                        '$uploadedFiles[pass]',
-                        '$uploadedFiles[dvla]',
+                        '$licence_authority',                        
                         '$acount_status',
                         '$date')";
             
             $r = mysqli_query($connect, $sql);
             if ($r) {
+				
+				$d_id = 
+				$dsql = "INSERT INTO `driver_documents`(
+														`d_id`,
+														`date_upload_document`
+														) VALUES (
+														'[value-1]',
+														'[value-11]')";
+            
+            $dr = mysqli_query($connect, $dsql);
+				
+				
+				
                 echo json_encode(array('message' => "Driver Registered Successfully", 'status' => true));
             } else {
                 echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));
