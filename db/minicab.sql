@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2024 at 03:25 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Mar 13, 2024 at 01:12 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -600,19 +600,6 @@ CREATE TABLE `drivers` (
   `d_gender` varchar(55) NOT NULL,
   `d_language` varchar(55) NOT NULL,
   `licence_authority` varchar(255) NOT NULL,
-  `d_licence` varchar(55) NOT NULL,
-  `d_licence_exp` varchar(55) NOT NULL,
-  `pco_licence` varchar(55) NOT NULL,
-  `pco_exp` varchar(55) NOT NULL,
-  `skype_acount` varchar(255) NOT NULL,
-  `dl_front` varchar(255) NOT NULL,
-  `dl_back` varchar(255) NOT NULL,
-  `national_insurance` varchar(255) NOT NULL,
-  `basic_disclosure` varchar(255) NOT NULL,
-  `work_proof` varchar(255) NOT NULL,
-  `passport` varchar(255) NOT NULL,
-  `dvla` varchar(255) NOT NULL,
-  `d_remarks` varchar(255) NOT NULL,
   `latitude` varchar(55) NOT NULL,
   `longitude` varchar(55) NOT NULL,
   `status` varchar(55) NOT NULL,
@@ -624,8 +611,10 @@ CREATE TABLE `drivers` (
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `d_licence`, `d_licence_exp`, `pco_licence`, `pco_exp`, `skype_acount`, `dl_front`, `dl_back`, `national_insurance`, `basic_disclosure`, `work_proof`, `passport`, `dvla`, `d_remarks`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
-(1, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'london uk new#485 new uk', '', '../../img/drivers/1000046675.jpg', 'Male', 'English', 'London', '4858595959533', '09/09/2024', '0485858595', '09/09/2025', ' ', '', '', '', '', '', '', '', '    \n', '31.4414005', '73.0886402', 'On Ride', 1, '2024-02-25 04:19:09');
+INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
+(1, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'london uk new#485 new uk', '', '../../img/drivers/1000046675.jpg', 'Male', 'English', 'London', '31.4414005', '73.0886402', 'Reached on Dropoff', 1, '2024-03-11 05:41:20'),
+(2, '', 'prenero12@gmail.com', '+923346452312', 'asdf1234', '', '', '', '', '', 'London', '', '', '', 0, '2024-03-11 01:36:13'),
+(3, 'Azib Ali', 'eurodatatechnology@gmail.com', '+923346523621', '6266a', 'FSD', 'WJ123', '../../img/drivers/background.jpg', 'Male', 'English', 'London', '', '', '', 0, '2024-03-11 16:11:03');
 
 -- --------------------------------------------------------
 
@@ -640,6 +629,33 @@ CREATE TABLE `driver_acounts` (
   `d_com` varchar(255) NOT NULL,
   `pay_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `driver_documents`
+--
+
+CREATE TABLE `driver_documents` (
+  `dd_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_license_front` varchar(255) NOT NULL,
+  `d_license_back` varchar(255) NOT NULL,
+  `pco_license` varchar(255) NOT NULL,
+  `address_proof_1` varchar(255) NOT NULL,
+  `address_proof_2` varchar(255) NOT NULL,
+  `dvla_check_code` varchar(255) NOT NULL,
+  `national_insurance` varchar(255) NOT NULL,
+  `extra` varchar(255) NOT NULL,
+  `date_upload_document` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `driver_documents`
+--
+
+INSERT INTO `driver_documents` (`dd_id`, `d_id`, `d_license_front`, `d_license_back`, `pco_license`, `address_proof_1`, `address_proof_2`, `dvla_check_code`, `national_insurance`, `extra`, `date_upload_document`) VALUES
+(00000001, 00000003, '', '', '', '', '', '', '', '', '2024-03-11 01:37:53');
 
 -- --------------------------------------------------------
 
@@ -2092,6 +2108,13 @@ CREATE TABLE `driver_vehicle` (
   `date_v_add` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `driver_vehicle`
+--
+
+INSERT INTO `driver_vehicle` (`dv_id`, `v_id`, `d_id`, `v_make`, `v_model`, `v_color`, `v_reg_num`, `v_phv`, `v_phv_expiry`, `v_ti`, `v_ti_expiry`, `v_mot`, `v_mot_expiry`, `date_v_add`) VALUES
+(1, 1, 1, 'Honda', 'Civic', 'Black', '635', '1234567', '02-2025', '123456', '02-2025', '123456', '02-2025', '2024-03-11 16:40:43');
+
 -- --------------------------------------------------------
 
 --
@@ -2471,6 +2494,13 @@ CREATE TABLE `vehicle_documents` (
   `date_upload` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `vehicle_documents`
+--
+
+INSERT INTO `vehicle_documents` (`vd_id`, `d_id`, `log_book`, `mot_certificate`, `pco`, `insurance`, `road_tax`, `vehicle_picture`, `rental_agreement`, `insurance_schedule`, `extra`, `date_upload`) VALUES
+(00000001, 00000001, '65eab64a5f4e0_background.jpg', '65eab64a5fb14_background.jpg', '65eab64a60064_background.jpg', '65eab64a60832_background.jpg', '65eab64a60d2d_background.jpg', '65eab64a613fa_background.jpg', '65eab64a61b4d_background.jpg', '65eab64a62129_background.jpg', '65eab64a62631_background.jpg', '2024-03-08 11:55:06');
+
 -- --------------------------------------------------------
 
 --
@@ -2573,6 +2603,12 @@ ALTER TABLE `drivers`
 --
 ALTER TABLE `driver_acounts`
   ADD PRIMARY KEY (`ac_id`);
+
+--
+-- Indexes for table `driver_documents`
+--
+ALTER TABLE `driver_documents`
+  ADD PRIMARY KEY (`dd_id`);
 
 --
 -- Indexes for table `driver_location`
@@ -2768,13 +2804,19 @@ ALTER TABLE `destinations`
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
-  MODIFY `d_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `d_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `driver_acounts`
 --
 ALTER TABLE `driver_acounts`
   MODIFY `ac_id` int(55) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `driver_documents`
+--
+ALTER TABLE `driver_documents`
+  MODIFY `dd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `driver_location`
@@ -2786,7 +2828,7 @@ ALTER TABLE `driver_location`
 -- AUTO_INCREMENT for table `driver_vehicle`
 --
 ALTER TABLE `driver_vehicle`
-  MODIFY `dv_id` int(55) NOT NULL AUTO_INCREMENT;
+  MODIFY `dv_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fares`
@@ -2882,7 +2924,7 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `vehicle_documents`
 --
 ALTER TABLE `vehicle_documents`
-  MODIFY `vd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `vd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `zones`

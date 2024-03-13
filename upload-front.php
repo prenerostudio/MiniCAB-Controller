@@ -2,7 +2,7 @@
 include('config.php');
 if(isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];    
-    $targetDir = "img/drivers/Driving-Licence/";
+    $targetDir = "img/drivers/driving-license/";
     $fileExtension = strtolower(pathinfo($_FILES["dl_front"]["name"], PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
     $uniqueId = uniqid();  // Generate a unique identifier
@@ -10,7 +10,7 @@ if(isset($_POST['submit'])) {
     $targetFilePath = $targetDir . $dl_front;
     if (in_array($fileExtension, $allowTypes)) {
         if (move_uploaded_file($_FILES["dl_front"]["tmp_name"], $targetFilePath)) {           
-            $insert = $connect->query("UPDATE `drivers` SET `dl_front`='$dl_front' WHERE `d_id`='$d_id'");
+            $insert = $connect->query("UPDATE `driver_documents` SET `d_license_front`='$dl_front' WHERE `d_id`='$d_id'");
             if($insert) {
                 echo "File uploaded successfully.";
                 header('location: view-driver.php?d_id='.$d_id.'#tabs-document');
