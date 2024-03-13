@@ -292,6 +292,10 @@ if (!isset($_SESSION['email'])) {
 											</span>                      											
 										</a>                    										
 									</li>
+									
+									
+									
+									
 									<li class="nav-item dropdown">                      									
 										<a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
 											<span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -316,16 +320,7 @@ if (!isset($_SESSION['email'])) {
 											</a>
 										</div>                    										
 									</li>					
-									<li class="nav-item">                      									
-										<a class="nav-link" href="special-dates.php">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-clock"></i>												
-											</span>
-											<span class="nav-link-title">
-												Special Dates												
-											</span>                      											
-										</a>                    										
-									</li>
+								
 									<li class="nav-item dropdown">                      									
 										<a class="nav-link dropdown-toggle" href="#navbar-report" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
 											<span class="nav-link-icon d-md-none d-lg-inline-block">

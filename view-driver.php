@@ -56,6 +56,12 @@ $drow = mysqli_fetch_array($dsql);
 							</a>                      
 						</li>
 						<li class="nav-item">
+							<a href="#tabs-vdocument" class="nav-link" data-bs-toggle="tab">							
+								<i class="ti ti-car-garage"></i>                          
+								Vehicle Documents
+ 							</a>                      
+						</li>
+						<li class="nav-item">
 							<a href="#tabs-vehicle" class="nav-link" data-bs-toggle="tab">							
 								<i class="ti ti-car-garage"></i>                          
 								Driver Vehicles
@@ -65,6 +71,12 @@ $drow = mysqli_fetch_array($dsql);
 							<a href="#tabs-statement" class="nav-link" data-bs-toggle="tab">							
 								<i class="ti ti-calendar-user"></i>                          
 								Driver Account Statement
+							</a>                      
+						</li>
+						<li class="nav-item">
+							<a href="#tabs-bank" class="nav-link" data-bs-toggle="tab">							
+								<i class="ti ti-calendar-user"></i>                          
+							Bank Details
 							</a>                      
 						</li>
 					</ul>                  
@@ -272,7 +284,7 @@ $drow = mysqli_fetch_array($dsql);
 						
 									<div class="col-md-6">															
 							<h3 class="card-title">														
-								Proof of National Insurance											
+								PCO License										
 							</h3>                																				
 							<div class="row align-items-center">                													
 								<div class="col-auto">
@@ -289,7 +301,7 @@ $drow = mysqli_fetch_array($dsql);
 						</div>																												
 						<div class="col-md-6">											
 							<h3 class="card-title">							
-								Proof of Basic Disclosure						
+								Proof of Address 1						
 							</h3>                															
 							<div class="row align-items-center">                							
 								<div class="col-auto">																						
@@ -309,7 +321,7 @@ $drow = mysqli_fetch_array($dsql);
 					<div class="row mb-3">				
 						<div class="col-md-6">										
 							<h3 class="card-title">							
-								Proof of Right To Work in the UK						
+								Proof of Address 2					
 							</h3>                																					
 							<div class="row align-items-center">                														
 								<div class="col-auto">
@@ -329,7 +341,7 @@ $drow = mysqli_fetch_array($dsql);
 					
 						<div class="col-md-6">					
 							<h3 class="card-title">
-								Passport						
+								National Insurance Number						
 							</h3>                															
 							<div class="row align-items-center">                
 								<div class="col-auto">															
@@ -349,7 +361,7 @@ $drow = mysqli_fetch_array($dsql);
 					<div class="row mb-3">					
 						<div class="col-md-6">											
 							<h3 class="card-title">							
-								DVLA Check Results						
+								DVLA Check Code					
 							</h3>                															
 							<div class="row align-items-center">                							
 								<div class="col-auto">																							
@@ -364,7 +376,239 @@ $drow = mysqli_fetch_array($dsql);
 								</div>											
 							</div>  										
 						</div>															
+						<div class="col-md-6">											
+							<h3 class="card-title">							
+								Extra			
+							</h3>                															
+							<div class="row align-items-center">                							
+								<div class="col-auto">																							
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
+								</div>                    																		
+								<div class="col-auto">																				
+									<form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+										<input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																				
+								</div>											
+							</div>  										
+						</div>
 					</div>																
+				</div>
+                      </div>
+						
+						<div class="tab-pane" id="tabs-vdocument">
+							<div class="card-body">
+								<h2 class="mb-4">Driver Vehicle Document Section</h2>
+								<div class="row mb-3">
+									<div class="col-md-6">
+										<h3 class="card-title">
+											Vehicle Log Book
+										</h3>                																
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_front'];?>); background-size:contain; width: 220px; height: 160px;"></span>
+											</div>															
+											<div class="col-auto">
+												<form action="upload-front.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">    
+													<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">    
+													<input type="file" id="dl_front" name="dl_front" accept="image/*" class="form-control" required>    
+													<input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
+												</form>											
+											</div>							
+											<script>    
+												function validateForm() {        
+													var fileInput = document.getElementById('dl_front');        
+													if (fileInput.files.length === 0) {            
+														alert("Please select an image before submitting.");            
+														return false;        
+													}        
+													return true;    
+												}
+											</script>										
+										</div>										
+									</div>																				
+									<div class="col-md-6">										
+    <h3 class="card-title">						
+        Vehicle MOT Certificate					
+    </h3>                																					
+    <div class="row align-items-center">                														
+        <div class="col-auto">
+            <span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_back'];?>); background-size:contain; width: 220px; height: 160px;"></span>													
+        </div>                    											
+        <div class="col-auto">									
+            <form action="upload-back.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dl_back')">
+                <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+                <input type="file" id="dl_back" name="dl_back" accept="image/*" class="form-control" required>
+                <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
+            </form>																										
+        </div>													
+    </div>  																
+</div>
+
+<script>
+    function validateForm(inputId) {
+        var fileInput = document.getElementById(inputId);
+        if (fileInput.files.length === 0) {
+            alert("Please select an image before submitting.");
+            return false;
+        }
+        return true;
+    }
+</script>
+										
+								</div>																								
+								<div class="row mb-3">														
+						
+									<div class="col-md-6">															
+							<h3 class="card-title">														
+								Vehicle PCO										
+							</h3>                																				
+							<div class="row align-items-center">                													
+								<div class="col-auto">
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/National-Insurance/<?php echo $drow['national_insurance'];?>); background-size:contain; width: 220px; height: 160px;"></span>
+								</div>                    																									
+								<div class="col-auto">																												
+									<form action="upload-ni.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('ni')">
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+										<input type="file" id="ni" name="ni" accept="image/*"  class="form-control" required>
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																			
+								</div>								
+							</div>  										
+						</div>																												
+						<div class="col-md-6">											
+							<h3 class="card-title">							
+								Vehicle Insurance					
+							</h3>                															
+							<div class="row align-items-center">                							
+								<div class="col-auto">																						
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Basic-Disclosure/<?php echo $drow['basic_disclosure'];?>); background-size:contain; width: 220px; height: 160px;"></span>													
+								</div>                    																		
+								<div class="col-auto">																				
+									<form action="upload-bd.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('bd')">									
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
+										<input type="file" id="bd" name="bd" accept="image/*"  class="form-control" required>										
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																		
+								</div>							
+							</div>  										
+						</div>										
+					</div>
+																		
+					<div class="row mb-3">				
+						<div class="col-md-6">										
+							<h3 class="card-title">							
+								Vehicle Road TAX				
+							</h3>                																					
+							<div class="row align-items-center">                														
+								<div class="col-auto">
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Work-Proof/<?php echo $drow['work_proof'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
+								</div>                    																										
+								<div class="col-auto">																				
+									<form action="upload-wp.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('wp')">									
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
+										<input type="file" id="wp" name="wp" accept="image/*"  class="form-control" required>										
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																			
+								</div>											
+							</div>  										
+						</div>
+					
+					
+					
+						<div class="col-md-6">					
+							<h3 class="card-title">
+								Vehicle Picture (Front) 					
+							</h3>                															
+							<div class="row align-items-center">                
+								<div class="col-auto">															
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/Passport/<?php echo $drow['passport'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
+								</div>                    																		
+								<div class="col-auto">																				
+									<form action="upload-passport.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('pass')">
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+										<input type="file" id="pass" name="pass" accept="image/*"  class="form-control" required>
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																		
+								</div>													              															
+							</div>  										
+						</div>					
+					</div>					
+																			
+					<div class="row mb-3">					
+						<div class="col-md-6">											
+							<h3 class="card-title">							
+								Vehicle Picture (Back)			
+							</h3>                															
+							<div class="row align-items-center">                							
+								<div class="col-auto">																							
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
+								</div>                    																		
+								<div class="col-auto">																				
+									<form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+										<input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																				
+								</div>											
+							</div>  										
+						</div>															
+						<div class="col-md-6">											
+							<h3 class="card-title">							
+								Vehicle Rental Agreement		
+							</h3>                															
+							<div class="row align-items-center">                							
+								<div class="col-auto">																							
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
+								</div>                    																		
+								<div class="col-auto">																				
+									<form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+										<input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																				
+								</div>											
+							</div>  										
+						</div>
+					</div>																
+								
+								<div class="row mb-3">					
+						<div class="col-md-6">											
+							<h3 class="card-title">							
+								Insurance Schedule		
+							</h3>                															
+							<div class="row align-items-center">                							
+								<div class="col-auto">																							
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
+								</div>                    																		
+								<div class="col-auto">																				
+									<form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+										<input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																				
+								</div>											
+							</div>  										
+						</div>															
+						<div class="col-md-6">											
+							<h3 class="card-title">							
+								Extra	
+							</h3>                															
+							<div class="row align-items-center">                							
+								<div class="col-auto">																							
+									<span class="avatar avatar-xl" style="background-image: url(img/drivers/DVLA/<?php echo $drow['dvla'];?>); background-size:contain; width: 220px; height: 160px;"></span>																				
+								</div>                    																		
+								<div class="col-auto">																				
+									<form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">
+										<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+										<input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
+										<input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+									</form>																				
+								</div>											
+							</div>  										
+						</div>
+					</div>
 				</div>
                       </div>
 						
@@ -522,6 +766,110 @@ $drow = mysqli_fetch_array($dsql);
 																	<button class="btn btn-info">
 																		<i class="ti ti-eye"></i>
 																		View Invoice
+																	</button>
+																</a>
+															</td>
+														</tr>                          						
+														<?php endwhile; ?>                         							
+														<?php if ($x === 0) : ?>
+														<tr>                                   							
+															<td colspan="8">							
+																<p align="center">No Invoice Found!</td>
+															</td>
+													</tr>												
+													<?php endif; ?>       				
+													</tbody>                   					
+										
+												</table>               							
+									
+											</div>           						
+								
+										</div>       							
+							
+									</div>
+
+
+										
+								
+								</div>																								
+								
+								
+																		
+										
+																			
+																					
+			
+							</div>
+                      
+						</div>
+				
+				<div class="tab-pane" id="tabs-bank">
+							<div class="card-body">
+								<h2 class="mb-4">Bank Details</h2>
+								
+								<button class="btn btn-info">Add Bank Account</button>
+								
+								
+								<div class="row mb-3">
+									<div class="card">            							
+										<div class="card-header">
+										</div>            							
+										<div class="card-body border-bottom py-3">                								
+											<div id="table-adriver" class="table-responsive">
+												<table class="table">                        									
+													<thead>                            										
+														<tr>                                												
+															<th>														
+																<button class="table-sort" data-sort="sort-id">ID</button>
+															</th>
+															<th>													
+																<button class="table-sort" data-sort="sort-date">Bank Name</button>
+															</th>
+															<th>													
+																<button class="table-sort" data-sort="sort-time">Account Number</button>
+															</th>
+															<th>													
+																<button class="table-sort" data-sort="sort-passenger">Sort Code</button>
+															</th> 													
+																										
+															<th>														
+																<button class="table-sort">Actions</button>
+															</th>                            												
+														</tr>                       											
+													</thead>
+													<tbody class="table-tbody">
+														<?php											
+														$x = 0;
+														$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id AND invoice.d_id = $d_id");
+														while ($irow = mysqli_fetch_array($isql)) :											
+														$x++;
+														?>
+														<tr>
+															<td class="sort-id">
+																<?php echo $x; ?>												
+															</td>									
+															<td class="sort-time">
+																<?php echo $irow['invoice_date']; ?>
+															</td>                                  							
+															<td class="sort-passenger">
+																Booking ID: <?php echo $irow['book_id']; ?> <br>
+																<?php echo $irow['pickup']; ?> - <?php echo $irow['destination']; ?>
+															</td>
+															<td class="sort-pickup">
+																<?php echo $irow['total_pay']; ?>
+															</td> 
+																													
+															<td>				
+																<a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
+																	<button class="btn btn-info">
+																		<i class="ti ti-eye"></i>
+																		Edit 
+																	</button>
+																</a>
+																<a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
+																	<button class="btn btn-danger">
+																		<i class="ti ti-eye"></i>
+																		Delete 
 																	</button>
 																</a>
 															</td>

@@ -79,7 +79,19 @@ include('header.php');
 							<i class="ti ti-route-alt-left" style="font-size: 28px;"></i>
 							Meet & Greet Charges					
 						</a>                     					
-					</li>  
+					</li> 
+					<li class="nav-item">                       					
+						<a href="#tabs-dates" class="nav-link" data-bs-toggle="tab">							                         						
+							<i class="ti ti-route-alt-left" style="font-size: 28px;"></i>
+							Special Dates					
+						</a>                     					
+					</li> 
+					<li class="nav-item">                       					
+						<a href="#tabs-peak" class="nav-link" data-bs-toggle="tab">							                         						
+							<i class="ti ti-route-alt-left" style="font-size: 28px;"></i>
+							Peak Hours					
+						</a>                     					
+					</li> 
 				</ul>                			
 			</div>                 			
 			<div class="card-body">                  			
@@ -726,7 +738,283 @@ include('header.php');
 					
 					</div>
 					
+				
+				<div class="tab-pane" id="tabs-dates">                    						
+<div class="page-header d-print-none page_padding">		   		
+	<div class="row g-2 align-items-center">        			
+		<div class="col">            												
+			<div class="page-pretitle">                									
+				Overview                							
+			</div>                												
+			<h2 class="page-title">                									
+				Special Date / Holidays             										
+			</h2>              							
+		</div>	
+		<div class="col-auto ms-auto d-print-none">            
+				<div class="btn-list">                					    
+					<span class="d-none d-sm-inline">
+						<a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#modal-date">	
+							<i class="ti ti-clock-plus"></i>                     
+							Add Date                 
+						</a>                  
+					</span>
+				</div>              
+			</div>
+	</div>	
+</div>
+<div class="page-body page_padding">          			
+	<div class="row row-deck row-cards">						
+		<div class="col-md-12">        		
+			<div class="card">         							
+				<div class="card-body">				
+					<h2 class="mb-4">Special Date / Holidays </h2>					
+					<div class="row mb-3">					
+						<div class="card">						
+							<div class="card-body border-bottom py-3">
+								<div id="table-adriver" class="table-responsive">								
+									<table class="table">
+										<thead>                            						
+											<tr>											
+												<th>												
+													<button class="table-sort" data-sort="sort-id">ID</button>
+												</th>												
+												<th>												
+													<button class="table-sort" data-sort="sort-date">Date</button>
+												</th>												
+												<th>												
+													<button class="table-sort" data-sort="sort-time">Event / Holiday</button>
+												</th>												
+												<th>												
+													<button class="table-sort" data-sort="sort-passenger">Price Increment %</button>													
+												</th>
+												<th>												
+													<button class="table-sort">Actions</button>
+												</th>													
+											</tr>
+										</thead>										
+										<tbody class="table-tbody">										
+											<?php
+											$x = 0;											
+											$dsql = mysqli_query($connect, "SELECT * FROM `special_dates`");
+											while ($drow = mysqli_fetch_array($dsql)) :			
+											$x++;														
+											?>														
+											<tr>														
+												<td class="sort-id">	
+													<?php echo $x; ?>
+												</td>															
+												<td class="sort-time">
+													<?php echo $drow['special_date']; ?>
+												</td>															
+												<td class="sort-passenger">
+													<?php echo $drow['event_name']; ?> 
+												</td>															
+												<td class="sort-pickup">								
+													<?php echo $drow['percent_increment']; ?>					
+												</td> 												
+												<td>
+													<a href="#">
+														<button class="btn btn-info">
+															<i class="ti ti-pencil"></i>
+															Edit
+														</button>															
+													</a>	
+													<a href="del-date.php?dt_id=<?php echo $drow['dt_id']; ?>">
+														<button class="btn btn-danger">
+															<i class="ti ti-basket-cancel"></i>
+															Delete
+														</button>															
+													</a>														
+												</td>													
+											</tr>
+											<?php endwhile; ?>
+											<?php if ($x === 0) : ?>				
+											<tr>					
+												<td colspan="8">
+													<p align="center">No Special Date Found!</p>
+												</td>													
+											</tr>													
+											<?php endif; ?>													
+										</tbody>	
+									</table>
+								</div>
+							</div>       										
+						</div>			
+					</div>			
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+<div class="modal modal-blur fade" id="modal-date" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">    	
+		<div class="modal-content">        		
+			<div class="modal-header">            			
+				<h5 class="modal-title">Add New Date</h5>            				
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
+			</div> 
+			<form method="post" action="date-process.php" onsubmit="return validateForm();">			
+				<div class="modal-body">								
+				
+									
+					<div class="row">   
+						<div class="col-lg-12">                						
+							<div class="mb-3">                  							
+								<label class="form-label">Select Date:</label>              				
+								<input type="date" name="mdate" class="form-control" required>					
+							</div>             					
+						</div>  
+						<div class="col-lg-12">                						
+							<div class="mb-3">                  							
+								<label class="form-label">Event Name:</label>              				
+								<input type="text" name="ename" class="form-control" required>					
+							</div>             					
+						</div> 
+						
+						<div class="col-lg-12">                						
+							<div class="mb-3">                  							
+								<label class="form-label">Price Increment %:</label>              				
+								<input type="number" name="inc" class="form-control" required>					
+							</div>             					
+						</div> 
+					             					
+						          				
+					</div>
+							          				          
+				</div>          			
+				       			
+				<div class="modal-footer">           
+					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">             					
+						Cancel           				
+					</a>           				
+					<button type="submit" class="btn btn-success">
+						
+						<i class="ti ti-clock-plus"></i>
+						Add Date 
+						
+					</button>       			
+				</div> 								
+			</form>	
+			<script>
+    function validateForm() {
+        // Perform your form validation here
+        var dateInput = document.getElementsByName("date")[0].value;
+        var eventNameInput = document.getElementsByName("ename")[0].value;
+        var priceIncrementInput = document.getElementsByName("inc")[0].value;
+
+        if (dateInput === "" || eventNameInput === "" || priceIncrementInput === "") {
+            // Display an error message or prevent the form submission
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        // If validation passes, you can proceed with the form submission
+        return true;
+    }
+</script>
+		</div>      	
+	</div>    
+</div>
+                      
 					
+					</div>
+					
+				
+				<div class="tab-pane" id="tabs-peak">                    						
+						<div class="card-body">            																	
+							<h2 class="mb-4">
+								Special Date
+							</h2>    														
+							<p align="justify">
+								When picking up a <strong>MiniCAB</strong> customer at the airport, we expect that the driver is available to meet & greet the customer as they arrive and direct them to the car. The price that you appear for on the site should therefore include any meet and greet charges you may have. Using the below tool you can add any fees you may have and these will automatically be added on top of any price you appear for on the minicaboffice.com website regardless of whether this has been calculated via by mileage, location or postcode area pricing.<br><br>
+								This flat fee will apply for your selected location as well as 0.2 miles around the location to ensure that the charge still applies for nearby locations also.<br><br>
+								If you charge a meet and greet charge for a location that you can’t find below, please request this via email to admin@minicaboffice.com.<br><br>
+								Please add reasonable pickup charges for these airports, as relevant. Any requests to add reasonable pickup charges for other venues can be sent to admin@minicaboffice.com, for the MiniCAB  team to consider.</p>					
+							<div class="row">												
+								<table class="table">						
+									<tbody>						
+										<tr>							
+											<td>Pickup Locations</td>							
+											<td>Pickup Charges</td>							  
+											<td></td>							
+										</tr>										
+										<form action="mg_process.php" method="post">																
+											<tr>				
+												<td style="width: 50%;">
+													<input type="text" name="pickup" class="form-control" required />
+												</td>					
+												<td>												
+													<div class="input-group mb-3"> 
+														<div class="input-group-prepend"> 		
+															<span class="input-group-text">
+																£
+															</span>  		
+														</div> 		
+														<input type="text" name="price" class="form-control" aria-label="Amount (to the nearest pound)" required />
+																									
+													</div>											
+												</td>							  											
+												<td>												
+													<button type="submit" class="btn btn-success" style="width: 100%;">
+														<i class="ti ti-plus"></i>
+														Add
+													</button>											
+												</td>																	
+											</tr>																					
+										</form>						 									
+									</tbody>														
+								</table>							
+							</div>
+							
+							<div class="row">												
+								<table class="table table-responsive">						
+									<tbody>						
+										<tr>	
+											<td>ID</td>
+											<td>Pickup Locations</td>							
+											<td>Pickup Charges</td>							  
+											<td></td>							
+										</tr>																						
+										<?php																				
+										$n=0;																				
+										$mgsql=mysqli_query($connect,"SELECT * FROM `mg_charges`");													
+										while($mgrow = mysqli_fetch_array($mgsql)){										
+											$n++;										
+										?>																											
+										<tr>	
+											<td style="width: 4%;">											
+												<?php echo $n; ?>											
+											</td>
+											<td style="width: 50%;">											
+												<?php echo $mgrow['pickup_location'] ?>											
+											</td>											
+											<td>													
+												<?php echo $mgrow['pickup_charges'] ?>											
+											</td>												
+											<td>													
+												<a href="del-mg.php?mg_id=<?php echo $mgrow['mg_id'];?>">														
+													<button class="btn btn-danger">Delete</button>													
+												</a>												
+											</td>											
+										</tr>																					
+										<?php										
+										}											
+										?>				
+									</tbody>														
+								</table>							
+							</div>
+																			
+																			
+				
+						</div>   
+						
+						
+						
+                      
+					
+					</div>
 					
 			
 				</div>                
