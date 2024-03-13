@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 $d_id = $_GET['d_id'];
-$dsql=mysqli_query($connect,"SELECT drivers.* FROM drivers WHERE drivers.d_id ='$d_id'");
+$dsql=mysqli_query($connect,"SELECT drivers.*, driver_documents.* FROM drivers INNER JOIN driver_documents ON drivers.d_id = driver_documents.d_id WHERE  drivers.d_id ='$d_id'");
 $drow = mysqli_fetch_array($dsql);		
 ?>
 <div class="page-header d-print-none page_padding">		   		
@@ -219,73 +219,103 @@ $drow = mysqli_fetch_array($dsql);
 								</div>                                                    
 							</div>                      						
 						</div>                      																		
-						<div class="tab-pane" id="tabs-document">
-							<div class="card-body">
-								<h2 class="mb-4">Driver Document Section</h2>
-								<div class="row mb-3">
-									<div class="col-md-6">
-										<h3 class="card-title">
+						
+						<div class="tab-pane" id="tabs-document">						
+							<div class="card-body">							
+								<h2 class="mb-4">Driver Document Section</h2>								
+								<div class="row mb-3">								
+									<div class="col-md-6">									
+										<h3 class="card-title">										
 											Driver Licence Photo Card (Front)
-										</h3>                																
-										<div class="row align-items-center">
-											<div class="col-auto">
-												<span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_front'];?>); background-size:contain; width: 220px; height: 160px;"></span>
+										</h3>
+										<div class="row align-items-center">										
+											<div class="col-auto">											
+												<span class="avatar avatar-xl" style="background-image: url(img/drivers/driving-license/<?php echo $drow['d_license_front'];?>); background-size:contain; width: 220px; height: 160px;"></span>
 											</div>															
-											<div class="col-auto">
-												<form action="upload-front.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">    
-													<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">    
-													<input type="file" id="dl_front" name="dl_front" accept="image/*" class="form-control" required>    
-													<input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
-												</form>											
+											<div class="col-auto">											
+												<form action="upload-front.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">    												
+													<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
+													<input type="file" id="dl_front" name="dl_front" accept="image/*" class="form-control" required>
+													<input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">												
+												</form>																						
 											</div>							
-											<script>    
-												function validateForm() {        
-													var fileInput = document.getElementById('dl_front');        
-													if (fileInput.files.length === 0) {            
-														alert("Please select an image before submitting.");            
+											<script>    											
+												function validateForm() {        												
+													var fileInput = document.getElementById('dl_front');
+													if (fileInput.files.length === 0) {            													
+														alert("Please select an image before submitting.");
 														return false;        
-													}        
+													}
 													return true;    
-												}
-											</script>										
-										</div>										
+												}												
+											</script>																				
+										</div>																			
 									</div>																				
-									<div class="col-md-6">										
-    <h3 class="card-title">						
-        Driver Licence Photo Card (Back)					
-    </h3>                																					
-    <div class="row align-items-center">                														
-        <div class="col-auto">
-            <span class="avatar avatar-xl" style="background-image: url(img/drivers/Driving-Licence/<?php echo $drow['dl_back'];?>); background-size:contain; width: 220px; height: 160px;"></span>													
-        </div>                    											
-        <div class="col-auto">									
-            <form action="upload-back.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dl_back')">
-                <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
-                <input type="file" id="dl_back" name="dl_back" accept="image/*" class="form-control" required>
-                <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
-            </form>																										
-        </div>													
-    </div>  																
-</div>
+									
+									<div class="col-md-6">										   
+										<h3 class="card-title">						      
+											Driver Licence Photo Card (Back)					   
+										</h3>                																					    
+										<div class="row align-items-center">   
+											<div class="col-auto">
+            
+												<span class="avatar avatar-xl" style="background-image: url(img/drivers/driving-license/<?php echo $drow['d_license_back'];?>); background-size:contain; width: 220px; height: 160px;"></span>													
+        
+											</div>                    											
+        
+											<div class="col-auto">									
+            
+												<form action="upload-back.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dl_back')">
+                
+													<input type="hidden" name="d_id" value="<?php echo $d_id; ?>">										
+                
+													<input type="file" id="dl_back" name="dl_back" accept="image/*" class="form-control" required>
+                
+													<input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
+            
+												</form>																										
+        
+											</div>													
+    
+										</div>  																
 
-<script>
-    function validateForm(inputId) {
-        var fileInput = document.getElementById(inputId);
-        if (fileInput.files.length === 0) {
-            alert("Please select an image before submitting.");
-            return false;
-        }
-        return true;
-    }
-</script>
+									</div>
+
+
+									<script>
+    
+										function validateForm(inputId) {
+        
+											var fileInput = document.getElementById(inputId);
+        
+											if (fileInput.files.length === 0) {
+            
+												alert("Please select an image before submitting.");
+            
+												return false;
+        
+											}
+        
+											return true;
+    
+										}
+
+									</script>
 										
+
 								</div>																								
+
+								
 								<div class="row mb-3">														
 						
+								
 									<div class="col-md-6">															
-							<h3 class="card-title">														
-								PCO License										
-							</h3>                																				
+							
+										<h3 class="card-title">														
+								
+											PCO License										
+							
+										</h3>                																				
 							<div class="row align-items-center">                													
 								<div class="col-auto">
 									<span class="avatar avatar-xl" style="background-image: url(img/drivers/National-Insurance/<?php echo $drow['national_insurance'];?>); background-size:contain; width: 220px; height: 160px;"></span>
