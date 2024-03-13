@@ -21,7 +21,7 @@ if (isset($_POST['c_id'])) {
 										) VALUES (
 										'$c_id',
 										'$message',
-										'[value-4]')";								
+										'$date')";								
 
 	$r=mysqli_query($connect,$sql);		
 	if($r){    			

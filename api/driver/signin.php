@@ -7,25 +7,28 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-$d_phone = $_POST['d_phone'];
-$d_password=$_POST['d_password'];
 
+$d_phone = $_POST['d_phone'] ?? null;
+$d_password = $_POST['d_password'] ?? null;
 
-if(isset($_POST['d_phone'])){	
-	//$final_pass= md5($user_password);
-	$sql="SELECT * FROM `drivers` WHERE `d_phone`='$d_phone' AND `d_password`='$d_password'";
-	$r=mysqli_query($connect,$sql);
-	if($r){    
-		$output=$r->fetch_assoc();    
-		echo json_encode(array('data'=>$output, 'message'=>'User Logged in Successfully','status'=>true));
-	}else{    
-		echo json_encode(array('message'=>'User Does Not Exist','status'=>false));
-	}
-}else{
-    
-	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
-
+if(isset($d_phone, $d_password)) {    
+    $sql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone'";
+    $r = mysqli_query($connect, $sql);   
+    if($r) {       
+        if(mysqli_num_rows($r) > 0) {           
+            $row = mysqli_fetch_assoc($r);           
+            if($row['d_password'] === $d_password) {               
+                echo json_encode(array('data'=>$row, 'message'=>'User Logged in Successfully','status'=>true));
+            } else {                
+                echo json_encode(array('message'=>'Incorrect password','status'=>false));
+            }
+        } else {            
+            echo json_encode(array('message'=>'User does not exist','status'=>false));
+        }
+    } else {        
+        echo json_encode(array('message'=>'Query failed','status'=>false));
+    }
+} else {    
+    echo json_encode(array('message'=>"Some fields are missing",'status'=>false));
 }
-
-
 ?>
