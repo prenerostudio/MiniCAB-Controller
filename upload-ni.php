@@ -1,16 +1,16 @@
 <?php
 include('config.php');
 if(isset($_POST['submit'])) {
-    $d_id = $_POST['d_id'];		
-    $targetDir = "img/drivers/National-Insurance/";
+    $d_id = $_POST['d_id'];  	
+    $targetDir = "img/drivers/ni/";
     $fileExtension = strtolower(pathinfo($_FILES["ni"]["name"], PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
     $uniqueId = uniqid();  // Generate a unique identifier
     $ni = $uniqueId . "." . $fileExtension;  // Append the unique identifier to the file name
     $targetFilePath = $targetDir . $ni;
-    if (in_array($fileExtension, $allowTypes)) {								
+    if (in_array($fileExtension, $allowTypes)) {														
         if (move_uploaded_file($_FILES["ni"]["tmp_name"], $targetFilePath)) {            
-            $insert = $connect->query("UPDATE `drivers` SET  `national_insurance`='$ni'  WHERE `d_id`='$d_id'");
+            $insert = $connect->query("UPDATE `driver_documents` SET `national_insurance`='$ni' WHERE `d_id`='$d_id'");
             if($insert) {
                 echo "File uploaded successfully.";
                 header('location: view-driver.php?d_id='.$d_id.'#tabs-document');

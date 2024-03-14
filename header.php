@@ -137,17 +137,7 @@ if (!isset($_SESSION['email'])) {
 												Dashboard												
 											</span>
 										</a>                    										
-									</li>						                   									
-									<li class="nav-item">                      									
-										<a class="nav-link" href="company.php">										
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-building-bank"></i>
-											</span>                        											
-											<span class="nav-link-title">
-												Company                        												
-											</span>                      											
-										</a>                    										
-									</li>									
+									</li>																		
 									<li class="nav-item dropdown">                      									
 										<a class="nav-link dropdown-toggle" href="#navbar-booking" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
 											<span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -292,10 +282,6 @@ if (!isset($_SESSION['email'])) {
 											</span>                      											
 										</a>                    										
 									</li>
-									
-									
-									
-									
 									<li class="nav-item dropdown">                      									
 										<a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
 											<span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -318,9 +304,12 @@ if (!isset($_SESSION['email'])) {
 												<i class="ti ti-map-2"></i>												
 												Destinations												
 											</a>
+											<a class="dropdown-item" href="railway_stations.php">
+												<i class="ti ti-train"></i>												
+												Railway Stations												
+											</a>
 										</div>                    										
 									</li>					
-								
 									<li class="nav-item dropdown">                      									
 										<a class="nav-link dropdown-toggle" href="#navbar-report" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
 											<span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -345,6 +334,16 @@ if (!isset($_SESSION['email'])) {
 											</a>											
 										</div>                    										
 									</li>	
+									<li class="nav-item">                      									
+										<a class="nav-link" href="company.php">										
+											<span class="nav-link-icon d-md-none d-lg-inline-block">
+												<i class="ti ti-building-bank"></i>
+											</span>                        											
+											<span class="nav-link-title">
+												Company Profile                   												
+											</span>                      											
+										</a>                    										
+									</li>
 								</ul>                								
 							</div>						
 						</div>      									
