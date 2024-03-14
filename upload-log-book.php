@@ -5,8 +5,8 @@ if(isset($_POST['submit'])) {
     $targetDir = "img/drivers/vehicle/log-book/";
     $fileExtension = strtolower(pathinfo($_FILES["log_book"]["name"], PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-    $uniqueId = uniqid();  // Generate a unique identifier
-    $log_book = $uniqueId . "." . $fileExtension;  // Append the unique identifier to the file name
+    $uniqueId = uniqid();  
+    $log_book = $uniqueId . "." . $fileExtension;
     $targetFilePath = $targetDir . $log_book;
     if (in_array($fileExtension, $allowTypes)) {
         if (move_uploaded_file($_FILES["log_book"]["tmp_name"], $targetFilePath)) {           

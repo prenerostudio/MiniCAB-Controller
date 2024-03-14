@@ -5,8 +5,8 @@ if(isset($_POST['submit'])) {
     $targetDir = "img/drivers/ni/";
     $fileExtension = strtolower(pathinfo($_FILES["ni"]["name"], PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-    $uniqueId = uniqid();  // Generate a unique identifier
-    $ni = $uniqueId . "." . $fileExtension;  // Append the unique identifier to the file name
+    $uniqueId = uniqid();  
+    $ni = $uniqueId . "." . $fileExtension;  
     $targetFilePath = $targetDir . $ni;
     if (in_array($fileExtension, $allowTypes)) {														
         if (move_uploaded_file($_FILES["ni"]["tmp_name"], $targetFilePath)) {            

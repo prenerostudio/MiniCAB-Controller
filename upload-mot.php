@@ -5,8 +5,8 @@ if(isset($_POST['submit'])) {
     $targetDir = "img/drivers/vehicle/mot-certificate/";
     $fileExtension = strtolower(pathinfo($_FILES["mot"]["name"], PATHINFO_EXTENSION));
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-    $uniqueId = uniqid();  // Generate a unique identifier
-    $mot = $uniqueId . "." . $fileExtension;  // Append the unique identifier to the file name
+    $uniqueId = uniqid();  
+    $mot = $uniqueId . "." . $fileExtension; 
     $targetFilePath = $targetDir . $mot;
     if (in_array($fileExtension, $allowTypes)) {
         if (move_uploaded_file($_FILES["mot"]["tmp_name"], $targetFilePath)) {           
