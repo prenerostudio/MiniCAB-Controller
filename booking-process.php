@@ -77,37 +77,6 @@ $date = date("Y-m-d H:i:s");
 
 
 
-echo $b_type_id.'<br>';
-echo $c_id .'<br>';
-echo $pickup.'<br>';
-echo $dropoff.'<br>';
-echo $address.'<br>';
-echo $postal_code.'<br>';
-echo $passenger.'<br>';
-echo $pick_date .'<br>';
-echo $pick_time .'<br>';
-echo $journey_type.'<br>';
-echo $v_id .'<br>';
-echo $luggage.'<br>';
-echo $child_seat.'<br>';
-echo $flight_number.'<br>';
-echo $delay_time.'<br>';
-echo $note .'<br>';
-echo $journey_fare.'<br>';
-echo $journey_distance.'<br>';
-echo $booking_fee.'<br>';
-echo $car_parking .'<br>';
-echo $waiting.'<br>';
-echo $tolls.'<br>';
-echo $extra .'<br>';
-echo $booking_status.'<br>';
-echo $date .'<br>';
-
-echo  implode(',', $stops);
-
-//die;
-
-
 $sql = "INSERT INTO `bookings`(
 								`b_type_id`,
 								`c_id`, 
