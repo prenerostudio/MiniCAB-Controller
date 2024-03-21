@@ -25,6 +25,7 @@ $journey_distance = isset($_POST['journey_distance']) ? $_POST['journey_distance
 $note = isset($_POST['note']) ? $_POST['note'] : null;
 $booking_status = 'Pending';
 $commission = $_POST['commission'];
+$payment_type = $_POST['payment_type'];
 $date = date("Y-m-d H:i:s");
 
 if ($c_id) {
@@ -49,6 +50,7 @@ if ($c_id) {
 									`journey_fare`,
 									`journey_distance`,
 									`booking_status`,
+									`payment_type`,
 									`book_add_date`
 									) VALUES (
 									'3',
@@ -66,6 +68,7 @@ if ($c_id) {
 									'$journey_fare',
 									'$journey_distance',
 									'$booking_status',
+									'$payment_type',
 									'$date')";
 
     
