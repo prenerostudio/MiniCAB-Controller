@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2024 at 04:54 PM
+-- Generation Time: Mar 16, 2024 at 10:04 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,6 +51,28 @@ INSERT INTO `airports` (`ap_id`, `ap_name`, `ap_address`, `ap_city`, `ap_code`, 
 (8, 'Southend Airport', 'Eastwoodbury Cres, Southend-on-Sea SS2 6YF', 'United Kingdom', 'SEN', '2023-10-28'),
 (9, 'London City Airport', 'Hartmann Rd, London E16 2PX', 'United Kingdom', 'LCY', '2023-10-28'),
 (10, 'Newcastle International Airport', 'Woolsington, Newcastle upon Tyne NE13 8BZ', 'United Kingdom', 'NCL', '2023-10-28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `availability_times`
+--
+
+CREATE TABLE `availability_times` (
+  `at_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `day_title` varchar(255) NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `added_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `availability_times`
+--
+
+INSERT INTO `availability_times` (`at_id`, `d_id`, `day_title`, `start_time`, `end_time`, `added_time`) VALUES
+(00000001, 00000001, 'Monday', '09:00:00', '17:00:00', '2024-03-16 07:00:57');
 
 -- --------------------------------------------------------
 
@@ -612,23 +634,33 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
-(00000001, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'london uk new#485 new uk', '', '../../img/drivers/1000046675.jpg', 'Male', 'English', 'London', '31.4414005', '73.0886402', 'Reached on Dropoff', 1, '2024-03-11 05:41:20'),
+(00000001, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'london uk new#485 new uk', '', '../../img/drivers/1000046675.jpg', 'Male', 'English', 'London', '31.4414005', '73.0886402', 'online', 1, '2024-03-11 05:41:20'),
 (00000002, '', 'prenero12@gmail.com', '+923346452312', 'asdf1234', '', '', '', '', '', 'London', '', '', '', 0, '2024-03-11 01:36:13'),
 (00000003, 'Azib Ali', 'eurodatatechnology@gmail.com', '+923346523621', '6266a', 'FSD', 'WJ123', '../../img/drivers/background.jpg', 'Male', 'English', 'London', '', '', '', 0, '2024-03-11 16:11:03');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `driver_acounts`
+-- Table structure for table `driver_accounts`
 --
 
-CREATE TABLE `driver_acounts` (
-  `ac_id` int(55) NOT NULL,
-  `d_id` int(55) NOT NULL,
-  `invoice_id` int(11) NOT NULL,
+CREATE TABLE `driver_accounts` (
+  `ac_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `invoice_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `d_com` varchar(255) NOT NULL,
-  `pay_date` datetime(6) NOT NULL
+  `com_status` varchar(55) NOT NULL,
+  `pay_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `driver_accounts`
+--
+
+INSERT INTO `driver_accounts` (`ac_id`, `d_id`, `invoice_id`, `d_com`, `com_status`, `pay_date`) VALUES
+(00000001, 00000001, 00000001, '50', 'Unpaid', '2024-03-16 07:19:47'),
+(00000002, 00000001, 00000002, '75', 'Unpaid', '2024-03-16 07:19:50'),
+(00000003, 00000001, 00000003, '125', 'Paid', '2024-03-16 07:21:27');
 
 -- --------------------------------------------------------
 
@@ -644,6 +676,13 @@ CREATE TABLE `driver_bank_details` (
   `sort_code` varchar(255) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `driver_bank_details`
+--
+
+INSERT INTO `driver_bank_details` (`d_bank_id`, `d_id`, `bank_name`, `account_number`, `sort_code`, `date_added`) VALUES
+(00000003, 00000001, 'Mezaan Bank', '01078562365', 'MZ5236', '2024-03-16 07:10:35');
 
 -- --------------------------------------------------------
 
@@ -670,7 +709,7 @@ CREATE TABLE `driver_documents` (
 --
 
 INSERT INTO `driver_documents` (`dd_id`, `d_id`, `d_license_front`, `d_license_back`, `pco_license`, `address_proof_1`, `address_proof_2`, `dvla_check_code`, `national_insurance`, `extra`, `date_upload_document`) VALUES
-(00000001, 00000001, '65f2dd29e1848.png', '65f2e1c2e4cc3.png', '65f2e689e51ff.png', '65f30cd03869c.png', '65f30d0e74db4.png', '65f311073f5fc.png', '65f30eaf486c8.png', '65f3113b65c46.png', '2024-03-11 01:37:53');
+(00000001, 00000001, '65f1be9caaf41.jpg', '65f211694b1e4.jpg', '', '', '', '', '', '', '2024-03-11 01:37:53');
 
 -- --------------------------------------------------------
 
@@ -2546,7 +2585,7 @@ CREATE TABLE `vehicle_documents` (
 --
 
 INSERT INTO `vehicle_documents` (`vd_id`, `d_id`, `log_book`, `mot_certificate`, `pco`, `insurance`, `road_tax`, `vehicle_picture_front`, `vehicle_picture_back`, `rental_agreement`, `insurance_schedule`, `extra`, `date_upload`) VALUES
-(00000001, 00000001, '65f318e6860a3.png', '65f31aadd049f.png', '65f31bdeb8087.png', '65f31d514932c.png', '65f201df97826.jpg', '65f1ffd8d0265.jpeg', '65f2008ea6cbd.jpeg', '65f20de8edb2b.jpeg', '65f210864d1ff.jpeg', '65f2115d22106.jpg', '2024-03-08 11:55:06');
+(00000001, 00000001, '65f1f95f3aa3e.jpg', '65f1fa7ecb099.jpg', '65f1fc0fa25e7.jpg', '65f1fd73a5607.jpg', '65f53b6d2072a.png', '65f53cfb47231.png', '65f53dab1787f.png', '65f53e7185c0a.png', '65f53f6d44708.png', '65f540d6be995.png', '2024-03-08 11:55:06');
 
 -- --------------------------------------------------------
 
@@ -2572,6 +2611,12 @@ CREATE TABLE `zones` (
 --
 ALTER TABLE `airports`
   ADD PRIMARY KEY (`ap_id`);
+
+--
+-- Indexes for table `availability_times`
+--
+ALTER TABLE `availability_times`
+  ADD PRIMARY KEY (`at_id`);
 
 --
 -- Indexes for table `bids`
@@ -2646,9 +2691,9 @@ ALTER TABLE `drivers`
   ADD PRIMARY KEY (`d_id`);
 
 --
--- Indexes for table `driver_acounts`
+-- Indexes for table `driver_accounts`
 --
-ALTER TABLE `driver_acounts`
+ALTER TABLE `driver_accounts`
   ADD PRIMARY KEY (`ac_id`);
 
 --
@@ -2794,6 +2839,12 @@ ALTER TABLE `airports`
   MODIFY `ap_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `availability_times`
+--
+ALTER TABLE `availability_times`
+  MODIFY `at_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `bids`
 --
 ALTER TABLE `bids`
@@ -2866,16 +2917,16 @@ ALTER TABLE `drivers`
   MODIFY `d_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `driver_acounts`
+-- AUTO_INCREMENT for table `driver_accounts`
 --
-ALTER TABLE `driver_acounts`
-  MODIFY `ac_id` int(55) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `driver_accounts`
+  MODIFY `ac_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `driver_bank_details`
 --
 ALTER TABLE `driver_bank_details`
-  MODIFY `d_bank_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `d_bank_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `driver_documents`

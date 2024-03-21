@@ -43,7 +43,7 @@ if (isset($_POST['d_phone'])) {
 			$dsql = "INSERT INTO `driver_documents`(`d_id`, `date_upload_document`) VALUES ('$d_id', '$date')";            
             $dr = mysqli_query($connect, $dsql);
 												             
-			echo json_encode(array('message' => "Driver Registered Successfully", 'status' => true));            
+			echo json_encode(array('data'=>$d_id,'message' => "Driver Registered Successfully", 'status' => true));            
 		} else {        
 			echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));            
 		}        
