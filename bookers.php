@@ -234,7 +234,7 @@ include('header.php');
 							<label class="form-label">Gender</label>
 							<select class="form-select" name="cgender" required>
 								<option value="" selected>Select Gender</option>
-								<option>Male</option>																
+								<option>Male</option>
 								<option>Female</option>								
 								<option>Transgender</option>							
 							</select>             																
