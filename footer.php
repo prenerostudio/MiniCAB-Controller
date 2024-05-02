@@ -44,6 +44,10 @@
 </div>  
 </div>
 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
+    async defer></script>
+
 <!-- Libs JS -->
 <script src="libs/apexcharts/dist/apexcharts.min.js" defer></script>
 <script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>

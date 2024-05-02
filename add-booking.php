@@ -100,9 +100,9 @@ include('header.php');
 												<!-- Additional stops will be dynamically added here -->
 											</div>								
 											<div class="mb-3 col-lg-2">								
-												<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;">
+												<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
 													<i class="ti ti-plus"></i> 
-													Add Stop
+													
 												</button>									
 											</div>									
 										</div>
@@ -194,11 +194,11 @@ include('header.php');
 							<div class="row">						
 								<h4>Pricing Section</h4>	
 								<div class="mb-3 col-lg-4">          
-									<label class="form-label">Bookinng Fee </label>
+									<label class="form-label">Booking Fee </label>
 									<input type="text" class="form-control" name="booking_fee">
 								</div>														
 								<div class="mb-3 col-lg-4">          
-									<label class="form-label">Car Park </label>								
+									<label class="form-label">Car Parking </label>								
 									<input type="text" class="form-control" name="car_parking">
 								</div>							
 								<div class="mb-3 col-lg-4">          
@@ -213,6 +213,10 @@ include('header.php');
 									<label class="form-label">Extra </label>								
 									<input type="text" class="form-control" name="extra">
 								</div>
+								<div class="mb-3 col-lg-4">          
+									<label class="form-label">Booker Commission </label>
+									<input type="text" class="form-control" name="booker_com">
+								</div>
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">Distance (Auto-calculated)</label>
 									<input type="text" class="form-control" name="journey_distance" id="journeyDistance" readonly>
@@ -222,7 +226,7 @@ include('header.php');
 									<input type="text" class="form-control"  name="journey_fare" id="journeyFare"  required>	
 								</div>
 								<div class="mb-3 col-lg-4">
-									<button class="btn btn-instagram" style="margin-top:25px;" id="calculateFareBtn">Calculate Fare</button>
+									<button class="btn btn-instagram" style="margin-top:27px;" id="calculateFareBtn">Calculate Fare</button>
 								</div>
 								<div class="col-lg-4">			
 									<h4>Send Online Payment Link</h4>										
@@ -311,79 +315,91 @@ include('header.php');
 	</div>
 </div>       
 <!-- Include the Google Maps API script -->  
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
-    async defer></script>
+
 
 <script>	
 	function initAutocomplete() {        
-		var pickupInput = document.getElementById('pickup');            
-		var dropoffInput = document.getElementById('dropoff');            
-		var journeyDistanceInput = document.getElementById('journeyDistance');		            
-		var autocompleteOptions = {        
-			types: ['geocode'],                    
-			componentRestrictions: {country: 'GB'}    
-		};				            
-		var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-		var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
-		autocompletePickup.addListener('place_changed', function () {        
-			updateDistance();        
-			updateJourneyFare();    
-		});            
-		autocompleteDropoff.addListener('place_changed', function () {
-			updateDistance();        
-			updateJourneyFare();    
-		});		            		    
-		function handleSuggestions(predictions, inputField) {        
-			var addresses = predictions.map(function(prediction) {            
-				return prediction.description;        
-			});			                    
-			updateAutocompleteSuggestions(inputField, addresses);    
-		}				        
-		function updateAutocompleteSuggestions(inputField, suggestions) {        
-			var datalistId = inputField.id + '_datalist';                    
-			var datalist = document.getElementById(datalistId);			                    
-			if (!datalist) {            
-				datalist = document.createElement('datalist');                            
-				datalist.id = datalistId;                            
-				document.body.appendChild(datalist);        
-			}						            
-			datalist.innerHTML = '';			                    
-			suggestions.forEach(function(suggestion) {            
-				var option = document.createElement('option');                            
-				option.value = suggestion;                            
-				datalist.appendChild(option);        
-			});						                    
-			inputField.setAttribute('list', datalistId);    
-		}    
-		function updateDistance() {                
-			var pickupPlace = autocompletePickup.getPlace();                    
-			var dropoffPlace = autocompleteDropoff.getPlace();			                    
-			if (pickupPlace.geometry && dropoffPlace.geometry) {            
-				calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);        
-			}    
-		}		    
-		function calculateDistance(pickupLocation, dropoffLocation) {    
-			var service = new google.maps.DistanceMatrixService();    
-			service.getDistanceMatrix({        
-				origins: [pickupLocation],        
-				destinations: [dropoffLocation],        
-				travelMode: 'DRIVING',    
-			}, function(response, status) {        
-				if (status === 'OK' && response.rows.length > 0) {            
-					var distanceText = response.rows[0].elements[0].distance.text;            
-					var distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));
-					if (!isNaN(distanceValue)) {                						                
-						journeyDistanceInput.value = distanceValue.toFixed(2);                
-						updateJourneyFare(distanceValue);            
-					} else {                
-						console.error('Invalid distance value:', distanceText);            
-					}       
-				} else {            					            
-					console.error('Error calculating distance:', status);        
-				}    
-			});	
-		}   
-	}	    
+    var pickupInput = document.getElementById('pickup');            
+    var dropoffInput = document.getElementById('dropoff');
+    var stopInput = document.getElementById('stop');
+    var journeyDistanceInput = document.getElementById('journeyDistance');		            
+    var autocompleteOptions = {        
+        types: ['geocode'],                    
+        componentRestrictions: {country: 'GB'}    
+    };				            
+    var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
+    var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
+    var autocompleteStop = new google.maps.places.Autocomplete(stopInput, autocompleteOptions); // Initialize autocomplete for stop field
+
+    autocompletePickup.addListener('place_changed', function () {        
+        updateDistance();        
+        updateJourneyFare();    
+    });            
+    autocompleteDropoff.addListener('place_changed', function () {
+        updateDistance();        
+        updateJourneyFare();    
+    });	
+    autocompleteStop.addListener('place_changed', function () { // Add listener for stop input field
+        updateDistance();        
+        updateJourneyFare();    
+    });
+
+    function handleSuggestions(predictions, inputField) {        
+        var addresses = predictions.map(function(prediction) {            
+            return prediction.description;        
+        });			                    
+        updateAutocompleteSuggestions(inputField, addresses);    
+    }				        
+
+    function updateAutocompleteSuggestions(inputField, suggestions) {        
+        var datalistId = inputField.id + '_datalist';                    
+        var datalist = document.getElementById(datalistId);			                    
+        if (!datalist) {            
+            datalist = document.createElement('datalist');                            
+            datalist.id = datalistId;                            
+            document.body.appendChild(datalist);        
+        }						            
+        datalist.innerHTML = '';			                    
+        suggestions.forEach(function(suggestion) {            
+            var option = document.createElement('option');                            
+            option.value = suggestion;                            
+            datalist.appendChild(option);        
+        });						                    
+        inputField.setAttribute('list', datalistId);    
+    }    
+
+    function updateDistance() {                
+        var pickupPlace = autocompletePickup.getPlace();                    
+        var dropoffPlace = autocompleteDropoff.getPlace();			                    
+        if (pickupPlace.geometry && dropoffPlace.geometry) {            
+            calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);        
+        }    
+    }		    
+    
+    function calculateDistance(pickupLocation, dropoffLocation) {    
+        var service = new google.maps.DistanceMatrixService();    
+        service.getDistanceMatrix({        
+            origins: [pickupLocation],        
+            destinations: [dropoffLocation],        
+            travelMode: 'DRIVING',    
+        }, function(response, status) {        
+            if (status === 'OK' && response.rows.length > 0) {            
+                var distanceText = response.rows[0].elements[0].distance.text;            
+                var distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));
+                if (!isNaN(distanceValue)) {                						                
+                    journeyDistanceInput.value = distanceValue.toFixed(2);                
+                    updateJourneyFare(distanceValue);            
+                } else {                
+                    console.error('Invalid distance value:', distanceText);            
+                }       
+            } else {            					            
+                console.error('Error calculating distance:', status);        
+            }    
+        });	
+    }   
+}
+
+
 	google.maps.event.addDomListener(window, 'load', initAutocomplete);  
 </script>	
 <?php

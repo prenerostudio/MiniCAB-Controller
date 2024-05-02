@@ -42,19 +42,28 @@ if (!isset($_SESSION['email'])) {
 												
 		<script>		
 			document.addEventListener("DOMContentLoaded", function() {    
-				const addStopButton = document.getElementById('add-stop-btn');    
-				const stopsContainer = document.getElementById('stops-container');    
-				let stopCount = 0;				    
-				addStopButton.addEventListener('click', function() {        
-					stopCount++;        
-					const newStopInput = document.createElement('input');        
-					newStopInput.type = 'text';        
-					newStopInput.className = 'form-control mb-3 col-lg-3';        
-					newStopInput.placeholder = 'Enter stop location';        
-					newStopInput.name = 'stop_' + stopCount; // Assigning unique name        
-					stopsContainer.appendChild(newStopInput);    
-				});
-			});									
+    const addStopButton = document.getElementById('add-stop-btn');    
+    const stopsContainer = document.getElementById('stops-container');    
+    let stopCount = 0;				    
+    addStopButton.addEventListener('click', function() {        
+        stopCount++;        
+        const newStopInput = document.createElement('input');        
+        newStopInput.type = 'text';        
+        newStopInput.className = 'form-control mb-3 col-lg-3 stop-autocomplete';        
+        newStopInput.placeholder = 'Enter stop location';        
+        newStopInput.name = 'stop_' + stopCount; // Assigning unique name
+        newStopInput.id = 'stop_' + stopCount; // Assigning unique ID
+        stopsContainer.appendChild(newStopInput);    
+
+        // Initialize autocomplete for the new input field
+        const autocompleteOptions = {        
+            types: ['geocode'],                    
+            componentRestrictions: {country: 'GB'}    
+        };
+        new google.maps.places.Autocomplete(newStopInput, autocompleteOptions);
+    });
+});
+									
 		</script>					  	
 	</head>  		
 	<body>			
