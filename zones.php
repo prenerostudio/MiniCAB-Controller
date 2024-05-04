@@ -282,6 +282,10 @@ include('header.php');
 	</div>    
 </div>  
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
+    async defer></script>
+
+
 <script>
 	function validateForm() {                							
 		var spInput = document.getElementsByName("sp")[0].value;        		
@@ -375,7 +379,10 @@ include('header.php');
 }
 
 
-	google.maps.event.addDomListener(window, 'load', initAutocomplete);  
+$('#modal-zone').on('shown.bs.modal', function () {
+    initAutocomplete();
+});
+
 	
 </script>
 <?php

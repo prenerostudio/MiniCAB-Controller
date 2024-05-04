@@ -8,12 +8,13 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 if (isset($_POST['d_phone'])) {
+	
+	$d_name = $_POST['d_name'];								  
 	$d_email = $_POST['d_email'];    
 	$d_phone = $_POST['d_phone'];	
 	$d_password = $_POST['d_password'];    
 	$licence_authority = $_POST['licence_authority'];    
-	$acount_status = 0;    
-	$date = date("Y-m-d h:i:s");
+	$acount_status = 0;	
 	         			
 	$checksql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone'";		
 	$checkr = mysqli_query($connect, $checksql);        		
@@ -22,30 +23,39 @@ if (isset($_POST['d_phone'])) {
 	if (count($datacheck) > 0) {            		
 		echo json_encode(array('message' => "This User Already Exists! Try to Sign in", 'status' => false));        	
 	} else {		
-		$sql = "INSERT INTO `drivers`( 
+		$sql = "INSERT INTO `drivers`(
+									`d_name`, 
 									`d_email`, 
 									`d_phone`, 
 									`d_password`, 
 									`licence_authority`, 
-									`acount_status`, 
-									`driver_reg_date`
-									) VALUES ( 
-									'$d_email', 
-									'$d_phone', 
-									'$d_password', 
-									'$licence_authority', 
-									'$acount_status', 
-									'$date')";
+									`acount_status`
+									) VALUES (
+									'$d_name',
+									'$d_email',
+									'$d_phone',
+									'$d_password',
+									'$licence_authority',
+									'$acount_status')";
                     
 		$r = mysqli_query($connect, $sql);        		
-		if ($r) {								
+		if ($r) {
 			$d_id = mysqli_insert_id($connect);   						
-			$dsql = "INSERT INTO `driver_documents`(`d_id`, `date_upload_document`) VALUES ('$d_id', '$date')";            
-            $dr = mysqli_query($connect, $dsql);
-												             
+			$dsql = "INSERT INTO `driver_documents`(`d_id`) VALUES ('$d_id')";            
+            $dr = mysqli_query($connect, $dsql);			
+			$actsql = "INSERT INTO `activity_log` (
+													`activity_type`,
+													`user`, 
+													`details`
+													) VALUES (
+													'New Driver ',
+													'$d_name',
+													'New Driver Acount Created by " . $d_name . "')";		
+		
+			$actr = mysqli_query($connect, $actsql);			
 			echo json_encode(array('data'=>$d_id,'message' => "Driver Registered Successfully", 'status' => true));            
 		} else {        
-			echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));            
+			echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));
 		}        
 	}    
 } else {

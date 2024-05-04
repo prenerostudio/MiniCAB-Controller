@@ -65,335 +65,175 @@ include('header.php');
 <div class="page-body page_padding">          
 	<div class="row row-deck row-cards">			      	
 		<div class="col-12">            					
-			<div class="card">                				
-			
-				
-				<div class="card-header">                    					
-				
-				
-					<h3 class="card-title">All Bookings List</h3>                  					
-					
-				
-				</div>                  
-				
-				<div class="card-body border-bottom py-3">
-				
-					<div id="table-default" class="table-responsive">                  
-						                  
-								                 
-					
-						<tbody class="table-tbody" id="tableBody">					
-						
-							
-							
-							<?php
-        
-							
-							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");
-
-        
-							
-							if (mysqli_num_rows($bsql) > 0) {
-       
-							
-							?>
-           
-							
-							<table class="table">
-              
-								
-										
-								<thead>                      
-								
-											
-									<tr> 																				
-										
-												
-										<th>
-											
-													
-											<button class="table-sort" data-sort="sort-id">ID</button>
-										
-												
-										</th>                        
-										
-												
-										<th>
-											
-												
-											<button class="table-sort" data-sort="sort-date">Date Pickup</button>
-										
-												
-										</th>                        
-										
-										<th>
-											
-													
-											<button class="table-sort" data-sort="sort-time">Time Pickup</button>
-										
-												
-										</th>                       
-										
-												
-										<th>
-											
-													
-											<button class="table-sort" data-sort="sort-passenger">Passenger</button>
-										
-												
-										</th>                        
-										
-												
-										<th>
-											
-													
-											<button class="table-sort" data-sort="sort-pickup">Pickup</button>
-										
-												
-										</th>                        
-										
-												
-										<th>
-											
-													
-											<button class="table-sort" data-sort="sort-stops">Stops</button>
-										
-											
+			<div class="card">     											
+				<div class="card-header">				
+					<h3 class="card-title">All Bookings List</h3>
+				</div>				
+				<div class="card-body border-bottom py-3">				
+					<div id="table-default" class="table-responsive">
+						<tbody class="table-tbody" id="tableBody">
+							<?php        							
+							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");        							
+							if (mysqli_num_rows($bsql) > 0) {							
+							?>           							
+							<table class="table">	
+								<thead>                      		
+									<tr> 																	
+										<th>		
+											<button class="table-sort" data-sort="sort-id">
+												ID
+											</button>		
+										</th>                        	
+										<th>	
+											<button class="table-sort" data-sort="sort-date">
+												Date Pickup
+											</button>						
+										</th>										
+										<th>							
+											<button class="table-sort" data-sort="sort-time">
+												Time Pickup
+											</button>						
+										</th>												
+										<th>							
+											<button class="table-sort" data-sort="sort-passenger">
+												Passenger
+											</button>	
+										</th>                        		
+										<th>		
+											<button class="table-sort" data-sort="sort-pickup">
+												Pickup
+											</button>	
+										</th>                        		
+										<th>		
+											<button class="table-sort" data-sort="sort-stops">
+												Stops
+											</button>
 										</th>
-										
-											
 										<th>
-											
-												
-											<button class="table-sort" data-sort="sort-dropoff">Dropoff</button>
-										
-												
-										</th>
-										
-											
+											<button class="table-sort" data-sort="sort-dropoff">
+												Dropoff
+											</button>	
+										</th>	
 										<th>
-											
-												
-											<button class="table-sort" data-sort="sort-fare">Fare</button>
-										
-											
+											<button class="table-sort" data-sort="sort-fare">
+												Fare
+											</button>
 										</th>						   
-										
-										
-											
-										<th>
-											
-												
-											<button class="table-sort" data-sort="sort-vehicle">Vehicle</button>
-										
-												
-										</th>
-										
-												
-									
-																   
-										
-												
-										<th>
-											
-													
-											<button class="table-sort" style="width: 25%;">Actions</button>
-										
-												
-										</th>                      
-									
-											
-											
+										<th>	
+											<button class="table-sort" data-sort="sort-vehicle">
+												Vehicle
+											</button>	
+										</th>	
+										<th>		
+											<button class="no-sort">
+												Actions
+											</button>	
+										</th>		
 									</tr>                   
-								
-								
-								
-								</thead> 
-                
+								</thead>
 								<tbody class="table-tbody" id="tableBody">
-                    
-									<?php
-                    
-								$y = 0;
-                    
-								while ($brow = mysqli_fetch_array($bsql)) {
-                        
-									$y++;
-                    
+									<?php                   								
+										$y = 0;                    
+										while ($brow = mysqli_fetch_array($bsql)) {                        
+										$y++;                    
 									?>											                     
-									<tr>                        
-
+									<tr>
 										<td class="sort-id">
 											<?php echo $brow['book_id']; ?>
-										</td>                        
-										
+										</td>										
 										<td class="sort-date">
 											<?php echo $brow['pick_date']; ?>
-										</td>                       
-										
+										</td>										
 										<td class="sort-time">
 											<?php echo $brow['pick_time']; ?>
-										</td>                       
-										
+										</td>										
 										<td class="sort-passenger">
 											<?php echo $brow['passenger']; ?>
-										</td>  
-										
+										</td>										
 										<td class="sort-pickup" style="width: 15%;">
 											<?php echo $brow['pickup']; ?>
 										</td>         
 										<td class="sort-stops">
 											<?php echo $brow['stops']; ?>
-										</td>              
-										
+										</td>										
 										<td class="sort-drpoff" style="width: 15%;">
 											<?php echo $brow['destination'] ?>
-										</td>
-										
+										</td>										
 										<td class="sort-fare"> 
 											<?php echo $brow['journey_fare'] ?> 
-										</td>
-										
+										</td>										
 										<td class="sort-vehicle"> 
 											<?php echo $brow['v_name'] ?> 
 										</td>
-										
-										
-										
-										
 										<td> 
 											<?php
-											if($brow['booking_status']=='Booked'){
-    
-												// If booking status is 'Booked', generate a button to dispatch the booking
- 
+												if($brow['booking_status']=='Booked'){
 											?>
-											<a href="#" class="btn button_padding">
-       
+											<a href="#" class="btn button_padding" title="Dispatched">       
 												<i class="ti ti-plane-tilt"></i>
-       
-												Dispatched
-    
-											</a>
-  
-											
-   
-											<?php
-
-											} else {
-   
-												// If booking status is not 'Booked', indicate that the booking has already been dispatched
-   
-											?>
-    
-											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>" class="btn btn-success button_padding">
-        
+											</a>  											   
+											<?php											
+												} else {   
+											?>    
+											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>" class="btn btn-success button_padding" title="Dispatch">
 												<i class="ti ti-plane-tilt"></i>
-       
-												Dispatch
-    
-											</a>
-   
-											<?php
-
-											}
-
-											?>
-
-											
-											
-											<?php
-										
-										if($brow['bid_status']==0){
-											
-											?>
-											
+											</a>   
+											<?php											
+												}										
+											if($brow['bid_status']==0){	
+											?>											
 											<a href="open-bid.php?book_id=<?php echo $brow['book_id'] ?>">
-												
-												<button class="btn btn-instagram button_padding">
-													
-													<i class="ti ti-aspect-ratio"></i>Open Bid
-												
-												</button>
-											
-											</a>
-											
-											
-											<?php
-										
-										}else{
-											
+												<button class="btn btn-instagram button_padding" title="Open Bid">
+													<i class="ti ti-aspect-ratio"></i>
+												</button>											
+											</a>											
+											<?php				
+											}else{					
+											?>					
+											<a href="#">												
+												<button class="btn button_padding" disabled title="On Bid">
+													<i class="ti ti-aspect-ratio"></i>
+												</button>											
+											</a>											
+											<?php										
+											}										
 											?>
-											
-											
-											<a href="#">
-												
-												<button class="btn button_padding" disabled>
-													
-													<i class="ti ti-aspect-ratio"></i>on Bid
-												
-												</button>
-											
+											<a href="view-booking.php?book_id=<?php echo $brow['book_id'] ?>">											
+												<button class="btn btn-info button_padding" title="View">
+													<i class="ti ti-eye"></i>
+												</button>												
 											</a>
-											
-											<?php
-										
-										}
-										
-											?>
-											
-										
-											
-											<a href="view-booking.php?book_id=<?php echo $brow['book_id'] ?>">
-											
-												<button class="btn btn-info button_padding">
-													<i class="ti ti-eye"></i>View
-												</button>
-												
-											</a>
-											
-											
-											
-											
-											
-											<a class="btn btn-danger button_padding" href="cancel-booking.php?book_id=<?php echo $brow['book_id'] ?>">
+											<a class="btn btn-danger button_padding" href="cancel-booking.php?book_id=<?php echo $brow['book_id'] ?>" title="Cancel">
 												<i class="ti ti-square-rounded-x"></i>
-												Cancel
-											
-											</a>	
-										
-										
+											</a>				
 										</td>
 									</tr>											
-									<?php																	
-									}																
-									?>                                       
-								</tbody>                 
-							</table>
-									 <?php
-        } else {
-            echo '<p>No booking found.</p>';
-        }
-        ?>
-						</div>                  
-					</div>                                                    
-				</div>              
-			</div>
-		</div>
-
+									<?php			
+										}									
+									?>								
+								</tbody>							
+							</table>							
+							<?php        
+							} else {            
+								echo '<p>No booking found.</p>';        
+							}        
+							?>						
+					</div>                  
+				</div>                                                    				
+			</div>              			
+		</div>		
+	</div>	
 </div>        
 <script>	
 	document.addEventListener("DOMContentLoaded", function() {    	
 		const list = new List('table-default', {      			
 			sortClass: 'table-sort',      				
 			listClass: 'table-tbody',      				
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',						      					
-						 'sort-driver'      	
+			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare', 'sort-driver'      	
 						]			
 		}); 		
 	})	
 </script>
-
 <?php
 include('footer.php');
 ?>

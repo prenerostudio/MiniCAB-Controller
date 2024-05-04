@@ -27,9 +27,13 @@ $dname = $_POST['dname'];
 $demail = $_POST['demail'];
 $d_address = $_POST['d_address'];
 $dgender = $_POST['dgender'];
-$pc = $_POST['post_code'];
 $dlang = $_POST['dlang'];
-$license_authority = $_POST['license_authority'];
+$licence = $_POST['dlicence'];
+$lexp = $_POST['lexp'];
+$pco = $_POST['pco'];
+$pcoexp = $_POST['pcoexp'];
+$skype = $_POST['skype'];
+$remarks = $_POST['remarks'];
 $date = date("Y-m-d H:i:s");
 
 // Handle image upload
@@ -38,13 +42,17 @@ $d_img = uploadImage();
 if(isset($_POST['d_id'])){ 	 	        			
 	$sql = "UPDATE `drivers` SET 
 								`d_name`='$dname',
-								`d_email`='$demail', 
+								`d_email`='$demail',
 								`d_address`='$d_address',
-								`d_post_code`='$pc',
 								`d_pic`='$d_img',
 								`d_gender`='$dgender',
 								`d_language`='$dlang',
-								`licence_authority`='$license_authority', 
+								`d_licence`='$licence',
+								`d_licence_exp`='$lexp',
+								`pco_licence`='$pco',
+								`pco_exp`='$pcoexp',
+								`skype_acount`='$skype',
+								`d_remarks`='$remarks',
 								`driver_reg_date`='$date' WHERE `d_id`='$d_id'";
 	$r = mysqli_query($connect, $sql);
 	if($r){    

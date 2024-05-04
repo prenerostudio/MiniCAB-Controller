@@ -353,6 +353,17 @@ if (!isset($_SESSION['email'])) {
 											</span>                      											
 										</a>                    										
 									</li>
+									<li class="nav-item">                      									
+										<a class="nav-link" href="activity_log.php">										
+											<span class="nav-link-icon d-md-none d-lg-inline-block">
+												<i class="ti ti-building-bank"></i>
+											</span>                        											
+											<span class="nav-link-title">
+												Activity Logs
+
+											</span>                      											
+										</a>                    										
+									</li>
 								</ul>                								
 							</div>						
 						</div>      									

@@ -213,10 +213,10 @@ include('header.php');
 									<label class="form-label">Extra </label>								
 									<input type="text" class="form-control" name="extra">
 								</div>
-								<div class="mb-3 col-lg-4">          
-									<label class="form-label">Booker Commission </label>
-									<input type="text" class="form-control" name="booker_com">
-								</div>
+								<div class="mb-3 col-lg-4" id="bookerCommissionField" style="display: none;">          
+    <label class="form-label">Booker Commission </label>
+    <input type="text" class="form-control" name="booker_com">
+</div>
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">Distance (Auto-calculated)</label>
 									<input type="text" class="form-control" name="journey_distance" id="journeyDistance" readonly>
@@ -256,6 +256,25 @@ include('header.php');
 							</button>					     											
 						</div> 										
 					</form>	
+
+
+					
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var bookingTypeSelect = document.getElementById("bookingType");
+    var bookerCommissionField = document.getElementById("bookerCommissionField");
+
+    bookingTypeSelect.addEventListener("change", function() {
+        if (this.value == 3) {
+            bookerCommissionField.style.display = "block";
+        } else {
+            bookerCommissionField.style.display = "none";
+        }
+    });
+});
+</script>
+
 					
 					<script>    
 						$(document).ready(function() {                
@@ -316,7 +335,8 @@ include('header.php');
 </div>       
 <!-- Include the Google Maps API script -->  
 
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
+    async defer></script>
 <script>	
 	function initAutocomplete() {        
     var pickupInput = document.getElementById('pickup');            

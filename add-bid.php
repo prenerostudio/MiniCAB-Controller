@@ -31,15 +31,28 @@ include('header.php');
 					             					
 						          				
 					</div>
-						<div class="row">              					             
+						
+					<div class="row">              					             
+						<div class="col-lg-12">               						
+							<div>                 							
+								<label class="form-label">Available time</label>                  							
+								<input type="text" class="form-control" name="av_time">              						
+							</div>              					
+						</div>  
+
+						 				
+					</div>  
+					
+					<div class="row">              					             
 						<div class="col-lg-12">               						
 							<div>                 							
 								<label class="form-label">Bid Note</label>                  							
 								<textarea class="form-control" rows="3" name="bid_note"></textarea>               						
 							</div>              					
-						</div>   					
+						</div>  
+
 						 				
-					</div>  	
+					</div>  
 							
 							
 							

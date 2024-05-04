@@ -132,7 +132,20 @@ $sql = "INSERT INTO `bookings`(
 								'$booking_status',
 								'$date')";                
 $result = mysqli_query($connect, $sql);       
-if ($result) {         
+if ($result) {  
+$book_id = mysqli_last_insert($connect);
+
+	$actsql = "INSERT INTO `activity_log` (
+		`activity_type`,												
+		`user`, 
+		`details`
+	) VALUES (													
+		'New Booking',													
+		'Controller',
+		'Controller Has added a new boooking " . $book_id . "'
+	)";
+	
+	$r = mysqli_query($connect, $actsql);       
 	header('Location: all-bookings.php');    
 	exit();    
 } else {		

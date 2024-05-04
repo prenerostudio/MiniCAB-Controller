@@ -31,6 +31,9 @@ include('header.php');
 										</th>                        
 										<th>
 											<button class="table-sort" data-sort="sort-date">Booking</button>
+										</th> 
+										<th>
+											<button class="table-sort" data-sort="sort-time">Available Time</button>
 										</th>                        
 										<th>
 											<button class="table-sort" data-sort="sort-time">Note</button>
@@ -55,15 +58,17 @@ include('header.php');
 									<tr>                        
 										<td class="sort-id"><?php echo $y; ?></td>                        
 										<td class="sort-date">Booking ID: <?php echo $brow['book_id'] ?><br><?php echo $brow['pickup'] ?> - <?php echo $brow['destination'] ?><br><?php echo $brow['pick_date'] ?> - <?php echo $brow['pick_time'] ?> </td>                       
+										<td class="sort-time"><?php echo $brow['bid_time'] ?></td> 
 										<td class="sort-time"><?php echo $brow['bid_note'] ?></td>                       
 										<td class="sort-passenger">
 											<?php if($brow['bid_status']==0){
 										echo 'Closed';									
-									}else{
-										
+									}else{										
 										echo 'Open';
-									}
-											?></td>  
+									}											
+										
+										?>
+										</td>  
 										
 										
 										<td> 
