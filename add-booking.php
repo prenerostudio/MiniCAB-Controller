@@ -101,8 +101,7 @@ include('header.php');
 											</div>								
 											<div class="mb-3 col-lg-2">								
 												<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
-													<i class="ti ti-plus"></i> 
-													
+													<i class="ti ti-plus"></i>
 												</button>									
 											</div>									
 										</div>
@@ -213,10 +212,10 @@ include('header.php');
 									<label class="form-label">Extra </label>								
 									<input type="text" class="form-control" name="extra">
 								</div>
-								<div class="mb-3 col-lg-4" id="bookerCommissionField" style="display: none;">          
-    <label class="form-label">Booker Commission </label>
-    <input type="text" class="form-control" name="booker_com">
-</div>
+								<div class="mb-3 col-lg-4" id="bookerCommissionField" style="display: none;">    
+									<label class="form-label">Booker Commission </label>   
+									<input type="text" class="form-control" name="booker_com">
+								</div>
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">Distance (Auto-calculated)</label>
 									<input type="text" class="form-control" name="journey_distance" id="journeyDistance" readonly>
@@ -255,28 +254,20 @@ include('header.php');
 								Save Booking  																
 							</button>					     											
 						</div> 										
-					</form>	
-
-
-					
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var bookingTypeSelect = document.getElementById("bookingType");
-    var bookerCommissionField = document.getElementById("bookerCommissionField");
-
-    bookingTypeSelect.addEventListener("change", function() {
-        if (this.value == 3) {
-            bookerCommissionField.style.display = "block";
-        } else {
-            bookerCommissionField.style.display = "none";
-        }
-    });
-});
-</script>
-
-					
-					<script>    
+					</form>						
+					<script>
+						document.addEventListener("DOMContentLoaded", function() {    
+							var bookingTypeSelect = document.getElementById("bookingType");    
+							var bookerCommissionField = document.getElementById("bookerCommissionField");    
+							bookingTypeSelect.addEventListener("change", function() {        
+								if (this.value == 3) {            
+									bookerCommissionField.style.display = "block";        
+								} else {            
+									bookerCommissionField.style.display = "none";        
+								}    
+							});
+						});
+				   
 						$(document).ready(function() {                
 							$('#calculateFareBtn').on('click', function(e) {            
 								e.preventDefault(); // Prevent the form from submitting                   

@@ -82,27 +82,22 @@ $d_id = $_GET['d_id'];
 								Save Vehicle							
 							</button>
 						</div> 															
-					</form>																				
-							<script>
-    function validateForm() {
-        // Perform your form validation here
-        var vidInput = document.getElementsByName("v_id")[0].value;
-        var makeInput = document.getElementsByName("make")[0].value;
-        var modelInput = document.getElementsByName("model")[0].value;
-		var colorInput = document.getElementsByName("color")[0].value;
-		var regInput = document.getElementsByName("reg_num")[0].value;
-		
-
-        if (vidInput === "" || makeInput === "" || modelInput === "" || colorInput === "" || regInput === "" ) {
-            // Display an error message or prevent the form submission
-            alert("Please fill in all required fields.");
-            return false;
-        }
-
-        // If validation passes, you can proceed with the form submission
-        return true;
-    }
-</script>
+					</form>							
+					<script>    								
+						function validateForm() {        									        									
+							var vidInput = document.getElementsByName("v_id")[0].value;        							
+							var makeInput = document.getElementsByName("make")[0].value;        														
+							var modelInput = document.getElementsByName("model")[0].value;									
+							var colorInput = document.getElementsByName("color")[0].value;									
+							var regInput = document.getElementsByName("reg_num")[0].value;
+									
+							if (vidInput === "" || makeInput === "" || modelInput === "" || colorInput === "" || regInput === "" ) {
+								alert("Please fill in all required fields.");            								
+								return false;        									
+							}                									
+							return true;    								
+						}					
+					</script>				
 				</div>                                                    							
 			</div>              					
 		</div>			

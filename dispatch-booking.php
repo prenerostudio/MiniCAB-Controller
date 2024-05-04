@@ -166,7 +166,7 @@ $bookrow = mysqli_fetch_array($booksql);
 										while ($drrow = mysqli_fetch_array($drsql)) {
 										?>           																			
 										<option value="<?php echo $drrow['d_id'] ?>">
-											<?php echo $drrow['d_name'] ?>
+											<?php echo $drrow['d_id'] ?> - <?php echo $drrow['d_name'] ?> - <?php echo $drrow['d_phone'] ?>
 										</option>           																			
 										<?php       																			
 										}				

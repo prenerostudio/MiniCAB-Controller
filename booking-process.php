@@ -72,6 +72,7 @@ $car_parking  = $_POST['car_parking'];
 $waiting = $_POST['waiting'];
 $tolls  = $_POST['tolls'];
 $extra  = $_POST['extra'];
+$booker_com = $_POST['booker_com'];
 $booking_status  = 'Pending';
 $date = date("Y-m-d H:i:s");
 
@@ -102,6 +103,7 @@ $sql = "INSERT INTO `bookings`(
 								`waiting`,
 								`tolls`, 
 								`extra`, 
+								`booker_commission`,
 								`booking_status`, 
 								`book_add_date`
 								) VALUES (
@@ -128,26 +130,25 @@ $sql = "INSERT INTO `bookings`(
 								'$car_parking',
 								'$waiting',
 								'$tolls',
-								'$extra',								
+								'$extra',
+								'$booker_com',
 								'$booking_status',
-								'$date')";                
+								'$date')"; 
+
 $result = mysqli_query($connect, $sql);       
 if ($result) {  
-$book_id = mysqli_last_insert($connect);
-
+	$book_id = mysqli_last_insert($connect);	
 	$actsql = "INSERT INTO `activity_log` (
-		`activity_type`,												
-		`user`, 
-		`details`
-	) VALUES (													
-		'New Booking',													
-		'Controller',
-		'Controller Has added a new boooking " . $book_id . "'
-	)";
-	
+											`activity_type`,												
+											`user`,
+											`details`
+											) VALUES (
+											'New Booking',
+											'Controller',
+											'Controller Has added a new boooking " . $book_id . "')";
+		
 	$r = mysqli_query($connect, $actsql);       
 	header('Location: all-bookings.php');    
-	exit();    
 } else {		
 	header('Location: all-bookings.php');    
 }

@@ -83,9 +83,9 @@ if (!isset($_SESSION['email'])) {
 						<div class="navbar-nav flex-row order-md-last">         						
 							<div class="nav-item d-none d-md-flex me-3">         							
 								<div class="btn-list">								
-									<a href="inbox.php" class="btn btn-indigo">           									
-										<i class="ti ti-message"></i>            										
-										Inbox          									
+									<a href="new-drivers.php" class="btn btn-indigo">           									
+										<i class="ti ti-users-group"></i>            										
+										New Drivers         									
 									</a>									
 									<a href="fare-corrections.php" class="btn btn-danger">
 										<i class="ti ti-receipt-pound"></i>            										
@@ -203,11 +203,11 @@ if (!isset($_SESSION['email'])) {
 											</a>-->													
 											<a class="dropdown-item" href="bid-bookings.php">											
 												<i class="ti ti-file-check"></i>
-												Accepted Bids for Bookings                     					
+												Bookings on Bid                    					
 											</a>		
-											<a class="dropdown-item" href="drivers-bid.php">											
+											<a class="dropdown-item" href="accepted-bids.php">											
 												<i class="ti ti-users"></i> 												
-												All Bids From Drivers
+												Accepted Bids
 											</a>				
 										</div>                    										
 									</li>									

@@ -42,7 +42,11 @@ if (isset($_POST['d_phone'])) {
 		if ($r) {
 			$d_id = mysqli_insert_id($connect);   						
 			$dsql = "INSERT INTO `driver_documents`(`d_id`) VALUES ('$d_id')";            
-            $dr = mysqli_query($connect, $dsql);			
+            $dr = mysqli_query($connect, $dsql);	
+			
+			$vsql = "INSERT INTO `vehicle_documents`(`d_id`) VALUES ('$d_id')";
+			$vr = mysqli_query($connect, $vsql);
+			
 			$actsql = "INSERT INTO `activity_log` (
 													`activity_type`,
 													`user`, 

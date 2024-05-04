@@ -74,16 +74,13 @@ include('header.php');
 </div>					
 <script>    
 	function validateForm() {    
-		// Perform your form validation here        
 		var didInput = document.getElementsByName("d_id")[0].value;
         var startInput = document.getElementsByName("start_date")[0].value;
         var endInput = document.getElementsByName("end_date")[0].value;			
-        if (didInput === "" || startInput === "" || endInput === "") {
-            // Display an error message or prevent the form submission
+        if (didInput === "" || startInput === "" || endInput === "") {            
             alert("Please fill in all required fields.");
             return false;
         }
-        // If validation passes, you can proceed with the form submission
         return true;
     }
 </script> 

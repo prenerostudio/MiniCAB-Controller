@@ -160,7 +160,7 @@ include('header.php');
         $('#deleteDriverBtn').click(function() {
             $.ajax({
                 url: 'del-booker.php',
-                type: 'GET', // or 'POST' based on your server-side handling
+                type: 'GET', 
                 data: { b_id: customerId },
                 success: function(response) {
                     console.log('Deletion successful');
@@ -325,29 +325,26 @@ include('header.php');
 							Add Booker 											
 						</button>					     							
 					</div> 							
+					
 					</form>		
-				
-				<script>
-    function validateForm() {
-        // Perform your form validation here
-        var cnameInput = document.getElementsByName("cname")[0].value;
-        var cemailInput = document.getElementsByName("cemail")[0].value;
-        var cphoneInput = document.getElementsByName("cphone")[0].value;
-		var cgenderInput = document.getElementsByName("cgender")[0].value;
-		var pcInput = document.getElementsByName("pc")[0].value;
-
-        if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {
-            // Display an error message or prevent the form submission
-            alert("Please fill in all required fields.");
-            return false;
-        }
-
-        // If validation passes, you can proceed with the form submission
-        return true;
-    }
-</script>
-				</div>      				
-		</div>    
+											
+				<script>    
+					function validateForm() {        						        
+						var cnameInput = document.getElementsByName("cname")[0].value;        
+						var cemailInput = document.getElementsByName("cemail")[0].value;        
+						var cphoneInput = document.getElementsByName("cphone")[0].value;		
+						var cgenderInput = document.getElementsByName("cgender")[0].value;		
+						var pcInput = document.getElementsByName("pc")[0].value;
+       
+						if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {
+							alert("Please fill in all required fields.");           
+							return false;      
+						}      						       
+						return true;   
+					}
+				</script>
+				</div>      						
+		</div>    	
 	</div>
 <?php
 include('footer.php');

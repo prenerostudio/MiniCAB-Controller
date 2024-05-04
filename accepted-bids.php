@@ -8,7 +8,7 @@ include('header.php');
 				Overview                				
 			</div>                			
 			<h2 class="page-title">                			
-				Driver Bids Section                				
+				Accepted Bids Section                				
 			</h2>              			
 		</div>						
 	</div>	
@@ -18,7 +18,7 @@ include('header.php');
 		<div class="col-12">            					
 			<div class="card">                							
 				<div class="card-header">                    									
-					<h3 class="card-title">All Bookings List</h3>                  										
+					<h3 class="card-title">All Accepted Bid List</h3>                  										
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-default" class="table-responsive">            										
@@ -36,7 +36,7 @@ include('header.php');
 							<tbody> 													
 								<?php								
 								$n=0;
-								$bidsql=mysqli_query($connect,"SELECT bids.*, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.*, clients.c_name, clients.c_email, clients.c_phone FROM bids, drivers, bookings, clients WHERE bids.book_id = bookings.book_id AND bids.d_id = drivers.d_id AND bookings.c_id = clients.c_id");
+								$bidsql=mysqli_query($connect,"SELECT bids.*, bookings.*, booking_type.*, drivers.* FROM bids JOIN bookings ON bids.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN drivers ON bids.d_id = drivers.d_id WHERE  bids.bidding_status = 1");
 								while($bidrow = mysqli_fetch_array($bidsql)){																	$n++		
 								?>																					
 								<tr>                         														
@@ -49,11 +49,13 @@ include('header.php');
 										<?php echo $bidrow['pick_date']; ?> | 										
 										<?php echo $bidrow['pick_time']; ?>										
 									</td>									
-									<td>																		
-										<?php echo $bidrow['d_name']; ?>																
+									<td>
+										ID: <?php echo $bidrow['d_id']; ?><br>
+										Driver Name: <?php echo $bidrow['d_name']; ?><br>
+										Driver Phone: <?php echo $bidrow['d_phone']; ?><br>
 									</td> 									
 									<td>																				
-										<span class=" btn"> £ 												
+										<span style="font-size: 28px;"> £ 												
 											<?php echo $bidrow['bid_amount']; ?>												
 										</span>										
 									</td>                        																	
@@ -61,9 +63,9 @@ include('header.php');
 										<?php echo $bidrow['bid_date']; ?>									
 									</td>
 									<td>										
-										<a href="dispatch-booking.php?book_id=<?php echo $bidrow['book_id'] ?>">
-												<button class="btn btn-success"><i class="ti ti-plane-tilt"></i>Dispatch</button>
-											</a>								
+										<a href="dispatch-booking.php?book_id=<?php  echo $bidrow['book_id'] ?>">
+												<button class="btn btn-success"><i class="ti ti-plane-tilt"></i>Dispatch Job</button>
+											</a>							
 									</td>			
 								</tr>                              															
 								<?php																	

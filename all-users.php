@@ -73,15 +73,15 @@ include('header.php');
 									</td>									
 									<td class="sort-date">
 									 	<?php
-									if (!$urow['user_pic']) {									
+											if (!$urow['user_pic']) {									
 										?>																	
 										<img src="img/user-1.jpg" alt="User Img" style="width: 80px; height: 80px; border-radius: 5px;">	
-										<?php
-									} else{															
+										<?php									
+											} else{															
 										?>																
 										<img src="img/users/<?php echo $urow['user_pic'];?>" alt="User Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
-										<?php
-									}			
+										<?php								
+											}			
 										?>											
 									</td>                       										
 									<td class="sort-time">
@@ -99,16 +99,15 @@ include('header.php');
 									<td class="sort-drpoff">											
 										<?php echo $urow['designation']; ?>							
 									</td>	
-									<td> 									
-										<a href="view-user.php?user_id=<?php echo $urow['user_id']; ?>">
-											<button class="btn btn-info">
-												<i class="ti ti-eye"></i>View
-											</button>												
+									<td>																					
+										<a href="view-user.php?user_id=<?php echo $urow['user_id']; ?>" class="btn btn-info">
+											<i class="ti ti-eye"></i>
+											View		
 										</a>										
-										<button class="btn btn-danger delete_btn" data-user_id="<?php echo $urow['user_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-user-delete">
+										<a class="btn btn-danger delete_btn" href="#">
 											<i class="ti ti-square-rounded-x"></i>										
 											Delete										
-										</button>					
+										</a>					
 									</td>	
 								</tr>																
 								<?php																
@@ -128,38 +127,14 @@ include('header.php');
 		const list = new List('table-customer', {      					
 			sortClass: 'table-sort',      							
 			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-name', 'sort-email', 'sort-phone', 'sort-gender'						
-						]					
+			valueNames: [ 'sort-name', 'sort-email', 'sort-phone', 'sort-gender']					
 		}); 			
 	})	
-	$(document).ready(function() {
-    $('#modal-user-delete').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var userId = button.data('user_id');
-        var modal = $(this);
-
-        $('#deleteCustomerBtn').click(function() {
-            $.ajax({
-                url: 'del-customer.php',
-                type: 'GET', // or 'POST' based on your server-side handling
-                data: { user_id: userId },
-                success: function(response) {
-                    console.log('Deletion successful');
-                    $('#modal-user-delete').modal('hide');
-                    location.reload(); // Refresh the page after successful deletion
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error:', error);
-                }
-            });
-        });
-    });
-});
 </script>
 
 
 <!-------------------------------
-----------Add Customer-------------
+----------Add User-------------
 -------------------------------->
 <div class="modal modal-blur fade" id="modal-user" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">    	
@@ -262,53 +237,26 @@ include('header.php');
 					</div> 					
 				</div> 					
 			</form>									
-			<script>    
-					function validateForm() {     
-						// Perform your form validation here     
-						var fnameInput = document.getElementsByName("fname")[0].value;
-						var lnameInput = document.getElementsByName("lname")[0].value;
-						var uemailInput = document.getElementsByName("uemail")[0].value;  
-						var upassInput = document.getElementsByName("upass")[0].value;
-						var uphoneInput = document.getElementsByName("uphone")[0].value;		
-						var ugenderInput = document.getElementsByName("ugender")[0].value;		
-						var pcInput = document.getElementsByName("pc")[0].value;
-       
-						if (fnameInput === "" || lnameInput === "" || uphoneInput === "" || uemailInput === "" || upassInput === "" || ugenderInput === "" || pcInput === "") {           
-							// Display an error message or prevent the form submission           
-							alert("Please fill in all required fields.");           
-							return false;     
-						}      
-						// If validation passes, you can proceed with the form submission      
-						return true;   
-					}
-				</script>											     								
+			<script>					
+				function validateForm() {						    						
+					var fnameInput = document.getElementsByName("fname")[0].value;					
+					var lnameInput = document.getElementsByName("lname")[0].value;					
+					var uemailInput = document.getElementsByName("uemail")[0].value;  					
+					var upassInput = document.getElementsByName("upass")[0].value;					
+					var uphoneInput = document.getElementsByName("uphone")[0].value;							
+					var ugenderInput = document.getElementsByName("ugender")[0].value;							
+					var pcInput = document.getElementsByName("pc")[0].value;       
+					
+					if (fnameInput === "" || lnameInput === "" || uphoneInput === "" || uemailInput === "" || upassInput === "" || ugenderInput === "" || pcInput === "") {							          					
+						alert("Please fill in all required fields.");           						
+						return false;     						
+					}      						     					
+					return true;   					
+				}
+			</script>											     										
 		</div>
 	</div>		
 </div>
-				
-	<!--Delete Modal-->										
-	<div class="modal modal-blur fade" id="modal-user-delete" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog modal-sm modal-dialog-centered" role="document">			
-			<div class="modal-content">            															
-				<div class="modal-header">                																	
-					<h5 class="modal-title">Delete Customer</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>            																	
-				<div class="modal-body">                																		
-					<p>Are you sure you want to delete Customer ?</p>
-				</div>            																	
-				<div class="modal-footer">                																		
-					<button type="button" class="btn btn-success" data-bs-dismiss="modal">					
-						Cancel
-					</button>				
-					<button type="button" class="btn ms-auto btn-danger"  id="deleteCustomerBtn">
-						Yes								
-					</button>            													
-				</div>        												
-			</div>    											
-		</div>										
-	</div>									
-	<!--End Delete Modal-->
 <?php
 include('footer.php');
 ?>

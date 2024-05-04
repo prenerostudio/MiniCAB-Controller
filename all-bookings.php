@@ -12,8 +12,7 @@ include('header.php');
 			</h2>              			
 		</div>		
 		<div class="col-auto ms-auto d-print-none">            		
-			<div class="btn-list">                			
-								
+			<div class="btn-list">				
 				<span class="d-none d-sm-inline">									
 						<span class="dropdown">                    
 							<button class="btn dropdown-toggle align-text-top" id="filterDropdown" data-bs-boundary="viewport" data-bs-toggle="dropdown">

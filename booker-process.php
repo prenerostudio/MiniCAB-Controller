@@ -65,10 +65,22 @@ if ($phone_count > 0) {
     }
 
     if ($stmt->execute()) {
-        header('Location: bookers.php'); // Redirect on successful insertion
-        exit();
+		$actsql = "INSERT INTO `activity_log` (
+												`activity_type`,
+												`user`, 
+												`details`
+												) VALUES (
+												'New Booker',
+												'$d_name',
+												'New Booker Added by Controller')";		
+		
+			$actr = mysqli_query($connect, $actsql);
+		
+		
+        header('Location: bookers.php'); 
+        
     } else {
-        header('Location: bookers.php'); // Handle the error
+        header('Location: bookers.php'); 
     }
 
     $stmt->close();

@@ -39,8 +39,6 @@ if ($result->num_rows > 0) {
 					</h2>        										   					
 					<div class="row mb-3">											
 						<div class="card">		
-							<div class="card-header">														
-							</div>
 							<div class="card-body border-bottom py-3">								
 								<div id="table-adriver" class="table-responsive">									        
 									<table class='table table-responsive'>          

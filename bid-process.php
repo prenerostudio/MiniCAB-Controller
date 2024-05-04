@@ -12,27 +12,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								`bid_status`='$status',
 								`bid_time`='$bid_time',
 								`bid_note`='$bid_note' WHERE `book_id`='$book_id'";
-    
-	if (mysqli_query($connect, $sql)) {
 
+	if (mysqli_query($connect, $sql)) {
 		$actsql = "INSERT INTO `activity_log` (
-			`activity_type`,												
-			`user`, 
-			`details`
-		) VALUES (													
-			'Booking Opens for Bid',													
-			'Controller',
-			'Controller Has Opened a Bid for Booking " . $book_id . "'
-		)";
+												`activity_type`,												
+												`user`, 
+												`details`
+												) VALUES (													
+												'Booking Opens for Bid',													
+												'Controller',
+												'Controller Has Opened a Bid for Booking " . $book_id . "')";
 		
 		$actr = mysqli_query($connect, $actsql);
-			
 		echo "Bid added successfully!";
 		header('location: bid-bookings.php');
 	} else {
 		echo "Error: " . mysqli_error($connect);
-		//header('location: add-bid.php');
-	}
+		header('location: bid-bookings.php');
+	}	
 	mysqli_close($connect); 
 }
 ?>
