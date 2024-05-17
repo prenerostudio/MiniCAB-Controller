@@ -7,27 +7,16 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-
+$at_id = $_POST['at_id'];
 $d_id = $_POST['d_id'];
-$day_title = $_POST['day_title'];
-$start_time = $_POST['start_time'];
-$end_time = $_POST['end_time'];
-$date = date("Y-m-d h:i:s");
+$status = 1;
+
 
 if(isset($_POST['d_id'])){ 					
-		$sql="INSERT INTO `availability_times`(
-											`d_id`, 
-											`day_title`, 
-											`start_time`, 
-											`end_time` 											
-											) VALUES (
-											'$d_id',
-											'$day_title',
-											'$start_time',
-											'$end_time')";								
+		$sql="UPDATE `availability_times` SET `d_id`='$d_id', `at_status`='$status' WHERE `at_id`='$at_id'";								
 		$r=mysqli_query($connect,$sql);		
 		if($r){    			
-			echo json_encode(array('message'=>"Time Slot Added Successfully",'status'=>true));		
+			echo json_encode(array('message'=>"Time Slot Accepted Successfully",'status'=>true));		
 		}else{    		
 			echo json_encode(array('message'=>"Error In Adding Time Slot",'status'=>false));		
 		}				

@@ -137,7 +137,7 @@ $sql = "INSERT INTO `bookings`(
 
 $result = mysqli_query($connect, $sql);       
 if ($result) {  
-	$book_id = mysqli_last_insert($connect);	
+	$book_id = mysqli_insert_id($connect);	
 	$actsql = "INSERT INTO `activity_log` (
 											`activity_type`,												
 											`user`,

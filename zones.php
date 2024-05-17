@@ -299,16 +299,32 @@ include('header.php');
 	}
 	
 	function initAutocomplete() {        
-    var pickupInput = document.getElementById('pickup');            
-    var dropoffInput = document.getElementById('dropoff');
-    
-    var journeyDistanceInput = document.getElementById('journeyDistance');		            
-    var autocompleteOptions = {        
-        types: ['geocode'],                    
-        componentRestrictions: {country: 'GB'}    
-    };				            
-    var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-    var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
+        var pickupInput = document.getElementById('pickup');
+        var dropoffInput = document.getElementById('dropoff');
+
+        var autocompleteOptions = {
+            types: ['geocode'],
+            componentRestrictions: {country: 'GB'}
+        };
+
+        var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
+        var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
+        
+        autocompletePickup.addListener('place_changed', function() {
+            var place = autocompletePickup.getPlace();
+            if (!place.geometry) {
+                console.error("Place not found");
+                return;
+            }
+        });
+        
+        autocompleteDropoff.addListener('place_changed', function() {
+            var place = autocompleteDropoff.getPlace();
+            if (!place.geometry) {
+                console.error("Place not found");
+                return;
+            }
+        });
    
     autocompletePickup.addListener('place_changed', function () {        
         updateDistance();        
@@ -379,10 +395,9 @@ include('header.php');
 }
 
 
-$('#modal-zone').on('shown.bs.modal', function () {
-    initAutocomplete();
-});
-
+ $('#modal-zone').on('shown.bs.modal', function () {
+        initAutocomplete();
+    });
 	
 </script>
 <?php

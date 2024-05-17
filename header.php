@@ -197,10 +197,7 @@ if (!isset($_SESSION['email'])) {
 												<i class="ti ti-file-plus"></i>
 												Add New Bid	
 											</a>   											
-											<!--<a class="dropdown-item" href="#"> 											
-												<i class="ti ti-bookmark-question"></i>
-												Requested Bookings for Bids												
-											</a>-->													
+																							
 											<a class="dropdown-item" href="bid-bookings.php">											
 												<i class="ti ti-file-check"></i>
 												Bookings on Bid                    					
@@ -208,7 +205,11 @@ if (!isset($_SESSION['email'])) {
 											<a class="dropdown-item" href="accepted-bids.php">											
 												<i class="ti ti-users"></i> 												
 												Accepted Bids
-											</a>				
+											</a>	
+											<a class="dropdown-item" href="time-slots.php">
+												<i class="ti ti-clock-24"></i>
+												Time Slots												
+											</a>
 										</div>                    										
 									</li>									
 									<li class="nav-item dropdown">                      									
