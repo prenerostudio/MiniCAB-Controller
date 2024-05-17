@@ -17,21 +17,21 @@ $drow = mysqli_fetch_array($dsql);
 		<div class="col-auto ms-auto d-print-none">            				
 			<div class="btn-list">                						
 				<?php				
-				if($drow['acount_status'] == 0){				
+					if($drow['acount_status'] == 0){				
 				?>								
 				<a href="update-driver-status.php?d_id=<?php echo $d_id ?>" class="btn btn-primary d-none d-sm-inline-block">
 					<i class="ti ti-checks"></i>                    										
 					Approve Driver                 									
 				</a>   				
-				<?php				
-				}else {									
+				<?php					
+					}else {									
 				?>								
 				<button class="btn btn-disable d-none d-sm-inline-block" disabled>
 					<i class="ti ti-checks"></i>                    										
 					Verified Driver                 									
 				</button>  
-				<?php									
-				}				
+				<?php				
+					}				
 				?>							              					                							
 			</div>              					
 		</div>			
@@ -108,7 +108,7 @@ $drow = mysqli_fetch_array($dsql);
 													Delete avatar                       							
 												</a>							
 											</div>
-										</div>															
+										</div>
 										<h3 class="card-title mt-4">Business Profile</h3>
 										<form method="post" action="update-driver.php" enctype="multipart/form-data">
 											<div class="row g-3">
@@ -145,7 +145,7 @@ $drow = mysqli_fetch_array($dsql);
 												<div class="col-md-4">
 													<div class="mb-3"> 
 														<div class="form-label">Licence Authority </div>  
-														<select class="form-select" name="dauth">											
+														<select class="form-select" name="dauth">			
 															<option>
 																<?php echo $drow['licence_authority']; ?>
 															</option>									
@@ -155,27 +155,29 @@ $drow = mysqli_fetch_array($dsql);
 														</select>        															
 													</div>																
 													<div class="mb-3">								
-														<div class="form-label">Driving Licence </div>										
+														<div class="form-label">Driving Licence </div>	
 														<input type="text" class="form-control" value="<?php echo $drow['d_licence']; ?>" name="dl">							
 													</div>		
-													<div class="mb-3">                    													
-														<div class="form-label">Licence Expiry </div>								
-														<input type="text" class="form-control" value="<?php echo $drow['d_licence_exp']; ?>" name="dle">							
+													<div class="mb-3">
+														<div class="form-label">Licence Expiry </div>	
+														<input type="date" class="form-control" value="<?php echo $drow['d_licence_exp']; ?>" name="dle">							
 													</div>																					
-													<div class="mb-3">                    													
-														<div class="form-label">PCO Licence</div>									
-														<input type="text" class="form-control" value="<?php echo $drow['pco_licence'] ?>" name="pl">                     							
+													<div class="mb-3">			
+														<div class="form-label">PCO Licence</div>
+														<input type="text" class="form-control" value="<?php echo $drow['pco_licence'] ?>" name="pl">		
 													</div>															
 													<div class="mb-3">								
 														<div class="form-label">PCO Expiry</div>  								
-														<input type="text" class="form-control" value="<?php echo $drow['pco_exp'] ?>" name="ple">								             							
+														<input type="date" class="form-control" value="<?php echo $drow['pco_exp'] ?>" name="ple">								             							
 													</div>																					
 												</div>																		
 												<div class="col-md-4">
-													<div class="mb-3">                    													
+													<div class="mb-3">	
 														<div class="form-label">Language</div>
 														<select class="form-select" name="dlang">
-															<option><?php echo $drow['d_language'] ?></option>
+															<option>
+																<?php echo $drow['d_language']; ?>
+															</option>
 															<?php
 																$lsql=mysqli_query($connect,"SELECT * FROM `language`");
 															   	while($lrow = mysqli_fetch_array($lsql)){
@@ -184,40 +186,37 @@ $drow = mysqli_fetch_array($dsql);
 																<?php echo $lrow['language'] ?>
 															</option>									
 															<?php									
-															   }																		
-															?>																				
+															   }		
+															?>			
 														</select> 								
-													</div>														
-																											
-																		
+													</div>																		
 													<div class="mb-3">								
 														<div class="form-label">Remarks</div>  								
 														<textarea class="form-control" rows="3" name="dr">
 															<?php echo $drow['d_remarks'] ?>
-														</textarea>								             							
-													</div>																				
-													<div class="mb-3">                    													
-														<div class="form-label">Date Registered</div>										
-														<input type="text" class="form-control" value="<?php echo $drow['driver_reg_date'] ?>" disabled>                     							
+														</textarea>		
+													</div>		
+													<div class="mb-3">			
+														<div class="form-label">Date Registered</div>			
+														<input type="text" class="form-control" value="<?php echo $drow['driver_reg_date'] ?>" disabled>				
 													</div>						
-												</div>                    																
-											</div>															
-											</div>                 
-				
-										<div class="card-footer bg-transparent mt-auto">                 					
-											<div class="btn-list justify-content-end">                 					
-												<a href="new-drivers.php" class="btn btn-danger">                  							
-													Cancel                  						
-												</a>                  						 						
-												<button type="submit" class="btn btn-success">
-													<i class="ti ti-360"></i>
-													Update
-												</button>		
-											</div>                 				
-										</div>															
-										</form>    
-								</div>                                                    
-							</div>                      						
+												</div>													
+											</div>													
+											<div class="card-footer bg-transparent mt-auto">
+												<div class="btn-list justify-content-end">
+													<a href="new-drivers.php" class="btn btn-danger">
+														Cancel												
+													</a>												
+													<button type="submit" class="btn btn-success">
+														<i class="ti ti-360"></i>
+														Update												
+													</button>											
+												</div>										
+											</div>																				
+										</form>											
+									</div>	   								
+								</div>							
+							</div>         						
 						</div>				
 						
 						<div class="tab-pane" id="tabs-document">						
@@ -242,7 +241,7 @@ $drow = mysqli_fetch_array($dsql);
 											<script>    											
 												function validateForm() {        												
 													var fileInput = document.getElementById('dl_front');
-													if (fileInput.files.length === 0) {            													
+													if (fileInput.files.length === 0) {			
 														alert("Please select an image before submitting.");
 														return false;        
 													}

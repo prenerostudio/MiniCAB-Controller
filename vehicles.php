@@ -2,73 +2,82 @@
 include('header.php');
 ?>  
 <div class="page-header d-print-none page_padding">		   		
-	<div class="row g-2 align-items-center">        	
-		<div class="col">            								
-			<div class="page-pretitle">                			
+	<div class="row g-2 align-items-center">        		
+		<div class="col">            										
+			<div class="page-pretitle">                						
 				Overview                				
-			</div>                			
-			<h2 class="page-title">                			
-				Vehicle Section                				
-			</h2>              			
-		</div>		
-		<div class="col-auto ms-auto d-print-none">            		
-			<div class="btn-list">                			
-				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-vehicle">  											
-					<i class="ti ti-user-plus"></i>                    					
-					Add New Vehicle                  					
-				</a>                  				
-				<a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-vehicle" aria-label="Create new report">                    				
-					<i class="ti ti-bookmark-plus"></i>                  					
-				</a>                				
-			</div>              			
-		</div>		
+			</div>                						
+			<h2 class="page-title">                						
+				Vehicle Section                							
+			</h2>              					
+		</div>						
 	</div>	
 </div>
 <div class="page-body page_padding">          
-	<div class="row row-deck row-cards">			      	
-		<div class="col-12">            					
-			<div class="card">                							
-				<div class="card-header">                    									
-					<h3 class="card-title">All Vehicle List</h3>
-				</div>                  				
-				<div class="card-body border-bottom py-3">				
-					<div id="table-booker" class="table-responsive">                  					
-						<table class="table">                    						
-							<thead>                      							
-								<tr>									
-									<th>									
-										<button class="table-sort" data-sort="sort-id">ID</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-date">Image</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-time">Name</button>
+	<div class="row row-deck row-cards">			      			
+		<div class="col-8">            							
+			<div class="card">                										
+				<div class="card-header">                    													
+					<h3 class="card-title">
+						All Vehicle List
+					</h3>				
+				</div>                  								
+				<div class="card-body border-bottom py-3">									
+					<div id="table-booker" class="table-responsive">                  										
+						<table class="table">                    													
+							<thead>                      															
+								<tr>																		
+									<th>																			
+										<button class="table-sort" data-sort="sort-id">
+											ID
+										</button>									
+									</th>
+									<th>										
+										<button class="table-sort" data-sort="sort-date">
+											Image
+										</button>									
+									</th>									
+									<th>										
+										<button class="table-sort" data-sort="sort-time">
+											Vehicle Name
+										</button>
 									</th>                       									
 									<th>									
-										<button class="table-sort" data-sort="sort-passenger">Seat</button>
+										<button class="table-sort" data-sort="sort-passenger">
+											Seat
+										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-pickup">Air Bags</button>
+										<button class="table-sort" data-sort="sort-pickup">
+											Air Bags
+										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Wheel Chair</button>
+										<button class="table-sort" data-sort="sort-dropoff">
+											Wheel Chair
+										</button>
 									</th>
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Baby Sitter</button>
+										<button class="table-sort" data-sort="sort-dropoff">
+											Baby Sitter
+										</button>
 									</th>
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Price</button>
+										<button class="table-sort" data-sort="sort-dropoff">
+											Price
+										</button>
 									</th>							
 									<th>									
-										<button class="table-sort">Actions</button>
+										<button class="table-sort">
+											Actions
+										</button>
 									</th>                      									
 								</tr>                   								
-							</thead>                  							
-							<tbody class="table-tbody">												
-								<?php																		
-								$x=0;																
-								$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");								
+							</thead>							
+							<tbody class="table-tbody">							
+								<?php							
+								$x=0;							
+								$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");							
 								while($vrow = mysqli_fetch_array($vsql)){
 									$x++;									
 								?>								
@@ -78,15 +87,15 @@ include('header.php');
 									</td>
 									<td class="sort-date">									
 										<?php																
-									if (!$vrow['v_img']) {
-										?>																	
+											if (!$vrow['v_img']) {
+										?>										
 										<img src="img/car-icon.png" alt="Vehicle Img" style="width: 80px; height: 80px; border-radius: 50px;">	
-										<?php
-									} else{															
+										<?php									
+											} else{															
 										?>																
 										<img src="img/vehicles/<?php echo $vrow['v_img'];?>" alt="Vehicle Img" style="width: 80px; height: 80px; border-radius: 50px;">
-										<?php
-									}			
+										<?php									
+											}			
 										?>											
 									</td>                       										
 									<td class="sort-time">
@@ -97,61 +106,56 @@ include('header.php');
 									</td> 
 									<td class="sort-pickup">									
 										<?php 
-									if ($vrow['v_airbags'] == 1) {
+											if ($vrow['v_airbags'] == 1) {
 										?>    
-										<p style="color: yellowgreen; font-size: 14px; font-weight: 700;">Yes</p>
+										<p style="color: yellowgreen;">Yes</p>
 										<?php
-									} else {
+											} else {
 										?>    
-										<p style="color: red; font-size: 14px; font-weight: 700;">No</p>
+										<p style="color: red;">No</p>
 										<?php
-									}
+											}
 										?>									
-									</td>                       										
-									
+									</td>									
 									<td class="sort-drpoff">							
 										<?php										
-									if ($vrow['v_wchair'] == 1) {
+											if ($vrow['v_wchair'] == 1) {
 										?>    
-										<p style="color: yellowgreen; font-size: 14px; font-weight: 700;">Yes</p>
-										<?php
-									} else {
+										<p style="color: yellowgreen;">Yes</p>
+										<?php									
+											} else {
 										?>    
-										<p style="color: red; font-size: 14px; font-weight: 700;">No</p>
-										<?php
-									}
+										<p style="color: red;">No</p>
+										<?php									
+											}
 										?>										
 									</td>									
 									<td class="sort-drpoff">									
 										<?php								
-									if ($vrow['v_babyseat'] == 1) {
+											if ($vrow['v_babyseat'] == 1) {
 										?>    										
-										<p style="color: yellowgreen; font-size: 14px; font-weight: 700;">Yes</p>
-										<?php
-									} else {
+										<p style="color: yellowgreen;">Yes</p>
+										<?php									
+											} else {
 										?>    
-										<p style="color: red; font-size: 14px; font-weight: 700;">No</p>
-										<?php
-									}
+										<p style="color: red;">No</p>
+										<?php									
+											}
 										?>										
-									</td>
-									<td class="sort-drpoff">											
-											<button class="btn">£ <?php echo $vrow['v_pricing']; ?></button>								
-									</td>	
-									<td> 									
-										<a href="view-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>">
-											<button class="btn btn-info">
-												<i class="ti ti-eye"></i>View
-											</button>												
-										</a>
-
-										<a href="del-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>">
-											<button class="btn btn-danger">
-												<i class="ti ti-square-rounded-x"></i>Delete
-											</button>				
-										</a>										
 									</td>									
-								</tr>								
+									<td class="sort-drpoff" style="font-size: 18px;">											
+										£										
+										<?php echo $vrow['v_pricing']; ?>
+									</td>									
+									<td> 									
+										<a href="view-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>" class="btn btn-info" title="View / Edit">	
+											<i class="ti ti-eye"></i>
+										</a>
+										<a href="del-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>" class="btn btn-danger" title="Delete Vehicle">												
+											<i class="ti ti-square-rounded-x"></i>										
+										</a>																			
+									</td>																	
+								</tr>																
 								<?php								
 								}								
 								?>                                       								
@@ -161,6 +165,67 @@ include('header.php');
 				</div>                                                    				
 			</div>              			
 		</div>		
+		<div class="col-4">            								
+			<div class="card">                										
+				<div class="card-header">                    														
+					<h3 class="card-title">						
+						Add New Vehicle					
+					</h3>				
+				</div>                  								
+				<div class="card-body border-bottom py-3">						
+					<form method="post" enctype="multipart/form-data" action="vehicle-process.php" onsubmit="return validateForm();">							
+						<div class="modal-body">									
+							<div class="row">																			
+								<div class="mb-3">													
+									<label class="form-label">Vehicle Name</label>
+									<input type="text" class="form-control" name="vname" placeholder="Vehicle Name">
+								</div>						                												
+								<div class="mb-3">													
+									<label class="form-label">No. of Seats</label>
+									<input type="number" class="form-control" name="seats">
+								</div>											
+								<div class="mb-3">							
+									<label class="form-check form-switch">        								
+										<input class="form-check-input" type="checkbox" name="bags" value="1">
+										<span class="form-check-label">Air Bags</span>    							
+									</label>						
+								</div>						
+								<div class="mb-3">							
+									<label class="form-check form-switch">        								
+										<input class="form-check-input" type="checkbox" name="wchair" value="1">
+										<span class="form-check-label">Wheel Chair</span>					
+									</label>						
+								</div>						
+								<div class="mb-3">    							
+									<label class="form-check form-switch">        								
+										<input class="form-check-input" type="checkbox" name="babyc" value="1">
+										<span class="form-check-label">Baby Carriers</span>
+									</label>
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Pricing </label>       
+									<input type="number" class="form-control" name="pricing">
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Image</label>
+									<input type="file" class="form-control" name="v_img">
+								</div>
+							</div>
+						</div>          							        			
+						<div class="modal-footer">
+							<button type="reset" class="btn btn-danger">
+								<i class="ti ti-circle-x"></i>
+								Cancel
+							</button>
+							<button type="submit" class="btn ms-auto btn-success">						
+								<i class="ti ti-car-garage"></i>						
+								Save Vehicles					
+							</button>       							
+						</div> 											
+					</form>					                  									
+				</div>                                                    				
+			</div>              			
+		</div>
 	</div>
 </div>        
 <script>	
@@ -173,136 +238,8 @@ include('header.php');
 						]					
 		}); 			
 	})	
-</script>
-
-<!-------------------------------
-----------Add Vehicle-------------
--------------------------------->
-
-<div class="modal modal-blur fade" id="modal-vehicle" tabindex="-1" role="dialog" aria-hidden="true">
-
-	<div class="modal-dialog modal-lg" role="document">    	
 	
-		<div class="modal-content">        		
-		
-			<div class="modal-header">            			
-			
-				<h5 class="modal-title">Add New Vehicle</h5>            				
-				
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
-			
-			</div> 
-			
-			<form method="post" enctype="multipart/form-data" action="vehicle-process.php" onsubmit="return validateForm();">			
-			
-				<div class="modal-body">								
-				
-					<div class="row">              					
-								
-					
-						<div class="mb-3">              					
-						
-							<label class="form-label">Vehicle Name</label>              					
-							
-							<input type="text" class="form-control" name="vname" placeholder="Vehicle Name">            				
-							
-						</div> 						
-						                
-						
-						<div class="mb-3">                  							
-						
-							<label class="form-label">No. of Seats</label>              					
-							
-							<input type="number" class="form-control" name="seats">
-							
-						</div>             				
-					           				
-					             					
-										
-							
-						
-						<div class="mb-3">
-    
-							<label class="form-check form-switch">
-        
-								<input class="form-check-input" type="checkbox" name="bags" value="1">
-        
-								<span class="form-check-label">Air Bags</span>
-    
-							</label>
-
-						</div>
-
-
-						<div class="mb-3">
-    
-							<label class="form-check form-switch">
-        
-								<input class="form-check-input" type="checkbox" name="wchair" value="1">
-        
-								<span class="form-check-label">Wheel Chair</span>
-    
-							</label>
-
-						</div>
-
-
-						<div class="mb-3">
-    
-							<label class="form-check form-switch">
-        
-								<input class="form-check-input" type="checkbox" name="babyc" value="1">
-        
-								<span class="form-check-label">Baby Carriers</span>
-    
-							</label>
-
-						</div>         					
-					          				
-				             					
-									
-							
-						<div class="mb-3">                  							
-
-						
-							<label class="form-label">Pricing </label>              					
-							
-							<input type="number" class="form-control" name="pricing">      						
-							
-						</div> 					
-					                
-						
-						<div class="mb-3">                  							
-						
-							<label class="form-label">Image</label>              					
-							
-							<input type="file" class="form-control" name="v_img">      						
-							
-						</div>             					
-					           				
-					
-					</div>														          				          
-				
-				</div>          							        			
-				
-				<div class="modal-footer">           
-				
-					<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 
-					
-						<i class="ti ti-circle-x"></i>
-						
-						Cancel           				
-					
-					</a>           				
-					
-					<button type="submit" class="btn ms-auto btn-success">						
-						<i class="ti ti-car-garage"></i>
-						Add Vehicles						
-					</button>       			
-				</div> 								
-			</form>		
-			<script>
-    function validateForm() {
+	function validateForm() {
         // Perform your form validation here
         var vnameInput = document.getElementsByName("vname")[0].value;
         var seatsInput = document.getElementsByName("seats")[0].value;
@@ -320,12 +257,6 @@ include('header.php');
         return true;
     }
 </script>
-		</div>      	
-	</div>    
-</div>   
-
-
-
 <?php
 include('footer.php');
 ?>
