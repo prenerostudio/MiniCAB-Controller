@@ -3,19 +3,13 @@ require 'config.php';
 
 $ap_name = $_POST['ap_name'];
 $ap_address = $_POST['ap_address'];
-$ap_city = $_POST['ap_city'];
-$ap_code = $_POST['ap_code'];
 
 $sql = "INSERT INTO `airports`(
 								`ap_name`, 
-								`ap_address`, 
-								`ap_city`, 
-								`ap_code`								
+								`ap_address`							
 								) VALUES (
 								'$ap_name',
-								'$ap_address',
-								'$ap_city',
-								'$ap_code')";                
+								'$ap_address')";                
 
 $result = mysqli_query($connect, $sql);       
 if ($result) {  	

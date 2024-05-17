@@ -3,7 +3,7 @@ require 'config.php';
 
 $sp = $_POST['sp'];
 $ep = $_POST['ep'];
-$dis = $_POST['dis'];
+$dis = $_POST['journey_distance'];
 $fare = $_POST['fare'];
 $date = date("Y-m-d H:i:s");
 

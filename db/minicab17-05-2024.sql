@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 17, 2024 at 05:07 AM
--- Server version: 10.6.17-MariaDB-cll-lve
--- PHP Version: 8.1.27
+-- Host: 127.0.0.1
+-- Generation Time: May 17, 2024 at 02:10 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `euroqzwc_minicaboffice`
+-- Database: `minicab`
 --
 
 -- --------------------------------------------------------
@@ -61,7 +61,9 @@ INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user`, `det
 (00000019, 'New Driver ', '2024-05-13 00:42:27', 'iuhihihuihuih', 'New Driver Acount Created by iuhihihuihuih'),
 (00000020, 'New Driver ', '2024-05-13 00:43:13', 'iuhihihuihuih', 'New Driver Acount Created by iuhihihuihuih'),
 (00000021, 'New Driver ', '2024-05-13 00:45:04', 'iuhihihuihuih', 'New Driver Acount Created by iuhihihuihuih'),
-(00000022, 'New Driver ', '2024-05-13 12:18:50', '', 'New Driver Acount Created by ');
+(00000022, 'New Driver ', '2024-05-13 12:18:50', '', 'New Driver Acount Created by '),
+(00000023, 'New Airport Added', '2024-05-17 11:37:18', 'Controller', 'New Airport Heathrow Airport Has been Added by Controller'),
+(00000024, 'New Airport Added', '2024-05-17 11:58:28', 'Controller', 'New Airport London Airport Has been Added by Controller');
 
 -- --------------------------------------------------------
 
@@ -73,8 +75,6 @@ CREATE TABLE `airports` (
   `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `ap_name` varchar(255) NOT NULL,
   `ap_address` varchar(255) NOT NULL,
-  `ap_city` varchar(255) NOT NULL,
-  `ap_code` varchar(55) NOT NULL,
   `ap_date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -82,17 +82,14 @@ CREATE TABLE `airports` (
 -- Dumping data for table `airports`
 --
 
-INSERT INTO `airports` (`ap_id`, `ap_name`, `ap_address`, `ap_city`, `ap_code`, `ap_date_added`) VALUES
-(00000001, 'Gatwick Airport', 'Horley, Gatwick RH6 0NP', 'United Kingdom', 'LGW', '2023-10-27 19:00:00'),
-(00000002, 'Heathrow Airport', 'Longford TW6, UK', 'United Kingdom', 'LHR', '2023-10-27 19:00:00'),
-(00000003, 'Manchester Airport', 'Manchester M90 1QX', 'United Kingdom', 'MAN', '2023-10-27 19:00:00'),
-(00000004, 'Birmingham Airport', 'Birmingham B26 3QJ', 'United Kingdom', 'BHX', '2023-10-27 19:00:00'),
-(00000005, 'Stansted Airport', 'Bassingbourn Rd, Stansted CM24 1QW', 'United Kingdom', 'STN', '2023-10-27 19:00:00'),
-(00000006, 'Leeds Bradford Airport', 'Whitehouse Ln, Yeadon, Leeds LS19 7TU', 'United Kingdom', 'LBA', '2023-10-27 19:00:00'),
-(00000007, 'Luton Airport', 'Airport Way, Luton LU2 9LY', 'United Kingdom', 'LTN', '2023-10-27 19:00:00'),
-(00000008, 'Southend Airport', 'Eastwoodbury Cres, Southend-on-Sea SS2 6YF', 'United Kingdom', 'SEN', '2023-10-27 19:00:00'),
-(00000009, 'London City Airport', 'Hartmann Rd, London E16 2PX', 'United Kingdom', 'LCY', '2023-10-27 19:00:00'),
-(00000010, 'Newcastle International Airport', 'Woolsington, Newcastle upon Tyne NE13 8BZ', 'United Kingdom', 'NCL', '2023-10-27 19:00:00');
+INSERT INTO `airports` (`ap_id`, `ap_name`, `ap_address`, `ap_date_added`) VALUES
+(00000006, 'Leeds Bradford Airport', 'Whitehouse Ln, Yeadon, Leeds LS19 7TU', '2023-10-27 19:00:00'),
+(00000007, 'Luton Airport', 'Airport Way, Luton LU2 9LY', '2023-10-27 19:00:00'),
+(00000008, 'Southend Airport', 'Eastwoodbury Cres, Southend-on-Sea SS2 6YF', '2023-10-27 19:00:00'),
+(00000009, 'London City Airport', 'Hartmann Rd, London E16 2PX', '2023-10-27 19:00:00'),
+(00000010, 'Newcastle International Airport', 'Woolsington, Newcastle upon Tyne NE13 8BZ', '2023-10-27 19:00:00'),
+(00000013, 'Heathrow Airport', 'london heathrow airport terminal 5, London Heathrow Airport (LHR), Wallis Road, Longford, Hounslow, UK', '2024-05-17 11:37:18'),
+(00000014, 'London Airport', 'London Stansted Airport (STN), Bassingbourn Road, Stansted, UK', '2024-05-17 11:58:28');
 
 -- --------------------------------------------------------
 
@@ -335,7 +332,10 @@ CREATE TABLE `break_time` (
 INSERT INTO `break_time` (`bt_id`, `d_id`, `start_time`, `end_time`) VALUES
 (00000003, 00000001, '2024-05-16 04:43:14', '0000-00-00 00:00:00'),
 (00000004, 00000001, '2024-05-16 04:45:59', '0000-00-00 00:00:00'),
-(00000005, 00000001, '2024-05-16 04:48:23', '0000-00-00 00:00:00');
+(00000005, 00000001, '2024-05-16 04:48:23', '0000-00-00 00:00:00'),
+(00000006, 00000001, '2024-05-17 02:34:53', '0000-00-00 00:00:00'),
+(00000007, 00000001, '2024-05-17 02:38:30', '0000-00-00 00:00:00'),
+(00000008, 00000001, '2024-05-17 02:38:51', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -749,7 +749,7 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
-(00000001, 'Azib Ali ', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'london uk new#485 new uk', '', '../../img/drivers/1000046675.jpg', 'Male', 'English', 'London', '31.4408682', '73.08904', 'online', 1, '2024-05-16 12:18:06'),
+(00000001, 'Azib Ali ', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'london uk new#485 new uk', '', '../../img/drivers/1000046675.jpg', 'Male', 'English', 'London', '31.4408682', '73.08904', 'On-Break', 1, '2024-05-17 09:34:53'),
 (00000008, 'Mahtab', 'mahtab@gmail.com', '+447500000001', 'asdf1234', '', '', '', '', '', 'North West', '', '', '', 1, '2024-05-04 09:49:45'),
 (00000020, 'Atiq Ramzan', 'prenero123@gmail.com', '+9233465212345', '6266a', '', '', '', '', '', 'London', '', '', '', 0, '2024-05-13 00:37:42'),
 (00000021, 'iuhihihuihuih', 'jkhihiuhih@gmail.com', 'iuhihihi9y89yu89', '9u09u09yh89', '', '', '', '', '', 'iougiuguiguihuih', '', '', '', 0, '2024-05-13 00:42:27'),
@@ -7523,10 +7523,9 @@ CREATE TABLE `zones` (
 --
 
 INSERT INTO `zones` (`zone_id`, `starting_point`, `end_point`, `distance`, `fare`, `zone_date`) VALUES
-(00000000001, 'Large, popular zoo established in 1872 with an aviary, camel & pony rides & a restaurant.', 'Shahrah-e-Quaid-e-Azam, Mozang Chungi, Lahore, Punjab 54000, Pakistan', '85', '500', '2024-03-19 08:17:09'),
-(00000000002, 'Large, popular zoo established in 1872 with an aviary, camel & pony rides & a restaurant.', 'Shahrah-e-Quaid-e-Azam, Mozang Chungi, Lahore, Punjab 54000, Pakistan', '85', '4666', '2024-03-19 08:17:23'),
-(00000000003, 'Large, popular zoo established in 1872 with an aviary, camel & pony rides & a restaurant.', 'Shahrah-e-Quaid-e-Azam, Mozang Chungi, Lahore, Punjab 54000, Pakistan', '83', '3456', '2024-03-19 08:26:39'),
-(00000000004, '', '', '', '', '2024-05-01 12:30:02');
+(00000000001, 'London, UK', 'Manchester, UK', '340.00', '520', '2024-05-17 10:23:18'),
+(00000000002, 'Birmingham, UK', 'London, UK', '190.00', '310', '2024-05-17 10:25:53'),
+(00000000003, 'London, UK', 'Birmingham, UK', '207.00', '560', '2024-05-17 10:40:23');
 
 --
 -- Indexes for dumped tables
@@ -7776,13 +7775,13 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `airports`
 --
 ALTER TABLE `airports`
-  MODIFY `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `availability_times`
@@ -7818,7 +7817,7 @@ ALTER TABLE `booking_type`
 -- AUTO_INCREMENT for table `break_time`
 --
 ALTER TABLE `break_time`
-  MODIFY `bt_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `bt_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `cancelled_bookings`
@@ -8004,7 +8003,7 @@ ALTER TABLE `vehicle_documents`
 -- AUTO_INCREMENT for table `zones`
 --
 ALTER TABLE `zones`
-  MODIFY `zone_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `zone_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
