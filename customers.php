@@ -16,10 +16,7 @@ include('header.php');
 				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-customer">  											
 					<i class="ti ti-user-plus"></i>                    					
 					Add New Customer                  					
-				</a>                  				
-				<a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-customer" aria-label="Create new report">                    				
-					<i class="ti ti-bookmark-plus"></i>                  					
-				</a>                				
+				</a>				              				
 			</div>              			
 		</div>		
 	</div>	
@@ -29,7 +26,9 @@ include('header.php');
 		<div class="col-12">            					
 			<div class="card">                							
 				<div class="card-header">                    									
-					<h3 class="card-title">All Customers List</h3>
+					<h3 class="card-title">
+						All Customers List
+					</h3>
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-customer" class="table-responsive">                  					
@@ -37,28 +36,44 @@ include('header.php');
 							<thead>                      							
 								<tr>									
 									<th>									
-										<button class="table-sort">ID</button>
+										<button class="table-sort" data-sort="sort-id">
+											ID
+										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort">Image</button>
+										<button class="table-sort">
+											Image
+										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-name">Name</button>
+										<button class="table-sort" data-sort="sort-name">
+											Name
+										</button>
 									</th>                       									
 									<th>									
-										<button class="table-sort" data-sort="sort-email">Email</button>
+										<button class="table-sort" data-sort="sort-email">
+											Email
+										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-phone">Phone</button>
+										<button class="table-sort" data-sort="sort-phone">
+											Phone
+										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-gender">Gender</button>
+										<button class="table-sort" data-sort="sort-gender">
+											Gender
+										</button>
 									</th>									
 									<th>									
-										<button class="table-sort">Status</button>
+										<button class="table-sort" data-sort="sort-status">
+											Status
+										</button>
 									</th>							
 									<th>									
-										<button class="table-sort">Actions</button>
+										<button class="table-sort">
+											Actions
+										</button>
 									</th>                      									
 								</tr>                   								
 							</thead>                  							
@@ -66,197 +81,96 @@ include('header.php');
 								<?php																		
 								$x=0;																
 								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 ORDER BY clients.c_id DESC");								
-								while($crow = mysqli_fetch_array($csql)){
+								while($crow = mysqli_fetch_array($csql)){									
 									$x++;									
 								?>								
 								<tr>                        								
 									<td class="sort-id">
 										<?php echo $x; ?>
 									</td>
-									<td class="sort-date">									
+									<td>									
 										<?php																
-									if (!$crow['c_pic']) {
+											if (!$crow['c_pic']) {
 										?>																	
-										<img src="img/user-1.jpg" alt="Customer Img" style="width: 80px; height: 80px; border-radius: 5px;">	
-										<?php
-									} else{															
-										?>																
-										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
-										<?php
-									}			
+										<img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">	
+										<?php									
+											} else{															
+										?>										
+										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
+										<?php									
+											}			
 										?>											
 									</td>                       										
-									<td class="sort-time">
+									<td class="sort-name">
 										<?php echo $crow['c_name']; ?>
 									</td>                       										
-									<td class="sort-passenger">
+									<td class="sort-email">
 										<?php echo $crow['c_email']; ?>
 									</td>  										
-									<td class="sort-pickup">
+									<td class="sort-phone">
 										<?php echo $crow['c_phone']; ?>
 									</td>                       										
-									<td class="sort-drpoff">
+									<td class="sort-gender">
 										<?php echo $crow['c_gender']; ?>
 									</td>										
-									<td class="sort-drpoff">											
+									<td class="sort-status">											
 										<?php 											
-									if($crow['acount_status']==0){
+											if($crow['acount_status']==0){
 										?>												
 										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-red d-block"></span>															
+											<span class="status-dot status-dot-animated bg-red d-block"></span>
 											<span>Unverified</span>									
 										</div>
-										<?php											
-									} else{											
+										<?php									
+											} else{											
 										?>
 										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-green d-block"></span>											
+											<span class="status-dot status-dot-animated bg-green d-block"></span>
 											<span>Verified</span>											
 										</div>			
-										<?php
-									}
+										<?php									
+											}
 										?>									
 									</td>	
 									<td> 									
 										<a href="view-customer.php?c_id=<?php echo $crow['c_id']; ?>">
 											<button class="btn btn-info">
-												<i class="ti ti-eye"></i>View
+												<i class="ti ti-eye"></i>
+												View
 											</button>												
+										</a>						
+										<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>">
+											<button class="btn btn-danger">
+												<i class="ti ti-square-rounded-x"></i>
+												Delete
+											</button>
 										</a>
-
-										<!--Delete Modal-->
-
-										<div class="modal modal-blur fade" id="modal-customer-delete" tabindex="-1" role="dialog" aria-hidden="true">
-    
-											<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-        
-												<div class="modal-content">
-            
-													<div class="modal-header">
-                
-														<h5 class="modal-title">Delete Customer</h5>
-                
-														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            
-													</div>
-            
-													<div class="modal-body">
-                
-														<p>Are you sure you want to delete Customer ?</p>
-
-														<!--					with ID: <span id="driverId"></span> -->
-            
-													</div>
-            
-													<div class="modal-footer">
-                
-														<button type="button" class="btn btn-success" data-bs-dismiss="modal">
-                    
-															Cancel
-                
-														</button>
-                
-														<button type="button" class="btn ms-auto btn-danger"  id="deleteCustomerBtn">
-                    
-															Yes
-                
-														</button>
-            
-													</div>
-        
-												</div>
-    
-											</div>
-
-										</div>
-
-										<!--End Delete Modal-->
-
-										<button class="btn btn-danger delete_btn" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-
-												target="#modal-customer-delete">
-    
-											<i class="ti ti-square-rounded-x"></i>
-    
-											Delete
-
-										</button>
-
-										<!--
-
-<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>">
-
-<button class="btn btn-danger">
-
-<i class="ti ti-square-rounded-x"></i>Delete
-
-</button>				
-
-</a>										
-
--->
-
-									</td>									
-								
-								</tr>								
-
+									</td>								
+								</tr>
 								<?php								
-								
 								}								
-								
-								?>                                       								
-							
-							</tbody>                 							
-						
-						</table>                						
-					
-					</div>                  					
-				
-				</div>                                                    				
-			
-			</div>              			
-		
-		</div>		
-	
+								?>							
+							</tbody>						
+						</table>					
+					</div>				
+				</div>			
+			</div>		
+		</div>	
 	</div>
-
 </div>        
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-customer', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-name', 'sort-email', 'sort-phone', 'sort-gender'						
-						]					
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const list = new List('table-customer', {
+			sortClass: 'table-sort',
+			listClass: 'table-tbody',
+			valueNames: ['sort-id', 'sort-name', 'sort-email', 'sort-phone', 'sort-gender', 'sort-status']					
 		}); 			
 	})	
-	$(document).ready(function() {
-    $('#modal-customer-delete').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var driverId = button.data('c_id');
-        var modal = $(this);
-
-        $('#deleteCustomerBtn').click(function() {
-            $.ajax({
-                url: 'del-customer.php',
-                type: 'GET', // or 'POST' based on your server-side handling
-                data: { c_id: driverId },
-                success: function(response) {
-                    console.log('Deletion successful');
-                    $('#modal-customer-delete').modal('hide');
-                    location.reload(); // Refresh the page after successful deletion
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error:', error);
-                }
-            });
-        });
-    });
-});
 </script>
 
 
 <!-------------------------------
-----------Add Customer-------------
+----------Add Customer-----------
 -------------------------------->
 <div class="modal modal-blur fade" id="modal-customer" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">    	
@@ -266,11 +180,11 @@ include('header.php');
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div> 			
 			<form method="post" action="customer-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
-				<div class="modal-body">								
-					<div class="row">				
+				<div class="modal-body">
+					<div class="row">					
 						<div class="mb-3 col-md-4">              					
 							<label class="form-label">Full Name</label>              					
-							<input type="text" class="form-control" name="cname" placeholder="Customer Name" required> 				
+							<input type="text" class="form-control" name="cname" placeholder="Customer Name" required>
 						</div> 						               
 						<div class="mb-3 col-md-4">                  
 							<label class="form-label">Email</label>              					
@@ -282,7 +196,7 @@ include('header.php');
 						</div>	
 						<div class="mb-3 col-md-4">              					
 							<label class="form-label">Password</label>              					
-							<input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required> 				
+							<input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required>
 						</div> 	
 						<div class="mb-3 col-md-4">              															
 							<label class="form-label">Gender</label>
@@ -304,7 +218,7 @@ include('header.php');
 								<option>								
 									<?php echo $lrow['language'] ?>								
 								</option>
-								<?php																	
+								<?php
 								}																		
 								?>																			
 							</select> 												
@@ -322,54 +236,50 @@ include('header.php');
 							<input type="text" class="form-control" name="cni">						
 						</div>             																					
 					</div>						         												
-					<div class="modal-body">									
-						<div class="row">
-							<div class="col-lg-12">               													
-								<div class="mb-3">                 															
-									<label class="form-label">Address</label>								
+					<div class="modal-body">						
+						<div class="row">						
+							<div class="col-lg-12">							
+								<div class="mb-3">								
+									<label class="form-label">Address</label>									
 									<textarea class="form-control" rows="3" name="caddress"></textarea>
-								</div>     							
-								<div class="mb-3">                 							
-									<label class="form-label">Others</label>								
-									<textarea class="form-control" rows="3" name="cothers"></textarea>	
-								</div> 						
-							</div>   									
-						</div>          							
-					</div>        							
-					<div class="modal-footer">           				
-						<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 
-						<i class="ti ti-circle-x"></i>
-						Cancel           				
-					</a>           																					
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Others</label>
+									<textarea class="form-control" rows="3" name="cothers"></textarea>
+								</div>
+							</div>						
+						</div>					
+					</div>					
+					<div class="modal-footer">					
+						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">						
+							<i class="ti ti-circle-x"></i>						
+							Cancel					
+						</a>
 						<button type="submit" class="btn ms-auto btn-success">
-							<i class="ti ti-user-plus"></i> 						
-							Add Customer  											
-						</button>					     							
-					</div> 							
-					</form>		
-				
-				<script>
-    function validateForm() {
-        // Perform your form validation here
-        var cnameInput = document.getElementsByName("cname")[0].value;
-        var cemailInput = document.getElementsByName("cemail")[0].value;
-        var cphoneInput = document.getElementsByName("cphone")[0].value;
-		var cgenderInput = document.getElementsByName("cgender")[0].value;
-		var pcInput = document.getElementsByName("pc")[0].value;
-
-        if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {
-            // Display an error message or prevent the form submission
-            alert("Please fill in all required fields.");
-            return false;
-        }
-
-        // If validation passes, you can proceed with the form submission
-        return true;
-    }
-</script>
-				</div>      				
-		</div>    
+							<i class="ti ti-user-plus"></i>
+							Save Customer						
+						</button>					
+					</div> 																		
+					<script>    
+						function validateForm() {        							        
+							var cnameInput = document.getElementsByName("cname")[0].value;        
+							var cemailInput = document.getElementsByName("cemail")[0].value;        
+							var cphoneInput = document.getElementsByName("cphone")[0].value;		
+							var cgenderInput = document.getElementsByName("cgender")[0].value;		
+							var pcInput = document.getElementsByName("pc")[0].value;
+							        
+							if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        
+								alert("Please fill in all required fields.");            
+								return false;        
+							}							        							        
+							return true;    
+						}
+					</script>				
+				</div> 
+			</form>		
+		</div>    	
 	</div>
+</div>	
 <?php
 include('footer.php');
 ?>

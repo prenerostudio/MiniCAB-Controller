@@ -61,7 +61,7 @@ include('header.php');
 								</div>                    
 								<div class="col-6">						
 									<button class="btn btn-link w-100" type="reset">
-										Reset to defaults                    						
+										Reset to Defaults                    						
 									</button>						
 								</div>
 							</div>                  					
@@ -72,18 +72,15 @@ include('header.php');
 		</div>
 	</div>
 </div>					
-<script>    
-	function validateForm() {    
-		// Perform your form validation here        
+<script>	
+	function validateForm() {     
 		var didInput = document.getElementsByName("d_id")[0].value;
         var startInput = document.getElementsByName("start_date")[0].value;
         var endInput = document.getElementsByName("end_date")[0].value;			
-        if (didInput === "" || startInput === "" || endInput === "") {
-            // Display an error message or prevent the form submission
+        if (didInput === "" || startInput === "" || endInput === "") {           
             alert("Please fill in all required fields.");
             return false;
-        }
-        // If validation passes, you can proceed with the form submission
+        }        
         return true;
     }
 </script> 

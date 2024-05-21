@@ -52,7 +52,7 @@ $frow = mysqli_fetch_array($fsql);
 									<i class="ti ti-circle-x"></i>														
 									Cancel                  												
 								</a>                  						 													
-								<button type="submit" class="btn btn-primary">															
+								<button type="submit" class="btn btn-primary">
 									<i class="ti ti-refresh"></i>																
 									Update Charges													
 								</button>

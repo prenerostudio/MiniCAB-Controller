@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
 			</h2>            
 		</div>        		        
 		<div class="col-auto ms-auto d-print-none">        
-			<button type="button" class="btn btn-primary" onclick="javascript:window.print();">            
+			<button type="button" class="btn btn-primary" onclick="javascript:window.print();">
 				<i class="ti ti-printer"></i>                
 				Print Report
 			</button>            
@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
 					<div class="row mb-3">											
 						<div class="card">		
 							<div class="card-body border-bottom py-3">								
-								<div id="table-adriver" class="table-responsive">									        
+								<div id="table-adriver" class="table-responsive">
 									<table class='table table-responsive'>          
 										<tr>            
 											<th>Invoice ID</th>
@@ -56,24 +56,45 @@ if ($result->num_rows > 0) {
 											while ($row = $result->fetch_assoc()) {		
 										?>       
 										<tr>                
-											<td><?php echo $row['invoice_id']; ?></td> 
-											<td><strong style="text-transform: capitalize;"><?php echo $row['c_name'] ; ?></strong></td> 
-											<td><?php echo $row['pickup'] ; ?> | <?php echo $row['destination'] ; ?></td>
-											<td><strong style="text-transform:capitalize;"><?php echo $row['d_name'] ; ?></strong></td>                     
-											<td><?php echo $row['total_pay'] ; ?></td>                
-											<td><?php echo $row['driver_commission'] ; ?></td>                
-											<td><?php echo $row['invoice_status'] ; ?></td>               
-											<td><?php echo $row['invoice_date'] ; ?></td>              
+											<td>
+												<?php echo $row['invoice_id'];?>
+											</td> 
+											<td>
+												<strong style="text-transform: capitalize;">
+													<?php echo $row['c_name'];?>
+												</strong>
+											</td> 
+											<td>
+												<?php echo $row['pickup'];?> | 
+												<?php echo $row['destination'];?>
+											</td>
+											<td>
+												<strong style="text-transform:capitalize;">
+													<?php echo $row['d_name'];?>
+												</strong>
+											</td>                     
+											<td>
+												<?php echo $row['total_pay'];?>
+											</td>                
+											<td>
+												<?php echo $row['driver_commission'];?>
+											</td>                
+											<td>
+												<?php echo $row['invoice_status'];?>
+											</td>               
+											<td>
+												<?php echo $row['invoice_date'];?>
+											</td>              
 										</tr>	
 										<?php    
 											}
 										?>    
 									</table>
-									<?php
-						   					} else {    
-													echo "No Results Found!";
-													}
-											$connect->close();
+									<?php	
+						   				} else {    
+										echo "No Results Found!";
+										}											
+										$connect->close();
 									?>
 								</div>										
 							</div>

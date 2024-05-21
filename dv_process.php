@@ -13,8 +13,7 @@ $taxi_ins = $_POST['taxi_ins'];
 $taxi_exp = $_POST['taxi_exp'];
 $mot = $_POST['mot'];
 $mot_exp = $_POST['mot_exp'];
-$date = date("Y-m-d H:i:s");
-         
+
 $sql = "INSERT INTO `driver_vehicle`(
 									`v_id`, 
 									`d_id`, 
@@ -27,8 +26,7 @@ $sql = "INSERT INTO `driver_vehicle`(
 									`v_ti`,
 									`v_ti_expiry`, 
 									`v_mot`,
-									`v_mot_expiry`,
-									`date_v_add`
+									`v_mot_expiry`
 									) VALUES (
 									'$v_id',
 									'$d_id',
@@ -41,11 +39,22 @@ $sql = "INSERT INTO `driver_vehicle`(
 									'$taxi_ins',
 									'$taxi_exp',
 									'$mot',
-									'$mot_exp',
-									'$date')";
+									'$mot_exp')";
          
 $result = mysqli_query($connect, $sql);              
-if ($result) {                   
+if ($result) {   
+	
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Vehicle Added',											
+											'Driver',											
+											'A new vehicle added by driver " . $d_id. ".')";		
+	$actr = mysqli_query($connect, $actsql);		
+
+
 	header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
 	exit();       
 } else {           			

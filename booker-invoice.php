@@ -67,14 +67,14 @@ $irow = mysqli_fetch_array($sql);
 									<?php echo $irow['pick_time'];?>							
 								</p>                      							
 								<div class="text-secondary">
-									Pickup: <?php echo $irow['pickup'];?> <br>								
-									Dropoff: <?php echo $irow['destination'];?>							
+									Pickup: <?php echo $irow['pickup'];?> <br>
+									Dropoff: <?php echo $irow['destination'];?>
 								</div>                    						
 							</td>                    						
 							<td class="text-center">                     							
 								£ <?php echo $irow['commission_date'];?>
 							</td>                    						
-							<td class="text-center">													
+							<td class="text-center">
 								<?php echo $irow['comission_amount'];?>	
 							</td>                  					
 						</tr>                                                     					

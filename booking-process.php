@@ -1,57 +1,34 @@
 <?php
 include('config.php');
-// Function to fetch vehicle pricing from the database
+
 function fetchVehiclePricingFromDatabase($vehicleId) {
-    global $connect;
-
-    // Sanitize input to prevent SQL injection
-    $vehicleId = mysqli_real_escape_string($connect, $vehicleId);
-
-    // Your SQL query to fetch vehicle pricing based on the provided vehicle ID
-    $query = "SELECT v_pricing FROM vehicles WHERE v_id = '$vehicleId'";
-
-    // Execute the query
-    $result = mysqli_query($connect, $query);
-
-    // Check if the query was successful
-    if ($result) {
-        // Fetch the result row
-        $row = mysqli_fetch_assoc($result);
-
-        // Check if a valid row was fetched
-        if ($row) {
-            // Return the fetched vehicle pricing
+	global $connect;    	    
+	$vehicleId = mysqli_real_escape_string($connect, $vehicleId);    	
+    $query = "SELECT v_pricing FROM vehicles WHERE v_id = '$vehicleId'";   	
+    $result = mysqli_query($connect, $query);   	
+    if ($result) {        		
+        $row = mysqli_fetch_assoc($result);       		
+        if ($row) {           			
             return $row['v_pricing'];
-        } else {
-            // Handle the case where no row was fetched
-            return 0; // Return a default value or handle it based on your requirements
+        } else {           			
+            return 0; 			
         }
-    } else {
-        // Handle the case where the query was not successful
-        return 0; // Return a default value or handle it based on your requirements
+    } else {       		
+        return 0; 		
     }
 }
-
-
-
 
 $b_type_id = $_POST['b_type_id'];
 $c_id  = $_POST['c_id'];
 $pickup = $_POST['pickup'];
-$dropoff = $_POST['dropoff'];
-
-// Array to hold stop locations
-    $stops = array();
-
-    // Loop through all stop fields
-    foreach ($_POST as $key => $value) {
-        // Check if the field starts with 'stop_'
-        if (substr($key, 0, 5) === 'stop_') {
-            // Add stop location to the stops array
-            $stops[] = $value;
-        }
-    }
-
+$dropoff = $_POST['dropoff'];    
+$stops = array();
+        
+foreach ($_POST as $key => $value) {        	       
+	if (substr($key, 0, 5) === 'stop_') {            		           
+		$stops[] = $value;       
+	}  
+}
 
 $address = $_POST['address'];
 $postal_code = $_POST['postal_code'];
@@ -74,7 +51,7 @@ $tolls  = $_POST['tolls'];
 $extra  = $_POST['extra'];
 $booker_com = $_POST['booker_com'];
 $booking_status  = 'Pending';
-$date = date("Y-m-d H:i:s");
+
 
 
 
@@ -104,8 +81,7 @@ $sql = "INSERT INTO `bookings`(
 								`tolls`, 
 								`extra`, 
 								`booker_commission`,
-								`booking_status`, 
-								`book_add_date`
+								`booking_status`
 								) VALUES (
 								'$b_type_id',
 								'$c_id',
@@ -132,14 +108,13 @@ $sql = "INSERT INTO `bookings`(
 								'$tolls',
 								'$extra',
 								'$booker_com',
-								'$booking_status',
-								'$date')"; 
+								'$booking_status')"; 
 
 $result = mysqli_query($connect, $sql);       
 if ($result) {  
 	$book_id = mysqli_insert_id($connect);	
 	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,												
+											`activity_type`,
 											`user`,
 											`details`
 											) VALUES (

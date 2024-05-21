@@ -3,11 +3,11 @@
 
 i{
 	font-size: 18px;
-	/*padding-right: 10px;*/
+	padding-right: 5px;
 }
 
 .readonly { 
-	background:#DBDBDB;
+	background:#C4C4C4;
 }
 #map {    
 	width: 100%;

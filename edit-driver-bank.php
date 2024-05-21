@@ -1,11 +1,8 @@
 <?php
 include('header.php');
 $d_bank_id = $_GET['d_bank_id'];
-
-$bsql = mysqli_query($connect, "SELECT * FROM `driver_bank_details` WHERE `d_bank_id`='$d_bank_id'");								
-$brow = mysqli_fetch_array($bsql);	
-
-
+$bsql = mysqli_query($connect, "SELECT * FROM `driver_bank_details` WHERE `d_bank_id`='$d_bank_id'");
+$brow = mysqli_fetch_array($bsql);
 ?>  
 <div class="page-body page_padding">
 	<div class="row row-deck row-cards">			      					

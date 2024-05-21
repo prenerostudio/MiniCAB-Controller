@@ -1,23 +1,14 @@
 <?php
-// Include your database connection file or establish a connection here
 include('config.php');
 if (isset($_POST['v_id'])) {
     $vehicleId = $_POST['v_id'];
-
-    // Escape the input to prevent SQL injection
-    $vehicleId = mysqli_real_escape_string($connect, $vehicleId);
-
-    // Your SQL query
-    $query = "SELECT v_pricing FROM vehicles WHERE v_id = $vehicleId";
-
-    // Execute the query
+    $vehicleId = mysqli_real_escape_string($connect, $vehicleId);    
+    $query = "SELECT v_pricing FROM vehicles WHERE v_id = $vehicleId";    
     $result = mysqli_query($connect, $query);
-
     if (!$result) {
         echo json_encode(['success' => false, 'error' => mysqli_error($connect)]);
     } else {
         $row = mysqli_fetch_assoc($result);
-
         if ($row) {
             echo json_encode(['success' => true, 'price' => $row['v_pricing']]);
         } else {
@@ -28,7 +19,3 @@ if (isset($_POST['v_id'])) {
     echo json_encode(['success' => false, 'error' => 'Invalid request']);
 }
 ?>
-
-
-?>
-

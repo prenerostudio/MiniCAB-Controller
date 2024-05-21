@@ -33,12 +33,12 @@ include('header.php');
 										</button>										
 									</th>                                													
 									<th>														
-										<button class="table-sort" data-sort="sort-date">
+										<button class="table-sort" data-sort="sort-name">
 											Station Name
 										</button>											
 									</th>                                													
 									<th>														
-										<button class="table-sort" data-sort="sort-time">
+										<button class="table-sort">
 											Address
 										</button>													
 									</th>
@@ -60,10 +60,10 @@ include('header.php');
 									<td class="sort-id">																	
 										<?php echo $x; ?>																	
 									</td>			
-									<td class="sort-date">									
+									<td class="sort-name">									
 										<?php echo $drow['rail_name']; ?>											
 									</td>                             									
-									<td class="sort-time">									
+									<td>									
 										<?php echo $drow['rail_address']; ?>										
 									</td>			
 									<td> 									
@@ -77,7 +77,7 @@ include('header.php');
 								<tr>                                   															
 									<td colspan="8">																	
 										<p align="center">
-											No Destination Found!
+											No Railway Station Found!
 										</p>
 									</td>									
 								</tr>								
@@ -134,42 +134,31 @@ include('header.php');
 		const list = new List('table-default', {      							
 			sortClass: 'table-sort',			
 			listClass: 'table-tbody',			
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',	'sort-driver']					
+			valueNames: [ 'sort-id', 'sort-name']					
 		}); 			
-	})	
-	   
-		function validateForm() {                							
+	})		   		
+	function validateForm() {                								
 		var r_nameInput = document.getElementsByName("r_name")[0].value;        		
-		var r_addressInput = document.getElementsByName("r_address")[0].value;        		
-		
+		var r_addressInput = document.getElementsByName("r_address")[0].value;        				
 		if (r_nameInput === "" || r_addressInput === "") {		
 			alert("Please fill in all required fields.");			
 			return false;			
 		}		
 		return true;    		
-	}
-	 
-	var autocompletePickup;
-
-   
+	}	 
+	var autocompletePickup;   
 	function initAutocomplete() {
         var pickupInput = document.getElementById('pickup');
         var autocompleteOptions = {
             types: ['establishment'],
             componentRestrictions: {country: 'GB'}
         };
-
         autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-
-        autocompletePickup.addListener('place_changed', function() {
-            // Optionally, you can handle the selected place here
+        autocompletePickup.addListener('place_changed', function() {            
         });
-    }
-       
-    google.maps.event.addDomListener(window, 'load', initAutocomplete);
-	
+    }       
+    google.maps.event.addDomListener(window, 'load', initAutocomplete);	
 </script>
-
 <?php
 include('footer.php');
 ?>

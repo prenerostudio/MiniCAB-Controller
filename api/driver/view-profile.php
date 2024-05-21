@@ -15,7 +15,7 @@ if(isset($_POST['d_id'])){
 	if(count($output)>0){    				    		
 		echo json_encode(array('data'=>$output, 'status'=>true,));
 	}else{    
-		echo json_encode(array('message'=>'User Does Not Exist','status'=>false));
+		echo json_encode(array('message'=>'Driver Does Not Exist','status'=>false));
 	}
 }else{    
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));

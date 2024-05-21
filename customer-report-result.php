@@ -58,14 +58,35 @@ if ($result->num_rows > 0) {
 											while ($row = $result->fetch_assoc()) {		
 										?>       
 										<tr>                
-											<td><?php echo $row['invoice_id']; ?></td> 
-											<td><strong style="text-transform: capitalize;"><?php echo $row['c_name'] ; ?></strong></td> 
-											<td><?php echo $row['pickup'] ; ?> | <?php echo $row['destination'] ; ?></td>
-											<td><strong style="text-transform:capitalize;"><?php echo $row['d_name'] ; ?></strong></td>                     
-											<td><?php echo $row['total_pay'] ; ?></td>                
-											<td><?php echo $row['driver_commission'] ; ?></td>                
-											<td><?php echo $row['invoice_status'] ; ?></td>               
-											<td><?php echo $row['invoice_date'] ; ?></td>              
+											<td>
+												<?php echo $row['invoice_id'];?>
+											</td> 
+											<td>
+												<strong style="text-transform: capitalize;">
+													<?php echo $row['c_name'];?>
+												</strong>
+											</td> 
+											<td>
+												<?php echo $row['pickup'];?> | 
+												<?php echo $row['destination'];?>
+											</td>
+											<td>
+												<strong style="text-transform:capitalize;">
+													<?php echo $row['d_name'];?>
+												</strong>
+											</td>                     
+											<td>
+												<?php echo $row['total_pay'];?>
+											</td>                
+											<td>
+												<?php echo $row['driver_commission'];?>
+											</td>                
+											<td>
+												<?php echo $row['invoice_status'];?>
+											</td>               
+											<td>
+												<?php echo $row['invoice_date'];?>
+											</td>
 										</tr>	
 										<?php    
 											}

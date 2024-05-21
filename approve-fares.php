@@ -1,12 +1,8 @@
 <?php
 include('config.php');
-
 $fare_id = $_GET['id'];
 $status= 'Corrected';
-$date = date("Y-m-d H:i:s");
-	
 $sql = "UPDATE `fares` SET `fare_status`='$status' WHERE `fare_id`='$fare_id'";
-	
 $result = $connect->query($sql);	
 if($result){ 	
 	$actsql = "INSERT INTO `activity_log` (
@@ -18,7 +14,6 @@ if($result){
 											'Cotroller',
 											'Controller has approve Fare against Fare ID: " . $fare_id . "')";		
 		
-			
 	$actr = mysqli_query($connect, $actsql);	
 	header('location: fare-corrections.php');	
 } else {		

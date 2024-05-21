@@ -43,12 +43,12 @@ include('header.php');
 								<?php						
 								$dsql = mysqli_query($connect, "SELECT clients.* FROM clients WHERE clients.account_type = 2");
 								while ($drow = mysqli_fetch_array($dsql)) {						
-								?>        																
+								?>
 								<option value="<?php echo $drow['c_id'];?>">
 									<?php echo $drow['c_name']; ?>						
-								</option>        															
-								<?php        																
-								}				        																
+								</option>	
+								<?php		
+								}					
 								?>                   					  
 							</select>                  
 						</div>					  						
@@ -56,7 +56,7 @@ include('header.php');
 							<div class="row">							
 								<div class="col-6">						
 									<button class="btn btn-primary w-100" type="submit">
-										Fetch Reports																
+										Fetch Reports
 									</button>								
 								</div>                    
 								<div class="col-6">						
@@ -74,10 +74,10 @@ include('header.php');
 </div>					
 <script>    
 	function validateForm() {    
-		var didInput = document.getElementsByName("d_id")[0].value;
+		var cidInput = document.getElementsByName("c_id")[0].value;
         var startInput = document.getElementsByName("start_date")[0].value;
         var endInput = document.getElementsByName("end_date")[0].value;			
-        if (didInput === "" || startInput === "" || endInput === "") {            
+        if (cidInput === "" || startInput === "" || endInput === "") {            
             alert("Please fill in all required fields.");
             return false;
         }

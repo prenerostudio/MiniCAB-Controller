@@ -6,7 +6,9 @@ include('header.php');
 		<div class="col-12">            						
 			<div class="card">                							
 				<div class="card-header">                    								
-					<h3 class="card-title">Create New Booking</h3>		
+					<h3 class="card-title">
+						Create New Booking
+					</h3>		
 				</div>                  				
 				<div class="card-body border-bottom py-3">
 					<form method="post" action="booking-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">				
@@ -31,7 +33,7 @@ include('header.php');
 							</div>
 							<div class="row">
 								<h4>Passenger Details:</h4>
-								<div class="mb-3 col-lg-4">					    						
+								<div class="mb-3 col-lg-4">
 									<label class="form-label">Name</label>    
 									<select class="form-control" name="c_id" id="clientSelect" required>
 									</select>
@@ -44,24 +46,22 @@ include('header.php');
 									<label class="form-label">Customer Email</label>
 									<input type="text" class="form-control" name="cemail" id="customerEmail" readonly>
 								</div>
-								<script>   																	
-									var bookingTypeSelect = document.getElementById('bookingType');    
+								<script>
+									var bookingTypeSelect = document.getElementById('bookingType');
 									var clientSelect = document.getElementById('clientSelect');    
-									var customerPhoneInput = document.getElementById('customerPhone');    
+									var customerPhoneInput = document.getElementById('customerPhone');
 									var customerEmailInput = document.getElementById('customerEmail');    
-									bookingTypeSelect.addEventListener('change', function () {        
+									bookingTypeSelect.addEventListener('change', function () {
 										// Fetch clients based on booking type        
 										var selectedBookingType = bookingTypeSelect.value;        
 										$.ajax({            
 											type: 'POST',            
 											url: 'get_clients.php',             
 											data: { b_type_id: selectedBookingType },            
-											success: function (response) {                
-												// Populate client list                
+											success: function (response) {
 												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;            
 											},            
-											error: function () {                
-												// Handle error if needed            
+											error: function () {
 											}        
 										});    
 									});									    
@@ -73,11 +73,10 @@ include('header.php');
 											data: { c_id: selectedClientId },            
 											success: function (response) {                
 												var data = JSON.parse(response);                
-												customerPhoneInput.value = data.phone;                
+												customerPhoneInput.value = data.phone; 
 												customerEmailInput.value = data.email;            
 											},            
-											error: function () {                
-												// Handle error if needed            
+											error: function () {
 											}        
 										});    
 									});
@@ -90,15 +89,13 @@ include('header.php');
 										<div class="mb-3 col-lg-4">   								
 											<label class="form-label">Pickup Location:</label>
 											<input type="text" id="pickup" name="pickup" class="form-control" placeholder="Select pickup location" required>
-										</div>																
-										<div class="mb-3 col-lg-4">   									
+										</div>
+										<div class="mb-3 col-lg-4">
 											<label class="form-label">Drop-off Location:</label>
 											<input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location" required>
 										</div>
 										<div class="col-lg-4">
-											<div id="stops-container" >
-												<!-- Additional stops will be dynamically added here -->
-											</div>								
+											<div id="stops-container"></div>
 											<div class="mb-3 col-lg-2">								
 												<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
 													<i class="ti ti-plus"></i>
@@ -108,14 +105,14 @@ include('header.php');
 									</div>
 								</div>		
 								<div class="mb-3 col-lg-4">
-									<label class="form-label">Address</label>								
+									<label class="form-label">Address</label>
 									<input type="text" class="form-control" name="address">
 								</div>							
 								<div class="mb-3 col-lg-4">				
 									<label class="form-label">Postal Code</label>
 									<input type="text" class="form-control" name="postal_code">
 								</div>							
-								<div class="mb-3 col-lg-4">												
+								<div class="mb-3 col-lg-4">
 									<label class="form-label">No. of Passenger</label>
 									<input type="number" class="form-control" name="passenger" required>
 								</div>
@@ -151,7 +148,7 @@ include('header.php');
 										while ($vrow = mysqli_fetch_array($vsql)) {
 										?>           									
 										<option value="<?php echo $vrow['v_id'] ?>">
-											<?php echo $vrow['v_name'] ?>									
+											<?php echo $vrow['v_name'] ?>
 										</option>           									
 										<?php       									
 										}        									
@@ -159,7 +156,7 @@ include('header.php');
 									</select>							
 								</div>															
 								<div class="mb-3 col-lg-4">				
-									<label class="form-label">Luggage</label>								
+									<label class="form-label">Luggage</label>
 									<input type="text" class="form-control" name="luggage">
 								</div> 															
 								<div class="mb-3 col-lg-4">								
@@ -167,11 +164,11 @@ include('header.php');
 									<div>
 										<label class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="child_seat" value="Yes">
-											<span class="form-check-label">Yes</span>									
+											<span class="form-check-label">Yes</span>
 										</label>
 										<label class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="child_seat" value="No">
-											<span class="form-check-label">No</span>					
+											<span class="form-check-label">No</span>
 										</label>								
 									</div>				
 								</div>															
@@ -197,7 +194,7 @@ include('header.php');
 									<input type="text" class="form-control" name="booking_fee">
 								</div>														
 								<div class="mb-3 col-lg-4">          
-									<label class="form-label">Car Parking </label>								
+									<label class="form-label">Car Parking </label>
 									<input type="text" class="form-control" name="car_parking">
 								</div>							
 								<div class="mb-3 col-lg-4">          
@@ -205,11 +202,11 @@ include('header.php');
 									<input type="text" class="form-control" name="waiting">
 								</div>							
 								<div class="mb-3 col-lg-4">          
-									<label class="form-label">Tolls </label>								
+									<label class="form-label">Tolls </label>
 									<input type="text" class="form-control" name="tolls">
 								</div>							
 								<div class="mb-3 col-lg-4">          
-									<label class="form-label">Extra </label>								
+									<label class="form-label">Extra </label>
 									<input type="text" class="form-control" name="extra">
 								</div>
 								<div class="mb-3 col-lg-4" id="bookerCommissionField" style="display: none;">    
@@ -228,13 +225,13 @@ include('header.php');
 									<button class="btn btn-instagram" style="margin-top:27px;" id="calculateFareBtn">Calculate Fare</button>
 								</div>
 								<div class="col-lg-4">			
-									<h4>Send Online Payment Link</h4>										
+									<h4>Send Online Payment Link</h4>		
 									<p>			
 										<label>		
 											<input type="checkbox" name="Payment Link" value="checkbox" id="PaymentLink_0">
 											Phone Number									
 										</label>
-										<br>							   									
+										<br>	
 										<label>							      
 											<input type="checkbox" name="Payment Link" value="checkbox" id="PaymentLink_1">
 											Email Address									
@@ -247,12 +244,12 @@ include('header.php');
 						<div class="modal-footer">
 							<a href="all-bookings.php" class="btn btn-danger"> 						
 								<i class="ti ti-circle-x"></i>						
-								Cancel           														
+								Cancel
 							</a>		
-							<button type="submit" class="btn btn-success ms-auto">						
+							<button type="submit" class="btn btn-success ms-auto">
 								<i class="ti ti-message-plus"></i>						
-								Save Booking  																
-							</button>					     											
+								Save Booking
+							</button>
 						</div> 										
 					</form>						
 					<script>
@@ -266,13 +263,12 @@ include('header.php');
 									bookerCommissionField.style.display = "none";        
 								}    
 							});
-						});
-				   
+						});			
 						$(document).ready(function() {                
 							$('#calculateFareBtn').on('click', function(e) {            
-								e.preventDefault(); // Prevent the form from submitting                   
+								e.preventDefault(); // Prevent the form from submitting
 								var distance = parseFloat($('#journeyDistance').val());            
-								var pickDate = new Date($('input[name="pick_date"]').val());            
+								var pickDate = new Date($('input[name="pick_date"]').val());
 								var pickTime = $('input[name="pick_time"]').val();            
 								var vehicleId = $('#vehicleSelect').val();            
 								var vehiclePricing = parseFloat(fetchVehiclePricing(vehicleId));
@@ -305,12 +301,12 @@ include('header.php');
 							}    
 						});    
 						function validateForm() {                
-							var typeInput = document.getElementsByName("b_type_id")[0].value;        
+							var typeInput = document.getElementsByName("b_type_id")[0].value;
 							var cidInput = document.getElementsByName("c_id")[0].value;        
-							var pickupInput = document.getElementsByName("pickup")[0].value;		        
-							var dropoffInput = document.getElementsByName("dropoff")[0].value;        
-							var pdateInput = document.getElementsByName("pick_date")[0].value;        
-							var ptimeInput = document.getElementsByName("pick_time")[0].value;		        
+							var pickupInput = document.getElementsByName("pickup")[0].value;
+							var dropoffInput = document.getElementsByName("dropoff")[0].value;
+							var pdateInput = document.getElementsByName("pick_date")[0].value;
+							var ptimeInput = document.getElementsByName("pick_time")[0].value;
 							var fareInput = document.getElementsByName("journey_fare")[0].value;
 							if (typeInput === "" || cidInput === "" || pickupInput === "" || dropoffInput === "" || pdateInput === "" || ptimeInput === "" || fareInput === "") {            
 								alert("Please fill in all required fields.");            
@@ -408,9 +404,7 @@ include('header.php');
             }    
         });	
     }   
-}
-
-
+}	
 	google.maps.event.addDomListener(window, 'load', initAutocomplete);  
 </script>	
 <?php

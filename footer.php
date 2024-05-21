@@ -28,7 +28,7 @@
 				<ul class="list-inline list-inline-dots mb-0">                
 					<li class="list-inline-item">                    
 						Copyright &copy; 2024                    
-						<a href="dashboard.php" class="link-secondary">Euro Data Technology</a>.
+						<a href="https://www.eurodatatech.com" class="link-secondary">Euro Data Technology</a>.
 						All rights reserved.                  
 					</li>                  
 					<li class="list-inline-item">

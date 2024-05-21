@@ -4,11 +4,10 @@ include('config.php');
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $d_id = $_POST['d_id'];				
-    $date = date("Y-m-d H:i:s");
 
-    $targetDir = "img/drivers/"; // Directory where the logos will be stored
+    $targetDir = "img/drivers/"; 
 
-    // Generate a unique identifier for the image filename
+    
     $uniqueID = uniqid();
     
     $targetFile = $targetDir . $uniqueID . '_' . basename($_FILES["fileToUpload"]["name"]);

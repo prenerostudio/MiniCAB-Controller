@@ -16,10 +16,7 @@ include('header.php');
 				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-booker">
 					<i class="ti ti-user-plus"></i>                    					
 					Add New Booker                  					
-				</a>                  				
-				<a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-booker" aria-label="Create new report">
-					<i class="ti ti-bookmark-plus"></i>                  					
-				</a>                				
+				</a>              				
 			</div>              			
 		</div>		
 	</div>	
@@ -29,43 +26,41 @@ include('header.php');
 		<div class="col-12">            					
 			<div class="card">                							
 				<div class="card-header">                    									
-					<h3 class="card-title">All Bookers List</h3>
+					<h3 class="card-title">
+						All Bookers List
+					</h3>
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
-					<div id="table-booker" class="table-responsive">                  					
+					<div id="table-booker" class="table-responsive">
 						<table class="table">                    						
 							<thead>                      							
 								<tr>									
 									<th>									
-										<button class="table-sort" data-sort="sort-id">ID</button>
+										<button class="table-sort" data-sort="sort-id">
+											ID
+										</button>
 									</th>                        									
+									<th> Image </th>			
+									<th> Name </th>		
+									<th> Email </th>			
+									<th> Phone </th>                  			
 									<th>									
-										<button class="table-sort" data-sort="sort-date">Image</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-time">Name</button>
-									</th>                       									
-									<th>									
-										<button class="table-sort" data-sort="sort-passenger">Email</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-pickup">Phone</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Gender</button>
+										<button class="table-sort" data-sort="sort-gender">
+											Gender
+										</button>
 									</th>									
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Status</button>
+										<button class="table-sort" data-sort="sort-status">
+											Status
+										</button>
 									</th>							
-									<th>									
-										<button class="table-sort">Actions</button>
-									</th>                      									
+									<th> Actions </th>			
 								</tr>                   								
 							</thead>                  							
 							<tbody class="table-tbody">												
-								<?php																		
+								<?php	
 								$x=0;																
-								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 2 ORDER BY clients.c_id DESC");								
+								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 2 ORDER BY clients.c_id DESC");
 								while($crow = mysqli_fetch_array($csql)){
 									$x++;									
 								?>								
@@ -73,48 +68,48 @@ include('header.php');
 									<td class="sort-id">
 										<?php echo $x; ?>
 									</td>
-									<td class="sort-date">									
-										<?php																
-									if (!$crow['c_pic']) {
-										?>																	
-										<img src="img/user-1.jpg" alt="Booker Img" style="width: 80px; height: 80px; border-radius: 5px;">	
+									<td>									
+										<?php		
+											if (!$crow['c_pic']) {
+										?>		
+										<img src="img/user-1.jpg" alt="Booker Img" style="width: 50px; height: 50px; border-radius: 5px;">	
 										<?php
-									} else{															
-										?>																
-										<img src="img/bookers/<?php echo $crow['c_pic'];?>" alt="Booker Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
-										<?php
-									}			
+											} else{		
+										?>	
+										<img src="img/bookers/<?php echo $crow['c_pic'];?>" alt="Booker Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
+										<?php										
+											}			
 										?>											
-									</td>                       										
-									<td class="sort-time">
+									</td>	
+									<td>
 										<?php echo $crow['c_name']; ?>
-									</td>                       										
-									<td class="sort-passenger">
+									</td>	
+									<td>
 										<?php echo $crow['c_email']; ?>
 									</td>  										
-									<td class="sort-pickup">
+									<td>
 										<?php echo $crow['c_phone']; ?>
 									</td>                       										
-									<td class="sort-drpoff">
+									<td class="sort-gender">
 										<?php echo $crow['c_gender']; ?>
 									</td>										
-									<td class="sort-drpoff">											
+									<td class="sort-status">
 										<?php 											
-									if($crow['acount_status']==0){
+											if($crow['acount_status']==0){
 										?>												
 										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-red d-block"></span>															
+											<span class="status-dot status-dot-animated bg-red d-block"></span>
 											<span>Unverified</span>									
 										</div>
-										<?php											
-									} else{											
+										<?php									
+											} else{											
 										?>
 										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-green d-block"></span>											
-											<span>Verified</span>											
+											<span class="status-dot status-dot-animated bg-green d-block"></span>
+											<span>Verified</span>
 										</div>			
-										<?php
-									}
+										<?php									
+											}
 										?>									
 									</td>	
 									<td> 									
@@ -123,7 +118,6 @@ include('header.php');
 												<i class="ti ti-eye"></i>View
 											</button>												
 										</a>
-
 										<button class="btn btn-danger delete_btn" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-customer-delete">    
 											<i class="ti ti-square-rounded-x"></i>    
 											Delete
@@ -132,7 +126,7 @@ include('header.php');
 								</tr>								
 								<?php								
 								}								
-								?>                                       								
+								?>                                       						
 							</tbody>                 							
 						</table>                						
 					</div>                  					
@@ -146,8 +140,7 @@ include('header.php');
 		const list = new List('table-default', {      					
 			sortClass: 'table-sort',      							
 			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',						 
-						 'sort-driver'						
+			valueNames: [ 'sort-id', 'sort-gender', 'sort-status'						
 						]					
 		}); 			
 	})	
@@ -211,11 +204,11 @@ include('header.php');
 				<h5 class="modal-title">Add New Booker</h5>            				
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div> 			
-			<form method="post" action="booker-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
-				<div class="modal-body">								
+			<div class="modal-body">	
+				<form method="post" action="booker-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
 					<div class="row">				
 						<div class="mb-3 col-md-4">              					
-							<label class="form-label">Full Name</label>              					
+							<label class="form-label">Full Name</label>
 							<input type="text" class="form-control" name="cname" placeholder="Customer Name" required> 				
 						</div> 						               
 						<div class="mb-3 col-md-4">                  
@@ -224,61 +217,61 @@ include('header.php');
 						</div>			
 						<div class="mb-3 col-md-4">                  						
 							<label class="form-label">Phone</label>              					
-							<input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>
+							<input type="text" class="form-control" name="cphone" placeholder="+44 xx xxxx xxxx" required>
 						</div>	
 						<div class="mb-3 col-md-4">              					
-							<label class="form-label">Password</label>              					
+							<label class="form-label">Password</label>
 							<input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required> 				
 						</div> 	
-						<div class="mb-3 col-md-4">              															
+						<div class="mb-3 col-md-4">
 							<label class="form-label">Gender</label>
 							<select class="form-select" name="cgender" required>
 								<option value="" selected>Select Gender</option>
 								<option>Male</option>
 								<option>Female</option>								
 								<option>Transgender</option>							
-							</select>             																
-						</div>					               												
-						<div class="mb-3 col-md-4">                  													
+							</select>			
+						</div>		
+						<div class="mb-3 col-md-4">
 							<label class="form-label">Language</label>							
 							<select class="form-select" name="clang">							
-								<option value="" selected>Select Language</option>		      								
+								<option value="" selected>Select Language</option>	
 								<?php														
-								$lsql=mysqli_query($connect,"SELECT * FROM `language`");								
-								while($lrow = mysqli_fetch_array($lsql)){								
+								$lsql=mysqli_query($connect,"SELECT * FROM `language`");
+								while($lrow = mysqli_fetch_array($lsql)){
 								?>			
-								<option>								
+								<option>
 									<?php echo $lrow['language'] ?>								
 								</option>
-								<?php																	
-								}																		
-								?>																			
+								<?php
+								}
+								?>
 							</select> 												
 						</div>						
-						<div class="mb-3 col-md-4">              											
-							<label class="form-label">Postal Code</label>									
+						<div class="mb-3 col-md-4">
+							<label class="form-label">Postal Code</label>
 							<input type="text" class="form-control" name="pc" placeholder="xx xxx" required>
-						</div> 					              											
-						<div class="mb-3 col-md-4">                  												
-							<label class="form-label">Picture</label>							
-							<input type="file" class="form-control" name="cpic">						
 						</div>
-						<div class="mb-3 col-md-4">                  												
+						<div class="mb-3 col-md-4">
+							<label class="form-label">Picture</label>							
+							<input type="file" class="form-control" name="cpic">
+						</div>
+						<div class="mb-3 col-md-4">
 							<label class="form-label">National ID</label>							
 							<input type="text" class="form-control" name="cni">						
-						</div>             																					
-					</div>						         												
-					<div class="modal-body">															
+						</div>
+					</div>
+					<div class="modal-body">
 						<div class="row">												
 							<div class="mb-3 col-md-4">    
 								<label class="form-label">Commission Type</label>    
-								<select class="form-control" name="com_type" id="commission_type">        
-									<option value="" selected>Select Commission Type</option>        
+								<select class="form-control" name="com_type" id="commission_type">
+									<option value="" selected>Select Commission Type</option>
 									<option value="1">Percentage</option>        
 									<option value="2">Fixed</option>    
 								</select>
 							</div>
-							<div class="mb-3 col-md-4" id="percentage_field" style="display:none;">    
+							<div class="mb-3 col-md-4" id="percentage_field" style="display:none;">
 								<label class="form-label">Percentage</label>    
 								<input type="text" class="form-control" name="percent" placeholder="%">
 							</div>
@@ -287,7 +280,7 @@ include('header.php');
 								<input type="text" class="form-control" name="fixed" placeholder="£">
 							</div>
 							<script>    
-								document.getElementById('commission_type').addEventListener('change', function() {        
+							document.getElementById('commission_type').addEventListener('change', function() {        
 									var selectedValue = this.value;        
 									var percentageField = document.getElementById('percentage_field');        
 									var fixedField = document.getElementById('fixed_field');        
@@ -304,30 +297,28 @@ include('header.php');
 								});
 							</script>							
 							<div class="col-lg-12">
-								<div class="mb-3">                 															
-									<label class="form-label">Address</label>								
+								<div class="mb-3">
+									<label class="form-label">Address</label>
 									<textarea class="form-control" rows="3" name="caddress"></textarea>
 								</div>     							
 								<div class="mb-3">                 							
-									<label class="form-label">Others</label>								
+									<label class="form-label">Others</label>
 									<textarea class="form-control" rows="3" name="cothers"></textarea>	
 								</div> 						
 							</div>   									
 						</div>          							
-					</div>        							
+					</div>
 					<div class="modal-footer">           				
-						<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 
-						<i class="ti ti-circle-x"></i>
-						Cancel           				
-					</a>           																					
+						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">
+							<i class="ti ti-circle-x"></i>
+							Cancel					
+						</a>					
 						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
 							Add Booker 											
 						</button>					     							
-					</div> 							
-					
-					</form>		
-											
+					</div>
+				</form>
 				<script>    
 					function validateForm() {        						        
 						var cnameInput = document.getElementsByName("cname")[0].value;        
@@ -335,7 +326,6 @@ include('header.php');
 						var cphoneInput = document.getElementsByName("cphone")[0].value;		
 						var cgenderInput = document.getElementsByName("cgender")[0].value;		
 						var pcInput = document.getElementsByName("pc")[0].value;
-       
 						if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {
 							alert("Please fill in all required fields.");           
 							return false;      
@@ -343,9 +333,10 @@ include('header.php');
 						return true;   
 					}
 				</script>
-				</div>      						
-		</div>    	
+			</div>
+		</div>
 	</div>
+</div>
 <?php
 include('footer.php');
 ?>

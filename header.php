@@ -40,31 +40,28 @@ if (!isset($_SESSION['email'])) {
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />		
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 												
-		<script>		
-			document.addEventListener("DOMContentLoaded", function() {    
-    const addStopButton = document.getElementById('add-stop-btn');    
-    const stopsContainer = document.getElementById('stops-container');    
-    let stopCount = 0;				    
-    addStopButton.addEventListener('click', function() {        
-        stopCount++;        
-        const newStopInput = document.createElement('input');        
-        newStopInput.type = 'text';        
-        newStopInput.className = 'form-control mb-3 col-lg-3 stop-autocomplete';        
-        newStopInput.placeholder = 'Enter stop location';        
-        newStopInput.name = 'stop_' + stopCount; // Assigning unique name
-        newStopInput.id = 'stop_' + stopCount; // Assigning unique ID
-        stopsContainer.appendChild(newStopInput);    
-
-        // Initialize autocomplete for the new input field
-        const autocompleteOptions = {        
-            types: ['geocode'],                    
-            componentRestrictions: {country: 'GB'}    
-        };
-        new google.maps.places.Autocomplete(newStopInput, autocompleteOptions);
-    });
-});
-									
-		</script>					  	
+		<script>			
+			document.addEventListener("DOMContentLoaded", function() {    			
+				const addStopButton = document.getElementById('add-stop-btn');        
+				const stopsContainer = document.getElementById('stops-container');        
+				let stopCount = 0;    
+				addStopButton.addEventListener('click', function() {        
+					stopCount++;        
+					const newStopInput = document.createElement('input');        
+					newStopInput.type = 'text';        
+					newStopInput.className = 'form-control mb-3 col-lg-3 stop-autocomplete';        
+					newStopInput.placeholder = 'Enter stop location';        
+					newStopInput.name = 'stop_' + stopCount;         
+					newStopInput.id = 'stop_' + stopCount;         
+					stopsContainer.appendChild(newStopInput);        
+					const autocompleteOptions = {            
+						types: ['geocode'],            
+						componentRestrictions: {country: 'GB'}        
+					};        
+					new google.maps.places.Autocomplete(newStopInput, autocompleteOptions);    
+				});
+			});										
+		</script>					  		
 	</head>  		
 	<body>			
 		<script src="js/demo-theme.min.js"></script> 								
@@ -83,7 +80,7 @@ if (!isset($_SESSION['email'])) {
 						<div class="navbar-nav flex-row order-md-last">         						
 							<div class="nav-item d-none d-md-flex me-3">         							
 								<div class="btn-list">								
-									<a href="new-drivers.php" class="btn btn-indigo">           									
+									<a href="new-drivers.php" class="btn btn-indigo">
 										<i class="ti ti-users-group"></i>            										
 										New Drivers         									
 									</a>									
@@ -218,7 +215,7 @@ if (!isset($_SESSION['email'])) {
 												<i class="ti ti-user-shield"></i>					
 											</span>                        											
 											<span class="nav-link-title">		
-												Clients Section												
+												Customers Section												
 											</span>                      											
 										</a>					
 										<div class="dropdown-menu">

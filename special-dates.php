@@ -111,9 +111,7 @@ include('header.php');
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>          			
 			</div> 
 			<form method="post" action="date-process.php" onsubmit="return validateForm();">			
-				<div class="modal-body">								
-				
-									
+				<div class="modal-body">													
 					<div class="row">   
 						<div class="col-lg-12">                						
 							<div class="mb-3">                  							
@@ -126,54 +124,40 @@ include('header.php');
 								<label class="form-label">Event Name:</label>              				
 								<input type="text" name="ename" class="form-control" required>					
 							</div>             					
-						</div> 
-						
+						</div>						
 						<div class="col-lg-12">                						
 							<div class="mb-3">                  							
 								<label class="form-label">Price Increment %:</label>              				
 								<input type="number" name="inc" class="form-control" required>					
 							</div>             					
-						</div> 
-					             					
-						          				
-					</div>
-							          				          
-				</div>          			
-				       			
+						</div>					             											          				
+					</div>							          				          
+				</div>				       			
 				<div class="modal-footer">           
 					<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">             					
 						Cancel           				
 					</a>           				
-					<button type="submit" class="btn btn-success">
-						
+					<button type="submit" class="btn btn-success">						
 						<i class="ti ti-clock-plus"></i>
-						Add Date 
-						
+						Add Date
 					</button>       			
 				</div> 								
-			</form>	
-			<script>
-    function validateForm() {
-        // Perform your form validation here
-        var dateInput = document.getElementsByName("date")[0].value;
-        var eventNameInput = document.getElementsByName("ename")[0].value;
-        var priceIncrementInput = document.getElementsByName("inc")[0].value;
-
-        if (dateInput === "" || eventNameInput === "" || priceIncrementInput === "") {
-            // Display an error message or prevent the form submission
-            alert("Please fill in all required fields.");
-            return false;
-        }
-
-        // If validation passes, you can proceed with the form submission
-        return true;
-    }
-</script>
-		</div>      	
+			</form>			
+			<script>    
+				function validateForm() {        					        
+					var dateInput = document.getElementsByName("date")[0].value;        
+					var eventNameInput = document.getElementsByName("ename")[0].value;        
+					var priceIncrementInput = document.getElementsByName("inc")[0].value;					        
+					if (dateInput === "" || eventNameInput === "" || priceIncrementInput === "") {
+						alert("Please fill in all required fields.");            
+						return false;        
+					}					        					        
+					return true;    
+				}
+			</script>		
+		</div>      		
 	</div>    
 </div>
-
-
 <?php
 include('footer.php');
 ?>

@@ -38,9 +38,7 @@ if ($result->num_rows > 0) {
 						<?php echo $end_date;?>
 					</h2>        										   					
 					<div class="row mb-3">											
-						<div class="card">		
-							<div class="card-header">														
-							</div>
+						<div class="card">												
 							<div class="card-body border-bottom py-3">								
 								<div id="table-adriver" class="table-responsive">									        
 									<table class='table table-responsive'>          
@@ -58,24 +56,45 @@ if ($result->num_rows > 0) {
 											while ($row = $result->fetch_assoc()) {		
 										?>       
 										<tr>                
-											<td><?php echo $row['invoice_id']; ?></td> 
-											<td><strong style="text-transform: capitalize;"><?php echo $row['d_name'] ; ?></strong></td> 
-											<td><?php echo $row['pickup'] ; ?> | <?php echo $row['destination'] ; ?></td>
-											<td><strong style="text-transform:capitalize;"><?php echo $row['c_name'] ; ?></strong></td>                     
-											<td><?php echo $row['total_pay'] ; ?></td>                
-											<td><?php echo $row['driver_commission'] ; ?></td>                
-											<td><?php echo $row['invoice_status'] ; ?></td>               
-											<td><?php echo $row['invoice_date'] ; ?></td>              
-										</tr>	
-										<?php    
+											<td>
+												<?php echo $row['invoice_id'];?>
+											</td> 
+											<td>
+												<strong style="text-transform: capitalize;">
+													<?php echo $row['d_name'];?>
+												</strong>
+											</td> 
+											<td>
+												<?php echo $row['pickup'];?> | 
+												<?php echo $row['destination'];?>
+											</td>
+											<td>
+												<strong style="text-transform:capitalize;">
+													<?php echo $row['c_name'];?>
+												</strong>
+											</td>                     
+											<td>
+												<?php echo $row['total_pay'];?>
+											</td>                
+											<td>
+												<?php echo $row['driver_commission'];?>
+											</td>                
+											<td>
+												<?php echo $row['invoice_status'];?>
+											</td>               
+											<td>
+												<?php echo $row['invoice_date'];?>
+											</td>										
+										</tr>										
+										<?php										
 											}
 										?>    
 									</table>
-									<?php
-						   					} else {    
-													echo "No Results Found!";
-													}
-											$connect->close();
+									<?php						   					
+						   } else {    							
+	echo "No Results Found!";	
+}
+$connect->close();
 									?>
 								</div>										
 							</div>

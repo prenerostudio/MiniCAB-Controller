@@ -22,99 +22,79 @@ include('header.php');
 						Locations
 					</h3>					
 					<div class="ratio ratio-21x9">							
-						<div>                    															
-				<?php																											
-				$query = "SELECT `longitude`, `latitude` FROM `drivers`";										
-				$result = mysqli_query($connect, $query);										
-				if ($result) { 																							
-					$userLocations = array();																			
-					while ($row = mysqli_fetch_assoc($result)) {																		
-						$location = array(															
-							'lat' => $row['latitude'],							
-							'lng' => $row['longitude']																	
-						);  																
-						$userLocations[] = $location;													
-					}												
-					mysqli_free_result($result);															
-				} else { 															
-					echo "Error executing the query: " . mysqli_error($connect);											
-				}																																
-				?>																															
-				<div id="map"></div>
-
-								<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-								<script>
-    
-									document.addEventListener('DOMContentLoaded', function () {
-        
-										var map = L.map('map');
-       
-										L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-            maxZoom: 30
-        }).addTo(map);
-
-        var carIcon = L.icon({
-            iconUrl: 'img/car-icon.png',
-            iconSize: [80, 80],
-            iconAnchor: [30, 30],
-            popupAnchor: [0, -30]
-        });
-
-        var firstLocation = <?php echo json_encode($userLocations[0]); ?>;
-        var initialLatLng = L.latLng(firstLocation.lat, firstLocation.lng);
-        map.setView(initialLatLng, 12);
-
-        var userLocations = <?php echo json_encode($userLocations); ?>;
-        userLocations.forEach(function (user) {
-            var marker = L.marker([user.lat, user.lng], { icon: carIcon }).addTo(map);
-            
-            // Add a popup to the marker
-            marker.bindPopup("Loading..."); // Placeholder content
-
-            // Add click event to the marker
-            marker.on('click', function () {
-                // Fetch driver details using AJAX
-                var driverId = user.d_id;
-                fetchDriverDetails(driverId)
-                    .then(function (driverDetails) {
-                        // Update the marker's popup content
-                        marker.setPopupContent("Driver Details: " + driverDetails);
-                    })
-                    .catch(function (error) {
-                        console.error('Error fetching driver details:', error);
-                        marker.setPopupContent("Error fetching details");
-                    });
-            });
-        });
-
-        // Function to fetch driver details using AJAX
-        function fetchDriverDetails(driverId) {
-            return new Promise(function (resolve, reject) {
-                // Use AJAX or fetch API to get driver details from the server
-                // Replace the following with your actual endpoint
-                var endpoint = 'your-backend-endpoint.php?driverId=' + driverId;
-
-                fetch(endpoint)
-                    .then(function (response) {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.text();
-                    })
-                    .then(function (data) {
-                        resolve(data);
-                    })
-                    .catch(function (error) {
-                        reject(error);
-                    });
-            });
-        }
-    });
-</script>
-						                    														
-			</div>                                        
+						<div>											
+							<?php							
+							$query = "SELECT `longitude`, `latitude` FROM `drivers`";				
+							$result = mysqli_query($connect, $query);				
+							if ($result) { 					
+								$userLocations = array();						
+								while ($row = mysqli_fetch_assoc($result)) {											
+									$location = array(							
+										'lat' => $row['latitude'],							
+										'lng' => $row['longitude']																
+									); 						
+									$userLocations[] = $location;					
+								}					
+								mysqli_free_result($result);				
+							} else {					
+								echo "Error executing the query: " . mysqli_error($connect);
+							}											
+							?>										
+							<div id="map"></div>							
+							<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+							<script>
+								document.addEventListener('DOMContentLoaded', function () {								
+									var map = L.map('map');       									
+									L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {            
+										attribution: 'Map data &copy; contributors',            
+										maxZoom: 30        
+									}).addTo(map);        									
+									var carIcon = L.icon({										            
+										iconUrl: 'img/car-icon.png',            
+										iconSize: [80, 80],            
+										iconAnchor: [30, 30],            
+										popupAnchor: [0, -30]        
+									});									        
+									var firstLocation = <?php echo json_encode($userLocations[0]); ?>;        
+									var initialLatLng = L.latLng(firstLocation.lat, firstLocation.lng);        
+									map.setView(initialLatLng, 12);									        
+									var userLocations = <?php echo json_encode($userLocations); ?>;        
+									userLocations.forEach(function (user) {            
+										var marker = L.marker([user.lat, user.lng], { icon: carIcon }).addTo(map);
+										marker.bindPopup("Loading..."); 
+										marker.on('click', function () {
+											var driverId = user.d_id;                
+											fetchDriverDetails(driverId)                    
+												.then(function (driverDetails) {                
+												marker.setPopupContent("Driver Details: " + driverDetails);                    
+											})                    
+												.catch(function (error) {                        
+												console.error('Error fetching driver details:', error);                        
+												marker.setPopupContent("Error fetching details");                    
+											});            
+										});        
+									});									        									        
+									function fetchDriverDetails(driverId) {            
+										return new Promise(function (resolve, reject) {
+											var endpoint = 'your-backend-endpoint.php?driverId=' + driverId;
+											fetch(endpoint)                    												
+												.then(function (response) {                        
+												if (!response.ok) {                            
+													throw new Error('Network response was not ok');                        
+												}                        
+												return response.text();                    
+											})                    
+												.then(function (data) {                        
+												resolve(data);                    
+											})                    
+												.catch(function (error) {                        
+												reject(error);                    											
+											});            
+										});        
+									}    
+								});
+							</script>
+						</div>					
 					</div>                  
 				</div>                
 			</div>              
@@ -123,7 +103,9 @@ include('header.php');
 			<div class="card">                			
 				<div class="card-body">                    				
 					<div class="d-flex align-items-center">                      					
-						<div class="subheader">Driver Onboard</div>
+						<div class="subheader">
+							Driver Onboard
+						</div>
 					</div>					
 					<div class="table-responsive">                   															
 						<div id="driverListPOB">    
@@ -242,25 +224,25 @@ include('header.php');
 			<div class="card">                							
 				<div class="card-header">                    									
 					<h3 class="card-title">Today's Jobs	</h3>                  										
-				</div>                  				
-				<div class="card-body border-bottom py-3">				
-					<div id="table-default" class="table-responsive">                  					
-    <table class="table">                    						
-        <thead>                      							
-            <tr>                        								
-                <th>									
-                    <button class="table-sort" data-sort="sort-id">
-                        ID
-                    </button>										
-                </th>                        									
-                <th>									
-                    <button class="table-sort" data-sort="sort-date">
-                        Date
-                    </button>										
-                </th>                        									
-                <th>									
+				</div>				
+				<div class="card-body border-bottom py-3">					
+					<div id="table-default" class="table-responsive">    
+						<table class="table">        
+							<thead>            
+								<tr>                
+									<th>                    
+										<button class="table-sort" data-sort="sort-id">
+											ID                    
+										</button>										                
+									</th>                        									                
+									<th>									                    
+										<button class="table-sort" data-sort="sort-date">                        
+											Date                    
+										</button>										                
+									</th>                        									                
+									<th>									
 										<button class="table-sort" data-sort="sort-time">
-											Time
+											Time										
 										</button>										
 									</th>                       									
 									<th>									
@@ -269,12 +251,12 @@ include('header.php');
 										</button>										
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-pickup">
+										<button class="table-sort">
 											Pickup
 										</button>										
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">
+										<button class="table-sort">
 											Dropoff
 										</button>										
 									</th>                       									
@@ -297,110 +279,82 @@ include('header.php');
 										<button class="table-sort" data-sort="sort-driver">
 											Driver
 										</button>										
-									</th>  						
-            </tr>                   								
-        </thead>							
-        <tbody class="table-tbody">																			
-            <?php										
-            $y = 0;								
-            $jobsql = mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs, clients, bookings, drivers, booking_type, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY jobs.job_id DESC");									
-            while($jobrow = mysqli_fetch_array($jobsql)){											
-                $y++;												
-            ?>														                     
-            <tr>                        
-                <td class="sort-id">
-                    <?php echo $y; ?>
-                </td>                        
-                <td class="sort-date">
-                    <?php echo $jobrow['pick_date'];?>
-                </td>                       
-                	<td class="sort-time">
-										<?php echo $jobrow['pick_time'];?>
-									</td>                       
-										
+									</th>           
+								</tr>        
+							</thead>        
+							<tbody class="table-tbody">            
+								<?php            
+								$y = 0;            
+								$jobsql = mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs, clients, bookings, drivers, booking_type, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY jobs.job_id DESC");
+								while($jobrow = mysqli_fetch_array($jobsql)){
+									$y++;            
+								?>            
+								<tr>                                  
+									<td class="sort-id">                    
+										<?php echo $y; ?>                
+									</td>                
+									<td class="sort-date">                    
+										<?php echo $jobrow['pick_date'];?>                
+									</td>                	
+									<td class="sort-time">
+										<?php echo $jobrow['pick_time'];?>									
+									</td>                       										
 									<td class="sort-passenger">
 										<?php echo $jobrow['passenger'];?>
-									</td>  
-										
-									<td class="sort-pickup">
+									</td>  										
+									<td>
 										<?php echo $jobrow['pickup'];?>
-									</td>                       
-										
-									<td class="sort-drpoff">
+									</td>                       										
+									<td>
 										<?php echo $jobrow['destination'];?>
-									</td>
-										
+									</td>										
 									<td class="sort-fare"> 
 										<?php echo $jobrow['journey_fare'];?> 
-									</td>
-										
+									</td>										
 									<td class="sort-vehicle"> 
 										<?php echo $jobrow['v_name'];?> 
-									</td>
-										
+									</td>										
 									<td class="sort-status"> 
 										<?php echo $jobrow['job_status'];?> 
-									</td>
-										
+									</td>										
 									<td class="sort-driver"> 
 										<?php echo $jobrow['d_name'];?>
-									</td>               
-            </tr>											
-            <?php																	
-            }																
-            ?>                                       
-        </tbody>                 
-    </table>                
-</div>
-
-<script>
-    function loadJobList() {
-        // AJAX call to fetch updated job list
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.querySelector("#table-default .table-tbody").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "update_job_list.php", true);
-        xhttp.send();
-    }
-
-    // Call the function initially and then every 15 seconds
-    loadJobList();
-    setInterval(loadJobList, 15000); // 15 seconds
-</script>
-                  
-					
-				</div>                                                    
-				
-			</div>              
-			
-		</div>
-		
-	</div>
-	
-
+									</td>           
+								</tr>          
+								<?php          
+								}           
+								?>        
+							</tbody>    
+						</table>
+					</div>
+					<script>   
+						function loadJobList() {       							        
+							var xhttp = new XMLHttpRequest();      
+							xhttp.onreadystatechange = function() {         
+								if (this.readyState == 4 && this.status == 200) {               
+									document.querySelector("#table-default .table-tbody").innerHTML = this.responseText;
+								}     
+							};       
+							xhttp.open("GET", "update_job_list.php", true);       
+							xhttp.send();   
+						}   						   
+						loadJobList();   
+						setInterval(loadJobList, 10000); 
+					</script>                  					
+				</div>                                                    				
+			</div>              			
+		</div>		
+	</div>	
 </div>        
-
 <script>	
-
-	document.addEventListener("DOMContentLoaded", function() {    	
-	
-		const list = new List('table-default', {      			
-		
-			sortClass: 'table-sort',      				
-			
-			listClass: 'table-tbody',      				
-			
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare', 'sort-driver']			
-		
-		}); 		
-	
+	document.addEventListener("DOMContentLoaded", function() {    		
+		const list = new List('table-default', {      					
+			sortClass: 'table-sort',      							
+			listClass: 'table-tbody',      							
+			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-passenger', 'sort-fare', 'sort-vehicle', 'sort-status', 'sort-driver']					
+		}); 			
 	})	
-
 </script>
-
 <?php	
 include('footer.php');	
 ?>

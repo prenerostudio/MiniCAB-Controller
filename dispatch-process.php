@@ -43,8 +43,18 @@ $sql = "INSERT INTO `jobs`(
 $result = mysqli_query($connect, $sql);       
 if ($result) {  
 	$book_status='Booked';
-	$bsql="UPDATE `bookings` SET `booking_status`='$book_status', `book_add_date`='$date' WHERE `book_id`='$book_id'";
+	$bsql="UPDATE `bookings` SET `booking_status`='$book_status' WHERE `book_id`='$book_id'";
 	$r = mysqli_query($connect, $bsql); 
+	
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Job Dispatched ',											
+											'Controller',											
+											'Job Has been dispatched to driver by Controller.')";		
+	$actr = mysqli_query($connect, $actsql);
 	header('Location: upcoming-bookings.php');    
 	exit();    
 } else {		

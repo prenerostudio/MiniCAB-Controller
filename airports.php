@@ -24,64 +24,47 @@ include('header.php');
 					</h3>									
 				</div>								
 				<div class="card-body border-bottom py-3">								
-					<div id="table-adriver" class="table-responsive">                    										
-						<table class="table">                        												
-							<thead>                            														
-								<tr>                                																	
-									<th>																			
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>																			
-									</th>                                																		
-									<th>																		
-										<button class="table-sort" data-sort="sort-date">
-											Airport Name
-										</button>																			
-									</th>                                																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-time">
-											Address
-										</button>																			
-									</th>									     																		
-									<th>																			
-										<button class="table-sort">
-											Actions
-										</button>																			
-									</th>                            																	
-								</tr>                       															
-							</thead>                       																				
-							<tbody class="table-tbody">                        																				
-								<?php                            														
-								$x = 0;                            														
-								$asql = mysqli_query($connect, "SELECT * FROM `airports`");   														
-								while ($arow = mysqli_fetch_array($asql)) :								
-								$x++;                            														
+					<div id="table-adriver" class="table-responsive">							
+						<table class="table">
+							<thead>				
+								<tr>									
+									<th> ID </th>													
+									<th> Airport Name </th>
+									<th> Address </th>
+									<th> Actions </th>
+								</tr>					
+							</thead>
+							<tbody class="table-tbody">
+								<?php					
+								$x = 0;					
+								$asql = mysqli_query($connect, "SELECT * FROM `airports`");
+								while ($arow = mysqli_fetch_array($asql)) :
+								$x++;
 								?>								
-								<tr>                            															
-									<td class="sort-id">																	
-										<?php echo $x; ?>																	
-									</td>                                   																
-									<td class="sort-date">									
-										<?php echo $arow['ap_name']; ?>											
-									</td>                                   																
-									<td class="sort-time">																	
-										<?php echo $arow['ap_address']; ?>																	
-									</td>																	
-									<td>																		
-										                                       										
+								<tr>						
+									<td>		
+										<?php echo $x; ?>						
+									</td>										
+									<td>									
+										<?php echo $arow['ap_name']; ?>			
+									</td>										
+									<td>		
+										<?php echo $arow['ap_address']; ?>
+									</td>		
+									<td>													
 										<a href="del-airport.php?ap_id=<?php echo $arow['ap_id']; ?>" class="btn btn-danger" title="Delete">
 											<i class="ti ti-square-rounded-x"></i>	
-										</a>                                   										
+										</a>			
 									</td>									
-								</tr>                          														
-								<?php endwhile; ?>                         															
+								</tr>				
+								<?php endwhile; ?>
 								<?php if ($x === 0) : ?>								
-								<tr>                                   															
-									<td colspan="8">																	
-										<p align="center">No Airport Found!</p>																		
-									</td>                              																
-								</tr>                           															
-								<?php endif; ?>                        														
+								<tr>							
+									<td colspan="8">					
+										<p align="center">No Airport Found!</p>
+									</td>                 								
+								</tr>						
+								<?php endif; ?>						
 							</tbody>                   												
 						</table>               													
 					</div>           											
@@ -101,26 +84,26 @@ include('header.php');
 						<div class="modal-body">												
 							<div class="row">              											
 								<div class="col-lg-12">											
-									<div class="mb-3">              													
-										<label class="form-label">Airport Name</label>              													
+									<div class="mb-3">			
+										<label class="form-label">Airport Name</label>	
 										<input type="text" class="form-control" name="ap_name" placeholder="Airport Name" required>
 									</div> 												
 								</div>              											
 								<div class="col-lg-12">                							
-									<div class="mb-3">                  															
-										<label class="form-label">Address</label>              													
+									<div class="mb-3">
+										<label class="form-label">Address</label>
 										<input type="text" class="form-control" name="ap_address" id="pickup" placeholder="Address" required>
 									</div>             										
 								</div>            									
 							</div> 
-						</div>          							        							
+						</div>	
 						<div class="modal-footer">           					
 							<button type="reset" class="btn btn-danger"> 						
 								<i class="ti ti-circle-x"></i>						
 								Cancel           									
 							</button>           									
-							<button type="submit" class="btn ms-auto btn-success">																		
-								<i class="ti ti-plane-tilt"></i>												
+							<button type="submit" class="btn ms-auto btn-success">
+								<i class="ti ti-plane-tilt"></i>
 								Save Airport  											
 							</button>       							
 						</div> 											
@@ -133,16 +116,8 @@ include('header.php');
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
     async defer></script>
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    			
-		const list = new List('table-default', {      							
-			sortClass: 'table-sort',			
-			listClass: 'table-tbody',			
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',	'sort-driver']					
-		}); 			
-	})	
-	   
-		function validateForm() {                							
+<script>		   	
+	function validateForm() {	
 		var ap_nameInput = document.getElementsByName("ap_name")[0].value;        		
 		var ap_addressInput = document.getElementsByName("ap_address")[0].value;        		
 		
@@ -151,27 +126,20 @@ include('header.php');
 			return false;			
 		}		
 		return true;    		
-	}
-	 
-	var autocompletePickup;
-
-   
+	}	 
+	var autocompletePickup;   
 	function initAutocomplete() {
         var pickupInput = document.getElementById('pickup');
         var autocompleteOptions = {
             types: ['airport'],
             componentRestrictions: {country: 'GB'}
         };
-
         autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-
         autocompletePickup.addListener('place_changed', function() {
             // Optionally, you can handle the selected place here
         });
-    }
-       
-    google.maps.event.addDomListener(window, 'load', initAutocomplete);
-	
+    }       
+    google.maps.event.addDomListener(window, 'load', initAutocomplete);	
 </script>
 
 

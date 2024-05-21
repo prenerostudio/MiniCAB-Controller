@@ -1,51 +1,24 @@
 <?php
-// Include your database connection file
 include "config.php";
-
-// Set up error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Sanitize user input for timeInterval
 $selectedInterval = isset($_GET['timeInterval']) ? intval($_GET['timeInterval']) : 0;
-
-// Validate selected interval (ensure it's a positive integer or handle other validation logic)
 if ($selectedInterval <= 0) {
-    // Handle invalid input (e.g., display error message)
     echo "<tr><td colspan='9'>Invalid time interval selected</td></tr>";
-    exit; // Stop further execution
+    exit;
 }
-
-// Construct SQL query to fetch bookings based on the selected time interval
-$bsql = mysqli_query($connect, "SELECT
-	*
-FROM
-	bookings
-WHERE
-	book_add_date >= NOW() - INTERVAL $selectedInterval
- HOUR AND
-	book_add_date <= NOW() AND
-	bookings.booking_status = 'Cancelled'");
-
-// Check if query was successful
+$bsql = mysqli_query($connect, "SELECT * FROM bookings WHERE book_add_date >= NOW() - INTERVAL $selectedInterval HOUR AND book_add_date <= NOW() AND bookings.booking_status = 'Cancelled'");
 if (!$bsql) {
-    // Handle SQL error (e.g., display error message)
-    echo "<tr><td colspan='9'>Error fetching bookings</td></tr>";
-    exit; // Stop further execution
+	echo "<tr><td colspan='9'>Error fetching bookings</td></tr>";
+	exit; 
 }
-
-// Check if any bookings were found
 if (mysqli_num_rows($bsql) == 0) {
-    // Handle no bookings found (e.g., display message)
-    echo "<tr><td colspan='9'>No bookings found for the selected interval</td></tr>";
-    exit; // Stop further execution
+	echo "<tr><td colspan='9'>No bookings found for the selected interval</td></tr>";
+	exit; 
 }
-
-// Generate HTML for the updated table rows based on fetched bookings
 while ($brow = mysqli_fetch_array($bsql)) {
-    // Output table row HTML based on the fetched data
-    echo "<tr>";
-    // Add columns as needed
+	echo "<tr>";    
     echo "<td class='sort-id'>" . $brow['book_id'] . "</td>";
     echo "<td class='sort-date'>" . $brow['pick_date'] . "</td>";
     echo "<td class='sort-time'>" . $brow['pick_time'] . "</td>";
@@ -87,10 +60,8 @@ while ($brow = mysqli_fetch_array($bsql)) {
         </button>";
 
     echo "</td>";
-    // Add other columns
     echo "</tr>";
 }
 
-// Close the database connection (if necessary)
 mysqli_close($connect);
 ?>

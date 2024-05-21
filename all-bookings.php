@@ -13,25 +13,49 @@ include('header.php');
 		</div>		
 		<div class="col-auto ms-auto d-print-none">            		
 			<div class="btn-list">				
-				<span class="d-none d-sm-inline">									
-						<span class="dropdown">                    
-							<button class="btn dropdown-toggle align-text-top" id="filterDropdown" data-bs-boundary="viewport" data-bs-toggle="dropdown">
-								Search Bookings
-							</button>                            
-							<div class="dropdown-menu dropdown-menu-end">
-								<a class="filter-item" href="#" data-filter="3"> All Bookings In 3 Hours</a>
-								<a class="filter-item" href="#" data-filter="6">All Bookings In 6 Hours</a>
-								<a class="filter-item" href="#" data-filter="9">All Bookings In 9 Hours</a>
-								<a class="filter-item" href="#" data-filter="12">All Bookings In 12 Hours</a>
-								<a class="filter-item" href="#" data-filter="24">All Bookings In 24 Hours</a>
-								<a class="filter-item" href="#" data-filter="72">All Bookings In 3 Days</a>
-								<a class="filter-item" href="#" data-filter="168">All Bookings In 7 Days</a>
-								<a class="filter-item" href="#" data-filter="336">All Bookings In 14 Days</a>
-								<a class="filter-item" href="#" data-filter="720">All Bookings In 30 Days</a>
-								<a class="filter-item" href="#" data-filter="2160">All Bookings In 3 Months</a>
-								<a class="filter-item" href="#" data-filter="4320">All Bookings In 6 Months</a>
-								<a class="filter-item" href="#" data-filter="8760">All Bookings In 12 Months</a>
-							</div>                            
+				<span class="d-none d-sm-inline">
+					<span class="dropdown">
+						<button class="btn dropdown-toggle align-text-top" id="filterDropdown" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+							Search Bookings
+						</button>						
+						<div class="dropdown-menu dropdown-menu-end">						
+							<a class="filter-item" href="#" data-filter="3">
+								All Bookings In 3 Hours								
+							</a>							
+							<a class="filter-item" href="#" data-filter="6">
+								All Bookings In 6 Hours								
+							</a>							
+							<a class="filter-item" href="#" data-filter="9">
+								All Bookings In 9 Hours
+							</a>
+							<a class="filter-item" href="#" data-filter="12">
+								All Bookings In 12 Hours
+							</a>
+							<a class="filter-item" href="#" data-filter="24">
+								All Bookings In 24 Hours
+							</a>
+							<a class="filter-item" href="#" data-filter="72">
+								All Bookings In 3 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="168">
+								All Bookings In 7 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="336">
+								All Bookings In 14 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="720">
+								All Bookings In 30 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="2160">
+								All Bookings In 3 Months
+							</a>
+							<a class="filter-item" href="#" data-filter="4320">
+								All Bookings In 6 Months
+							</a>
+							<a class="filter-item" href="#" data-filter="8760">
+								All Bookings In 12 Months
+							</a>
+						</div>                            
 					</span>           					
 				</span> 				
 				<script>					
@@ -66,7 +90,9 @@ include('header.php');
 		<div class="col-12">            					
 			<div class="card">     											
 				<div class="card-header">				
-					<h3 class="card-title">All Bookings List</h3>
+					<h3 class="card-title">
+						All Bookings List
+					</h3>
 				</div>				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-default" class="table-responsive">
@@ -98,21 +124,9 @@ include('header.php');
 												Passenger
 											</button>	
 										</th>                        		
-										<th>		
-											<button class="table-sort" data-sort="sort-pickup">
-												Pickup
-											</button>	
-										</th>                        		
-										<th>		
-											<button class="table-sort" data-sort="sort-stops">
-												Stops
-											</button>
-										</th>
-										<th>
-											<button class="table-sort" data-sort="sort-dropoff">
-												Dropoff
-											</button>	
-										</th>	
+										<th> Pickup </th>                        		
+										<th> Stops </th>
+										<th> Dropoff </th>	
 										<th>
 											<button class="table-sort" data-sort="sort-fare">
 												Fare
@@ -149,13 +163,13 @@ include('header.php');
 										<td class="sort-passenger">
 											<?php echo $brow['passenger']; ?>
 										</td>										
-										<td class="sort-pickup" style="width: 15%;">
+										<td style="width: 15%;">
 											<?php echo $brow['pickup']; ?>
 										</td>         
-										<td class="sort-stops">
+										<td>
 											<?php echo $brow['stops']; ?>
 										</td>										
-										<td class="sort-drpoff" style="width: 15%;">
+										<td style="width: 15%;">
 											<?php echo $brow['destination'] ?>
 										</td>										
 										<td class="sort-fare"> 
@@ -178,33 +192,24 @@ include('header.php');
 												<i class="ti ti-plane-tilt"></i>
 											</a>   
 											<?php											
-												}										
-											if($brow['bid_status']==0){	
-											?>											
-											<a href="open-bid.php?book_id=<?php echo $brow['book_id'] ?>">
-												<button class="btn btn-instagram button_padding" title="Open Bid">
-													<i class="ti ti-aspect-ratio"></i>
-												</button>											
-											</a>											
-											<?php				
-											}else{					
-											?>					
-											<a href="#">												
-												<button class="btn button_padding" disabled title="On Bid">
-													<i class="ti ti-aspect-ratio"></i>
-												</button>											
-											</a>											
-											<?php										
-											}										
+												}												
 											?>
-											<a href="view-booking.php?book_id=<?php echo $brow['book_id'] ?>">											
+											<a href="view-booking.php?book_id=<?php echo $brow['book_id'] ?>">
 												<button class="btn btn-info button_padding" title="View">
 													<i class="ti ti-eye"></i>
-												</button>												
+												</button>
 											</a>
+											<?php
+												if($brow['booking_status']=='Booked'){
+													echo '';
+												} else {   
+											?>    
 											<a class="btn btn-danger button_padding" href="cancel-booking.php?book_id=<?php echo $brow['book_id'] ?>" title="Cancel">
 												<i class="ti ti-square-rounded-x"></i>
-											</a>				
+											</a> 
+											<?php											
+												}												
+											?>											
 										</td>
 									</tr>											
 									<?php			
@@ -228,7 +233,7 @@ include('header.php');
 		const list = new List('table-default', {      			
 			sortClass: 'table-sort',      				
 			listClass: 'table-tbody',      				
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare', 'sort-driver'      	
+			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-passenger', 'sort-fare', 'sort-vehicle'      	
 						]			
 		}); 		
 	})	

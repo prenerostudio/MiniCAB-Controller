@@ -93,8 +93,8 @@ $urow = mysqli_fetch_array($usql);
 											<?php echo $urow['country_name'] ?>
 										</option>
 										<?php
-									$lsql=mysqli_query($connect,"SELECT * FROM `countries`");
-								   	while($lrow = mysqli_fetch_array($lsql)){
+											$lsql=mysqli_query($connect,"SELECT * FROM `countries`");
+								   			while($lrow = mysqli_fetch_array($lsql)){
 										?>																					
 										<option value="<?php echo $lrow['country_id'] ?>">						
 											<?php echo $lrow['country_name'] ?>

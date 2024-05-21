@@ -116,14 +116,14 @@ include('header.php');
 									?>													
 								</td>
 							</tr>
-							<?php																									
+							<?php	
 							}																									
 							?>																									
 						</tbody>                    																
 					</table>                					
 				</div>            			
 			</div>        	
-		</div>    			              															               					
+		</div>
 	</div>	
 </div>        
 <?php	

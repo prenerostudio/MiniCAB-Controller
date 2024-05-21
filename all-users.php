@@ -11,11 +11,11 @@ include('header.php');
 				Users Section                													
 			</h2>              									
 		</div>						
-		<div class="col-auto ms-auto d-print-none">            												
+		<div class="col-auto ms-auto d-print-none">		
 			<div class="btn-list">                												
 				<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-user">
 					<i class="ti ti-user-plus"></i>
-					Add New User                  																	
+					Add New User
 				</a>	
 			</div>              								
 		</div>					
@@ -25,81 +25,66 @@ include('header.php');
 <div class="page-body page_padding">          
 	<div class="row row-deck row-cards">			      					
 		<div class="col-12">            											
-			<div class="card">                																
+			<div class="card">	
 				<div class="card-header">													
-					<h3 class="card-title">All Users List</h3>												
-				</div>                  																
-				<div class="card-body border-bottom py-3">																	
+					<h3 class="card-title">All Users List</h3>
+				</div>	
+				<div class="card-body border-bottom py-3">						
 					<div id="table-customer" class="table-responsive">
 						<table class="table table-responsive">
 							<thead>										
 								<tr>		
-									<th>																		
-										<button class="table-sort">ID</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort">Image</button>									
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-name">Name</button>
-									</th>                       									
-									<th>									
-										<button class="table-sort" data-sort="sort-email">Email</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-phone">Phone</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-gender">Gender</button>
-									</th>									
-									<th>									
-										<button class="table-sort">Designation</button>									
-									</th>							
-									<th>									
-										<button class="table-sort">Actions</button>									
-									</th>                      																	
-								</tr>                   															
+									<th> ID </th>		
+									<th> Image </th>			
+									<th> Name </th>		
+									<th> Email </th>			
+									<th> Phone </th>			
+									<th> Gender </th>									
+									<th> Designation </th>							
+									<th> Actions </th>
+								</tr>		
 							</thead>                  							
-							<tbody class="table-tbody">																			
+							<tbody class="table-tbody">							
 								<?php
 								$x=0;								
 								$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users, countries WHERE users.country_id = countries.country_id AND users.designation != 'Owner'");
-								while($urow = mysqli_fetch_array($usql)){								
-									$x++;																	
+								while($urow = mysqli_fetch_array($usql)){
+									$x++;
 								?>																
-								<tr>                        																
-									<td class="sort-id">									
+								<tr>						
+									<td>									
 										<?php echo $x; ?>									
 									</td>									
-									<td class="sort-date">
+									<td>
 									 	<?php
-											if (!$urow['user_pic']) {									
-										?>																	
+											if (!$urow['user_pic']) {	
+										?>		
 										<img src="img/user-1.jpg" alt="User Img" style="width: 80px; height: 80px; border-radius: 5px;">	
 										<?php									
-											} else{															
-										?>																
+											} else{		
+										?>
 										<img src="img/users/<?php echo $urow['user_pic'];?>" alt="User Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
 										<?php								
 											}			
 										?>											
-									</td>                       										
-									<td class="sort-time">
-										<?php echo $urow['first_name']; ?> <?php echo $urow['last_name']; ?>
-									</td>                       										
-									<td class="sort-passenger">
+									</td>
+									<td>
+										<?php echo $urow['first_name']; ?> 
+										<?php echo $urow['last_name']; ?>
+									</td>
+									<td>
 										<?php echo $urow['user_email']; ?>
 									</td>  										
-									<td class="sort-pickup">
+									<td>
 										<?php echo $urow['user_phone']; ?>
-									</td>                       										
-									<td class="sort-drpoff">
+									</td>	
+									<td>
 										<?php echo $urow['user_gender']; ?>
 									</td>										
-									<td class="sort-drpoff">											
+									<td>											
 										<?php echo $urow['designation']; ?>							
 									</td>	
-									<td>																					
+									<td>						
 										<a href="view-user.php?user_id=<?php echo $urow['user_id']; ?>" class="btn btn-info">
 											<i class="ti ti-eye"></i>
 											View		
@@ -111,9 +96,9 @@ include('header.php');
 									</td>	
 								</tr>																
 								<?php																
-								}																								
+								}						
 								?>														
-							</tbody>                 													
+							</tbody>
 						</table>                											
 					</div>                  									
 				</div>                                                    							
@@ -121,17 +106,6 @@ include('header.php');
 		</div>			
 	</div>
 </div>    
-
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-customer', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-name', 'sort-email', 'sort-phone', 'sort-gender']					
-		}); 			
-	})	
-</script>
-
 
 <!-------------------------------
 ----------Add User-------------
@@ -147,11 +121,11 @@ include('header.php');
 				<div class="modal-body">								
 					<div class="row">				
 						<div class="mb-3 col-md-4">              					
-							<label class="form-label">First Name</label>              					
+							<label class="form-label">First Name</label>
 							<input type="text" class="form-control" name="fname" placeholder="First Name" required> 				
 						</div> 
 						<div class="mb-3 col-md-4">              					
-							<label class="form-label">Last Name</label>              					
+							<label class="form-label">Last Name</label>
 							<input type="text" class="form-control" name="lname" placeholder="Last Name" required> 				
 						</div> 
 						<div class="mb-3 col-md-4">                  						
@@ -163,7 +137,7 @@ include('header.php');
 							<input type="email" class="form-control" name="uemail" placeholder="hello@example.com" required>
 						</div>
 						<div class="mb-3 col-md-6">                  
-							<label class="form-label">Password</label>              					
+							<label class="form-label">Password</label>
 							<input type="password" class="form-control" name="upass" placeholder="xxxxxxxx" required>
 						</div>					
 						<div class="mb-3 col-md-6">				
@@ -185,7 +159,7 @@ include('header.php');
 							</select>
 						</div>	
 						<div class="mb-3 col-md-12">							
-							<label class="form-label">Address</label>									
+							<label class="form-label">Address</label>
 							<textarea class="form-control" rows="3" name="uaddress"></textarea>
 						</div> 						
 						<div class="mb-3 col-md-4">                  						
@@ -196,40 +170,40 @@ include('header.php');
 							<label class="form-label">State</label>
 							<input type="text" class="form-control" name="ustate" placeholder="Enter State">
 						</div>							
-						<div class="mb-3 col-md-4">              															
+						<div class="mb-3 col-md-4">
 							<label class="form-label">Country</label>
 							<select class="form-select" name="country_id" required>
-								<option value="" selected>Select Country</option>								
+								<option value="" selected>Select Country</option>
 								<?php								
 								$lsql=mysqli_query($connect,"SELECT * FROM `countries`");
-								while($lrow = mysqli_fetch_array($lsql)){								
-								?>																		
+								while($lrow = mysqli_fetch_array($lsql)){
+								?>
 								<option value="<?php echo $lrow['country_id'] ?>">
 									<?php echo $lrow['country_name']; ?>
-								</option>																		
+								</option>
 								<?php
-								}																					
+								}
 								?>								
-							</select>             																
+							</select>			
 						</div>			
-						<div class="mb-3 col-md-4">              											
-							<label class="form-label">Postal Code</label>									
+						<div class="mb-3 col-md-4">
+							<label class="form-label">Postal Code</label>
 							<input type="text" class="form-control" name="pc" placeholder="xx xxx">
-						</div> 					              											
-						<div class="mb-3 col-md-4">                  												
-							<label class="form-label">Picture</label>							
-							<input type="file" class="form-control" name="upic">						
 						</div>
-						<div class="mb-3 col-md-4">                  												
+						<div class="mb-3 col-md-4">
+							<label class="form-label">Picture</label>							
+							<input type="file" class="form-control" name="upic">
+						</div>
+						<div class="mb-3 col-md-4">
 							<label class="form-label">National ID</label>							
 							<input type="text" class="form-control" name="uni">						
-						</div>             																					
+						</div>						
 					</div>				   							
-					<div class="modal-footer">           				
-						<a href="#" class="btn btn-danger" data-bs-dismiss="modal"> 
-						<i class="ti ti-circle-x"></i>
-						Cancel           				
-					</a>           																					
+					<div class="modal-footer">						
+						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">
+							<i class="ti ti-circle-x"></i>						
+							Cancel											
+						</a>					
 						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i> 						
 							Add User 											
@@ -241,19 +215,18 @@ include('header.php');
 				function validateForm() {						    						
 					var fnameInput = document.getElementsByName("fname")[0].value;					
 					var lnameInput = document.getElementsByName("lname")[0].value;					
-					var uemailInput = document.getElementsByName("uemail")[0].value;  					
+					var uemailInput = document.getElementsByName("uemail")[0].value;
 					var upassInput = document.getElementsByName("upass")[0].value;					
-					var uphoneInput = document.getElementsByName("uphone")[0].value;							
-					var ugenderInput = document.getElementsByName("ugender")[0].value;							
-					var pcInput = document.getElementsByName("pc")[0].value;       
-					
-					if (fnameInput === "" || lnameInput === "" || uphoneInput === "" || uemailInput === "" || upassInput === "" || ugenderInput === "" || pcInput === "") {							          					
-						alert("Please fill in all required fields.");           						
+					var uphoneInput = document.getElementsByName("uphone")[0].value;
+					var ugenderInput = document.getElementsByName("ugender")[0].value;
+					var pcInput = document.getElementsByName("pc")[0].value;
+					if (fnameInput === "" || lnameInput === "" || uphoneInput === "" || uemailInput === "" || upassInput === "" || ugenderInput === "" || pcInput === "") {
+						alert("Please fill in all required fields.");
 						return false;     						
 					}      						     					
 					return true;   					
 				}
-			</script>											     										
+			</script>		
 		</div>
 	</div>		
 </div>

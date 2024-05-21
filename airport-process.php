@@ -3,7 +3,6 @@ require 'config.php';
 
 $ap_name = $_POST['ap_name'];
 $ap_address = $_POST['ap_address'];
-
 $sql = "INSERT INTO `airports`(
 								`ap_name`, 
 								`ap_address`							

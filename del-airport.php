@@ -4,12 +4,17 @@ $ap_id = $_GET['ap_id'];
 $sql = "DELETE FROM `airports` WHERE `ap_id`='$ap_id'";
 $result = $connect->query($sql);
 if($result){ 
-	echo'<br>'; 	
-	echo ' '; 	
-	echo "<script>alert('Airport has been deleted from the record')</script>";	
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Airport Deleted',											
+											'Controller',											
+											'Airport Has Been Deleted by Controller.')";		
+	$actr = mysqli_query($connect, $actsql);
 	header('location: airports.php');	
 } else {
-	echo "<script>alert('Some error occurred. Try again')</script>";	
 	header('location: airports.php');	
 }
 ?>

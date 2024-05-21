@@ -6,7 +6,7 @@ function uploadImage() {
     $fileExtension = strtolower(pathinfo($_FILES["cpic"]["name"], PATHINFO_EXTENSION));
     $uniqueFilename = uniqid() . '_' . time() . '.' . $fileExtension; // Generate unique filename
     $targetFilePath = $targetDir . $uniqueFilename;
-    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+    $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'JPEG', 'BMP', 'PDF', 'TIFF', 'WebP', 'Raw', 'SVG', 'HEIF', 'apng', 'CR2', 'ICO', 'JPEG 2000', 'avif');
 
     if (in_array($fileExtension, $allowTypes)) {
         if (move_uploaded_file($_FILES["cpic"]["tmp_name"], $targetFilePath)) {
@@ -33,7 +33,6 @@ $com_type = $_POST['com_type'];
 $percent = $_POST['percent'];
 $fixed = $_POST['fixed'];
 $account_type = 2;
-$date = date("Y-m-d H:i:s");
 
 // Check if the email already exists
 $stmt_check = $connect->prepare("SELECT COUNT(*) FROM `clients` WHERE `c_phone` = ?");
@@ -52,16 +51,16 @@ if ($phone_count > 0) {
 
       if ($cpic !== false) {
         // Insert image name along with other data
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `commission_type`, `percentage`, `fixed`,`account_type`, `reg_date`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $com_type, $percent, $fixed, $account_type, $date);
-    } else {
-        // Insert only name without image name
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `commission_type`, `percentage`, `fixed`,`account_type`, `reg_date`)
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `commission_type`, `percentage`, `fixed`,`account_type`)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $com_type, $percent, $fixed, $account_type, $date);
+        $stmt->bind_param("sssssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $com_type, $percent, $fixed, $account_type);
+    } else {
+        // Insert only name without image name
+        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `commission_type`, `percentage`, `fixed`,`account_type`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("ssssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $com_type, $percent, $fixed, $account_type);
     }
 
     if ($stmt->execute()) {
@@ -71,20 +70,16 @@ if ($phone_count > 0) {
 												`details`
 												) VALUES (
 												'New Booker',
-												'$d_name',
+												'$cname',
 												'New Booker Added by Controller')";		
 		
-			$actr = mysqli_query($connect, $actsql);
-		
-		
-        header('Location: bookers.php'); 
+			$actr = mysqli_query($connect, $actsql);		
         
+		header('Location: bookers.php');         
     } else {
         header('Location: bookers.php'); 
     }
-
     $stmt->close();
 }
-
 $connect->close();
 ?>

@@ -46,7 +46,9 @@ include('header.php');
 		<div class="col-12">            					
 			<div class="card">                							
 				<div class="card-header">                    									
-					<h3 class="card-title">Upcoming Bookings</h3>                  										
+					<h3 class="card-title">
+						Upcoming Bookings
+					</h3>                  										
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-default" class="table-responsive">                  					
@@ -54,72 +56,112 @@ include('header.php');
 							<thead>                      							
 								<tr>                        								
 									<th>									
-										<button class="table-sort" data-sort="sort-id">ID</button>										
+										<button class="table-sort" data-sort="sort-id">
+											ID
+										</button>										
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-date">Date</button>										
+										<button class="table-sort" data-sort="sort-date">
+											Date
+										</button>										
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-time">Time</button>										
+										<button class="table-sort" data-sort="sort-time">
+											Time
+										</button>										
 									</th>                       									
 									<th>									
-										<button class="table-sort" data-sort="sort-passenger">Passenger</button>
+										<button class="table-sort" data-sort="sort-passenger">
+											Passenger
+										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-pickup">Pickup</button>
+										<button class="table-sort">Pickup</button>
 									</th> 
 									<th>									
-										<button class="table-sort" data-sort="sort-stops">Stops</button>
+										<button class="table-sort">Stops</button>
 									</th>
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">Dropoff</button>
+										<button class="table-sort">Dropoff</button>
 									</th>                       									
 									<th>									
-										<button class="table-sort" data-sort="sort-fare">Fare</button>										
+										<button class="table-sort" data-sort="sort-fare">
+											Fare
+										</button>										
 									</th>						   									
 									<th>									
-										<button class="table-sort" data-sort="sort-vehicle">Vehicle</button>
+										<button class="table-sort" data-sort="sort-vehicle">
+											Vehicle
+										</button>
 									</th>						  									
 									<th>									
-										<button class="table-sort" data-sort="sort-status">Status</button>
+										<button class="table-sort" data-sort="sort-status">
+											Status
+										</button>
 									</th>						   									
 									<th>									
-										<button class="table-sort" data-sort="sort-driver">Driver</button>
+										<button class="table-sort" data-sort="sort-driver">
+											Driver
+										</button>
 									</th>									
 									<th>									
-										<button class="table-sort" data-sort="sort-driver">Actions</button>
+										<button class="table-sort">
+											Actions
+										</button>
 									</th>									
 								</tr>                   								
 							</thead>                  							
 							<tbody class="table-tbody">												
 								<?php																		
-								$y=0;																
-								$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs, clients, bookings, drivers, booking_type, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY jobs.job_id DESC");									
+								$y=0;								
+								$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs JOIN clients ON jobs.c_id = clients.c_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN drivers ON jobs.d_id = drivers.d_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE jobs.job_status = 'waiting' ORDER BY jobs.job_id DESC");
 								while($jobrow = mysqli_fetch_array($jobsql)){
 									$y++;									
-								?>														                     								
-								<tr>                        								
-									<td class="sort-id"><?php echo $y; ?></td>                        									
-									<td class="sort-date"><?php echo $jobrow['pick_date'] ?></td>
-									<td class="sort-time"><?php echo $jobrow['pick_time'] ?></td>
-									<td class="sort-passenger"><?php echo $jobrow['passenger'] ?></td>  									
-									<td class="sort-pickup"><?php echo $jobrow['pickup'] ?></td> 
-									<td class="sort-drpoff"><?php echo $jobrow['stops'] ?></td>	
-									<td class="sort-drpoff"><?php echo $jobrow['destination'] ?></td>									
-									<td class="sort-fare"> <?php echo $jobrow['journey_fare'] ?> </td>									
-									<td class="sort-vehicle"> <?php echo $jobrow['v_name'] ?> </td>									
-									<td class="sort-status"> <?php echo $jobrow['job_status'] ?> </td>									
-									<td class="sort-driver"> <?php echo $jobrow['d_name'] ?> </td>
+								?>			
+								<tr>									
+									<td class="sort-id">
+										<?php echo $y; ?>
+									</td>                        												
+									<td class="sort-date">
+										<?php echo $jobrow['pick_date'] ?>
+									</td>
+									<td class="sort-time">
+										<?php echo $jobrow['pick_time'] ?>
+									</td>
+									<td class="sort-passenger">
+										<?php echo $jobrow['passenger'] ?>
+									</td>  									
+									<td>
+										<?php echo $jobrow['pickup'] ?>
+									</td> 
+									<td>
+										<?php echo $jobrow['stops'] ?>
+									</td>	
+									<td>
+										<?php echo $jobrow['destination'] ?>
+									</td>									
+									<td class="sort-fare"> 
+										<?php echo $jobrow['journey_fare'] ?> 
+									</td>									
+									<td class="sort-vehicle"> 
+										<?php echo $jobrow['v_name'] ?> 
+									</td>									
+									<td class="sort-status"> 
+										<?php echo $jobrow['job_status'] ?> 
+									</td>									
+									<td class="sort-driver"> 
+										<?php echo $jobrow['d_name'] ?> 
+									</td>
 									<td class="sort-driver"> 									
 										<a href="withdraw-job.php?job_id=<?php echo $jobrow['job_id']; ?>&book_id=<?php echo $jobrow['book_id']; ?>">										
 											<button class="btn btn-danger">										
-												<i class="ti ti-square-rounded-x"></i>												
+												<i class="ti ti-square-rounded-x"></i>
 												Withdraw Job											
 											</button>												
 										</a>										
 									</td>									
 								</tr>																			
-								<?php																									
+								<?php
 								}																								
 								?>                                       								
 							</tbody>                 							
@@ -135,9 +177,7 @@ include('header.php');
 		const list = new List('table-default', {      					
 			sortClass: 'table-sort',      							
 			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',						      								
-						 'sort-driver'      	
-						]					
+			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare', 'sort-driver']					
 		}); 			
 	})	
 </script>
