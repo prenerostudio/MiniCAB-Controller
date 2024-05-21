@@ -14,7 +14,6 @@ $taxi_ins = $_POST['taxi_ins'];
 $taxi_exp = $_POST['taxi_exp'];
 $mot = $_POST['mot'];
 $mot_exp = $_POST['mot_exp'];
-$date = date("Y-m-d H:i:s");
          
 $sql = "UPDATE `driver_vehicle` SET 
 									`v_id`='$v_id',									
@@ -27,11 +26,19 @@ $sql = "UPDATE `driver_vehicle` SET
 									`v_ti`='$taxi_ins',
 									`v_ti_expiry`='$taxi_exp',
 									`v_mot`='$mot',
-									`v_mot_expiry`='$mot_exp',
-									`date_v_add`='$date' WHERE `dv_id`='$dv_id'";
+									`v_mot_expiry`='$mot_exp' WHERE `dv_id`='$dv_id'";
          
 $result = mysqli_query($connect, $sql);              
-if ($result) {                   
+if ($result) { 	
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Driver Vehicle Details Update',											
+											'Controller',											
+											'Driver Vehicle Details Has Been updated by Controller.')";		
+	$actr = mysqli_query($connect, $actsql);		
 	header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
 	exit();       
 } else {           			

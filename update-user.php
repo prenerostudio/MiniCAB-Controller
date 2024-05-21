@@ -13,7 +13,6 @@ $city = $_POST['city'];
 $state = $_POST['state'];
 $country = $_POST['country'];
 $pc = $_POST['pc'];
-$date = date("Y-m-d H:i:s");
      
 $sql = "UPDATE `users` SET 
 						`first_name`='$fname',
@@ -25,11 +24,18 @@ $sql = "UPDATE `users` SET
 						`state`='$state',
 						`country_id`='$country',
 						`pc`='$pc',
-						`nid`='$nid',
-						`reg_date`='$date' WHERE `user_id`='$user_id'";
-        
+						`nid`='$nid' WHERE `user_id`='$user_id'";        
 $result = mysqli_query($connect, $sql);       
-if ($result) {	    
+if ($result) {		
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Admin Profile Updated',											
+											'Controller',											
+											'Admin Profile Has Been updated by Controller.')";		
+	$actr = mysqli_query($connect, $actsql);
 	header('location: profile-setting.php');    
 	exit();    
 } else {           

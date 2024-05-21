@@ -4,24 +4,20 @@ require 'config.php';
 function uploadImage() {
     $targetDir = "img/users/";
     $fileExtension = strtolower(pathinfo($_FILES["upic"]["name"], PATHINFO_EXTENSION));
-    $uniqueFilename = uniqid() . '_' . time() . '.' . $fileExtension; // Generate unique filename
+    $uniqueFilename = uniqid() . '_' . time() . '.' . $fileExtension; 
     $targetFilePath = $targetDir . $uniqueFilename;
-    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+    $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'JPEG', 'BMP', 'PDF', 'TIFF', 'WebP', 'Raw', 'SVG', 'HEIF', 'apng', 'CR2', 'ICO', 'JPEG 2000', 'avif');
 
     if (in_array($fileExtension, $allowTypes)) {
         if (move_uploaded_file($_FILES["upic"]["tmp_name"], $targetFilePath)) {
-            return $uniqueFilename; // Return the unique filename
+            return $uniqueFilename; 
         } else {
             return false;
         }
     }
     return false;
 }
-
-
-   // Handle image upload
-    $upic = uploadImage();
-
+$upic = uploadImage();
 
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
@@ -36,8 +32,7 @@ $ucity = $_POST['ucity'];
 $ustate = $_POST['ustate'];
 $country_id = $_POST['country_id'];
 $pc = $_POST['pc'];
-$date = date("Y-m-d H:i:s");
-     
+  
 $sql = "INSERT INTO `users`(
 							`first_name`, 
 							`last_name`, 
@@ -72,7 +67,16 @@ $sql = "INSERT INTO `users`(
 							'$date')";
         
 $result = mysqli_query($connect, $sql);       
-if ($result) {	    
+if ($result) {	
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'New Admin Added',											
+											'Controller',											
+											'New Admin " . $fname . " Has Been Added by Controller.')";		
+	$actr = mysqli_query($connect, $actsql);				
 	header('location: all-users.php');    
 	exit();    
 } else {           

@@ -76,13 +76,19 @@ include('header.php');
 										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort">Pickup</button>
+										<button class="table-sort">
+											Pickup
+										</button>
 									</th> 
 									<th>									
-										<button class="table-sort">Stops</button>
+										<button class="table-sort">
+											Stops
+										</button>
 									</th>
 									<th>									
-										<button class="table-sort">Dropoff</button>
+										<button class="table-sort">
+											Dropoff
+										</button>
 									</th>                       									
 									<th>									
 										<button class="table-sort" data-sort="sort-fare">
@@ -152,8 +158,8 @@ include('header.php');
 									<td class="sort-driver"> 
 										<?php echo $jobrow['d_name'] ?> 
 									</td>
-									<td class="sort-driver"> 									
-										<a href="withdraw-job.php?job_id=<?php echo $jobrow['job_id']; ?>&book_id=<?php echo $jobrow['book_id']; ?>">										
+									<td> 									
+										<a href="withdraw-job.php?job_id=<?php echo $jobrow['job_id']; ?>&book_id=<?php echo $jobrow['book_id']; ?>">
 											<button class="btn btn-danger">										
 												<i class="ti ti-square-rounded-x"></i>
 												Withdraw Job											
@@ -177,7 +183,7 @@ include('header.php');
 		const list = new List('table-default', {      					
 			sortClass: 'table-sort',      							
 			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare', 'sort-driver']					
+			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-passenger', 'sort-fare', 'sort-vehicle', 'sort-status', 'sort-driver']					
 		}); 			
 	})	
 </script>

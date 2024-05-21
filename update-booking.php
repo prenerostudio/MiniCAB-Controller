@@ -26,7 +26,6 @@ $waiting = $_POST['waiting'];
 $tolls  = $_POST['tolls'];
 $extra  = $_POST['extra'];
 $booking_status  = 'Pending';
-$date = date("Y-m-d H:i:s");
 
 $sql = "UPDATE `bookings` SET  
 							`b_type_id`='$b_type_id',
@@ -51,10 +50,20 @@ $sql = "UPDATE `bookings` SET
 							`car_parking`='$car_parking',
 							`waiting`='$waiting',
 							`tolls`='$tolls',
-							`extra`='$extra',
-							`book_add_date`='$date' WHERE `book_id`='$book_id'";                
+							`extra`='$extra' WHERE `book_id`='$book_id'";                
+
 $result = mysqli_query($connect, $sql);       
-if ($result) {         
+if ($result) {
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Booking Updated',											
+											'Controller',											
+											'Booking " . $book_id . " Has Been Updated by Controller.')";		
+	
+	$actr = mysqli_query($connect, $actsql);					
 	header('Location: view-booking.php?book_id='.$book_id);    
 	exit();    
 } else {		

@@ -9,7 +9,9 @@ $vhrow = mysqli_fetch_array($vhsql);
 		<div class="col-12">            								
 			<div class="card">                										
 				<div class="card-header">                    												
-					<h3 class="card-title">Add Vehicle</h3>
+					<h3 class="card-title">
+						Add Vehicle
+					</h3>
 				</div>                  								
 				<div class="card-body border-bottom py-3">
 					<form method="post" action="update-dv.php" enctype="multipart/form-data">	

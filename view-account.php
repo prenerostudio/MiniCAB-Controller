@@ -1,7 +1,7 @@
 <?php
 include('header.php');	
 $d_id= $_GET['d_id'];
-$acsql=mysqli_query($connect, "SELECT invoice.*, jobs.book_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, clients.c_name, drivers.d_name, booking_type.b_type_name FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND jobs.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND invoice.d_id = '$d_id' AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id");
+$acsql=mysqli_query($connect, "SELECT invoice.*, jobs.book_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, clients.c_name, drivers.d_name, booking_type.b_type_name FROM invoice JOIN jobs ON invoice.job_id = jobs.job_id JOIN drivers ON jobs.d_id = drivers.d_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN clients ON jobs.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE invoice.d_id = '$d_id'");
 $r=mysqli_num_rows($acsql);
 ?>
 <div class="page-header d-print-none page_padding">		   		
@@ -30,59 +30,47 @@ $r=mysqli_num_rows($acsql);
 								<div id="table-adriver" class="table-responsive">								
 									<table class="table">
 										<thead>                            						
-											<tr>                                												
-											
-												<th>														
-												
-													<button class="table-sort" data-sort="sort-id">ID</button>
-													
-												</th>
-												
-												<th>													
-												
-													<button class="table-sort" data-sort="sort-date">Booking </button>
-													
-												</th>
-												
-												<th>													
-												
-													<button class="table-sort" data-sort="sort-time">Completion Time</button>
-													
-												</th>
-												
-												<th>													
-												
-													<button class="table-sort" data-sort="sort-passenger">Total Payment</button>
-													
-												</th> 
-												<th>													
-												
-													<button class="table-sort" data-sort="sort-passenger">Driver Commission</button>
-													
-												</th> 
-												
-												<th>														
-												
-													<button class="table-sort" data-sort="sort-passenger">Status</button>
-													
+											<tr>											
+												<th>												
+													<button class="table-sort" data-sort="sort-id">
+														ID
+													</button>													
 												</th>												
-												
-												<th>														
-												
-													<button class="table-sort">Actions</button>
-													
-												</th>                            												
-												
-											</tr>                       											
-											
-										</thead>
-										
-										<tbody class="table-tbody">
-										
-											<?php											
-											
-											$x = 0;
-											
+												<th>												
+													<button class="table-sort" data-sort="sort-book">
+														Booking 
+													</button>													
+												</th>												
+												<th>																									
+													<button class="table-sort" data-sort="sort-time">
+														Completion Time
+													</button>													
+												</th>												
+												<th>																									
+													<button class="table-sort" data-sort="sort-payment">
+														Total Payment
+													</button>													
+												</th> 
+												<th>																									
+													<button class="table-sort" data-sort="sort-commission">
+														Driver Commission
+													</button>													
+												</th> 												
+												<th>												
+													<button class="table-sort" data-sort="sort-status">
+														Status
+													</button>													
+												</th>																								
+												<th>												
+													<button class="table-sort">
+														Actions
+													</button>													
+												</th>												
+											</tr>											
+										</thead>										
+										<tbody class="table-tbody">										
+											<?php
+											$x = 0;											
 											$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id");														
 											while ($irow = mysqli_fetch_array($isql)) :			
 											$x++;														

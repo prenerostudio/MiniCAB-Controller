@@ -1,52 +1,46 @@
 <?php
 require 'config.php';
 
-$b_id = $_POST['b_id'];
-$bname = $_POST['bname'];
-$bemail = $_POST['bemail'];
-$bphone = $_POST['bphone'];
-$bgender = $_POST['bgender'];
-$baddress = $_POST['baddress'];
-$blang = $_POST['blang'];
+$c_id = $_POST['c_id'];
+$cname = $_POST['cname'];
+$cemail = $_POST['cemail'];
+$cgender = $_POST['cgender'];
+$caddress = $_POST['caddress'];
+$clang = $_POST['clang'];
 $pc = $_POST['pc'];
-$others = $_POST['bothers'];
-$bni = $_POST['bni'];
+$cni = $_POST['cni'];
 $com_name = $_POST['com_name'];
 $com_type = $_POST['com_type'];
 $percent = $_POST['percent'];
 $fixed = $_POST['fixed'];
-$date = date("Y-m-d H:i:s");
-
-
-   
-        
-$sql = "UPDATE `bookers` SET 
-							`b_name`='$bname',
-							`b_email`='$bemail',
-							`b_phone`='$bphone',
-							`b_address`='$baddress',
-							`b_gender`='$bgender',
-							`b_language`='$blang',							
-							`postal_code`='$pc',
-							`company_name`='$com_name',
-							`others`='$others',
-							`b_ni`='$bni',
-							`commision_type`='$com_type',
-							`percent`='$percent',
-							`fixed`='$fixed',							
-							`booker_reg_date`='$date' WHERE `b_id`='$b_id'";
-        
-        $result = mysqli_query($connect, $sql);
-       
-        if ($result) {
-         
-            header('location: view-booker.php?b_id='.$b_id);
-            exit();
-        } else {
            
-			header('location: view-booker.php?b_id='.$b_id);
-        }
-
-
+$sql = "UPDATE `clients` SET 
+							`c_name`='$cname',
+							`c_email`='$cemail',
+							`c_address`='$caddress',
+							`c_gender`='$cgender',
+							`c_language`='$clang',
+							`postal_code`='$pc',
+							`c_ni`='$cni',
+							`company_name`='$com_name',
+							`commission_type`='$com_type',
+							`percentage`='$percent',
+							`fixed`='$fixed' WHERE `c_id`='$c_id'";
+$result = mysqli_query($connect, $sql);
+if ($result) {
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Booker Profile Updated',											
+											'Controller',											
+											'Booker Profile " . $c_id . " Has Been Updated by Controller.')";		
+	$actr = mysqli_query($connect, $actsql);		
+	header('location: view-booker.php?c_id='.$c_id);    
+	exit();    
+} else {		
+	header('location: view-booker.php?c_id='.$c_id);    
+}
 $connect->close();
 ?>

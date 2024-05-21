@@ -15,8 +15,6 @@ $ple = $_POST['ple'];
 $dlang = $_POST['dlang'];
 $sa = $_POST['sa'];
 $dr = $_POST['dr'];
-$date = date("Y-m-d H:i:s");
-
 
 $sql = "UPDATE `drivers` SET  
 							`d_name`='$dname',
@@ -31,21 +29,23 @@ $sql = "UPDATE `drivers` SET
 							`pco_licence`='$pl',
 							`pco_exp`='$ple',
 							`skype_acount`='$sa',
-							`d_remarks`='$dr',
-							`driver_reg_date`='$date' WHERE `d_id`='$d_id'";
+							`d_remarks`='$dr' WHERE `d_id`='$d_id'";
         
-        $result = mysqli_query($connect, $sql);
-       
-        if ($result) {
-         
-            header('Location: view-driver.php?d_id='.$d_id);
-            exit();
-        } else {
-           
-			header('Location: view-driver.php?d_id='.$d_id);
-        }
-
-
-
+$result = mysqli_query($connect, $sql);       
+if ($result) {			
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'Driver Profile Updated',											
+											'Controller',											
+											'Driver " . $d_name . " Profile Has Been updated by Controller.')";				
+	$actr = mysqli_query($connect, $actsql);		             
+	header('Location: view-driver.php?d_id='.$d_id);    
+	exit();    
+} else {           
+	header('Location: view-driver.php?d_id='.$d_id);    
+}
 $connect->close();
 ?>

@@ -33,37 +33,37 @@ include('header.php');
 										</button>									
 									</th>
 									<th>										
-										<button class="table-sort" data-sort="sort-date">
+										<button class="table-sort">
 											Image
 										</button>									
 									</th>									
 									<th>										
-										<button class="table-sort" data-sort="sort-time">
+										<button class="table-sort" data-sort="sort-name">
 											Vehicle Name
 										</button>
 									</th>                       									
 									<th>									
-										<button class="table-sort" data-sort="sort-passenger">
+										<button class="table-sort" data-sort="sort-seat">
 											Seat
 										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-pickup">
+										<button class="table-sort" data-sort="sort-air">
 											Air Bags
 										</button>
 									</th>                        									
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">
+										<button class="table-sort" data-sort="sort-chair">
 											Wheel Chair
 										</button>
 									</th>
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">
+										<button class="table-sort" data-sort="sort-baby">
 											Baby Sitter
 										</button>
 									</th>
 									<th>									
-										<button class="table-sort" data-sort="sort-dropoff">
+										<button class="table-sort" data-sort="sort-price">
 											Price
 										</button>
 									</th>							
@@ -78,7 +78,7 @@ include('header.php');
 								<?php							
 								$x=0;							
 								$vsql=mysqli_query($connect,"SELECT * FROM `vehicles`");							
-								while($vrow = mysqli_fetch_array($vsql)){
+								while($vrow = mysqli_fetch_array($vsql)){									
 									$x++;									
 								?>								
 								<tr>                        								
@@ -89,22 +89,22 @@ include('header.php');
 										<?php																
 											if (!$vrow['v_img']) {
 										?>										
-										<img src="img/car-icon.png" alt="Vehicle Img" style="width: 80px; height: 80px; border-radius: 50px;">	
+										<img src="img/car-icon.png" alt="Vehicle Img" style="width: 50px; height: 50px; border-radius: 5px;">	
 										<?php									
 											} else{															
 										?>																
-										<img src="img/vehicles/<?php echo $vrow['v_img'];?>" alt="Vehicle Img" style="width: 80px; height: 80px; border-radius: 50px;">
+										<img src="img/vehicles/<?php echo $vrow['v_img'];?>" alt="Vehicle Img" style="width: 50px; height: 50px; border-radius: 5px;">
 										<?php									
 											}			
 										?>											
 									</td>                       										
-									<td class="sort-time">
+									<td class="sort-name">
 										<?php echo $vrow['v_name']; ?>
 									</td>                       										
-									<td class="sort-passenger">
+									<td class="sort-seat">
 										<?php echo $vrow['v_seat']; ?>
 									</td> 
-									<td class="sort-pickup">									
+									<td class="sort-air">									
 										<?php 
 											if ($vrow['v_airbags'] == 1) {
 										?>    
@@ -117,7 +117,7 @@ include('header.php');
 											}
 										?>									
 									</td>									
-									<td class="sort-drpoff">							
+									<td class="sort-chair">							
 										<?php										
 											if ($vrow['v_wchair'] == 1) {
 										?>    
@@ -130,7 +130,7 @@ include('header.php');
 											}
 										?>										
 									</td>									
-									<td class="sort-drpoff">									
+									<td class="sort-baby">									
 										<?php								
 											if ($vrow['v_babyseat'] == 1) {
 										?>    										
@@ -143,15 +143,15 @@ include('header.php');
 											}
 										?>										
 									</td>									
-									<td class="sort-drpoff" style="font-size: 18px;">											
-										£										
+									<td class="sort-price" style="font-size: 18px;">											
+										£									
 										<?php echo $vrow['v_pricing']; ?>
 									</td>									
 									<td> 									
 										<a href="view-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>" class="btn btn-info" title="View / Edit">	
 											<i class="ti ti-eye"></i>
 										</a>
-										<a href="del-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>" class="btn btn-danger" title="Delete Vehicle">												
+										<a href="del-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>" class="btn btn-danger" title="Delete Vehicle">
 											<i class="ti ti-square-rounded-x"></i>										
 										</a>																			
 									</td>																	
@@ -233,27 +233,19 @@ include('header.php');
 		const list = new List('table-default', {      					
 			sortClass: 'table-sort',      							
 			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',						 
-						 'sort-driver'						
-						]					
+			valueNames: [ 'sort-id', 'sort-name', 'sort-seat', 'sort-air',	'sort-chair', 'sort-baby', 'sort-price']					
 		}); 			
 	})	
 	
 	function validateForm() {
-        // Perform your form validation here
+        
         var vnameInput = document.getElementsByName("vname")[0].value;
         var seatsInput = document.getElementsByName("seats")[0].value;
-        var pricingInput = document.getElementsByName("pricing")[0].value;
-		
-		
-
-        if (vnameInput === "" || seatsInput === "" || pricingInput === "") {
-            // Display an error message or prevent the form submission
+        var pricingInput = document.getElementsByName("pricing")[0].value;				
+        if (vnameInput === "" || seatsInput === "" || pricingInput === "") {       
             alert("Please fill in all required fields.");
             return false;
-        }
-
-        // If validation passes, you can proceed with the form submission
+        }       
         return true;
     }
 </script>

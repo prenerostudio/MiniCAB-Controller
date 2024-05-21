@@ -4,7 +4,7 @@ if(isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];    
     $targetDir = "img/drivers/vehicle/mot-certificate/";
     $fileExtension = strtolower(pathinfo($_FILES["mot"]["name"], PATHINFO_EXTENSION));
-    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+    $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'JPEG', 'BMP', 'PDF', 'TIFF', 'WebP', 'Raw', 'SVG', 'HEIF', 'apng', 'CR2', 'ICO', 'JPEG 2000', 'avif');
     $uniqueId = uniqid();  
     $mot = $uniqueId . "." . $fileExtension; 
     $targetFilePath = $targetDir . $mot;
@@ -12,7 +12,15 @@ if(isset($_POST['submit'])) {
         if (move_uploaded_file($_FILES["mot"]["tmp_name"], $targetFilePath)) {           
             $insert = $connect->query("UPDATE `vehicle_documents` SET `mot_certificate`='$mot' WHERE `d_id`='$d_id'");
             if($insert) {
-                echo "File uploaded successfully.";
+                $actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'MOT Certificate Updated',											
+											'Controller',											
+											'MOT Certificate of Driver " . $d_id . " Has Been uploaded by Controller.')";
+				$actr = mysqli_query($connect, $actsql);		
                 header('location: view-driver.php?d_id='.$d_id.'#tabs-vdocument');
             } else {
                 echo "Database update failed.";

@@ -61,25 +61,39 @@ $bookrow = mysqli_fetch_array($booksql);
 									<input type="text" class="form-control" name="cemail" value="<?php echo $bookrow['c_email'] ?>" id="customerEmail" readonly>
 								</div>															
 								<script>   																	
-									var clientSelect = document.getElementById('clientSelect');
+									var bookingTypeSelect = document.getElementById('bookingType');
+									var clientSelect = document.getElementById('clientSelect');    
 									var customerPhoneInput = document.getElementById('customerPhone');
-									var customerEmailInput = document.getElementById('customerEmail');
-									clientSelect.addEventListener('change', function () {
-										var selectedClientId = clientSelect.value;
-										$.ajax({          																				
-											type: 'POST',
-											url: 'get_customer_details.php',
-											data: { c_id: selectedClientId },
+									var customerEmailInput = document.getElementById('customerEmail');    
+									bookingTypeSelect.addEventListener('change', function () {
+										// Fetch clients based on booking type        
+										var selectedBookingType = bookingTypeSelect.value;        
+										$.ajax({            
+											type: 'POST',            
+											url: 'get_clients.php',             
+											data: { b_type_id: selectedBookingType },            
 											success: function (response) {
-												var data = JSON.parse(response);
-												customerPhoneInput.value = data.phone;
-												customerEmailInput.value = data.email;
-											},          																					
+												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;            
+											},            
 											error: function () {
-												// Handle error if needed
-											}       																				
-										});   																		
-									});																							
+											}        
+										});    
+									});									    
+									clientSelect.addEventListener('change', function () {        
+										var selectedClientId = clientSelect.value;        
+										$.ajax({            
+											type: 'POST',            
+											url: 'get_customer_details.php',            
+											data: { c_id: selectedClientId },            
+											success: function (response) {                
+												var data = JSON.parse(response);                
+												customerPhoneInput.value = data.phone; 
+												customerEmailInput.value = data.email;            
+											},            
+											error: function () {
+											}        
+										});    
+									});																						
 								</script>																									
 							</div>																								
 							<div class="row">																				
@@ -91,7 +105,16 @@ $bookrow = mysqli_fetch_array($booksql);
 								<div class="mb-3 col-lg-4">    								
 									<label class="form-label">Drop-off Location:</label>    									
 									<input type="text" id="dropoff" name="dropoff" class="form-control" value="<?php echo $bookrow['destination'] ?>">									
-								</div>							
+								</div>	
+								
+								<div class="col-lg-4">
+											<div id="stops-container"></div>
+											<div class="mb-3 col-lg-2">								
+												<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
+													<i class="ti ti-plus"></i>
+												</button>									
+											</div>									
+										</div>
 								<div class="mb-3 col-lg-4">																				
 									<label class="form-label">Address</label>								
 									<input type="text" class="form-control" name="address" value="<?php echo $bookrow['address'] ?>">							
