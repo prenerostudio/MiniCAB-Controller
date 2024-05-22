@@ -8,7 +8,7 @@ include('header.php');
 				Overview				
 			</div>			
 			<h2 class="page-title">			
-				Dashboard				
+				Activity Logs		
 			</h2>			
 		</div>					
 	</div>	
@@ -18,7 +18,7 @@ include('header.php');
 		<div class="card">		
 			<div class="card-header">			
 				<h3 class="card-title">
-					Activity Logs	
+					Activity Logs List
 				</h3>				
 			</div>			
 			<div class="card-body border-bottom py-3">			
@@ -36,7 +36,7 @@ include('header.php');
 						<tbody class="table-tbody">						
 							<?php							
 							$y=0;							
-							$actsql=mysqli_query($connect,"SELECT * FROM `activity_log`");
+							$actsql=mysqli_query($connect,"SELECT activity_log.* FROM activity_log ORDER BY activity_log.log_id DESC");
 							while($actrow = mysqli_fetch_array($actsql)){
 								$y++;								
 							?>    							
