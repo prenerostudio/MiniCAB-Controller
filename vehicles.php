@@ -228,17 +228,15 @@ include('header.php');
 		</div>
 	</div>
 </div>        
-<script>	
+<script>
 	document.addEventListener("DOMContentLoaded", function() {    		
 		const list = new List('table-default', {      					
 			sortClass: 'table-sort',      							
 			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-name', 'sort-seat', 'sort-air',	'sort-chair', 'sort-baby', 'sort-price']					
+			valueNames: [ 'sort-id', 'sort-name', 'sort-seat', 'sort-air',	'sort-chair', 'sort-baby', 'sort-price']		
 		}); 			
-	})	
-	
-	function validateForm() {
-        
+	})		
+	function validateForm() {        
         var vnameInput = document.getElementsByName("vname")[0].value;
         var seatsInput = document.getElementsByName("seats")[0].value;
         var pricingInput = document.getElementsByName("pricing")[0].value;				

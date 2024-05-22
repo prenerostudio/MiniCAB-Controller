@@ -18,65 +18,69 @@ include('header.php');
 		<div class="col-6">       				
 			<div class="card">            						
 				<div class="card-header">                								
-					<h3 class="card-title">Zones List</h3>            									
+					<h3 class="card-title">
+						Zones List
+					</h3>            									
 				</div>            								
 				<div class="card-body border-bottom py-3">                								
 					<div id="table-adriver" class="table-responsive">                    										
 						<table class="table">                        												
 							<thead>                            														
-								<tr>                                																
+								<tr>	
 									<th>																		
 										<button class="table-sort" data-sort="sort-id">
 											ID
 										</button>										
 									</th>                                									
 									<th>									
-										<button class="table-sort" data-sort="sort-date">
+										<button class="table-sort">
 											Starting Point
 										</button>											
 									</th>                                																		
 									<th>																			
-										<button class="table-sort" data-sort="sort-time">
+										<button class="table-sort">
 											End Point
 										</button>													
 									</th>                                																					
 									<th>														
-										<button class="table-sort" data-sort="sort-passenger">
+										<button class="table-sort" data-sort="sort-distance">
 											Distance
 										</button>													
 									</th>     													
 									<th>													
-										<button class="table-sort" data-sort="sort-pickup">
+										<button class="table-sort" data-sort="sort-fare">
 											Fare (£)
 										</button>													
 									</th>       													
 									<th>													
-										<button class="table-sort">Actions</button>													
+										<button class="table-sort">
+											Actions
+										</button>													
 									</th>                            												
-								</tr>                       																		
-							</thead>                       																							
-							<tbody class="table-tbody">                        																	
-								<?php                            																	
+								</tr>
+							</thead>
+							<tbody class="table-tbody">
+								<?php
 								$x = 0;                            																
-								$zsql = mysqli_query($connect, "SELECT * FROM `zones`");   														
+								$zsql = mysqli_query($connect, "SELECT * FROM `zones`");
 								while ($zrow = mysqli_fetch_array($zsql)) :								
 								$x++;                            														
 								?>								
 								<tr>                            															
 									<td class="sort-id">																	
 										<?php echo $x; ?>																	
-									</td>                                   																
-									<td class="sort-date">									
-										<?php echo $zrow['starting_point']; ?>											
-									</td>                                   																
-									<td class="sort-time">																	
-										<?php echo $zrow['end_point']; ?>																	
-									</td>                                  																
-									<td class="sort-passenger">																		
-										<?php echo $zrow['distance']; ?> KM																	
-									</td>                                 																	
-									<td class="sort-pickup">																	
-										£ <?php echo $zrow['fare']; ?>																	
+									</td>			
+									<td>									
+										<?php echo $zrow['starting_point'];?>											
+									</td>
+									<td>																	
+										<?php echo $zrow['end_point'];?>
+									</td>
+									<td class="sort-distance">
+										<?php echo $zrow['distance']; ?> KM
+									</td>
+									<td class="sort-fare">																	
+										£ <?php echo $zrow['fare']; ?>
 									</td>                 
 									<td>																		
 										<a href="zone-details.php?z_id=<?php echo $zrow['zone_id']; ?>" class="btn btn-info" title="View / Edit">
@@ -87,12 +91,12 @@ include('header.php');
 										</a>                                   										
 									</td>									
 								</tr>                          														
-								<?php endwhile; ?>                         															
+								<?php endwhile; ?>
 								<?php if ($x === 0) : ?>								
 								<tr>                                   															
 									<td colspan="8">																	
-										<p align="center">No Zone Found!</p>																		
-									</td>                              																
+										<p align="center">No Zone Found!</p>					
+									</td>	
 								</tr>                           															
 								<?php endif; ?>                        														
 							</tbody>                   												
@@ -100,8 +104,7 @@ include('header.php');
 					</div>           											
 				</div>       											
 			</div>   									
-		</div>	
-		
+		</div>			
 		<div class="col-6">       				
 			<div class="card">            						
 				<div class="card-header">                								
@@ -129,14 +132,14 @@ include('header.php');
 							<div class="row">                                              
 								<div class="col-lg-6">                                            
 									<div class="mb-3">
-										<label class="form-label">Distance (Auto-calculated)</label>									
+										<label class="form-label">Distance (Auto-calculated)</label>
 										<input type="text" class="form-control" name="journey_distance" id="journeyDistance" readonly>								
 									</div>										                        
 								</div>                                              
 								<div class="col-lg-6">                                            
 									<div class="mb-3">                                                  
-										<label class="form-label">Fare</label>                                                                
-										<input type="number" class="form-control" name="fare" placeholder=" £ 00.00" required>                            
+										<label class="form-label">Fare</label>
+										<input type="number" class="form-control" name="fare" placeholder=" £ 00.00" required>
 									</div>                                              
 								</div>                                          
 							</div>                                          
@@ -156,22 +159,10 @@ include('header.php');
 			</div>   											
 		</div>							
 	</div>                	
-</div>
-             
+</div>        
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
     async defer></script>
-
 <script>
-	document.addEventListener("DOMContentLoaded", function() {  
-		const list = new List('table-default', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',						 
-						 'sort-driver'						
-						]					
-		}); 			
-	})	
-
 	function validateForm() {                							
 		var spInput = document.getElementsByName("sp")[0].value;        		
 		var epInput = document.getElementsByName("ep")[0].value;        		
@@ -182,42 +173,33 @@ include('header.php');
 		}		
 		return true;    		
 	}
-	
-	
     var autocompletePickup;
     var autocompleteDropoff;
     var journeyDistanceInput;
-
     function initAutocomplete() {
         var pickupInput = document.getElementById('pickup');
         var dropoffInput = document.getElementById('dropoff');
         journeyDistanceInput = document.getElementById('journeyDistance');
-
         var autocompleteOptions = {
             types: ['geocode'],
             componentRestrictions: {country: 'GB'}
         };
-
         autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-        autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
-        
+        autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);        
         autocompletePickup.addListener('place_changed', function() {
             updateDistance();
-        });
-        
+        });        
         autocompleteDropoff.addListener('place_changed', function() {
             updateDistance();
         });
-    }
-    
+    }    
     function updateDistance() {                
         var pickupPlace = autocompletePickup.getPlace();
         var dropoffPlace = autocompleteDropoff.getPlace();                
         if (pickupPlace.geometry && dropoffPlace.geometry) {            
             calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);
         }
-    }   
-    
+    }       
     function calculateDistance(pickupLocation, dropoffLocation) {
         var service = new google.maps.DistanceMatrixService();
         service.getDistanceMatrix({
@@ -237,8 +219,7 @@ include('header.php');
                 console.error('Error calculating distance:', status);
             }
         });
-    }
-    
+    }    
     google.maps.event.addDomListener(window, 'load', initAutocomplete);
 </script>
 <?php

@@ -2,10 +2,9 @@
 include('header.php');
 
 $user_id = $_GET['user_id'];
-$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users, countries WHERE users.country_id = countries.country_id AND users.user_id = '$user_id'");											
+$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users JOIN countries ON users.country_id = countries.country_id WHERE users.user_id = '$user_id'");											
 $urow = mysqli_fetch_array($usql);	
-?>
-        
+?>     
 <div class="page-header d-print-none">
 	<div class="container-xl">    
 		<div class="row g-2 align-items-center">        
@@ -91,12 +90,12 @@ $urow = mysqli_fetch_array($usql);
 								<div class="col-md-4">                        
 									<div class="form-label">Country</div>                        
 									<select class="form-select" id="country" name="country">
-										<option value="<?php echo $urow['country_id'] ?>">
-											<?php echo $urow['country_name'] ?>
+										<option value="<?php echo $urow['country_id'];?>">
+											<?php echo $urow['country_name'];?>
 										</option>
 										<?php
-									$lsql=mysqli_query($connect,"SELECT * FROM `countries`");
-								   	while($lrow = mysqli_fetch_array($lsql)){
+											$lsql=mysqli_query($connect,"SELECT * FROM `countries`");
+								   			while($lrow = mysqli_fetch_array($lsql)){
 										?>																					
 										<option value="<?php echo $lrow['country_id'] ?>">						
 											<?php echo $lrow['country_name'] ?>
@@ -108,7 +107,7 @@ $urow = mysqli_fetch_array($usql);
 								</div>                      
 								<div class="col-md-4">                        
 									<div class="form-label">Post Code</div>                        
-									<input type="text" class="form-control" value="<?php echo $urow['pc'] ?>" name="pc">
+									<input type="text" class="form-control" value="<?php echo $urow['pc'];?>" name="pc">
 								</div>								                    
 							</div>															
 							<div class="card-footer bg-transparent mt-auto">                    						

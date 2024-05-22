@@ -45,14 +45,14 @@ $crow = mysqli_fetch_array($csql);
 				<div class="card-header">                				
 					<ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">                    					
 						<li class="nav-item">                        						
-							<a href="#tabs-profile" class="nav-link active" data-bs-toggle="tab">														
+							<a href="#tabs-profile" class="nav-link active" data-bs-toggle="tab">
 								<i class="ti ti-user-scan"></i>                          								
 								<?php if($crow['account_type']== 2) { ?> Booker								
 								<?php }else{ ?> Customer <?php } ?> Profile							
 							</a>                      						
 						</li>                      						
 						<li class="nav-item">						
-							<a href="#tabs-statement" class="nav-link" data-bs-toggle="tab">														
+							<a href="#tabs-statement" class="nav-link" data-bs-toggle="tab">					
 								<i class="ti ti-calendar-user"></i>                          								
 								<?php if($crow['account_type']== 2) { ?> Booker	
 								<?php }else{ ?> Customer <?php } ?> Bookings Statement							
@@ -64,23 +64,24 @@ $crow = mysqli_fetch_array($csql);
 					<div class="tab-content">                    					
 						<div class="tab-pane active show" id="tabs-profile">    						
 							<div class="col-12">            								
-								<div class="card">                																			
+								<div class="card">									
 									<div class="card-body border-bottom py-3">									
 										<h2 class="mb-4">
 											<?php if($crow['account_type']== 2) { ?> Booker									
-											<?php }else{ ?> Customer <?php } ?> Profile</h2>                														
+											<?php }else{ ?> Customer <?php } ?> Profile</h2>									
 										<h3 class="card-title">Profile Details</h3>
 										<div class="row align-items-center">						
 											<div class="col-auto">							
 												<span class="avatar avatar-xl" 								  
 													  style="background-image: url(img/customers/<?php echo $crow['c_pic'];?>);
-															 background-size:100% 100% ; width: 150px; height: 150px;"></span>							
+															 background-size:100% 100% ; width: 150px; height: 150px;">
+												</span>							
 											</div>											
 											<div class="col-auto">													
 												<form action="update-customer-img.php" method="post" enctype="multipart/form-data">								
 													<input type="hidden" value="<?php echo $crow['c_id']; ?>" name="c_id">
-													<input type="file" name="fileToUpload" id="fileToUpload" class="btn">								
-													<button type="submit" class="btn btn-info">Upload Image </button>							
+													<input type="file" name="fileToUpload" id="fileToUpload" class="btn">
+													<button type="submit" class="btn btn-info">Upload Image </button>
 												</form>						
 											</div>						
 											<div class="col-auto">							
@@ -89,156 +90,157 @@ $crow = mysqli_fetch_array($csql);
 												</a>						
 											</div>								
 										</div>                  														
-										<h3 class="card-title mt-4">Business Profile</h3> 															
-										<form method="post" action="update-customer.php" enctype="multipart/form-data">											
-											<div class="row g-3">                													
-												<div class="col-md-4">																				
-													<div class="mb-3">                  
-														<div class="form-label">Customer Name</div>									
-														<input type="hidden" class="form-control" value="<?php echo $crow['c_id']; ?>" name="c_id">
-														<input type="text" class="form-control" value="<?php echo $crow['c_name']; ?>" name="cname"> 
-													</div>                    													
-													<div class="mb-3">             				
-														<div class="form-label">Email Address</div>									
-														<input type="text" class="form-control" value="<?php echo $crow['c_email']; ?>" name="cemail" readonly>
-													</div>                    																				
-													<div class="mb-3">
-														<div class="form-label">Phone</div>																	
-														<input type="text" class="form-control" value="<?php echo $crow['c_phone']; ?>" name="cphone" readonly>
-													</div>																	
-													<div class="mb-3">									
-														<div class="form-label">Address</div>  																	
-														<textarea class="form-control" rows="3" name="caddress"><?php echo $crow['c_address'] ?></textarea>
-													</div>																				
+										<h3 class="card-title mt-4">Personel Information:</h3>
+										<form method="post" action="update-customer.php" enctype="multipart/form-data">
+											<div class="row g-3">				
+												<div class="mb-3 col-md-3">														
+													<div class="form-label">Customer Name</div>
+													<input type="hidden" class="form-control" value="<?php echo $crow['c_id']; ?>" name="c_id">														
+													<input type="text" class="form-control" value="<?php echo $crow['c_name']; ?>" name="cname"> 													
+												</div>													
+												<div class="mb-3 col-md-3">												
+													<div class="form-label">Email Address</div>
+													<input type="text" class="form-control" value="<?php echo $crow['c_email']; ?>" name="cemail">													
+												</div>											
+												<div class="mb-3 col-md-3">												
+													<div class="form-label">Phone</div>
+													<input type="text" class="form-control" value="<?php echo $crow['c_phone']; ?>" name="cphone" readonly>
+												</div>												
+												<div class="mb-3 col-md-3">												
+													<div class="form-label">Gender</div>			
+													<select class="form-select" name="cgender" required>
+														<option><?php echo $crow['c_gender']; ?></option>
+														<option>Male</option>											
+														<option>Female</option>									
+														<option>Transgender</option>
+													</select>
+												</div>												
+												<div class="mb-3 col-md-3">												
+													<div class="form-label">Language </div>
+													<select class="form-select" name="clang">
+														<option><?php echo $crow['c_language']; ?></option>
+														<?php														
+														$lsql=mysqli_query($connect,"SELECT * FROM `language`");
+														while($lrow = mysqli_fetch_array($lsql)){
+														?>														
+														<option>														
+															<?php echo $lrow['language'];?>
+														</option>														
+														<?php														
+														}														
+														?>														
+													</select>													
+												</div>												
+												<div class="mb-3 col-md-3">												
+													<div class="form-label">Postal Code</div>
+													<input type="text" class="form-control" value="<?php echo $crow['postal_code'] ?>" name="postal_code">
+												</div>					
+												<div class="mb-3 col-md-3">												
+													<div class="form-label">National ID</div>
+													<input type="text" class="form-control" value="<?php echo $crow['c_ni'];?>" name="cni">													
+												</div>				
+												<div class="mb-3 col-md-3">			
+													<div class="form-label">Address</div>
+													<textarea class="form-control" rows="3" name="caddress"><?php echo $crow['c_address'] ?></textarea>
 												</div>
-												<div class="col-md-4">								
-													<div class="mb-3">									
-														<div class="form-label">Gender</div>									
-														<select class="form-select" name="cgender" required>
-															<option><?php echo $crow['c_gender']; ?></option>								
-															<option>Male</option>
-															<option>Female</option>																
-															<option>Transgender</option>														
-														</select> 													
-													</div>                    																				
-													<div class="mb-3">                    															
-														<div class="form-label">Language </div>																		
-														<select class="form-select" name="clang">															
-															<option><?php echo $crow['c_language']; ?></option>
-															<?php																						
-															$lsql=mysqli_query($connect,"SELECT * FROM `language`");								
-															while($lrow = mysqli_fetch_array($lsql)){																
-															?>											
-															<option>																	
-																<?php echo $lrow['language'] ?>																
-															</option>								
-															<?php																									
-															}																										
-															?>																										
-														</select> 																									
-													</div>
-													<div class="mb-3">                    															
-														<div class="form-label">Postal Code</div>									
-														<input type="text" class="form-control" value="<?php echo $crow['postal_code'] ?>" name="postal_code">
-													</div>																							
-													<div class="mb-3">
-														<div class="form-label">Other Details</div>
-														<textarea class="form-control" rows="3" name="cothers"><?php echo $crow['others'] ?></textarea>
-													</div>
-												</div>																									
-												<div class="col-md-4">
-													<div class="mb-3">                    															
-														<div class="form-label">National ID</div>									
-														<input type="text" class="form-control" value="<?php echo $crow['c_ni'] ?>" name="cni">
-													</div>								
-													<div class="mb-3">
-														<div class="form-label">Date Registered</div>									
-														<input type="text" class="form-control" value="<?php echo $crow['reg_date'] ?>" disabled>
-													</div>													
-												</div>                    																						
-											</div>																
-											</div>                 																			
-										<div class="card-footer bg-transparent mt-auto">                 						
-											<div class="btn-list justify-content-end">                 							
-												<a href="customers.php" class="btn">                  								
-													Cancel                  													
-												</a>                  						 							
-												<button type="submit" class="btn btn-primary">								
-													Update							
-												</button>									
-											</div>                 									
-										</div>																				
-										</form>    																				
-								</div>                                                    						
-							</div> 																				                     						
+											</div>
+											<div class="card-footer bg-transparent mt-auto">
+												<div class="btn-list justify-content-end">
+													<a href="customers.php" class="btn">
+														Cancel
+													</a>
+													<button type="submit" class="btn btn-primary">
+														Update													
+													</button>												
+												</div>											
+											</div>										
+										</form>
+									</div>
+								</div>																							
+							</div>    												
 						</div>
 						<div class="tab-pane" id="tabs-statement">						
 							<div class="card-body">							
-								<h2 class="mb-4">Customer Booking Statements</h2>								
+								<h2 class="mb-4">
+									Customer Booking Statements
+								</h2>								
 								<div class="row mb-3">								
 									<div class="card"> 
 										<div class="card-body border-bottom py-3">
-											<div id="table-adriver" class="table-responsive">											
+											<div id="table-adriver" class="table-responsive">
 												<table class="table">
 													<thead>													
 														<tr>														
 															<th>															
-																<button class="table-sort" data-sort="sort-id">ID</button>
+																<button class="table-sort" data-sort="sort-id">
+																	ID
+																</button>
 															</th>															
 															<th>					
-																<button class="table-sort" data-sort="sort-date">Job Completion Date</button>
+																<button class="table-sort" data-sort="sort-date">
+																	Job Completion Date
+																</button>
 															</th>															
 															<th>					
-																<button class="table-sort" data-sort="sort-time">Job Details</button>
+																<button class="table-sort">
+																	Job Details
+																</button>
 															</th>
 															<th>													
-																<button class="table-sort" data-sort="sort-passenger">Total Pay</button>
+																<button class="table-sort" data-sort="sort-pay">
+																	Total Pay
+																</button>
 															</th> 													
 															<th>													
-																<button class="table-sort" data-sort="sort-passenger">Status</button>
+																<button class="table-sort" data-sort="sort-status">
+																	Status
+																</button>
 															</th>															
 															<th>															
-																<button class="table-sort">Actions</button>															
+																<button class="table-sort">
+																	Actions
+																</button>
 															</th>														
 														</tr>													
 													</thead>
 													<tbody class="table-tbody">													
-														<?php																									
-															 $x = 0;																 
-															   $isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, bookings.b_type_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, clients.c_name, clients.c_phone, booking_type.b_type_name, drivers.d_name, drivers.d_phone FROM invoice, jobs, clients, bookings, booking_type, drivers WHERE invoice.job_id = jobs.job_id AND invoice.c_id = clients.c_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND invoice.c_id = '$c_id'");
-															   while ($irow = mysqli_fetch_array($isql)) :
-															   $x++;														
-														?>
+														<?php
+														$x = 0;
+														$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, bookings.b_type_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, clients.c_name, clients.c_phone, booking_type.b_type_name, drivers.d_name, drivers.d_phone FROM invoice JOIN jobs ON invoice.job_id = jobs.job_id JOIN clients ON invoice.c_id = clients.c_id JOIN drivers ON invoice.d_id = drivers.d_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE invoice.c_id = '$c_id'");
+														while ($irow = mysqli_fetch_array($isql)) :	 
+														$x++;														
+														?>														
 														<tr>														
-															<td class="sort-id">															
-																<?php echo $x; ?>															
-															</td>																								
-															<td class="sort-time">															
-																<?php echo $irow['invoice_date']; ?>															
+															<td class="sort-id">			
+																<?php echo $x; ?>			
+															</td>								
+															<td class="sort-date">			
+																<?php echo $irow['invoice_date'];?>
 															</td>
-															<td class="sort-passenger">															
-																Booking ID: <?php echo $irow['book_id']; ?> <br>
-																<?php echo $irow['pickup']; ?> - <?php echo $irow['destination']; ?>
+															<td>				
+																Booking ID: <?php echo $irow['book_id'];?><br>
+																<?php echo $irow['pickup'];?> - 
+																<?php echo $irow['destination'];?>
 															</td>															
-															<td class="sort-pickup">															
-																<?php echo $irow['total_pay']; ?>															
+															<td class="sort-pay">
+																<?php echo $irow['total_pay'];?>
 															</td> 															
-															<td class="sort-pickup">
-																<?php echo $irow['invoice_status']; ?>
+															<td class="sort-status">
+																<?php echo $irow['invoice_status'];?>
 															</td>					
-															<td>																			
+															<td>			
 																<a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
-																	<button class="btn btn-info">																	
+																	<button class="btn btn-info">
 																		<i class="ti ti-eye"></i>
-																		View Invoice																	
+																		View Invoice
 																	</button>
-																</a>																
+																</a>
 															</td>														
-														</tr>                          																				
+														</tr>
 														<?php endwhile; ?>
-														<?php if ($x === 0) : ?>														
+														<?php if ($x === 0) : ?>
 														<tr>
-															<td colspan="8">																						
+															<td colspan="8">
 																<p align="center">No Invoice Found!</p>	
 															</td>
 														</tr>
@@ -246,8 +248,8 @@ $crow = mysqli_fetch_array($csql);
 													</tbody>				
 												</table>												
 											</div>					
-										</div>																						
-									</div>																														
+										</div>	
+									</div>					
 								</div>
 							</div>                      									
 						</div>                   				
@@ -256,8 +258,7 @@ $crow = mysqli_fetch_array($csql);
 			</div>
 		</div>
 	</div>
-</div>
-</div>     
+</div>   
 <?php
 include('footer.php');
 ?>

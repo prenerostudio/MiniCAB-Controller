@@ -5,22 +5,27 @@ $sp = $_POST['sp'];
 $ep = $_POST['ep'];
 $dis = $_POST['journey_distance'];
 $fare = $_POST['fare'];
-$date = date("Y-m-d H:i:s");
-
 $sql = "INSERT INTO `zones`( 
 							`starting_point`,							
 							`end_point`, 							
 							`distance`, 							
-							`fare`, 							
-							`zone_date`							
+							`fare`							
 							) VALUES (							
 							'$sp',							
 							'$ep',							
 							'$dis',							
-							'$fare',							
-							'$date')";                
+							'$fare')";                
 $result = mysqli_query($connect, $sql);       
-if ($result) {         
+if ($result) {  
+	$actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`,											
+											`details`											
+											) VALUES (											
+											'New Zone Added',											
+											'Controller',											
+											'New Zone " . $sp . " - " . $ep . " Has Been Added by Controller.')";		
+	$actr = mysqli_query($connect, $actsql);	
 	header('Location: zones.php');    
 	exit();    
 } else {		
