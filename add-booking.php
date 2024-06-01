@@ -115,11 +115,17 @@ include('header.php');
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">No. of Passenger</label>
 									<input type="number" class="form-control" name="passenger" required>
-								</div>
-								<div class="mb-3 col-lg-4">
-									<label class="form-label">Pickup Date</label>
-									<input type="date" class="form-control" name="pick_date" required>
-								</div>														
+								</div>								 
+								<div class="mb-3 col-lg-4">        
+									<label class="form-label">Pickup Date</label>        
+									<input type="date" class="form-control" name="pick_date" id="pick_date" required>    
+								</div>    
+								<script>        
+									document.addEventListener("DOMContentLoaded", function() {            
+										var today = new Date().toISOString().split('T')[0];            
+										document.getElementById('pick_date').setAttribute('min', today);        
+									});    
+								</script>													
 								<div class="mb-3 col-lg-4">
 									<label class="form-label">Pickup Time</label>
 									<input type="time" class="form-control" name="pick_time" required>
