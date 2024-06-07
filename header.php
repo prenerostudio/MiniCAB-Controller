@@ -35,11 +35,17 @@ if (!isset($_SESSION['email'])) {
 		<link href="css/tabler-payments.min.css" rel="stylesheet"/>    		
 		<link href="css/tabler-vendors.min.css" rel="stylesheet"/>    		
 		<link href="css/demo.min.css" rel="stylesheet"/>		 		
-		<link href="css/style.css" rel="stylesheet"/>					
+		<link href="css/style.css" rel="stylesheet"/>		
+		
+	
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />				
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />		
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 												
+		
+		
 		<script>			
 			document.addEventListener("DOMContentLoaded", function() {    			
 				const addStopButton = document.getElementById('add-stop-btn');        

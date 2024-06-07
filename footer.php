@@ -49,6 +49,11 @@
 <script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>
 <script src="libs/jsvectormap/dist/maps/world.js" defer></script>
 <script src="libs/jsvectormap/dist/maps/world-merc.js" defer></script>
+
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
 	<!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- Tabler Core -->

@@ -95,13 +95,13 @@ include('header.php');
 					</h3>
 				</div>				
 				<div class="card-body border-bottom py-3">				
-					<div id="table-default" class="table-responsive">
-						<tbody class="table-tbody" id="tableBody">
+					<div class="table-responsive">
+					
 							<?php        							
 							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");        							
 							if (mysqli_num_rows($bsql) > 0) {							
 							?>           							
-							<table class="table">	
+							<table class="table" id="table-default">	
 								<thead>                      		
 									<tr> 																	
 										<th>		
@@ -229,14 +229,17 @@ include('header.php');
 	</div>	
 </div>        
 <script>	
-	document.addEventListener("DOMContentLoaded", function() {    	
+	$(document).ready(function() {
+    $('#table-default').DataTable();
+});
+	/*document.addEventListener("DOMContentLoaded", function() {    	
 		const list = new List('table-default', {      			
 			sortClass: 'table-sort',      				
 			listClass: 'table-tbody',      				
 			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-passenger', 'sort-fare', 'sort-vehicle'      	
 						]			
 		}); 		
-	})	
+	})	*/
 </script>
 <?php
 include('footer.php');
