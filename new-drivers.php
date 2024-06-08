@@ -117,7 +117,7 @@ include('header.php');
 												View
 											</button>
                                         </a>							
-										<a href="del-driver.php">
+										<a href="del-driver.php?d_id=<?php echo $ndrow['d_id']; ?>&user_id=<?php echo $myId ?>">
 											<button class="btn btn-danger delete_btn">    
 												<i class="ti ti-square-rounded-x"></i>    
 												Delete

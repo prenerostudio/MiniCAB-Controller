@@ -60,6 +60,21 @@ if ($d_id) {
         $r = mysqli_query($connect, $sql);
 
         if ($r) {
+			$activity_type = 'New Vehicle Added';
+			$user_type = 'driver';
+			$details = "New Vehicle added name $v_make $v_model";
+			$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$d_id',
+											'$details')";		
+		
+			$actr = mysqli_query($connect, $actsql);
             echo json_encode(array('message' => "Vehicle Added Successfully", 'status' => true));
         } else {
             echo json_encode(array('message' => "Error In Adding Vehicle", 'status' => false));

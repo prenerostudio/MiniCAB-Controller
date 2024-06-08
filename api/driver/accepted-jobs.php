@@ -9,17 +9,11 @@ include("../../config.php");
 
 $d_id = $_POST['d_id'];
 
-if (isset($_POST['d_id'])) {
-    // Get the current date
-    $currentDate = date('Y-m-d');
-
-    // Calculate the start date of the current week (assuming Monday as the start of the week)
-    $startOfWeek = date('Y-m-d', strtotime('last monday', strtotime($currentDate)));
-
-    // Calculate the end date of the current week (assuming Sunday as the end of the week)
+if (isset($_POST['d_id'])) {    
+    $currentDate = date('Y-m-d');    
+    $startOfWeek = date('Y-m-d', strtotime('last monday', strtotime($currentDate)));    
     $endOfWeek = date('Y-m-d', strtotime('next sunday', strtotime($currentDate)));
 
-    // Modify your SQL query to filter jobs added within the current week
     $sql = "SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, clients.c_address, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.* FROM jobs, drivers, clients, bookings, booking_type WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.d_id = '$d_id' AND jobs.job_status = 'accepted' AND bookings.b_type_id = booking_type.b_type_id AND jobs.date_job_add BETWEEN '$startOfWeek' AND '$endOfWeek' ORDER BY jobs.job_id DESC";
 
     $r = mysqli_query($connect, $sql);

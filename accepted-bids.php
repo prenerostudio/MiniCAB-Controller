@@ -22,7 +22,7 @@ include('header.php');
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-default" class="table-responsive">            										
-						<table class="table table-responsive">						
+						<table class="table table-responsive" id="table-bids">						
 							<thead>                   													
 								<tr>                          																
 									<th class="w-1">ID</th>
@@ -79,7 +79,12 @@ include('header.php');
 			</div>              			
 		</div>s
 	</div>
-</div>        
+</div> 
+<script>	
+	$(document).ready(function() {
+    $('#table-bids').DataTable();
+});
+</script>
 <?php
 include('footer.php');
 ?>

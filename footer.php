@@ -50,12 +50,21 @@
 <script src="libs/jsvectormap/dist/maps/world.js" defer></script>
 <script src="libs/jsvectormap/dist/maps/world-merc.js" defer></script>
 
+<script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+<script src="vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 
+<!-- Datatables js -->
+<script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+<script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
 
-<script type="text/javascript" src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+<!-- Datatable Init js -->
+<script src="js/demo.datatable-init.js"></script>
 
-	<!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- Tabler Core -->
 <script src="js/tabler.min.js" defer></script>
 <script src="js/demo.min.js" defer></script>

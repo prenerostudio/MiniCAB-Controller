@@ -44,7 +44,22 @@ if(isset($_POST['job_id'])){
 									'$fare_status',
 									'$date')";								
 		$r=mysqli_query($connect,$sql);		
-		if($r){    			
+		if($r){   
+			$activity_type = 'Journey Fare Added';
+			$user_type = 'driver';
+			$details = "Journey Fare added for correction against job #: $job_id.";
+			$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$d_id',
+											'$details')";		
+		
+			$actr = mysqli_query($connect, $actsql);
 			echo json_encode(array('message'=>"Fare Details Submitted Successfully",'status'=>true));		
 		}else{    		
 			echo json_encode(array('message'=>"Error In Submitting Fare Details",'status'=>false));		

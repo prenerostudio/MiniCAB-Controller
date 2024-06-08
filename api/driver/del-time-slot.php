@@ -13,7 +13,29 @@ if(isset($_POST['at_id'])){
 	$sql="DELETE FROM `availability_times` WHERE `at_id`='$at_id'";
 	$r=mysqli_query($connect,$sql);
 	if($r){    
-		//$output=mysqli_fetch_all($r,MYSQLI_ASSOC);    
+		$activity_type = 'Job Completed';        
+			
+		$user_type = 'driver';        
+		
+		$details = "Job # $job_id Has been Completed.";
+
+		
+		
+		$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";		
+			
+		
+		$actr = mysqli_query($connect, $actsql);	
+		
+		
 		echo json_encode(array('message'=>'Slot Has Been Deleted','status'=>true));
 	}else{    
 		echo json_encode(array('message'=>'No Record Found','status'=>false));

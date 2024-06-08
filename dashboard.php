@@ -109,7 +109,7 @@ include('header.php');
 					</div>					
 					<div class="table-responsive">                   															
 						<div id="driverListPOB">    
-							<table class="table table-responsive">		        
+							<table class="table table-responsive" id="table-pob">		        
 								<thead>                   														            
 									<tr>                  
 										<th class="w-1">ID</th>										                
@@ -134,7 +134,7 @@ include('header.php');
 											</span>                
 										</td>                
 										<td>                    
-											<span class="badge bg-success me-1"></span> Online                
+											<span class="badge bg-success me-1"></span> <?php echo $drrow['status']; ?>
 										</td>            
 									</tr>            
 									<?php            
@@ -143,7 +143,10 @@ include('header.php');
 								</tbody>    
 							</table>
 						</div>
-						<script>
+						<script>							
+							$(document).ready(function() {    
+							$('#table-pob').DataTable();
+						});  
 							function loadDriverListPOB() {
 								var xhttp = new XMLHttpRequest();        
 								xhttp.onreadystatechange = function() {            
@@ -168,7 +171,7 @@ include('header.php');
 						<div class="subheader">Active users</div>                                          						
 					</div>                    					
 					<div id="driverList">    
-						<table class="table table-responsive">        
+						<table class="table" id="table-active">        
 							<thead>            
 								<tr>                
 									<th class="w-1">ID</th>                
@@ -194,7 +197,7 @@ include('header.php');
 									</td>                
 									<td>                    
 										<span class="badge bg-success me-1"></span> 
-										Online               
+										<?php echo $drvrow['status']; ?>              
 									</td>            
 								</tr>           
 								<?php           
@@ -202,9 +205,12 @@ include('header.php');
 								?>        
 							</tbody>    
 						</table>
-					</div>
-					<script>    
-						function loadDriverList() {        							        
+					</div>					
+					<script>  					
+						$(document).ready(function() {    
+							$('#table-active').DataTable();
+						});  
+						function loadDriverList() {        							        						
 							var xhttp = new XMLHttpRequest();       
 							xhttp.onreadystatechange = function() {            
 								if (this.readyState == 4 && this.status == 200) {               
@@ -221,113 +227,56 @@ include('header.php');
 			</div>              						
 		</div>               			
 		<div class="col-12">            					
-			<div class="card">                							
-				<div class="card-header">                    									
-					<h3 class="card-title">Today's Jobs	</h3>                  										
-				</div>				
-				<div class="card-body border-bottom py-3">					
-					<div id="table-default" class="table-responsive">    
-						<table class="table">        
-							<thead>            
-								<tr>                
-									<th>                    
-										<button class="table-sort" data-sort="sort-id">
-											ID                    
-										</button>										                
-									</th>                        									                
-									<th>									                    
-										<button class="table-sort" data-sort="sort-date">                        
-											Date                    
-										</button>										                
-									</th>                        									                
-									<th>									
-										<button class="table-sort" data-sort="sort-time">
-											Time										
-										</button>										
-									</th>                       									
-									<th>									
-										<button class="table-sort" data-sort="sort-passenger">
-											Passenger
-										</button>										
-									</th>                        									
-									<th>									
-										<button class="table-sort">
-											Pickup
-										</button>										
-									</th>                        									
-									<th>									
-										<button class="table-sort">
-											Dropoff
-										</button>										
-									</th>                       									
-									<th>									
-										<button class="table-sort" data-sort="sort-fare">
-											Fare
-										</button>										
-									</th>						   									
-									<th>									
-										<button class="table-sort" data-sort="sort-vehicle">
-											Vehicle
-										</button>										
-									</th>						  									
-									<th>									
-										<button class="table-sort" data-sort="sort-status">
-											Status
-										</button>										
-									</th>						   									
-									<th>									
-										<button class="table-sort" data-sort="sort-driver">
-											Driver
-										</button>										
-									</th>           
-								</tr>        
-							</thead>        
-							<tbody class="table-tbody">            
-								<?php            
-								$y = 0;            
-								$jobsql = mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs, clients, bookings, drivers, booking_type, vehicles WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_status = 'waiting' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY jobs.job_id DESC");
-								while($jobrow = mysqli_fetch_array($jobsql)){
-									$y++;            
-								?>            
-								<tr>                                  
-									<td class="sort-id">                    
-										<?php echo $y; ?>                
-									</td>                
-									<td class="sort-date">                    
-										<?php echo $jobrow['pick_date'];?>                
-									</td>                	
-									<td class="sort-time">
-										<?php echo $jobrow['pick_time'];?>									
-									</td>                       										
-									<td class="sort-passenger">
-										<?php echo $jobrow['passenger'];?>
-									</td>  										
-									<td>
-										<?php echo $jobrow['pickup'];?>
-									</td>                       										
-									<td>
-										<?php echo $jobrow['destination'];?>
-									</td>										
-									<td class="sort-fare"> 
-										<?php echo $jobrow['journey_fare'];?> 
-									</td>										
-									<td class="sort-vehicle"> 
-										<?php echo $jobrow['v_name'];?> 
-									</td>										
-									<td class="sort-status"> 
-										<?php echo $jobrow['job_status'];?> 
-									</td>										
-									<td class="sort-driver"> 
-										<?php echo $jobrow['d_name'];?>
-									</td>           
-								</tr>          
-								<?php          
-								}           
-								?>        
-							</tbody>    
-						</table>
-					</div>
-					<script>   
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">Today's Jobs	</h3>
+				</div>
+				<div class="card-body border-bottom py-3">
+					<table class="table" id="table-job">													
+						<thead>								
+							<tr>          								
+								<th>ID</th>            					
+								<th>Date</th>                
+								<th>Time</th>                
+								<th>Passenger</th>                
+								<th>Pickup</th>								
+								<th>Stops</th>                
+								<th>Dropoff</th>                
+								<th>Fare</th>                
+								<th>Vehicle</th>                
+								<th>Status</th>                
+								<th>Driver</th>            
+							</tr>        
+						</thead>        
+						<tbody>            
+							<?php            
+							$y = 0;            
+							$jobsql = mysqli_query($connect, "SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs JOIN clients ON jobs.c_id = clients.c_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN drivers ON jobs.d_id = drivers.d_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE jobs.job_status <> 'completed' ORDER BY jobs.job_id DESC");            
+							while($jobrow = mysqli_fetch_array($jobsql)){                
+								$y++;            
+							?>            
+							<tr>                
+								<td><?php echo $jobrow['book_id']; ?></td>                
+								<td><?php echo $jobrow['pick_date'];?></td>                
+								<td><?php echo $jobrow['pick_time'];?></td>                
+								<td><?php echo $jobrow['passenger'];?></td>                
+								<td><?php echo $jobrow['pickup'];?></td>
+								<td><?php echo $jobrow['stops'];?></td>                
+								<td><?php echo $jobrow['destination'];?></td>                
+								<td><?php echo $jobrow['journey_fare'];?></td>                
+								<td><?php echo $jobrow['v_name'];?></td>                
+								<td><?php echo $jobrow['job_status'];?></td>                
+								<td><?php echo $jobrow['d_name'];?></td>            
+							</tr>            
+							<?php            
+							}            
+							?>        
+						</tbody>    
+					</table>					  									
+					<script>   					
+						$(document).ready(function() {    
+							$('#table-job').DataTable();
+						});
 						function loadJobList() {       							        
 							var xhttp = new XMLHttpRequest();      
 							xhttp.onreadystatechange = function() {         
@@ -346,15 +295,7 @@ include('header.php');
 		</div>		
 	</div>	
 </div>        
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-default', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-passenger', 'sort-fare', 'sort-vehicle', 'sort-status', 'sort-driver']					
-		}); 			
-	})	
-</script>
+
 <?php	
 include('footer.php');	
 ?>

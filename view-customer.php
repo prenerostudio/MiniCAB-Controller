@@ -170,40 +170,16 @@ $crow = mysqli_fetch_array($csql);
 											<div id="table-adriver" class="table-responsive">
 												<table class="table">
 													<thead>													
-														<tr>														
-															<th>															
-																<button class="table-sort" data-sort="sort-id">
-																	ID
-																</button>
-															</th>															
-															<th>					
-																<button class="table-sort" data-sort="sort-date">
-																	Job Completion Date
-																</button>
-															</th>															
-															<th>					
-																<button class="table-sort">
-																	Job Details
-																</button>
-															</th>
-															<th>													
-																<button class="table-sort" data-sort="sort-pay">
-																	Total Pay
-																</button>
-															</th> 													
-															<th>													
-																<button class="table-sort" data-sort="sort-status">
-																	Status
-																</button>
-															</th>															
-															<th>															
-																<button class="table-sort">
-																	Actions
-																</button>
-															</th>														
-														</tr>													
+														<tr>
+															<th>ID</th>
+															<th>Job Completion Date</th>
+															<th>Job Details</th>
+															<th>Total Pay</th>
+															<th>Status</th>
+															<th>Actions</th>
+														</tr>
 													</thead>
-													<tbody class="table-tbody">													
+													<tbody class="table-tbody">
 														<?php
 														$x = 0;
 														$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, bookings.b_type_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, clients.c_name, clients.c_phone, booking_type.b_type_name, drivers.d_name, drivers.d_phone FROM invoice JOIN jobs ON invoice.job_id = jobs.job_id JOIN clients ON invoice.c_id = clients.c_id JOIN drivers ON invoice.d_id = drivers.d_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE invoice.c_id = '$c_id'");

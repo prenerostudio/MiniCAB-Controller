@@ -59,6 +59,23 @@ if(isset($_POST['job_id'])){
 									`job_status`='$job_status',
 									`date_job_add`='$date' WHERE `job_id`='$job_id'";
 			$ur=mysqli_query($connect,$usql);
+			
+			$activity_type = 'Job Completed';        
+			$user_type = 'driver';        
+			$details = "Job # $job_id Has been Completed.";
+
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";		
+			
+			$actr = mysqli_query($connect, $actsql);			
 			echo json_encode(array('message'=>"Invoice Generated Successfully",'status'=>true));
 		}else{    
 			echo json_encode(array('message'=>"Error In Generating Invoice",'status'=>false));

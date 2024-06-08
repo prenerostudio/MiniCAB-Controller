@@ -32,28 +32,16 @@ include('header.php');
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-booker" class="table-responsive">
-						<table class="table">                    						
+						<table class="table" id="table-bookers">                    						
 							<thead>                      							
 								<tr>									
-									<th>									
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>
-									</th>                        									
+									<th>ID</th>                        									
 									<th> Image </th>			
 									<th> Name </th>		
 									<th> Email </th>			
 									<th> Phone </th>                  			
-									<th>									
-										<button class="table-sort" data-sort="sort-gender">
-											Gender
-										</button>
-									</th>									
-									<th>									
-										<button class="table-sort" data-sort="sort-status">
-											Status
-										</button>
-									</th>							
+									<th>Gender</th>									
+									<th>Status</th>							
 									<th> Actions </th>			
 								</tr>                   								
 							</thead>                  							
@@ -65,7 +53,7 @@ include('header.php');
 									$x++;									
 								?>								
 								<tr>                        								
-									<td class="sort-id">
+									<td>
 										<?php echo $x; ?>
 									</td>
 									<td>									
@@ -90,10 +78,10 @@ include('header.php');
 									<td>
 										<?php echo $crow['c_phone']; ?>
 									</td>                       										
-									<td class="sort-gender">
+									<td>
 										<?php echo $crow['c_gender']; ?>
 									</td>										
-									<td class="sort-status">
+									<td>
 										<?php 											
 											if($crow['acount_status']==0){
 										?>												
@@ -136,15 +124,12 @@ include('header.php');
 	</div>
 </div>        
 <script>	
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-default', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-gender', 'sort-status'						
-						]					
-		}); 			
-	})	
+	
 	$(document).ready(function() {
+    $('#table-bookers').DataTable();
+});
+
+$(document).ready(function() {
     $('#modal-customer-delete').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
         var customerId = button.data('b_id');

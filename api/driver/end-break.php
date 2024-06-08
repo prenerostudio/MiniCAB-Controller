@@ -19,6 +19,23 @@ if(isset($_POST['bt_id'])){
 	if($r){   	
 		$dsql="UPDATE `drivers` SET  `status`='online' WHERE `d_id`='$d_id'";		
 		$dr=mysqli_query($connect,$dsql);
+				
+		$activity_type = 'Break Time Ends';        			
+		$user_type = 'driver';
+		$details = "Break Timme Ends and back to online";
+		
+		$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";		
+					
+		$actr = mysqli_query($connect, $actsql);	
 											
 		echo json_encode(array('message'=>"Driver is Back to Online",'status'=>true));		
 	}else{    	

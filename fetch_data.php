@@ -8,55 +8,82 @@ if ($selectedInterval <= 0) {
     echo "<tr><td colspan='9'>Invalid time interval selected</td></tr>";
     exit;
 }
-$bsql = mysqli_query($connect, "SELECT * FROM bookings INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE pick_date >= DATE_SUB(NOW(), INTERVAL ? HOUR) AND pick_date <= NOW()");
-if (!$bsql) {
-    echo "<tr><td colspan='9'>Error fetching bookings</td></tr>";
-    exit;
-}
-if (mysqli_num_rows($bsql) == 0) {
-    echo "<tr><td colspan='9'>No bookings found for the selected interval</td></tr>";
-    exit; 
-}
-while ($brow = mysqli_fetch_array($bsql)) {
-    echo "<tr>";
-    echo "<td class='sort-id'>" . $brow['book_id'] . "</td>";
-    echo "<td class='sort-date'>" . $brow['pick_date'] . "</td>";
-    echo "<td class='sort-time'>" . $brow['pick_time'] . "</td>";
-    echo "<td class='sort-passenger'>" . $brow['passenger'] . "</td>";
-    echo "<td class='sort-pickup' style='width: 15%;'>" . $brow['pickup'] . "</td>";
-	 echo "<td class='sort-dropoff' style='width: 15%;'>" . $brow['stops'] . "</td>";
-    echo "<td class='sort-dropoff' style='width: 15%;'>" . $brow['destination'] . "</td>";
-    echo "<td class='sort-fare'>" . $brow['journey_fare'] . "</td>";
-    echo "<td class='sort-vehicle'>" . $brow['v_name'] . "</td>";
-    echo "<td>";
-    if ($brow['bid_status'] == 0) {
-        echo "<a href='open-bid.php?book_id=" . $brow['book_id'] . "'>
-                <button class='btn btn-instagram'>
-                    <i class='ti ti-aspect-ratio'></i>
-                </button>
-            </a>";
+
+// Prepare the SQL statement
+$query = "
+    SELECT 
+        bookings.book_id, bookings.pick_date, bookings.pick_time, bookings.passenger,
+        bookings.pickup, bookings.stops, bookings.destination, bookings.journey_fare,
+        vehicles.v_name, bookings.bid_status
+    FROM bookings
+    INNER JOIN clients ON bookings.c_id = clients.c_id
+    INNER JOIN vehicles ON bookings.v_id = vehicles.v_id
+    INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id
+    WHERE pick_date >= DATE_SUB(NOW(), INTERVAL ? HOUR) AND pick_date <= NOW()
+";
+
+// Initialize a prepared statement
+if ($stmt = $connect->prepare($query)) {
+    // Bind the parameter
+    $stmt->bind_param("i", $selectedInterval);
+
+    // Execute the statement
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 0) {
+        echo "<tr><td colspan='9'>No bookings found for the selected interval</td></tr>";
     } else {
-        echo "<a href='#'>
-                <button class='btn' disabled>
-                    <i class='ti ti-aspect-ratio'></i>
-                </button>
-            </a>";
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row['book_id']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['pick_date']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['pick_time']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['passenger']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['pickup']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['stops']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['destination']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['journey_fare']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['v_name']) . "</td>";
+            echo "<td style='width: 15%;'>";
+            if ($row['bid_status'] == 0) {
+                echo "<a href='open-bid.php?book_id=" . htmlspecialchars($row['book_id']) . "'>
+                        <button class='btn btn-instagram'>
+                            <i class='ti ti-aspect-ratio'></i>
+                        </button>
+                    </a>";
+            } else {
+                echo "<a href='#'>
+                        <button class='btn' disabled>
+                            <i class='ti ti-aspect-ratio'></i>
+                        </button>
+                    </a>";
+            }
+            echo "<a href='view-booking.php?book_id=" . htmlspecialchars($row['book_id']) . "'>
+                    <button class='btn btn-info'>
+                        <i class='ti ti-eye'></i>
+                    </button>
+                </a>";
+            echo "<a href='dispatch-booking.php?book_id=" . htmlspecialchars($row['book_id']) . "'>
+                    <button class='btn btn-success'>
+                        <i class='ti ti-plane-tilt'></i>
+                    </button>
+                </a>";
+            echo "<button class='btn btn-danger'>
+                    <i class='ti ti-square-rounded-x'></i>
+                </button>";
+            echo "</td>";
+            echo "</tr>";
+        }
     }
-    echo "<a href='view-booking.php?book_id=" . $brow['book_id'] . "'>
-            <button class='btn btn-info'>
-                <i class='ti ti-eye'></i>
-            </button>
-        </a>";
-    echo "<a href='dispatch-booking.php?book_id=" . $brow['book_id'] . "'>
-            <button class='btn btn-success'>
-                <i class='ti ti-plane-tilt'></i>
-            </button>
-        </a>";
-    echo "<button class='btn btn-danger'>
-            <i class='ti ti-square-rounded-x'></i>
-        </button>";
-    echo "</td>";   
-    echo "</tr>";
+    // Close the statement
+    $stmt->close();
+} else {
+    echo "<tr><td colspan='9'>Error preparing the statement: " . htmlspecialchars($connect->error) . "</td></tr>";
 }
-mysqli_close($connect);
+
+// Close the database connection
+$connect->close();
 ?>

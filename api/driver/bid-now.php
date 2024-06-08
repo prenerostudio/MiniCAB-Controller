@@ -24,26 +24,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 									'$bid_amount')";
         
         $result = mysqli_query($connect, $sql);
-        if ($result) {   
-
-			
-			$fsql = "SELECT `d_name` FROM `drivers` WHERE `d_id`='$d_id'";
-			$fetch = mysqli_query($connect, $fsql);
-			$output=$fetch->fetch_assoc();   
-			$d_name = $output['d_name'];
-			
-			$actsql = "INSERT INTO `activity_log` (
-													`activity_type`,
-													`user`, 
-													`details`
-													) VALUES (
-													'Bid Placed By Driver ',
-													'$d_name',
-													'New Driver Acount Created by " . $d_name . "')";		
+        if ($result) {   			
+			$activity_type = 'Bid Placed';
+			$user_type = 'driver';
+			$details = "Bid of Amount $bid_amount has been placed against Booking # $book_id";
+			$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$d_id',
+											'$details')";		
 		
 			$actr = mysqli_query($connect, $actsql);
-			
-			
 			
             $response = array('message' => "Bid Placed Successfully", 'status' => true);
             echo json_encode($response);

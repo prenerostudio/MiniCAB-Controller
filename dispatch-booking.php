@@ -114,7 +114,14 @@ $bookrow = mysqli_fetch_array($booksql);
 							Driver Details
 						</h3>				
 					</div>				
-					<div class="card-body border-bottom py-3">														
+					<div class="card-body border-bottom py-3">	
+						<?php															
+					session_start();															
+					if(isset($_SESSION['success_msg'])){															
+						echo '<h4 style="color:red; margin-top: 10px; font-size: 18px;" align="center">'.$_SESSION['success_msg'].' </h4>';						
+						unset($_SESSION['success_msg']);					
+					}					
+					?>	
 						<div class="modal-body">
 							<div class="row">								
 								<input type="hidden" name="book_id" value="<?php echo $bookrow['book_id'];?>">

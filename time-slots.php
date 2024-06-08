@@ -33,11 +33,11 @@ include('header.php');
 					</h3>                  										
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
-					<div id="table-default" class="table-responsive">            										
-						<table class="table table-responsive">						
+					<div class="table-responsive">            										
+						<table class="table table-responsive" id="table-slots">						
 							<thead>                   													
 								<tr>                          																
-									<th class="w-1">ID</th>
+									<th>ID</th>
 									<th>Date</th>
 									<th>Start Time</th>
 									<th>End Date</th>
@@ -94,7 +94,8 @@ include('header.php');
 					</div>																	
 				</div>                                                    				
 			</div>              			
-		</div>	
+		</div>
+		
 		
 		<div class="col-5">            					
 			<div class="card">                							
@@ -143,6 +144,11 @@ include('header.php');
 	</div>
 </div>        
 <script>
+	
+	$(document).ready(function() {
+    $('#table-slots').DataTable();
+});
+
 	function validateForm() {       
         var dateInput = document.getElementsByName("date")[0].value;
         var stimeInput = document.getElementsByName("stime")[0].value;

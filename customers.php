@@ -32,61 +32,29 @@ include('header.php');
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-customer" class="table-responsive">                  					
-						<table class="table">                    						
+						<table class="table" id="table-booking">                    						
 							<thead>                      							
 								<tr>									
-									<th>									
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort">
-											Image
-										</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-name">
-											Name
-										</button>
-									</th>                       									
-									<th>									
-										<button class="table-sort" data-sort="sort-email">
-											Email
-										</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-phone">
-											Phone
-										</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-gender">
-											Gender
-										</button>
-									</th>									
-									<th>									
-										<button class="table-sort" data-sort="sort-status">
-											Status
-										</button>
-									</th>							
-									<th>									
-										<button class="table-sort">
-											Actions
-										</button>
-									</th>                      									
+									<th>ID</th>                        									
+									<th>Image</th>                        									
+									<th>Name</th>                       									
+									<th>Email</th>                        									
+									<th>Phone</th>                        									
+									<th>Gender</th>									
+									<th>Status</th>							
+									<th>Actions</th>                      									
 								</tr>                   								
 							</thead>                  							
 							<tbody class="table-tbody">												
 								<?php																		
-								$x=0;																
+																							
 								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 ORDER BY clients.c_id DESC");								
 								while($crow = mysqli_fetch_array($csql)){									
-									$x++;									
+																	
 								?>								
 								<tr>                        								
 									<td class="sort-id">
-										<?php echo $x; ?>
+										<?php echo $crow['c_id']; ?>
 									</td>
 									<td>									
 										<?php																
@@ -158,14 +126,10 @@ include('header.php');
 		</div>	
 	</div>
 </div>        
-<script>
-	document.addEventListener("DOMContentLoaded", function() {
-		const list = new List('table-customer', {
-			sortClass: 'table-sort',
-			listClass: 'table-tbody',
-			valueNames: ['sort-id', 'sort-name', 'sort-email', 'sort-phone', 'sort-gender', 'sort-status']					
-		}); 			
-	})	
+<script>	
+	$(document).ready(function() {
+    $('#table-booking').DataTable();
+});
 </script>
 
 

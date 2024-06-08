@@ -26,29 +26,40 @@ function uploadImage() {
 }
 
 
-// Check if all required fields are set
-if(isset($_POST['d_id'], $_POST['dname'], $_POST['demail'], $_POST['d_address'], $_POST['dgender'], $_POST['dlang'])) {
-    $d_id = $_POST['d_id'];
-    $dname = $_POST['dname'];
-    $demail = $_POST['demail'];
-    $d_address = $_POST['d_address'];
-    $dgender = $_POST['dgender'];
-    $dlang = $_POST['dlang'];
-
-    // Handle image upload
-    $d_img = uploadImage();
-
-    if ($d_img !== false) {
-        $sql = "UPDATE `drivers` SET 
+if(isset($_POST['d_id'])) {
+	$d_id = $_POST['d_id'];    
+	$dname = $_POST['dname'];    
+	$demail = $_POST['demail'];    
+	$d_address = $_POST['d_address'];    
+	$dgender = $_POST['dgender'];    
+	$dlang = $_POST['dlang'];    
+	$d_img = uploadImage();
+    
+	if ($d_img !== false) {    
+		$sql = "UPDATE `drivers` SET 
                                     `d_name`='$dname',
                                     `d_email`='$demail',
                                     `d_address`='$d_address',
                                     `d_pic`='$d_img',
                                     `d_gender`='$dgender',
                                     `d_language`='$dlang' WHERE `d_id`='$d_id'";
-
-        $r = mysqli_query($connect, $sql);
-        if ($r) {    
+        
+		$r = mysqli_query($connect, $sql);        
+		if ($r) {  		
+			$activity_type = "Profile Details updated";					
+			$user_type = 'driver';			
+			$details = "Your have Updated profile details";					
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";
+			$actr = mysqli_query($connect, $actsql);									
             echo json_encode(array('message' => "Profile Updated Successfully", 'status' => true));
         } else {    
             echo json_encode(array('message' => "Error In Updating Profile", 'status' => false));

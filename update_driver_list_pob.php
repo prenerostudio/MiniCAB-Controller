@@ -18,7 +18,7 @@ while ($drrow = mysqli_fetch_array($drsql)) {
     $driver_list_html .= '<tr>'; 
     $driver_list_html .= '<td>' . $n . '</td>'; 
     $driver_list_html .= '<td><span class="text-secondary">' . $drrow['d_name'] . '</span></td>'; 
-    $driver_list_html .= '<td><span class="badge bg-success me-1"></span> Online</td>'; 
+    $driver_list_html .= '<td><span class="badge bg-success me-1"></span>' . $drrow['status'] . '</td>'; 
     $driver_list_html .= '</tr>'; 
 }
 

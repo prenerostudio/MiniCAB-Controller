@@ -20,7 +20,22 @@ if (isset($_POST['d_id'])) {
 	if (in_array($fileExtension, $allowTypes)) {    
 		if (move_uploaded_file($_FILES["ni"]["tmp_name"], $targetFilePath)) {                   
 			$r = $connect->query("UPDATE `driver_documents` SET `national_insurance`='$ni' WHERE `d_id`='$d_id'");
-			if($r){															             			
+			if($r){	
+				$activity_type = "Driver Document updated";		
+				$user_type = 'driver';		
+				$details = "You have updated National Insurance Document.";
+		
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";				
+				$actr = mysqli_query($connect, $actsql);
 				echo json_encode(array('message' => "National Insurance Upload Successfully", 'status' => true));            		
 			} else {        
 				echo json_encode(array('message' => "Error In Uploading National Insurance", 'status' => false));	

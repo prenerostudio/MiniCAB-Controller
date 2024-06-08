@@ -20,7 +20,22 @@ if (isset($_POST['d_id'])) {
 	if (in_array($fileExtension, $allowTypes)) {    
 		if (move_uploaded_file($_FILES["vextra"]["tmp_name"], $targetFilePath)) {                   
 			$r = $connect->query("UPDATE `vehicle_documents` SET `extra`='$vextra' WHERE `d_id`='$d_id'");
-			if($r){															             			
+			if($r){		
+				$activity_type = "Driver Vehicle Document updated";		
+				$user_type = 'driver';		
+				$details = "You have updated Vehicle Extra Document.";
+		
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";				
+				$actr = mysqli_query($connect, $actsql);
 				echo json_encode(array('message' => "Vehicle Extra Upload Successfully", 'status' => true));            		
 			} else {        
 				echo json_encode(array('message' => "Error In Uploading Vehicle Extra", 'status' => false));	

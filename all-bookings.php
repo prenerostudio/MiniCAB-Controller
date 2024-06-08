@@ -95,53 +95,24 @@ include('header.php');
 					</h3>
 				</div>				
 				<div class="card-body border-bottom py-3">				
-					<div class="table-responsive">
-					
+					<div class="table-responsive">					
 							<?php        							
 							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");        							
 							if (mysqli_num_rows($bsql) > 0) {							
 							?>           							
-							<table class="table" id="table-default">	
+							<table class="table" id="table-booking">	
 								<thead>                      		
 									<tr> 																	
-										<th>		
-											<button class="table-sort" data-sort="sort-id">
-												ID
-											</button>		
-										</th>                        	
-										<th>	
-											<button class="table-sort" data-sort="sort-date">
-												Date Pickup
-											</button>						
-										</th>										
-										<th>							
-											<button class="table-sort" data-sort="sort-time">
-												Time Pickup
-											</button>						
-										</th>												
-										<th>							
-											<button class="table-sort" data-sort="sort-passenger">
-												Passenger
-											</button>	
-										</th>                        		
-										<th> Pickup </th>                        		
-										<th> Stops </th>
-										<th> Dropoff </th>	
-										<th>
-											<button class="table-sort" data-sort="sort-fare">
-												Fare
-											</button>
-										</th>						   
-										<th>	
-											<button class="table-sort" data-sort="sort-vehicle">
-												Vehicle
-											</button>	
-										</th>	
-										<th>		
-											<button class="no-sort">
-												Actions
-											</button>	
-										</th>		
+										<th>ID</th>                        	
+										<th>Date Pickup</th>										
+										<th>Time Pickup</th>												
+										<th>Passenger</th>                        		
+										<th>Pickup</th>                        		
+										<th>Stops</th>
+										<th>Dropoff</th>	
+										<th>Fare</th>						   
+										<th>Vehicle</th>	
+										<th>Actions</th>		
 									</tr>                   
 								</thead>
 								<tbody class="table-tbody" id="tableBody">
@@ -151,34 +122,34 @@ include('header.php');
 										$y++;                    
 									?>											                     
 									<tr>
-										<td class="sort-id">
+										<td>
 											<?php echo $brow['book_id']; ?>
 										</td>										
-										<td class="sort-date">
+										<td>
 											<?php echo $brow['pick_date']; ?>
 										</td>										
-										<td class="sort-time">
+										<td>
 											<?php echo $brow['pick_time']; ?>
 										</td>										
-										<td class="sort-passenger">
+										<td>
 											<?php echo $brow['passenger']; ?>
 										</td>										
-										<td style="width: 15%;">
+										<td>
 											<?php echo $brow['pickup']; ?>
 										</td>         
 										<td>
 											<?php echo $brow['stops']; ?>
 										</td>										
-										<td style="width: 15%;">
+										<td>
 											<?php echo $brow['destination'] ?>
 										</td>										
-										<td class="sort-fare"> 
+										<td> 
 											<?php echo $brow['journey_fare'] ?> 
 										</td>										
-										<td class="sort-vehicle"> 
+										<td> 
 											<?php echo $brow['v_name'] ?> 
 										</td>
-										<td> 
+										<td style="width: 10%;"> 
 											<?php
 												if($brow['booking_status']=='Booked'){
 											?>
@@ -230,16 +201,8 @@ include('header.php');
 </div>        
 <script>	
 	$(document).ready(function() {
-    $('#table-default').DataTable();
+    $('#table-booking').DataTable();
 });
-	/*document.addEventListener("DOMContentLoaded", function() {    	
-		const list = new List('table-default', {      			
-			sortClass: 'table-sort',      				
-			listClass: 'table-tbody',      				
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-passenger', 'sort-fare', 'sort-vehicle'      	
-						]			
-		}); 		
-	})	*/
 </script>
 <?php
 include('footer.php');

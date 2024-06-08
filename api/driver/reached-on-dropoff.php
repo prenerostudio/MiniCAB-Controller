@@ -9,16 +9,30 @@ include("../../config.php");
 
 $d_id = $_POST['d_id'];
 $status = 'Reached on Dropoff';
-$date = date("Y-m-d h:i:s");
 
 if(isset($_POST['d_id'])){ 
-		$sql="UPDATE `drivers` SET `status`='$status', `driver_reg_date`='$date' WHERE `d_id`='$d_id'";
-		$r=mysqli_query($connect,$sql);
-		if($r){    			
-			echo json_encode(array('message'=>"Driver is Reached on Dropoff",'status'=>true));
-		}else{    
-			echo json_encode(array('message'=>"Error In fetching status",'status'=>false));
-		}	       
+	$sql="UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";
+	$r=mysqli_query($connect,$sql);
+	if($r){	
+		$activity_type = "Status Updated to $status";
+		$user_type = 'driver';
+		$details = "Your Status recently Updated";
+		$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";		
+
+		$actr = mysqli_query($connect, $actsql);
+		echo json_encode(array('message'=>"Driver is Reached on Dropoff",'status'=>true));
+	}else{
+		echo json_encode(array('message'=>"Error In fetching status",'status'=>false));
+	}	       
 }else{   
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }

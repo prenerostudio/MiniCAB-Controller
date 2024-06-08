@@ -20,7 +20,22 @@ if (isset($_POST['d_id'])) {
 	if (in_array($fileExtension, $allowTypes)) {    
 		if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $targetFilePath)) {                   
 			$r = $connect->query("UPDATE `vehicle_documents` SET `vehicle_picture_front`='$pic1' WHERE `d_id`='$d_id'");
-			if($r){															             			
+			if($r){	
+				$activity_type = "Driver Vehicle Picture updated";		
+				$user_type = 'driver';		
+				$details = "You have updated Vehicle Front Picture.";
+		
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";				
+				$actr = mysqli_query($connect, $actsql);
 				echo json_encode(array('message' => "Vehicle Front Picture Upload Successfully", 'status' => true));            		
 			} else {        
 				echo json_encode(array('message' => "Error In Uploading Picture", 'status' => false));	

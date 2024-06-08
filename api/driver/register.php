@@ -47,16 +47,23 @@ if (isset($_POST['d_phone'])) {
 			$vsql = "INSERT INTO `vehicle_documents`(`d_id`) VALUES ('$d_id')";
 			$vr = mysqli_query($connect, $vsql);
 			
-			$actsql = "INSERT INTO `activity_log` (
-													`activity_type`,
-													`user`, 
-													`details`
-													) VALUES (
-													'New Driver ',
-													'$d_name',
-													'New Driver Acount Created by " . $d_name . "')";		
-		
-			$actr = mysqli_query($connect, $actsql);			
+			$activity_type = 'New Driver Profile Registered';		
+			$user_type = 'driver';		
+			$details = "New Driver Acount Created by $d_name";
+				
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";		
+							
+			$actr = mysqli_query($connect, $actsql);
+									
 			echo json_encode(array('data'=>$d_id,'message' => "Driver Registered Successfully", 'status' => true));            
 		} else {        
 			echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));

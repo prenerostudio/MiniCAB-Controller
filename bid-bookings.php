@@ -1,4 +1,4 @@
-<?php
+ <?php
 include('header.php');
 ?>  
 <div class="page-header d-print-none page_padding">		   		
@@ -24,7 +24,7 @@ include('header.php');
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-default" class="table-responsive">
-						<table class="table">                    						
+						<table class="table" id="table-booking">                    						
 							<thead>                      							
 								<tr>												
 									<th> ID </th>		
@@ -95,8 +95,12 @@ include('header.php');
 		</div>		
 	</div>
 </div>        
-<script>    
-    function updateRemainingTime() {
+<script> 	
+	$(document).ready(function() {
+    $('#table-booking').DataTable();
+});
+
+	function updateRemainingTime() {
         <?php        
         mysqli_data_seek($bsql, 0);
         $y = 0;

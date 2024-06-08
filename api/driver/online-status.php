@@ -14,6 +14,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";        		
         $result = mysqli_query($connect, $sql);
         if ($result) {  	
+			$activity_type = 'Status Updated';		
+			$user_type = 'driver';		
+			$details = "Your Status recently Updated";
+				
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";		
+							
+			$actr = mysqli_query($connect, $actsql);
+			
+			
 			$response = array('message' => "Status Update Successfully", 'status' => true);
             echo json_encode($response);
         } else {    
