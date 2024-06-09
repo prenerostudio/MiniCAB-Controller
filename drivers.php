@@ -32,18 +32,8 @@ include('header.php');
 							Active Drivers
 						</a>                      
 					</li>                      
-					<li class="nav-item">                       
-						<a href="#new-drivers" class="nav-link" data-bs-toggle="tab">						
-							<i class="ti ti-user-shield"></i>                        
-							New Driver Requests
-						</a>                   
-					</li>						
-					<li class="nav-item">                      
-						<a href="#inactive" class="nav-link" data-bs-toggle="tab">						
-							<i class="ti ti-car-off"></i>                         
-							Inactive Drivers
-						</a>                     
-					</li>                   
+											
+					                   
 				</ul>                 
 			</div>               
 			<div class="card-body">              
@@ -58,49 +48,17 @@ include('header.php');
 								</div>            
 								<div class="card-body border-bottom py-3">                
 									<div id="table-adriver" class="table-responsive">                    
-										<table class="table">                        
+										<table class="table" id="table-driver">                        
 											<thead>                            
 												<tr>                                
-													<th>
-														<button class="table-sort" data-sort="sort-id">
-															ID
-														</button>
-													</th>                                
-													<th>
-														<button class="table-sort">
-															Image
-														</button>
-													</th>                                
-													<th>
-														<button class="table-sort" data-sort="sort-name">
-															Name
-														</button>
-													</th>                                
-													<th>
-														<button class="table-sort" data-sort="sort-email">
-															Email
-														</button>
-													</th>                                
-													<th>
-														<button class="table-sort" data-sort="sort-phone">
-															Phone
-														</button>
-													</th>                                
-													<th>
-														<button class="table-sort" data-sort="sort-gender">
-															Gender
-														</button>
-													</th>                                
-													<th>
-														<button class="table-sort" data-sort="sort-license">
-															Licence Authority
-														</button>
-													</th>                               
-													<th>
-														<button class="table-sort">
-															Actions
-														</button>
-													</th>                            
+													<th>ID</th>                                
+													<th>Image</th>                                
+													<th>Name</th>                                
+													<th>Email</th>                                
+													<th>Phone</th>                                
+													<th>Gender</th>                                
+													<th>Licence Authority</th>                               
+													<th>Actions</th>                            
 												</tr>                       
 											</thead>                       						
 											<tbody class="table-tbody">                        						
@@ -111,7 +69,7 @@ include('header.php');
 												$x++;                            						
 												?>
 												<tr>                            							
-													<td class="sort-id">								
+													<td>								
 														<?php echo $x; ?>							
 													</td>                                   							
 													<td>
@@ -123,21 +81,21 @@ include('header.php');
 														<img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">														
 														<?php endif; ?>													
 													</td>						
-													<td class="sort-name">
+													<td>
 														<strong style="text-transform: capitalize;">
 															<?php echo $adrow['d_name'];?>	
 														</strong>						
 													</td>                                  							
-													<td class="sort-email">									
+													<td>									
 														<?php echo $adrow['d_email'];?>								
 													</td>                                 								
-													<td class="sort-phone">								
+													<td>								
 														<?php echo $adrow['d_phone'];?>							
 													</td>                                 							
-													<td class="sort-gender">									
+													<td>									
 														<?php echo $adrow['d_gender'];?>								
 													</td>                                   								
-													<td class="sort-license">									
+													<td>									
 														<?php echo $adrow['licence_authority'];?>
 													</td>								
 													<td>									
@@ -174,264 +132,17 @@ include('header.php');
 									</div>           						
 								</div>       							
 							</div>   						
-						</div>					
-					</div>
-
-					<div class="tab-pane" id="new-drivers">                    
-						<div class="col-12">          								
-							<div class="card">     											
-								<div class="card-header">					
-									<h3 class="card-title">
-										New Drivers Request List
-									</h3>				
-								</div>												
-								<div class="card-body border-bottom py-3">					
-									<div id="table-ndriver" class="table-responsive">						
-										<table class="table">							
-											<thead>								
-												<tr>									
-													<th>										
-														<button class="table-sort" data-sort="sort-id">
-															ID
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort">
-															Image
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-name">
-															Name
-														</button>									
-													</th>									
-													<th>
-														<button class="table-sort" data-sort="sort-email">
-															Email
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-phone">
-															Phone
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-gender">
-															Gender
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-license">
-															Licence Authority
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort">
-															Actions
-														</button>									
-													</th>								
-												</tr>							
-											</thead>							
-											<tbody class="table-tbody">                           
-												<?php                          
-												$y = 0;                          
-												$ndsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 0 ORDER BY drivers.d_id DESC");                           
-												while ($ndrow = mysqli_fetch_array($ndsql)) :                            
-												$y++;                          
-												?>                              
-												<tr>                                  
-													<td class="sort-id">
-														<?php echo $y; ?>
-													</td>                                    
-													<td class="sort-date">                                       
-														<?php if (!$ndrow['d_pic']) : ?>
-														<img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                        
-														<?php else : ?>                                            
-														<img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-														<?php endif; ?>			
-													</td>                                    
-													<td class="sort-name">
-														<?php echo $ndrow['d_name']; ?>
-													</td>                                   
-													<td class="sort-email">
-														<?php echo $ndrow['d_email']; ?>
-													</td>                                    
-													<td class="sort-phone">
-														<?php echo $ndrow['d_phone']; ?>
-													</td>                                    
-													<td class="sort-gender">
-														<?php echo $ndrow['d_gender']; ?>
-													</td>                                    
-													<td class="sort-license">
-														<?php echo $ndrow['licence_authority']; ?>
-													</td>                                   
-													<td>                                       
-														<a href="view-driver.php?d_id=<?php echo $ndrow['d_id'];?>">
-															<button class="btn btn-info">
-																<i class="ti ti-eye"></i>
-																View
-															</button>                                       
-														</a>                                        
-														<a href="del-customer.php?c_id=<?php echo $ndrow['c_id'];?>">
-															<button class="btn btn-danger">
-																<i class="ti ti-square-rounded-x"></i>
-																Delete
-															</button>                                      
-														</a>                                   
-													</td>                              
-												</tr>                          
-												<?php endwhile; ?>                          
-												<?php if ($y === 0) : ?>                            
-												<tr>                                   
-													<td colspan="8">
-														<p align="center">No Driver Found!</p>
-													</td>                               
-												</tr>                           
-												<?php endif; ?>                       
-											</tbody>
-										</table>					
-									</div>				
-								</div>			
-							</div>		
-						</div>                      
-					</div>					
-					<div class="tab-pane" id="inactive">                       
-						<div class="col-12">            								
-							<div class="card">                										
-								<div class="card-header">					
-									<h3 class="card-title">
-										InActive Drivers List
-									</h3>				
-								</div>				
-								<div class="card-body border-bottom py-3">				
-									<div id="table-customer" class="table-responsive">						
-										<table class="table">							
-											<thead>								
-												<tr>									
-													<th>										
-														<button class="table-sort" data-sort="sort-id">
-															ID
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort">
-															Image
-														</button>								
-													</th>								
-													<th>										
-														<button class="table-sort" data-sort="sort-name">
-															Name
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-email">
-															Email
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-phone">
-															Phone
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-gender">
-															Gender
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort" data-sort="sort-license">
-															Licence Authority
-														</button>									
-													</th>									
-													<th>										
-														<button class="table-sort">
-															Actions
-														</button>									
-													</th>								
-												</tr>							
-											</thead>																		
-											<tbody class="table-tbody">                           
-												<?php                            
-												$z = 0;                            
-												$idsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 2 ORDER BY drivers.d_id DESC");
-												while ($idrow = mysqli_fetch_array($idsql)) :                                
-												$z++;                            
-												?>                                
-												<tr>                                    
-													<td class="sort-id">
-														<?php echo $z; ?>
-													</td>                                    
-													<td>                                        
-														<?php if (!$idrow['d_pic']) : ?>
-														<img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                        
-														<?php else : ?>                                            
-														<img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-														<?php endif; ?>                                    
-													</td>                                   
-													<td class="sort-name">
-														<?php echo $idrow['d_name']; ?>
-													</td>                                    
-													<td class="sort-email">
-														<?php echo $idrow['d_email']; ?>
-													</td>                                    
-													<td class="sort-phone">
-														<?php echo $idrow['d_phone']; ?>
-													</td>                                    
-													<td class="sort-gender">
-														<?php echo $idrow['d_gender']; ?>
-													</td>                                    
-													<td class="sort-license">
-														<?php echo $idrow['licence_authority']; ?>
-													</td>                                    
-													<td>                                        
-														<a href="view-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
-															<button class="btn btn-info">
-																<i class="ti ti-eye"></i>
-																View
-															</button>                                        
-														</a>                                        
-														<a href="del-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
-															<button class="btn btn-danger">
-																<i class="ti ti-square-rounded-x"></i>
-																Delete
-															</button>                                        
-														</a> 										
-														<a href="activate-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
-															<button class="btn btn-success">
-																<i class="ti ti-user-check"></i>
-																Activate Driver
-															</button>                                        
-														</a>                                    
-													</td>                                
-												</tr>                            
-												<?php endwhile; ?>                            
-												<?php if ($x === 0) : ?>                                
-												<tr>                                    
-													<td colspan="8">
-														<p align="center">No Driver Found!</p>
-													</td>                                
-												</tr>                            
-												<?php endif; ?>                        
-											</tbody>
-										</table>					
-									</div>				
-								</div>			
-							</div>		
-						</div>                      
+						</div>
 					</div>
 				</div>                
 			</div>            
 		</div>
 	</div>
 </div>        
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-default', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-name', 'sort-email', 'sort-phone', 'sort-gender', 'sort-license' ]					
-		}); 			
-	})		
+<script>			
+	$(document).ready(function() {   	
+		$('#table-driver').DataTable();
+	});
 </script>
 
 <div class="modal modal-blur fade" id="modal-driver" tabindex="-1" role="dialog" aria-hidden="true">

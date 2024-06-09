@@ -2,7 +2,8 @@
 include('config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $d_id = $_POST['d_id'];				
+    $d_id = $_POST['d_id'];	
+	$user_id = $_POST['user_id'];
 
     $targetDir = "img/drivers/"; 
     $uniqueID = uniqid();    
@@ -29,8 +30,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 											) VALUES (											
 											'Driver Profile Image Updated',											
 											'Controller',											
-											'Driver Profile Image " . $d_id . " Has Been updated by Controller.')";
+											'')";
 			$actr = mysqli_query($connect, $actsql);
+			
+			$activity_type = 'Driver Profile Image Updated';        
+
+			$user_type = 'user';        
+
+			$details = "Driver Profile Image " . $d_id . " Has Been updated by Controller.";
+
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$user_id',
+												'$details')";		
+			
+$actr = mysqli_query($connect, $actsql);
+			
+			
+			
+			
             echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
             header('Location: view-driver.php?d_id='.$d_id);
         } else {

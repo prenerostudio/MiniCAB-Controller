@@ -24,7 +24,7 @@ include('header.php');
 				</div>								
 				<div class="card-body border-bottom py-3">								
 					<div id="table-customer" class="table-responsive">											
-						<table class="table">													
+						<table class="table" id="table-inactive">													
 							<thead>															
 								<tr>																	
 									<th>																			
@@ -139,15 +139,10 @@ include('header.php');
 		</div>            			
 	</div>
 </div>        
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-default', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-name', 'sort-email', 'sort-phone', 'sort-gender', 'sort-license']					
-		}); 			
-	})	
-	
+<script>			
+	$(document).ready(function() {    
+		$('#table-inactive').DataTable();
+	});
 </script>
 <?php
 include('footer.php');

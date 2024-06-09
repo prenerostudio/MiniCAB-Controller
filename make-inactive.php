@@ -10,11 +10,11 @@ $result = $connect->query($sql);
 if($result){ 
 	$actsql = "INSERT INTO `activity_log` (
 											`activity_type`,
-											`user`,											
+											`user_type`,											
 											`details`											
 											) VALUES (											
 											'Driver Inactive ',											
-											'Controller',											
+											'user',											
 											'Driver " . $d_id . " Has Been made by Controller.')";		
 	
 	$actr = mysqli_query($connect, $actsql);		

@@ -32,7 +32,7 @@ include('header.php');
 				</div>																
 				<div class="card-body border-bottom py-3">									
 					<div id="table-ndriver" class="table-responsive">
-						<table class="table">
+						<table class="table" id="table-new">
 							<thead>																			
 								<tr>																						
 									<th>	
@@ -144,13 +144,9 @@ include('header.php');
 	</div>
 </div>   
 <script>	
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-default', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-name', 'sort-email', 'sort-phone', 'sort-gender', 'sort-license']					
-		}); 			
-	})		
+	$(document).ready(function() {			
+		$('#table-new').DataTable();
+	});	
 </script>
 
 
