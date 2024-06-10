@@ -27,46 +27,14 @@ include('header.php');
 						<table class="table" id="table-inactive">													
 							<thead>															
 								<tr>																	
-									<th>																			
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>
-									</th>
-									<th>	
-										<button class="table-sort">
-											Image
-										</button>																		
-									</th>
-									<th>																			
-										<button class="table-sort" data-sort="sort-name">
-											Name
-										</button>																			
-									</th>
-									<th>																			
-										<button class="table-sort" data-sort="sort-email">
-											Email
-										</button>																			
-									</th>																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-phone">
-											Phone
-										</button>																			
-									</th>																		
-									<th>																		
-										<button class="table-sort" data-sort="sort-gender">
-											Gender
-										</button>																	
-									</th>																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-license">
-											Licence Authority
-										</button>																			
-									</th>																		
-									<th>																			
-										<button class="table-sort">
-											Actions
-										</button>
-									</th>																	
+									<th>ID</th>
+									<th>Image</th>
+									<th>Name</th>
+									<th>Email</th>																		
+									<th>Phone</th>																		
+									<th>Gender</th>																		
+									<th>Licence Authority</th>																		
+									<th>Actions</th>																	
 								</tr>															
 							</thead>													
 							<tbody class="table-tbody">                            
@@ -77,7 +45,7 @@ include('header.php');
 								$z++;                            
 								?>                                
 								<tr>                                									
-									<td class="sort-id">
+									<td>
 										<?php echo $z; ?>
 									</td>                                    
 									<td>                                       										
@@ -87,19 +55,19 @@ include('header.php');
 										<img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                        
 										<?php endif; ?>                                   
 									</td>                                   
-									<td class="sort-name">
+									<td>
 										<?php echo $idrow['d_name']; ?>
 									</td>                                   
-									<td class="sort-email">
+									<td>
 										<?php echo $idrow['d_email']; ?>
 									</td>                                    
-									<td class="sort-phone">
+									<td>
 										<?php echo $idrow['d_phone']; ?>
 									</td>
-                                    <td class="sort-gender">
+                                    <td>
 										<?php echo $idrow['d_gender']; ?>
 									</td>
-                                    <td class="sort-license">
+                                    <td>
 										<?php echo $idrow['licence_authority']; ?>
 									</td>                                    
 									<td>                                    
@@ -124,7 +92,7 @@ include('header.php');
 									</td>                              
 								</tr>                         
 								<?php endwhile; ?>                           
-								<?php if ($x == 0) : ?>                              
+								<?php if ($z == 0) : ?>                              
 								<tr>                                    
 									<td colspan="8">
 										<p align="center">No Driver Found!</p>

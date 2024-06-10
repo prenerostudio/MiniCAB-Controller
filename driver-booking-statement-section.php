@@ -6,39 +6,15 @@
 		<div class="card">																		
 			<div class="card-body border-bottom py-3">			
 				<div id="table-adriver" class="table-responsive">												
-					<table class="table">                        														
+					<table class="table" id="table-statement">                        														
 						<thead>                            																
 							<tr>                                																			
-								<th>																						
-									<button class="table-sort">
-										ID
-									</button>									
-								</th>								
-								<th>																					
-									<button class="table-sort">
-										Job Completion Date
-									</button>									
-								</th>								
-								<th>																					
-									<button class="table-sort">
-										Job Details
-									</button>									
-								</th>								
-								<th>																					
-									<button class="table-sort">
-										Total Pay
-									</button>									
-								</th> 																					
-								<th>																						
-									<button class="table-sort">
-										Status
-									</button>									
-								</th>																				
-								<th>																						
-									<button class="table-sort">
-										Actions
-									</button>									
-								</th>                            																				
+								<th>ID</th>								
+								<th>Job Completion Date</th>								
+								<th>Job Details</th>								
+								<th>Total Pay</th> 																					
+								<th>Status</th>																				
+								<th>Actions</th>                            																				
 							</tr>                       																		
 						</thead>						
 						<tbody class="table-tbody">						
@@ -90,3 +66,8 @@
 		</div>
 	</div>
 </div>
+<script>	
+	$(document).ready(function() {
+    $('#table-statement').DataTable();
+});
+</script>

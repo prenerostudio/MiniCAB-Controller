@@ -57,7 +57,14 @@ $crow = mysqli_fetch_array($csql);
 								<?php if($crow['account_type']== 2) { ?> Booker	
 								<?php }else{ ?> Customer <?php } ?> Bookings Statement							
 							</a>                      						
-						</li>					
+						</li>	
+						<li class="nav-item">						
+							<a href="#tabs-activity" class="nav-link" data-bs-toggle="tab">					
+								<i class="ti ti-activity"></i>                         								
+								<?php if($crow['account_type']== 2) { ?> Booker	
+								<?php }else{ ?> Customer <?php } ?> Activity Logs							
+							</a>                      						
+						</li>	
 					</ul>                  				
 				</div>				
 				<div class="card-body">                				
@@ -168,7 +175,7 @@ $crow = mysqli_fetch_array($csql);
 									<div class="card"> 
 										<div class="card-body border-bottom py-3">
 											<div id="table-adriver" class="table-responsive">
-												<table class="table">
+												<table class="table" id="cstate">
 													<thead>													
 														<tr>
 															<th>ID</th>
@@ -227,8 +234,18 @@ $crow = mysqli_fetch_array($csql);
 										</div>	
 									</div>					
 								</div>
-							</div>                      									
-						</div>                   				
+							</div>  
+							<script>	
+	$(document).ready(function() {
+    $('#cstate').DataTable();
+});
+</script>
+						</div>    
+						<div class="tab-pane" id="tabs-activity">						
+							<?php							
+							include('customer-activity-log.php');							
+							?>						
+						</div>
 					</div>                 										
 				</div>             
 			</div>

@@ -1,46 +1,19 @@
 <div class="card-body">
-	<div class="row g-2 align-items-center">        				
-		<div class="col">            										
-			<div class="page-pretitle">                								
-				Overview                								
-			</div>                							
-			<h2 class="page-title">                								
-				Vehicle Section                								
-			</h2>              			
-		</div>				
-	</div>	
+	<h2 class="mb-4">
+		Driver Vehicle Section
+	</h2>
 	<div class="row mb-3">
 		<div class="card">					
 			<div class="card-body border-bottom py-3">			
 				<div id="table-adriver" class="table-responsive">					
-					<table class="table">							
+					<table class="table" id="table-vehicle">							
 						<thead>									
 							<tr>											
-								<th>													
-									<button class="table-sort">								
-										ID							
-									</button>													
-								</th>												
-								<th>													
-									<button class="table-sort">								
-										Vehicle Type							
-									</button>													
-								</th>												
-								<th>													
-									<button class="table-sort">								
-										Make & Model, Color							
-									</button>													
-								</th>												
-								<th>													
-									<button class="table-sort">								
-										Registration #							
-									</button>													
-								</th>																								
-								<th>													
-									<button class="table-sort">								
-										Actions							
-									</button>													
-								</th>                            																							
+								<th>ID</th>												
+								<th>Vehicle Type</th>												
+								<th>Make & Model, Color</th>												
+								<th>Registration #</th>																								
+								<th>Actions</th>	
 							</tr>									
 						</thead>								
 						<tbody class="table-tbody">									
@@ -94,3 +67,8 @@
 		</div>
 	</div>	
 </div>   
+<script>	
+	$(document).ready(function() {
+    $('#table-vehicle').DataTable();
+});
+</script>

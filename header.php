@@ -1,22 +1,7 @@
 <?php
-session_start(); 
+
 include('config.php');
-ini_set("display_errors","off");
-
-$myId = $_SESSION['user_id'];
-$email = $_SESSION['email'];                		
-$fname=	$_SESSION['first_name'];                		
-$lname= $_SESSION['last_name'];               		
-$userphone = $_SESSION['user_phone'];                            			                		
-$user_pic = $_SESSION['user_pic'];		
-$designation = $_SESSION['designation'];
-
-if (!isset($_SESSION['email'])) {	
-	$_SESSION['first_name'] = $fname;	
-	$_SESSION['last_name'] = $lname;	
-	$_SESSION['msg'] = "You must log in first";	
-	header('location: index.php');
-}
+include('session.php');
 ?>
 <!doctype html>
 <html lang="en">  
@@ -366,7 +351,7 @@ if (!isset($_SESSION['email'])) {
 									<li class="nav-item">                      									
 										<a class="nav-link" href="activity_log.php">										
 											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-building-bank"></i>
+												<i class="ti ti-activity"></i>
 											</span>                        											
 											<span class="nav-link-title">
 												Activity Logs

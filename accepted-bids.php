@@ -25,7 +25,7 @@ include('header.php');
 						<table class="table table-responsive" id="table-bids">						
 							<thead>                   													
 								<tr>                          																
-									<th class="w-1">ID</th>
+									<th>ID</th>
 									<th>Booking Details</th>
 									<th>Driver Name</th>
 									<th>Bid Amount</th>									

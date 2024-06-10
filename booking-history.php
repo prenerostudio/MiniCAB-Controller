@@ -40,41 +40,17 @@ include('header.php');
 				</div>                  					
 				<div class="card-body border-bottom py-3">				
 					<div id="table-default" class="table-responsive">
-						<table class="table">                    						
+						<table class="table" id="table-history">                    						
 							<thead>                      							
 								<tr>												
-									<th>									
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>										
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-date">
-											Date
-										</button>										
-									</th>	
-									<th>											
-										<button class="table-sort" data-sort="sort-time">
-											Time
-										</button>										
-									</th>	
-									<th>											
-										<button class="table-sort" data-sort="sort-passenger">
-											Passenger
-										</button>										
-									</th>	
+									<th>ID</th>                        									
+									<th>Date</th>	
+									<th>Time</th>	
+									<th>Passenger</th>	
 									<th> Pickup </th>			
 									<th> Dropoff </th>			
-									<th>											
-										<button class="table-sort" data-sort="sort-fare">
-											Fare
-										</button>										
-									</th>										
-									<th>											
-										<button class="table-sort" data-sort="sort-vehicle">
-											Vehicle
-										</button>										
-									</th>										
+									<th>Fare</th>										
+									<th>Vehicle</th>										
 									<th> Status </th>                      									
 								</tr>                   								
 							</thead>                  								
@@ -86,16 +62,16 @@ include('header.php');
 									$y++;									
 								?>        									
 								<tr>                        									
-									<td class="sort-id">
+									<td>
 										<?php echo $y; ?>
 									</td>	
-									<td class="sort-date">
+									<td>
 										<?php echo $brow['pick_date'] ?>
 									</td>										
-									<td class="sort-time">
+									<td>
 										<?php echo $brow['pick_time'] ?>
 									</td>										
-									<td class="sort-passenger">
+									<td>
 										<?php echo $brow['passenger'] ?>
 									</td>  										
 									<td style="width: 15%;">
@@ -104,10 +80,10 @@ include('header.php');
 									<td style="width: 15%;">
 										<?php echo $brow['destination'] ?>
 									</td>										
-									<td class="sort-fare"> 
+									<td> 
 										<?php echo $brow['journey_fare'] ?>
 									</td>										
-									<td class="sort-vehicle"> 
+									<td> 
 										<?php echo $brow['v_name'] ?> 
 									</td>					
 									<td> 		
@@ -128,13 +104,9 @@ include('header.php');
 	</div>
 </div>        
 <script>	
-	document.addEventListener("DOMContentLoaded", function() {    	
-		const list = new List('table-default', {      			
-			sortClass: 'table-sort',      				
-			listClass: 'table-tbody',      				
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',	'sort-vehicle']			
-		}); 		
-	})	
+	$(document).ready(function() {
+    $('#table-history').DataTable();
+});
 </script>
 <?php
 include('footer.php');

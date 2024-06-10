@@ -61,6 +61,12 @@ $brow = mysqli_fetch_array($bsql);
 								Booker Wallet
 							</a>                      												
 						</li>	
+						<li class="nav-item">												
+							<a href="#tabs-activity" class="nav-link" data-bs-toggle="tab">
+								<i class="ti ti-activity"></i>
+								BookerActivity Logs
+							</a>                      												
+						</li>	
 					</ul>                  								
 				</div>				
 				<div class="card-body">                								
@@ -206,7 +212,7 @@ $brow = mysqli_fetch_array($bsql);
 									<div class="card">										
 										<div class="card-body border-bottom py-3">										
 											<div id="table-adriver" class="table-responsive">												
-												<table class="table">												
+												<table class="table" id="bstate">												
 													<thead>																											
 														<tr>															
 															<th>															
@@ -307,7 +313,12 @@ $brow = mysqli_fetch_array($bsql);
 										</div>																						
 									</div>																														
 								</div>
-							</div>                      									
+							</div> 
+							<script>	
+	$(document).ready(function() {
+    $('#bstate').DataTable();
+});
+</script>
 						</div> 
 						
 						
@@ -318,36 +329,15 @@ $brow = mysqli_fetch_array($bsql);
 									<div class="card"> 
 										<div class="card-body border-bottom py-3">
 											<div id="table-adriver" class="table-responsive">	
-												<table class="table">
+												<table class="table" id="bwallet">
 													<thead>													
 														<tr>														
-															<th>															
-																<button class="table-sort" data-sort="sort-id">
-																	ID
-																</button>
-															</th>															
-															<th>					
-																<button class="table-sort" data-sort="sort-date">
-																	Job Completion Date
-																</button>
-															</th>															
-															<th>					
-																<button class="table-sort" data-sort="sort-time">
-																	Job Details
-																</button>
-															</th>
-															 
-															<th>													
-																<button class="table-sort" data-sort="sort-passenger">
-																	Total Comission
-																</button>
-															</th> 												
-															<th>													
-																<button class="table-sort" data-sort="sort-passenger">Status</button>
-															</th>															
-															<th>															
-																<button class="table-sort">Actions</button>															
-															</th>														
+															<th>ID</th>															
+															<th>Job Completion Date</th>															
+															<th>Job Details</th>															 
+															<th>Total Comission</th> 												
+															<th>Status</th>															
+															<th>Actions</th>														
 														</tr>													
 													</thead>
 													<tbody class="table-tbody">													
@@ -358,21 +348,21 @@ $brow = mysqli_fetch_array($bsql);
 															   $x++;														
 														?>
 														<tr>														
-															<td class="sort-id">															
+															<td>															
 																<?php echo $x; ?>															
 															</td>																								
-															<td class="sort-time">															
+															<td>															
 																<?php echo $irow['commission_date']; ?>															
 															</td>
-															<td class="sort-passenger">															
+															<td>															
 																Booking ID: <?php echo $irow['book_id']; ?> <br>
 																<?php echo $irow['pickup']; ?> - <?php echo $irow['destination']; ?>
 															</td>															
 															
-															<td class="sort-pickup">															
+															<td>															
 																<?php echo $irow['comission_amount']; ?>															
 															</td>
-															<td class="sort-pickup">
+															<td>
 																
 																<?php 											
 									
@@ -433,7 +423,78 @@ $brow = mysqli_fetch_array($bsql);
 										</div>																						
 									</div>																														
 								</div>
-							</div>                      									
+							</div> 
+							<script>	
+	$(document).ready(function() {
+    $('#bwallet').DataTable();
+});
+</script>
+						</div>
+						<div class="tab-pane" id="tabs-activity">						
+							
+							<div class="card-body">
+	<h2 class="mb-4">
+		Activity Logs
+	</h2>									
+	<div class="row mb-3">									
+		<div class="card">			            																			
+			<div class="card-body border-bottom py-3">			
+				<div id="table-adriver" class="table-responsive">				
+					<table class="table" id="blogs">																		
+						<thead>                            																
+							<tr>											
+								<th>ID</th>								
+								<th>Activity Type</th>								
+								<th>Details</th>								
+								<th>Time</th>					
+								                          																				
+							</tr>                       																		
+						</thead>						
+						<tbody class="table-tbody">						
+							<?php																		
+							$x = 0;							
+							$acsql = mysqli_query($connect, "SELECT activity_log.* FROM activity_log WHERE activity_log.user_type = 'client' AND activity_log.user_id = $c_id");							
+							while ($acrow = mysqli_fetch_array($acsql)):							
+							$x++;							
+							?>							
+							<tr>							
+								<td>								
+									<?php echo $x; ?>																					
+								</td>																	
+								<td>								
+									<?php echo $acrow['activity_type'];?>									
+								</td>								
+								<td>								
+									<?php echo $acrow['details'];?>
+								</td>								
+								<td>								
+									<?php echo $acrow['timestamp']; ?>									
+								</td>																								
+															
+							</tr>
+							<?php endwhile; ?>							
+							<?php if ($x === 0) : ?>							
+							<tr>                                   														
+								<td colspan="8">															
+									<p align="center">									
+										No Log Found!
+									</p>
+								</td>								
+							</tr>							
+							<?php endif; ?>							
+						</tbody>						
+					</table>					
+				</div>				
+			</div> 			
+		</div>		
+	</div>	
+</div>
+<script>	
+	$(document).ready(function() {
+    $('#blogs').DataTable();
+});
+</script>
+
 						</div>
 					</div>                 										
 				</div>             

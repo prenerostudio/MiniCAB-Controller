@@ -31,7 +31,7 @@ include('header.php');
 				</div>	
 				<div class="card-body border-bottom py-3">						
 					<div id="table-customer" class="table-responsive">
-						<table class="table table-responsive">
+						<table class="table table-responsive" id="table-user">
 							<thead>										
 								<tr>		
 									<th> ID </th>		
@@ -47,7 +47,7 @@ include('header.php');
 							<tbody class="table-tbody">							
 								<?php
 								$x=0;								
-								$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users, countries WHERE users.country_id = countries.country_id AND users.designation != 'Owner'");
+								$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users JOIN countries ON users.country_id = countries.country_id WHERE users.designation <> 'Owner'");
 								while($urow = mysqli_fetch_array($usql)){
 									$x++;
 								?>																
@@ -105,7 +105,13 @@ include('header.php');
 			</div>              					
 		</div>			
 	</div>
-</div>    
+</div> 
+
+<script>	
+	$(document).ready(function() {
+    $('#table-user').DataTable();
+});
+</script>
 
 <!-------------------------------
 ----------Add User-------------

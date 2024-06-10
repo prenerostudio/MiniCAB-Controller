@@ -24,7 +24,7 @@ include('header.php');
 				</div>            				
 				<div class="card-body border-bottom py-3">                				
 					<div id="table-adriver" class="table-responsive">                    					
-						<table class="table">                        						
+						<table class="table" id="railways">                        						
 							<thead>                            							
 								<tr>                                								
 									<th>									
@@ -87,7 +87,12 @@ include('header.php');
 					</div>           											
 				</div>       											
 			</div>   									
-		</div>		
+		</div>	
+		<script>
+	$(document).ready(function() {
+    $('#railways').DataTable();
+});
+		</script>
 		<div class="col-4">		
 			<div class="card">			
 				<div class="card-header">				

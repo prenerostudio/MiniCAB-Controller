@@ -23,11 +23,11 @@ include('header.php');
 			</div>            				
 			<div class="card-body">            					
 				<div id="table-default" class="table-responsive">            								
-					<table class="table table-responsive">                   																
+					<table class="table table-responsive" id="fares">                   																
 						<thead>                   																				
 							<tr align="center">
-								<th class="w-1">ID</th>											
-								<th class="w-1">Job</th>											
+								<th>ID</th>											
+								<th>Job</th>											
 								<th >Driver</th>
 								<th>Journey Fare</th>										
 								<th>Car Parking</th> 												
@@ -125,7 +125,12 @@ include('header.php');
 			</div>        	
 		</div>
 	</div>	
-</div>        
+</div> 
+<script>	
+	$(document).ready(function() {
+    $('#fares').DataTable();
+});
+</script>
 <?php	
 include('footer.php');	
 ?>

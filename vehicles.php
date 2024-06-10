@@ -24,54 +24,18 @@ include('header.php');
 				</div>                  								
 				<div class="card-body border-bottom py-3">									
 					<div id="table-booker" class="table-responsive">                  										
-						<table class="table">                    													
+						<table class="table" id="vehicles">                    													
 							<thead>                      															
 								<tr>																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>									
-									</th>
-									<th>										
-										<button class="table-sort">
-											Image
-										</button>									
-									</th>									
-									<th>										
-										<button class="table-sort" data-sort="sort-name">
-											Vehicle Name
-										</button>
-									</th>                       									
-									<th>									
-										<button class="table-sort" data-sort="sort-seat">
-											Seat
-										</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-air">
-											Air Bags
-										</button>
-									</th>                        									
-									<th>									
-										<button class="table-sort" data-sort="sort-chair">
-											Wheel Chair
-										</button>
-									</th>
-									<th>									
-										<button class="table-sort" data-sort="sort-baby">
-											Baby Sitter
-										</button>
-									</th>
-									<th>									
-										<button class="table-sort" data-sort="sort-price">
-											Price
-										</button>
-									</th>							
-									<th>									
-										<button class="table-sort">
-											Actions
-										</button>
-									</th>                      									
+									<th>ID</th>
+									<th>Image</th>									
+									<th>Vehicle Name</th>                       									
+									<th>Seat</th>                        									
+									<th>Air Bags</th>                        									
+									<th>Wheel Chair</th>
+									<th>Baby Sitter</th>
+									<th>Price</th>							
+									<th>Actions</th>                      									
 								</tr>                   								
 							</thead>							
 							<tbody class="table-tbody">							
@@ -82,10 +46,10 @@ include('header.php');
 									$x++;									
 								?>								
 								<tr>                        								
-									<td class="sort-id">
+									<td>
 										<?php echo $x; ?>
 									</td>
-									<td class="sort-date">									
+									<td>									
 										<?php																
 											if (!$vrow['v_img']) {
 										?>										
@@ -98,13 +62,13 @@ include('header.php');
 											}			
 										?>											
 									</td>                       										
-									<td class="sort-name">
+									<td>
 										<?php echo $vrow['v_name']; ?>
 									</td>                       										
-									<td class="sort-seat">
+									<td>
 										<?php echo $vrow['v_seat']; ?>
 									</td> 
-									<td class="sort-air">									
+									<td>									
 										<?php 
 											if ($vrow['v_airbags'] == 1) {
 										?>    
@@ -117,7 +81,7 @@ include('header.php');
 											}
 										?>									
 									</td>									
-									<td class="sort-chair">							
+									<td>							
 										<?php										
 											if ($vrow['v_wchair'] == 1) {
 										?>    
@@ -130,7 +94,7 @@ include('header.php');
 											}
 										?>										
 									</td>									
-									<td class="sort-baby">									
+									<td>									
 										<?php								
 											if ($vrow['v_babyseat'] == 1) {
 										?>    										
@@ -143,7 +107,7 @@ include('header.php');
 											}
 										?>										
 									</td>									
-									<td class="sort-price" style="font-size: 18px;">											
+									<td style="font-size: 18px;">											
 										£									
 										<?php echo $vrow['v_pricing']; ?>
 									</td>									
@@ -229,13 +193,10 @@ include('header.php');
 	</div>
 </div>        
 <script>
-	document.addEventListener("DOMContentLoaded", function() {    		
-		const list = new List('table-default', {      					
-			sortClass: 'table-sort',      							
-			listClass: 'table-tbody',      							
-			valueNames: [ 'sort-id', 'sort-name', 'sort-seat', 'sort-air',	'sort-chair', 'sort-baby', 'sort-price']		
-		}); 			
-	})		
+	$(document).ready(function() {
+    $('#vehicles').DataTable();
+});
+	
 	function validateForm() {        
         var vnameInput = document.getElementsByName("vname")[0].value;
         var seatsInput = document.getElementsByName("seats")[0].value;

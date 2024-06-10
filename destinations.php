@@ -24,29 +24,13 @@ include('header.php');
 				</div>				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-adriver" class="table-responsive">					
-						<table class="table">						
+						<table class="table" id="destinations">						
 							<thead>							
 								<tr>								
-									<th>									
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>										
-									</th>													
-									<th>														
-										<button class="table-sort" data-sort="sort-date">
-											Destination Name
-										</button>													
-									</th>													
-									<th>														
-										<button class="table-sort" data-sort="sort-time">
-											Address
-										</button>													
-									</th>			
-									<th>														
-										<button class="table-sort">
-											Actions
-										</button>			
-									</th>
+									<th>ID</th>													
+									<th>Destination Name</th>													
+									<th>Address</th>			
+									<th>Actions</th>
 								</tr>
 							</thead>							
 							<tbody class="table-tbody">							
@@ -57,13 +41,13 @@ include('header.php');
 								$x++;								
 								?>								
 								<tr>								
-									<td class="sort-id">									
+									<td>									
 										<?php echo $x; ?>										
 									</td>									
-									<td class="sort-date">									
+									<td>									
 										<?php echo $drow['des_name'];?>										
 									</td>									
-									<td class="sort-time">									
+									<td>									
 										<?php echo $drow['des_address'];?>										
 									</td>
 									<td>							
@@ -85,7 +69,13 @@ include('header.php');
 					</div>           											
 				</div>       											
 			</div>   									
-		</div>						
+		</div>	
+		
+		<script>
+	$(document).ready(function() {
+    $('#destinations').DataTable();
+});
+		</script>	
 		<div class="col-4">       		
 			<div class="card">            			
 				<div class="card-header">                				

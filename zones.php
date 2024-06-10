@@ -24,39 +24,15 @@ include('header.php');
 				</div>            								
 				<div class="card-body border-bottom py-3">                								
 					<div id="table-adriver" class="table-responsive">                    										
-						<table class="table">                        												
+						<table class="table" id="zones">                        												
 							<thead>                            														
 								<tr>	
-									<th>																		
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>										
-									</th>                                									
-									<th>									
-										<button class="table-sort">
-											Starting Point
-										</button>											
-									</th>                                																		
-									<th>																			
-										<button class="table-sort">
-											End Point
-										</button>													
-									</th>                                																					
-									<th>														
-										<button class="table-sort" data-sort="sort-distance">
-											Distance
-										</button>													
-									</th>     													
-									<th>													
-										<button class="table-sort" data-sort="sort-fare">
-											Fare (£)
-										</button>													
-									</th>       													
-									<th>													
-										<button class="table-sort">
-											Actions
-										</button>													
-									</th>                            												
+									<th>ID</th>                                									
+									<th>Starting Point</th>                                																		
+									<th>End Point</th>
+									<th>Distance</th>     													
+									<th>Fare (£)</th>       													
+									<th>Actions</th>                            												
 								</tr>
 							</thead>
 							<tbody class="table-tbody">
@@ -67,7 +43,7 @@ include('header.php');
 								$x++;                            														
 								?>								
 								<tr>                            															
-									<td class="sort-id">																	
+									<td>																	
 										<?php echo $x; ?>																	
 									</td>			
 									<td>									
@@ -76,10 +52,10 @@ include('header.php');
 									<td>																	
 										<?php echo $zrow['end_point'];?>
 									</td>
-									<td class="sort-distance">
+									<td>
 										<?php echo $zrow['distance']; ?> KM
 									</td>
-									<td class="sort-fare">																	
+									<td>																	
 										£ <?php echo $zrow['fare']; ?>
 									</td>                 
 									<td>																		
@@ -104,7 +80,12 @@ include('header.php');
 					</div>           											
 				</div>       											
 			</div>   									
-		</div>			
+		</div>
+			<script>
+	$(document).ready(function() {
+    $('#zones').DataTable();
+});
+		</script>
 		<div class="col-6">       				
 			<div class="card">            						
 				<div class="card-header">                								

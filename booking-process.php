@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');	
 
 function fetchVehiclePricingFromDatabase($vehicleId) {
 	global $connect;    	    
@@ -113,16 +114,22 @@ $sql = "INSERT INTO `bookings`(
 $result = mysqli_query($connect, $sql);       
 if ($result) {  
 	$book_id = mysqli_insert_id($connect);	
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,
+	$activity_type = 'New Booking';		
+	$user_type = 'user';        	
+	$details = "Controller Has added a new boooking " . $book_id . "')";
+			
+	$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
 											`details`
 											) VALUES (
-											'New Booking',
-											'Controller',
-											'Controller Has added a new boooking " . $book_id . "')";
-		
-	$r = mysqli_query($connect, $actsql);       
+											'$activity_type',
+											'$user_type',
+											'$myId',
+											'$details')";		
+				
+	$actr = mysqli_query($connect, $actsql);      
 	header('Location: all-bookings.php');    
 } else {		
 	header('Location: all-bookings.php');    

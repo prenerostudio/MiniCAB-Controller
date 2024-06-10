@@ -79,6 +79,12 @@ $drow = mysqli_fetch_array($dsql);
 							Bank Details
 							</a>                      
 						</li>
+						<li class="nav-item">
+							<a href="#tabs-activity" class="nav-link" data-bs-toggle="tab">							
+								<i class="ti ti-activity"></i>                          
+							Activity Logs
+							</a>                      
+						</li>
 					</ul>                  
 				</div>
 				<div class="card-body">                
@@ -214,6 +220,11 @@ $drow = mysqli_fetch_array($dsql);
 						<div class="tab-pane" id="tabs-bank">						
 							<?php							
 							include('driver-bank-section.php');							
+							?>						
+						</div>
+						<div class="tab-pane" id="tabs-activity">						
+							<?php							
+							include('driver-activity-logs.php');							
 							?>						
 						</div>
 					</div>

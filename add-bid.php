@@ -20,7 +20,7 @@ include('header.php');
 										<select class="form-select" name="book_id" required>	
 											<option value="" selected>Select Bookings</option>
 											<?php									
-											$bsql=mysqli_query($connect,"SELECT	bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings, clients, vehicles WHERE bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.bid_status = 0 AND bookings.booking_status = 'Pending'");
+											$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.bid_status = 0 AND bookings.booking_status = 'Pending'");
 											while($brow = mysqli_fetch_array($bsql)){
 											?>
 											<option value="<?php echo $brow['book_id'] ?>">
@@ -50,11 +50,7 @@ include('header.php');
 								</div>								
 							</div>
 						</div>
-						<div class="modal-footer">						
-							<a href="view-driver.php?d_id=''" class="btn btn-danger">
-								<i class="ti ti-circle-x"></i>				
-								Cancel
-							</a>
+						<div class="modal-footer">
 							<button type="submit" class="btn btn-success" data-bs-dismiss="modal">
 								<i class="ti ti-copy-plus"></i>						
 								Add Booking for Bid					

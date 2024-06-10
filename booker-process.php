@@ -1,5 +1,7 @@
 <?php
 require 'config.php';
+include('session.php');	
+
 
 function uploadImage() {
     $targetDir = "img/customers/";
@@ -63,18 +65,23 @@ if ($phone_count > 0) {
         $stmt->bind_param("ssssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $com_type, $percent, $fixed, $account_type);
     }
 
-    if ($stmt->execute()) {
-		$actsql = "INSERT INTO `activity_log` (
-												`activity_type`,
-												`user`, 
-												`details`
-												) VALUES (
-												'New Booker',
-												'$cname',
-												'New Booker Added by Controller')";		
-		
-			$actr = mysqli_query($connect, $actsql);		
-        
+    if ($stmt->execute()) {		
+		$activity_type = 'New Booker';			
+		$user_type = 'user';        		
+		$details = "New Booker " . $cname . "  Added by Controller.";			
+	
+		$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$myId',
+											'$details')";		
+				
+		$actr = mysqli_query($connect, $actsql);        
 		header('Location: bookers.php');         
     } else {
         header('Location: bookers.php'); 
