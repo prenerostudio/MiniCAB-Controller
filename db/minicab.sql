@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2024 at 02:23 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jun 10, 2024 at 10:37 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,7 +58,13 @@ INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user_type`,
 (00000015, 'Bid Amount Updated', '2024-06-08 11:10:29', 'driver', 00000000, 'Bid Amount 500 Updated against Bid # 1.'),
 (00000016, 'Bid Amount Updated', '2024-06-08 11:10:49', 'driver', 00000001, 'Bid Amount 500 Updated against Bid # 1.'),
 (00000017, 'Break Time Ends', '2024-06-08 11:18:10', 'driver', 00000001, 'Break Timme Ends and back to online'),
-(00000018, 'Account Logged In', '2024-06-08 11:43:23', 'driver', 00000001, 'You Have Logged in to your account.');
+(00000018, 'Account Logged In', '2024-06-08 11:43:23', 'driver', 00000001, 'You Have Logged in to your account.'),
+(00000019, 'Driver Inactive ', '2024-06-08 13:05:43', 'user', 00000000, 'Driver 00000008 Has Been made by Controller.'),
+(00000020, 'Driver Profile Deleted', '2024-06-09 14:40:12', 'user', 00000001, 'Driver Profile has been deleted.'),
+(00000021, 'Bid Accepted', '2024-06-10 06:52:06', 'user', 00000001, 'Bid From Driver Azib Ali Has Been Accepted by Controller.'),
+(00000022, 'Driver Inactive ', '2024-06-10 06:55:48', 'user', 00000000, 'Driver 00000001 Has Been made by Controller.'),
+(00000023, 'Activate Driver', '2024-06-10 06:55:58', 'user', 00000001, 'Driver ID: 00000001 Has Been Activated'),
+(00000024, 'New Airport Added', '2024-06-10 07:12:40', 'user', 00000001, 'New Airport test Has been Added by Controller.');
 
 -- --------------------------------------------------------
 
@@ -89,7 +95,8 @@ INSERT INTO `airports` (`ap_id`, `ap_name`, `ap_address`, `ap_city`, `ap_code`, 
 (00000007, 'Luton Airport', 'Airport Way, Luton LU2 9LY', 'United Kingdom', 'LTN', '2023-10-27 19:00:00'),
 (00000008, 'Southend Airport', 'Eastwoodbury Cres, Southend-on-Sea SS2 6YF', 'United Kingdom', 'SEN', '2023-10-27 19:00:00'),
 (00000009, 'London City Airport', 'Hartmann Rd, London E16 2PX', 'United Kingdom', 'LCY', '2023-10-27 19:00:00'),
-(00000010, 'Newcastle International Airport', 'Woolsington, Newcastle upon Tyne NE13 8BZ', 'United Kingdom', 'NCL', '2023-10-27 19:00:00');
+(00000010, 'Newcastle International Airport', 'Woolsington, Newcastle upon Tyne NE13 8BZ', 'United Kingdom', 'NCL', '2023-10-27 19:00:00'),
+(00000013, 'test', 'London Luton Airport (LTN), Airport Way, Luton, UK', '', '', '2024-06-10 07:12:40');
 
 -- --------------------------------------------------------
 
@@ -134,9 +141,9 @@ CREATE TABLE `bids` (
 --
 
 INSERT INTO `bids` (`bid_id`, `book_id`, `d_id`, `bid_amount`, `bidding_status`, `bid_date`) VALUES
-(00000000001, 00000000009, 00000000001, '500', 1, '0000-00-00 00:00:00'),
-(00000000002, 00000000001, 00000000001, '250', 0, '2024-05-22 09:34:52'),
-(00000000003, 00000000013, 00000000001, '55', 1, '2024-06-08 07:05:41'),
+(00000000001, 00000000009, 00000000001, '500', 0, '2024-06-10 06:48:43'),
+(00000000002, 00000000001, 00000000001, '250', 1, '2024-06-10 06:52:06'),
+(00000000003, 00000000013, 00000000001, '55', 0, '2024-06-10 06:51:43'),
 (00000000004, 00000000001, 00000000001, '12000', 0, '2024-06-08 10:42:39');
 
 -- --------------------------------------------------------
@@ -244,7 +251,7 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booker_commission`, `booking_status`, `bid_status`, `bid_time`, `bid_note`, `payment_type`, `customer_name`, `customer_email`, `customer_phone`, `book_add_date`) VALUES
-(00000001, 00000003, 00000002, 'Horley, Gatwick RH6 0NP', '', 'Longford TW6, UK', '', '', 0, '0000-00-00', '00:00:00', '', 00000005, '', '', '', '00:00:00', '', 0, 0, 0, 0, 0, 0, 0, 0, 'Cancelled', 1, '2024-05-05 06:17:42', '', '', '', '', '', '2024-02-25 07:33:18'),
+(00000001, 00000003, 00000002, 'Horley, Gatwick RH6 0NP', '', 'Longford TW6, UK', '', '', 0, '0000-00-00', '00:00:00', '', 00000005, '', '', '', '00:00:00', '', 0, 0, 0, 0, 0, 0, 0, 0, 'Cancelled', 0, '2024-05-05 06:17:42', '', '', '', '', '', '2024-02-25 07:33:18'),
 (00000002, 00000003, 00000002, 'Eastwoodbury Cres, Southend-on-Sea SS2 6YF', '', 'Woolsington, Newcastle upon Tyne NE13 8BZ', '', '', 4, '2024-02-21', '00:47:29', '', 00000002, '', '', '', '00:00:00', '', 0, 0, 0, 0, 0, 0, 0, 0, 'Booked', 1, '2024-05-05 08:17:55', 'Bid Open for Limited Time', '', '', '', '', '2024-02-21 00:47:56'),
 (00000003, 00000003, 00000002, 'Horley, Gatwick RH6 0NP', '', 'Manchester M90 1QX', '', '', 4, '2024-02-21', '08:26:08', '', 00000001, '', '', '', '00:00:00', '', 0, 367, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', '', '', '2024-02-21 08:26:26'),
 (00000004, 00000003, 00000002, 'Iqbal Cricket Stadium, New Civil Lines, Civil Lines, Faisalabad, Pakistan', '', 'Lahore, Pakistan', '', '', 4, '2024-02-21', '00:00:00', '', 00000001, '', '', '', '00:00:00', '', 920, 184, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', '', '', '2024-02-21 22:39:40'),
@@ -468,7 +475,7 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `status`, `company_name`, `commission_type`, `percentage`, `fixed`, `acount_status`, `account_type`, `reg_date`) VALUES
 (00000001, 'Azib Ali Butt', 'eurodatatech@gmail.com', '+447552834179', 'asdf1234', '', 'Male', 'English', '666406729b70e_1717831282.png', 'WJ123', '', '', 0, '', '', 0, 0, 1, 1, '2024-06-08 07:21:22'),
-(00000002, 'Atiq Ramzan', 'hello@prenero.com', '+923157524000', 'asdf1234', ',bj g vgvygc vycyc uxcxctrxd rdcxrx dddtrxtrxtxcxccxexetx', 'Male', 'Portuguese', '', '38000bj ', '', '', 0, '', '1', 50, 0, 1, 2, '2024-02-20 21:16:13'),
+(00000002, 'Atiq Ramzan', 'hello@prenero.com', '+923157524000', 'asdf1234', ',bj g vgvygc vycyc uxcxctrxd rdcxrx dddtrxtrxtxcxccxexetx', 'Male', 'Portuguese', '66669f1e770c6_mahmood.jpg', '38000bj ', '', '', 0, '', '1', 50, 0, 1, 2, '2024-06-10 06:37:18'),
 (00000003, 'Atiq Ramazan', 'Prenero@gmail.com', '+447500000000', 'asdf1234', '', '', '', '', '', '', '', 0, '', '2', 20, 50, 0, 2, '2024-02-26 08:10:18'),
 (00000004, 'Muhammad Atiq', 'sales@prenero.com', '+923346452312', 'asdf1234', 'Jail Road, Faisalabad.', 'Male', 'English', '', '38000', '', '33102-1457353-9', 0, '', '', 0, 0, 1, 1, '2024-05-10 03:01:58');
 
@@ -818,11 +825,10 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `pco_num`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
-(00000001, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'lahore', '', '664f2ae04248f_IMG-20240523-WA0016.jpg', 'Male', 'English', 'London', '', '51.8709183', '0.1963333', 'online', 1, '2024-06-08 11:18:10'),
-(00000008, 'Mahtab', 'mahtab@gmail.com', '+447500000001', 'asdf1234', '', '', '', '', '', 'North West', '', '', '', 'online', 1, '2024-06-07 18:40:19'),
+(00000001, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'lahore', '', '666455a6b5f1a_driver-app-icon.png', 'Male', 'English', 'London', '', '51.8709183', '0.1963333', 'online', 1, '2024-06-10 06:55:58'),
+(00000008, 'Mahtab', 'mahtab@gmail.com', '+447500000001', 'asdf1234', '', '', '', '', '', 'North West', '', '', '', 'online', 2, '2024-06-09 01:05:43'),
 (00000020, 'Atiq Ramzan', 'prenero123@gmail.com', '+9233465212345', '6266a', '', '', '', '', '', 'London', '', '', '', 'pob', 0, '2024-06-07 18:40:45'),
 (00000022, 'iuhihihuihuih', 'jkh64ihiuhih@gmail.com', 'iuhihihi9y84669yu89', '9u09u09yh89', '', '', '', '', '', 'iougiuguiguihuih', '', '', '', '', 0, '2024-05-13 00:43:13'),
-(00000023, 'iuhihihuihuih', 'jkh64iuhiuhih@gmail.com', 'iuhihiuhi9y84669yu89', '9u09u09yh89', '', '', '', '', '', 'iougiuguiguihuih', '', '', '', '', 0, '2024-05-13 00:45:04'),
 (00000025, 'Umar Atiq', 'sales@prenero.com', '+923346452312', '', '', '38000', '', '', '', '', '12345678', '', '', 'online', 0, '2024-06-07 18:40:24');
 
 -- --------------------------------------------------------
@@ -19388,13 +19394,13 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `airports`
 --
 ALTER TABLE `airports`
-  MODIFY `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `availability_times`
