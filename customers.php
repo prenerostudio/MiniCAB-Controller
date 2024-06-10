@@ -13,7 +13,7 @@ include('header.php');
 		</div>		
 		<div class="col-auto ms-auto d-print-none">            		
 			<div class="btn-list">                			
-				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-customer">  											
+				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-customer">
 					<i class="ti ti-user-plus"></i>                    					
 					Add New Customer                  					
 				</a>				              				
@@ -32,7 +32,7 @@ include('header.php');
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
 					<div id="table-customer" class="table-responsive">                  					
-						<table class="table" id="table-booking">                    						
+						<table class="table" id="customers">                    						
 							<thead>                      							
 								<tr>									
 									<th>ID</th>                        									
@@ -46,14 +46,12 @@ include('header.php');
 								</tr>                   								
 							</thead>                  							
 							<tbody class="table-tbody">												
-								<?php																		
-																							
-								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 ORDER BY clients.c_id DESC");								
-								while($crow = mysqli_fetch_array($csql)){									
-																	
+								<?php																							
+								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 ORDER BY clients.c_id DESC");
+								while($crow = mysqli_fetch_array($csql)){
 								?>								
 								<tr>                        								
-									<td class="sort-id">
+									<td>
 										<?php echo $crow['c_id']; ?>
 									</td>
 									<td>									
@@ -69,19 +67,19 @@ include('header.php');
 											}			
 										?>											
 									</td>                       										
-									<td class="sort-name">
+									<td>
 										<?php echo $crow['c_name']; ?>
 									</td>                       										
-									<td class="sort-email">
+									<td>
 										<?php echo $crow['c_email']; ?>
 									</td>  										
-									<td class="sort-phone">
+									<td>
 										<?php echo $crow['c_phone']; ?>
 									</td>                       										
-									<td class="sort-gender">
+									<td>
 										<?php echo $crow['c_gender']; ?>
 									</td>										
-									<td class="sort-status">											
+									<td>											
 										<?php 											
 											if($crow['acount_status']==0){
 										?>												
@@ -128,7 +126,7 @@ include('header.php');
 </div>        
 <script>	
 	$(document).ready(function() {
-    $('#table-booking').DataTable();
+    $('#customers').DataTable();
 });
 </script>
 

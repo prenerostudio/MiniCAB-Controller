@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 $fare_id = $_GET['id'];
-$fsql=mysqli_query($connect,"SELECT fares.*, drivers.*, jobs.job_id, jobs.book_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, bookings.book_id FROM fares, jobs, drivers, bookings WHERE fares.job_id = jobs.job_id AND fares.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND fares.fare_id ='$fare_id'");																
+$fsql=mysqli_query($connect,"SELECT fares.*, drivers.*, jobs.job_id, jobs.book_id, bookings.pickup, bookings.destination, bookings.pick_date, bookings.pick_time, bookings.book_id FROM fares JOIN jobs ON fares.job_id = jobs.job_id JOIN drivers ON fares.d_id = drivers.d_id JOIN bookings ON jobs.book_id = bookings.book_id WHERE fares.fare_id = '$fare_id'");																
 $frow = mysqli_fetch_array($fsql);		
 ?> 
 <div class="container-xl">           
