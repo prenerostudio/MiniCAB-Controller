@@ -2,7 +2,7 @@
 include('header.php');
 
 $book_id = $_GET['book_id'];
-$booksql=mysqli_query($connect,"SELECT bookings.*, clients.*, booking_type.*, vehicles.*  FROM bookings, booking_type, vehicles, clients  WHERE bookings.b_type_id = booking_type.b_type_id  AND bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.book_id ='$book_id'");
+$booksql=mysqli_query($connect,"SELECT bookings.*, clients.*, booking_type.*, vehicles.* FROM bookings INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.book_id = '$book_id'");
 $bookrow = mysqli_fetch_array($booksql);
 ?>  
 

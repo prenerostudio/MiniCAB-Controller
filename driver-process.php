@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 function uploadImage() {
     $targetDir = "img/drivers/";
@@ -54,12 +55,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         
-        if ($stmt->execute()) {       		        
-            // Log the activity
-            $actsql = "INSERT INTO `activity_log` (`activity_type`, `user`, `details`) VALUES ('New Driver Added', 'Controller', 'New Driver Added by Controller.')";        
-            $actr = mysqli_query($connect, $actsql);                
+        if ($stmt->execute()) {     
+			
+			$d_id = mysqli_insert_id($connect);   						
+			$dsql = "INSERT INTO `driver_documents`(`d_id`) VALUES ('$d_id')";            
+            $dr = mysqli_query($connect, $dsql);	
+			
+			$vsql = "INSERT INTO `vehicle_documents`(`d_id`) VALUES ('$d_id')";
+			$vr = mysqli_query($connect, $vsql);
+						
+            // Log the activity			
+			$activity_type = 'New Driver Added';        
+			$user_type = 'user';        
+			$details = "New Driver " . $dname . " Has been Added by Controller.";
 
-           
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";									
+			$actr = mysqli_query($connect, $actsql);			                         
             header('Location: new-drivers.php');        
             exit();            
         } else {           
@@ -71,6 +91,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo 'Form submission method not allowed.';
     exit;
 }
-
 $connect->close();
 ?>

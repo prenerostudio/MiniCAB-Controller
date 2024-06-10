@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 $at_date = $_POST['mdate'];
 $stime  = $_POST['stime'];
@@ -14,15 +15,21 @@ $sql = "INSERT INTO `availability_times`(
 										'$stime',
 										'$etime')";                
 $result = mysqli_query($connect, $sql);       
-if ($result) {  
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Time Slot Added ',											
-											'Controller',											
-											'New Time Slot Has Been Added by Controller.')";		
+if ($result) { 	
+	$activity_type = 'Time Slot Added';	
+	$user_type = 'user';	
+	$details = "New Time Slot Has Been Added by Controller.";
+	
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";
 	$actr = mysqli_query($connect, $actsql);
 	header('Location: time-slots.php');    
 	exit();    

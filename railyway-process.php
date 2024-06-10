@@ -1,5 +1,7 @@
 <?php
 require 'config.php';
+include('session.php');
+
 $r_name = $_POST['r_name'];
 $r_address = $_POST['r_address'];
 
@@ -11,15 +13,21 @@ $sql = "INSERT INTO `railway_stations`(
 									'$r_address')"; 
 
 $result = mysqli_query($connect, $sql);       
-if ($result) {  
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Railyway Station Added ',											
-											'Controller',											
-											'Railyway Station Has Been Added by Controller.')";		
+if ($result) { 	
+	$activity_type = 'Railyway Station Added';	
+	$user_type = 'user';	
+	$details = "Railyway Station Has Been Added by Controller.";
+	
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";	
 	$actr = mysqli_query($connect, $actsql);
 	header('Location: railway_stations.php');    
 	exit();    

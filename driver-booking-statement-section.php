@@ -6,17 +6,17 @@
 		<div class="card">																		
 			<div class="card-body border-bottom py-3">			
 				<div id="table-adriver" class="table-responsive">												
-					<table class="table" id="table-statement">                        														
+					<table class="table" id="table-statement">
 						<thead>                            																
-							<tr>                                																			
+							<tr>
 								<th>ID</th>								
 								<th>Job Completion Date</th>								
 								<th>Job Details</th>								
-								<th>Total Pay</th> 																					
+								<th>Total Pay</th>	
 								<th>Status</th>																				
-								<th>Actions</th>                            																				
+								<th>Actions</th>
 							</tr>                       																		
-						</thead>						
+						</thead>
 						<tbody class="table-tbody">						
 							<?php																		
 							$x = 0;							
@@ -43,11 +43,11 @@
 									<?php echo $irow['invoice_status']; ?>									
 								</td>								
 								<td>								
-									<a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">									
-										<button class="btn btn-info">										
-											<i class="ti ti-eye"></i>											
-											View Invoice											
-										</button>										
+									<a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
+										<button class="btn btn-info">
+											<i class="ti ti-eye"></i>
+											View Invoice
+										</button>
 									</a>									
 								</td>								
 							</tr>                          													
@@ -58,8 +58,8 @@
 									<p align="center">No Booking Found!</p>
 								</td>
 							</tr>																				
-							<?php endif; ?>																														
-						</tbody>																												
+							<?php endif; ?>								
+						</tbody>				
 					</table>
 				</div>
 			</div>

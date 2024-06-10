@@ -26,44 +26,16 @@ include('header.php');
 						<div class="card">
 							<div class="card-body border-bottom py-3">							
 								<div id="table-adriver" class="table-responsive">
-									<table class="table">									
+									<table class="table" id="table-payment">									
 										<thead>										
 											<tr>
-												<th>						
-													<button class="table-sort">
-														ID
-													</button>													
-												</th>												
-												<th>										
-													<button class="table-sort">
-														Driver Name
-													</button>													
-												</th>												
-												<th>												
-													<button class="table-sort">
-														Phone
-													</button>													
-												</th>												
-												<th>												
-													<button class="table-sort">
-														Total Jobs
-													</button>													
-												</th> 
-												<th>												
-													<button class="table-sort">
-														Total Payment Due
-													</button>													
-												</th>												
-												<th>												
-													<button class="table-sort">
-														Status
-													</button>													
-												</th>												
-												<th>											
-													<button class="table-sort">
-														Actions
-													</button>													
-												</th>												
+												<th>ID</th>												
+												<th>Driver Name</th>												
+												<th>Phone</th>												
+												<th>Total Jobs</th> 
+												<th>Total Payment Due</th>												
+												<th>Status</th>												
+												<th>Actions</th>												
 											</tr>											
 										</thead>																				
 										<tbody class="table-tbody">
@@ -74,16 +46,16 @@ include('header.php');
 											$x++;										
 											?>										
 											<tr>														
-												<td class="sort-id">															
+												<td>															
 													<?php echo $x; ?>
 												</td>															
-												<td class="sort-time">
+												<td>
 													<?php echo $irow['d_name']; ?>
 												</td>															
-												<td class="sort-passenger">
+												<td>
 													<?php echo $irow['d_phone']; ?> 
 												</td>															
-												<td class="sort-pickup">								
+												<td>								
 													<?php													
 													$dr_id= $irow['d_id'];
 													$drsql=mysqli_query($connect, "SELECT jobs.* FROM jobs WHERE jobs.d_id = '$dr_id' AND jobs.job_status = 'completed'");
@@ -91,7 +63,7 @@ include('header.php');
 													echo $rowcount;													
 													?>														
 												</td> 												
-												<td class="sort-pickup">	
+												<td>	
 													<?php 
 													$dr_id= $irow['d_id'];													
 													$ivsql=mysqli_query($connect, "SELECT invoice.total_pay FROM invoice WHERE invoice.d_id = '$dr_id' AND invoice.invoice_status = 'unpaid'");
@@ -101,7 +73,7 @@ include('header.php');
 													echo $total_payment;							
 													?>
 												</td>															
-												<td class="sort-pickup">
+												<td>
 													<?php echo $irow['invoice_status']; ?>
 												</td>															
 												<td>		
@@ -132,6 +104,11 @@ include('header.php');
 		</div>
 	</div>		
 </div>
+<script>	
+	$(document).ready(function() {
+    $('#table-payment').DataTable();
+});
+</script>
 <?php
 include('footer.php');
 ?>

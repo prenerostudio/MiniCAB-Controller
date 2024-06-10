@@ -33,7 +33,7 @@
 									<h2 class="h2 text-center mb-4">
 										Login to your Account
 									</h2>                  
-									<form action="functions.php" method="post" autocomplete="off" novalidate>                    
+									<form action="functions.php" method="post" autocomplete="off" novalidate>
 										<div class="mb-3">                      
 											<label class="form-label">Email address</label>                      
 											<input type="email" class="form-control" placeholder="your@email.com" name="email" autocomplete="off" required>                    

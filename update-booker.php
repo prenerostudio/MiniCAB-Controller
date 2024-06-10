@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 $c_id = $_POST['c_id'];
 $cname = $_POST['cname'];
@@ -27,15 +28,20 @@ $sql = "UPDATE `clients` SET
 							`percentage`='$percent',
 							`fixed`='$fixed' WHERE `c_id`='$c_id'";
 $result = mysqli_query($connect, $sql);
-if ($result) {
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Booker Profile Updated',											
-											'Controller',											
-											'Booker Profile " . $c_id . " Has Been Updated by Controller.')";		
+if ($result) {	
+	$activity_type = 'Booker Profile Updated';		
+	$user_type = 'user';		
+	$details = "Booker Profile " . $c_id . " Has Been Updated by Controller.";		
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";
 	$actr = mysqli_query($connect, $actsql);		
 	header('location: view-booker.php?c_id='.$c_id);    
 	exit();    

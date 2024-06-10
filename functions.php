@@ -18,7 +18,23 @@ if (isset($_POST['login_user'])) {
 		$_SESSION['user_pic'] = $crow['user_pic'];		
 		$_SESSION['designation'] = $crow['designation'];		
 		$_SESSION['success'] = "You are now logged in";						
-		$_SESSION['full_name']= $crow['first_name'] ." " .$crow['last_name'];								
+		$_SESSION['full_name']= $crow['first_name'] ." " .$crow['last_name'];
+				
+		$activity_type = 'Controller Logged-In';		
+		$user_type = 'user';		
+		$details = "Controller " . $_SESSION['first_name'] . " Logged in successfully.";
+		
+		$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$myId',
+											'$details')";		
+		$actr = mysqli_query($connect, $actsql);								
 		header('location: dashboard.php');					
 	}else {					
 		header('location: index.php');						

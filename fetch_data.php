@@ -8,31 +8,11 @@ if ($selectedInterval <= 0) {
     echo "<tr><td colspan='9'>Invalid time interval selected</td></tr>";
     exit;
 }
-
-// Prepare the SQL statement
-$query = "
-    SELECT 
-        bookings.book_id, bookings.pick_date, bookings.pick_time, bookings.passenger,
-        bookings.pickup, bookings.stops, bookings.destination, bookings.journey_fare,
-        vehicles.v_name, bookings.bid_status
-    FROM bookings
-    INNER JOIN clients ON bookings.c_id = clients.c_id
-    INNER JOIN vehicles ON bookings.v_id = vehicles.v_id
-    INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id
-    WHERE pick_date >= DATE_SUB(NOW(), INTERVAL ? HOUR) AND pick_date <= NOW()
-";
-
-// Initialize a prepared statement
+$query = "SELECT bookings.book_id, bookings.pick_date, bookings.pick_time, bookings.passenger, bookings.pickup, bookings.stops, bookings.destination, bookings.journey_fare, vehicles.v_name, bookings.bid_status FROM bookings INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE pick_date >= DATE_SUB(NOW(), INTERVAL ? HOUR) AND pick_date <= NOW()";
 if ($stmt = $connect->prepare($query)) {
-    // Bind the parameter
     $stmt->bind_param("i", $selectedInterval);
-
-    // Execute the statement
     $stmt->execute();
-
-    // Get the result
     $result = $stmt->get_result();
-
     if ($result->num_rows == 0) {
         echo "<tr><td colspan='9'>No bookings found for the selected interval</td></tr>";
     } else {
@@ -78,12 +58,9 @@ if ($stmt = $connect->prepare($query)) {
             echo "</tr>";
         }
     }
-    // Close the statement
     $stmt->close();
 } else {
     echo "<tr><td colspan='9'>Error preparing the statement: " . htmlspecialchars($connect->error) . "</td></tr>";
 }
-
-// Close the database connection
 $connect->close();
 ?>

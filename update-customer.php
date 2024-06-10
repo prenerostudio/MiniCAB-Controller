@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 $c_id = $_POST['c_id'];
 $cname = $_POST['cname'];
@@ -19,15 +20,20 @@ $sql = "UPDATE `clients` SET
 							`postal_code`='$pc',							
 							`c_ni`='$cni' WHERE `c_id`='$c_id'";        
         $result = mysqli_query($connect, $sql);       
-        if ($result) {
-			$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Customer Profile Updated',											
-											'Controller',											
-											'Customer " . $c_id . " Has Been Updated by Controller.')";
+        if ($result) {			
+			$activity_type = 'Customer Profile Updated';
+			$user_type = 'user';
+			$details = "Customer " . $c_id . " Has Been Updated by Controller.";
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";
 			$actr = mysqli_query($connect, $actsql);
             header('location: view-customer.php?c_id='.$c_id);
             exit();

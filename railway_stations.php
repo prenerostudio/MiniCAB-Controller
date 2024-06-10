@@ -27,26 +27,10 @@ include('header.php');
 						<table class="table" id="railways">                        						
 							<thead>                            							
 								<tr>                                								
-									<th>									
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>										
-									</th>                                													
-									<th>														
-										<button class="table-sort" data-sort="sort-name">
-											Station Name
-										</button>											
-									</th>                                													
-									<th>														
-										<button class="table-sort">
-											Address
-										</button>													
-									</th>
-									<th>														
-										<button class="table-sort">
-											Actions
-										</button>													
-									</th>                            									
+									<th>ID</th>
+									<th>Station Name</th>
+									<th>Address</th>
+									<th>Actions</th>
 								</tr>                       								
 							</thead>                       													
 							<tbody class="table-tbody">                        													
@@ -57,10 +41,10 @@ include('header.php');
 								$x++;                            														
 								?>								
 								<tr>                            															
-									<td class="sort-id">																	
+									<td>																	
 										<?php echo $x; ?>																	
 									</td>			
-									<td class="sort-name">									
+									<td>									
 										<?php echo $drow['rail_name']; ?>											
 									</td>                             									
 									<td>									
@@ -88,10 +72,11 @@ include('header.php');
 				</div>       											
 			</div>   									
 		</div>	
-		<script>
-	$(document).ready(function() {
-    $('#railways').DataTable();
-});
+		
+		<script>	
+			$(document).ready(function() {    
+				$('#railways').DataTable();
+			});		
 		</script>
 		<div class="col-4">		
 			<div class="card">			
@@ -111,8 +96,7 @@ include('header.php');
 								<div class="mb-3">								
 									<label class="form-label">Address</label>									
 									<input type="text" class="form-control" name="r_address" id="pickup" placeholder="Address" required>									
-								</div>														
-								           									
+								</div>
 							</div>          				          				
 						</div>				        			
 						<div class="modal-footer">					
@@ -134,14 +118,7 @@ include('header.php');
  
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
     async defer></script>
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    			
-		const list = new List('table-default', {      							
-			sortClass: 'table-sort',			
-			listClass: 'table-tbody',			
-			valueNames: [ 'sort-id', 'sort-name']					
-		}); 			
-	})		   		
+<script>	   		
 	function validateForm() {                								
 		var r_nameInput = document.getElementsByName("r_name")[0].value;        		
 		var r_addressInput = document.getElementsByName("r_address")[0].value;        				

@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {    
     if (
         isset($_POST['pickup'], $_POST['dropoff'], $_POST['1-4pass'], $_POST['1-4es'], $_POST['5-6pass'], 
@@ -19,14 +20,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO `price_postcode`(`pickup`, `dropoff`, `1_4p`, `1_4e`, `5_6p`, `7p`, `8p`, `9p`, `10_14p`, `15_16p`, `date_add_pp`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";            
             $stmt = $connect->prepare($sql);
             $stmt->execute([$pickup, $dropoff, $p1_4, $e1_4, $p5_6, $p7, $p8, $p9, $p10_14, $p15_16]);			
-			$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'PostCode Price Added',											
-											'Controller',											
-											'PostCode Price Has Been Added by Controller.')";			
+		
+			$activity_type = 'PostCode Price Added';
+			$user_type = 'user';
+			$details = "PostCode Price Has Been Added by Controller.";
+			
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";
 			$actr = mysqli_query($connect, $actsql);			
             echo "Data inserted successfully.";
             header("Location: pricing.php"); 
@@ -39,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: Insufficient data.";
     }
 } else {    
-    header("Location: pricing.php"); // Replace with the actual filename or URL of your form page
+    header("Location: pricing.php"); 
     exit();
 }
 ?>

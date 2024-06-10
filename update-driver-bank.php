@@ -1,5 +1,6 @@
 <?php
-require 'config.php';  
+require 'config.php'; 
+include('session.php');
 	
 $d_bank_id = $_POST['d_bank_id'];
 $d_id = $_POST['d_id'];
@@ -14,16 +15,22 @@ $sql = "UPDATE `driver_bank_details` SET
 									`sort_code`='$sort_code' WHERE `d_bank_id`='$d_bank_id'";
          
 $result = mysqli_query($connect, $sql);              
-if ($result) {     
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Driver Bank Details Updated',											
-											'Controller',											
-											'Driver  " . $d_name . " Bank Details Has Been Updated by Controller.')";		
-	$actr = mysqli_query($connect, $actsql);		
+if ($result) { 	
+	$activity_type = 'Driver Bank Details Updated';	
+	$user_type = 'user';	
+	$details = "Driver  " . $d_name . " Bank Details Has Been Updated by Controller.";
+	
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";
+	$actr = mysqli_query($connect, $actsql);	
 	header('Location: view-driver.php?d_id='.$d_id.'#tabs-bank');          
 	exit();       
 } else {           			

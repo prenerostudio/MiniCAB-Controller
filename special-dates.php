@@ -2,25 +2,25 @@
 include('header.php');	
 ?>
 <div class="page-header d-print-none page_padding">		   		
-	<div class="row g-2 align-items-center">        			
-		<div class="col">            												
-			<div class="page-pretitle">                									
-				Overview                							
-			</div>                												
-			<h2 class="page-title">                									
-				Special Date / Holidays             										
-			</h2>              							
+	<div class="row g-2 align-items-center">        				
+		<div class="col">            														
+			<div class="page-pretitle">                												
+				Overview                										
+			</div>                															
+			<h2 class="page-title">                												
+				Special Date / Holidays             													
+			</h2>              									
+		</div>			
+		<div class="col-auto ms-auto d-print-none">            		
+			<div class="btn-list">                					    			
+				<span class="d-none d-sm-inline">				
+					<a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#modal-date">						
+						<i class="ti ti-clock-plus"></i>                     						
+						Add Date                 						
+					</a>                  					
+				</span>				
+			</div>              			
 		</div>	
-		<div class="col-auto ms-auto d-print-none">            
-				<div class="btn-list">                					    
-					<span class="d-none d-sm-inline">
-						<a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#modal-date">	
-							<i class="ti ti-clock-plus"></i>                     
-							Add Date                 
-						</a>                  
-					</span>
-				</div>              
-			</div>
 	</div>	
 </div>
 <div class="page-body page_padding">          			
@@ -36,21 +36,11 @@ include('header.php');
 									<table class="table">
 										<thead>                            						
 											<tr>											
-												<th>												
-													<button class="table-sort" data-sort="sort-id">ID</button>
-												</th>												
-												<th>												
-													<button class="table-sort" data-sort="sort-date">Date</button>
-												</th>												
-												<th>												
-													<button class="table-sort" data-sort="sort-time">Event / Holiday</button>
-												</th>												
-												<th>												
-													<button class="table-sort" data-sort="sort-passenger">Price Increment %</button>													
-												</th>
-												<th>												
-													<button class="table-sort">Actions</button>
-												</th>													
+												<th>ID</th>												
+												<th>Date</th>												
+												<th>Event / Holiday</th>												
+												<th>Price Increment %</th>
+												<th>Actions</th>													
 											</tr>
 										</thead>										
 										<tbody class="table-tbody">										
@@ -61,16 +51,16 @@ include('header.php');
 											$x++;														
 											?>														
 											<tr>														
-												<td class="sort-id">	
+												<td>	
 													<?php echo $x; ?>
 												</td>															
-												<td class="sort-time">
+												<td>
 													<?php echo $drow['special_date']; ?>
 												</td>															
-												<td class="sort-passenger">
+												<td>
 													<?php echo $drow['event_name']; ?> 
 												</td>															
-												<td class="sort-pickup">								
+												<td>								
 													<?php echo $drow['percent_increment']; ?>					
 												</td> 												
 												<td>															

@@ -11,9 +11,11 @@ include("../../config.php");
 $bt_id = $_POST['bt_id'];
 $d_id = $_POST['d_id'];
 $date = date("Y-m-d h:i:s");
+$total_time = $_POST['total_time'];
+$status = 1;
 
 if(isset($_POST['bt_id'])){ 	
-	$sql="UPDATE `break_time` SET  `end_time`='$date' WHERE `bt_id`='$bt_id'";	
+	$sql="UPDATE `break_time` SET `end_time`='$date',`total_time`='$total_time',`break_status`='$status' WHERE `bt_id`='$bt_id'";	
 	$r=mysqli_query($connect,$sql);
 	
 	if($r){   	
@@ -22,7 +24,7 @@ if(isset($_POST['bt_id'])){
 				
 		$activity_type = 'Break Time Ends';        			
 		$user_type = 'driver';
-		$details = "Break Timme Ends and back to online";
+		$details = "Break Time Ends and back to online";
 		
 		$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 

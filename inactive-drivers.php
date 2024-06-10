@@ -33,8 +33,8 @@ include('header.php');
 									<th>Email</th>																		
 									<th>Phone</th>																		
 									<th>Gender</th>																		
-									<th>Licence Authority</th>																		
-									<th>Actions</th>																	
+									<th>Licence Authority</th>
+									<th>Actions</th>
 								</tr>															
 							</thead>													
 							<tbody class="table-tbody">                            

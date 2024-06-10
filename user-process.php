@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 function uploadImage() {
     $targetDir = "img/users/";
@@ -32,55 +33,105 @@ $ucity = $_POST['ucity'];
 $ustate = $_POST['ustate'];
 $country_id = $_POST['country_id'];
 $pc = $_POST['pc'];
-  
-$sql = "INSERT INTO `users`(
-							`first_name`, 
-							`last_name`, 
-							`user_email`, 
-							`user_password`, 
-							`user_phone`, 
-							`user_gender`, 
-							`designation`, 
-							`address`, 
-							`city`, 
-							`state`, 
-							`country_id`, 
-							`pc`, 
-							`nid`, 
-							`user_pic`, 
-							`reg_date`
-							) VALUES (
-							'$fname',
-							'$lname',
-							'$uemail',
-							'$upass',
-							'$uphone',
-							'$ugender',
-							'$udesig',
-							'$uaddress',
-							'$ucity',
-							'$ustate',
-							'$country_id',
-							'$pc',
-							'$uni',
-							'$upic',
-							'$date')";
-        
+
+// Check if email already exists
+$emailCheckSql = "SELECT * FROM `users` WHERE `user_email` = '$uemail'";
+$emailCheckResult = mysqli_query($connect, $emailCheckSql);
+
+if (mysqli_num_rows($emailCheckResult) > 0) {
+    // Email already exists
+    header('location: all-users.php?error=EmailAlreadyExists');
+    exit();
+}
+
+// If email doesn't exist, proceed with insertion
+if ($upic) {
+    $sql = "INSERT INTO `users`(
+                                `first_name`, 
+                                `last_name`, 
+                                `user_email`, 
+                                `user_password`, 
+                                `user_phone`, 
+                                `user_gender`, 
+                                `designation`, 
+                                `address`, 
+                                `city`, 
+                                `state`, 
+                                `country_id`, 
+                                `pc`, 
+                                `nid`, 
+                                `user_pic`, 
+                                `reg_date`
+                                ) VALUES (
+                                '$fname',
+                                '$lname',
+                                '$uemail',
+                                '$upass',
+                                '$uphone',
+                                '$ugender',
+                                '$udesig',
+                                '$uaddress',
+                                '$ucity',
+                                '$ustate',
+                                '$country_id',
+                                '$pc',
+                                '$uni',
+                                '$upic',
+                                NOW())";
+} else {
+    $sql = "INSERT INTO `users`(
+                                `first_name`, 
+                                `last_name`, 
+                                `user_email`, 
+                                `user_password`, 
+                                `user_phone`, 
+                                `user_gender`, 
+                                `designation`, 
+                                `address`, 
+                                `city`, 
+                                `state`, 
+                                `country_id`, 
+                                `pc`, 
+                                `nid`, 
+                                `reg_date`
+                                ) VALUES (
+                                '$fname',
+                                '$lname',
+                                '$uemail',
+                                '$upass',
+                                '$uphone',
+                                '$ugender',
+                                '$udesig',
+                                '$uaddress',
+                                '$ucity',
+                                '$ustate',
+                                '$country_id',
+                                '$pc',
+                                '$uni',
+                                NOW())";
+}
+
 $result = mysqli_query($connect, $sql);       
-if ($result) {	
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'New Admin Added',											
-											'Controller',											
-											'New Admin " . $fname . " Has Been Added by Controller.')";		
-	$actr = mysqli_query($connect, $actsql);				
-	header('location: all-users.php');    
-	exit();    
+if ($result) {        
+    $activity_type = 'New Admin Added';    
+    $user_type = 'user';    
+    $details = "New Admin " . $fname . " Has Been Added by Controller.";
+    
+    $actsql = "INSERT INTO `activity_log`(
+                                        `activity_type`, 
+                                        `user_type`, 
+                                        `user_id`, 
+                                        `details`
+                                        ) VALUES (
+                                        '$activity_type',
+                                        '$user_type',
+                                        '$myId',
+                                        '$details')";    
+    $actr = mysqli_query($connect, $actsql);                            
+    header('location: all-users.php');    
+    exit();    
 } else {           
-	header('location: all-users.php');    
+    header('location: all-users.php');    
 }
 $connect->close();
 ?>

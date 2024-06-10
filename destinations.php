@@ -71,10 +71,11 @@ include('header.php');
 			</div>   									
 		</div>	
 		
-		<script>
-	$(document).ready(function() {
-    $('#destinations').DataTable();
-});
+		
+		<script>	
+			$(document).ready(function() {    
+				$('#destinations').DataTable();
+			});		
 		</script>	
 		<div class="col-4">       		
 			<div class="card">            			
@@ -116,29 +117,17 @@ include('header.php');
             
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
     async defer></script>
-<script>	
-	document.addEventListener("DOMContentLoaded", function() {    			
-		const list = new List('table-default', {      							
-			sortClass: 'table-sort',			
-			listClass: 'table-tbody',			
-			valueNames: [ 'sort-id', 'sort-date', 'sort-time', 'sort-fare',	'sort-driver']					
-		}); 			
-	})	
-	   
-		function validateForm() {                							
-		var ap_nameInput = document.getElementsByName("ap_name")[0].value;        		
-		var ap_addressInput = document.getElementsByName("ap_address")[0].value;        		
-		
-		if (ap_nameInput === "" || ap_addressInput === "") {		
+<script>		   	
+	function validateForm() { 
+		var ap_nameInput = document.getElementsByName("ap_name")[0].value;        				
+		var ap_addressInput = document.getElementsByName("ap_address")[0].value;        						
+		if (ap_nameInput === "" || ap_addressInput === "") {				
 			alert("Please fill in all required fields.");			
 			return false;			
 		}		
 		return true;    		
-	}
-	 
-	var autocompletePickup;
-
-   
+	}	 
+	var autocompletePickup;   
 	function initAutocomplete() {
         var pickupInput = document.getElementById('pickup');
         var autocompleteOptions = {

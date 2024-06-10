@@ -1,4 +1,4 @@
-<?php
+ <?php
 include('header.php');
 ?>     
 <div class="page-header d-print-none page_padding">		   
@@ -110,18 +110,18 @@ include('header.php');
 					<div class="table-responsive">                   															
 						<div id="driverListPOB">    
 							<table class="table table-responsive" id="table-pob">		        
-								<thead>                   														            
+								<thead>         
 									<tr>                  
-										<th class="w-1">ID</th>										                
+										<th>ID</th>
 										<th>Driver</th>										                
-										<th>Status</th>	                     										            
+										<th>Status</th>	            
 									</tr>                     									        
 								</thead>                    								        
 								<tbody> 								            
-									<?php																		            
+									<?php
 									$n=0;            
-									$drsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='pob'");            
-									while($drrow = mysqli_fetch_array($drsql)){													
+									$drsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='pob'");
+									while($drrow = mysqli_fetch_array($drsql)){
 										$n++;										            
 									?>            
 									<tr>                
@@ -158,7 +158,7 @@ include('header.php');
 								xhttp.send();    
 							}							    							    
 							loadDriverListPOB();    
-							setInterval(loadDriverListPOB, 10000); 						
+							setInterval(loadDriverListPOB, 5000); 						
 						</script>         																
 					</div>                  					
 				</div>				
@@ -174,7 +174,7 @@ include('header.php');
 						<table class="table" id="table-active">        
 							<thead>            
 								<tr>                
-									<th class="w-1">ID</th>                
+									<th>ID</th>                
 									<th>Driver</th>                
 									<th>Status</th>            
 								</tr>        
@@ -182,7 +182,7 @@ include('header.php');
 							<tbody>            
 								<?php            
 								$x=0;            
-								$drvsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");            
+								$drvsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");
 								while($drvrow = mysqli_fetch_array($drvsql)){                
 									$x++;            
 								?>            
@@ -190,7 +190,7 @@ include('header.php');
 									<td>                    
 										<?php echo $x ?>                
 									</td>                
-									<td>																	                    
+									<td>        
 										<span class="text-secondary">                        
 											<?php echo $drvrow['d_name']; ?>                    
 										</span>                
@@ -210,7 +210,7 @@ include('header.php');
 						$(document).ready(function() {    
 							$('#table-active').DataTable();
 						});  
-						function loadDriverList() {        							        						
+						function loadDriverList() {
 							var xhttp = new XMLHttpRequest();       
 							xhttp.onreadystatechange = function() {            
 								if (this.readyState == 4 && this.status == 200) {               
@@ -221,7 +221,7 @@ include('header.php');
 							xhttp.send();   
 						}    						    
 						loadDriverList();    
-						setInterval(loadDriverList, 10000); 					
+						setInterval(loadDriverList, 5000); 					
 					</script>              					
 				</div>					                								
 			</div>              						
@@ -288,7 +288,7 @@ include('header.php');
 							xhttp.send();   
 						}   						   
 						loadJobList();   
-						setInterval(loadJobList, 10000); 
+						setInterval(loadJobList, 5000); 
 					</script>                  					
 				</div>                                                    				
 			</div>              			

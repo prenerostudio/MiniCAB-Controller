@@ -1,5 +1,7 @@
 <?php
 require 'config.php';
+include('session.php');
+
 
 $fare_id = $_POST['fare_id'];
 $cpc = $_POST['cpc'];
@@ -13,16 +15,21 @@ $sql = "UPDATE `fares` SET
 							`tolls`='$tolls',
 							`extras`='$exc' WHERE `fare_id`='$fare_id'";                
 $result = mysqli_query($connect, $sql);       
-if ($result) {         
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Booking Fares Updated',											
-											'Controller',											
-											'Booking Fare Has Been updated by Controller.')";		
-	$actr = mysqli_query($connect, $actsql);
+if ($result) { 	
+	$activity_type = 'Booking Fares Updated';	
+	$user_type = 'user';	
+	$details = "Booking Fare Has Been updated by Controller.";	
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);	
 	header('Location: fare-corrections.php');    
 	exit();    
 } else {		

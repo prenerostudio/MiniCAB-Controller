@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 session_start();
 
 $book_id = $_POST['book_id'];
@@ -25,7 +26,7 @@ if ($checkr && $checkr->num_rows > 0) {
     $_SESSION['success_msg'] = "This Booking cannot be assigned to this driver because it is already withdrawn from this driver.";
     header('Location: dispatch-booking.php?book_id=' . $book_id);
 } else {
-    // Insert the job into the jobs table
+    
     $sql = "INSERT INTO `jobs`(
                 `book_id`, 
                 `c_id`, 
@@ -57,16 +58,24 @@ if ($checkr && $checkr->num_rows > 0) {
         $historystmt = $connect->prepare($historysql);
         $historystmt->bind_param("ii", $d_id, $book_id);
         $historystmt->execute();
+		
+		
 
-        // Insert into the activity log
-        $actsql = "INSERT INTO `activity_log` (`activity_type`, `user`, `details`) VALUES (?, ?, ?)";
-        $activity_type = 'Job Dispatched';
-        $user = 'Controller';
-        $details = 'Job has been dispatched to driver by Controller.';
-        $actstmt = $connect->prepare($actsql);
-        $actstmt->bind_param("sss", $activity_type, $user, $details);
-        $actstmt->execute();
-
+		$activity_type = 'Job Dispatched';		
+		$user_type = 'user';		
+		$details = "Job has been dispatched to driver by Controller.";
+		
+		$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$myId',
+											'$details')";		
+		$actr = mysqli_query($connect, $actsql);        
         header('Location: upcoming-bookings.php');
         exit();
     } else {

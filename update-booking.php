@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 $book_id = $_POST['book_id'];
 $b_type_id = $_POST['b_type_id'];
@@ -53,17 +54,21 @@ $sql = "UPDATE `bookings` SET
 							`extra`='$extra' WHERE `book_id`='$book_id'";                
 
 $result = mysqli_query($connect, $sql);       
-if ($result) {
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Booking Updated',											
-											'Controller',											
-											'Booking " . $book_id . " Has Been Updated by Controller.')";		
-	
-	$actr = mysqli_query($connect, $actsql);					
+if ($result) {	
+	$activity_type = 'Booking Updated';	
+	$user_type = 'user';	
+	$details = "Booking " . $book_id . " Has Been Updated by Controller.";	
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";
+	$actr = mysqli_query($connect, $actsql);	
 	header('Location: view-booking.php?book_id='.$book_id);    
 	exit();    
 } else {		

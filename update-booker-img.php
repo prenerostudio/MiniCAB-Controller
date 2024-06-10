@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $c_id = $_POST['c_id'];
@@ -36,15 +37,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Sorry, there was an error uploading your file.";
         }
     }
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Booker Profile Image Updated',											
-											'Controller',											
-											'Booker Profile Image Has Been Updated by Controller.')";		
-	$actr = mysqli_query($connect, $actsql);		
+	
+	$activity_type = 'Booker Profile Image Updated';			
+	$user_type = 'user';			
+	$details = "Booker Profile Image Has Been Updated by Controller.";			
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);			
     header('location: view-booker.php?c_id=' . $c_id);
 }
 ?>

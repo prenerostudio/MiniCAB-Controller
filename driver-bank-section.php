@@ -13,19 +13,19 @@
 								<th>Bank Name</th>								
 								<th>Account Number</th>								
 								<th>Sort Code</th>					
-								<th>Actions</th>                            																				
+								<th>Actions</th>
 							</tr>                       																		
 						</thead>						
 						<tbody class="table-tbody">						
 							<?php																		
 							$x = 0;							
-							$bsql = mysqli_query($connect, "SELECT drivers.*, driver_bank_details.* FROM drivers JOIN driver_bank_details ON drivers.d_id = driver_bank_details.d_id WHERE drivers.d_id = $d_id");							
+							$bsql = mysqli_query($connect, "SELECT drivers.*, driver_bank_details.* FROM drivers JOIN driver_bank_details ON drivers.d_id = driver_bank_details.d_id WHERE drivers.d_id = $d_id");
 							while ($brow = mysqli_fetch_array($bsql)):							
 							$x++;							
 							?>							
 							<tr>							
 								<td>								
-									<?php echo $x; ?>																					
+									<?php echo $x;?>
 								</td>																	
 								<td>								
 									<?php echo $brow['bank_name'];?>									
@@ -35,14 +35,14 @@
 								</td>								
 								<td>								
 									<?php echo $brow['sort_code']; ?>									
-								</td>																								
+								</td>	
 								<td>								
-									<a href="edit-driver-bank.php?d_bank_id=<?php echo $brow['d_bank_id']; ?>">									
-										<button class="btn btn-info">										
-											<i class="ti ti-eye"></i>											
-											Edit											
-										</button>										
-									</a>									
+									<a href="edit-driver-bank.php?d_bank_id=<?php echo $brow['d_bank_id']; ?>">
+										<button class="btn btn-info">
+											<i class="ti ti-eye"></i>
+											Edit
+										</button>
+									</a>
 									<a href="del-driver-bank.php?d_bank_id=<?php echo $brow['d_bank_id'];?>& d_id=<?php echo $brow['d_id'];?>">
 										<button class="btn btn-danger">										
 											<i class="ti ti-basket"></i>											

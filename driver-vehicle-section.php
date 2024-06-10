@@ -9,18 +9,18 @@
 					<table class="table" id="table-vehicle">							
 						<thead>									
 							<tr>											
-								<th>ID</th>												
-								<th>Vehicle Type</th>												
-								<th>Make & Model, Color</th>												
-								<th>Registration #</th>																								
-								<th>Actions</th>	
+								<th>ID</th>	
+								<th>Vehicle Type</th>
+								<th>Make & Model, Color</th>
+								<th>Registration #</th>
+								<th>Actions</th>
 							</tr>									
 						</thead>								
 						<tbody class="table-tbody">									
 							<?php										
 							$x = 0;										
-							$vhsql = mysqli_query($connect, "SELECT driver_vehicle.*, vehicles.* FROM driver_vehicle, vehicles WHERE driver_vehicle.v_id = vehicles.v_id AND driver_vehicle.d_id = $d_id");					
-							while ($vhrow = mysqli_fetch_array($vhsql)):					
+							$vhsql = mysqli_query($connect, "SELECT driver_vehicle.*, vehicles.* FROM driver_vehicle INNER JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE driver_vehicle.d_id = $d_id");
+							while ($vhrow = mysqli_fetch_array($vhsql)):
 							$x++;										
 							?>										
 							<tr>											
@@ -37,26 +37,26 @@
 								</td>												
 								<td>													
 									<?php echo $vhrow['v_reg_num']; ?>													
-								</td>																								
-								<td>													
-									<a href="vehicle-details.php?dv_id=<?php echo $vhrow['dv_id']; ?>">															
-										<button class="btn btn-info">																	
-											<i class="ti ti-eye"></i>																		
-											View																	
-										</button>															
-									</a>													
-								</td>											
+								</td>	
+								<td>
+									<a href="vehicle-details.php?dv_id=<?php echo $vhrow['dv_id']; ?>">
+										<button class="btn btn-info">
+											<i class="ti ti-eye"></i>
+											View
+										</button>
+									</a>
+								</td>
 							</tr>										
 							<?php endwhile; ?>										
 							<?php if ($x === 0) : ?>										
-							<tr>                                   																		
-								<td colspan="8">																				
-									<p align="center">								
+							<tr>
+								<td colspan="8">
+									<p align="center">
 										<a href="add-vehicle.php?d_id=<?php echo $d_id; ?>" class="btn btn-primary d-none d-sm-inline-block">
-											<i class="ti ti-car"></i>									
-											Add Vehicle								
-										</a> 								
-									</p>						
+											<i class="ti ti-car"></i>
+											Add Vehicle
+										</a>
+									</p>
 								</td>																					
 							</tr>																						
 							<?php endif; ?>       													

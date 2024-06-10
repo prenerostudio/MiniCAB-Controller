@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 $dv_id = $_POST['dv_id'];
 $d_id = $_POST['d_id'];
@@ -30,15 +31,20 @@ $sql = "UPDATE `driver_vehicle` SET
          
 $result = mysqli_query($connect, $sql);              
 if ($result) { 	
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Driver Vehicle Details Update',											
-											'Controller',											
-											'Driver Vehicle Details Has Been updated by Controller.')";		
-	$actr = mysqli_query($connect, $actsql);		
+	$activity_type = 'Driver Vehicle Details Update';	
+	$user_type = 'user';	
+	$details = "Driver Vehicle Details Has Been updated by Controller.";	
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);			
 	header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
 	exit();       
 } else {           			

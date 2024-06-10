@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {    
     if (isset($_POST['from'], $_POST['to'], $_POST['1-4p'], $_POST['1-4e'], $_POST['5-6p'], $_POST['7p'], $_POST['8p'], $_POST['9p'], $_POST['10_14p'], $_POST['15_16p'])) {    
@@ -19,17 +20,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $connect->prepare($sql);
             $stmt->execute([$from, $to, $p1_4, $e1_4, $p5_6, $p7, $p8, $p9, $p10_14, $p15_16]);           			
             echo "Data inserted successfully.";
+										
+			$activity_type = 'Price Per Mile Added';			
+			$user_type = 'user';			
+			$details = "New Price Per Mile Has Been Added by Controller.";
 			
-			$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Price Per Mile Added ',											
-											'Controller',											
-											'New Price Per Mile Has Been Added by Controller.')";		
-	
-			$actr = mysqli_query($connect, $actsql);
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";			
+			$actr = mysqli_query($connect, $actsql);												
             header("Location: pricing.php");
         } catch (PDOException $e) {           			
             echo "Error: " . $e->getMessage();

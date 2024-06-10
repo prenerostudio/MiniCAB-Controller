@@ -4,8 +4,7 @@ include('config.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['pickup'], $_POST['price'])) {
         $pickup = $_POST['pickup'];
-        $price = $_POST['price'];
-        
+        $price = $_POST['price'];        
         try {
             $sql = "INSERT INTO `mg_charges`(`pickup_location`, `pickup_charges`, `date_add_mg`) VALUES(?, ?, NOW())";
             $stmt = $connect->prepare($sql);

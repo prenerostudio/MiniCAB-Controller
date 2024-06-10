@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $c_id = $_POST['c_id'];
@@ -21,14 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$sql = "UPDATE `clients` SET `c_pic`='$logoName' WHERE `c_id`='$c_id'";            
 			$result = mysqli_query($connect, $sql);            
 			if ($result) { 
-				$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Customer Profile Image Update',											
-											'Controller',											
-											'Customer Profile Image " . $c_id . " Has Been Updated by Controller.')";	
+				$activity_type = 'Customer Profile Image Update';
+				$user_type = 'user';
+				$details = "Customer Profile Image " . $c_id . " Has Been Updated by Controller.";
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";
 				$actr = mysqli_query($connect, $actsql);										
 				echo "The file " . htmlspecialchars($logoName) . " has been uploaded.";                
 				header('location: view-customer.php?c_id='.$c_id);

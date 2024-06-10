@@ -1,5 +1,4 @@
 <?php
-
 include('config.php');
 include('session.php');
 ?>
@@ -30,13 +29,9 @@ include('session.php');
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<link href="vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 
-
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />				
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />		
-	
-												
-		
-		
+																	
 		<script>			
 			document.addEventListener("DOMContentLoaded", function() {    			
 				const addStopButton = document.getElementById('add-stop-btn');        
@@ -117,8 +112,6 @@ include('session.php');
 								</a>             								
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 									<a href="all-users.php" class="dropdown-item">All Users</a>
-									<a href="#" class="dropdown-item">Add New User</a>
-									<div class="dropdown-divider"></div>                									
 									<a href="profile-setting.php" class="dropdown-item">Settings</a>
 									<a href="logout.php" class="dropdown-item">Logout</a>
 								</div>            							

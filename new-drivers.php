@@ -35,46 +35,14 @@ include('header.php');
 						<table class="table" id="table-new">
 							<thead>																			
 								<tr>																						
-									<th>	
-										<button class="table-sort" data-sort="sort-id">
-											ID
-										</button>
-									</th>
-									<th>																			
-										<button class="table-sort">
-											Image
-										</button>																			
-									</th>																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-name">
-											Name
-										</button>									
-									</th>																		
-									<th>									
-										<button class="table-sort" data-sort="sort-email">
-											Email
-										</button>																			
-									</th>																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-phone">
-											Phone
-										</button>																			
-									</th>																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-gender">
-											Gender
-										</button>																			
-									</th>																		
-									<th>																			
-										<button class="table-sort" data-sort="sort-license">
-											Licence Authority
-										</button>																			
-									</th>																		
-									<th>																			
-										<button class="table-sort">
-											Actions
-										</button>																			
-									</th>																	
+									<th>ID</th>
+									<th>Image</th>																		
+									<th>Name</th>																		
+									<th>Email</th>																		
+									<th>Phone</th>																		
+									<th>Gender</th>																		
+									<th>Licence Authority</th>											
+									<th>Actions</th>																	
 								</tr>															
 							</thead>														
 							<tbody class="table-tbody">                            
@@ -85,7 +53,7 @@ include('header.php');
 								$y++;                            
 								?>                                
 								<tr>                                
-									<td class="sort-id">
+									<td>
 										<?php echo $y; ?>
 									</td>                                    
 									<td>                                        
@@ -95,19 +63,19 @@ include('header.php');
 										<img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
 										<?php endif; ?>                                    
 									</td>
-                                    <td class="sort-time">
+                                    <td>
 										<?php echo $ndrow['d_name']; ?>
 									</td>
-                                    <td class="sort-passenger">
+                                    <td>
 										<?php echo $ndrow['d_email']; ?>
 									</td>
-                                    <td class="sort-pickup">
+                                    <td>
 										<?php echo $ndrow['d_phone']; ?>
 									</td>
-                                    <td class="sort-drpoff">
+                                    <td>
 										<?php echo $ndrow['d_gender']; ?>
 									</td>
-                                    <td class="sort-drpoff">
+                                    <td>
 										<?php echo $ndrow['licence_authority']; ?>
 									</td>
                                     <td>
@@ -117,7 +85,7 @@ include('header.php');
 												View
 											</button>
                                         </a>							
-										<a href="del-driver.php?d_id=<?php echo $ndrow['d_id']; ?>&user_id=<?php echo $myId ?>">
+										<a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>">
 											<button class="btn btn-danger delete_btn">    
 												<i class="ti ti-square-rounded-x"></i>    
 												Delete

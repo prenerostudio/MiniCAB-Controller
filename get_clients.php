@@ -1,6 +1,5 @@
 <?php
 include('config.php');
-
 if (isset($_POST['b_type_id'])) {
     $selectedBookingType = $_POST['b_type_id'];
     $accountTypeCondition = ($selectedBookingType == '3') ? 'AND account_type = 2' : 'AND account_type = 1';

@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_POST['user_id'];
@@ -19,16 +20,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $logoName = $uniqueFilename;
             $sql = "UPDATE `users` SET `user_pic`='$logoName' WHERE `user_id`='$user_id'";
             $result = mysqli_query($connect, $sql);
-            if ($result) {
-				$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Admin Profile Image',											
-											'Controller',											
-											'Admin Profile Image Has Been Updated by Controller.')";	
-				$actr = mysqli_query($connect, $actsql);
+            if ($result) {				
+				$activity_type = 'Admin Profile Image';			
+				$user_type = 'user';			
+				$details = "Admin Profile Image Has Been Updated by Controller.";
+			
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";			
+				$actr = mysqli_query($connect, $actsql);									
                 echo "The file " . htmlspecialchars($logoName) . " has been uploaded.";
                 header('Location: profile-setting.php');
             } else {

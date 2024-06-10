@@ -33,7 +33,7 @@
 					</li>                  
 					<li class="list-inline-item">
 						<a href="#" class="link-secondary" rel="noopener">                      
-							v1.0.0-beta20                    
+							v1.0.1-beta2.0                    
 						</a>                  
 					</li>                
 				</ul>              

@@ -1,6 +1,6 @@
 <?php
 include('header.php');
-$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users, countries WHERE users.country_id = countries.country_id AND users.user_id = '$myId'");											
+$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users INNER JOIN countries ON users.country_id = countries.country_id WHERE users.user_id = '$myId'");											
 $urow = mysqli_fetch_array($usql);	
 ?>
         

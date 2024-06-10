@@ -42,8 +42,7 @@ include('header.php');
 									<th>Start Time</th>
 									<th>End Date</th>
 									<th>Driver</th> 
-									<th>Status</th>	
-									
+									<th>Status</th>									
 								</tr>                     													
 							</thead>                    												
 							<tbody> 													
@@ -94,21 +93,12 @@ include('header.php');
 					</div>																	
 				</div>                                                    				
 			</div>              			
-		</div>
-		
-		
-		<script>
-				
-	
-			$(document).ready(function() {
-    
+		</div>				
+		<script>					
+			$(document).ready(function() {    
 				$('#slots').DataTable();
-
-			});
-	
-		</script>
-		
-		
+			});	
+		</script>				
 		<div class="col-5">            					
 			<div class="card">                							
 				<div class="card-header">                    									

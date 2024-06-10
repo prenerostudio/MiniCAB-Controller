@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 $v_id = $_POST['v_id'];
 $d_id = $_POST['d_id'];
@@ -42,19 +43,22 @@ $sql = "INSERT INTO `driver_vehicle`(
 									'$mot_exp')";
          
 $result = mysqli_query($connect, $sql);              
-if ($result) {   
+if ($result) {   	
+	$activity_type = 'Vehicle Added';	
+	$user_type = 'user';	
+	$details = "A new vehicle added by driver " . $d_id. ".";
 	
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Vehicle Added',											
-											'Driver',											
-											'A new vehicle added by driver " . $d_id. ".')";		
-	$actr = mysqli_query($connect, $actsql);		
-
-
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);				
 	header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
 	exit();       
 } else {           			

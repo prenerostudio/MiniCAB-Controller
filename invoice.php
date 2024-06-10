@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 $inv_id = $_GET['invoice_id'];
-$sql=mysqli_query($connect,"SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id AND invoice.invoice_id = '$inv_id'");
+$sql=mysqli_query($connect,"SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice INNER JOIN jobs ON invoice.job_id = jobs.job_id INNER JOIN drivers ON invoice.d_id = drivers.d_id INNER JOIN bookings ON jobs.book_id = bookings.book_id INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN clients ON jobs.c_id = clients.c_id WHERE invoice.invoice_id = '$inv_id'");
 $irow = mysqli_fetch_array($sql);	
 ?>       
 <div class="page-header d-print-none">
