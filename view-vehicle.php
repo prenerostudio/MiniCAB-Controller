@@ -34,15 +34,12 @@ $vrow = mysqli_fetch_array($vsql);
 					<h3 class="card-title mt-4">Business Profile</h3>
 					<form method="post" action="update-vehicles.php" enctype="multipart/form-data">
 						<div class="row g-3">						
-							<div class="mb-3 col-md-4">                    						
-								
-								<div class="form-label">Vehicle Name</div>                        						
-							
+							<div class="mb-3 col-md-4">
+								<div class="form-label">Vehicle Name</div>
 								<input type="hidden" class="form-control" value="<?php echo $vrow['v_id']; ?>" name="v_id">  
 								<input type="text" class="form-control" value="<?php echo $vrow['v_name']; ?>" name="vname">  
 							</div>
-							<div class="mb-3 col-md-4">                    						
-								
+							<div class="mb-3 col-md-4">
 								<div class="form-label">Wheel Chair</div>   
 								<select class="form-control" name="vchair">
 								<option value="<?php echo $vrow['w_chair'] ?>">

@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 if(isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];    
     $targetDir = "img/drivers/vehicle/picture/";
@@ -12,17 +13,22 @@ if(isset($_POST['submit'])) {
         if (move_uploaded_file($_FILES["pic2"]["tmp_name"], $targetFilePath)) {           
             $insert = $connect->query("UPDATE `vehicle_documents` SET `vehicle_picture_back`='$pic2' WHERE `d_id`='$d_id'");
             if($insert) {
-                echo "File uploaded successfully.";
-				$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Vehicle Back Picture Updated',											
-											'Controller',											
-											'Vehicle Back Picture of Driver " . $d_id . " Has Been uploaded by Controller.')";	
-				$actr = mysqli_query($connect, $actsql);													
-                header('location: view-driver.php?d_id='.$d_id.'#tabs-vdocument');
+                echo "File uploaded successfully.";				
+				$activity_type = 'Vehicle Back Picture Updated';			
+				$user_type = 'user';			
+				$details = "Vehicle Back Picture of Driver " . $d_id . " Has Been uploaded by Controller.";			
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";			
+				$actr = mysqli_query($connect, $actsql);
+				header('location: view-driver.php?d_id='.$d_id.'#tabs-vdocument');
             } else {
                 echo "Database update failed.";
                 header('location: view-driver.php?d_id='.$d_id.'#tabs-vdocument');

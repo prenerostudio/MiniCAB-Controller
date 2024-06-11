@@ -1,5 +1,7 @@
 <?php
 include('config.php');
+include('session.php');
+
 if(isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];		
     $targetDir = "img/drivers/pco-license/";
@@ -12,15 +14,20 @@ if(isset($_POST['submit'])) {
         if (move_uploaded_file($_FILES["pco"]["tmp_name"], $targetFilePath)) {            
             $insert = $connect->query("UPDATE `driver_documents` SET `pco_license`='$pco' WHERE `d_id`='$d_id'");
             if($insert) {
-                $actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'PCO License Updated',											
-											'Controller',											
-											'PCO License of Driver " . $d_id . " Has Been uploaded by Controller.')";
-				$actr = mysqli_query($connect, $actsql);		
+				$activity_type = 'PCO License Updated';		
+				$user_type = 'user';		
+				$details = "PCO License of Driver " . $d_id . " Has Been uploaded by Controller.";		
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";			
+				$actr = mysqli_query($connect, $actsql);          		
                 header('location: view-driver.php?d_id='.$d_id.'#tabs-document');
             } else {
                 echo "Database update failed.";

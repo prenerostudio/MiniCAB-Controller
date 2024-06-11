@@ -234,12 +234,12 @@ $crow = mysqli_fetch_array($csql);
 										</div>	
 									</div>					
 								</div>
-							</div>  
-							<script>	
-	$(document).ready(function() {
-    $('#cstate').DataTable();
-});
-</script>
+							</div>  							
+							<script>		
+								$(document).ready(function() {    
+									$('#cstate').DataTable();
+								});
+							</script>						
 						</div>    
 						<div class="tab-pane" id="tabs-activity">						
 							<?php							

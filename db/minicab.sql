@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2024 at 07:34 PM
+-- Generation Time: Jun 11, 2024 at 04:41 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -77,7 +77,13 @@ INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user_type`,
 (00000034, 'Controller Logged-In', '2024-06-10 15:07:02', 'user', 00000000, 'Controller Azib  Logged in successfully.'),
 (00000035, 'Controller Logged-In', '2024-06-10 15:10:12', 'user', 00000000, 'Controller Azib  Logged in successfully.'),
 (00000036, 'Admin Profile Image', '2024-06-10 15:13:07', 'user', 00000002, 'Admin Profile Image Has Been Updated by Controller.'),
-(00000037, 'Break Time Ends', '2024-06-10 17:30:02', 'driver', 00000001, 'Break Time Ends and back to online');
+(00000037, 'Break Time Ends', '2024-06-10 17:30:02', 'driver', 00000001, 'Break Time Ends and back to online'),
+(00000038, 'Bank Account Added', '2024-06-11 10:56:32', 'client', 00000001, 'Customer # 1 Has added new Bank Account.'),
+(00000039, 'New Account Created', '2024-06-11 11:05:33', 'client', 00000001, 'New Booker Account registered.'),
+(00000040, 'New Booking Added', '2024-06-11 11:06:34', 'client', 00000001, 'Booker Has added new Booking # 2.'),
+(00000041, 'Credit Card Added', '2024-06-11 11:13:18', 'client', 00000001, 'Customer Has added new Credit Card.'),
+(00000042, 'Customer Address Added', '2024-06-11 13:51:55', 'client', 00000001, 'Customer Has added New Address.'),
+(00000043, 'Review Posted by Customer', '2024-06-11 14:37:51', 'client', 00000003, 'Customer Has posted reviews on job ID: 1.');
 
 -- --------------------------------------------------------
 
@@ -156,6 +162,13 @@ CREATE TABLE `booker_account` (
   `commission_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `booker_account`
+--
+
+INSERT INTO `booker_account` (`acc_id`, `c_id`, `book_id`, `comission_amount`, `comission_status`, `commission_date`) VALUES
+(00000001, 00000000001, 00000000002, 25, '', '2024-06-11 11:06:34');
+
 -- --------------------------------------------------------
 
 --
@@ -199,6 +212,13 @@ CREATE TABLE `bookings` (
   `customer_phone` varchar(255) NOT NULL,
   `book_add_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booker_commission`, `booking_status`, `bid_status`, `bid_time`, `bid_note`, `payment_type`, `customer_name`, `customer_email`, `customer_phone`, `book_add_date`) VALUES
+(00000002, 00000003, 00000001, 'Jail Road', 'midway', 'General Bus Stand', '', '', 3, '2024-01-18', '07:43:00', '', 00000002, '2', '', '', '00:00:00', 'N/A', 500, 25, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Personel', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-11 16:06:34');
 
 -- --------------------------------------------------------
 
@@ -279,6 +299,13 @@ CREATE TABLE `clients` (
   `account_type` tinyint(2) NOT NULL,
   `reg_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `status`, `company_name`, `commission_type`, `percentage`, `fixed`, `acount_status`, `account_type`, `reg_date`) VALUES
+(00000001, 'Atiq Ramzan', 'prenero12@gmail.com', '+923127346634', '6266a', '', '', '', '', '', '', '', 0, '', '', 0, 0, 0, 2, '2024-06-10 23:05:33');
 
 -- --------------------------------------------------------
 
@@ -543,6 +570,58 @@ CREATE TABLE `customers_address` (
   `address` text NOT NULL,
   `date_add_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customers_address`
+--
+
+INSERT INTO `customers_address` (`ca_id`, `c_id`, `address`, `date_add_added`) VALUES
+(00000001, 00000001, 'Jail Road Faisalabad.', '2024-06-11 13:51:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_bank_account`
+--
+
+CREATE TABLE `customer_bank_account` (
+  `cb_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `c_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `cb_account_title` varchar(255) NOT NULL,
+  `cb_account_number` varchar(535) NOT NULL,
+  `cb_bank_name` varchar(255) NOT NULL,
+  `cb_date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer_bank_account`
+--
+
+INSERT INTO `customer_bank_account` (`cb_id`, `c_id`, `cb_account_title`, `cb_account_number`, `cb_bank_name`, `cb_date_added`) VALUES
+(00000001, 00000001, 'Atiq Ramzan', '0417854256312', 'Meezan Bank', '2024-06-10 22:56:32');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_cards`
+--
+
+CREATE TABLE `customer_cards` (
+  `cc_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `c_id` int(8) NOT NULL,
+  `card_name` varchar(255) NOT NULL,
+  `card_number` varchar(255) NOT NULL,
+  `card_expiry` varchar(55) NOT NULL,
+  `card_cvv` int(10) NOT NULL,
+  `card_date_add` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer_cards`
+--
+
+INSERT INTO `customer_cards` (`cc_id`, `c_id`, `card_name`, `card_number`, `card_expiry`, `card_cvv`, `card_date_add`) VALUES
+(00000001, 1, 'Atiq Ramzan', '4648540026141600', '02-2024', 949, '2024-06-11 11:13:18');
 
 -- --------------------------------------------------------
 
@@ -1002,6 +1081,13 @@ CREATE TABLE `reviews` (
   `rev_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`rev_id`, `job_id`, `d_id`, `c_id`, `rev_msg`, `rev_date`) VALUES
+(00000000001, 00000000001, 00000000001, 00000000003, 'N/A', '2024-06-11 14:37:51');
+
 -- --------------------------------------------------------
 
 --
@@ -1235,6 +1321,18 @@ ALTER TABLE `customers_address`
   ADD PRIMARY KEY (`ca_id`);
 
 --
+-- Indexes for table `customer_bank_account`
+--
+ALTER TABLE `customer_bank_account`
+  ADD PRIMARY KEY (`cb_id`);
+
+--
+-- Indexes for table `customer_cards`
+--
+ALTER TABLE `customer_cards`
+  ADD PRIMARY KEY (`cc_id`);
+
+--
 -- Indexes for table `delete_customers`
 --
 ALTER TABLE `delete_customers`
@@ -1410,7 +1508,7 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `airports`
@@ -1434,13 +1532,13 @@ ALTER TABLE `bids`
 -- AUTO_INCREMENT for table `booker_account`
 --
 ALTER TABLE `booker_account`
-  MODIFY `acc_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `acc_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `book_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `booking_type`
@@ -1464,7 +1562,7 @@ ALTER TABLE `cancelled_bookings`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `c_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `c_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `company`
@@ -1482,7 +1580,19 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `customers_address`
 --
 ALTER TABLE `customers_address`
-  MODIFY `ca_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `ca_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `customer_bank_account`
+--
+ALTER TABLE `customer_bank_account`
+  MODIFY `cb_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `customer_cards`
+--
+ALTER TABLE `customer_cards`
+  MODIFY `cc_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `delete_customers`
@@ -1614,7 +1724,7 @@ ALTER TABLE `railway_stations`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `rev_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `rev_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `special_dates`

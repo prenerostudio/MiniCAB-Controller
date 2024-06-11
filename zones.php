@@ -80,11 +80,11 @@ include('header.php');
 					</div>           											
 				</div>       											
 			</div>   									
-		</div>
-			<script>
-	$(document).ready(function() {
-    $('#zones').DataTable();
-});
+		</div>			
+		<script>	
+				$(document).ready(function() {    
+					$('#zones').DataTable();
+				});		
 		</script>
 		<div class="col-6">       				
 			<div class="card">            						

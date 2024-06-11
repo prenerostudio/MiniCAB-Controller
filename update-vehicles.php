@@ -1,5 +1,7 @@
 <?php
-include("config.php"); 
+include("config.php");
+include('session.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
 	$v_id = $_POST["v_id"];	
 	$vname = $_POST["vname"];		
@@ -16,16 +18,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								`v_wchair`='$vchair',								
 								`v_babyseat`='$vbaby',
 								`v_pricing`='$vpricing' WHERE `v_id`='$v_id'";    	
-	if (mysqli_query($connect, $sql)) {			
-		$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'New Vehicle Added',											
-											'Controller',											
-											'New Vehicle " . $vname . " Has Been updated by Controller.')";			
-		$actr = mysqli_query($connect, $actsql);						
+	if (mysqli_query($connect, $sql)) {	
+		$activity_type = 'New Vehicle Added';
+		$user_type = 'user';
+		$details = "New Vehicle " . $vname . " Has Been updated by Controller.";
+		$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$myId',
+											'$details')";
+		$actr = mysqli_query($connect, $actsql);							
 		echo "Vehicle Updated successfully!";		
 		header('location: vehicles.php');	
 	} else {	

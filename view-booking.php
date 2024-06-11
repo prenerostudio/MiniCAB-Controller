@@ -2,7 +2,7 @@
 include('header.php');
 
 $book_id = $_GET['book_id'];
-$booksql=mysqli_query($connect,"SELECT bookings.*, clients.*, booking_type.*, vehicles.*  FROM bookings, booking_type, vehicles, clients  WHERE bookings.b_type_id = booking_type.b_type_id  AND bookings.c_id = clients.c_id AND bookings.v_id = vehicles.v_id AND bookings.book_id ='$book_id'");
+$booksql=mysqli_query($connect,"SELECT bookings.*, clients.*, booking_type.*, vehicles.* FROM bookings INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.book_id = '$book_id'");
 $bookrow = mysqli_fetch_array($booksql);
 ?>  
 <div class="page-body page_padding">
@@ -27,12 +27,12 @@ $bookrow = mysqli_fetch_array($booksql);
 										?>           																			
 										<option value="<?php echo $btrow['b_type_id'] ?>">
 											<?php echo $btrow['b_type_name'] ?>										
-										</option>           																			
+										</option>
 										<?php       																			
 										}        																			
 										?>
 									</select>																
-								</div>																										
+								</div>
 							</div>																						
 							<div class="row">
 								<h4>Passenger Details:</h4>
@@ -46,11 +46,11 @@ $bookrow = mysqli_fetch_array($booksql);
 										?>           																			
 										<option value="<?php echo $clrow['c_id'] ?>">
 											<?php echo $clrow['c_name'] ?>
-										</option>           																			
+										</option>
 										<?php       																			
 										}				
 										?>    																	
-									</select>																								
+									</select>
 								</div>																							
 								<div class="mb-3 col-lg-4">  																
 									<label class="form-label">Customer Phone</label>
@@ -94,7 +94,7 @@ $bookrow = mysqli_fetch_array($booksql);
 											}        
 										});    
 									});																						
-								</script>																									
+								</script>
 							</div>																								
 							<div class="row">																				
 								<h4>Journey Details:</h4>																	
@@ -107,19 +107,19 @@ $bookrow = mysqli_fetch_array($booksql);
 									<input type="text" id="dropoff" name="dropoff" class="form-control" value="<?php echo $bookrow['destination'] ?>">									
 								</div>	
 								
-								<div class="col-lg-4">
-											<div id="stops-container"></div>
-											<div class="mb-3 col-lg-2">								
-												<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
-													<i class="ti ti-plus"></i>
-												</button>									
-											</div>									
-										</div>
-								<div class="mb-3 col-lg-4">																				
-									<label class="form-label">Address</label>								
+								<div class="col-lg-4">								
+									<div id="stops-container"></div>									
+									<div class="mb-3 col-lg-2">																	
+										<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">										
+											<i class="ti ti-plus"></i>											
+										</button>																			
+									</div>																		
+								</div>								
+								<div class="mb-3 col-lg-4">										
+									<label class="form-label">Address</label>									
 									<input type="text" class="form-control" name="address" value="<?php echo $bookrow['address'] ?>">							
 								</div>							
-								<div class="mb-3 col-lg-4">																				
+								<div class="mb-3 col-lg-4">		
 									<label class="form-label">Postal Code</label>								
 									<input type="text" class="form-control" name="postal_code" value="<?php echo $bookrow['postal_code'] ?>">							
 								</div>							
@@ -144,8 +144,8 @@ $bookrow = mysqli_fetch_array($booksql);
 										</label>
 										<label class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="journey_type" value="Return">
-											<span class="form-check-label">Return</span>												
-										</label>                             																
+											<span class="form-check-label">Return</span>
+										</label>
 									</div>                          														
 								</div>						
 							</div>												
@@ -153,14 +153,16 @@ $bookrow = mysqli_fetch_array($booksql);
 								<div class="mb-3 col-lg-4">    								
 									<label class="form-label">Vehicle Type</label>   									
 									<select class="form-control" name="v_id" id="vehicleSelect" onchange="updateFare()">
-										<option value="<?php echo $bookrow['v_id'] ?>"><?php echo $bookrow['v_name'] ?></option>       									
-										<?php        									
-										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");        									
-										while ($vrow = mysqli_fetch_array($vsql)) {           									
-										?>           									
-										<option value="<?php echo $vrow['v_id'] ?>">
-											<?php echo $vrow['v_name'] ?>									
-										</option>           									
+										<option value="<?php echo $bookrow['v_id'] ?>">
+											<?php echo $bookrow['v_name'] ?>
+										</option>
+										<?php
+										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
+										while ($vrow = mysqli_fetch_array($vsql)) {
+										?>
+										<option value="<?php echo $vrow['v_id'];?>">
+											<?php echo $vrow['v_name'];?>
+										</option>
 										<?php       									
 										}        									
 										?>    								

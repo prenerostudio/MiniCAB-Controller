@@ -1,5 +1,7 @@
 <?php
 include('config.php');
+include('session.php');
+
 if(isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];    
     $targetDir = "img/drivers/vehicle/road-tax/";
@@ -12,15 +14,20 @@ if(isset($_POST['submit'])) {
         if (move_uploaded_file($_FILES["rt"]["tmp_name"], $targetFilePath)) {           
             $insert = $connect->query("UPDATE `vehicle_documents` SET `road_tax`='$rt' WHERE `d_id`='$d_id'");
             if($insert) {
-                $actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Vehicle Road Tax Updated',											
-											'Controller',											
-											'Vehicle Road Tax of Driver " . $d_id . " Has Been uploaded by Controller.')";
-				$actr = mysqli_query($connect, $actsql);		
+				$activity_type = 'Vehicle Road Tax Updated';
+				$user_type = 'user';
+				$details = "Vehicle Road Tax of Driver " . $d_id . " Has Been uploaded by Controller.";
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";
+				$actr = mysqli_query($connect, $actsql);	
                 header('location: view-driver.php?d_id='.$d_id.'#tabs-vdocument');
             } else {
                 echo "Database update failed.";

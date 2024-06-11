@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 $sp = $_POST['sp'];
 $ep = $_POST['ep'];
@@ -16,15 +17,20 @@ $sql = "INSERT INTO `zones`(
 							'$dis',							
 							'$fare')";                
 $result = mysqli_query($connect, $sql);       
-if ($result) {  
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'New Zone Added',											
-											'Controller',											
-											'New Zone " . $sp . " - " . $ep . " Has Been Added by Controller.')";		
+if ($result) { 
+	$activity_type = 'New Zone Added';
+	$user_type = 'user';
+	$details = "New Zone " . $sp . " - " . $ep . " Has Been Added by Controller.";
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";
 	$actr = mysqli_query($connect, $actsql);	
 	header('Location: zones.php');    
 	exit();    

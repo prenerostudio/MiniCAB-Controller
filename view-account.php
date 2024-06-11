@@ -28,64 +28,36 @@ $r=mysqli_num_rows($acsql);
 							</div>            														
 							<div class="card-body border-bottom py-3">
 								<div id="table-adriver" class="table-responsive">								
-									<table class="table">
+									<table class="table" id="dact">
 										<thead>                            						
 											<tr>											
-												<th>												
-													<button class="table-sort" data-sort="sort-id">
-														ID
-													</button>													
-												</th>												
-												<th>												
-													<button class="table-sort" data-sort="sort-book">
-														Booking 
-													</button>													
-												</th>												
-												<th>																									
-													<button class="table-sort" data-sort="sort-time">
-														Completion Time
-													</button>													
-												</th>												
-												<th>																									
-													<button class="table-sort" data-sort="sort-payment">
-														Total Payment
-													</button>													
-												</th> 
-												<th>																									
-													<button class="table-sort" data-sort="sort-commission">
-														Driver Commission
-													</button>													
-												</th> 												
-												<th>												
-													<button class="table-sort" data-sort="sort-status">
-														Status
-													</button>													
-												</th>																								
-												<th>												
-													<button class="table-sort">
-														Actions
-													</button>													
-												</th>												
+												<th>ID</th>												
+												<th>Booking</th>												
+												<th>Completion Time</th>												
+												<th>Total Payment</th> 
+												<th>Driver Commission</th> 												
+												<th>Status</th>
+												<th>Actions</th>												
 											</tr>											
 										</thead>										
 										<tbody class="table-tbody">										
 											<?php
 											$x = 0;											
-											$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice, jobs, drivers, bookings, clients, booking_type WHERE invoice.job_id = jobs.job_id AND invoice.d_id = drivers.d_id AND jobs.book_id = bookings.book_id AND bookings.b_type_id = booking_type.b_type_id AND jobs.c_id = clients.c_id");														
+											$isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice INNER JOIN jobs ON invoice.job_id = jobs.job_id INNER JOIN drivers ON invoice.d_id = drivers.d_id INNER JOIN bookings ON jobs.book_id = bookings.book_id INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN clients ON jobs.c_id = clients.c_id");
 											while ($irow = mysqli_fetch_array($isql)) :			
 											$x++;														
 											?>														
 											<tr>														
-												<td class="sort-id">															
+												<td>															
 													<?php echo $x; ?>
 												</td>															
-												<td class="sort-time">
+												<td>
 													<?php echo $irow['d_name']; ?>
 												</td>															
-												<td class="sort-passenger">
+												<td>
 													<?php echo $irow['d_phone']; ?> 
 												</td>															
-												<td class="sort-pickup">								
+												<td>								
 													<?php													
 													$dr_id= $irow['d_id'];
 													$drsql=mysqli_query($connect, "SELECT jobs.* FROM jobs WHERE jobs.d_id = '$dr_id' AND jobs.job_status = 'completed'");
@@ -93,7 +65,7 @@ $r=mysqli_num_rows($acsql);
 													echo $rowcount;													
 													?>														
 												</td> 												
-												<td class="sort-pickup">	
+												<td>	
 													<?php 
 													$dr_id= $irow['d_id'];													
 													$ivsql=mysqli_query($connect, "SELECT invoice.total_pay FROM invoice WHERE invoice.d_id = '$dr_id' AND invoice.invoice_status = 'unpaid'");
@@ -102,106 +74,43 @@ $r=mysqli_num_rows($acsql);
 													 }													
 													echo $total_payment;							
 													?>
-												</td> 
-															
-												<td class="sort-pickup">								
-																
-													<?php echo $irow['invoice_status']; ?>							
-															
 												</td>															
-															
-												<td>				
-															
+												<td>																
+													<?php echo $irow['invoice_status'];?>
+												</td>
+												<td>
 													<a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
-															
 														<button class="btn btn-info">
-															
 															<i class="ti ti-eye"></i>
-																
 															View Invoice
-																
-														</button>
-															
-													</a>
-														
-												</td>
-													
-											</tr>                          						
-													
-											<?php endwhile; ?>                         							
-												
+														</button>															
+													</a>														
+												</td>													
+											</tr>
+											<?php endwhile; ?>
 											<?php if ($x === 0) : ?>
-													
-											
-											<tr>                                   							
-													
-												
-												<td colspan="8">							
-														
+											<tr>
+												<td colspan="8">
 													<p align="center">No Invoice Found!</p>
-														
-										
-										
-												</td>
-													
-											</tr>												
-													
-											<?php endif; ?>       				
-													
-										</tbody>                   					
-										
-												
-									</table>               							
-									
-											
-								</div>           						
-								
-										
-							</div>       							
-							
-									
+												</td>													
+											</tr>													
+											<?php endif; ?>													
+										</tbody>
+									</table>																				
+								</div>
+							</div>																
 						</div>
-
-
-										
-								
-								
-					</div>																								
-								
-								
-																		
-										
-																			
-																					
-			
-							
-				</div>
-				
-				
-				
-               
-		
-			</div>
-             
-	
+					</div>
+				</div>												               		
+			</div>             	
 		</div>
-		
-		
-		
-		
-		              
-			
-	
-	
-	
-	
-	
-	</div>
-		
+	</div>		
 </div>
-
-
-
+<script>	
+	$(document).ready(function() {
+		$('#dact').DataTable();
+	});	
+</script>
 <?php
 include('footer.php');
 ?>

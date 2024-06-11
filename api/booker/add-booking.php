@@ -78,25 +78,26 @@ if ($c_id) {
 									'$customer_name',
 									'$customer_email',
 									'$customer_phone',
-									'$date')";
-
-    
-	$r = mysqli_query($connect, $sql);
-
-    if ($r) {
-        // Fetch the last inserted ID (book_id)
-       
-		$book_id = mysqli_insert_id($connect);      
-
-     //  $output=mysqli_fetch_all($book_id,MYSQLI_ASSOC);
-       
-           
-		$bsql = "INSERT INTO `booker_account`(`c_id`, `book_id`, `comission_amount`, `commission_date`) VALUES ('$c_id','$book_id','$commission','$date')";
-          
-		$br = mysqli_query($connect, $bsql);
-       
-
-        
+									'$date')";    	
+	$r = mysqli_query($connect, $sql);   
+	if ($r) {               	
+		$book_id = mysqli_insert_id($connect);                         
+		$bsql = "INSERT INTO `booker_account`(`c_id`, `book_id`, `comission_amount`, `commission_date`) VALUES ('$c_id','$book_id','$commission','$date')";          		
+		$br = mysqli_query($connect, $bsql);				
+		$activity_type = 'New Booking Added';		
+		$user_type = 'client';		
+		$details = "Booker Has added new Booking # $book_id.";		
+		$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";
+		$actr = mysqli_query($connect, $actsql);
 		echo json_encode(array('message' => "Booking Posted Successfully", 'data'=>$book_id, 'status' => true));
     } else {
         echo json_encode(array('message' => "Error In Posting Booking", 'status' => false));

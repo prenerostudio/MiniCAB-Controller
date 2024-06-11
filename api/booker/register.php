@@ -13,13 +13,11 @@ $c_phone = $_POST['c_phone'];
 $c_password = $_POST['c_password'];
 $account_type = 2;
 $acount_status = 0;
-$date = date("Y-m-d h:i:s");
 
 if (isset($_POST['c_phone'])) {	   
 	$checksql = "SELECT * FROM `clients` WHERE `c_phone`='$c_phone'";    		
 	$checkr = mysqli_query($connect, $checksql);    	
-	$datacheck = mysqli_fetch_all($checkr, MYSQLI_ASSOC);
-        	
+	$datacheck = mysqli_fetch_all($checkr, MYSQLI_ASSOC);        	
 	if (count($datacheck) > 0) {    		
 		echo json_encode(array('message' => "This User Already Exists! Try to Sign in", 'status' => false));        	
 	} else {    
@@ -29,19 +27,31 @@ if (isset($_POST['c_phone'])) {
 									`c_phone`, 
 									`c_password`,
 									`acount_status`,
-									`account_type`,
-									`reg_date`
+									`account_type`
 									) VALUES (
 									'$c_name',
 									'$c_email',
 									'$c_phone',
 									'$c_password',
 									'$acount_status',
-									'$account_type',
-									'$date')";
-                    
-		$r = mysqli_query($connect, $sql);        
-		if ($r) {        
+									'$account_type')";                    		
+		$r = mysqli_query($connect, $sql);        		
+		if ($r) {     		
+			$c_id = mysqli_insert_id($connect); 					
+			$activity_type = 'New Account Created';		
+			$user_type = 'client';		
+			$details = "New Booker Account registered.";		
+			$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";
+			$actr = mysqli_query($connect, $actsql);			
 			echo json_encode(array('message' => "Booker Registered Successfully", 'status' => true));            
 		} else {        
 			echo json_encode(array('message' => "Error In Registering Driver", 'status' => false));            

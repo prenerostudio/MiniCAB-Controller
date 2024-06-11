@@ -1,5 +1,7 @@
 <?php
 include('config.php');
+include('session.php');
+
 if(isset($_POST['submit'])) {
 	$d_id = $_POST['d_id'];  	    
 	$targetDir = "img/drivers/dvla/";    
@@ -10,17 +12,22 @@ if(isset($_POST['submit'])) {
 	$targetFilePath = $targetDir . $dvla;    
 	if (in_array($fileExtension, $allowTypes)) {												    
 		if (move_uploaded_file($_FILES["dvla"]["tmp_name"], $targetFilePath)) {        			            
-			$insert = $connect->query("UPDATE `driver_documents` SET `dvla_check_code`='$dvla' WHERE `d_id`='$d_id'");            
+			$insert = $connect->query("UPDATE `driver_documents` SET `dvla_check_code`='$dvla' WHERE `d_id`='$d_id'");           
 			if($insert) {				
-				$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'DVLA Updated',											
-											'Controller',											
-											'DVLA of Driver " . $d_id . " Has Been uploaded by Controller.')";
-				$actr = mysqli_query($connect, $actsql);	
+				$activity_type = 'DVLA Updated';			
+				$user_type = 'user';			
+				$details = "DVLA of Driver " . $d_id . " Has Been uploaded by Controller.";			
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";			
+				$actr = mysqli_query($connect, $actsql);									
 				echo "File uploaded successfully.";                
 				header('location: view-driver.php?d_id='.$d_id.'#tabs-document');            
 			} else {

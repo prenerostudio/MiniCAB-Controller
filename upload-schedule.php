@@ -1,5 +1,7 @@
 <?php
 include('config.php');
+include('session.php');
+
 if(isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];    
     $targetDir = "img/drivers/vehicle/insurance-schedule/";
@@ -11,15 +13,20 @@ if(isset($_POST['submit'])) {
     if (in_array($fileExtension, $allowTypes)) {
         if (move_uploaded_file($_FILES["sche"]["tmp_name"], $targetFilePath)) {           
             $insert = $connect->query("UPDATE `vehicle_documents` SET `insurance_schedule`='$sche' WHERE `d_id`='$d_id'");
-            if($insert) {
-                $actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Vehicle Insurance Schedule Updated',											
-											'Controller',											
-											'Vehicle Insurance Schedule of Driver " . $d_id . " Has Been uploaded by Controller.')";
+            if($insert) {				
+				$activity_type = 'Vehicle Insurance Schedule Updated';
+				$user_type = 'user';			
+				$details = "Vehicle Insurance Schedule of Driver " . $d_id . " Has Been uploaded by Controller.";			
+				$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";
 				$actr = mysqli_query($connect, $actsql);		
                 header('location: view-driver.php?d_id='.$d_id.'#tabs-vdocument');
             } else {

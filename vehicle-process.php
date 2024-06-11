@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 function uploadImage() {    
 	$targetDir = "img/vehicles/";   
@@ -33,16 +34,20 @@ if ($v_img !== false) {
 	$stmt = $connect->prepare($sql);	
 	$stmt->bind_param("ssiisis", $vname, $seats, $bags, $wchair, $babyc, $pricing);   
 }
-if ($stmt->execute()) {       	
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'New Vehicle Added',											
-											'Controller',											
-											'New Vehicle Has Been addd by Controller.')";
-
+if ($stmt->execute()) {   		
+	$activity_type = 'New Vehicle Added';			
+	$user_type = 'user';			
+	$details = "New Vehicle Has Been addd by Controller.";			
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";
 	$actr = mysqli_query($connect, $actsql);	       
 	header('Location: vehicles.php');      	
 	exit();   	

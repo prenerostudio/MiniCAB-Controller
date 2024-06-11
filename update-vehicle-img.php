@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $v_id = $_POST['v_id'];
@@ -22,6 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $logoName = $uniqueID . '_' . basename($_FILES["fileToUpload"]["name"]);            
             $sql = "UPDATE `vehicles` SET  `v_img`='$logoName' WHERE `v_id`='$v_id'";
             $result = mysqli_query($connect, $sql);
+			$activity_type = 'Vehicle Image Updated';
+			$user_type = 'user';
+			$details = "Vehicle Image updated by controller.";
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";
+			$actr = mysqli_query($connect, $actsql);
             echo "Success: The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
             header('Location: view-vehicle.php?v_id='.$v_id);
         } else {

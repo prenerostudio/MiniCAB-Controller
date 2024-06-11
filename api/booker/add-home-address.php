@@ -10,20 +10,32 @@ include("../../config.php");
 
 $c_id = $_POST['c_id'];
 $address = $_POST['address'];
-$date = date("Y-m-d h:i:s");
+
 
 if (isset($_POST['c_id'])) {	
 	$sql="INSERT INTO `customers_address`(
 									`c_id`, 
-									`address`, 
-									`date_add_added`
+									`address`
 									) VALUES (
 									'$c_id',
-									'$address',
-									'$date')";								
+									'$address')";								
 
 	$r=mysqli_query($connect,$sql);		
-	if($r){    			
+	if($r){
+		$activity_type = 'Customer Address Added';		
+		$user_type = 'client';		
+		$details = "Customer Has added New Address.";		
+		$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";		
+		$actr = mysqli_query($connect, $actsql);			
 		echo json_encode(array('message'=>"Home Address Added Successfully",'status'=>true));			
 	}else{    		
 		echo json_encode(array('message'=>"Error In adding Home Address",'status'=>false));			

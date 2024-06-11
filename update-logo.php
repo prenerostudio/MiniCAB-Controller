@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $company_id = $_POST['company_id'];				
@@ -22,14 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $logoName = $uniqueID . '_' . basename($_FILES["fileToUpload"]["name"]);
             $sql = "UPDATE `company` SET `com_logo`='$logoName' WHERE `company_id`='$company_id'";
             $result = mysqli_query($connect, $sql);
-			$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Company Logo Updated',											
-											'Controller',											
-											'Company Logo Has Been updated.')";
+		
+			$activity_type = 'Company Logo Updated';
+			$user_type = 'user';
+			$details = "Company Logo Has Been updated.";
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$myId',
+												'$details')";
 			$actr = mysqli_query($connect, $actsql);
             echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
             header('Location: company.php');

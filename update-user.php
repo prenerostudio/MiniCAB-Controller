@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include('session.php');
 
 $user_id = $_POST['user_id'];
 $fname = $_POST['fname'];
@@ -26,16 +27,21 @@ $sql = "UPDATE `users` SET
 						`pc`='$pc',
 						`nid`='$nid' WHERE `user_id`='$user_id'";        
 $result = mysqli_query($connect, $sql);       
-if ($result) {		
-	$actsql = "INSERT INTO `activity_log` (
-											`activity_type`,
-											`user`,											
-											`details`											
-											) VALUES (											
-											'Admin Profile Updated',											
-											'Controller',											
-											'Admin Profile Has Been updated by Controller.')";		
-	$actr = mysqli_query($connect, $actsql);
+if ($result) {
+	$activity_type = 'Admin Profile Updated';	
+	$user_type = 'user';
+	$details = "Admin Profile Has Been updated by Controller.";
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$myId',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);	
 	header('location: profile-setting.php');    
 	exit();    
 } else {           

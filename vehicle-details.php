@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 $dv_id = $_GET['dv_id'];
-$vhsql = mysqli_query($connect, "SELECT driver_vehicle.*, vehicles.* FROM driver_vehicle, vehicles WHERE driver_vehicle.v_id = vehicles.v_id AND driver_vehicle.dv_id ='$dv_id'");								
+$vhsql = mysqli_query($connect, "SELECT driver_vehicle.*, vehicles.* FROM driver_vehicle INNER JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE driver_vehicle.dv_id = '$dv_id'");								
 $vhrow = mysqli_fetch_array($vhsql);											
 ?>  
 <div class="page-body page_padding">

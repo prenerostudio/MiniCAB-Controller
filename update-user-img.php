@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$activity_type = 'Admin Profile Image';			
 				$user_type = 'user';			
 				$details = "Admin Profile Image Has Been Updated by Controller.";
-			
 				$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

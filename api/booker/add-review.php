@@ -8,25 +8,40 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 $c_id = $_POST['c_id'];
-$book_id = $_POST['book_id'];
+$job_id = $_POST['job_id'];
+$d_id = $_POST['d_id'];
 $rev_msg = $_POST['rev_msg'];
 $date = date("Y-m-d h:i:s");
 
 if(isset($_POST['c_id'])){ 	 	
 	        		
 		$sql="INSERT INTO `reviews`(
-									`book_id`, 
+									`job_id`, 
+									`d_id`, 
 									`c_id`, 
-									`rev_msg`, 
-									`rev_date`
+									`rev_msg`
 									) VALUES (
-									'$book_id',
+									'$job_id',
+									'$d_id',
 									'$c_id',
-									'$rev_msg',
-									'$date')";				
+									'$rev_msg')";				
 		
 		$r=mysqli_query($connect,$sql);
-		if($r){    
+		if($r){  
+			$activity_type = 'Review Posted by Customer';				
+			$user_type = 'client';				
+			$details = "Customer Has posted reviews on job ID: $job_id.";				
+			$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";
+			$actr = mysqli_query($connect, $actsql);
 			echo json_encode(array('message'=>"Review Posted Successfully",'status'=>true));
 		}else{    
 			echo json_encode(array('message'=>"Error In Posting Review",'status'=>false));

@@ -28,7 +28,21 @@ $sql="INSERT INTO `customer_bank_account`(
 
 $r=mysqli_query($connect,$sql);		
 
-if($r){    			
+if($r){		
+	$activity_type = 'Bank Account Added';	
+	$user_type = 'client';	
+	$details = "Customer Has added new Bank Account.";	
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);	
 	echo json_encode(array('message'=>"Bank Account Added Successfully",'status'=>true));			
 }else{    		
 	echo json_encode(array('message'=>"Error In adding Bank Account",'status'=>false));			
