@@ -11,17 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['d_id'])) {
 		$d_id = $_POST['d_id'];
         $job_id = $_POST['job_id'];
-        $c_id = $_POST['c_id'];
+
 		$waiting_time = $_POST['waiting_time'];
         
        
-        $sql = "INSERT INTO `waiting_time`(
-											`c_id`, 
+        $sql = "INSERT INTO `waiting_time`(											
 											`d_id`, 
 											`job_id`, 
 											`waiting_time`
-											) VALUES (
-											'$c_id',
+											) VALUES (											
 											'$d_id',
 											'$job_id',
 											'$waiting_time')";

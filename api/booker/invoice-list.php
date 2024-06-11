@@ -10,7 +10,7 @@ include("../../config.php");
 $c_id=$_POST['c_id'];
 
 if(isset($_POST['c_id'])){		
-	$sql=" SELECT invoice.*, jobs.*, bookings.*, drivers.* FROM invoice, jobs, drivers, bookings, clients WHERE invoice.job_id = jobs.job_id AND jobs.book_id = bookings.book_id AND invoice.d_id = drivers.d_id AND jobs.c_id = clients.c_id AND invoice.c_id = '$c_id' ORDER BY invoice.invoice_id DESC";	
+	$sql="SELECT invoice.*, jobs.*, bookings.*, drivers.* FROM invoice JOIN jobs ON invoice.job_id = jobs.job_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN drivers ON invoice.d_id = drivers.d_id JOIN clients ON jobs.c_id = clients.c_id WHERE invoice.c_id = '$c_id' ORDER BY invoice.invoice_id DESC";	
 	$r=mysqli_query($connect,$sql);
 	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
 	if(count($output)>0){    				    		

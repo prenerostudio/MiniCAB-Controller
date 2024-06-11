@@ -38,6 +38,20 @@ if (mysqli_num_rows($result) > 0) {
 
 // Execute the query
 if (mysqli_query($connect, $sql)) {
+	$activity_type = 'Marketing Preference Updated';				
+			$user_type = 'client';				
+			$details = "Marketing Preference Updated by booker";				
+			$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";
+			$actr = mysqli_query($connect, $actsql);
     echo json_encode(array('message' => 'Preferences updated successfully', 'status' => true));
 } else {
     http_response_code(500); // Internal Server Error

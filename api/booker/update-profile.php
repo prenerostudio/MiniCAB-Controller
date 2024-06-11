@@ -7,7 +7,7 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-// Function to handle image upload and return the image name
+
 function uploadImage() {
     $targetDir = "../../img/bookers/";
     $targetFileName = basename($_FILES["c_img"]["name"]);
@@ -54,7 +54,21 @@ if (isset($_POST['c_id'])) {
     
     $r = mysqli_query($connect, $sql);
     
-    if ($r) {
+    if ($r) {		
+		$activity_type = 'Profile Updated';							
+		$user_type = 'client';							
+		$details = "Booker has updated his profile details";							
+		$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";			
+		$actr = mysqli_query($connect, $actsql);		
         echo json_encode(array('message' => "Profile Update Successfully", 'status' => true));
     } else {
         echo json_encode(array('message' => "Error In Updating Profile", 'status' => false));

@@ -5,33 +5,22 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 header('Cache-Control: max-age=3600');
 
-// Include the database configuration file
+
 include("../../config.php");
 
-// Check if c_id is set in the POST request
-if(isset($_POST['c_id'])){
-    // Sanitize the input to prevent SQL injection
-    $c_id = mysqli_real_escape_string($connect, $_POST['c_id']);
-    
-    // Prepare the SQL query to fetch total commission amount for the given c_id
-    $sql = "SELECT c_id, SUM(comission_amount) AS total_commission FROM booker_account WHERE c_id = '$c_id' GROUP BY c_id";
 
-    // Execute the query
-    $result = mysqli_query($connect, $sql);
-
-    // Check if there are any rows returned
-    if(mysqli_num_rows($result) > 0){
-        // Fetch the result as an associative array
-        $output = mysqli_fetch_assoc($result);
-
-        // Return the result as JSON with success status and message
+if(isset($_POST['c_id'])){    
+    $c_id = mysqli_real_escape_string($connect, $_POST['c_id']);        
+    $sql = "SELECT c_id, SUM(comission_amount) AS total_commission FROM booker_account WHERE c_id = '$c_id' GROUP BY c_id";    
+    $result = mysqli_query($connect, $sql);    
+    if(mysqli_num_rows($result) > 0){       
+        $output = mysqli_fetch_assoc($result);        
         echo json_encode(array('data' => $output, 'status' => true, 'message' => "Total commission fetched successfully"));
-    } else {
-        // Return a message if no rows are found for the given c_id
+    } else {       
         echo json_encode(array('message' => 'No commission found for the given c_id', 'status' => false));
     }
 } else {
-    // Return a message if c_id is not set in the POST request
+    
     echo json_encode(array('message' => "c_id is missing in the request", 'status' => false));
 }
 ?>

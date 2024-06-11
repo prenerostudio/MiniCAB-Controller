@@ -40,6 +40,20 @@ if ($current_pass !== $current_password_hash) {
 $sql = "UPDATE `clients` SET `c_password`='$new_pass', `reg_date`=NOW() WHERE `c_id`='$c_id'";
 
 if (mysqli_query($connect, $sql)) {
+	$activity_type = 'Password Changed';					
+	$user_type = 'client';					
+	$details = "Booker changed his account password";					
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);
     echo json_encode(array('message' => 'Password updated successfully', 'status' => true));
 } else {
     http_response_code(500); // Internal Server Error

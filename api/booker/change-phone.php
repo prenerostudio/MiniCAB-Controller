@@ -15,7 +15,21 @@ $sql="UPDATE `clients` SET `c_phone`='$c_phone',`reg_date`='$date' WHERE `c_id`=
 
 $r=mysqli_query($connect,$sql);		
 
-if($r){    			
+if($r){  
+	$activity_type = 'Phone Number Changed';					
+	$user_type = 'client';					
+	$details = "Booker changed his Phone Number";					
+	$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";	
+	$actr = mysqli_query($connect, $actsql);
 	echo json_encode(array('message'=>"Phone Number Updated Successfully",'status'=>true));			
 }else{    		
 	echo json_encode(array('message'=>"Error In Updating Phone Number",'status'=>false));			

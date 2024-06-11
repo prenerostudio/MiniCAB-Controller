@@ -11,10 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['c_id'])) {
 		$c_id = $_POST['c_id'];
         $status = $_POST['status'];               
-       // $date = date("Y-m-d h:i:s");
                
-        $sql = "UPDATE `clients` SET `status`='$status' WHERE `c_id`='$c_id'";
-        
+        $sql = "UPDATE `clients` SET `status`='$status' WHERE `c_id`='$c_id'";        
 		
         $result = mysqli_query($connect, $sql);
         if ($result) {  

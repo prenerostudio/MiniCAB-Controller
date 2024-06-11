@@ -39,6 +39,20 @@ if(isset($_POST['c_id'])){
 	$sql = "UPDATE `clients` SET `c_pic`='$c_img', `reg_date`='$date' WHERE `c_id`='$c_id'";
 	$r = mysqli_query($connect, $sql);
 	if($r){    
+		$activity_type = 'Profile Image Updated';				
+			$user_type = 'client';				
+			$details = "Booker Updated Profile Image.";				
+			$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";
+			$actr = mysqli_query($connect, $actsql);
 		echo json_encode(array('message'=>"Profile Img Update Successfully",'status'=>true));
 	}else{    
 		echo json_encode(array('message'=>"Error In Updating Profile Img",'status'=>false));

@@ -9,17 +9,14 @@ include("../../config.php");
 
 $book_id=$_POST['book_id'];
 
-if(isset($_POST['book_id'])){		
-	
-	 $sql="SELECT * FROM `bookings` WHERE `book_id`='$book_id'";	
-	$r=mysqli_query($connect,$sql);
-	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-	
-	
-	if(count($output)>0){    				    		
+if(isset($_POST['book_id'])){			
+	$sql="SELECT * FROM `bookings` WHERE `book_id`='$book_id'";		
+	$r=mysqli_query($connect,$sql);	
+	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);			
+	if(count($output)>0){    				    			
 		echo json_encode(array('data'=>$output, 'status'=>true,));
 	}else{    
-		echo json_encode(array('message'=>'User Does Not Exist','status'=>false));
+		echo json_encode(array('message'=>'Booking Does Not Exist','status'=>false));
 	}
 }else{    
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));

@@ -11,12 +11,25 @@ $c_phone = $_POST['c_phone'];
 $c_password=$_POST['c_password'];
 
 
-if(isset($_POST['c_phone'])){	
-	//$final_pass= md5($user_password);
+if(isset($_POST['c_phone'])){		
 	$sql="SELECT * FROM `clients` WHERE `c_phone`='$c_phone' AND `c_password`='$c_password'";
 	$r=mysqli_query($connect,$sql);
 	if($r){    
-		$output=$r->fetch_assoc();   
+		$output=$r->fetch_assoc();
+		$activity_type = 'Booker Signed-In';				
+			$user_type = 'client';				
+			$details = "Booker recently logged-In.";				
+			$actsql = "INSERT INTO `activity_log`(
+										`activity_type`, 
+										`user_type`, 
+										`user_id`, 
+										`details`
+										) VALUES (
+										'$activity_type',
+										'$user_type',
+										'$c_id',
+										'$details')";
+			$actr = mysqli_query($connect, $actsql);
 		echo json_encode(array('data'=>$output, 'message'=>'Customer Logged in Successfully','status'=>true));
 	}else{    
 		echo json_encode(array('message'=>'Customer Does Not Exist','status'=>false));
