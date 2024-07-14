@@ -41,3 +41,21 @@ a:hover {
 .filter-item.active,.filter-item:active{color:var(--tblr-dropdown-link-active-color);text-decoration:none;background-color:var(--tblr-dropdown-link-active-bg)}
 
 .filter-item.disabled,.filter-item:disabled{color:var(--tblr-dropdown-link-disabled-color);pointer-events:none;background-color:transparent}
+
+
+
+.scrollable-table {
+            display: block;
+            height: 260px; /* Adjust the height as necessary to fit 6 records */
+            overflow-y: scroll;
+        }
+
+        .scrollable-table thead, .scrollable-table tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .scrollable-table thead {
+            width: calc( 100% - 1em );
+        }

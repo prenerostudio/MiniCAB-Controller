@@ -21,50 +21,50 @@
 								</th>																						
 								<th>								
 									<p align="center">									
-										<span>1-4</span>										
-										<br>Passenger										
+										<span>1-4</span>									
+										<br>Salon  /<strong style="font-weight: 800"> Mile</strong>										
 									</p>									
 								</th>																						
 								<th>								
 									<p align="center">									
 										<span>1-4</span>										
-										<br>Estate										
+										<br>Estate  /<strong style="font-weight: 800"> Mile</strong>									
 									</p>									
 								</th>																						
 								<th>								
 									<p align="center">									
 										<span>5-6</span>										
-										<br>Passenger										
+										<br>MPV  /<strong style="font-weight: 800"> Mile</strong>										
 									</p>									
 								</th>																						
 								<th>								
 									<p align="center">									
-										<span>7</span><br>										
-										Passenger										
+										<span>1-4 Seater</span><br>										
+										Executive Salon  /<strong style="font-weight: 800"> Mile</strong>							
 									</p>									
 								</th>																						
 								<th>								
 									<p align="center">									
-										<span>8</span><br>										
-										Passenger										
+										<span>8-9 Seater</span><br>										
+										Large MPV  /<strong style="font-weight: 800"> Mile</strong>									
 									</p>									
 								</th>																						
 								<th>								
 									<p align="center">									
-										<span>9</span><br>										
-										Passenger										
+										<span>8-9 Seater</span><br>										
+										Executive Large MPV  /<strong style="font-weight: 800"> Mile</strong>								
 									</p>									
 								</th>																	
 								<th>								
 									<p align="center">									
-										<span>10-14</span><br>										
-										Passenger										
+										<span>10-14 Seater</span><br>										
+										MiniBus  /<strong style="font-weight: 800"> Mile</strong>									
 									</p>									
 								</th>																	
 								<th>								
 									<p align="center">									
-										<span>15-16</span><br>										
-										Passenger										
+										<span>Parcel</span><br>										
+										Courier / Delivery  /<strong style="font-weight: 800"> Mile</strong>							
 									</p>									
 								</th>																						
 							</tr>																				
@@ -78,28 +78,28 @@
 									<input type="text" class="form-control" name="to" required>									
 								</td>																		
 								<td>								
-									<input type="text" class="form-control" name="1-4p" oninput="updateValues()" required>
+									<input type="text" class="form-control" name="salon" required>
 								</td>																	
 								<td>								
-									<input type="text" class="form-control" name="1-4e" readonly>
+									<input type="text" class="form-control" name="estate" required>
 								</td>																						
 								<td>								
-									<input type="text" class="form-control" name="5-6p" readonly>
+									<input type="text" class="form-control" name="mpv" required>
 								</td>																						
 								<td>								
-									<input type="text" class="form-control" name="7p" readonly>									
+									<input type="text" class="form-control" name="esalon" required>									
 								</td>																						
 								<td>								
-									<input type="text" class="form-control" name="8p" readonly>									
+									<input type="text" class="form-control" name="lmpv" required>									
 								</td>																						
 								<td>								
-									<input type="text" class="form-control" name="9p" readonly>									
+									<input type="text" class="form-control" name="empv" required>									
 								</td>																						
 								<td>								
-									<input type="text" class="form-control" name="10_14p" readonly>
+									<input type="text" class="form-control" name="minibus" required>
 								</td>
 								<td>								
-									<input type="text" class="form-control" name="15_16p" readonly>
+									<input type="text" class="form-control" name="delivery" required>
 								</td>																						
 							</tr>																				
 						</tbody>																		
@@ -133,47 +133,65 @@
 								<p>To (miles)</p>								
 							</th>																				
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>1-4</span><br>Passenger</p>								
+								<p align="center"><span>1-4 Seater</span><br>Salon  /<strong style="font-weight: 800"> Mile</strong></p>								
 							</th>																				
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>1-4</span><br>Estate</p>								
+								<p align="center"><span>1-4 Seater</span><br>Estate  /<strong style="font-weight: 800"> Mile</strong></p>								
 							</th>														
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>5-6</span><br>Passenger</p>								
+								<p align="center"><span>5-6 Seater</span><br>MPV  /<strong style="font-weight: 800"> Mile</strong></p>								
 							</th>													
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>7</span><br>Passenger</p>								
+								<p align="center"><span>1-4 Seater</span><br>Executive Salon  /<strong style="font-weight: 800"> Mile</strong></p>								
 							</th>													
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>8</span><br>Passenger</p>								
+								<p align="center"><span>8-9 Seater</span><br>Large MPV  /<strong style="font-weight: 800"> Mile</strong></p>								
 							</th>																				
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>9</span><br>Passenger</p>								
+								<p align="center"><span>8-9 Seater</span><br>Executive Large MPV  /<strong style="font-weight: 800"> Mile</strong></p>								
 							</th>
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>10-14</span><br>Passenger</p>								
+								<p align="center"><span>10-14 Seater</span><br>MiniBus  /<strong style="font-weight: 800"> Mile</strong></p>								
 							</th>
 							<th style="background: #FFFFFF; color: #3A3A3A;">							
-								<p align="center"><span>15-16</span><br>Passenger</p>								
-							</th>																				
+								<p align="center"><span>Parcel</span><br>Courier / Delivery  /<strong style="font-weight: 800"> Mile</strong></p>								
+							</th>	
+							<th></th>
 						</tr>																		
 					</thead>																
 					<tbody>					
 						<?php
-						$pmsql=mysqli_query($connect,"SELECT * FROM `price_mile` ");						
+						$pmsql=mysqli_query($connect,"SELECT * FROM `price_mile`");						
 						while($pmrow = mysqli_fetch_array($pmsql)){						
 						?>																		
 						<tr align="center">																		
-							<td><?php echo $pmrow['start_from'];?></td>							
-							<td><?php echo $pmrow['end_to'];?></td>							
-							<td><?php echo $pmrow['1_4p'];?></td>							
-							<td><?php echo $pmrow['1_4e'];?></td>							
-							<td><?php echo $pmrow['5_6p'];?></td>														
-							<td><?php echo $pmrow['7p'];?></td>							
-							<td><?php echo $pmrow['8p'];?></td>							
-							<td><?php echo $pmrow['9p'];?></td>							
-							<td><?php echo $pmrow['10_14p'];?></td>							
-							<td><?php echo $pmrow['15_16p'];?></td>							
+							<td><?php echo $pmrow['start_from'];?> Miles</td>							
+							<td><?php echo $pmrow['end_to'];?> Miles</td>							
+							<td>£ <?php echo $pmrow['saloon'];?></td>							
+							<td>£ <?php echo $pmrow['estate'];?></td>							
+							<td>£ <?php echo $pmrow['mpv'];?></td>														
+							<td>£ <?php echo $pmrow['esaloon'];?></td>							
+							<td>£ <?php echo $pmrow['lmpv'];?></td>							
+							<td>£ <?php echo $pmrow['empv'];?></td>							
+							<td>£ <?php echo $pmrow['minibus'];?></td>							
+							<td>£ <?php echo $pmrow['delivery'];?></td>	
+							<td>
+								<a class="btn btn-info button_padding" href="del-price-by-mile.php?pm_id=<?php echo $pmrow['pm_id'] ?>" title="Edit">
+												
+				
+									<i class="ti ti-pencil"></i>
+											
+				
+								</a>
+								<a class="btn btn-danger button_padding" href="del-price-by-mile.php?pm_id=<?php echo $pmrow['pm_id'] ?>" title="Cancel">
+												
+				
+									<i class="ti ti-square-rounded-x"></i>
+											
+				
+								</a>
+							</td>
+						
 						</tr>																		
 						<?php																		
 						}																		

@@ -22,53 +22,39 @@ include('header.php');
 						Zones List
 					</h3>            									
 				</div>            								
-				<div class="card-body border-bottom py-3">                								
-					<div id="table-adriver" class="table-responsive">                    										
-						<table class="table" id="zones">                        												
-							<thead>                            														
-								<tr>	
-									<th>ID</th>                                									
-									<th>Starting Point</th>                                																		
-									<th>End Point</th>
-									<th>Distance</th>     													
-									<th>Fare (£)</th>       													
-									<th>Actions</th>                            												
-								</tr>
-							</thead>
-							<tbody class="table-tbody">
-								<?php
-								$x = 0;                            																
-								$zsql = mysqli_query($connect, "SELECT * FROM `zones`");
+				
+				<div class="card-body border-bottom py-3">
+					<div id="table-adriver" class="table-responsive">
+						<table class="table" id="zones">						
+							<thead>
+								<tr>									
+									<th>ID</th>									
+									<th>Zone Address</th>									
+									<th>Actions</th>
+								</tr>							
+							</thead>							
+							<tbody class="table-tbody">							
+								<?php								
+								$x = 0;								
+								$zsql = mysqli_query($connect, "SELECT * FROM `zones`");								
 								while ($zrow = mysqli_fetch_array($zsql)) :								
-								$x++;                            														
-								?>								
-								<tr>                            															
-									<td>																	
-										<?php echo $x; ?>																	
-									</td>			
+								$x++;								
+								?>																
+								<tr>								
 									<td>									
-										<?php echo $zrow['starting_point'];?>											
-									</td>
-									<td>																	
-										<?php echo $zrow['end_point'];?>
+										<?php echo $x; ?>									
 									</td>
 									<td>
-										<?php echo $zrow['distance']; ?> KM
+										<?php echo $zrow['zone_name'];?>
+									</td>									               									
+									<td>										
+										<a href="del-zone.php?z_id=<?php echo $zrow['zone_id']; ?>" class="btn btn-danger" title="Delete">
+											<i class="ti ti-square-rounded-x"></i>
+										</a>
 									</td>
-									<td>																	
-										£ <?php echo $zrow['fare']; ?>
-									</td>                 
-									<td>																		
-										<a href="zone-details.php?z_id=<?php echo $zrow['zone_id']; ?>" class="btn btn-info" title="View / Edit">
-											<i class="ti ti-eye"></i>
-										</a>                                       										
-										<a href="del-zone.php?z_id=<?php echo $zrow['zone_id']; ?>" class="btn btn-danger" title="Delete">		
-											<i class="ti ti-square-rounded-x"></i>						
-										</a>                                   										
-									</td>									
-								</tr>                          														
-								<?php endwhile; ?>
-								<?php if ($x === 0) : ?>								
+								</tr>
+								<?php endwhile; ?>								
+								<?php if ($x === 0) : ?>
 								<tr>                                   															
 									<td colspan="8">																	
 										<p align="center">No Zone Found!</p>					
@@ -97,39 +83,18 @@ include('header.php');
 					<form method="post" enctype="multipart/form-data" action="zone-process.php" onsubmit="return validateForm();" >                       
 						<div class="modal-body">                                                 
 							<div class="row">                                              
-								<div class="col-lg-6">                                            
+								                                           
 									<div class="mb-3">                                                      
-										<label class="form-label">Starting Point</label>                                
-										<input type="text" class="form-control" id="pickup" name="sp" placeholder="Starting Point" required>            
+										<label class="form-label">Zone Address</label>                                
+										<input type="text" class="form-control" id="pickup" name="za" placeholder="Starting Point" required>            
 									</div>                                              
-								</div>                                              
-								<div class="col-lg-6">                                            
-									<div class="mb-3">                                                                  
-										<label class="form-label">Ending Point</label>                                
-										<input type="text" class="form-control" id="dropoff" name="ep" placeholder="Ending Point" required>
-									</div>                                              
-								</div>                                          
+								                                              
+								                                          
 							</div>                              
-							<div class="row">                                              
-								<div class="col-lg-6">                                            
-									<div class="mb-3">
-										<label class="form-label">Distance (Auto-calculated)</label>
-										<input type="text" class="form-control" name="journey_distance" id="journeyDistance" readonly>								
-									</div>										                        
-								</div>                                              
-								<div class="col-lg-6">                                            
-									<div class="mb-3">                                                  
-										<label class="form-label">Fare</label>
-										<input type="number" class="form-control" name="fare" placeholder=" £ 00.00" required>
-									</div>                                              
-								</div>                                          
-							</div>                                          
+							                                          
 						</div>                          
 						<div class="modal-footer">                               
-							<button type="reset" class="btn btn-danger">                         
-								<i class="ti ti-circle-x"></i>                        
-								Cancel                                               
-							</button>                                                
+							                                                
 							<button type="submit" class="btn ms-auto btn-success">                        
 								<i class="ti ti-message-plus"></i>                        
 								Save Zone                    

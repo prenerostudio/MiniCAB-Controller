@@ -18,7 +18,7 @@
 				<form action="mg_process.php" method="post">				
 					<tr>																	
 						<td style="width: 50%;">
-							<input type="text" name="pickup" class="form-control" required />							
+							<input type="text" name="pickup" class="form-control" id="pickup_location" required />							
 						</td>																	
 						<td>																	
 							<div class="input-group mb-3"> 
@@ -66,9 +66,16 @@
 					<td>															
 						<?php echo $mgrow['pickup_charges'] ?>																	
 					</td>															
-					<td>															
+					<td>
+						<a href="edit-mg.php?mg_id=<?php echo $mgrow['mg_id']; ?>">						
+							<button class="btn btn-info">								
+								<i class="ti ti-pencil"></i>
+							</button>							
+						</a>
 						<a href="del-mg.php?mg_id=<?php echo $mgrow['mg_id'];?>">						
-							<button class="btn btn-danger">Delete</button>							
+							<button class="btn btn-danger">
+								<i class="ti ti-square-rounded-x"></i>
+							</button>							
 						</a>																	
 					</td>															
 				</tr>													
@@ -79,3 +86,86 @@
 		</table>									
 	</div>																		
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
+    async defer></script>
+<script>	
+	function initAutocomplete() {        
+    var pickupInput = document.getElementById('pickup_location');            
+                
+    var autocompleteOptions = {        
+        types: ['geocode'],                    
+        componentRestrictions: {country: 'GB'}    
+    };				            
+    var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
+    var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
+    var autocompleteStop = new google.maps.places.Autocomplete(stopInput, autocompleteOptions); // Initialize autocomplete for stop field
+
+    autocompletePickup.addListener('place_changed', function () {        
+        updateDistance();        
+        updateJourneyFare();    
+    });            
+    autocompleteDropoff.addListener('place_changed', function () {
+        updateDistance();        
+        updateJourneyFare();    
+    });	
+    autocompleteStop.addListener('place_changed', function () { // Add listener for stop input field
+        updateDistance();        
+        updateJourneyFare();    
+    });
+
+    function handleSuggestions(predictions, inputField) {        
+        var addresses = predictions.map(function(prediction) {            
+            return prediction.description;        
+        });			                    
+        updateAutocompleteSuggestions(inputField, addresses);    
+    }				        
+
+    function updateAutocompleteSuggestions(inputField, suggestions) {        
+        var datalistId = inputField.id + '_datalist';                    
+        var datalist = document.getElementById(datalistId);			                    
+        if (!datalist) {            
+            datalist = document.createElement('datalist');                            
+            datalist.id = datalistId;                            
+            document.body.appendChild(datalist);        
+        }						            
+        datalist.innerHTML = '';			                    
+        suggestions.forEach(function(suggestion) {            
+            var option = document.createElement('option');                            
+            option.value = suggestion;                            
+            datalist.appendChild(option);        
+        });						                    
+        inputField.setAttribute('list', datalistId);    
+    }    
+
+    function updateDistance() {                
+        var pickupPlace = autocompletePickup.getPlace();                    
+        var dropoffPlace = autocompleteDropoff.getPlace();			                    
+        if (pickupPlace.geometry && dropoffPlace.geometry) {            
+            calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);        
+        }    
+    }		    
+    
+    function calculateDistance(pickupLocation, dropoffLocation) {    
+        var service = new google.maps.DistanceMatrixService();    
+        service.getDistanceMatrix({        
+            origins: [pickupLocation],        
+            destinations: [dropoffLocation],        
+            travelMode: 'DRIVING',    
+        }, function(response, status) {        
+            if (status === 'OK' && response.rows.length > 0) {            
+                var distanceText = response.rows[0].elements[0].distance.text;            
+                var distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));
+                if (!isNaN(distanceValue)) {                						                
+                    journeyDistanceInput.value = distanceValue.toFixed(2);                
+                    updateJourneyFare(distanceValue);            
+                } else {                
+                    console.error('Invalid distance value:', distanceText);            
+                }       
+            } else {            					            
+                console.error('Error calculating distance:', status);        
+            }    
+        });	
+    }   
+}	
+	google.maps.event.addDomListener(window, 'load', initAutocomplete);  
+</script>	

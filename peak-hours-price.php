@@ -1,32 +1,59 @@
 <div class="card-body">            																	
 	<h2 class="mb-4">	
-		Special Date		
+		Peak Hours Time		
 	</h2>    															
-	<p align="justify">	
-		When picking up a <strong>MiniCAB</strong> customer at the airport, we expect that the driver is available to meet & greet the customer as they arrive and direct them to the car. The price that you appear for on the site should therefore include any meet and greet charges you may have. Using the below tool you can add any fees you may have and these will automatically be added on top of any price you appear for on the minicaboffice.com website regardless of whether this has been calculated via by mileage, location or postcode area pricing.<br><br>		
-		This flat fee will apply for your selected location as well as 0.2 miles around the location to ensure that the charge still applies for nearby locations also.<br><br>		
-		If you charge a meet and greet charge for a location that you can’t find below, please request this via email to admin@minicaboffice.com.<br><br>		
-		Please add reasonable pickup charges for these airports, as relevant. Any requests to add reasonable pickup charges for other venues can be sent to admin@minicaboffice.com, for the MiniCAB  team to consider.</p>							
+						
 	<div class="row">													
 		<table class="table">								
 			<tbody>									
 				<tr>											
-					<td>Pickup Locations</td>												
-					<td>Pickup Charges</td>							  					
+					<td>Start Time</td>
+					<td>End Time</td>
+					<td>Select Days</td>
+					<td>Charges Increment %</td>							  					
 					<td></td>												
 				</tr>														
-				<form action="mg_process.php" method="post">
+				<form action="peak-hours-process.php" method="post">
 					<tr>									
-						<td style="width: 50%;">						
-							<input type="text" name="pickup" class="form-control" required />							
-						</td>											
-						<td>																		
-							<div class="input-group mb-3"> 							
-								<div class="input-group-prepend"> 										
-									<span class="input-group-text">									
-										£										
-									</span>  											
-								</div> 																		
+						<td style="width: 30%;">						
+							<input type="time" name="st" class="form-control" required />							
+						</td>
+						<td style="width: 30%;">						
+							<input type="time" name="et" class="form-control" required />							
+						</td>
+						<td>
+						  <p>
+						    <label>
+						      <input type="checkbox" name="days[]" value="monday">
+						      Monday</label>
+						    <br>
+						    <label>
+						      <input type="checkbox" name="days[]" value="tuesday">
+						      Tuesday</label>
+						    <br>
+						    <label>
+						      <input type="checkbox" name="days[]" value="wednesday">
+						      Wednesday</label>
+						    <br>
+						    <label>
+						      <input type="checkbox" name="days[]" value="thursday">
+						      Thursday</label>
+						    <br>
+						    <label>
+						      <input type="checkbox" name="days[]" value="friday">
+						      Friday</label>
+						    <br>
+						    <label>
+						      <input type="checkbox" name="days[]" value="saturday">
+						      Saturday</label>
+						    <br>
+						    <label>
+						      <input type="checkbox" name="days[]" value="sunday">
+						      Sunday</label>
+						    <br>
+				        </p></td>
+					  <td>																		
+							<div class="input-group mb-3">
 								<input type="text" name="price" class="form-control" aria-label="Amount (to the nearest pound)" required />
 							</div>																		
 						</td>							  																	
@@ -46,28 +73,36 @@
 			<tbody>									
 				<tr>					
 					<td>ID</td>					
-					<td>Pickup Locations</td>												
-					<td>Pickup Charges</td>							  					
+					<td>Start Time</td>												
+					<td>End Time</td>	
+					<td>Days</td>
+					<td>Price Increment</td>
 					<td></td>
 				</tr>																										
 				<?php																								
 				$n=0;																								
-				$mgsql=mysqli_query($connect,"SELECT * FROM `mg_charges`");
-				while($mgrow = mysqli_fetch_array($mgsql)){
+				$phsql=mysqli_query($connect,"SELECT * FROM `peak_hours`");
+				while($phrow = mysqli_fetch_array($phsql)){
 					$n++;
 				?>
 				<tr>					
 					<td style="width: 4%;">																
 						<?php echo $n; ?>																	
 					</td>					
-					<td style="width: 50%;">																
-						<?php echo $mgrow['pickup_location'] ?>																	
+					<td>																
+						<?php echo $phrow['start_time'] ?>																	
 					</td>																
 					<td>																		
-						<?php echo $mgrow['pickup_charges'] ?>																	
-					</td>																	
+						<?php echo $phrow['end_time'] ?>																	
+					</td>
 					<td>																		
-						<a href="del-mg.php?mg_id=<?php echo $mgrow['mg_id'];?>">
+						<?php echo $phrow['peak_hours_days'] ?>																	
+					</td>
+					<td>																		
+						<?php echo $phrow['price_increment'] ?>																	
+					</td>
+					<td>																		
+						<a href="del-peak-hours.php?ph_id=<?php echo $phrow['ph_id'];?>">
 							<button class="btn btn-danger">Delete</button>
 						</a>						
 					</td>																

@@ -14,18 +14,6 @@ $waiting = $_POST['waiting'];
 $tolls = $_POST['tolls'];
 $extra = $_POST['extra'];
 $job_status = 'waiting';
-
-
-$checksql = "SELECT * FROM `driver_history` WHERE `d_id` = ? AND `book_id` = ?";
-$checkstmt = $connect->prepare($checksql);
-$checkstmt->bind_param("ii", $d_id, $book_id);
-$checkstmt->execute();
-$checkr = $checkstmt->get_result();
-
-if ($checkr && $checkr->num_rows > 0) {
-    $_SESSION['success_msg'] = "This Booking cannot be assigned to this driver because it is already withdrawn from this driver.";
-    header('Location: dispatch-booking.php?book_id=' . $book_id);
-} else {
     
     $sql = "INSERT INTO `jobs`(
                 `book_id`, 
@@ -82,7 +70,7 @@ if ($checkr && $checkr->num_rows > 0) {
         header('Location: view-booking.php?book_id=' . $book_id);
         exit();
     }
-}
+
 
 $connect->close();
 ?>

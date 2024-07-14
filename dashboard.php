@@ -21,81 +21,43 @@ include('header.php');
 					<h3 class="card-title">
 						Locations
 					</h3>					
-					<div class="ratio ratio-21x9">							
-						<div>											
-							<?php							
-							$query = "SELECT `longitude`, `latitude` FROM `drivers`";				
-							$result = mysqli_query($connect, $query);				
-							if ($result) { 					
-								$userLocations = array();						
-								while ($row = mysqli_fetch_assoc($result)) {											
-									$location = array(							
-										'lat' => $row['latitude'],							
-										'lng' => $row['longitude']																
-									); 						
-									$userLocations[] = $location;					
-								}					
-								mysqli_free_result($result);				
-							} else {					
-								echo "Error executing the query: " . mysqli_error($connect);
-							}											
-							?>										
-							<div id="map"></div>							
-							<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-							<script>
-								document.addEventListener('DOMContentLoaded', function () {								
-									var map = L.map('map');       									
-									L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {            
-										attribution: 'Map data &copy; contributors',            
-										maxZoom: 30        
-									}).addTo(map);        									
-									var carIcon = L.icon({										            
-										iconUrl: 'img/car-icon.png',            
-										iconSize: [80, 80],            
-										iconAnchor: [30, 30],            
-										popupAnchor: [0, -30]        
-									});									        
-									var firstLocation = <?php echo json_encode($userLocations[0]); ?>;        
-									var initialLatLng = L.latLng(firstLocation.lat, firstLocation.lng);        
-									map.setView(initialLatLng, 12);									        
-									var userLocations = <?php echo json_encode($userLocations); ?>;        
-									userLocations.forEach(function (user) {            
-										var marker = L.marker([user.lat, user.lng], { icon: carIcon }).addTo(map);
-										marker.bindPopup("Loading..."); 
-										marker.on('click', function () {
-											var driverId = user.d_id;                
-											fetchDriverDetails(driverId)                    
-												.then(function (driverDetails) {                
-												marker.setPopupContent("Driver Details: " + driverDetails);                    
-											})                    
-												.catch(function (error) {                        
-												console.error('Error fetching driver details:', error);                        
-												marker.setPopupContent("Error fetching details");                    
-											});            
-										});        
-									});									        									        
-									function fetchDriverDetails(driverId) {            
-										return new Promise(function (resolve, reject) {
-											var endpoint = 'your-backend-endpoint.php?driverId=' + driverId;
-											fetch(endpoint)                    												
-												.then(function (response) {                        
-												if (!response.ok) {                            
-													throw new Error('Network response was not ok');                        
-												}                        
-												return response.text();                    
-											})                    
-												.then(function (data) {                        
-												resolve(data);                    
-											})                    
-												.catch(function (error) {                        
-												reject(error);                    											
-											});            
-										});        
-									}    
-								});
-							</script>
-						</div>					
-					</div>                  
+						<div>				
+						<table class="table scrollable-table">						
+							<thead>
+								<tr>									
+									<th style="width: 14%;">ID</th>									
+									<th>Zone Address</th>									
+								</tr>							
+							</thead>							
+							<tbody class="table-tbody ">							
+								<?php								
+								$x = 0;								
+								$zsql = mysqli_query($connect, "SELECT * FROM `zones`");								
+								while ($zrow = mysqli_fetch_array($zsql)) :								
+								$x++;								
+								?>																
+								<tr>								
+									<td style="width: 14%;">									
+										<?php echo $x; ?>									
+									</td>
+									<td>
+										<?php echo $zrow['zone_name'];?>
+									</td>									               									
+									
+								</tr>
+								<?php endwhile; ?>								
+								<?php if ($x === 0) : ?>
+								<tr>                                   															
+									<td colspan="2">																	
+										<p align="center">No Zone Found!</p>					
+									</td>	
+								</tr>                           															
+								<?php endif; ?>                        														
+							</tbody>                   												
+						</table>
+						</div>	
+						
+					                  
 				</div>                
 			</div>              
 		</div>			              								
@@ -230,50 +192,183 @@ include('header.php');
 			<div class="card">
 				<div class="card-header">
 					<h3 class="card-title">Today's Jobs	</h3>
+					<div class="col-auto ms-auto d-print-none">            		
+			<div class="btn-list">				
+				<span class="d-none d-sm-inline">
+					<span class="dropdown">
+						<button class="btn dropdown-toggle align-text-top" id="filterDropdown" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+							Search Bookings
+						</button>						
+						<div class="dropdown-menu dropdown-menu-end">						
+							<a class="filter-item" href="#" data-filter="3">
+								All Bookings In 3 Hours								
+							</a>							
+							<a class="filter-item" href="#" data-filter="6">
+								All Bookings In 6 Hours								
+							</a>							
+							<a class="filter-item" href="#" data-filter="9">
+								All Bookings In 9 Hours
+							</a>
+							<a class="filter-item" href="#" data-filter="12">
+								All Bookings In 12 Hours
+							</a>
+							<a class="filter-item" href="#" data-filter="24">
+								All Bookings In 24 Hours
+							</a>
+							<a class="filter-item" href="#" data-filter="72">
+								All Bookings In 3 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="168">
+								All Bookings In 7 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="336">
+								All Bookings In 14 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="720">
+								All Bookings In 30 Days
+							</a>
+							<a class="filter-item" href="#" data-filter="2160">
+								All Bookings In 3 Months
+							</a>
+							<a class="filter-item" href="#" data-filter="4320">
+								All Bookings In 6 Months
+							</a>
+							<a class="filter-item" href="#" data-filter="8760">
+								All Bookings In 12 Months
+							</a>
+						</div>                            
+					</span>           					
+				</span> 				
+				<script>					
+					$(document).ready(function() {    
+						$(".filter-item").click(function(event) {        
+							event.preventDefault();        
+							var selectedInterval = $(this).data("filter");        
+							console.log("Selected Interval:", selectedInterval);        
+							// No need to check if selectedInterval is undefined or null        
+							$.ajax({            
+								type: "GET",            
+								url: "fetch-next-data.php",            
+								data: { timeInterval: selectedInterval },            
+								success: function(data) {                
+									console.log("Ajax Success:", data);                
+									$("#tableBody").html(data);            
+								},            
+								error: function(xhr, status, error) {                
+									console.error("Ajax Error:", error);            
+								}        
+							});    
+						});
+					});					   
+				</script>									      				
+			</div>              			
+		</div>
 				</div>
 				<div class="card-body border-bottom py-3">
-					<table class="table" id="table-job">													
-						<thead>								
-							<tr>          								
-								<th>ID</th>            					
-								<th>Date</th>                
-								<th>Time</th>                
-								<th>Passenger</th>                
-								<th>Pickup</th>								
-								<th>Stops</th>                
-								<th>Dropoff</th>                
-								<th>Fare</th>                
-								<th>Vehicle</th>                
-								<th>Status</th>                
-								<th>Driver</th>            
-							</tr>        
-						</thead>        
-						<tbody>            
-							<?php            
-							$y = 0;            
-							$jobsql = mysqli_query($connect, "SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs JOIN clients ON jobs.c_id = clients.c_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN drivers ON jobs.d_id = drivers.d_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE jobs.job_status <> 'completed' ORDER BY jobs.job_id DESC");            
-							while($jobrow = mysqli_fetch_array($jobsql)){                
-								$y++;            
-							?>            
-							<tr>                
-								<td><?php echo $jobrow['book_id']; ?></td>                
-								<td><?php echo $jobrow['pick_date'];?></td>                
-								<td><?php echo $jobrow['pick_time'];?></td>                
-								<td><?php echo $jobrow['passenger'];?></td>                
-								<td><?php echo $jobrow['pickup'];?></td>
-								<td><?php echo $jobrow['stops'];?></td>                
-								<td><?php echo $jobrow['destination'];?></td>                
-								<td><?php echo $jobrow['journey_fare'];?></td>                
-								<td><?php echo $jobrow['v_name'];?></td>                
-								<td><?php echo $jobrow['job_status'];?></td>                
-								<td><?php echo $jobrow['d_name'];?></td>            
-							</tr>            
-							<?php            
-							}            
-							?>        
-						</tbody>    
-					</table>					  									
-					<script>   					
+					<div class="table-responsive">					
+							<?php        							
+							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");        							
+							if (mysqli_num_rows($bsql) > 0) {							
+							?>           							
+							<table class="table" id="table-booking">	
+								<thead>                      		
+									<tr> 																	
+										<th>ID</th>                        	
+										<th>Date Pickup</th>										
+										<th>Time Pickup</th>												
+										<th>Passenger</th>                        		
+										<th>Pickup</th>                        		
+										<th>Stops</th>
+										<th>Dropoff</th>	
+										<th>Fare</th>						   
+										<th>Vehicle</th>	
+										<th>Actions</th>		
+									</tr>                   
+								</thead>
+								<tbody class="table-tbody" id="tableBody">
+									<?php                   								
+										$y = 0;                    
+										while ($brow = mysqli_fetch_array($bsql)) {                        
+										$y++;                    
+									?>											                     
+									<tr>
+										<td>
+											<?php echo $brow['book_id']; ?>
+										</td>										
+										<td>
+											<?php echo $brow['pick_date']; ?>
+										</td>										
+										<td>
+											<?php echo $brow['pick_time']; ?>
+										</td>										
+										<td>
+											<?php echo $brow['passenger']; ?>
+										</td>										
+										<td>
+											<?php echo $brow['pickup']; ?>
+										</td>         
+										<td>
+											<?php echo $brow['stops']; ?>
+										</td>										
+										<td>
+											<?php echo $brow['destination'] ?>
+										</td>										
+										<td> 
+											<?php echo $brow['journey_fare'] ?> 
+										</td>										
+										<td> 
+											<?php echo $brow['v_name'] ?> 
+										</td>
+										<td style="width: 10%;"> 
+											<?php
+												if($brow['booking_status']=='Booked'){
+											?>
+											<a href="#" class="btn button_padding" title="Dispatched">       
+												<i class="ti ti-plane-tilt"></i>
+											</a>  											   
+											<?php											
+												} else {   
+											?>    
+											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>" class="btn btn-success button_padding" title="Dispatch">
+												<i class="ti ti-plane-tilt"></i>
+											</a>   
+											<?php											
+												}												
+											?>
+											<a href="view-booking.php?book_id=<?php echo $brow['book_id'] ?>">
+												<button class="btn btn-info button_padding" title="View">
+													<i class="ti ti-eye"></i>
+												</button>
+											</a>
+											<?php
+												if($brow['booking_status']=='Booked'){
+													echo '';
+												} else {   
+											?>    
+											<a class="btn btn-danger button_padding" href="cancel-booking.php?book_id=<?php echo $brow['book_id'] ?>" title="Cancel">
+												<i class="ti ti-square-rounded-x"></i>
+											</a> 
+											<?php											
+												}												
+											?>											
+										</td>
+									</tr>											
+									<?php			
+										}									
+									?>								
+								</tbody>							
+							</table>							
+							<?php        
+							} else {            
+								echo '<p>No booking found.</p>';        
+							}        
+							?>						
+					</div>					  									
+					<script>
+						$(document).ready(function() {
+    $('#table-booking').DataTable();
+});
+						
 						$(document).ready(function() {    
 							$('#table-job').DataTable();
 						});

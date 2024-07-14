@@ -1,50 +1,56 @@
 <?php
-include('config.php');
-include('session.php');
+// Include configuration and session management files
+require_once('config.php');
+require_once('session.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {    
-    if (isset($_POST['from'], $_POST['to'], $_POST['1-4p'], $_POST['1-4e'], $_POST['5-6p'], $_POST['7p'], $_POST['8p'], $_POST['9p'], $_POST['10_14p'], $_POST['15_16p'])) {    
-        $from = $_POST['from'];
-        $to = $_POST['to'];
-        $p1_4 = $_POST['1-4p'];
-        $e1_4 = $_POST['1-4e'];
-        $p5_6 = $_POST['5-6p'];
-        $p7 = $_POST['7p'];
-        $p8 = $_POST['8p'];
-        $p9 = $_POST['9p'];
-        $p10_14 = $_POST['10_14p'];
-        $p15_16 = $_POST['15_16p'];
 
-        try {            
-            $sql = "INSERT INTO `price_mile` (`start_from`, `end_to`, `1_4p`, `1_4e`, `5_6p`, `7p`, `8p`, `9p`, `10_14p`, `15_16p`, `date_add_pm`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
-            $stmt = $connect->prepare($sql);
-            $stmt->execute([$from, $to, $p1_4, $e1_4, $p5_6, $p7, $p8, $p9, $p10_14, $p15_16]);           			
-            echo "Data inserted successfully.";
-										
-			$activity_type = 'Price Per Mile Added';			
-			$user_type = 'user';			
-			$details = "New Price Per Mile Has Been Added by Controller.";
-			
-			$actsql = "INSERT INTO `activity_log`(
-												`activity_type`, 
-												`user_type`, 
-												`user_id`, 
-												`details`
-												) VALUES (
-												'$activity_type',
-												'$user_type',
-												'$myId',
-												'$details')";			
-			$actr = mysqli_query($connect, $actsql);												
-            header("Location: pricing.php");
-        } catch (PDOException $e) {           			
-            echo "Error: " . $e->getMessage();
-        }
-    } else {        		
-        echo "Error: Insufficient data.";
-    }
-} else {    	
-    header("Location: pricing.php");
-    exit();
+$from = $_POST['from'];
+$to = $_POST['to'];
+$salon = $_POST['salon'];
+$estate = $_POST['estate'];
+$mpv = $_POST['mpv'];
+$esalon = $_POST['esalon'];
+$lmpv = $_POST['lmpv'];
+$empv = $_POST['empv'];
+$minibus = $_POST['minibus'];
+$delivery = $_POST['delivery'];
+
+
+
+$sql = "INSERT INTO `price_mile`(
+								`start_from`, 
+								`end_to`, 
+								`saloon`, 
+								`estate`, 
+								`mpv`, 
+								`esaloon`, 
+								`lmpv`, 
+								`empv`, 
+								`minibus`, 
+								`delivery`
+								) VALUES (
+								'$from',
+								'$to',
+								'$salon',
+								'$estate',
+								'$mpv',
+								'$esalon',
+								'$lmpv',
+								'$empv',
+								'$minibus',
+								'$delivery')";
+
+$result = $connect->query($sql);
+
+if($result){
+	
+	header('location: pricing.php');
+}else{
+	
+	echo 'error';
+	header('location: pricing.php');
 }
+
+
+
 ?>

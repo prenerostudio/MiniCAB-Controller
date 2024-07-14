@@ -54,12 +54,12 @@ include('header.php');
 							Price Per Mile						
 						</a>										
 					</li>					
-					<li class="nav-item">					
+					<!--<li class="nav-item">					
 						<a href="#tabs-loc" class="nav-link" data-bs-toggle="tab">						
 							<i class="ti ti-map-pin" style="font-size: 28px;"></i>							
 							Location Prices					
 						</a>                     					
-					</li>  
+					</li> --> 
 					<li class="nav-item">                       					
 						<a href="#tabs-post" class="nav-link" data-bs-toggle="tab">
 							<i class="ti ti-map-search" style="font-size: 28px;"></i>

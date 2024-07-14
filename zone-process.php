@@ -2,20 +2,12 @@
 require 'config.php';
 include('session.php');
 
-$sp = $_POST['sp'];
-$ep = $_POST['ep'];
-$dis = $_POST['journey_distance'];
-$fare = $_POST['fare'];
-$sql = "INSERT INTO `zones`( 
-							`starting_point`,							
-							`end_point`, 							
-							`distance`, 							
-							`fare`							
-							) VALUES (							
-							'$sp',							
-							'$ep',							
-							'$dis',							
-							'$fare')";                
+$za = $_POST['za'];
+
+$sql = "INSERT INTO `zones`(
+							`zone_name`
+							) VALUES (
+							'$za')";                
 $result = mysqli_query($connect, $sql);       
 if ($result) { 
 	$activity_type = 'New Zone Added';

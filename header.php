@@ -198,7 +198,27 @@ include('session.php');
 												Time Slots												
 											</a>
 										</div>                    										
-									</li>									
+									</li>	
+									<li class="nav-item dropdown">                      									
+										<a class="nav-link dropdown-toggle" href="#navbar-client" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">	
+											<span class="nav-link-icon d-md-none d-lg-inline-block">
+												<i class="ti ti-user-shield"></i>					
+											</span>                        											
+											<span class="nav-link-title">		
+												Companies Section												
+											</span>                      											
+										</a>					
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="companies.php">
+												<i class="ti ti-users-group"></i>
+												Companies Accounts												
+											</a>        											
+											<a class="dropdown-item" href="#">
+												<i class="ti ti-users-group"></i>
+												Delete Accounts Requests
+											</a>
+										</div>                    										
+									</li>
 									<li class="nav-item dropdown">                      									
 										<a class="nav-link dropdown-toggle" href="#navbar-client" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">	
 											<span class="nav-link-icon d-md-none d-lg-inline-block">
