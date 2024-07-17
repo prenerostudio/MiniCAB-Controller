@@ -1,7 +1,20 @@
 <div class="card-body">
-	<h2 class="mb-4">
-		Driver Vehicle Section
-	</h2>
+<div class="row g-2 align-items-center mb-4">        	
+		<div class="col">            								
+			               			
+			<h2 class="page-title">                			
+				Drivers Details Section                				
+			</h2>              			
+		</div>		
+		<div class="col-auto ms-auto d-print-none">            					
+			<div class="btn-list">  				
+				<a href="add-vehicle.php?d_id=<?php echo $d_id; ?>" class="btn btn-primary d-none d-sm-inline-block">
+					<i class="ti ti-car"></i>					
+					Add Vehicle					
+				</a>													             				
+			</div>              			
+		</div>		
+	</div>	
 	<div class="row mb-3">
 		<div class="card">					
 			<div class="card-body border-bottom py-3">			
@@ -52,10 +65,7 @@
 							<tr>
 								<td colspan="8">
 									<p align="center">
-										<a href="add-vehicle.php?d_id=<?php echo $d_id; ?>" class="btn btn-primary d-none d-sm-inline-block">
-											<i class="ti ti-car"></i>
-											Add Vehicle
-										</a>
+										No Vehicle Found!
 									</p>
 								</td>																					
 							</tr>																						

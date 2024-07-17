@@ -62,7 +62,7 @@ include('header.php');
 										<?php									
 											} else{															
 										?>										
-										<img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
+										<img src="img/companies/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
 										<?php									
 											}			
 										?>											

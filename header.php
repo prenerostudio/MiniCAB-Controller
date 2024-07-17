@@ -60,7 +60,7 @@ include('session.php');
 		<div class="page">				
 			<div class="sticky-top">      											
 				<header class="navbar navbar-expand-md d-print-none" >        					
-					<div class="container-xl">          					
+					<div class="container">          					
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>         						
 						</button>        						
@@ -71,28 +71,97 @@ include('session.php');
 						</h1>          						
 						<div class="navbar-nav flex-row order-md-last">         						
 							<div class="nav-item d-none d-md-flex me-3">         							
-								<div class="btn-list">								
-									<a href="new-drivers.php" class="btn btn-indigo">
-										<i class="ti ti-users-group"></i>            										
-										New Drivers         									
-									</a>									
+								 
+								<div class="btn-list">
+									
+									<a href="#" class="btn btn-indigo position-relative">
+            
+										<i class="ti ti-users-group"></i>
+            
+										Drivers From WEB
+            
+										<span class="badge badge-danger position-absolute top-0 start-100 translate-middle">
+                
+											0 <!-- This number will be dynamically updated -->
+            
+										</span>
+        
+									</a>
+        
+									<a href="new-drivers.php" class="btn btn-indigo position-relative">
+            
+										<i class="ti ti-users-group"></i>
+            
+										New Drivers
+            
+										<span class="badge badge-danger position-absolute top-0 start-100 translate-middle">
+                
+											0 <!-- This number will be dynamically updated -->
+            
+										</span>
+        
+									</a>
+        
 									<a href="fare-corrections.php" class="btn btn-danger">
-										<i class="ti ti-receipt-pound"></i>            										
-										Fare Corrections          									
-									</a> 									
-									<a href="upcoming-bookings.php" class="btn btn-instagram">
-										<i class="ti ti-alarm-plus"></i>            										
-										Upcoming Jobs          									
-									</a> 
+            
+										<i class="ti ti-receipt-pound"></i>
+            
+										Fare Corrections
+        
+									</a>
+        
+									<!--<a href="upcoming-bookings.php" class="btn btn-instagram">
+            
+										<i class="ti ti-alarm-plus"></i>
+            
+										Upcoming Jobs
+        
+									</a>-->
+        
 									<a href="driver-tracker.php" class="btn btn-cyan">
-										<i class="ti ti-user-search"></i>            										
-										Driver Tracker          									
-									</a>              									
+            
+										<i class="ti ti-user-search"></i>
+            
+										Driver Tracker
+        
+									</a>
+        
 									<a href="add-booking.php" class="btn btn-indigo">
+            
 										<i class="ti ti-bookmark-plus"></i>
-										Create New Booking              									
-									</a>              								
-								</div>            							
+            
+										New Booking
+        
+									</a>
+    
+								</div>
+
+								
+    
+								<script>
+    
+									document.addEventListener("DOMContentLoaded", function() {
+        
+										// Fetch the number of new drivers from the server
+        
+										fetch('new-drivers-count.php')
+            
+											.then(response => response.json())
+            
+											.then(data => {
+                
+											// Update the badge with the fetched count
+                
+											document.querySelector('.btn-indigo .badge').textContent = data.newDriversCount;
+            
+										})
+            
+											.catch(error => console.error('Error fetching new drivers count:', error));
+    
+									});
+    
+								</script>         							
+							
 							</div>           
 							<div class="d-none d-md-flex">              							
 								<a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
@@ -255,7 +324,7 @@ include('session.php');
 										<div class="dropdown-menu">                   
 											<a class="dropdown-item" href="new-drivers.php">
 												<i class="ti ti-user-shield"></i>
-												New Comer Drivers
+												New Drivers
 											</a>                      											
 											<a class="dropdown-item" href="drivers.php">
 												<i class="ti ti-steering-wheel"></i>
@@ -333,21 +402,21 @@ include('session.php');
 												<i class="ti ti-credit-card-pay"></i>
 											</span>                        											
 											<span class="nav-link-title">
-												Reports                       												
+												Account Statement                    												
 											</span>                      											
 										</a>                      										
 										<div class="dropdown-menu">
 											<a class="dropdown-item" href="driver-reports.php">											
 												<i class="ti ti-report"></i>												
-												Driver Reports												
+												Driver Account Statement  											
 											</a>                        											
 											<a class="dropdown-item" href="customer-report.php">											
 												<i class="ti ti-report"></i>
-												Customer Reports												
+												Customer Account Statement  												
 											</a>                        											
 											<a class="dropdown-item" href="booker-report.php">											
 												<i class="ti ti-report"></i>												
-												Booker Reports	
+												Booker Account Statement  
 											</a>											
 										</div>                    										
 									</li>	

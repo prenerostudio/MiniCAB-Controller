@@ -10,6 +10,7 @@ $d_post = mysqli_real_escape_string($connect, $_POST['post_code']);
 $v_id = mysqli_real_escape_string($connect, $_POST['v_id']);
 $pco = mysqli_real_escape_string($connect, $_POST['pco']);
 $status = 0;
+$signup_type = 3;
 
 // Check if the driver already exists
 $checksql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone'";
@@ -20,9 +21,25 @@ if ($checkr && mysqli_num_rows($checkr) > 0) {
     header('Location: index.php');
 } else {
     // Insert new driver
-    $sql = "INSERT INTO `drivers`(`d_name`, `d_email`, `d_phone`, `d_post_code`, `pco_num`, `acount_status`) VALUES ('$d_name', '$d_email', '$d_phone', '$d_post', '$pco', '$status')";
-    $r = mysqli_query($connect, $sql);
-
+    $sql = "INSERT INTO `drivers`(
+								`d_name`, 
+								`d_email`, 
+								`d_phone`, 
+								`d_post_code`, 
+								`pco_num`, 
+								`acount_status`, 
+								`signup_type`
+								) VALUES (
+								'$d_name',
+								'$d_email',
+								'$d_phone',
+								'$d_post',
+								'$pco',
+								'$status',
+								'$signup_type')";
+    
+	$r = mysqli_query($connect, $sql);
+	
     if ($r) {
         $d_id = mysqli_insert_id($connect);
 
@@ -31,7 +48,14 @@ if ($checkr && mysqli_num_rows($checkr) > 0) {
         $vr = mysqli_query($connect, $vsql);
 
         // Log the activity
-        $actsql = "INSERT INTO `activity_log` (`activity_type`, `user`, `details`) VALUES ('New Driver Registered', '$d_name', 'New Driver $d_name has been registered through Web Link')";
+        $actsql = "INSERT INTO `activity_log` (
+											`activity_type`,
+											`user`, 
+											`details`
+											) VALUES (
+											'New Driver Registered', 
+											'$d_name', 
+											'New Driver $d_name has been registered through Web Link')";
         $actr = mysqli_query($connect, $actsql);
 
         $_SESSION['success_msg'] = "Thanks for Account Registration with MiniCAB Services! We will get back to you via SMS/Email.";

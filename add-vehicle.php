@@ -75,7 +75,7 @@ $d_id = $_GET['d_id'];
 							</div>													
 						</div>					
 						<div class="modal-footer">
-							<a href="#" class="btn btn-danger">
+							<a href="view-driver.php?d_id=<?php echo $d_id; ?>" class="btn btn-danger">
 								<i class="ti ti-circle-x"></i>
 								Cancel
 							</a>
