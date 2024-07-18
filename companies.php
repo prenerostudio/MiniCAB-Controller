@@ -82,7 +82,7 @@ include('header.php');
 									</td>		
 									<td>
 										<?php echo $crow['com_pin']; ?>
-									</td>										
+									</td>
 									<td>											
 										<?php 											
 											if($crow['acount_status']==0){

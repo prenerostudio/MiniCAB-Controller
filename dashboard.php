@@ -324,14 +324,7 @@ include('header.php');
 										<td> 
 											<?php echo $brow['v_name'] ?> 
 										</td>
-										<td style="width: 10%;"> 
-											
-											
-											
-											
-											
-											
-											
+										<td style="width: 10%;">
 											<?php
 												if($brow['booking_status']=='Booked'){
 											?>
@@ -342,50 +335,29 @@ include('header.php');
 												} else {   
 											?>    
 											<form method="post" action="dispatch-process.php">
-												<input type="text" value="<?php echo $brow['book_id']; ?>" name="book_id">
-												<input type="text" value="<?php echo $brow['c_id']; ?>" name="c_id">
-												
-												<input type="text" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">
-												
-												<input type="text" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">
-												
-												<input type="text" value="<?php echo $brow['c_id']; ?>" name="c_id">
-												<select class="form-control" name="d_id" required>
-										
+												<input type="hidden" value="<?php echo $brow['book_id']; ?>" name="book_id">
+												<input type="hidden" value="<?php echo $brow['c_id']; ?>" name="c_id">
+												<input type="hidden" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">
+												<input type="hidden" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">												
+												<select class="form-control" name="d_id" required>				
 													<option value="">Select Driver</option>
-										
-													
 													<?php										
-										
-											
-											$drsql = mysqli_query($connect, "SELECT * FROM `drivers`");
-										
-											while ($drrow = mysqli_fetch_array($drsql)) {										
-										
-													?>										
-										
-													<option value="<?php echo $drrow['d_id'] ?>">										
-											
-														<?php echo $drrow['d_id'] ?> - 
-											
-														<?php echo $drrow['d_name'] ?> - 
-											
-														<?php echo $drrow['d_phone'] ?>										
-										
-													</option>		
-										
-													<?php       																			
-									
-										
-											}				
-										
-													?>									
-									
+														$drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
+														while ($drrow = mysqli_fetch_array($drsql)) {
+													?>
+													<option value="<?php echo $drrow['d_id'] ?>">
+														<?php echo $drrow['d_id'] ?> - 											
+														<?php echo $drrow['d_name'] ?> -
+														<?php echo $drrow['d_phone'] ?>
+													</option>										
+													<?php				
+														}
+													?>
 												</select>
-												<button type="submit" class="btn btn-info"><i class="ti ti-plane-tilt"></i>Dispatch</button>
-											
-											
-											
+												<button type="submit" class="btn btn-info">
+													<i class="ti ti-plane-tilt"></i>
+													Dispatch
+												</button>
 											</form>  
 											<?php											
 												}												
@@ -419,13 +391,12 @@ include('header.php');
 							}        
 							?>						
 					</div>					  									
-					<script>
-						$(document).ready(function() {
-    $('#table-booking').DataTable();
-});
-						
+					<script>					
 						$(document).ready(function() {    
-							$('#table-job').DataTable();
+							$('#table-booking').DataTable();
+						});												
+						$(document).ready(function() {    						
+							$('#table-job').DataTable();						
 						});
 						function loadJobList() {       							        
 							var xhttp = new XMLHttpRequest();      

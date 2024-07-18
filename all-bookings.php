@@ -106,10 +106,11 @@ include('header.php');
 										<th>ID</th>                        	
 										<th>Date Pickup</th>										
 										<th>Time Pickup</th>												
-										<th>Passenger</th>                        		
+										<th>Post Code</th>                        		
 										<th>Pickup</th>                        		
 										<th>Stops</th>
-										<th>Dropoff</th>	
+										<th>Dropoff</th>
+										<th>Passenger</th> 
 										<th>Fare</th>						   
 										<th>Vehicle</th>	
 										<th>Actions</th>		
@@ -132,7 +133,7 @@ include('header.php');
 											<?php echo $brow['pick_time']; ?>
 										</td>										
 										<td>
-											<?php echo $brow['passenger']; ?>
+											<?php echo $brow['postal_code']; ?>
 										</td>										
 										<td>
 											<?php echo $brow['pickup']; ?>
@@ -142,7 +143,10 @@ include('header.php');
 										</td>										
 										<td>
 											<?php echo $brow['destination'] ?>
-										</td>										
+										</td>
+										<td>
+											<?php echo $brow['passenger']; ?>
+										</td>
 										<td> 
 											<?php echo $brow['journey_fare'] ?> 
 										</td>										
