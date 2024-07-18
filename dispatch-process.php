@@ -6,31 +6,21 @@ session_start();
 $book_id = $_POST['book_id'];
 $c_id  = $_POST['c_id'];
 $d_id = $_POST['d_id'];
-$job_note = $_POST['job_note'];
 $journey_fare = $_POST['journey_fare'];
 $booking_fee = $_POST['booking_fee'];
-$car_parking = $_POST['car_parking'];
-$waiting = $_POST['waiting'];
-$tolls = $_POST['tolls'];
-$extra = $_POST['extra'];
 $job_status = 'waiting';
     
     $sql = "INSERT INTO `jobs`(
                 `book_id`, 
                 `c_id`, 
-                `d_id`, 
-                `job_note`, 
+                `d_id`,                
                 `journey_fare`, 
-                `booking_fee`, 
-                `car_parking`, 
-                `waiting`, 
-                `tolls`, 
-                `extra`, 
+                `booking_fee`,                  
                 `job_status`
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            ) VALUES (?, ?, ?, ?, ?, ?)";
     
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("iiissddddds", $book_id, $c_id, $d_id, $job_note, $journey_fare, $booking_fee, $car_parking, $waiting, $tolls, $extra, $job_status);
+    $stmt->bind_param("iiisss", $book_id, $c_id, $d_id, $journey_fare, $booking_fee, $job_status);
     $result = $stmt->execute();
 
     if ($result) {
@@ -64,10 +54,10 @@ $job_status = 'waiting';
 											'$myId',
 											'$details')";		
 		$actr = mysqli_query($connect, $actsql);        
-        header('Location: upcoming-bookings.php');
+        header('Location: inprocess-bookings.php');
         exit();
     } else {
-        header('Location: view-booking.php?book_id=' . $book_id);
+        header('Location: dashboard.php');
         exit();
     }
 

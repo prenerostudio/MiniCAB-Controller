@@ -19,20 +19,18 @@ function uploadImage() {
 }
 
 $cname = $_POST['cname'];
+$rpname = $_POST['rpname'];
 $cemail = $_POST['cemail'];
 $cphone = $_POST['cphone'];
 $cpass = $_POST['cpass'];
-$cgender = $_POST['cgender'];
-$clang = $_POST['clang'];
+$cpin = $_POST['cpin'];
 $pc = $_POST['pc'];
-$cni = $_POST['cni'];
 $caddress = $_POST['caddress'];
-$cothers = $_POST['cothers'];
-$account_type = 1;
+$acount_status = 0;
 
 
 // Check if the email already exists
-$stmt_check = $connect->prepare("SELECT COUNT(*) FROM `clients` WHERE `c_phone` = ?");
+$stmt_check = $connect->prepare("SELECT COUNT(*) FROM `companies` WHERE `com_phone` = ?");
 $stmt_check->bind_param("s", $cphone);
 $stmt_check->execute();
 $stmt_check->bind_result($phone_count);
@@ -41,30 +39,27 @@ $stmt_check->close();
 
 if ($phone_count > 0) {
      echo '<script>alert("Phone already exists. Please use a different Phone Number.");';
-    echo 'window.location.href = "customers.php";</script>';
+    echo 'window.location.href = "companies.php";</script>';
 } else {
     // Handle image upload
     $cpic = uploadImage();
 
       if ($cpic !== false) {
         // Insert image name along with other data
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `companies`(`com_name`, `com_email`, `com_phone`, `com_password`, `com_address`, `com_person`, `com_pic`, `postal_code`, `com_pin`, `acount_status`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type);
+        $stmt->bind_param("ssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $rpname, $cpic, $pc, $cpin, $acount_status);
     } else {
-        // Insert only name without image name
-        $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+         // Insert image name along with other data
+        $sql = "INSERT INTO `companies`(`com_name`, `com_email`, `com_phone`, `com_password`, `com_address`, `com_person`, `postal_code`, `com_pin`, `acount_status`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type);
+        $stmt->bind_param("sssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $rpname, $pc, $cpin, $acount_status);
     }
 
     if ($stmt->execute()) {						
-		$activity_type = 'New Customer Added';			
+		$activity_type = 'New Company Added';			
 		$user_type = 'user';        		
-		$details = "New Customer " . $cname . " Has been Added by Controller.";
-				
+		$details = "New Company " . $cname . " Has been Added by Controller.";
 		$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 
 											`user_type`, 
@@ -77,10 +72,10 @@ if ($phone_count > 0) {
 											'$details')";		
 					
 		$actr = mysqli_query($connect, $actsql);				
-		header('Location: customers.php'); 
+		header('Location: companies.php'); 
         exit();
     } else {
-        header('Location: customers.php'); 
+        header('Location: companies.php'); 
     }
     $stmt->close();
 }

@@ -20,7 +20,7 @@ include('header.php');
 					</a>                  					
 				</span> 
 				<span class="d-none d-sm-inline">				
-					<a href="inprocess-bookings.php" class="btn btn-instagram">											
+					<a href="inprocess-bookings.php" class="btn btn-instagram">
 						<i class="ti ti-user-search"></i>                     						
 						Bookings InProcess                  						
 					</a>                  					
@@ -46,24 +46,26 @@ include('header.php');
 		<div class="col-12">            					
 			<div class="card">                							
 				<div class="card-header">                    									
-					<h3 class="card-title">Bookings In-Process</h3>                  										
+					<h3 class="card-title">Bookings In-Process</h3>
 				</div>                  				
 				<div class="card-body border-bottom py-3">				
-					<div id="table-default" class="table-responsive">                  					
-						<table class="table" id="table-inprocess">                    						
+					<div id="table-default" class="table-responsive">
+						<table class="table" id="table-inprocess">
 							<thead>                      							
 								<tr>                        								
-									<th>ID</th>                        									
-									<th>Date</th>                        									
-									<th>Time</th>                       									
-									<th>Passenger</th>                        									
+									<th>ID</th>
+									<th>Date</th>
+									<th>Time</th>
+									<th>Post Code</th>
 									<th>Pickup</th> 
 									<th>Stops</th>
-									<th>Dropoff</th>                       									
+									<th>Dropoff</th>   
+									<th>Passenger</th>
 									<th>Fare</th>						   									
 									<th>Vehicle</th>						  									
 									<th>Status</th>						   									
-									<th>Driver</th>			
+									<th>Driver</th>
+									<th>Action</th>
 								</tr>
 							</thead>							
 							<tbody class="table-tbody">								
@@ -84,7 +86,7 @@ include('header.php');
 										<?php echo $jobrow['pick_time'] ?>
 									</td>
 									<td>
-										<?php echo $jobrow['passenger'] ?>
+										<?php echo $jobrow['postal_code'] ?>
 									</td>  									
 									<td>
 										<?php echo $jobrow['pickup'] ?>
@@ -94,7 +96,10 @@ include('header.php');
 									</td>	
 									<td>
 										<?php echo $jobrow['destination'] ?>
-									</td>									
+									</td>
+									<td>
+										<?php echo $jobrow['passenger'] ?>
+									</td>
 									<td> 
 										<?php echo $jobrow['journey_fare'] ?> 
 									</td>									
@@ -102,13 +107,49 @@ include('header.php');
 										<?php echo $jobrow['v_name'] ?> 
 									</td>									
 									<td>
-										<button class="btn btn-indigo">
-											<?php echo $jobrow['job_status'] ?>
-										</button>
+										
+										
+										<?php 											
+											if($jobrow['job_status']=='waiting'){
+										?>												
+										<div class="col-auto status">
+											<span class="status-dot status-dot-animated bg-orange d-block"></span>
+											<span>Waiting</span>									
+										</div>
+										<?php									
+											} elseif($jobrow['job_status']=='completed'){											
+										?>
+										<div class="col-auto status">
+											<span class="status-dot status-dot-animated bg-green d-block"></span>
+											<span>Completed</span>											
+										</div>			
+										<?php									
+											}else{
+												?>
+										<div class="col-auto status">
+											<span class="status-dot status-dot-animated bg-red d-block"></span>
+											<span>Cancelled</span>											
+										</div>
+										<?php
+												
+											}
+										?>	
+										
+										
+										
+										
 									</td>									
 									<td> 
 										<?php echo $jobrow['d_name'] ?>
-									</td>								
+									</td>
+									<td> 
+										<a href="withdraw-job.php?job_id=<?php echo $jobrow['job_id']; ?>&book_id=<?php echo $jobrow['book_id']; ?>">
+											<button class="btn btn-danger">										
+												<i class="ti ti-square-rounded-x"></i>
+												Withdraw Job											
+											</button>												
+										</a>
+									</td>
 								</tr>																			
 								<?php
 								}																								

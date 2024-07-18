@@ -6,7 +6,7 @@ include('session.php');
 <html lang="en">  
 	<head>    	
 		<meta charset="utf-8"/>    		
-		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>    		
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     		
 		<title>Dashboard - MiniCAB Taxi Booking Service.</title>		
@@ -62,19 +62,19 @@ include('session.php');
 				<header class="navbar navbar-expand-md d-print-none" >        					
 					<div class="container">          					
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>         						
-						</button>        						
+							<span class="navbar-toggler-icon"></span>
+						</button>        					
 						<h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
 							<a href="dashboard.php">            								
 								<img src="img/logo.png" width="110" height="32" alt="MiniCAB" class="navbar-brand-image">
 							</a>         						
-						</h1>          						
+						</h1>
 						<div class="navbar-nav flex-row order-md-last">         						
 							<div class="nav-item d-none d-md-flex me-3">         							
 								 
 								<div class="btn-list">
 									
-									<a href="#" class="btn btn-indigo position-relative">
+									<a href="new-driver-web.php" class="btn btn-warning position-relative">
             
 										<i class="ti ti-users-group"></i>
             
@@ -102,21 +102,20 @@ include('session.php');
         
 									</a>
         
-									<a href="fare-corrections.php" class="btn btn-danger">
+									<a href="fare-corrections.php" class="btn btn-danger position-relative">
             
 										<i class="ti ti-receipt-pound"></i>
             
 										Fare Corrections
+										<span class="badge badge-danger position-absolute top-0 start-100 translate-middle">
+                
+											0 <!-- This number will be dynamically updated -->
+            
+										</span>
         
 									</a>
         
-									<!--<a href="upcoming-bookings.php" class="btn btn-instagram">
-            
-										<i class="ti ti-alarm-plus"></i>
-            
-										Upcoming Jobs
-        
-									</a>-->
+									
         
 									<a href="driver-tracker.php" class="btn btn-cyan">
             
@@ -125,10 +124,11 @@ include('session.php');
 										Driver Tracker
         
 									</a>
-        
+
 									<a href="add-booking.php" class="btn btn-indigo">
             
 										<i class="ti ti-bookmark-plus"></i>
+
             
 										New Booking
         
@@ -159,22 +159,63 @@ include('session.php');
 											.catch(error => console.error('Error fetching new drivers count:', error));
     
 									});
+									
+									document.addEventListener("DOMContentLoaded", function() {
+        
+										// Fetch the number of new drivers from the server
+        
+										fetch('web-driver-count.php')
+            
+											.then(response => response.json())
+            
+											.then(data => {
+                
+											// Update the badge with the fetched count
+                
+											document.querySelector('.btn-warning .badge').textContent = data.webDriversCount;
+            
+										})
+            
+											.catch(error => console.error('Error fetching new drivers count:', error));
+    
+									});
+									
+									document.addEventListener("DOMContentLoaded", function() {
+        
+										// Fetch the number of new drivers from the server
+        
+										fetch('fare-count.php')
+            
+											.then(response => response.json())
+            
+											.then(data => {
+                
+											// Update the badge with the fetched count
+                
+											document.querySelector('.btn-danger .badge').textContent = data.faresCount;
+            
+										})
+            
+											.catch(error => console.error('Error fetching new drivers count:', error));
+    
+									});
     
 								</script>         							
 							
+
 							</div>           
-							<div class="d-none d-md-flex">              							
+							<div class="d-none d-md-flex">
 								<a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
-									<i class="ti ti-moon"></i>            								
+									<i class="ti ti-moon"></i>
 								</a>            								
 								<a href="dashboard.php?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip" data-bs-placement="bottom">									
-									<i class="ti ti-sun"></i>            								
-								</a>								          							
+									<i class="ti ti-sun"></i>
+								</a>
 							</div>           														
 							<div class="nav-item dropdown">
-								<a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">                								
-									<span class="avatar avatar-sm" style="background-image: url(img/users/<?php echo $user_pic;?>)"></span>               									
-									<div class="d-none d-xl-block ps-2">                									
+								<a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+									<span class="avatar avatar-sm" style="background-image: url(img/users/<?php echo $user_pic;?>)"></span>
+									<div class="d-none d-xl-block ps-2">
 										<div><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></div>
 										<div class="mt-1 small text-secondary"><?php echo $designation;?></div>
 									</div>             								
@@ -186,265 +227,10 @@ include('session.php');
 								</div>            							
 							</div>          						
 						</div>        					
-					</div>      				
-				</header>																				
-				<header class="navbar-expand-md">        				
-					<div class="collapse navbar-collapse" id="navbar-menu">          					
-						<div class="navbar">           														
-							<div class="col">                  							
-								<ul class="navbar-nav">
-									<li class="nav-item">                      									
-										<a class="nav-link" href="dashboard.php">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-home"></i>												
-											</span>											
-											<span class="nav-link-title">											
-												Dashboard												
-											</span>
-										</a>                    										
-									</li>																		
-									<li class="nav-item dropdown">                      									
-										<a class="nav-link dropdown-toggle" href="#navbar-booking" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-book"></i>												
-											</span>
-											<span class="nav-link-title">											
-												Bookings Section												
-											</span>                      											
-										</a>                      										
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="add-booking.php">
-												<i class="ti ti-bookmark-plus"></i>
-												Add New Booking
-											</a>   											
-											<a class="dropdown-item" href="all-bookings.php">
-												<i class="ti ti-bookmarks"></i>												
-												All Bookings
-											</a>											
-											<a class="dropdown-item" href="upcoming-bookings.php">
-												<i class="ti ti-alarm-plus"></i>
-												Upcoming Bookings												
-											</a>                        													
-											<a class="dropdown-item" href="inprocess-bookings.php">
-												<i class="ti ti-address-book"></i>
-												Booking InProcess												
-											</a>                        											
-											<a class="dropdown-item" href="completed-booking.php">
-												<i class="ti ti-bookmarks-filled"></i>
-												Completed Bookings
-											</a>											
-											<a class="dropdown-item" href="cancelled-booking.php">
-												<i class="ti ti-bookmarks-off"></i>
-												Cancelled Bookings
-											</a> 											
-										</div>                    										
-									</li>					
-									<li class="nav-item dropdown">									
-										<a class="nav-link dropdown-toggle" href="#navbar-booking" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-gavel"></i>
-											</span>											
-											<span class="nav-link-title">											
-												Bids Section
-											</span>											
-										</a>                      										
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="add-bid.php">
-												<i class="ti ti-file-plus"></i>
-												Add New Bid	
-											</a>   											
-																							
-											<a class="dropdown-item" href="bid-bookings.php">											
-												<i class="ti ti-file-check"></i>
-												Bookings on Bid                    					
-											</a>		
-											<a class="dropdown-item" href="accepted-bids.php">											
-												<i class="ti ti-users"></i> 												
-												Accepted Bids
-											</a>	
-											<a class="dropdown-item" href="time-slots.php">
-												<i class="ti ti-clock-24"></i>
-												Time Slots												
-											</a>
-										</div>                    										
-									</li>	
-									<li class="nav-item dropdown">                      									
-										<a class="nav-link dropdown-toggle" href="#navbar-client" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">	
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-user-shield"></i>					
-											</span>                        											
-											<span class="nav-link-title">		
-												Companies Section												
-											</span>                      											
-										</a>					
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="companies.php">
-												<i class="ti ti-users-group"></i>
-												Companies Accounts												
-											</a>        											
-											<a class="dropdown-item" href="#">
-												<i class="ti ti-users-group"></i>
-												Delete Accounts Requests
-											</a>
-										</div>                    										
-									</li>
-									<li class="nav-item dropdown">                      									
-										<a class="nav-link dropdown-toggle" href="#navbar-client" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">	
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-user-shield"></i>					
-											</span>                        											
-											<span class="nav-link-title">		
-												Customers Section												
-											</span>                      											
-										</a>					
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="customers.php">
-												<i class="ti ti-users-group"></i>
-												Customers Accounts												
-											</a>                        											
-											<a class="dropdown-item" href="bookers.php">
-												<i class="ti ti-users-group"></i>
-												Bookers Accounts												
-											</a>
-											<a class="dropdown-item" href="#">
-												<i class="ti ti-users-group"></i>
-												Delete Accounts Requests
-											</a>
-										</div>                    										
-									</li>
-									<li class="nav-item dropdown">                      									
-										<a class="nav-link dropdown-toggle" href="#navbar-driver" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-user-pin"></i>												
-											</span>                      											
-											<span class="nav-link-title">
-												Drivers                       												
-											</span>                     											
-										</a>                     										
-										<div class="dropdown-menu">                   
-											<a class="dropdown-item" href="new-drivers.php">
-												<i class="ti ti-user-shield"></i>
-												New Drivers
-											</a>                      											
-											<a class="dropdown-item" href="drivers.php">
-												<i class="ti ti-steering-wheel"></i>
-												Active Drivers
-											</a>									
-											<a class="dropdown-item" href="inactive-drivers.php">
-												<i class="ti ti-car-off"></i>
-												Inactive Drivers
-											</a>											
-											<a class="dropdown-item" href="driver-tracker.php">
-												<i class="ti ti-user-search"></i>
-												Driver Tracker
-											</a>
-											<a class="dropdown-item" href="fare-corrections.php">
-												<i class="ti ti-credit-card-refund"></i>
-												Fare Corrections
-											</a>											
-											<a class="dropdown-item" href="#">											
-												<i class="ti ti-receipt"></i>												
-												Reviews                        												
-											</a>                      											
-										</div>                    										
-									</li>						
-									<li class="nav-item">                      									
-										<a class="nav-link" href="vehicles.php">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-car-garage"></i>
-											</span>											
-											<span class="nav-link-title">
-												Vehicles
-											</span>                      											
-										</a>                    										
-									</li>					
-									<li class="nav-item">                      									
-										<a class="nav-link" href="pricing.php">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-coin-pound"></i>
-											</span>											
-											<span class="nav-link-title">											
-												Pricing												
-											</span>                      											
-										</a>                    										
-									</li>
-									<li class="nav-item dropdown">                      									
-										<a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-map-down"></i>												
-											</span>                        											
-											<span class="nav-link-title">
-												Destinations												
-											</span>                      											
-										</a>                      										
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="zones.php">										
-												<i class="ti ti-map-pins"></i>												
-												Zones												
-											</a>                        											
-											<a class="dropdown-item" href="airports.php">
-												<i class="ti ti-plane-tilt"></i>
-												Airports												
-											</a>                        											
-											<a class="dropdown-item" href="destinations.php">
-												<i class="ti ti-map-2"></i>												
-												Destinations												
-											</a>
-											<a class="dropdown-item" href="railway_stations.php">
-												<i class="ti ti-train"></i>												
-												Railway Stations												
-											</a>
-										</div>                    										
-									</li>					
-									<li class="nav-item dropdown">                      									
-										<a class="nav-link dropdown-toggle" href="#navbar-report" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-credit-card-pay"></i>
-											</span>                        											
-											<span class="nav-link-title">
-												Account Statement                    												
-											</span>                      											
-										</a>                      										
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="driver-reports.php">											
-												<i class="ti ti-report"></i>												
-												Driver Account Statement  											
-											</a>                        											
-											<a class="dropdown-item" href="customer-report.php">											
-												<i class="ti ti-report"></i>
-												Customer Account Statement  												
-											</a>                        											
-											<a class="dropdown-item" href="booker-report.php">											
-												<i class="ti ti-report"></i>												
-												Booker Account Statement  
-											</a>											
-										</div>                    										
-									</li>	
-									<li class="nav-item">                      									
-										<a class="nav-link" href="company.php">										
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-building-bank"></i>
-											</span>                        											
-											<span class="nav-link-title">
-												Company Profile                   												
-											</span>                      											
-										</a>                    										
-									</li>
-									<li class="nav-item">                      									
-										<a class="nav-link" href="activity_log.php">										
-											<span class="nav-link-icon d-md-none d-lg-inline-block">
-												<i class="ti ti-activity"></i>
-											</span>                        											
-											<span class="nav-link-title">
-												Activity Logs
-
-											</span>                      											
-										</a>                    										
-									</li>
-								</ul>                								
-							</div>						
-						</div>      									
-					</div>									
-				</header>			
+					</div>   		
+				</header>																		
+				<?php
+				include('navbar.php');
+				?>				
 			</div>							
 			<div class="page-wrapper">

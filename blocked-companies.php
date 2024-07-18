@@ -48,7 +48,7 @@ include('header.php');
 							</thead>
 							<tbody class="table-tbody">
 								<?php
-								$csql=mysqli_query($connect,"SELECT companies.* FROM companies WHERE companies.acount_status = 1 ORDER BY companies.com_id DESC");
+								$csql=mysqli_query($connect,"SELECT companies.* FROM companies WHERE companies.acount_status = 0 ORDER BY companies.com_id DESC");
 								while($crow = mysqli_fetch_array($csql)){
 								?>
 								<tr>
@@ -115,10 +115,10 @@ include('header.php');
 												Delete
 											</button>
 										</a>
-										<a href="block-company.php?com_id=<?php echo $crow['com_id']; ?>">
-											<button class="btn btn-warning">
+										<a href="activate-company.php?com_id=<?php echo $crow['com_id']; ?>">
+											<button class="btn btn-success">
 												<i class="ti ti-square-rounded-x"></i>
-												Block Company
+												Activate Company
 											</button>
 										</a>
 									</td>								
@@ -176,7 +176,7 @@ include('header.php');
 						</div> 
 						<div class="mb-3 col-md-4">
 							<label class="form-label">PIN</label>
-							<input type="text" class="form-control" name="cpin" placeholder="xxxx" required>
+							<input type="text" class="form-control" name="cpin" placeholder="xxxx" required>				
 						</div>												
 						<div class="mb-3 col-md-6">
 							<label class="form-label">Postal Code</label>
@@ -193,19 +193,18 @@ include('header.php');
 								}																		
 								?>
 							</select>
-						</div> 
+						</div>  
 						<div class="mb-3 col-md-6">               
 							<label class="form-label">Picture</label>
 							<input type="file" class="form-control" name="cpic">
 						</div>
-						<div class="mb-3 col-lg-12">							
-								<div class="mb-3">								
-									<label class="form-label">Address</label>
-									<textarea class="form-control" rows="3" name="caddress"></textarea>
-								</div>
-							</div>	
-					</div>
-									
+						<div class="mb-3 col-lg-12">
+							<div class="mb-3">								
+								<label class="form-label">Address</label>								
+								<textarea class="form-control" rows="3" name="caddress"></textarea>
+							</div>							
+						</div>
+					</div>										
 					<div class="modal-footer">					
 						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">
 							<i class="ti ti-circle-x"></i>						

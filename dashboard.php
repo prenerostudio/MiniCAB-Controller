@@ -24,69 +24,66 @@ include('header.php');
 						<div>				
 						<table class="table scrollable-table">						
 							<thead>
-								<tr>									
-									<th style="width: 14%;">ID</th>									
+								<tr>
+									<th style="width: 14%;">ID</th>
 									<th>Zone Address</th>									
-								</tr>							
-							</thead>							
-							<tbody class="table-tbody ">							
-								<?php								
+								</tr>
+							</thead>
+							<tbody class="table-tbody">
+								<?php
 								$x = 0;								
-								$zsql = mysqli_query($connect, "SELECT * FROM `zones`");								
-								while ($zrow = mysqli_fetch_array($zsql)) :								
-								$x++;								
-								?>																
+								$zsql = mysqli_query($connect, "SELECT * FROM `zones`");
+								while ($zrow = mysqli_fetch_array($zsql)) :		
+								$x++;
+								?>
 								<tr>								
 									<td style="width: 14%;">									
 										<?php echo $x; ?>									
 									</td>
 									<td>
 										<?php echo $zrow['zone_name'];?>
-									</td>									               									
-									
+									</td>
 								</tr>
-								<?php endwhile; ?>								
+								<?php endwhile; ?>
 								<?php if ($x === 0) : ?>
-								<tr>                                   															
-									<td colspan="2">																	
-										<p align="center">No Zone Found!</p>					
-									</td>	
-								</tr>                           															
-								<?php endif; ?>                        														
-							</tbody>                   												
+								<tr>
+									<td colspan="2">
+										<p align="center">No Zone Found!</p>
+									</td>
+								</tr>
+								<?php endif; ?>
+							</tbody>
 						</table>
-						</div>	
-						
-					                  
+					</div>
 				</div>                
 			</div>              
 		</div>			              								
 		<div class="col-sm-6 col-lg-3">										
 			<div class="card">                			
 				<div class="card-body">                    				
-					<div class="d-flex align-items-center">                      					
+					<div class="d-flex align-items-center">
 						<div class="subheader">
 							Driver Onboard
 						</div>
-					</div>					
-					<div class="table-responsive">                   															
-						<div id="driverListPOB">    
-							<table class="table table-responsive" id="table-pob">		        
-								<thead>         
-									<tr>                  
+					</div>
+					<div class="table-responsive">
+						<div id="driverListPOB">
+							<table class="table table-responsive" id="table-pob">
+								<thead>
+									<tr>
 										<th>ID</th>
-										<th>Driver</th>										                
+										<th>Driver</th>
 										<th>Status</th>	            
-									</tr>                     									        
-								</thead>                    								        
-								<tbody> 								            
+									</tr>
+								</thead>
+								<tbody>
 									<?php
-									$n=0;            
+									$n=0;
 									$drsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='pob'");
 									while($drrow = mysqli_fetch_array($drsql)){
-										$n++;										            
-									?>            
-									<tr>                
+										$n++;
+									?>
+									<tr>
 										<td>                    
 											<?php echo $n; ?>                
 										</td>                
@@ -112,7 +109,7 @@ include('header.php');
 							function loadDriverListPOB() {
 								var xhttp = new XMLHttpRequest();        
 								xhttp.onreadystatechange = function() {            
-									if (this.readyState == 4 && this.status == 200) {                
+									if (this.readyState == 4 && this.status == 200) {
 										document.getElementById("driverListPOB").innerHTML = this.responseText;            
 									}        
 								};        
@@ -129,19 +126,19 @@ include('header.php');
 		<div class="col-sm-6 col-lg-3">            					
 			<div class="card">                			
 				<div class="card-body">                    				
-					<div class="d-flex align-items-center">                      					
-						<div class="subheader">Active users</div>                                          						
-					</div>                    					
-					<div id="driverList">    
-						<table class="table" id="table-active">        
-							<thead>            
-								<tr>                
-									<th>ID</th>                
-									<th>Driver</th>                
-									<th>Status</th>            
-								</tr>        
-							</thead>        
-							<tbody>            
+					<div class="d-flex align-items-center">
+						<div class="subheader">Active users</div>
+					</div>
+					<div id="driverList">
+						<table class="table" id="table-active">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Driver</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
 								<?php            
 								$x=0;            
 								$drvsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");
@@ -267,30 +264,32 @@ include('header.php');
 				<div class="card-body border-bottom py-3">
 					<div class="table-responsive">					
 							<?php        							
-							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");        							
+							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id =  booking_type.b_type_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status <> 'Booked' ORDER BY bookings.book_id DESC");        							
 							if (mysqli_num_rows($bsql) > 0) {							
 							?>           							
 							<table class="table" id="table-booking">	
 								<thead>                      		
-									<tr> 																	
+									<tr>
 										<th>ID</th>                        	
-										<th>Date Pickup</th>										
-										<th>Time Pickup</th>												
-										<th>Passenger</th>                        		
+										<th>Date Pickup</th>
+										<th>Time Pickup</th>
+										<th>Post Code</th>                        		
 										<th>Pickup</th>                        		
 										<th>Stops</th>
-										<th>Dropoff</th>	
+										<th>Dropoff</th>
+										<th>Passenger</th>
+										<th>Journey Type</th>
 										<th>Fare</th>						   
 										<th>Vehicle</th>	
 										<th>Actions</th>		
-									</tr>                   
+									</tr>
 								</thead>
 								<tbody class="table-tbody" id="tableBody">
 									<?php                   								
 										$y = 0;                    
-										while ($brow = mysqli_fetch_array($bsql)) {                        
+										while ($brow = mysqli_fetch_array($bsql)){
 										$y++;                    
-									?>											                     
+									?>
 									<tr>
 										<td>
 											<?php echo $brow['book_id']; ?>
@@ -302,7 +301,7 @@ include('header.php');
 											<?php echo $brow['pick_time']; ?>
 										</td>										
 										<td>
-											<?php echo $brow['passenger']; ?>
+											<?php echo $brow['postal_code']; ?>
 										</td>										
 										<td>
 											<?php echo $brow['pickup']; ?>
@@ -312,7 +311,13 @@ include('header.php');
 										</td>										
 										<td>
 											<?php echo $brow['destination'] ?>
-										</td>										
+										</td>
+										<td>
+											<?php echo $brow['passenger']; ?>
+										</td>
+										<td>
+											<?php echo $brow['journey_type']; ?>
+										</td>
 										<td> 
 											<?php echo $brow['journey_fare'] ?> 
 										</td>										
@@ -320,6 +325,13 @@ include('header.php');
 											<?php echo $brow['v_name'] ?> 
 										</td>
 										<td style="width: 10%;"> 
+											
+											
+											
+											
+											
+											
+											
 											<?php
 												if($brow['booking_status']=='Booked'){
 											?>
@@ -329,9 +341,52 @@ include('header.php');
 											<?php											
 												} else {   
 											?>    
-											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>" class="btn btn-success button_padding" title="Dispatch">
-												<i class="ti ti-plane-tilt"></i>
-											</a>   
+											<form method="post" action="dispatch-process.php">
+												<input type="text" value="<?php echo $brow['book_id']; ?>" name="book_id">
+												<input type="text" value="<?php echo $brow['c_id']; ?>" name="c_id">
+												
+												<input type="text" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">
+												
+												<input type="text" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">
+												
+												<input type="text" value="<?php echo $brow['c_id']; ?>" name="c_id">
+												<select class="form-control" name="d_id" required>
+										
+													<option value="">Select Driver</option>
+										
+													
+													<?php										
+										
+											
+											$drsql = mysqli_query($connect, "SELECT * FROM `drivers`");
+										
+											while ($drrow = mysqli_fetch_array($drsql)) {										
+										
+													?>										
+										
+													<option value="<?php echo $drrow['d_id'] ?>">										
+											
+														<?php echo $drrow['d_id'] ?> - 
+											
+														<?php echo $drrow['d_name'] ?> - 
+											
+														<?php echo $drrow['d_phone'] ?>										
+										
+													</option>		
+										
+													<?php       																			
+									
+										
+											}				
+										
+													?>									
+									
+												</select>
+												<button type="submit" class="btn btn-info"><i class="ti ti-plane-tilt"></i>Dispatch</button>
+											
+											
+											
+											</form>  
 											<?php											
 												}												
 											?>

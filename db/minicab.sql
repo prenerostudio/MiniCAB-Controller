@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2024 at 11:54 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Generation Time: Jul 18, 2024 at 03:41 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,7 +48,28 @@ INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user_type`,
 (00000005, 'New Zone Added', '2024-07-13 12:00:34', 'user', 00000001, 'New Zone  -  Has Been Added by Controller.'),
 (00000006, 'Zone Deleted ', '2024-07-13 12:00:45', 'user', 00000001, 'Zone Address Has Been Deleted by Controller.'),
 (00000007, 'Meet & Greet Charges Deleted', '2024-07-13 12:31:15', 'user', 00000001, 'Meet & Greet Charges Has Been Deleted by Controller.'),
-(00000008, 'Peak Hours Deleted Deleted', '2024-07-13 14:11:21', 'user', 00000001, 'Peak Hours Deleted Has Been Deleted by Controller.');
+(00000008, 'Peak Hours Deleted Deleted', '2024-07-13 14:11:21', 'user', 00000001, 'Peak Hours Deleted Has Been Deleted by Controller.'),
+(00000009, 'Controller Logged-In', '2024-07-14 17:17:03', 'user', 00000000, 'Controller Atiq Logged in successfully.'),
+(00000010, 'Job Dispatched', '2024-07-17 03:48:06', 'user', 00000001, 'Job has been dispatched to driver by Controller.'),
+(00000011, 'New Company Added', '2024-07-17 11:39:06', 'user', 00000001, 'New Company Prenero Studio Has been Added by Controller.'),
+(00000012, 'Company Profile Image Update', '2024-07-17 11:52:44', 'user', 00000001, 'Company Profile Image 00000001 Has Been Updated by Controller.'),
+(00000013, 'Company Image Deleted', '2024-07-17 11:57:30', 'user', 00000001, 'Company Image Has Been Deleted by Controller.'),
+(00000014, 'Company Profile Image Update', '2024-07-17 12:25:04', 'user', 00000001, 'Company Profile Image 00000002 Has Been Updated by Controller.'),
+(00000015, 'Block Company', '2024-07-17 13:14:01', 'user', 00000001, 'Company ID: 00000001 Has Been Blocked'),
+(00000016, 'Activate Company', '2024-07-17 13:14:04', 'user', 00000001, 'Company ID: 00000001 Has Been Activated'),
+(00000017, 'Block Company', '2024-07-17 13:14:05', 'user', 00000001, 'Company ID: 00000001 Has Been Blocked'),
+(00000018, 'Activate Company', '2024-07-17 13:14:15', 'user', 00000001, 'Company ID: 00000001 Has Been Activated'),
+(00000019, 'Activate Company', '2024-07-17 13:14:21', 'user', 00000001, 'Company ID: 00000002 Has Been Activated'),
+(00000020, 'Delete Account Request', '2024-07-17 14:28:00', 'driver', 00000001, 'Delete Account Request Pending.'),
+(00000021, 'Delete Account Request', '2024-07-17 14:28:13', 'driver', 00000001, 'Delete Account Request Pending.'),
+(00000022, 'Driver Acount Deletion Request Cancelled', '2024-07-18 09:14:23', 'user', 00000001, 'Driver Acount Deletion Request has been Cancelled.'),
+(00000023, 'Driver Acount Deletion Request Cancelled', '2024-07-18 09:16:07', 'user', 00000001, 'Driver Acount Deletion Request has been Cancelled.'),
+(00000024, 'Driver Acount Deletion Request Cancelled', '2024-07-18 09:18:28', 'user', 00000001, 'Driver Acount Deletion Request has been Cancelled.'),
+(00000025, 'Driver Account Deletion Request Approved', '2024-07-18 09:27:50', 'user', 00000001, 'Driver Account Deletion Request has been Approved.'),
+(00000026, 'Activate Driver', '2024-07-18 12:46:40', 'user', 00000001, 'Driver ID: 00000001 Has Been Activated'),
+(00000027, 'Driver Account Deletion Request Approved', '2024-07-18 12:47:10', 'user', 00000001, 'Driver Account Deletion Request has been Approved.'),
+(00000028, 'New Driver Added', '2024-07-18 13:01:18', 'user', 00000002, 'New Driver Atiq Ramzan Has been Added by Controller.'),
+(00000029, 'Journey Fare Added', '2024-07-18 13:24:53', 'driver', 00000001, 'Journey Fare added for correction against job #: 1.');
 
 -- --------------------------------------------------------
 
@@ -183,7 +204,7 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booker_commission`, `booking_status`, `bid_status`, `bid_time`, `bid_note`, `payment_type`, `customer_name`, `customer_email`, `customer_phone`, `book_add_date`) VALUES
-(00000002, 00000003, 00000001, 'Jail Road', 'midway', 'General Bus Stand', '', '', 3, '2024-07-18', '07:43:00', '', 00000002, '2', '', '', '00:00:00', 'N/A', 500, 25, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Personel', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-11 16:06:34');
+(00000002, 00000003, 00000001, 'Jail Road', 'midway', 'General Bus Stand', '', '', 3, '2024-07-18', '07:43:00', 'one-way', 00000002, '2', '', '', '00:00:00', 'N/A', 500, 25, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', 'Personel', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-11 16:06:34');
 
 -- --------------------------------------------------------
 
@@ -298,7 +319,8 @@ CREATE TABLE `companies` (
 --
 
 INSERT INTO `companies` (`com_id`, `com_name`, `com_email`, `com_phone`, `com_password`, `com_address`, `com_person`, `com_pic`, `postal_code`, `com_pin`, `acount_status`, `reg_com_date`) VALUES
-(00000001, 'Atiq Ramzan', 'prenero12@gmail.com', '+923127346634', '6266a', '', '', '', '', '', 1, '2024-07-14 08:58:31');
+(00000001, 'Prenero Solutions', 'prenero12@gmail.com', '+923127346634', '6266a', 'P-24, Hamza Market', 'Atiq Ramzan', '', '38000', '1102', 1, '2024-07-17 13:14:15'),
+(00000002, 'Prenero Studio', 'hello@prenero.com', '+923157524000', '123456', '', 'Atiq Ramzan', '6697b820bb13a_1721219104.png', 'W12', '1234', 1, '2024-07-17 13:14:21');
 
 -- --------------------------------------------------------
 
@@ -619,15 +641,51 @@ INSERT INTO `customer_cards` (`cc_id`, `c_id`, `card_name`, `card_number`, `card
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `delete_companies`
+--
+
+CREATE TABLE `delete_companies` (
+  `del_com_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `com_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `request_msg` text NOT NULL,
+  `req_status` int(5) NOT NULL,
+  `del_com_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `delete_customers`
 --
 
 CREATE TABLE `delete_customers` (
-  `del_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `del_c_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `c_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `request_msg` text NOT NULL,
+  `req_status` int(5) NOT NULL,
   `delete_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `delete_drivers`
+--
+
+CREATE TABLE `delete_drivers` (
+  `del_d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `request_msg` text NOT NULL,
+  `req_status` int(5) NOT NULL,
+  `del_d_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `delete_drivers`
+--
+
+INSERT INTO `delete_drivers` (`del_d_id`, `d_id`, `request_msg`, `req_status`, `del_d_date`) VALUES
+(00000002, 00000001, 'Testing', 1, '2024-07-18 12:47:10');
 
 -- --------------------------------------------------------
 
@@ -683,6 +741,7 @@ CREATE TABLE `drivers` (
   `longitude` varchar(55) NOT NULL,
   `status` varchar(55) NOT NULL,
   `acount_status` int(10) NOT NULL,
+  `signup_type` tinyint(5) NOT NULL,
   `driver_reg_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -690,8 +749,9 @@ CREATE TABLE `drivers` (
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `pco_num`, `latitude`, `longitude`, `status`, `acount_status`, `driver_reg_date`) VALUES
-(00000001, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'London ', 'WJ1234', '669212c35f56b_booker_app.png', 'Male', 'English', 'Bermingham', '1234567', '', '', 'online', 1, '2024-07-13 05:39:57');
+INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `pco_num`, `latitude`, `longitude`, `status`, `acount_status`, `signup_type`, `driver_reg_date`) VALUES
+(00000001, 'Azib Ali', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'London ', 'WJ1234', '669212c35f56b_booker_app.png', 'Male', 'English', 'Bermingham', '1234567', '', '', 'online', 0, 3, '2024-07-18 13:11:24'),
+(00000002, 'Atiq Ramzan', 'admin@prenero.com', '+443157524000', '123456', '', 'W12', '', 'Male', 'English', 'Ireland', '', '', '', '', 0, 0, '2024-07-18 13:01:18');
 
 -- --------------------------------------------------------
 
@@ -748,7 +808,8 @@ CREATE TABLE `driver_documents` (
 --
 
 INSERT INTO `driver_documents` (`dd_id`, `d_id`, `d_license_front`, `d_license_back`, `pco_license`, `address_proof_1`, `address_proof_2`, `dvla_check_code`, `national_insurance`, `extra`, `date_upload_document`) VALUES
-(00000001, 00000001, '6666edcda14a5.jpg', '', '', '', '', '', '', '', '2024-06-10 12:13:01');
+(00000001, 00000001, '6666edcda14a5.jpg', '', '', '', '', '', '', '', '2024-06-10 12:13:01'),
+(00000002, 00000002, '', '', '', '', '', '', '', '', '2024-07-18 13:01:18');
 
 -- --------------------------------------------------------
 
@@ -762,6 +823,13 @@ CREATE TABLE `driver_history` (
   `book_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `date_assigned` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `driver_history`
+--
+
+INSERT INTO `driver_history` (`history_id`, `d_id`, `book_id`, `date_assigned`) VALUES
+(00000001, 00000001, 00000002, '2024-07-17 03:48:06');
 
 -- --------------------------------------------------------
 
@@ -2946,6 +3014,13 @@ CREATE TABLE `fares` (
   `apply_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `fares`
+--
+
+INSERT INTO `fares` (`fare_id`, `job_id`, `d_id`, `journey_fare`, `car_parking`, `waiting`, `tolls`, `extras`, `fare_status`, `apply_date`) VALUES
+(00000001, 00000001, 00000001, 300, 20, 15, 15, 250, 'Pending', '2024-07-18 01:24:53');
+
 -- --------------------------------------------------------
 
 --
@@ -2989,6 +3064,13 @@ CREATE TABLE `jobs` (
   `job_status` varchar(255) NOT NULL,
   `date_job_add` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`job_id`, `book_id`, `c_id`, `d_id`, `job_note`, `journey_fare`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `job_status`, `date_job_add`) VALUES
+(00000001, 00000000002, 00000000001, 00000000001, '', 500, 0, 0, 0, 0, 0, 'waiting', '2024-07-17 03:48:06');
 
 -- --------------------------------------------------------
 
@@ -3110,6 +3192,179 @@ CREATE TABLE `peak_hours` (
   `price_increment` int(8) NOT NULL,
   `ph_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_codes`
+--
+
+CREATE TABLE `post_codes` (
+  `pc_id` int(11) UNSIGNED ZEROFILL NOT NULL,
+  `pc_name` varchar(255) NOT NULL,
+  `pc_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `post_codes`
+--
+
+INSERT INTO `post_codes` (`pc_id`, `pc_name`, `pc_date`) VALUES
+(00000000001, 'N1= Barnsbury, Canonbury, Islington', '2024-07-13 12:04:27'),
+(00000000002, 'N2= East Finchley', '2024-07-13 12:04:27'),
+(00000000003, 'N3= Finchley Central', '2024-07-13 12:04:27'),
+(00000000004, 'N4= Finsbury Park, Manor House', '2024-07-13 12:04:27'),
+(00000000005, 'N5= Highbury', '2024-07-13 12:04:27'),
+(00000000006, 'N6= Highgate', '2024-07-13 12:04:27'),
+(00000000007, 'N7= Holloway', '2024-07-13 12:04:27'),
+(00000000008, 'N8= Crouch End, Hornsey', '2024-07-13 12:04:27'),
+(00000000009, 'N9= Lower Edmonton', '2024-07-13 12:04:27'),
+(00000000010, 'N10= Muswell Hill', '2024-07-13 12:04:27'),
+(00000000011, 'N11= Friern Barnet, New Southgate', '2024-07-13 12:04:27'),
+(00000000012, 'N12= North Finchley, Woodside Park', '2024-07-13 12:04:27'),
+(00000000013, 'N13= Palmers Green', '2024-07-13 12:04:27'),
+(00000000014, 'N14= Southgate', '2024-07-13 12:04:27'),
+(00000000015, 'N15= Seven Sisters', '2024-07-13 12:04:27'),
+(00000000016, 'N16= Stamford Hill, Stoke Newington', '2024-07-13 12:04:27'),
+(00000000017, 'N17= Tottenham', '2024-07-13 12:04:27'),
+(00000000018, 'N18= Upper Edmonton', '2024-07-13 12:04:27'),
+(00000000019, 'N19= Archway, Tufnell Park', '2024-07-13 12:04:27'),
+(00000000020, 'N20= Totteridge, Whetstone', '2024-07-13 12:04:27'),
+(00000000021, 'N21= Winchmore Hill', '2024-07-13 12:04:27'),
+(00000000022, 'N22= Alexandra Palace, Wood Green', '2024-07-13 12:04:27'),
+(00000000023, 'NW1= Camden Town, Regent\'s Park', '2024-07-13 12:04:27'),
+(00000000024, 'NW2= Cricklewood, Neasden', '2024-07-13 12:04:27'),
+(00000000025, 'NW3= Hampstead, Swiss Cottage', '2024-07-13 12:04:27'),
+(00000000026, 'NW4= Brent Cross, Hendon', '2024-07-13 12:04:27'),
+(00000000027, 'NW5= Kentish Town', '2024-07-13 12:04:27'),
+(00000000028, 'NW6= Kilburn, Queens Park, West Hampstead', '2024-07-13 12:04:27'),
+(00000000029, 'NW7= Mill Hill', '2024-07-13 12:04:27'),
+(00000000030, 'NW8= St John\'s Wood', '2024-07-13 12:04:27'),
+(00000000031, 'NW9= Colindale, Kingsbury', '2024-07-13 12:04:27'),
+(00000000032, 'NW10= Harlesden, Kensal Green, Willesden', '2024-07-13 12:04:27'),
+(00000000033, 'NW11= Golders Green, Hampstead Garden Suburb', '2024-07-13 12:04:27'),
+(00000000034, 'SE1= Bermondsey, Borough, Southwark, Waterloo', '2024-07-13 12:04:27'),
+(00000000035, 'SE2= Abbey Wood', '2024-07-13 12:04:27'),
+(00000000036, 'SE3= Blackheath, Westcombe Park', '2024-07-13 12:04:27'),
+(00000000037, 'SE4= Brockley, Crofton Park, Honor Oak Park', '2024-07-13 12:04:27'),
+(00000000038, 'SE5= Camberwell', '2024-07-13 12:04:27'),
+(00000000039, 'SE6= Bellingham, Catford, Hither Green', '2024-07-13 12:04:27'),
+(00000000040, 'SE7= Charlton', '2024-07-13 12:04:27'),
+(00000000041, 'SE8= Deptford', '2024-07-13 12:04:27'),
+(00000000042, 'SE9= Eltham, Mottingham', '2024-07-13 12:04:27'),
+(00000000043, 'SE10= Greenwich', '2024-07-13 12:04:27'),
+(00000000044, 'SE11= Lambeth', '2024-07-13 12:04:27'),
+(00000000045, 'SE12= Grove Park, Lee', '2024-07-13 12:04:27'),
+(00000000046, 'SE13= Hither Green, Lewisham', '2024-07-13 12:04:27'),
+(00000000047, 'SE14= New Cross, New Cross Gate', '2024-07-13 12:04:27'),
+(00000000048, 'SE15= Nunhead, Peckham', '2024-07-13 12:04:27'),
+(00000000049, 'SE16= Rotherhithe, South Bermondsey, Surrey Docks', '2024-07-13 12:04:27'),
+(00000000050, 'SE17= Elephant & Castle, Walworth', '2024-07-13 12:04:27'),
+(00000000051, 'SE18= Plumstead, Woolwich', '2024-07-13 12:04:27'),
+(00000000052, 'SE19= Crystal Palace, Upper Norwood', '2024-07-13 12:04:27'),
+(00000000053, 'SE20= Anerley, Penge', '2024-07-13 12:04:28'),
+(00000000054, 'SE21= Dulwich', '2024-07-13 12:04:28'),
+(00000000055, 'SE22= East Dulwich', '2024-07-13 12:04:28'),
+(00000000056, 'SE23= Forest Hill', '2024-07-13 12:04:28'),
+(00000000057, 'SE24= Herne Hill', '2024-07-13 12:04:28'),
+(00000000058, 'SE25= South Norwood', '2024-07-13 12:04:28'),
+(00000000059, 'SE26= Sydenham', '2024-07-13 12:04:28'),
+(00000000060, 'SE27= Tulse Hill, West Norwood', '2024-07-13 12:04:28'),
+(00000000061, 'SE28= Thamesmead', '2024-07-13 12:04:28'),
+(00000000062, 'SW1= Belgravia, Pimlico, Westminster', '2024-07-13 12:04:28'),
+(00000000063, 'SW2= Brixton, Streatham Hill', '2024-07-13 12:04:28'),
+(00000000064, 'SW3= Brompton, Chelsea', '2024-07-13 12:04:28'),
+(00000000065, 'SW4= Clapham', '2024-07-13 12:04:28'),
+(00000000066, 'SW5= Earl\'s Court', '2024-07-13 12:04:28'),
+(00000000067, 'SW6= Fulham, Parson\'s Green', '2024-07-13 12:04:28'),
+(00000000068, 'SW7= South Kensington', '2024-07-13 12:04:28'),
+(00000000069, 'SW8= Nine Elms, South Lambeth', '2024-07-13 12:04:28'),
+(00000000070, 'SW9= Brixton, Stockwell', '2024-07-13 12:04:28'),
+(00000000071, 'SW10= West Brompton, World\'s End', '2024-07-13 12:04:28'),
+(00000000072, 'SW11= Battersea, Clapham Junction', '2024-07-13 12:04:28'),
+(00000000073, 'SW12= Balham', '2024-07-13 12:04:28'),
+(00000000074, 'SW13= Barnes, Castelnau', '2024-07-13 12:04:28'),
+(00000000075, 'SW14= East Sheen, Mortlake', '2024-07-13 12:04:28'),
+(00000000076, 'SW15= Putney, Roehampton', '2024-07-13 12:04:28'),
+(00000000077, 'SW16= Norbury, Streatham', '2024-07-13 12:04:28'),
+(00000000078, 'SW17= Tooting', '2024-07-13 12:04:28'),
+(00000000079, 'SW18= Earlsfield, Wandsworth', '2024-07-13 12:04:28'),
+(00000000080, 'SW19= Merton, Wimbledon', '2024-07-13 12:04:28'),
+(00000000081, 'SW20= Raynes Park, South Wimbledon', '2024-07-13 12:04:28'),
+(00000000082, 'W1= Marylebone, Mayfair, Soho', '2024-07-13 12:04:28'),
+(00000000083, 'W2= Bayswater, Paddington', '2024-07-13 12:04:28'),
+(00000000084, 'W3= Acton', '2024-07-13 12:04:28'),
+(00000000085, 'W4= Chiswick', '2024-07-13 12:04:28'),
+(00000000086, 'W5= Ealing', '2024-07-13 12:04:28'),
+(00000000087, 'W6= Hammersmith', '2024-07-13 12:04:28'),
+(00000000088, 'W7= Hanwell', '2024-07-13 12:04:28'),
+(00000000089, 'W8= Kensington', '2024-07-13 12:04:28'),
+(00000000090, 'W9= Maida Vale, Warwick Avenue', '2024-07-13 12:04:28'),
+(00000000091, 'W10= Ladbroke Grove, North Kensington', '2024-07-13 12:04:28'),
+(00000000092, 'W11= Holland Park, Notting Hill', '2024-07-13 12:04:28'),
+(00000000093, 'W12= Shepherd\'s Bush', '2024-07-13 12:04:28'),
+(00000000094, 'W13= West Ealing', '2024-07-13 12:04:28'),
+(00000000095, 'W14= West Kensington', '2024-07-13 12:04:28'),
+(00000000096, 'E1= Mile End, Stepney, Whitechapel', '2024-07-13 12:04:28'),
+(00000000097, 'E2= Bethnal Green, Shoreditch', '2024-07-13 12:04:28'),
+(00000000098, 'E3= Bow, Bromley-by-Bow', '2024-07-13 12:04:28'),
+(00000000099, 'E4= Chingford, Highams Park', '2024-07-13 12:04:28'),
+(00000000100, 'E5= Clapton', '2024-07-13 12:04:28'),
+(00000000101, 'E6= East Ham, Beckton', '2024-07-13 12:04:28'),
+(00000000102, 'E7= Forest Gate, Upton Park', '2024-07-13 12:04:28'),
+(00000000103, 'E8= Hackney, Dalston', '2024-07-13 12:04:28'),
+(00000000104, 'E9= Hackney, Homerton', '2024-07-13 12:04:28'),
+(00000000105, 'E10= Leyton', '2024-07-13 12:04:28'),
+(00000000106, 'E11= Leytonstone', '2024-07-13 12:04:28'),
+(00000000107, 'E12= Manor Park', '2024-07-13 12:04:28'),
+(00000000108, 'E13= Plaistow', '2024-07-13 12:04:28'),
+(00000000109, 'E14= Isle of Dogs, Millwall, Poplar', '2024-07-13 12:04:28'),
+(00000000110, 'E15= Stratford, West Ham', '2024-07-13 12:04:28'),
+(00000000111, 'E16= Canning Town, North Woolwich', '2024-07-13 12:04:28'),
+(00000000112, 'E17= Walthamstow', '2024-07-13 12:04:28'),
+(00000000113, 'E18= South Woodford', '2024-07-13 12:04:28'),
+(00000000114, 'E20= Olympic Park, Stratford', '2024-07-13 12:04:28'),
+(00000000115, 'EC1A = Barbican, Clerkenwell, Finsbury', '2024-07-13 12:04:28'),
+(00000000116, 'EC1M = Barbican, Clerkenwell, Finsbury', '2024-07-13 12:04:28'),
+(00000000117, 'EC1N = Barbican, Clerkenwell, Finsbury', '2024-07-13 12:04:28'),
+(00000000118, 'EC1P = Barbican, Clerkenwell, Finsbury', '2024-07-13 12:04:28'),
+(00000000119, 'EC1R = Barbican, Clerkenwell, Finsbury', '2024-07-13 12:04:28'),
+(00000000120, 'EC1V = Barbican, Clerkenwell, Finsbury', '2024-07-13 12:04:28'),
+(00000000121, 'EC1Y = Barbican, Clerkenwell, Finsbury', '2024-07-13 12:04:28'),
+(00000000122, 'EC2A = Moorgate, Liverpool Street', '2024-07-13 12:04:28'),
+(00000000123, 'EC2M = Moorgate, Liverpool Street', '2024-07-13 12:04:28'),
+(00000000124, 'EC2N = Moorgate, Liverpool Street', '2024-07-13 12:04:28'),
+(00000000125, 'EC2P = Moorgate, Liverpool Street', '2024-07-13 12:04:28'),
+(00000000126, 'EC2R = Moorgate, Liverpool Street', '2024-07-13 12:04:28'),
+(00000000127, 'EC2V = Moorgate, Liverpool Street', '2024-07-13 12:04:28'),
+(00000000128, 'EC2Y = Moorgate, Liverpool Street', '2024-07-13 12:04:28'),
+(00000000129, 'EC3A = Aldgate, Monument, Tower Hill', '2024-07-13 12:04:28'),
+(00000000130, 'EC3M = Aldgate, Monument, Tower Hill', '2024-07-13 12:04:28'),
+(00000000131, 'EC3N = Aldgate, Monument, Tower Hill', '2024-07-13 12:04:28'),
+(00000000132, 'EC3P = Aldgate, Monument, Tower Hill', '2024-07-13 12:04:28'),
+(00000000133, 'EC3R = Aldgate, Monument, Tower Hill', '2024-07-13 12:04:28'),
+(00000000134, 'EC3V = Aldgate, Monument, Tower Hill', '2024-07-13 12:04:28'),
+(00000000135, 'EC4A = Fleet Street, St Paul\'s', '2024-07-13 12:04:28'),
+(00000000136, 'EC4M = Fleet Street, St Paul\'s', '2024-07-13 12:04:28'),
+(00000000137, 'EC4N = Fleet Street, St Paul\'s', '2024-07-13 12:04:28'),
+(00000000138, 'EC4P = Fleet Street, St Paul\'s', '2024-07-13 12:04:28'),
+(00000000139, 'EC4R = Fleet Street, St Paul\'s', '2024-07-13 12:04:28'),
+(00000000140, 'EC4V = Fleet Street, St Paul\'s', '2024-07-13 12:04:28'),
+(00000000141, 'EC4Y = Fleet Street, St Paul\'s', '2024-07-13 12:04:28'),
+(00000000142, 'WC1A = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000143, 'WC1B = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000144, 'WC1E = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000145, 'WC1H = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000146, 'WC1N = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000147, 'WC1R = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000148, 'WC1V = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000149, 'WC1X = Bloomsbury, Gray\'s Inn', '2024-07-13 12:04:28'),
+(00000000150, 'WC2A = Covent Garden, Holborn, Strand', '2024-07-13 12:04:28'),
+(00000000151, 'WC2B = Covent Garden, Holborn, Strand', '2024-07-13 12:04:28'),
+(00000000152, 'WC2E = Covent Garden, Holborn, Strand', '2024-07-13 12:04:28'),
+(00000000153, 'WC2H = Covent Garden, Holborn, Strand', '2024-07-13 12:04:28'),
+(00000000154, 'WC2N = Covent Garden, Holborn, Strand', '2024-07-13 12:04:28'),
+(00000000155, 'WC2R= Covent Garden, Holborn, Strand', '2024-07-13 12:04:28');
 
 -- --------------------------------------------------------
 
@@ -3353,7 +3608,8 @@ CREATE TABLE `vehicle_documents` (
 --
 
 INSERT INTO `vehicle_documents` (`vd_id`, `d_id`, `log_book`, `mot_certificate`, `pco`, `insurance`, `road_tax`, `vehicle_picture_front`, `vehicle_picture_back`, `rental_agreement`, `insurance_schedule`, `extra`, `date_upload`) VALUES
-(00000001, 00000001, '', '', '', '', '', '', '', '', '', '', '2024-06-10 11:50:08');
+(00000001, 00000001, '', '', '', '', '', '', '', '', '', '', '2024-06-10 11:50:08'),
+(00000002, 00000002, '', '', '', '', '', '', '', '', '', '', '2024-07-18 13:01:18');
 
 -- --------------------------------------------------------
 
@@ -3647,10 +3903,22 @@ ALTER TABLE `customer_cards`
   ADD PRIMARY KEY (`cc_id`);
 
 --
+-- Indexes for table `delete_companies`
+--
+ALTER TABLE `delete_companies`
+  ADD PRIMARY KEY (`del_com_id`);
+
+--
 -- Indexes for table `delete_customers`
 --
 ALTER TABLE `delete_customers`
-  ADD PRIMARY KEY (`del_id`);
+  ADD PRIMARY KEY (`del_c_id`);
+
+--
+-- Indexes for table `delete_drivers`
+--
+ALTER TABLE `delete_drivers`
+  ADD PRIMARY KEY (`del_d_id`);
 
 --
 -- Indexes for table `destinations`
@@ -3755,6 +4023,12 @@ ALTER TABLE `peak_hours`
   ADD PRIMARY KEY (`ph_id`);
 
 --
+-- Indexes for table `post_codes`
+--
+ALTER TABLE `post_codes`
+  ADD PRIMARY KEY (`pc_id`);
+
+--
 -- Indexes for table `price_by_location`
 --
 ALTER TABLE `price_by_location`
@@ -3828,7 +4102,7 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `airports`
@@ -3888,7 +4162,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `com_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `com_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `company`
@@ -3921,10 +4195,22 @@ ALTER TABLE `customer_cards`
   MODIFY `cc_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `delete_companies`
+--
+ALTER TABLE `delete_companies`
+  MODIFY `del_com_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `delete_customers`
 --
 ALTER TABLE `delete_customers`
-  MODIFY `del_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `del_c_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `delete_drivers`
+--
+ALTER TABLE `delete_drivers`
+  MODIFY `del_d_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `destinations`
@@ -3936,7 +4222,7 @@ ALTER TABLE `destinations`
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
-  MODIFY `d_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `d_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `driver_accounts`
@@ -3954,13 +4240,13 @@ ALTER TABLE `driver_bank_details`
 -- AUTO_INCREMENT for table `driver_documents`
 --
 ALTER TABLE `driver_documents`
-  MODIFY `dd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `dd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `driver_history`
 --
 ALTER TABLE `driver_history`
-  MODIFY `history_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `history_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `driver_location`
@@ -3978,7 +4264,7 @@ ALTER TABLE `driver_vehicle`
 -- AUTO_INCREMENT for table `fares`
 --
 ALTER TABLE `fares`
-  MODIFY `fare_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `fare_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `invoice`
@@ -3990,7 +4276,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `job_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `job_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `language`
@@ -4027,6 +4313,12 @@ ALTER TABLE `payment_history`
 --
 ALTER TABLE `peak_hours`
   MODIFY `ph_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `post_codes`
+--
+ALTER TABLE `post_codes`
+  MODIFY `pc_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `price_by_location`
@@ -4080,7 +4372,7 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `vehicle_documents`
 --
 ALTER TABLE `vehicle_documents`
-  MODIFY `vd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `vd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `waiting_time`
