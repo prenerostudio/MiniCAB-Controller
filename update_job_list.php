@@ -14,15 +14,38 @@ while ($jobrow = mysqli_fetch_array($jobsql)) {
     $job_list_html .= '<tr class="' . $current_class . '">'; 
     $job_list_html .= '<td>' . $y . '</td>'; // ID
     $job_list_html .= '<td>' . $jobrow['pick_date'] . '</td>'; // Date
-	$job_list_html .= '<td>' . $jobrow['pick_time'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['passenger'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['pickup'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['stops'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['destination'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['journey_fare'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['v_name'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['job_status'] . '</td>';
-	$job_list_html .= '<td>' . $jobrow['d_name'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['pick_time'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['postal_code'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['pickup'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['stops'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['destination'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['passenger'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['journey_type'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['journey_fare'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['v_name'] . '</td>';
+    $job_list_html .= '<td>' . $jobrow['job_status'] . '</td>';
+    $job_list_html .= '<td>
+                        <form method="post" action="dispatch-process.php">
+                            <input type="hidden" value="' . $jobrow['book_id'] . '" name="book_id">
+                            <input type="hidden" value="' . $jobrow['c_id'] . '" name="c_id">
+                            <input type="hidden" value="' . $jobrow['journey_fare'] . '" name="journey_fare">
+                            <input type="hidden" value="' . $jobrow['booking_fee'] . '" name="booking_fee">
+                            <select class="form-control" name="d_id" required>                
+                                <option value="">Select Driver</option>';
+                                
+                                $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
+                                while ($drrow = mysqli_fetch_array($drsql)) {
+                                    $job_list_html .= '<option value="' . $drrow['d_id'] . '">
+                                                       ' . $drrow['d_id'] . ' - ' . $drrow['d_name'] . ' - ' . $drrow['d_phone'] . '
+                                                   </option>';                                        
+                                }
+                                
+    $job_list_html .= '</select>
+                        <button type="submit" class="btn btn-info">
+                            <i class="ti ti-plane-tilt"></i>                                                    
+                        </button>
+                        </form>
+                       </td>';
     $job_list_html .= '</tr>';
 }
 echo $job_list_html;

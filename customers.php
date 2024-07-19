@@ -36,7 +36,8 @@ include('header.php');
 							<thead>                      							
 								<tr>									
 									<th>ID</th>                        									
-									<th>Image</th>                        									
+									<th>Image</th>  
+									<th>PostCode</th> 
 									<th>Name</th>                       									
 									<th>Email</th>                        									
 									<th>Phone</th>                        									
@@ -66,7 +67,10 @@ include('header.php');
 										<?php									
 											}			
 										?>											
-									</td>                       										
+									</td> 
+									<td>
+										<?php echo $crow['postal_code']; ?>
+									</td> 
 									<td>
 										<?php echo $crow['c_name']; ?>
 									</td>                       										
@@ -186,8 +190,20 @@ include('header.php');
 							</select> 												
 						</div>						
 						<div class="mb-3 col-md-4">              											
-							<label class="form-label">Postal Code</label>									
-							<input type="text" class="form-control" name="pc" placeholder="xx xxx" required>
+							<label class="form-label">Postal Code</label>	
+							<select class="form-control" name="pc">
+								<option>Search PostCode</option>								
+								<?php
+								$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");
+								while($pcrow = mysqli_fetch_array($pcsql)){								
+								?>			
+								<option>								
+									<?php echo $pcrow['pc_name'] ?>								
+								</option>
+								<?php
+								}																		
+								?>
+							</select>														
 						</div> 					              											
 						<div class="mb-3 col-md-4">                  												
 							<label class="form-label">Picture</label>							
@@ -196,33 +212,30 @@ include('header.php');
 						<div class="mb-3 col-md-4">                  												
 							<label class="form-label">National ID</label>							
 							<input type="text" class="form-control" name="cni">						
-						</div>             																					
-					</div>						         												
-					<div class="modal-body">						
-						<div class="row">						
-							<div class="col-lg-12">							
-								<div class="mb-3">								
-									<label class="form-label">Address</label>									
-									<textarea class="form-control" rows="3" name="caddress"></textarea>
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Others</label>
-									<textarea class="form-control" rows="3" name="cothers"></textarea>
-								</div>
-							</div>						
-						</div>					
-					</div>					
-					<div class="modal-footer">					
-						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">						
-							<i class="ti ti-circle-x"></i>						
-							Cancel					
+						</div>   
+						
+						<div class="col-lg-12">
+							<div class="mb-3">
+								<label class="form-label">Address</label>
+								<textarea class="form-control" rows="3" name="caddress"></textarea>
+							</div>							
+							<div class="mb-3">
+								<label class="form-label">Others</label>
+								<textarea class="form-control" rows="3" name="cothers"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-danger" data-bs-dismiss="modal">
+							<i class="ti ti-circle-x"></i>
+							Cancel
 						</a>
 						<button type="submit" class="btn ms-auto btn-success">
 							<i class="ti ti-user-plus"></i>
-							Save Customer						
-						</button>					
-					</div> 																		
-					<script>    
+							Save Customer
+						</button>
+					</div>
+					<script>
 						function validateForm() {        							        
 							var cnameInput = document.getElementsByName("cname")[0].value;        
 							var cemailInput = document.getElementsByName("cemail")[0].value;        

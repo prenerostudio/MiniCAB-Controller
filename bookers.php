@@ -36,7 +36,8 @@ include('header.php');
 							<thead>                      							
 								<tr>									
 									<th>ID</th>                        									
-									<th> Image </th>			
+									<th> Image </th>
+									<th> PostCode </th>	
 									<th> Name </th>		
 									<th> Email </th>			
 									<th> Phone </th>                  			
@@ -68,7 +69,10 @@ include('header.php');
 										<?php										
 											}			
 										?>											
-									</td>	
+									</td>
+									<td>
+										<?php echo $crow['postal_code']; ?>
+									</td>
 									<td>
 										<?php echo $crow['c_name']; ?>
 									</td>	
@@ -233,10 +237,22 @@ $(document).ready(function() {
 								?>
 							</select> 												
 						</div>						
-						<div class="mb-3 col-md-4">
-							<label class="form-label">Postal Code</label>
-							<input type="text" class="form-control" name="pc" placeholder="xx xxx" required>
-						</div>
+						<div class="mb-3 col-md-4">              											
+							<label class="form-label">Postal Code</label>	
+							<select class="form-control" name="pc">
+								<option>Search PostCode</option>								
+								<?php
+								$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");
+								while($pcrow = mysqli_fetch_array($pcsql)){								
+								?>			
+								<option>								
+									<?php echo $pcrow['pc_name'] ?>								
+								</option>
+								<?php
+								}																		
+								?>
+							</select>														
+						</div> 		
 						<div class="mb-3 col-md-4">
 							<label class="form-label">Picture</label>							
 							<input type="file" class="form-control" name="cpic">

@@ -110,7 +110,7 @@ $bookrow = mysqli_fetch_array($booksql);
 								<div class="col-lg-4">								
 									<div id="stops-container"></div>									
 									<div class="mb-3 col-lg-2">																	
-										<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">										
+										<button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
 											<i class="ti ti-plus"></i>											
 										</button>																			
 									</div>																		

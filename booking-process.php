@@ -52,37 +52,41 @@ $tolls  = $_POST['tolls'];
 $extra  = $_POST['extra'];
 $booker_com = $_POST['booker_com'];
 $booking_status  = 'Pending';
-
-
+$cname = $_POST['c_name'];
+$cemail = $_POST['cemail'];
+$cphone = $_POST['cphone'];
 
 
 $sql = "INSERT INTO `bookings`(
-								`b_type_id`,
+								`b_type_id`, 
 								`c_id`, 
 								`pickup`, 
-								`stops`,
+								`stops`, 
 								`destination`, 
 								`address`, 
-								`postal_code`,
-								`passenger`,
+								`postal_code`, 
+								`passenger`, 
 								`pick_date`, 
 								`pick_time`, 
 								`journey_type`, 
 								`v_id`, 
 								`luggage`, 
-								`child_seat`,
+								`child_seat`, 
 								`flight_number`, 
-								`delay_time`, 
-								`note`, 
+								`delay_time`,
+								`note`,
 								`journey_fare`,
-								`journey_distance`,
-								`booking_fee`,
+								`journey_distance`, 
+								`booking_fee`, 
 								`car_parking`, 
-								`waiting`,
+								`waiting`, 
 								`tolls`, 
 								`extra`, 
-								`booker_commission`,
-								`booking_status`
+								`booker_commission`, 
+								`booking_status`, 
+								`customer_name`, 
+								`customer_email`, 
+								`customer_phone`
 								) VALUES (
 								'$b_type_id',
 								'$c_id',
@@ -109,7 +113,10 @@ $sql = "INSERT INTO `bookings`(
 								'$tolls',
 								'$extra',
 								'$booker_com',
-								'$booking_status')"; 
+								'$booking_status',
+								'$cname',
+								'$cemail',
+								'$cphone')";
 
 $result = mysqli_query($connect, $sql);       
 if ($result) {  

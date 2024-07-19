@@ -30,40 +30,34 @@ if ($stmt = $connect->prepare($query)) {
             echo "<td>" . htmlspecialchars($row['book_id']) . "</td>";
             echo "<td>" . htmlspecialchars($row['pick_date']) . "</td>";
             echo "<td>" . htmlspecialchars($row['pick_time']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['passenger']) . "</td>";
+			echo "<td>" . htmlspecialchars($row['postal_code']) . "</td>";
             echo "<td>" . htmlspecialchars($row['pickup']) . "</td>";
             echo "<td>" . htmlspecialchars($row['stops']) . "</td>";
             echo "<td>" . htmlspecialchars($row['destination']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['passenger']) . "</td>";
+			echo "<td>" . htmlspecialchars($row['journey_type']) . "</td>";
             echo "<td>" . htmlspecialchars($row['journey_fare']) . "</td>";
             echo "<td>" . htmlspecialchars($row['v_name']) . "</td>";
-            echo "<td style='width: 15%;'>";
-            if ($row['bid_status'] == 0) {
-                echo "<a href='open-bid.php?book_id=" . htmlspecialchars($row['book_id']) . "'>
-                        <button class='btn btn-instagram'>
-                            <i class='ti ti-aspect-ratio'></i>
+            echo "<td>
+                    <form method='post' action='dispatch-process.php'>
+                        <input type='hidden' value='" . htmlspecialchars($row['book_id']) . "' name='book_id'>
+                        <input type='hidden' value='" . htmlspecialchars($row['c_id']) . "' name='c_id'>
+                        <input type='hidden' value='" . htmlspecialchars($row['journey_fare']) . "' name='journey_fare'>
+                        <input type='hidden' value='" . htmlspecialchars($row['booking_fee']) . "' name='booking_fee'>
+                        <select class='form-control' name='d_id' required>
+                            <option value=''>Select Driver</option>";
+                            
+                            $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
+                            while ($drrow = mysqli_fetch_array($drsql)) {
+                                echo "<option value='" . htmlspecialchars($drrow['d_id']) . "'>" . htmlspecialchars($drrow['d_id']) . " - " . htmlspecialchars($drrow['d_name']) . " - " . htmlspecialchars($drrow['d_phone']) . "</option>";
+                            }
+                            
+            echo "      </select>
+                        <button type='submit' class='btn btn-info'>
+                            <i class='ti ti-plane-tilt'></i>
                         </button>
-                    </a>";
-            } else {
-                echo "<a href='#'>
-                        <button class='btn' disabled>
-                            <i class='ti ti-aspect-ratio'></i>
-                        </button>
-                    </a>";
-            }
-            echo "<a href='view-booking.php?book_id=" . htmlspecialchars($row['book_id']) . "'>
-                    <button class='btn btn-info'>
-                        <i class='ti ti-eye'></i>
-                    </button>
-                </a>";
-            echo "<a href='dispatch-booking.php?book_id=" . htmlspecialchars($row['book_id']) . "'>
-                    <button class='btn btn-success'>
-                        <i class='ti ti-plane-tilt'></i>
-                    </button>
-                </a>";
-            echo "<button class='btn btn-danger'>
-                    <i class='ti ti-square-rounded-x'></i>
-                </button>";
-            echo "</td>";
+                    </form>
+                  </td>";
             echo "</tr>";
         }
     }
