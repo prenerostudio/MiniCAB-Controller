@@ -124,10 +124,12 @@ include('header.php');
 									<th>ID</th>                        									
 									<th>Date</th>                        									
 									<th>Time</th>                       									
-									<th>Passenger</th>                        									
+									<th>Postcode</th>                        									
 									<th>Pickup</th> 
 									<th>Stops</th>
-									<th>Dropoff</th>                       									
+									<th>Dropoff</th> 
+									<th>Passenger</th> 
+									<th>Journey Type</th> 
 									<th>Fare</th>						   									
 									<th>Vehicle</th>						  									
 									<th>Status</th>						   									
@@ -152,7 +154,7 @@ include('header.php');
 										<?php echo $jobrow['pick_time'];?>
 									</td>
 									<td>
-										<?php echo $jobrow['passenger'];?>
+										<?php echo $jobrow['postal_code'];?>
 									</td>  									
 									<td>
 										<?php echo $jobrow['pickup'];?>
@@ -162,7 +164,13 @@ include('header.php');
 									</td>	
 									<td>
 										<?php echo $jobrow['destination'];?>
-									</td>									
+									</td>	
+									<td>
+										<?php echo $jobrow['passenger'];?>
+									</td> 
+									<td>
+										<?php echo $jobrow['journey_type'];?>
+									</td> 
 									<td> 
 										<?php echo $jobrow['journey_fare'];?> 
 									</td>									
@@ -170,9 +178,11 @@ include('header.php');
 										<?php echo $jobrow['v_name'];?> 
 									</td>									
 									<td> 
-										<button class="btn btn-success">
-											<?php echo $jobrow['job_status'];?> 
-										</button>
+										<div class="col-auto status">
+											<span class="status-dot status-dot-animated bg-green d-block"></span>
+											<span><?php echo $jobrow['job_status'];?> </span>											
+										</div>
+										
 									</td>									
 									<td> 
 										<h4><?php echo $jobrow['d_name'];?></h4>

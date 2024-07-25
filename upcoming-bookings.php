@@ -191,11 +191,10 @@ include('header.php');
 												} else {   
 											?>    
 											<form method="post" action="dispatch-process.php">
-												<input type="text" value="<?php echo $brow['book_id']; ?>" name="book_id">
-												<input type="text" value="<?php echo $brow['c_id']; ?>" name="c_id">
-												<input type="text" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">
-												<input type="text" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">
-												<input type="text" value="<?php echo $brow['c_id']; ?>" name="c_id">
+												<input type="hidden" value="<?php echo $brow['book_id']; ?>" name="book_id">
+												<input type="hidden" value="<?php echo $brow['c_id']; ?>" name="c_id">
+												<input type="hidden" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">
+												<input type="hidden" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">
 												<select class="form-control" name="d_id" required>
 													<option value="">Select Driver</option>
 													<?php

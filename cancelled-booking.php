@@ -124,9 +124,12 @@ include('header.php');
 									<th>ID</th>									
 									<th>Date</th>
 									<th>Time</th>
+									<th>Postcode</th>
+									<th>Pickup</th>	
+									<th>Stops</th>
+									<th>Dropoff</th>
 									<th>Passenger</th>
-									<th>Pickup</th>									
-									<th>Dropoff</th>                       									
+									<th>Journey Type</th>
 									<th>Fare</th>									
 									<th>Vehicle</th>
 									<th>Status</th>									
@@ -150,24 +153,35 @@ include('header.php');
 										<?php echo $brow['pick_time'];?>
 									</td>									
 									<td>									
-										<?php echo $brow['passenger'];?>
+										<?php echo $brow['postal_code'];?>
 									</td>									
 									<td>									
 										<?php echo $brow['pickup'];?>
-									</td>									
+									</td>	
+									<td>									
+										<?php echo $brow['stops'];?>
+									</td>	
 									<td>									
 										<?php echo $brow['destination'];?>
-									</td>									
+									</td>
+									<td>									
+										<?php echo $brow['passenger'];?>
+									</td>
+									<td>									
+										<?php echo $brow['journey_type'];?>
+									</td>
 									<td> 									
 										<?php echo $brow['journey_fare'];?>
 									</td>									
 									<td>									
 										<?php echo $brow['v_name'];?>
 									</td>									
-									<td> 									
-										<button class="btn btn-danger">
-											<?php echo $brow['booking_status'];?>
-										</button> 										
+									<td> 
+										<div class="col-auto status">
+											<span class="status-dot status-dot-animated bg-red d-block"></span>
+											<span><?php echo $brow['booking_status'];?></span>											
+										</div>
+																				
 									</td>									
 								</tr>
 								<?php								

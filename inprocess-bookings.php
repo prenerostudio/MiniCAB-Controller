@@ -61,6 +61,7 @@ include('header.php');
 									<th>Stops</th>
 									<th>Dropoff</th>   
 									<th>Passenger</th>
+									<th>Journey Type</th>
 									<th>Fare</th>						   									
 									<th>Vehicle</th>						  									
 									<th>Status</th>						   									
@@ -101,14 +102,15 @@ include('header.php');
 										<?php echo $jobrow['passenger'] ?>
 									</td>
 									<td> 
+										<?php echo $jobrow['journey_type'] ?> 
+									</td>
+									<td> 
 										<?php echo $jobrow['journey_fare'] ?> 
 									</td>									
 									<td> 
 										<?php echo $jobrow['v_name'] ?> 
 									</td>									
 									<td>
-										
-										
 										<?php 											
 											if($jobrow['job_status']=='waiting'){
 										?>												
@@ -133,11 +135,7 @@ include('header.php');
 										<?php
 												
 											}
-										?>	
-										
-										
-										
-										
+										?>
 									</td>									
 									<td> 
 										<?php echo $jobrow['d_name'] ?>

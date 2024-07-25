@@ -11,7 +11,7 @@ $d_id = isset($_POST['d_id']) ? $_POST['d_id'] : null;
 $job_id = isset($_POST['job_id']) ? $_POST['job_id'] : null;
 $status = 'accepted';
 
-if ($d_id && $job_id) {
+if ($job_id) {
    
     $stmt = $connect->prepare("UPDATE `jobs` SET `job_status` = ? WHERE `job_id` = ?");
     $stmt->bind_param("si", $status, $job_id);
