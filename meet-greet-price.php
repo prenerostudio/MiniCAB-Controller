@@ -18,6 +18,24 @@
 				<form action="mg_process.php" method="post">				
 					<tr>																	
 						<td style="width: 50%;">
+							<input type="text" name="pickup" class="form-control" id="pickup_location" required />
+						</td>																	
+						<td>																	
+							<div class="input-group mb-3"> 
+								<div class="input-group-prepend">								
+									<span class="input-group-text">									
+										£										
+									</span> 									
+								</div>
+								<input type="text" name="price" class="form-control" aria-label="Amount (to the nearest pound)" required />								
+							</div>																			
+						</td>																	
+						<td>																	
+																									
+						</td>																	
+					</tr>	
+					<tr>																	
+						<td style="width: 50%;">
 							<input type="text" name="pickup" class="form-control" id="pickup_location" required />							
 						</td>																	
 						<td>																	
@@ -36,7 +54,7 @@
 								Add																					
 							</button>																			
 						</td>																	
-					</tr>															
+					</tr>		
 				</form>													
 			</tbody>			
 		</table>									
