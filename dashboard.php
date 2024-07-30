@@ -290,7 +290,7 @@ include('header.php');
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody class="table-tbody" id="tableBody">
+        <tbody class="table-tbody">
             <?php
             $y = 0;
             while ($brow = mysqli_fetch_array($bsql)) {
@@ -352,26 +352,7 @@ include('header.php');
     ?>
 </div>
 					  									
-					<script>					
-						$(document).ready(function() {    
-							$('#table-booking').DataTable();
-						});												
-						$(document).ready(function() {    						
-							$('#table-job').DataTable();						
-						});
-						function loadJobList() {       							        
-							var xhttp = new XMLHttpRequest();      
-							xhttp.onreadystatechange = function() {         
-								if (this.readyState == 4 && this.status == 200) {               
-									document.querySelector("#table-default .table-tbody").innerHTML = this.responseText;
-								}     
-							};       
-							xhttp.open("GET", "update_job_list.php", true);       
-							xhttp.send();   
-						}   						   
-						loadJobList();   
-						setInterval(loadJobList, 5000); 
-					</script>                  					
+									
 				</div>                                                    				
 			</div>              			
 		</div>		
