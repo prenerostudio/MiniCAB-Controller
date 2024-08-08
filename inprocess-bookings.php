@@ -72,7 +72,7 @@ include('header.php');
 							<tbody class="table-tbody">								
 								<?php								
 								$y=0;								
-								$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs JOIN clients ON jobs.c_id = clients.c_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN drivers ON jobs.d_id = drivers.d_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE jobs.job_status IN ('Waiting', 'On Ride') ORDER BY jobs.job_id DESC");								
+								$jobsql=mysqli_query($connect,"SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, bookings.*, drivers.*, booking_type.*, vehicles.* FROM jobs JOIN clients ON jobs.c_id = clients.c_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN drivers ON jobs.d_id = drivers.d_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE jobs.job_status <> 'Completed' AND jobs.job_status <> 'Cancelled' ORDER BY jobs.job_id DESC");								
 								while($jobrow = mysqli_fetch_array($jobsql)){								
 									$y++;								
 								?>											
@@ -111,31 +111,12 @@ include('header.php');
 										<?php echo $jobrow['v_name'] ?> 
 									</td>									
 									<td>
-										<?php 											
-											if($jobrow['job_status']=='waiting'){
-										?>												
+																						
 										<div class="col-auto status">
 											<span class="status-dot status-dot-animated bg-orange d-block"></span>
-											<span>Waiting</span>									
+											<span><?php echo $jobrow['job_status']; ?></span>									
 										</div>
-										<?php									
-											} elseif($jobrow['job_status']=='completed'){											
-										?>
-										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-green d-block"></span>
-											<span>Completed</span>											
-										</div>			
-										<?php									
-											}else{
-												?>
-										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-red d-block"></span>
-											<span>Cancelled</span>											
-										</div>
-										<?php
-												
-											}
-										?>
+										
 									</td>									
 									<td> 
 										<?php echo $jobrow['d_name'] ?>
