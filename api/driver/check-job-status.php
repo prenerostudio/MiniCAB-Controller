@@ -9,11 +9,12 @@ include("../../config.php");
 
 
 $job_id=$_POST['job_id'];
-
+$d_id = $_POST['d_id'];
 
 if(isset($_POST['job_id'])){		
 
-	$sql="SELECT jobs.* FROM jobs WHERE jobs.job_id = '$job_id'";
+	$sql="SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND
+    jobs.d_id = $d_id";
 	
 	$r=mysqli_query($connect,$sql);
 	

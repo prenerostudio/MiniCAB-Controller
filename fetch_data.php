@@ -21,10 +21,12 @@ if ($stmt = $connect->prepare($query)) {
             echo "<td>" . htmlspecialchars($row['book_id']) . "</td>";
             echo "<td>" . htmlspecialchars($row['pick_date']) . "</td>";
             echo "<td>" . htmlspecialchars($row['pick_time']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['passenger']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['postal_code']) . "</td>";
             echo "<td>" . htmlspecialchars($row['pickup']) . "</td>";
             echo "<td>" . htmlspecialchars($row['stops']) . "</td>";
             echo "<td>" . htmlspecialchars($row['destination']) . "</td>";
+			echo "<td>" . htmlspecialchars($row['passenger']) . "</td>";
+			echo "<td>" . htmlspecialchars($row['journey_type']) . "</td>";
             echo "<td>" . htmlspecialchars($row['journey_fare']) . "</td>";
             echo "<td>" . htmlspecialchars($row['v_name']) . "</td>";
             echo "<td style='width: 15%;'>";

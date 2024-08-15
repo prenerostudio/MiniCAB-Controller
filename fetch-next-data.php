@@ -6,11 +6,11 @@ ini_set('display_errors', 1);
 $selectedInterval = isset($_GET['timeInterval']) ? intval($_GET['timeInterval']) : 0;
 
 if ($selectedInterval <= 0) {
-    echo "<tr><td colspan='9'>Invalid time interval selected</td></tr>";
+    echo "<tr><td colspan='12'>Invalid time interval selected</td></tr>";
     exit;
 }
 
-$query = "SELECT bookings.book_id, bookings.pick_date, bookings.pick_time, bookings.passenger, bookings.pickup, bookings.stops, bookings.destination, bookings.journey_fare, vehicles.v_name, bookings.bid_status 
+$query = "SELECT bookings.book_id, bookings.pick_date, bookings.pick_time, bookings.passenger, bookings.pickup, bookings.stops, bookings.destination, bookings.journey_fare, bookings.c_id, vehicles.v_name, bookings.bid_status 
           FROM bookings 
           INNER JOIN clients ON bookings.c_id = clients.c_id 
           INNER JOIN vehicles ON bookings.v_id = vehicles.v_id 
@@ -23,7 +23,7 @@ if ($stmt = $connect->prepare($query)) {
     $result = $stmt->get_result();
     
     if ($result->num_rows == 0) {
-        echo "<tr><td colspan='9'>No bookings found for the selected interval</td></tr>";
+        echo "<tr><td colspan='12'>No bookings found for the selected interval</td></tr>";
     } else {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
@@ -35,7 +35,7 @@ if ($stmt = $connect->prepare($query)) {
             echo "<td>" . htmlspecialchars($row['stops']) . "</td>";
             echo "<td>" . htmlspecialchars($row['destination']) . "</td>";
             echo "<td>" . htmlspecialchars($row['passenger']) . "</td>";
-			echo "<td>" . htmlspecialchars($row['journey_type']) . "</td>";
+			  echo "<td>" . htmlspecialchars($row['journey_type']) . "</td>";
             echo "<td>" . htmlspecialchars($row['journey_fare']) . "</td>";
             echo "<td>" . htmlspecialchars($row['v_name']) . "</td>";
             echo "<td>
@@ -43,18 +43,21 @@ if ($stmt = $connect->prepare($query)) {
                         <input type='hidden' value='" . htmlspecialchars($row['book_id']) . "' name='book_id'>
                         <input type='hidden' value='" . htmlspecialchars($row['c_id']) . "' name='c_id'>
                         <input type='hidden' value='" . htmlspecialchars($row['journey_fare']) . "' name='journey_fare'>
-                        <input type='hidden' value='" . htmlspecialchars($row['booking_fee']) . "' name='booking_fee'>
-                        <select class='form-control' name='d_id' required>
+                        <select class='form-control mb-2' name='d_id' required>
                             <option value=''>Select Driver</option>";
                             
                             $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
-                            while ($drrow = mysqli_fetch_array($drsql)) {
-                                echo "<option value='" . htmlspecialchars($drrow['d_id']) . "'>" . htmlspecialchars($drrow['d_id']) . " - " . htmlspecialchars($drrow['d_name']) . " - " . htmlspecialchars($drrow['d_phone']) . "</option>";
+                            if ($drsql->num_rows > 0) {
+                                while ($drrow = mysqli_fetch_assoc($drsql)) {
+                                    echo "<option value='" . htmlspecialchars($drrow['d_id']) . "'>" . htmlspecialchars($drrow['d_id']) . " - " . htmlspecialchars($drrow['d_name']) . " - " . htmlspecialchars($drrow['d_phone']) . "</option>";
+                                }
+                            } else {
+                                echo "<option value=''>No available drivers</option>";
                             }
                             
             echo "      </select>
-                        <button type='submit' class='btn btn-info'>
-                            <i class='ti ti-plane-tilt'></i>
+                        <button type='submit' class='btn btn-success'>
+                            <i class='ti ti-plane-tilt'></i> Dispatch Job
                         </button>
                     </form>
                   </td>";
@@ -63,7 +66,7 @@ if ($stmt = $connect->prepare($query)) {
     }
     $stmt->close();
 } else {
-    echo "<tr><td colspan='9'>Error preparing the statement: " . htmlspecialchars($connect->error) . "</td></tr>";
+    echo "<tr><td colspan='12'>Error preparing the statement: " . htmlspecialchars($connect->error) . "</td></tr>";
 }
 $connect->close();
 ?>

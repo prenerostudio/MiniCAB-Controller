@@ -100,98 +100,83 @@ include('header.php');
 							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");        							
 							if (mysqli_num_rows($bsql) > 0) {							
 							?>           							
-							<table class="table" id="table-booking">	
-								<thead>                      		
-									<tr> 																	
-										<th>ID</th>                        	
-										<th>Date Pickup</th>										
-										<th>Time Pickup</th>												
-										<th>Post Code</th>                        		
-										<th>Pickup</th>                        		
-										<th>Stops</th>
-										<th>Dropoff</th>
-										<th>Passenger</th> 
-										<th>Fare</th>						   
-										<th>Vehicle</th>	
-										<th>Actions</th>		
-									</tr>                   
-								</thead>
-								<tbody class="table-tbody" id="tableBody">
-									<?php                   								
-										$y = 0;                    
-										while ($brow = mysqli_fetch_array($bsql)) {                        
-										$y++;                    
-									?>											                     
-									<tr>
-										<td>
-											<?php echo $brow['book_id']; ?>
-										</td>										
-										<td>
-											<?php echo $brow['pick_date']; ?>
-										</td>										
-										<td>
-											<?php echo $brow['pick_time']; ?>
-										</td>										
-										<td>
-											<?php echo $brow['postal_code']; ?>
-										</td>										
-										<td>
-											<?php echo $brow['pickup']; ?>
-										</td>         
-										<td>
-											<?php echo $brow['stops']; ?>
-										</td>										
-										<td>
-											<?php echo $brow['destination'] ?>
-										</td>
-										<td>
-											<?php echo $brow['passenger']; ?>
-										</td>
-										<td> 
-											<?php echo $brow['journey_fare'] ?> 
-										</td>										
-										<td> 
-											<?php echo $brow['v_name'] ?> 
-										</td>
-										<td style="width: 10%;"> 
-											<?php
-												if($brow['booking_status']=='Booked'){
-											?>
-											<a href="#" class="btn button_padding" title="Dispatched">       
-												<i class="ti ti-plane-tilt"></i>
-											</a>  											   
-											<?php											
-												} else {   
-											?>    
-											<a href="dispatch-booking.php?book_id=<?php echo $brow['book_id'] ?>" class="btn btn-success button_padding" title="Dispatch">
-												<i class="ti ti-plane-tilt"></i>
-											</a>   
-											<?php											
-												}												
-											?>
-											<a href="view-booking.php?book_id=<?php echo $brow['book_id'] ?>">
-												<button class="btn btn-info button_padding" title="View">
-													<i class="ti ti-eye"></i>
-												</button>
-											</a>
-											<?php
-												if($brow['booking_status']=='Booked'){
-													echo '';
-												} else {   
-											?>    
-											<a class="btn btn-danger button_padding" href="cancel-booking.php?book_id=<?php echo $brow['book_id'] ?>" title="Cancel">
-												<i class="ti ti-square-rounded-x"></i>
-											</a> 
-											<?php											
-												}												
-											?>											
-										</td>
-									</tr>											
-									<?php			
-										}									
-									?>								
-								</tbody>							
-							</table>							
+							<style>        
+							.near-pickup {            
+								background-color: red;			
+								color: white;        
+							}    
+						</style>    
+						<table class="table">        
+							<thead>            
+								<tr>                
+									<th>ID</th>                
+									<th>Date Pickup</th>                
+									<th>Time Pickup</th>                
+									<th>Post Code</th>                
+									<th>Pickup</th>                
+									<th>Stops</th>                
+									<th>Dropoff</th>                
+									<th>Passenger</th>                
+									<th>Journey Type</th>                
+									<th>Fare</th>                
+									<th>Vehicle</th>                
+									<th>Actions</th>            
+								</tr>        
+							</thead>        
+							<tbody class="table-tbody">            
+								<?php            
+									$y = 0;            
+									while ($brow = mysqli_fetch_array($bsql)) {                
+									$y++;                
+									$pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);                
+									$current_datetime = time();                
+									$time_diff = ($pickup_datetime - $current_datetime) / 60; // Difference in minutes                
+									$row_class = ($time_diff <= 30) ? 'near-pickup' : '';            
+								?>            
+								<tr class="<?php echo $row_class; ?>">                
+									<td><?php echo $brow['book_id']; ?></td>                
+									<td><?php echo $brow['pick_date']; ?></td>                
+									<td><?php echo $brow['pick_time']; ?></td>                
+									<td><?php echo $brow['postal_code']; ?></td>                
+									<td><?php echo $brow['pickup']; ?></td>                
+									<td><?php echo $brow['stops']; ?></td>                
+									<td><?php echo $brow['destination']; ?></td>                
+									<td><?php echo $brow['passenger']; ?></td>                
+									<td><?php echo $brow['journey_type']; ?></td>                
+									<td><?php echo $brow['journey_fare']; ?></td>                
+									<td><?php echo $brow['v_name']; ?></td>                
+									<td style="width: 10%;">                    
+										<form method="post" action="dispatch-process.php">                        
+											<input type="hidden" value="<?php echo $brow['book_id']; ?>" name="book_id">                        
+											<input type="hidden" value="<?php echo $brow['c_id']; ?>" name="c_id">                        
+											<input type="hidden" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">                        
+											<input type="hidden" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">                        
+											<select class="form-control" name="d_id" required>                            
+												<option value="">Select Driver</option>                            
+												<?php                            
+													$drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
+													while ($drrow = mysqli_fetch_array($drsql)) {                            
+												?>                            
+												<option value="<?php echo $drrow['d_id']; ?>">                                
+													<?php echo $drrow['d_id'] ?> -                                
+													<?php echo $drrow['d_name'] ?> -                                
+													<?php echo $drrow['d_phone'] ?>                            
+												</option>                            
+												<?php
+													}                            
+												?>                        
+											</select>                        
+											<button type="submit" class="btn btn-info">                            
+												<i class="ti ti-plane-tilt"></i>                        
+											</button>                    
+										</form>                
+									</td>            
+								</tr>            
+								<?php
+									}            
+								?>        
+							</tbody>    
+						</table>  							
 							<?php        
 							} else {            
 								echo '<p>No booking found.</p>';        
