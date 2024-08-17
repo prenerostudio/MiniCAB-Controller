@@ -8,13 +8,14 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 $d_id = $_POST['d_id'];
-if (isset($_POST['d_id'])) {
-    $currentDate = date('Y-m-d');
-    $currentTime = date('H:i:s'); // Get the current time
+$job_id = $_POST['job_id'];
 
+if (isset($_POST['d_id'])) {
+  
+	
     // Modify the SQL query to include jobs for today and future jobs
-    $sql = "SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, clients.c_address, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.* 
-            FROM jobs INNER JOIN bookings ON jobs.book_id = bookings.book_id INNER JOIN drivers ON jobs.d_id = drivers.d_id INNER JOIN clients ON jobs.c_id = clients.c_id WHERE jobs.d_id = '$d_id' AND jobs.job_status = 'accepted' AND (DATE(bookings.pick_date) = '$currentDate' AND bookings.pick_time >= '$currentTime' OR DATE(bookings.pick_date) > '$currentDate') ORDER BY bookings.pick_date ASC, bookings.pick_time ASC";
+    $sql = "SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND
+    jobs.d_id = $d_id";
 
     $r = mysqli_query($connect, $sql);    
     $output = mysqli_fetch_all($r, MYSQLI_ASSOC);  
