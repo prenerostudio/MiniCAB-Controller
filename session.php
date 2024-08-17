@@ -1,7 +1,6 @@
 <?php
 session_start(); 
-ini_set("display_errors","off");
-
+// Rest of your PHP code here...
 $myId = $_SESSION['user_id'];
 $email = $_SESSION['email'];                		
 $fname=	$_SESSION['first_name'];                		

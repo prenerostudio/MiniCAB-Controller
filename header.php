@@ -70,139 +70,62 @@ include('session.php');
 							</a>         						
 						</h1>
 						<div class="navbar-nav flex-row order-md-last">         						
-							<div class="nav-item d-none d-md-flex me-3">         							
-								 
-								<div class="btn-list">
-									
-									<a href="new-driver-web.php" class="btn btn-warning position-relative">
-            
-										<i class="ti ti-users-group"></i>
-            
-										Drivers From WEB
-            
-										<span class="badge badge-danger position-absolute top-0 start-100 translate-middle">
-                
-											0 <!-- This number will be dynamically updated -->
-            
-										</span>
-        
-									</a>
-        
-									<a href="new-drivers.php" class="btn btn-indigo position-relative">
-            
-										<i class="ti ti-users-group"></i>
-            
-										New Drivers
-            
-										<span class="badge badge-danger position-absolute top-0 start-100 translate-middle">
-                
-											0 <!-- This number will be dynamically updated -->
-            
-										</span>
-        
-									</a>
-        
-									<a href="fare-corrections.php" class="btn btn-danger position-relative">
-            
-										<i class="ti ti-receipt-pound"></i>
-            
+							<div class="nav-item d-none d-md-flex me-3">
+								<div class="btn-list">									
+									<a href="new-driver-web.php" class="btn btn-github position-relative">            
+										<i class="ti ti-users-group"></i>            
+										Drivers From WEB            
+										<span class="badge bg-orange text-orange-fg badge-notification badge-pill">0</span>
+									</a>       
+									<a href="new-drivers.php" class="btn btn-indigo position-relative">            
+										<i class="ti ti-users-group"></i>            
+										New Drivers            
+										<span class="badge bg-orange text-orange-fg badge-notification badge-pill">   
+											0             
+										</span>        
+									</a>        
+									<a href="fare-corrections.php" class="btn btn-danger position-relative">            
+										<i class="ti ti-receipt-pound"></i>            
 										Fare Corrections
-										<span class="badge badge-danger position-absolute top-0 start-100 translate-middle">
-                
-											0 <!-- This number will be dynamically updated -->
-            
-										</span>
-        
+										<span class="badge bg-orange text-orange-fg badge-notification badge-pill">
+											0
+										</span>        
+									</a>        									        
+									<a href="driver-tracker.php" class="btn btn-cyan">            
+										<i class="ti ti-user-search"></i>            
+										Driver Tracker        
 									</a>
-        
-									
-        
-									<a href="driver-tracker.php" class="btn btn-cyan">
-            
-										<i class="ti ti-user-search"></i>
-            
-										Driver Tracker
-        
-									</a>
-
-									<a href="add-booking.php" class="btn btn-indigo">
-            
-										<i class="ti ti-bookmark-plus"></i>
-
-            
-										New Booking
-        
-									</a>
-    
-								</div>
-
-								
-    
-								<script>
-    
+									<a href="add-booking.php" class="btn btn-indigo">            
+										<i class="ti ti-bookmark-plus"></i>            
+										New Booking        
+									</a>    
+								</div>								    
+								<script>    
 									document.addEventListener("DOMContentLoaded", function() {
-        
-										// Fetch the number of new drivers from the server
-        
-										fetch('new-drivers-count.php')
-            
-											.then(response => response.json())
-            
+										fetch('new-drivers-count.php')            
+											.then(response => response.json())            
 											.then(data => {
-                
-											// Update the badge with the fetched count
-                
 											document.querySelector('.btn-indigo .badge').textContent = data.newDriversCount;
-            
-										})
-            
-											.catch(error => console.error('Error fetching new drivers count:', error));
-    
-									});
-									
+										})            
+											.catch(error => console.error('Error fetching new drivers count:', error));    
+									});									
 									document.addEventListener("DOMContentLoaded", function() {
-        
-										// Fetch the number of new drivers from the server
-        
-										fetch('web-driver-count.php')
-            
-											.then(response => response.json())
-            
+										fetch('web-driver-count.php')            
+											.then(response => response.json())            
 											.then(data => {
-                
-											// Update the badge with the fetched count
-                
-											document.querySelector('.btn-warning .badge').textContent = data.webDriversCount;
-            
-										})
-            
-											.catch(error => console.error('Error fetching new drivers count:', error));
-    
-									});
-									
+											document.querySelector('.btn-github .badge').textContent = data.webDriversCount;
+										})            
+											.catch(error => console.error('Error fetching new drivers count:', error));    
+									});									
 									document.addEventListener("DOMContentLoaded", function() {
-        
-										// Fetch the number of new drivers from the server
-        
-										fetch('fare-count.php')
-            
-											.then(response => response.json())
-            
+										fetch('fare-count.php')            
+											.then(response => response.json())            
 											.then(data => {
-                
-											// Update the badge with the fetched count
-                
 											document.querySelector('.btn-danger .badge').textContent = data.faresCount;
-            
-										})
-            
-											.catch(error => console.error('Error fetching new drivers count:', error));
-    
-									});
-    
-								</script>         							
-							
-
+										})            
+											.catch(error => console.error('Error fetching new drivers count:', error));    
+									});    
+								</script>         														
 							</div>           
 							<div class="d-none d-md-flex">
 								<a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">

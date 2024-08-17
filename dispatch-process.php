@@ -3,13 +3,11 @@ include('config.php');
 include('session.php');
 require 'vendor/autoload.php'; // Load Pusher
 
-session_start();
-
 $book_id = $_POST['book_id'];
 $c_id  = $_POST['c_id'];
 $d_id = $_POST['d_id'];
-$journey_fare = $_POST['journey_fare'];
-$booking_fee = $_POST['booking_fee'];
+$journey_fare = (float)$_POST['journey_fare'];
+$booking_fee = (float)$_POST['booking_fee'];
 $job_status = 'waiting';
 
 // Prepare and execute the job insertion
@@ -23,38 +21,52 @@ $sql = "INSERT INTO `jobs`(
         ) VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = $connect->prepare($sql);
-$stmt->bind_param("iiisss", $book_id, $c_id, $d_id, $journey_fare, $booking_fee, $job_status);
+$stmt->bind_param("iiidds", $book_id, $c_id, $d_id, $journey_fare, $booking_fee, $job_status);
 $result = $stmt->execute();
 
 if ($result) {
+    $job_id = $stmt->insert_id;  // Better way to get the last inserted ID
+    $stmt->close();
+
     // Update the booking status
     $book_status = 'Booked';
     $bsql = "UPDATE `bookings` SET `booking_status` = ? WHERE `book_id` = ?";
     $bstmt = $connect->prepare($bsql);
     $bstmt->bind_param("si", $book_status, $book_id);
     $bstmt->execute();
+    $bstmt->close();
 
     // Insert into the driver history
     $historysql = "INSERT INTO `driver_history`(`d_id`, `book_id`) VALUES (?, ?)";
     $historystmt = $connect->prepare($historysql);
     $historystmt->bind_param("ii", $d_id, $book_id);
     $historystmt->execute();
+    $historystmt->close();
 
     // Log the activity
-    $activity_type = 'Job Dispatched';		
-    $user_type = 'user';		
+    $activity_type = 'Job Dispatched';
+    $user_type = 'user';
     $details = "Job has been dispatched to driver by Controller.";
-	
-    $actsql = "INSERT INTO `activity_log`(
-                                        `activity_type`, 
-                                        `user_type`, 
-                                        `user_id`, 
-                                        `details`
-                                        ) VALUES (
-                                        ?, ?, ?, ?)";
+    $actsql = "INSERT INTO `activity_log`(`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)";
     $actstmt = $connect->prepare($actsql);
     $actstmt->bind_param("ssis", $activity_type, $user_type, $myId, $details);
     $actstmt->execute();
+    $actstmt->close();
+
+    // Fetch the job details
+    $fetchsql = "SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.*
+                 FROM jobs
+                 JOIN bookings ON jobs.book_id = bookings.book_id
+                 JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id
+                 JOIN clients ON jobs.c_id = clients.c_id
+                 JOIN drivers ON jobs.d_id = drivers.d_id
+                 WHERE jobs.job_id = ? AND jobs.d_id = ?";
+    $fetchstmt = $connect->prepare($fetchsql);
+    $fetchstmt->bind_param("ii", $job_id, $d_id);
+    $fetchstmt->execute();
+    $fetchresult = $fetchstmt->get_result();
+    $output = $fetchresult->fetch_all(MYSQLI_ASSOC);
+    $fetchstmt->close();
 
     // Initialize Pusher
     $options = [
@@ -71,9 +83,7 @@ if ($result) {
     // Data to send via Pusher
     $data = [
         'message' => 'A new job has been dispatched',
-        'job_id' => $book_id,
-        'driver_id' => $d_id,
-        'customer_id' => $c_id
+        'details' => $output,
     ];
 
     // Trigger a Pusher event

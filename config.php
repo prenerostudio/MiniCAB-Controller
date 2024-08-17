@@ -19,5 +19,15 @@ if($connect->connect_error) {
 } else {
 }
 
+// Enable error logging
+ini_set("log_errors", 1); // Turn on error logging
 
+// Specify the log file path
+ini_set("error_log", "error.log");
+
+// Optional: Disable display of errors on the screen for production
+ini_set("display_errors", "off");
+
+// You can also set the error reporting level (e.g., to log all errors, warnings, and notices)
+error_reporting(E_ALL);
 ?>
