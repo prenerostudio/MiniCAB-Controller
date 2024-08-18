@@ -1,0 +1,5 @@
+[18-Aug-2024 15:36:43 Asia/Karachi] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'bookings.book_time' in 'field list' in C:\xampp\htdocs\MiniCAB\api\driver\fetch-reviews.php:14
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB\api\driver\fetch-reviews.php(14): mysqli_query(Object(mysqli), ' SELECT reviews...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB\api\driver\fetch-reviews.php on line 14
