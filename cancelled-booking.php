@@ -197,7 +197,9 @@ include('header.php');
 </div>        
 <script>	
 	$(document).ready(function() {
-    $('#table-cancelled').DataTable();
+    $('#table-cancelled').DataTable({
+        "order": [[ 0, "desc" ]] 
+    });
 });
 </script>
 <?php

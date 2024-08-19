@@ -3,9 +3,15 @@
 
 i{
 	font-size: 18px;
-	padding-right: 5px;
+	/*padding-right: 5px;*/
 }
-
+.near-pickup {            
+				
+	background-color:#FF282C;			
+						
+	color: white;        
+						
+}  
 .readonly { 
 	background:#C4C4C4;
 }

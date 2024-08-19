@@ -78,7 +78,7 @@ include('header.php');
 								?>											
 								<tr>									
 									<td>
-										<?php echo $y; ?>
+										<?php echo $jobrow['job_id']; ?>
 									</td>                        									
 									<td>
 										<?php echo $jobrow['pick_date'] ?>
@@ -123,7 +123,7 @@ include('header.php');
 									</td>
 									<td> 
 										<a href="withdraw-job.php?job_id=<?php echo $jobrow['job_id']; ?>&book_id=<?php echo $jobrow['book_id']; ?>">
-											<button class="btn btn-danger">										
+											<button class="btn btn-instagram">										
 												<i class="ti ti-square-rounded-x"></i>
 												Withdraw Job											
 											</button>												
@@ -143,7 +143,9 @@ include('header.php');
 </div>        
 <script>	
 	$(document).ready(function() {
-    $('#table-inprocess').DataTable();
+    $('#table-inprocess').DataTable({
+        "order": [[ 0, "desc" ]] 
+    });
 });
 </script>
 <?php	

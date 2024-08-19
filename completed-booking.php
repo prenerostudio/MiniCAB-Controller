@@ -201,7 +201,9 @@ include('header.php');
 </div>        
 <script>	
 	$(document).ready(function() {
-    $('#table-complete').DataTable();
+    $('#table-complete').DataTable({
+        "order": [[ 0, "desc" ]] 
+    });
 });
 </script>
 <?php	

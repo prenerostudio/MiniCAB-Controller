@@ -3,7 +3,7 @@ include('config.php');
 include('session.php');	
 
 function fetchVehiclePricingFromDatabase($vehicleId) {
-	global $connect;    	    
+	//global $connect;    	    
 	$vehicleId = mysqli_real_escape_string($connect, $vehicleId);    	
     $query = "SELECT v_pricing FROM vehicles WHERE v_id = '$vehicleId'";   	
     $result = mysqli_query($connect, $query);   	
@@ -123,18 +123,21 @@ if ($result) {
 	$book_id = mysqli_insert_id($connect);	
 	$activity_type = 'New Booking';		
 	$user_type = 'user';        	
-	$details = "Controller Has added a new boooking " . $book_id . "')";
+	$details = "Controller Has added a new booking " . $book_id;
+
 			
+
 	$actsql = "INSERT INTO `activity_log`(
-											`activity_type`, 
-											`user_type`, 
-											`user_id`, 
-											`details`
-											) VALUES (
-											'$activity_type',
-											'$user_type',
-											'$myId',
-											'$details')";		
+                                    `activity_type`, 
+                                    `user_type`, 
+                                    `user_id`, 
+                                    `details`
+                                    ) VALUES (
+                                    '$activity_type',
+                                    '$user_type',
+                                    '$myId',
+                                    '$details')";
+		
 				
 	$actr = mysqli_query($connect, $actsql);      
 	header('Location: all-bookings.php');    
@@ -143,3 +146,13 @@ if ($result) {
 }
 $connect->close();
 ?>
+Request URL:
+http://localhost/minicab/booking-process.php
+Request Method:
+POST
+Status Code:
+500 Internal Server Error
+Remote Address:
+[::1]:80
+Referrer Policy:
+strict-origin-when-cross-origin

@@ -134,8 +134,7 @@ $bookrow = mysqli_fetch_array($booksql);
 										$drsql = mysqli_query($connect, "SELECT * FROM `drivers`");
 										while ($drrow = mysqli_fetch_array($drsql)) {										
 										?>										
-										<option value="<?php echo $drrow['d_id'] ?>">										
-											<?php echo $drrow['d_id'] ?> - 
+										<option value="<?php echo $drrow['d_id'] ?>">	
 											<?php echo $drrow['d_name'] ?> - 
 											<?php echo $drrow['d_phone'] ?>										
 										</option>		
@@ -146,11 +145,11 @@ $bookrow = mysqli_fetch_array($booksql);
 								</div>								
 								<div class="mb-3 col-lg-12">  																
 									<label class="form-label">Driver Phone</label>
-									<input type="text" class="form-control readonly" name="dphone" id="driverPhone" readonly>
+									<input type="text" class="form-control" name="dphone" id="driverPhone" readonly>
 								</div>				
 								<div class="mb-3 col-lg-12">   																	
 									<label class="form-label">Driver Email</label>
-									<input type="text" class="form-control readonly" name="demail" id="driverEmail" readonly>
+									<input type="text" class="form-control" name="demail" id="driverEmail" readonly>
 								</div>								
 								<script>									
 									var driverSelect = document.getElementById('driverSelect');								
@@ -183,7 +182,7 @@ $bookrow = mysqli_fetch_array($booksql);
 								<h4>Pricing Section</h4>								
 								<div class="mb-3 col-lg-4">								
 									<label class="form-label">Jouney Fare</label>									
-									<input type="text" class="form-control"  name="journey_fare" id="journeyFare" value="<?php echo $bookrow['journey_fare'] ?>">
+									<input type="text" class="form-control"  name="journey_fare" id="journeyFare" value="<?php echo $bookrow['journey_fare'] ?>" readonly>
 								</div>
 								<div class="mb-3 col-lg-4">          
 									<label class="form-label">Bookinng Fee </label>								
