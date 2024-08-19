@@ -27,6 +27,8 @@ $stmt->bind_param("iiisss", $book_id, $c_id, $d_id, $journey_fare, $booking_fee,
 $result = $stmt->execute();
 
 if ($result) {
+	
+	$job_id = mysqli_insert_id($connect);
     // Update the booking status
     $book_status = 'Booked';
     $bsql = "UPDATE `bookings` SET `booking_status` = ? WHERE `book_id` = ?";
@@ -55,6 +57,14 @@ if ($result) {
     $actstmt = $connect->prepare($actsql);
     $actstmt->bind_param("ssis", $activity_type, $user_type, $myId, $details);
     $actstmt->execute();
+	
+	     // Modify the SQL query to include jobs for today and future jobs
+    $fetchsql = "SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND
+    jobs.d_id = $d_id";
+
+    $fetchr = mysqli_query($connect, $fetchsql);    
+    $output = mysqli_fetch_all($fetchr, MYSQLI_ASSOC);  
+	
 
     // Initialize Pusher
     $options = [
@@ -71,9 +81,8 @@ if ($result) {
     // Data to send via Pusher
     $data = [
         'message' => 'A new job has been dispatched',
-        'job_id' => $book_id,
-        'driver_id' => $d_id,
-        'customer_id' => $c_id
+        'details' => $output,
+       
     ];
 
     // Trigger a Pusher event

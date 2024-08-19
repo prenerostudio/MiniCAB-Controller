@@ -20,7 +20,7 @@ include('header.php');
 										<select class="form-select" name="book_id" required>	
 											<option value="" selected>Select Bookings</option>
 											<?php									
-											$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.bid_status = 0 AND bookings.booking_status = 'Pending'");
+											$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.bid_status = 0 AND bookings.booking_status = 'Pending' ORDER BY bookings.book_id DESC ");
 											while($brow = mysqli_fetch_array($bsql)){
 											?>
 											<option value="<?php echo $brow['book_id'] ?>">
@@ -39,9 +39,10 @@ include('header.php');
 								<div class="col-lg-12">							
 									<div class="mb-3">								
 										<label class="form-label">Available time</label>
-										<input type="text" class="form-control" name="av_time">
+										<input type="datetime-local" class="form-control" name="av_time">
 									</div>						
-								</div>								
+								</div>	
+								
 								<div class="col-lg-12">
 									<div class="mb-3">
 										<label class="form-label">Bid Note</label>

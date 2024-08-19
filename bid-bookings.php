@@ -39,18 +39,21 @@ include('header.php');
                                 <?php    
                                 $y = 0;    
                                 $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.* FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE bookings.bid_status = 1 ORDER BY bookings.book_id DESC");    
+                                $bookingData = [];
                                 while ($brow = mysqli_fetch_array($bsql)) {        
                                     $y++;                                 
-                                    $bid_time = strtotime($brow['bid_time']); // Fetching bid time from the database
-                                    $current_time = time(); // Current time in seconds since Unix Epoch
-                                    if ($bid_time < $current_time) {
-                                        // Bid time is in the past, display a message
-                                        $remaining_time = "Due time passed";
-                                    } else {
-                                        // Calculate remaining time
-                                        $remaining_time_seconds = $bid_time - $current_time;
-                                        $remaining_time = gmdate("H:i:s", $remaining_time_seconds);
-                                    }      
+                                    $bid_time = strtotime($brow['bid_time']);
+                                    $bookingData[] = [
+                                        'id' => $y,
+                                        'book_id' => $brow['book_id'],
+                                        'pickup' => $brow['pickup'],
+                                        'destination' => $brow['destination'],
+                                        'pick_date' => $brow['pick_date'],
+                                        'pick_time' => $brow['pick_time'],
+                                        'bid_time' => $bid_time,
+                                        'bid_note' => $brow['bid_note'],
+                                        'bid_status' => $brow['bid_status']
+                                    ];
                                 ?>        
                                 <tr>            
                                     <td>                
@@ -64,8 +67,7 @@ include('header.php');
                                         <?php echo $brow['pick_time']; ?>            
                                     </td>            
                                     <td id="remainingTime_<?php echo $y; ?>">                
-                                        Remaining Time: 
-                                        <?php echo $remaining_time; ?>            
+                                        Remaining Time:                
                                     </td>            
                                     <td>                
                                         <?php echo $brow['bid_note']; ?>            
@@ -102,29 +104,30 @@ include('header.php');
     </div>
 </div>        
 <script>    
+    var bookingData = <?php echo json_encode($bookingData); ?>;
+
     function updateRemainingTime() {
-        <?php        
-        mysqli_data_seek($bsql, 0);
-        $y = 0;
-        while ($brow = mysqli_fetch_array($bsql)) {
-            $y++;
-            $bid_time = strtotime($brow['bid_time']);
-            $current_time = time();
-            if ($bid_time < $current_time) {
-                // Bid time is in the past, display a message
-                $remaining_time = "Due time passed";
-            } else {
-                // Calculate remaining time
-                $remaining_time_seconds = $bid_time - $current_time;
-                $remaining_time = gmdate("H:i:s", $remaining_time_seconds);
+        var currentTime = Math.floor(Date.now() / 1000); // Current time in seconds since Unix Epoch
+
+        bookingData.forEach(function(booking) {
+            var remainingTimeElement = document.getElementById("remainingTime_" + booking.id);
+
+            if (remainingTimeElement) {
+                if (booking.bid_time < currentTime) {
+                    remainingTimeElement.innerHTML = "Remaining Time: Due time passed";
+                } else {
+                    var remainingTimeSeconds = booking.bid_time - currentTime;
+                    var hours = Math.floor(remainingTimeSeconds / 3600);
+                    var minutes = Math.floor((remainingTimeSeconds % 3600) / 60);
+                    var seconds = remainingTimeSeconds % 60;
+
+                    remainingTimeElement.innerHTML = "Remaining Time: " + hours.toString().padStart(2, '0') + ":" + minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+                }
             }
-        ?>
-            document.getElementById("remainingTime_<?php echo $y; ?>").innerHTML = "Remaining Time: <?php echo $remaining_time; ?>";
-        <?php
-        }
-        ?>
-    }    
-    setInterval(updateRemainingTime, 500);  
+        });
+    }
+
+    setInterval(updateRemainingTime, 1000);  
 </script>
 <?php
 include('footer.php');
