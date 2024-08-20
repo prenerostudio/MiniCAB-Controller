@@ -184,26 +184,7 @@ include('header.php');
 									<td> 									
 										<?php echo $brow['v_name'] ?> 										
 									</td>									
-									<td style="width: 10%;">
-										<?php            										
-											if ($brow['bid_status'] == 0) {													
-										?>                										
-										<a href='open-bid.php?book_id=<?php echo $brow['book_id'] ?>'>
-											<button class='btn btn-facebook btn-icon' title='Open Bid'>
-												<i class='ti ti-aspect-ratio'></i>
-											</button>
-										</a>
-										<?php										
-											} else {				
-										?>                										
-										<a href='#'>                					
-											<button class='btn btn-icon' disabled>                    						
-												<i class='ti ti-aspect-ratio'></i>                        					
-											</button>                    										
-										</a>										
-										<?php            									
-											}
-										?>  
+									<td style="width: 13%;">										  
 										<a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>                    
 											<button class='btn btn-twitter btn-icon' title='View / Edit'>
 												<i class='ti ti-eye'></i>                    
