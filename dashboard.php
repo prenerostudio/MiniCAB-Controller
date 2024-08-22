@@ -68,12 +68,12 @@ include('header.php');
 					</div>					
 					<div class="table-responsive">					
 						<div id="driverListPOB">						
-							<table class="table table-responsive" id="table-pob">							
+							<table class="table table-responsive" id="table-pob">
 								<thead>								
 									<tr>									
 										<th>ID</th>										
 										<th>Driver</th>										
-										<th>Status</th>	            									
+										<th>Status</th>
 									</tr>								
 								</thead>								
 								<tbody>								
@@ -81,20 +81,20 @@ include('header.php');
 										$n=0;
 										$drsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='pob'");
 										while($drrow = mysqli_fetch_array($drsql)){
-											$n++;									
+											$n++;
 									?>									
 									<tr>									
-										<td>                    										
-											<?php echo $n; ?>                										
+										<td>	
+											<?php echo $n; ?>
 										</td>                										
-										<td>                    										
+										<td>
 											<span class="text-secondary">
 												<?php echo $drrow['d_name']; ?>
-											</span>                										
+											</span>
 										</td>                
-										<td>                    										
+										<td>
 											<span class="badge bg-success me-1"></span> 
-											<?php echo $drrow['status']; ?>										
+											<?php echo $drrow['status']; ?>
 										</td>            									
 									</tr>            									
 									<?php            									
@@ -108,9 +108,9 @@ include('header.php');
 								$('#table-pob').DataTable();						
 							});  
 							function loadDriverListPOB() {							
-								var xhttp = new XMLHttpRequest();        								
-								xhttp.onreadystatechange = function() {            								
-									if (this.readyState == 4 && this.status == 200) {									
+								var xhttp = new XMLHttpRequest();
+								xhttp.onreadystatechange = function() {
+									if (this.readyState == 4 && this.status == 200) {
 										document.getElementById("driverListPOB").innerHTML = this.responseText;
 									}
 								};        
@@ -118,8 +118,8 @@ include('header.php');
 								xhttp.send();    							
 							}							    							    
 							loadDriverListPOB();    
-							setInterval(loadDriverListPOB, 1000); 												
-						</script>         																					
+							setInterval(loadDriverListPOB, 1000);
+						</script>
 					</div>                  									
 				</div>							
 			</div>              								
@@ -148,11 +148,11 @@ include('header.php');
 								?>            								
 								<tr>                								
 									<td>                    									
-										<?php echo $x ?>                									
+										<?php echo $x ?>
 									</td>                									
 									<td>        									
 										<span class="text-secondary">
-											<?php echo $drvrow['d_name']; ?>										
+											<?php echo $drvrow['d_name']; ?>
 										</span>                									
 									</td>                									
 									<td>                    									
@@ -271,7 +271,7 @@ include('header.php');
 							<thead>            							
 								<tr>                								
 									<th>ID</th>
-									<th>Date Pickup</th>                									
+									<th>Date Pickup</th>		
 									<th>Time Pickup</th>                
 									<th>Post Code</th>                
 									<th>Pickup</th>                
@@ -292,7 +292,11 @@ include('header.php');
 										$pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);
 										$current_datetime = time();                
 										$time_diff = ($pickup_datetime - $current_datetime) / 60;
-										$row_class = ($time_diff <= 30) ? 'near-pickup' : '';            
+										$row_class = ($time_diff <= 10) ? 'near-pickup' : '';            
+//										echo 'Server Timezone: ' . date_default_timezone_get() . '<br>';
+//echo 'Current Time: ' . date('Y-m-d H:i:s', $current_datetime) . '<br>';
+//echo 'Pickup Time: ' . date('Y-m-d H:i:s', $pickup_datetime) . '<br>';
+//die;
 								?>            
 								<tr class="<?php echo $row_class; ?>">                
 									<td><?php echo $brow['book_id']; ?></td>                
@@ -329,7 +333,7 @@ include('header.php');
 															}
 														?>
 													</select>		
-													<button class="btn btn-bitbucket" type="button">
+													<button class="btn btn-bitbucket" type="submit">
 														<i class="ti ti-plane-tilt"></i>
 													</button>
 												</div>

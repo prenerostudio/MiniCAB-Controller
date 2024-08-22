@@ -11,16 +11,7 @@ include('header.php');
 				Time Slots For Drivers			
 			</h2>		
 		</div>
-		<div class="col-auto ms-auto d-print-none">		
-			<div class="btn-list">			
-				<span class="d-none d-sm-inline">				
-					<a href="#" class="btn btn-indigo" data-bs-toggle="modal" data-bs-target="#modal-time">						
-						<i class="ti ti-clock-plus"></i>                     						
-						Add Time Slot						
-					</a>
-				</span>
-			</div>
-		</div>	
+		
 	</div>	
 </div>
 <div class="page-body page_padding">          
@@ -74,12 +65,20 @@ include('header.php');
 										<?php 
 											if($atrow['at_status']==0){
 										?>
-										<a class="btn btn-warning">Pending</a>
+										
+										<div class="col-auto status">
+											<span class="status-dot status-dot-animated bg-orange d-block"></span>
+											<span>Pending</span>									
+										</div>
 										<?php
 									
 											}else{
 										?>
-										<a class="btn btn-success">Accepted</a>
+										
+										<div class="col-auto status">
+											<span class="status-dot status-dot-animated bg-green d-block"></span>
+											<span>Accepted</span>									
+										</div>
 										<?php
 											}
 										?>				
@@ -131,9 +130,7 @@ include('header.php');
 							</div>							          				          				
 						</div>				       							
 						<div class="modal-footer">					
-							<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-								Cancel					
-							</a>					
+											
 							<button type="submit" class="btn btn-success">												
 								<i class="ti ti-clock-plus"></i>						
 								Save Time Slot											

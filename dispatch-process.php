@@ -3,7 +3,6 @@ include('config.php');
 include('session.php');
 require 'vendor/autoload.php'; // Load Pusher
 
-session_start();
 
 $book_id = $_POST['book_id'];
 $c_id  = $_POST['c_id'];

@@ -1,6 +1,7 @@
 <?php
-include('config.php');
 include('session.php');
+include('config.php');
+
 ?>
 <!doctype html>
 <html lang="en">  
@@ -52,8 +53,8 @@ include('session.php');
 					};        
 					new google.maps.places.Autocomplete(newStopInput, autocompleteOptions);    
 				});
-			});										
-		</script>					  		
+			});											   
+		</script>
 	</head>  		
 	<body>			
 		<script src="js/demo-theme.min.js"></script> 								
@@ -69,7 +70,7 @@ include('session.php');
 								<img src="img/logo.png" width="110" height="32" alt="MiniCAB" class="navbar-brand-image">
 							</a>         						
 						</h1>
-						<div class="navbar-nav flex-row order-md-last">         						
+						<div class="navbar-nav flex-row order-md-last">
 							<div class="nav-item d-none d-md-flex me-3">
 								<div class="btn-list">									
 									<a href="new-driver-web.php" class="btn btn-github position-relative">            

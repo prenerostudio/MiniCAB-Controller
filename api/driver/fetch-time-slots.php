@@ -7,7 +7,7 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-$sql="SELECT * FROM `availability_times`";
+$sql="SELECT * FROM `availability_times` WHERE `at_status`=0";
 $r=mysqli_query($connect,$sql);
 if($r){    
 	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);    
