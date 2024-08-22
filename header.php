@@ -99,7 +99,38 @@ include('config.php');
 									<a href="add-booking.php" class="btn btn-indigo">            
 										<i class="ti ti-bookmark-plus"></i>            
 										New Booking        
-									</a>    
+									</a>   
+									 <div class="server-time">
+										 <?php
+
+$current_time = date("Y-m-d H:i:s");
+?>
+<script>
+    // Pass the server time to JavaScript
+    var serverTime = "<?php echo $current_time; ?>";
+</script>
+        <p id="time">Current Server Time: </p>
+    </div>
+    <script>
+        // Function to format time
+        function formatTime(date) {
+            let hours = date.getHours().toString().padStart(2, '0');
+            let minutes = date.getMinutes().toString().padStart(2, '0');
+            let seconds = date.getSeconds().toString().padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Initialize with server time
+        var serverTime = new Date("<?php echo $current_time; ?>");
+
+        // Update the time every second
+        function updateTime() {
+            serverTime.setSeconds(serverTime.getSeconds() + 1);
+            document.getElementById('time').textContent = "Current Server Time: " + formatTime(serverTime);
+        }
+
+        setInterval(updateTime, 1000); // Update time every second
+    </script>
 								</div>								    
 								<script>    
 									document.addEventListener("DOMContentLoaded", function() {

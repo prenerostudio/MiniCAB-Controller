@@ -10,7 +10,7 @@ include("../../config.php");
 if(isset($_POST['d_id'])){    
     $d_id = mysqli_real_escape_string($connect, $_POST['d_id']);
         
-    $sql = "SELECT d_id, SUM(d_com) AS total_commission FROM driver_accounts WHERE d_id = '$d_id' AND driver_accounts.com_status = 'Unpaid' GROUP BY d_id";   
+    $sql = "SELECT d_id, SUM(driver_commission) AS total_commission FROM invoice WHERE d_id = '$d_id' AND invoice.invoice_status = 'Unpaid' GROUP BY d_id";   
     $result = mysqli_query($connect, $sql);    
     if(mysqli_num_rows($result) > 0){       
         $output = mysqli_fetch_assoc($result);        

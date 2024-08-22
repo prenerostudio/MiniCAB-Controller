@@ -99,8 +99,7 @@ include('header.php');
 							<?php        							
 							$bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");        							
 							if (mysqli_num_rows($bsql) > 0) {							
-							?>							
-						    
+							?>						    
 						<table class="table" id="table-booking">        
 							<thead>            
 								<tr>                
@@ -118,15 +117,20 @@ include('header.php');
 									<th>Actions</th>            
 								</tr>        
 							</thead>        
-							<tbody class="table-tbody" id="tableBody">            
-								<?php            							
-								$y = 0;            							
-								while ($brow = mysqli_fetch_array($bsql)) {                								
-									$y++;                								
-									$pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);
-									$current_datetime = time();                								
-									$time_diff = ($pickup_datetime - $current_datetime) / 60;
-									$row_class = ($time_diff <= 30) ? 'near-pickup' : '';		
+							<tbody class="table-tbody" id="tableBody">
+								<?php
+								$y = 0;								
+								while ($brow = mysqli_fetch_array($bsql)) {    
+									$y++;    
+									$pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);    
+									$current_datetime = time();     
+									$time_diff = ($pickup_datetime - $current_datetime) / 60;    
+									$row_class = '';    
+									if ($brow['booking_status'] === 'Pending') {        
+										$row_class = ($time_diff <= 30) ? 'near-pickup-red' : 'pending-red';    
+									} elseif ($brow['booking_status'] === 'Completed') {        
+										$row_class = 'completed-green';    
+									}								
 								?>            								
 								<tr class="<?php echo $row_class; ?>">                								
 									<td><?php echo $brow['book_id']; ?></td>                
@@ -140,7 +144,7 @@ include('header.php');
 									<td><?php echo $brow['journey_type']; ?></td>                
 									<td><?php echo $brow['journey_fare']; ?></td>                
 									<td><?php echo $brow['v_name']; ?></td>                
-									<td style='width: 15%;'>										
+									<td style='width: 15%; background: #FFFFFF;'>										
 										<?php            
 											if ($brow['bid_status'] == 0) {				
 										?>                
@@ -202,17 +206,16 @@ include('header.php');
 						}    
 						?>					
 					</div>                  
-				</div>                                                    				
-			</div>              			
-		</div>		
-	</div>	
-</div>        
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <script>	
 	$(document).ready(function() {
     $('#table-booking').DataTable({
         "order": [[ 0, "desc" ]] 
-    });  
-		
+    });		
 });
 </script>
 <?php
