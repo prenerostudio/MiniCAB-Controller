@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						
 			$activity_type = 'Driver Profile Image Updated';
 			$user_type = 'user';
-			$details = "Driver Profile Image " . $d_id . " Has Been updated by Controller.";
+			$details = "Driver Profile Image $d_id Has Been updated by Controller.";
 			$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

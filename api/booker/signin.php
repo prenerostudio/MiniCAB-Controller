@@ -25,6 +25,18 @@ if(isset($_POST['c_phone']) && isset($_POST['c_password'])){
         
         if ($result->num_rows > 0) {
             $output = $result->fetch_assoc();
+			
+			 $c_id = $output['c_id'];
+
+        // Generate a unique token
+        $token = bin2hex(random_bytes(32));
+
+        // Update the token in the database
+        $updateTokenSql = "UPDATE `clients` SET `login_token`='$token' WHERE `c_id`='$c_id'";
+        mysqli_query($connect, $updateTokenSql);
+			
+			
+			
 
             // Log activity
             $activity_type = 'Booker Signed-In';
@@ -40,7 +52,7 @@ if(isset($_POST['c_phone']) && isset($_POST['c_password'])){
             $actstmt->bind_param("ssis", $activity_type, $user_type, $user_id, $details);
             $actstmt->execute();
 
-            $response = array('data' => $output, 'message' => 'Customer Logged in Successfully', 'status' => true);
+            $response = array('data' => array('user' => $output, 'token' => $token), 'message' => 'User Logged in Successfully', 'status' => true);
         } else {
             $response = array('message' => 'Invalid Phone or Password!', 'status' => false);
         }
