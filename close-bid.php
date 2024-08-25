@@ -11,7 +11,7 @@ $result = $connect->query($sql);
 if($result){ 
 	$activity_type = 'Bid Closed';
 	$user_type = 'user';
-	$details = "Bid for Booking ID " . $book_id . " Has Been Closed by Controller.')";
+	$details = "Bid for Booking ID $book_id Has Been Closed by Controller.')";
 			
 	$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 

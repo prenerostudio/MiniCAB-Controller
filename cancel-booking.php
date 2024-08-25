@@ -11,7 +11,7 @@ $result = $connect->query($sql);
 if($result){ 		
 	$activity_type = 'Booking Cancelled';			
 	$user_type = 'user';        		
-	$details = "Booking ID: " . $book_id . " Has been Cancelled by Controller.";			
+	$details = "Booking ID: $book_id Has been Cancelled by Controller.";			
 	$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 
 											`user_type`, 

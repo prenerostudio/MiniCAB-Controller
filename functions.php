@@ -31,7 +31,7 @@ if (isset($_POST['login_user'])) {
         // Activity log details
         $activity_type = 'Controller Logged-In';
         $user_type = 'user';
-        $details = "Controller " . $_SESSION['first_name'] . " logged in successfully.";
+        $details = "Controller $_SESSION['first_name'] logged in successfully.";
         $myId = $_SESSION['user_id']; // Set $myId based on the logged-in user's ID
 
         // Insert the activity log

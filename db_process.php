@@ -27,7 +27,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) {	
 	$activity_type = 'Bank Account Added ';	
 	$user_type = 'user';	
-	$details = "A bank acount to driver ID: " . $d_name . " Has Been Added by Controller.";
+	$details = "A bank acount to driver ID: $d_name Has Been Added by Controller.";
 	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 

@@ -46,7 +46,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) {   	
 	$activity_type = 'Vehicle Added';	
 	$user_type = 'user';	
-	$details = "A new vehicle added by driver " . $d_id. ".";
+	$details = "A new vehicle added by driver $d_id";
 	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 

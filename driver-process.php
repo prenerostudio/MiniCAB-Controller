@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Log the activity			
 			$activity_type = 'New Driver Added';        
 			$user_type = 'user';        
-			$details = "New Driver " . $dname . " Has been Added by Controller.";
+			$details = "New Driver $dname Has been Added by Controller.";
 
 			$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 

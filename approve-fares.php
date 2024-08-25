@@ -14,7 +14,7 @@ if ($stmt->execute()) {
     
     $activity_type = 'Fare Correction';		
     $user_type = 'user';        	
-    $details = "Controller has approved Fare against Fare ID: " . $fare_id;
+    $details = "Controller has approved Fare against Fare ID: $fare_id";
 
     // Prepare activity log statement
     $actstmt = $connect->prepare("INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)");

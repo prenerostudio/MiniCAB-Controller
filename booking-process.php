@@ -123,7 +123,7 @@ if ($result) {
 	$book_id = mysqli_insert_id($connect);	
 	$activity_type = 'New Booking';		
 	$user_type = 'user';        	
-	$details = "Controller Has added a new booking " . $book_id;
+	$details = "Controller Has added a new booking $book_id";
 
 			
 
@@ -146,13 +146,3 @@ if ($result) {
 }
 $connect->close();
 ?>
-Request URL:
-http://localhost/minicab/booking-process.php
-Request Method:
-POST
-Status Code:
-500 Internal Server Error
-Remote Address:
-[::1]:80
-Referrer Policy:
-strict-origin-when-cross-origin

@@ -20,7 +20,7 @@ if ($result) {
 	
 	$activity_type = 'Special Date Added';	
 	$user_type = 'user';
-	$details = "Controller has added a Special Date " . $special_date . " for Price Upgradation')";
+	$details = "Controller has added a Special Date $special_date for Price Upgradation')";
 	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 
