@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
 			if($insert) {
 				$activity_type = 'Extra Document Updated';
 				$user_type = 'user';			
-				$details = "Extra Document of Driver " . $d_id . " Has Been uploaded by Controller.";			
+				$details = "Extra Document of Driver $d_id Has Been uploaded by Controller.";			
 				$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

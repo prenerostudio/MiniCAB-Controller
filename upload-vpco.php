@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
             if($insert) {				
 				$activity_type = 'Vehicle PCO Updated';			
 				$user_type = 'user';			
-				$details = "Vehicle PCO of Driver " . $d_id . " Has Been uploaded by Controller.";			
+				$details = "Vehicle PCO of Driver $d_id Has Been uploaded by Controller.";			
 				$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

@@ -19,7 +19,7 @@ if ($jresult) {
     // Log the activity
     $activity_type = 'Job Withdrawal';
     $user_type = 'user';
-    $details = "Job " . $job_id . " has been withdrawn by Controller.";
+    $details = "Job $job_id has been withdrawn by Controller.";
 
     $actsql = "INSERT INTO `activity_log`(
                                     `activity_type`, 

@@ -23,7 +23,7 @@ $sql = "UPDATE `clients` SET
         if ($result) {			
 			$activity_type = 'Customer Profile Updated';
 			$user_type = 'user';
-			$details = "Customer " . $c_id . " Has Been Updated by Controller.";
+			$details = "Customer $c_id Has Been Updated by Controller.";
 			$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

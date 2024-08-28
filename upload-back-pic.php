@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
                 echo "File uploaded successfully.";				
 				$activity_type = 'Vehicle Back Picture Updated';			
 				$user_type = 'user';			
-				$details = "Vehicle Back Picture of Driver " . $d_id . " Has Been uploaded by Controller.";			
+				$details = "Vehicle Back Picture of Driver $d_id Has Been uploaded by Controller.";			
 				$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 
