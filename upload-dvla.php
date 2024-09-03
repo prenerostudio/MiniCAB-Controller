@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
 			if($insert) {				
 				$activity_type = 'DVLA Updated';			
 				$user_type = 'user';			
-				$details = "DVLA of Driver " . $d_id . " Has Been uploaded by Controller.";			
+				$details = "DVLA of Driver $d_id Has Been uploaded by Controller.";			
 				$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

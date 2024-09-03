@@ -9,7 +9,7 @@ $result = $connect->query($sql);
 if($result){ 
 	$activity_type = 'Booker Verified';	
 	$user_type = 'user';
-	$details = "Booker " . $c_id . " Has Been Verified by Controller.";
+	$details = "Booker $c_id Has Been Verified by Controller.";
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 
 										`user_type`, 

@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (mysqli_query($connect, $sql)) {	
 		$activity_type = 'New Vehicle Added';
 		$user_type = 'user';
-		$details = "New Vehicle " . $vname . " Has Been updated by Controller.";
+		$details = "New Vehicle $vname Has Been updated by Controller.";
 		$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 
 											`user_type`, 

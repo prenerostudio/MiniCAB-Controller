@@ -57,7 +57,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) {	
 	$activity_type = 'Booking Updated';	
 	$user_type = 'user';	
-	$details = "Booking " . $book_id . " Has Been Updated by Controller.";	
+	$details = "Booking $book_id Has Been Updated by Controller.";	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 
 										`user_type`, 

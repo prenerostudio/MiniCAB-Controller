@@ -28,7 +28,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) {		
 	$activity_type = 'Driver Profile Updated';	
 	$user_type = 'user';	
-	$details = "Driver " . $d_name . " Profile Has Been updated by Controller.";
+	$details = "Driver $d_name Profile Has Been updated by Controller.";
 	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 
