@@ -310,61 +310,39 @@
 							<span class="nav-link-title">							
 								Activity Logs								
 							</span>                      																		
-						</a>                    																
-					</li>	
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">
-                                                <?php
-
-
-                                                                                 $current_time = date("Y-m-d H:i:s");
-
-                                                                                 ?>
-
-                                                                             <script>
-    
-    // Pass the server time to JavaScript
-
-    var serverTime = "<?php echo $current_time; ?>";
-
-                                                                             </script>
-							<span class="nav-link-icon d-md-none d-lg-inline-block">
-								<i class="ti ti-clock"></i>
-							</span>
-							<span class="nav-link-title" id="time">							
-								 Current Time:						
-							</span>                      																		
-						</a>  
-                                             <div class="server-time">
-										 
-        
-                                                                             
-    
-                                                                         </div>
-    
-                                                                    <script>
-        
-    // Function to format time
-
-    function formatTime(date) {
-            let hours = date.getHours().toString().padStart(2, '0');
-            let minutes = date.getMinutes().toString().padStart(2, '0');
-            let seconds = date.getSeconds().toString().padStart(2, '0');
-            return `${hours}:${minutes}:${seconds}`;
-        }
-
-        // Initialize with server time
-        var serverTime = new Date("<?php echo $current_time; ?>");
-
-        // Update the time every second
-        function updateTime() {
-            serverTime.setSeconds(serverTime.getSeconds() + 1);
-            document.getElementById('time').textContent = "Current Server Time: " + formatTime(serverTime);
-        }
-
-        setInterval(updateTime, 1000); // Update time every second
-    </script>
-                                        </li>
+						</a>					
+					</li>                    
+					<li class="nav-item">                    
+						<a class="nav-link" href="#">                        
+							<?php														                            
+							$current_time = date("Y-m-d H:i:s");                            
+							?>                            
+							<script>        								    
+								var serverTime = "<?php echo $current_time; ?>";                                
+							</script>							
+							<span class="nav-link-icon d-md-none d-lg-inline-block">							
+								<i class="ti ti-clock"></i>							
+							</span>							
+							<span class="nav-link-title" id="time">														
+								Current Time:													
+							</span>						
+						</a>
+						<div class="server-time"></div>                                                                  
+						<script>            							  
+							function formatTime(date) {        
+								let hours = date.getHours().toString().padStart(2, '0');            
+								let minutes = date.getMinutes().toString().padStart(2, '0');            
+								let seconds = date.getSeconds().toString().padStart(2, '0');            
+								return `${hours}:${minutes}:${seconds}`;        
+							}        							        
+							var serverTime = new Date("<?php echo $current_time; ?>");        							
+							function updateTime() {            
+								serverTime.setSeconds(serverTime.getSeconds() + 1);            
+								document.getElementById('time').textContent = "Current Time: " + formatTime(serverTime);
+							}        
+							setInterval(updateTime, 1000);    
+						</script>                        
+					</li>				
 				</ul>                												
 			</div>									
 		</div>      											

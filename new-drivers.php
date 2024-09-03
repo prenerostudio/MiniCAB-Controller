@@ -36,7 +36,8 @@ include('header.php');
 							<thead>																			
 								<tr>																						
 									<th>ID</th>
-									<th>Image</th>																		
+									<th>Image</th>	
+									<th>Post Code</th>
 									<th>Name</th>																		
 									<th>Email</th>																		
 									<th>Phone</th>																		
@@ -54,7 +55,7 @@ include('header.php');
 								?>                                
 								<tr>                                
 									<td>
-										<?php echo $y; ?>
+										<?php echo $ndrow['d_id']; ?>
 									</td>                                    
 									<td>                                        
 										<?php if (!$ndrow['d_pic']) : ?>                                          
@@ -62,6 +63,10 @@ include('header.php');
 										<?php else : ?>                                           
 										<img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
 										<?php endif; ?>                                    
+									</td>
+									<td>																	
+									<?php echo $ndrow['d_post_code'];?>
+								
 									</td>
                                     <td>
 										<?php echo $ndrow['d_name']; ?>
@@ -79,16 +84,14 @@ include('header.php');
 										<?php echo $ndrow['licence_authority']; ?>
 									</td>
                                     <td>
-                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>">
-                                            <button class="btn btn-info">
+                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View">
+                                            <button class="btn btn-twitter btn-icon">
 												<i class="ti ti-eye"></i>
-												View
 											</button>
                                         </a>							
-										<a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>">
-											<button class="btn btn-danger delete_btn">    
-												<i class="ti ti-square-rounded-x"></i>    
-												Delete
+										<a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete">
+											<button class="btn btn-youtube btn-icon">    
+												<i class="ti ti-square-rounded-x"></i>
 											</button>	
 										</a>                                                                            
 									</td>                                
@@ -96,7 +99,7 @@ include('header.php');
 								<?php endwhile; ?>                            
 								<?php if ($y === 0) : ?>
 								<tr>
-									<td colspan="8">									
+									<td colspan="9">									
 										<p align="center">										
 											No Driver Found!										
 										</p>									

@@ -24,8 +24,6 @@ function uploadImage() {
     }
     return false;
 }
-
-
 if(isset($_POST['d_id'])) {
 	$d_id = $_POST['d_id'];    
 	$dname = $_POST['dname'];    
@@ -33,8 +31,7 @@ if(isset($_POST['d_id'])) {
 	$d_address = $_POST['d_address'];    
 	$dgender = $_POST['dgender'];    
 	$dlang = $_POST['dlang'];    
-	$d_img = uploadImage();
-    
+	$d_img = uploadImage();   
 	if ($d_img !== false) {    
 		$sql = "UPDATE `drivers` SET 
                                     `d_name`='$dname',
@@ -43,7 +40,6 @@ if(isset($_POST['d_id'])) {
                                     `d_pic`='$d_img',
                                     `d_gender`='$dgender',
                                     `d_language`='$dlang' WHERE `d_id`='$d_id'";
-        
 		$r = mysqli_query($connect, $sql);        
 		if ($r) {  		
 			$activity_type = "Profile Details updated";					

@@ -80,6 +80,12 @@ $drow = mysqli_fetch_array($dsql);
 							</a>                      
 						</li>
 						<li class="nav-item">
+							<a href="#tabs-tracker" class="nav-link" data-bs-toggle="tab">							
+								<i class="ti ti-activity"></i>                          
+							Activity Tracker
+							</a>                      
+						</li>
+						<li class="nav-item">
 							<a href="#tabs-activity" class="nav-link" data-bs-toggle="tab">							
 								<i class="ti ti-activity"></i>                          
 							Activity Logs
@@ -118,6 +124,11 @@ $drow = mysqli_fetch_array($dsql);
 						<div class="tab-pane" id="tabs-bank">						
 							<?php							
 							include('driver-bank-section.php');							
+							?>						
+						</div>
+						<div class="tab-pane" id="tabs-tracker">						
+							<?php							
+							include('activity-tracker.php');							
 							?>						
 						</div>
 						<div class="tab-pane" id="tabs-activity">						
