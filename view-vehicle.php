@@ -110,7 +110,7 @@ $vrow = mysqli_fetch_array($vsql);
 						</div>											
 						<div class="card-footer bg-transparent mt-auto">					
 							<div class="btn-list justify-content-end">						
-								<a href="vehicle.php" class="btn">							
+								<a href="vehicles.php" class="btn">							
 									Cancel						
 								</a>						
 								<button type="submit" class="btn btn-primary">							

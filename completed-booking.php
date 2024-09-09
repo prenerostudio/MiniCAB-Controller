@@ -133,7 +133,8 @@ include('header.php');
 									<th>Fare</th>						   									
 									<th>Vehicle</th>						  									
 									<th>Status</th>						   									
-									<th>Driver</th>									
+									<th>Driver</th>	
+									<th>Action</th>	
 								</tr>                   								
 							</thead>                  							
 							<tbody class="table-tbody" id="tableBody">												
@@ -182,11 +183,41 @@ include('header.php');
 											<span class="status-dot status-dot-animated bg-green d-block"></span>
 											<span><?php echo $jobrow['job_status'];?> </span>											
 										</div>
+										<?php
+									if($jobrow['ride_status'] == 0) {
+										?>
+										
+										<div class="col-auto status" style="margin-top: 5px;">
+											<span class="status-dot status-dot-animated bg-red d-block"></span>
+											<span>Not Approved </span>											
+										</div>
+										<?php
+										
+									}else{
+										?>
+										
+										<div class="col-auto status" style="margin-top: 5px;">
+											<span class="status-dot status-dot-animated bg-green d-block"></span>
+											<span>Approved </span>											
+										</div>
+										
+										
+										<?php
+									}
+									?>
+										
 										
 									</td>									
 									<td> 
 										<h4><?php echo $jobrow['d_name'];?></h4>
-									</td>							
+									</td>	
+									<td> 
+										<a href='booking-details.php?job_id=<?php echo $jobrow['job_id']; ?>'>                    
+											<button class='btn btn-twitter btn-icon' title='View / Edit'>
+												<i class='ti ti-eye'></i>                    
+											</button>                
+										</a>
+									</td>
 								</tr>																			
 								<?php
 								}																								

@@ -17,6 +17,13 @@ if ($job_id) {
     $stmt->bind_param("si", $status, $job_id);
 
     if ($stmt->execute()) {
+		
+		$fetch_sql = "SELECT jobs.*, bookings.*, clients.*, drivers.* FROM jobs, clients, drivers, bookings WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_id = '$job_id'";
+		$fetch_r = $connect->query($fetch_sql);
+		$output = mysqli_fetch_all($fetch_r, MYSQLI_ASSOC);
+		
+		
+		
    
         $activity_type = 'Job Accepted';
         $user_type = 'driver';
@@ -27,7 +34,7 @@ if ($job_id) {
         $log_stmt->bind_param("ssis", $activity_type, $user_type, $d_id, $details);
 
         if ($log_stmt->execute()) {
-            echo json_encode(array('message' => "Driver has accepted job", 'status' => true));
+            echo json_encode(array('data' => $output, 'message' => "Driver has accepted job", 'status' => true));
         } else {
             echo json_encode(array('message' => "Error logging activity", 'status' => false));
         }

@@ -18,10 +18,10 @@
 					$start_point = $coordinates[0];
 					$end_point = end($coordinates);
 					?>					
-					<div id="map" style="height: 500px;"></div>					
+					<div id="mapa" style="height: 500px;"></div>					
 					<script>    
 						function initMap() {        							        
-							var map = new google.maps.Map(document.getElementById('map'), {            
+							var map = new google.maps.Map(document.getElementById('mapa'), {            
 								zoom: 13,            
 								center: <?php echo json_encode($start_point); ?>        
 							});								        								        

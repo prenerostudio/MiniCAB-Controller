@@ -79,17 +79,15 @@ include('header.php');
 									<?php											
 										if($frow['fare_status']=='Corrected'){
 									?>
-									<button class="btn align-text-top" disabled>
-										<i class="ti ti-eye"></i>
-										Edit
+									<button class="btn btn-twitter btn-icon" disabled>
+										<i class="ti ti-eye"></i>										
 									</button>
 									<?php						
 										}else{
 									?>
 									<a href="correction-details.php?id=<?php echo $frow['fare_id']; ?>">
-										<button class="btn align-text-top">
-											<i class="ti ti-eye" style="font-size: 16px; margin-right: 10px;"></i>
-											Edit
+										<button class="btn btn-twitter btn-icon">
+											<i class="ti ti-eye"></i>											
 										</button>
 									</a>
 									<?php								
@@ -98,17 +96,17 @@ include('header.php');
 									<?php												
 										if($frow['fare_status']=='Corrected'){							
 									?>		
-									<button class="btn btn-success align-text-top" disabled>									
+									<button class="btn btn-success btn-icon" disabled>									
 										<i class="ti ti-checks"></i>
-										Approve								
+																	
 									</button>
 									<?php						
 										}else{							
 									?>							
 									<a href="approve-fares.php?id=<?php echo $frow['fare_id']; ?>">
-										<button class="btn btn-success align-text-top">
+										<button class="btn btn-success btn-icon">
 											<i class="ti ti-checks"></i>
-											Approve								
+																			
 										</button>																		
 									</a>							
 									<?php							
