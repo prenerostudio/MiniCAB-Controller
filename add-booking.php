@@ -51,18 +51,22 @@ include('header.php');
                                             <label class="form-label">Pickup Location:</label>
                                             <div class="input-group">
                                                 <input type="text" id="pickup" name="pickup" class="form-control" placeholder="Select pickup location" required>
+<!--
                                                 <span class="input-group-text">
                                                     <i class="ti ti-map" id="pickup-map-icon" style="cursor: pointer;" data-field="pickup" data-bs-toggle="modal" data-bs-target="#mapModal"></i>
                                                 </span>
+-->
                                             </div>
                                         </div>
                                         <div class="mb-3 col-lg-4">
                                             <label class="form-label">Drop-off Location:</label>
                                             <div class="input-group">
                                                 <input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location" required>
+<!--
                                                 <span class="input-group-text">
                                                     <i class="ti ti-map" id="dropoff-map-icon" style="cursor: pointer;" data-field="dropoff" data-bs-toggle="modal" data-bs-target="#mapModal"></i>
                                                 </span>
+-->
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -249,98 +253,98 @@ include('header.php');
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>
 
 <script>
-    let map, marker, selectedField = '', geocoder;
+let map, marker, selectedField = '', geocoder;
+let autocompletePickup, autocompleteDropoff;
+let journeyDistanceInput = document.getElementById('journeyDistance'); // Ensure this element exists in your HTML
 
-    // Initialize Google Maps
-    function initMap() {
-       const initialLocation = { lat: 51.5074, lng: -0.1278 }; // London
-        map = new google.maps.Map(document.getElementById("mapb"), {
-            center: initialLocation,
-            zoom: 8,
-        });
+// Initialize Google Maps
+function initMap() {
+    const initialLocation = { lat: 51.5074, lng: -0.1278 }; // London
+    map = new google.maps.Map(document.getElementById("mapb"), {
+        center: initialLocation,
+        zoom: 8,
+    });
 
-        marker = new google.maps.Marker({
-            position: initialLocation,
-            map: map,
-            draggable: true
-        });
+    marker = new google.maps.Marker({
+        position: initialLocation,
+        map: map,
+        draggable: true
+    });
 
-        geocoder = new google.maps.Geocoder();
+    geocoder = new google.maps.Geocoder();
 
-        google.maps.event.addListener(marker, 'dragend', () => {
-            geocodePosition(marker.getPosition());
-        });
+    google.maps.event.addListener(marker, 'dragend', () => {
+        geocodePosition(marker.getPosition());
+    });
 
-        google.maps.event.addListener(map, 'click', (event) => {
-            marker.setPosition(event.latLng);
-            geocodePosition(marker.getPosition());
-        });
-    }
+    google.maps.event.addListener(map, 'click', (event) => {
+        marker.setPosition(event.latLng);
+        geocodePosition(marker.getPosition());
+    });
+}
 
-    function geocodePosition(pos) {
-        geocoder.geocode({ latLng: pos }, (responses) => {
-            if (responses && responses.length > 0) {
-                document.getElementById(selectedField).value = responses[0].formatted_address;
-            } else {
-                alert("Cannot determine address at this location.");
-            }
-        });
-    }
-
-    // Initialize autocomplete for pickup and dropoff fields
-    function initAutocomplete() {
-        const pickupInput = document.getElementById('pickup');
-        const dropoffInput = document.getElementById('dropoff');
-        const journeyDistanceInput = document.getElementById('journeyDistance');
-
-        const autocompleteOptions = {
-            types: ['geocode'],
-            componentRestrictions: { country: 'GB' }
-        };
-
-        const autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-        const autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
-
-        autocompletePickup.addListener('place_changed', () => {
-            updateDistance();
-            updateJourneyFare();
-        });
-
-        autocompleteDropoff.addListener('place_changed', () => {
-            updateDistance();
-            updateJourneyFare();
-        });
-    }
-
-    function updateDistance() {
-        const pickupPlace = autocompletePickup.getPlace();
-        const dropoffPlace = autocompleteDropoff.getPlace();
-        if (pickupPlace.geometry && dropoffPlace.geometry) {
-            calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);
+function geocodePosition(pos) {
+    geocoder.geocode({ location: pos }, (responses) => {
+        if (responses && responses.length > 0) {
+            document.getElementById(selectedField).value = responses[0].formatted_address;
+        } else {
+            alert("Cannot determine address at this location.");
         }
-    }
+    });
+}
 
-    function calculateDistance(pickupLocation, dropoffLocation) {
-        const service = new google.maps.DistanceMatrixService();
-        service.getDistanceMatrix({
-            origins: [pickupLocation],
-            destinations: [dropoffLocation],
-            travelMode: 'DRIVING',
-        }, (response, status) => {
-            if (status === 'OK' && response.rows.length > 0) {
-                const distanceText = response.rows[0].elements[0].distance.text;
-                const distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));
-                if (!isNaN(distanceValue)) {
-                    journeyDistanceInput.value = distanceValue.toFixed(2);
-                    updateJourneyFare(distanceValue);
-                } else {
-                    console.error('Invalid distance value:', distanceText);
-                }
-            } else {
-                console.error('Error calculating distance:', status);
-            }
-        });
+function initAutocomplete() {
+    const pickupInput = document.getElementById('pickup');
+    const dropoffInput = document.getElementById('dropoff');
+
+    const autocompleteOptions = {
+        types: ['geocode'],
+        componentRestrictions: { country: 'GB' }
+    };
+
+    autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
+    autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
+
+    autocompletePickup.addListener('place_changed', () => {
+        updateDistance();
+        updateJourneyFare();
+    });
+
+    autocompleteDropoff.addListener('place_changed', () => {
+        updateDistance();
+        updateJourneyFare();
+    });
+}
+
+function updateDistance() {
+    const pickupPlace = autocompletePickup.getPlace();
+    const dropoffPlace = autocompleteDropoff.getPlace();
+    if (pickupPlace.geometry && dropoffPlace.geometry) {
+        calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);
     }
+}
+
+function calculateDistance(pickupLocation, dropoffLocation) {
+    const service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+        origins: [pickupLocation],
+        destinations: [dropoffLocation],
+        travelMode: 'DRIVING',
+    }, (response, status) => {
+        if (status === 'OK' && response.rows.length > 0) {
+            const distanceText = response.rows[0].elements[0].distance.text;
+            const distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));
+            if (!isNaN(distanceValue)) {
+                journeyDistanceInput.value = distanceValue.toFixed(2);
+                updateJourneyFare(distanceValue);
+            } else {
+                console.error('Invalid distance value:', distanceText);
+            }
+        } else {
+            console.error('Error calculating distance:', status);
+        }
+    });
+}
 
     // Event listeners for booking type and client selection
     document.addEventListener('DOMContentLoaded', () => {
@@ -504,7 +508,10 @@ include('header.php');
     });
 
     // Initialize the map after page load
-    window.onload = initMap;
+    window.onload = () => {
+    initMap();
+    initAutocomplete();
+};
 </script>
  
 
