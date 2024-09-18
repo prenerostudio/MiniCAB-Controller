@@ -109,3 +109,18 @@
 [09-Sep-2024 14:56:35 Europe/London] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\MiniCAB-Controller\activity-tracker.php on line 18
 [09-Sep-2024 14:57:09 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 229
 [10-Sep-2024 11:29:13 Europe/London] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\MiniCAB-Controller\activity-tracker.php on line 18
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[14-Sep-2024 09:12:32 Europe/London] PHP Warning:  Undefined variable $date in C:\xampp\htdocs\MiniCAB-Controller\update-driver-status.php on line 7

@@ -98,6 +98,38 @@
 						</div>
 					</li>
 					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#navbar-booking" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
+							<span class="nav-link-icon d-md-none d-lg-inline-block">
+								<i class="ti ti-clock-24"></i>
+							</span>
+							<span class="nav-link-title">
+								Time Slots
+							</span>
+						</a>
+						<div class="dropdown-menu">						
+							<a class="dropdown-item" href="#">
+								<i class="ti ti-alarm"></i>							
+								Time Slots Available						
+							</a>
+							<a class="dropdown-item" href="#">
+								<i class="ti ti-clock-check"></i>
+								Time Slots Accepted
+							</a>							
+							<a class="dropdown-item" href="#">
+								<i class="ti ti-alarm-off"></i>
+								Time Slots Cancelled
+							</a>
+							<a class="dropdown-item" href="#">
+								<i class="ti ti-clock-exclamation"></i>
+								Tims Slots Withdrawn
+							</a>
+							<a class="dropdown-item" href="#">
+								<i class="ti ti-clock-24"></i>
+								Time Slots Completed
+							</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#navbar-client" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
 							<span class="nav-link-icon d-md-none d-lg-inline-block">
 								<i class="ti ti-building-store"></i>

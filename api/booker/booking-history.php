@@ -10,7 +10,7 @@ include("../../config.php");
 $c_id=$_POST['c_id'];
 
 if(isset($_POST['c_id'])){				
-	$sql="SELECT bookings.*, clients.*, vehicles.*, booking_type.* FROM bookings INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.c_id = '$c_id' AND bookings.booking_status != 'Pending' ORDER BY bookings.book_id DESC";	
+	$sql="SELECT jobs.*, bookings.*, clients.*, drivers.*, vehicles.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE jobs.c_id = '$c_id' AND jobs.job_status = 'completed' ORDER BY jobs.date_job_add DESC";	
 	$r=mysqli_query($connect,$sql);
 	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);		
 	if(count($output)>0){    				    		
