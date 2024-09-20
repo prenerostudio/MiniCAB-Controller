@@ -91,10 +91,7 @@
 								<i class="ti ti-users"></i>
 								Accepted Bids
 							</a>
-							<a class="dropdown-item" href="time-slots.php">
-								<i class="ti ti-clock-24"></i>
-								Time Slots
-							</a>
+							
 						</div>
 					</li>
 					<li class="nav-item dropdown">
@@ -107,11 +104,11 @@
 							</span>
 						</a>
 						<div class="dropdown-menu">						
-							<a class="dropdown-item" href="#">
+							<a class="dropdown-item" href="available-time-slots.php">
 								<i class="ti ti-alarm"></i>							
 								Time Slots Available						
 							</a>
-							<a class="dropdown-item" href="#">
+							<a class="dropdown-item" href="accepted-time-slots.php">
 								<i class="ti ti-clock-check"></i>
 								Time Slots Accepted
 							</a>							

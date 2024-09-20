@@ -124,3 +124,13 @@
 [14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
 [14-Sep-2024 08:20:33 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
 [14-Sep-2024 09:12:32 Europe/London] PHP Warning:  Undefined variable $date in C:\xampp\htdocs\MiniCAB-Controller\update-driver-status.php on line 7
+[19-Sep-2024 15:23:00 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.availability_times' doesn't exist in C:\xampp\htdocs\MiniCAB\time-slots.php:42
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB\time-slots.php(42): mysqli_query(Object(mysqli), 'SELECT availabi...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB\time-slots.php on line 42
+[19-Sep-2024 15:31:17 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.availability_times' doesn't exist in C:\xampp\htdocs\MiniCAB\time-slot-process.php:17
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB\time-slot-process.php(17): mysqli_query(Object(mysqli), 'INSERT INTO `av...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB\time-slot-process.php on line 17

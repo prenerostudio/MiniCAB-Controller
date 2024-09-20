@@ -12,7 +12,7 @@ $d_id = $_POST['d_id'];
 $status = 1;
 
 if(isset($_POST['d_id'])){
-	$sql="UPDATE `availability_times` SET `d_id`='$d_id', `at_status`='$status' WHERE `at_id`='$at_id'";
+	$sql="UPDATE `time_slots` SET `d_id`='$d_id', `at_status`='$status' WHERE `at_id`='$at_id'";
 	$r=mysqli_query($connect,$sql);
 	if($r){				
 		$activity_type = 'Time slot Accepted';        

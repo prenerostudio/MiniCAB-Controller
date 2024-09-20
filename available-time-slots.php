@@ -10,8 +10,7 @@ include('header.php');
 			<h2 class="page-title">
 				Time Slots For Drivers			
 			</h2>		
-		</div>
-		
+		</div>		
 	</div>	
 </div>
 <div class="page-body page_padding">          
@@ -26,24 +25,26 @@ include('header.php');
 				<div class="card-body border-bottom py-3">				
 					<div class="table-responsive">            										
 						<table class="table table-responsive" id="slots">						
-							<thead>                   													
-								<tr>                          																
+							<thead>	
+								<tr>						
 									<th>ID</th>
 									<th>Date</th>
 									<th>Start Time</th>
 									<th>End Date</th>
 									<th>Driver</th> 
 									<th>Status</th>									
-								</tr>                     													
-							</thead>                    												
+								</tr>		
+							</thead>	
 							<tbody> 													
 								<?php								
 								$n=0;								
-								$atsql=mysqli_query($connect,"SELECT availability_times.*, drivers.* FROM availability_times LEFT JOIN drivers ON availability_times.d_id = drivers.d_id ORDER BY availability_times.at_id DESC");
+								$atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id ORDER BY time_slots.at_id DESC");
 								while($atrow = mysqli_fetch_array($atsql)){				
 									$n++		
 								?>																					
+								
 								<tr>                         														
+								
 									<td>																
 										<?php echo $n; ?>																
 									</td>

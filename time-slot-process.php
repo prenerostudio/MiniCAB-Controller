@@ -6,14 +6,14 @@ $at_date = $_POST['mdate'];
 $stime  = $_POST['stime'];
 $etime  = $_POST['etime'];
 
-$sql = "INSERT INTO `availability_times`(
-										`at_date`, 
-										`start_time`, 
-										`end_time`
-										) VALUES (
-										'$at_date',
-										'$stime',
-										'$etime')";                
+$sql = "INSERT INTO `time_slots`(										
+								`at_date`, 
+								`start_time`, 
+								`end_time`
+								) VALUES (
+								'$at_date',
+								'$stime',
+								'$etime')";                
 $result = mysqli_query($connect, $sql);       
 if ($result) { 	
 	$activity_type = 'Time Slot Added';	
@@ -31,11 +31,11 @@ if ($result) {
 										'$myId',
 										'$details')";
 	$actr = mysqli_query($connect, $actsql);
-	header('Location: time-slots.php');    
+	header('Location: available-time-slots.php');    
 	exit();    
 } else {	
 	
-	header('Location: time-slots.php');    
+	header('Location: available-time-slots.php');    
 }
 $connect->close();
 ?>
