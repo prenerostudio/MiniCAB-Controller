@@ -2,16 +2,16 @@
 include('config.php');
 include('session.php');
 
-$at_date = $_POST['mdate'];
+$ts_date = $_POST['mdate'];
 $stime  = $_POST['stime'];
 $etime  = $_POST['etime'];
 
 $sql = "INSERT INTO `time_slots`(										
-								`at_date`, 
+								`ts_date`, 
 								`start_time`, 
 								`end_time`
 								) VALUES (
-								'$at_date',
+								'$ts_date',
 								'$stime',
 								'$etime')";                
 $result = mysqli_query($connect, $sql);       

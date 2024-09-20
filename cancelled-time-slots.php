@@ -39,7 +39,7 @@ include('header.php');
 							<tbody> 													
 								<?php								
 								$n=0;								
-								$atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 1 ORDER BY time_slots.ts_id DESC");
+								$atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 2 ORDER BY time_slots.ts_id DESC");
 								while($atrow = mysqli_fetch_array($atsql)){				
 									$n++		
 								?>																					

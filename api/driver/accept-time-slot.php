@@ -7,12 +7,12 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-$at_id = $_POST['at_id'];
+$ts_id = $_POST['ts_id'];
 $d_id = $_POST['d_id'];
 $status = 1;
 
 if(isset($_POST['d_id'])){
-	$sql="UPDATE `time_slots` SET `d_id`='$d_id', `at_status`='$status' WHERE `at_id`='$at_id'";
+	$sql="UPDATE `time_slots` SET `d_id`='$d_id', `ts_status`='$status' WHERE `ts_id`='$ts_id'";
 	$r=mysqli_query($connect,$sql);
 	if($r){				
 		$activity_type = 'Time slot Accepted';        

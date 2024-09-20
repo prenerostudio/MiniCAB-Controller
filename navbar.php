@@ -112,11 +112,11 @@
 								<i class="ti ti-clock-check"></i>
 								Time Slots Accepted
 							</a>							
-							<a class="dropdown-item" href="#">
+							<a class="dropdown-item" href="cancelled-time-slots.php">
 								<i class="ti ti-alarm-off"></i>
 								Time Slots Cancelled
 							</a>
-							<a class="dropdown-item" href="#">
+							<a class="dropdown-item" href="withdrawn-time-slots.php">
 								<i class="ti ti-clock-exclamation"></i>
 								Tims Slots Withdrawn
 							</a>
