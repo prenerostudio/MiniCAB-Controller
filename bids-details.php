@@ -39,7 +39,7 @@ $book_id = $_GET['book_id'];
 							<tbody> 													
 								<?php								
 								$n=0;
-								$bidsql=mysqli_query($connect,"SELECT drivers.d_name, drivers.d_id, drivers.d_phone, bookings.*, booking_type.*, clients.*, vehicles.*, bids.* FROM bids JOIN bookings ON bids.book_id = bookings.book_id JOIN drivers ON bids.d_id = drivers.d_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON bookings.c_id = clients.c_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bids.book_id = '$book_id'");
+								$bidsql=mysqli_query($connect,"SELECT drivers.*, bookings.*, booking_type.*, clients.*, vehicles.*, bids.* FROM bids JOIN bookings ON bids.book_id = bookings.book_id JOIN drivers ON bids.d_id = drivers.d_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON bookings.c_id = clients.c_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bids.book_id = '$book_id'");
 								while($bidrow = mysqli_fetch_array($bidsql)){
 									$n++		
 								?>
@@ -47,16 +47,18 @@ $book_id = $_GET['book_id'];
 									<td>	
 										<?php echo $n; ?>					
 									</td>
-									<td style="width: 40%;">
-										<?php echo $bidrow['pickup']; ?>  | 
-										<?php echo $bidrow['destination']; ?> | 
-										<?php echo $bidrow['pick_date']; ?> | 
-										<?php echo $bidrow['pick_time']; ?>
+									<td style="width: 40%;">																				
+										<strong> Booking ID:</strong> <?php echo $bidrow['book_id']; ?><br>                                       
+										<strong>Pickup Address:</strong> <?php echo $bidrow['pickup']; ?><br>                                                      
+										<strong>Dropoff Address:</strong> <?php echo $bidrow['destination']; ?><br>
+										<strong>Pickup Date:</strong> <?php echo $bidrow['pick_date']; ?> <br>
+										<strong>Pickup Time:</strong> <?php echo $bidrow['pick_time']; ?>  									
 									</td>									
-									<td>
-										ID: <?php echo $bidrow['d_id']; ?><br>
-										Driver Name: <?php echo $bidrow['d_name']; ?><br>
-										Driver Phone: <?php echo $bidrow['d_phone']; ?><br>
+									<td>										
+										<strong>Driver Name:</strong> <?php echo $bidrow['d_name']; ?><br>
+										<strong>Driver Phone:</strong> <?php echo $bidrow['d_phone']; ?><br>
+										<strong>Driver Email:</strong> <?php echo $bidrow['d_email']; ?><br>
+										<strong>Postcode:</strong> <?php echo $bidrow['d_post_code']; ?><br>
 									</td> 									
 									<td>
 										<span style="font-size: 28px;"> £

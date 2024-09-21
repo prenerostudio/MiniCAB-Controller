@@ -36,12 +36,18 @@ include('header.php');
 										</select> 													
 									</div>
 								</div>								
-								<div class="col-lg-12">							
+								<div class="col-lg-6">							
 									<div class="mb-3">								
-										<label class="form-label">Available time</label>
-										<input type="datetime-local" class="form-control" name="av_time">
+										<label class="form-label">Bid Expiry Date</label>
+										<input type="date" class="form-control" name="bid_date">
 									</div>						
 								</div>	
+								<div class="col-lg-6">							
+									<div class="mb-3">								
+										<label class="form-label">Expiry time</label>
+										<input type="time" class="form-control" name="bid_time">
+									</div>						
+								</div>
 								
 								<div class="col-lg-12">
 									<div class="mb-3">
