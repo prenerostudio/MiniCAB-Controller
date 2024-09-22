@@ -132,13 +132,14 @@ include('header.php');
 									<th>Journey Type</th>
 									<th>Fare</th>									
 									<th>Vehicle</th>
-									<th>Status</th>									
+									<th>Status</th>	
+									<th></th>	
 								</tr>                   								
 							</thead>                  							
 							<tbody class="table-tbody" id="tableBody">												
 								<?php
 								$y=0;								
-								$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone,  booking_type.*, vehicles.v_name FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.booking_status = 'Cancelled' ORDER BY bookings.book_id DESC");
+								$bsql=mysqli_query($connect,"SELECT bookings.*, booking_type.*, vehicles.v_name, clients.*, cancelled_bookings.* FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id JOIN cancelled_bookings ON cancelled_bookings.book_id = bookings.book_id WHERE bookings.booking_status = 'Cancelled' ORDER BY bookings.book_id DESC");
 								while($brow = mysqli_fetch_array($bsql)){
 									$y++;									
 								?>            									
@@ -182,7 +183,12 @@ include('header.php');
 											<span><?php echo $brow['booking_status'];?></span>											
 										</div>
 																				
-									</td>									
+									</td>	
+									<td><a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>                    
+											<button class='btn btn-twitter btn-icon' title='View / Edit'>
+												<i class='ti ti-eye'></i>                    
+											</button>                
+										</a></td>
 								</tr>
 								<?php								
 								}								

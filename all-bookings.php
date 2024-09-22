@@ -188,11 +188,25 @@ include('header.php');
 										<?php            
 											}									
 										?>            										
-										<a href='cancel-booking.php?book_id=<?php echo $brow['book_id']; ?>'>			
-											<button class='btn btn-youtube btn-icon'>                    
-												<i class='ti ti-square-rounded-x'></i>               
-											</button>				
-										</a>           
+										<a href="javascript:void(0);" 
+										   onclick="cancelBooking(<?php echo $brow['book_id']; ?>);">
+											<button class='btn btn-youtube btn-icon' title="Delete">
+												<i class='ti ti-square-rounded-x'></i>
+											</button>
+										</a>
+										<script>
+											function cancelBooking(bookId) {
+												let confirmation = confirm("Are you sure you want to cancel this booking?");        
+												if (confirmation) {	        
+													let reason = prompt("Please provide a reason for canceling this booking:");                
+													if (reason) {					            
+														window.location.href = `cancel-booking.php?book_id=${bookId}&reason=${encodeURIComponent(reason)}`;        
+													} else {            
+														alert("You must provide a reason for cancellation.");        
+													}    
+												}
+											}
+										</script>          
 									</td>            
 								</tr>            
 								<?php
