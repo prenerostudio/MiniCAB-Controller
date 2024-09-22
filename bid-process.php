@@ -5,7 +5,8 @@ include('session.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $book_id = mysqli_real_escape_string($connect, $_POST["book_id"]);
-    $bid_time = mysqli_real_escape_string($connect, $_POST['av_time']);
+	$bid_date = mysqli_real_escape_string($connect, $_POST['bid_date']);
+    $bid_time = mysqli_real_escape_string($connect, $_POST['bid_time']);
     $bid_note = mysqli_real_escape_string($connect, $_POST["bid_note"]);
     $status = 1;
 
@@ -25,16 +26,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
         if ($current_datetime > $pickup_datetime) {
-            echo "You cannot add a booking for bid because the time has already passed.";
+            echo "You cannot add a booking for bid because the Booking Pickup time has already passed.";
         } else {
     
             $update_sql = "UPDATE `bookings` 
-                           SET `bid_status` = ?, `bid_time` = ?, `bid_note` = ? 
+                           SET `bid_status` = ?, `bid_date` = ?, `bid_time` = ?, `bid_note` = ? 
                            WHERE `book_id` = ?";
 
             if ($stmt = mysqli_prepare($connect, $update_sql)) {
     
-                mysqli_stmt_bind_param($stmt, 'issi', $status, $bid_time, $bid_note, $book_id);
+                mysqli_stmt_bind_param($stmt, 'isssi', $status, $bid_date, $bid_time, $bid_note, $book_id);
 
                 if (mysqli_stmt_execute($stmt)) {
                     $activity_type = 'Booking Opens for Bid';

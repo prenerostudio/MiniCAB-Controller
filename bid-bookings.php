@@ -60,11 +60,11 @@ include('header.php');
                                         <?php echo $y; ?>            
                                     </td>            
                                     <td>                
-                                        Booking ID: <?php echo $brow['book_id']; ?><br>
-                                        <?php echo $brow['pickup']; ?> -                
-                                        <?php echo $brow['destination']; ?><br>                
-                                        <?php echo $brow['pick_date']; ?> -                
-                                        <?php echo $brow['pick_time']; ?>            
+                                      <strong> Booking ID:</strong> <?php echo $brow['book_id']; ?><br>
+                                       <strong>Pickup Address:</strong> <?php echo $brow['pickup']; ?><br>               
+                                       <strong>Dropoff Address:</strong> <?php echo $brow['destination']; ?><br>                
+                                       <strong>Pickup Date:</strong> <?php echo $brow['pick_date']; ?> <br>                
+                                       <strong>Pickup Time:</strong> <?php echo $brow['pick_time']; ?>            
                                     </td>            
                                     <td id="remainingTime_<?php echo $y; ?>">                
                                         Remaining Time:                
@@ -84,7 +84,7 @@ include('header.php');
                                     <td>                
                                         <a href="bids-details.php?book_id=<?php echo $brow['book_id']; ?>" class="btn btn-info">
                                             <i class="ti ti-eye-edit"></i>                    
-                                            View Bid              
+                                            View Bids              
                                         </a>               
                                         <a href="close-bid.php?book_id=<?php echo $brow['book_id']; ?>" class="btn btn-danger">                 
                                             <i class="ti ti-square-rounded-x"></i>                  
