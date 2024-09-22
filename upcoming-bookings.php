@@ -209,23 +209,78 @@ include('header.php');
 										<?php            
 											}									
 										?>            										
-										<a href='cancel-booking.php?book_id=<?php echo $brow['book_id']; ?>'>			
-											<button class='btn btn-youtube btn-icon'>                    
-												<i class='ti ti-square-rounded-x'></i>               
-											</button>				
-										</a>      										
-										</td>
-									</tr>											
-									<?php			
-										}									
-									?>								
-								</tbody>							
-							</table>							
-							<?php        
-							} else {            
-								echo '<p>No booking found.</p>';        
-							}        
-							?>                						
+
+										<a href="javascript:void(0);" 
+										   onclick="cancelBooking(<?php echo $brow['book_id']; ?>);">
+    
+											<button class='btn btn-youtube btn-icon' title="Delete">
+        
+												<i class='ti ti-square-rounded-x'></i>
+    
+											</button>
+
+										</a>
+
+
+										<script>
+
+											function cancelBooking(bookId) {
+    
+												// Step 1: Ask for confirmation
+    
+												let confirmation = confirm("Are you sure you want to cancel this booking?");
+    
+    
+												if (confirmation) {
+        
+													// Step 2: Ask for a reason
+        
+													let reason = prompt("Please provide a reason for canceling this booking:");
+        
+        
+													if (reason) {
+            
+														// Step 3: Redirect to cancel-booking.php with book_id and reason
+            
+														window.location.href = `cancel-booking.php?book_id=${bookId}&reason=${encodeURIComponent(reason)}`;
+        
+													} else {
+            
+														alert("You must provide a reason for cancellation.");
+        
+													}
+    
+												}
+
+											}
+
+										</script>
+
+
+										
+									</td>
+									
+								</tr>											
+								
+								<?php			
+								
+									}									
+									
+								?>								
+								
+							</tbody>							
+							
+						</table>							
+						
+						<?php        
+						
+						} else {            
+						
+							echo '<p>No booking found.</p>';        
+							
+						}        
+						
+						?>                						
 					</div>                  					
 				</div>                                                    				
 			</div>              			
