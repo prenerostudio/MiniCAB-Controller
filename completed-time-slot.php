@@ -35,13 +35,13 @@ include('header.php');
 									<th>Total Pay</th>
 									<th>Driver</th>
 									<th>Status</th>	
-									<th>Action</th>									
+																
 								</tr>		
 							</thead>	
 							<tbody>												
 								<?php							
 								$n=0;
-								$atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 2 ORDER BY time_slots.ts_id DESC");
+								$atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 4 ORDER BY time_slots.ts_id DESC");
 								while($atrow = mysqli_fetch_array($atsql)){				
 									$n++		
 								?>								
@@ -118,18 +118,7 @@ include('header.php');
 											}    
 										?>				
 									</td>	
-									<td>									
-										<a href="activate-time-slot.php?ts_id=<?php echo $atrow['ts_id'];?>" title="Re-Activate">
-											<button class="btn btn-success btn-icon">
-												<i class="ti ti-edit-circle"></i>
-											</button>
-										</a>
-										<a href="del-time-slot.php?ts_id=<?php echo $atrow['ts_id'];?>" title="Delete">
-											<button class="btn btn-youtube btn-icon">
-												<i class="ti ti-square-rounded-x"></i>
-											</button>
-										</a>
-									</td>
+									
 								</tr>                              															
 								<?php
 								}									

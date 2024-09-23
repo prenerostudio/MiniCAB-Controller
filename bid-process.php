@@ -44,11 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
                     $log_sql = "INSERT INTO `activity_log` (
-                                    `activity_type`, 
-                                    `user_type`, 
-                                    `user_id`, 
-                                    `details`
-                                ) VALUES (?, ?, ?, ?)";
+                                    						`activity_type`, 
+                                    						`user_type`, 
+                                    						`user_id`, 
+                                    						`details`
+                                							) VALUES (?, ?, ?, ?)";
 
                     if ($log_stmt = mysqli_prepare($connect, $log_sql)) {
     

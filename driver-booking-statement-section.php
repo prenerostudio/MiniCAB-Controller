@@ -32,9 +32,11 @@
 									<?php echo $irow['invoice_date']; ?>									
 								</td>								
 								<td>								
-									Booking ID: <?php echo $irow['book_id']; ?> <br>									
-									<?php echo $irow['pickup']; ?> - 
-									<?php echo $irow['destination']; ?>									
+									<strong>Booking ID:</strong> <?php echo $irow['book_id']; ?> <br>
+									<strong>Pickup Date:</strong> <?php echo $irow['pick_date']; ?> <br>
+									<strong>Pickup Time:</strong> <?php echo $irow['pick_time']; ?> <br>
+									<strong>Pickup Address:</strong> <?php echo $irow['pickup']; ?> <br>
+									<strong>Dropoff Address:</strong><?php echo $irow['destination']; ?>									
 								</td>								
 								<td>								
 									<?php echo $irow['total_pay']; ?>									

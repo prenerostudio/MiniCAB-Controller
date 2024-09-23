@@ -120,7 +120,7 @@
 								<i class="ti ti-clock-exclamation"></i>
 								Tims Slots Withdrawn
 							</a>
-							<a class="dropdown-item" href="#">
+							<a class="dropdown-item" href="completed-time-slot.php">
 								<i class="ti ti-clock-24"></i>
 								Time Slots Completed
 							</a>

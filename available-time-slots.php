@@ -61,11 +61,11 @@ include('header.php');
 									</td>
 									<td>					
 										<span>										
-											<?php echo $atrow['price_hour'];?>
+											<strong>£</strong> <?php echo $atrow['price_hour'];?>
 										</span>									
 									</td>
 									<td>
-										<?php
+										<strong>£</strong> <?php
 											$stime = strtotime($atrow['start_time']);
 											$etime = strtotime($atrow['end_time']);
 											$pph =  $atrow['price_hour'];
@@ -114,7 +114,13 @@ include('header.php');
 											}    
 										?>
 									</td>								
-									<td>											
+									<td>	
+										<a href="del-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="Dispatch">
+											<button class="btn btn-github btn-icon">
+												<i class="ti ti-plane-tilt"></i>
+											</button>
+										</a>	
+										
 										<a href="edit-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="View / Edit">
 											<button class="btn btn-info btn-icon">
 												<i class="ti ti-eye"></i>

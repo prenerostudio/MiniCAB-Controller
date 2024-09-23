@@ -3,8 +3,10 @@ include('header.php');
 
 $ts_id = $_GET['ts_id'];
 
+
 $atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_id = '$ts_id'");
-								$atrow = mysqli_fetch_array($atsql);
+							
+$atrow = mysqli_fetch_array($atsql);
 
 
 ?>  
@@ -21,22 +23,24 @@ $atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEF
 	</div>	
 </div>
 <div class="page-body page_padding">          
-	<div class="row row-deck row-cards">			      		
+	<div class="row row-deck row-cards">	
+		<div class="col-3"></div>
 						
-		<div class="col-5">            					
+		<div class="col-6">            					
 			<div class="card">                							
 				<div class="card-header">                    									
 					<h3 class="card-title">
-						Add Time Slot
+						Update Time Slot
 					</h3>                  										
 				</div>                  				
 				<div class="card-body border-bottom py-3">					
-					<form method="post" action="time-slot-process.php" onsubmit="return validateForm();">				
+					<form method="post" action="update-time-slot.php" onsubmit="return validateForm();">				
 						<div class="modal-body">																		
 							<div class="row">					
 								<div class="col-lg-12">						
 									<div class="mb-3">								
 										<label class="form-label">Select Date:</label>
+										<input type="hidden" name="ts_id" value="<?php echo $atrow['ts_id']; ?>" class="form-control" required>	
 										<input type="date" name="mdate" value="<?php echo $atrow['ts_date']; ?>" class="form-control" required>							
 									</div>						
 								</div>						
@@ -70,7 +74,8 @@ $atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEF
 					</form>									
 				</div>                                                    				
 			</div>              					
-		</div>				
+		</div>	
+		<div class="col-3"></div>
 	</div>
 </div>        
 <script>

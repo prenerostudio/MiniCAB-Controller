@@ -299,3 +299,28 @@ Stack trace:
 #0 C:\xampp\htdocs\MiniCAB\close-bid.php(27): mysqli_query(Object(mysqli), 'INSERT INTO `ac...')
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB\close-bid.php on line 27
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:48 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
+[23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
+[23-Sep-2024 12:14:17 Europe/London] PHP Warning:  Undefined array key "w_chair" in C:\xampp\htdocs\MiniCAB\view-vehicle.php on line 45

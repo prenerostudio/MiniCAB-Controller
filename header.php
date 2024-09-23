@@ -56,12 +56,12 @@ include('config.php');
 			});											   
 		</script>
 	</head>  		
-	<body>			
+	<body class=" layout-fluid">			
 		<script src="js/demo-theme.min.js"></script> 								
 		<div class="page">				
 			<div class="sticky-top">      											
 				<header class="navbar navbar-expand-md d-print-none" >        					
-<!--					<div class="container">          					-->
+					<div class="container-xl">          					
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>        					
@@ -186,7 +186,7 @@ include('config.php');
 							
 							
 						</div>        					
-<!--					</div>   		-->
+					</div>   		
 				</header>																		
 				<?php
 				include('navbar.php');
