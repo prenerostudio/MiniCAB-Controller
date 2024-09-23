@@ -31,6 +31,8 @@ include('header.php');
 									<th>Date</th>									
 									<th>Start Time</th>									
 									<th>End Date</th>
+									<th>Price / Hour</th>
+									<th>Total Payment</th>
 									<th>Status</th>									
 									<th>Action</th> 								
 								</tr>									
@@ -56,68 +58,76 @@ include('header.php');
 										<span>										
 											<?php echo $atrow['end_time'];?>
 										</span>									
-									</td>									
-									<td>	
-										<?php 
-											if($atrow['ts_status']==0){
-										?>
-										
-										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-orange d-block"></span>
-											<span>Pending</span>									
-										</div>
+									</td>
+									<td>					
+										<span>										
+											<?php echo $atrow['price_hour'];?>
+										</span>									
+									</td>
+									<td>
 										<?php
-									
-											}elseif($atrow['ts_status']==1){
+											$stime = strtotime($atrow['start_time']);
+											$etime = strtotime($atrow['end_time']);
+											$pph =  $atrow['price_hour'];
+											$total_time = ($etime - $stime) / 3600; 
+											$total_pay = $pph * $total_time;
+											echo number_format($total_pay, 2); 
 										?>
-										
-										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-green d-block"></span>
-											<span>Accepted</span>									
-										</div>
-										<?php
-									
-											}elseif($atrow['ts_status']==2){
+									</td>
+									<td>    
+										<?php         
+											if($atrow['ts_status']==0){    
+										?>        
+										<div class="col-auto status">            
+											<span class="status-dot status-dot-animated bg-orange d-block"></span>            
+											<span>Pending</span>
+										</div>    
+										<?php        
+											} elseif($atrow['ts_status']==1){    
+										?>        
+										<div class="col-auto status">            
+											<span class="status-dot status-dot-animated bg-green d-block"></span>            
+											<span>Accepted</span>
+										</div>    
+										<?php        
+											} elseif($atrow['ts_status']==2){    
+										?>        
+										<div class="col-auto status">            
+											<span class="status-dot status-dot-animated bg-red d-block"></span>            
+											<span>Cancelled</span>
+										</div>    
+										<?php        
+											} elseif($atrow['ts_status']==3){    
+										?>        
+										<div class="col-auto status">            
+											<span class="status-dot status-dot-animated bg-yellow d-block"></span>           
+											<span>Withdrawn</span>        
+										</div>    
+										<?php        
+											} else {    
+										?>        
+										<div class="col-auto status">            
+											<span class="status-dot status-dot-animated bg-blue d-block"></span>            
+											<span>Completed</span>
+										</div>    
+										<?php        
+											}    
 										?>
-										
-										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-green d-block"></span>
-											<span>Cancelled</span>									
-										</div>
-										<?php
-									
-											}elseif($atrow['ts_status']==3){
-										?>
-										
-										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-green d-block"></span>
-											<span>Withdrawn</span>									
-										</div>
-										<?php
-									
-											}else{
-										?>
-										
-										<div class="col-auto status">
-											<span class="status-dot status-dot-animated bg-green d-block"></span>
-											<span>Completed</span>									
-										</div>
-										<?php
-											}
-										?>				
 									</td>								
-									<td>																			
-										
-										
+									<td>											
+										<a href="edit-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="View / Edit">
+											<button class="btn btn-info btn-icon">
+												<i class="ti ti-eye"></i>
+											</button>
+										</a>
 										<a href="del-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="Delete">
 										
 											<button class="btn btn-youtube btn-icon">
 												<i class="ti ti-square-rounded-x"></i>
 											</button>
 										</a>							
-									</td>
-								
-								</tr>                              															
+									</td>								
+								</tr>						
 								<?php
 								}									
 								?>																	
@@ -160,7 +170,13 @@ include('header.php');
 										<label class="form-label">End Time:</label>								
 										<input type="time" name="etime" class="form-control" required>
 									</div>						
-								</div>					
+								</div>	
+								<div class="col-lg-12">                													
+									<div class="mb-3">								
+										<label class="form-label">Price Per Hour:</label>								
+										<input type="number" name="pph" class="form-control" required>
+									</div>						
+								</div>
 							</div>							          				          				
 						</div>				       							
 						<div class="modal-footer">					

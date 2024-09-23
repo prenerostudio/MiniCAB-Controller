@@ -5,37 +5,57 @@ include('session.php');
 $ts_date = $_POST['mdate'];
 $stime  = $_POST['stime'];
 $etime  = $_POST['etime'];
+$pph = $_POST['pph'];
 
-$sql = "INSERT INTO `time_slots`(										
-								`ts_date`, 
-								`start_time`, 
-								`end_time`
-								) VALUES (
-								'$ts_date',
-								'$stime',
-								'$etime')";                
+$sptime = strtotime($_POST['stime']);
+$eptime = strtotime($_POST['etime']);
+
+// Calculate total time in hours and total payment
+$total_time = ($eptime - $sptime) / 3600; // Convert seconds to hours
+$total_pay = $pph * $total_time;
+
+// Format total pay to 2 decimal places
+$total_pay_formatted = number_format($total_pay, 2);
+
+$sql = "INSERT INTO `time_slots`(
+                                `ts_date`, 
+                                `start_time`, 
+                                `end_time`, 
+                                `price_hour`, 
+                                `total_pay`
+                                ) VALUES (
+                                '$ts_date',
+                                '$stime',
+                                '$etime',
+                                '$pph',
+                                '$total_pay_formatted')";                
+
 $result = mysqli_query($connect, $sql);       
-if ($result) { 	
-	$activity_type = 'Time Slot Added';	
-	$user_type = 'user';	
-	$details = "New Time Slot Has Been Added by Controller.";
-	
-	$actsql = "INSERT INTO `activity_log`(
-										`activity_type`, 
-										`user_type`, 
-										`user_id`, 
-										`details`
-										) VALUES (
-										'$activity_type',
-										'$user_type',
-										'$myId',
-										'$details')";
-	$actr = mysqli_query($connect, $actsql);
-	header('Location: available-time-slots.php');    
-	exit();    
-} else {	
-	
-	header('Location: available-time-slots.php');    
+
+if ($result) {     
+    $activity_type = 'Time Slot Added';    
+    $user_type = 'user';    
+    $details = "New Time Slot Has Been Added by Controller.";
+    
+    $actsql = "INSERT INTO `activity_log`(
+                                        `activity_type`, 
+                                        `user_type`, 
+                                        `user_id`, 
+                                        `details`
+                                        ) VALUES (
+                                        '$activity_type',
+                                        '$user_type',
+                                        '$myId',
+                                        '$details')";
+    $actr = mysqli_query($connect, $actsql);
+    
+    // Redirect on success
+    header('Location: available-time-slots.php');    
+    exit();    
+} else {    
+    // Redirect on failure
+    header('Location: available-time-slots.php');    
 }
+
 $connect->close();
 ?>
