@@ -15,7 +15,7 @@ include('header.php');
 </div>
 <div class="page-body page_padding">          
 	<div class="row row-deck row-cards">			      		
-		<div class="col-7">            							
+		<div class="col-8">            							
 			<div class="card">                										
 				<div class="card-header">		
 					<h3 class="card-title">					
@@ -40,7 +40,18 @@ include('header.php');
 							<tbody>
 								<?php								
 								$n=0;								
-								$atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 0 ORDER BY time_slots.ts_id DESC");
+								$atsql=mysqli_query($connect,"SELECT 
+    time_slots.*, 
+    drivers.* 
+FROM 
+    time_slots 
+LEFT JOIN 
+    drivers ON time_slots.d_id = drivers.d_id 
+WHERE 
+    time_slots.ts_status = 0 
+    OR time_slots.ts_status = 5
+ORDER BY 
+    time_slots.ts_id DESC");
 								while($atrow = mysqli_fetch_array($atsql)){
 									$n++
 								?>			
@@ -103,9 +114,17 @@ include('header.php');
 											<span class="status-dot status-dot-animated bg-yellow d-block"></span>           
 											<span>Withdrawn</span>        
 										</div>    
+									  
+										<?php        
+											} elseif($atrow['ts_status']==5){    
+										?>        
+										<div class="col-auto status">            
+											<span class="status-dot status-dot-animated bg-yellow d-block"></span>           
+											<span>Waiting</span>        
+										</div>    
 										<?php        
 											} else {    
-										?>        
+										?>  
 										<div class="col-auto status">            
 											<span class="status-dot status-dot-animated bg-blue d-block"></span>            
 											<span>Completed</span>
@@ -115,21 +134,41 @@ include('header.php');
 										?>
 									</td>								
 									<td>	
-										<a href="del-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="Dispatch">
-											<button class="btn btn-github btn-icon">
-												<i class="ti ti-plane-tilt"></i>
-											</button>
-										</a>	
+										<form method="post" action="dispatch-time-slot.php">    
+											<input type="hidden" value="<?php echo $atrow['ts_id']; ?>" name="ts_id">											
+											<div class="mb-3">
+												<div class="input-group mb-2">
+													<select class="form-control" name="d_id" required>
+														<option value="">Select Driver</option>
+														<?php
+															$drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
+															while ($drrow = mysqli_fetch_array($drsql)) {
+														?>
+														<option value="<?php echo $drrow['d_id']; ?>">
+															<?php echo $drrow['d_id'] ?> -
+															<?php echo $drrow['d_name'] ?> -
+															<?php echo $drrow['d_phone'] ?>
+														</option>
+														<?php
+															}
+														?>
+													</select>		
+													<button class="btn btn-bitbucket" type="submit">
+														<i class="ti ti-plane-tilt"></i>
+													</button>
+												</div>
+											</div>	
+										</form>	
 										
 										<a href="edit-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="View / Edit">
-											<button class="btn btn-info btn-icon">
-												<i class="ti ti-eye"></i>
+											<button class="btn btn-info">
+												<i class="ti ti-eye"></i>View / Edit
 											</button>
 										</a>
 										<a href="del-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="Delete">
 										
-											<button class="btn btn-youtube btn-icon">
-												<i class="ti ti-square-rounded-x"></i>
+											<button class="btn btn-danger">
+												<i class="ti ti-square-rounded-x"></i>Delete
 											</button>
 										</a>							
 									</td>								
@@ -148,7 +187,7 @@ include('header.php');
 				$('#slots').DataTable();
 			});	
 		</script>				
-		<div class="col-5">            					
+		<div class="col-4">            					
 			<div class="card">                							
 				<div class="card-header">                    									
 					<h3 class="card-title">

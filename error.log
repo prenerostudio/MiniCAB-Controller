@@ -324,3 +324,279 @@ Stack trace:
 [23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 64
 [23-Sep-2024 10:27:52 Europe/London] PHP Warning:  Undefined array key "price_hour" in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 71
 [23-Sep-2024 12:14:17 Europe/London] PHP Warning:  Undefined array key "w_chair" in C:\xampp\htdocs\MiniCAB\view-vehicle.php on line 45
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:46:24 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:47:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:01 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 120
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 121
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:48:12 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 122
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:50:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 119
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Undefined variable $brow in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
+[24-Sep-2024 06:51:35 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB\available-time-slots.php on line 127
