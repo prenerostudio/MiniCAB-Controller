@@ -279,7 +279,7 @@ $bookrow = mysqli_fetch_array($result);
 </div>       
 
 <!-- Include the Google Maps API script -->  
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>
 <script>
 function initAutocomplete() {    
     var pickupInput = document.getElementById('pickup');        
