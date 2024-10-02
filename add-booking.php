@@ -253,77 +253,43 @@ include('header.php');
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>
 
 <script>
-let map, marker, selectedField = '', geocoder;
-let autocompletePickup, autocompleteDropoff;
-let journeyDistanceInput = document.getElementById('journeyDistance'); // Ensure this element exists in your HTML
 
-// Initialize Google Maps
-function initMap() {
-    const initialLocation = { lat: 51.5074, lng: -0.1278 }; // London
-    map = new google.maps.Map(document.getElementById("mapb"), {
-        center: initialLocation,
-        zoom: 8,
-    });
-
-    marker = new google.maps.Marker({
-        position: initialLocation,
-        map: map,
-        draggable: true
-    });
-
-    geocoder = new google.maps.Geocoder();
-
-    google.maps.event.addListener(marker, 'dragend', () => {
-        geocodePosition(marker.getPosition());
-    });
-
-    google.maps.event.addListener(map, 'click', (event) => {
-        marker.setPosition(event.latLng);
-        geocodePosition(marker.getPosition());
-    });
-}
-
-function geocodePosition(pos) {
-    geocoder.geocode({ location: pos }, (responses) => {
-        if (responses && responses.length > 0) {
-            document.getElementById(selectedField).value = responses[0].formatted_address;
-        } else {
-            alert("Cannot determine address at this location.");
-        }
-    });
-}
-
+// Initialize Google Maps Autocomplete
 function initAutocomplete() {
     const pickupInput = document.getElementById('pickup');
     const dropoffInput = document.getElementById('dropoff');
+    const stopInput = document.getElementById('stop');
+    const journeyDistanceInput = document.getElementById('journeyDistance');
 
     const autocompleteOptions = {
         types: ['geocode'],
         componentRestrictions: { country: 'GB' }
     };
 
-    autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-    autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
+    const autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
+    const autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);
+    const autocompleteStop = new google.maps.places.Autocomplete(stopInput, autocompleteOptions);
 
     autocompletePickup.addListener('place_changed', () => {
-        updateDistance();
-        updateJourneyFare();
+        updateDistance(autocompletePickup, autocompleteDropoff);
     });
 
     autocompleteDropoff.addListener('place_changed', () => {
-        updateDistance();
-        updateJourneyFare();
+        updateDistance(autocompletePickup, autocompleteDropoff);
     });
 }
 
-function updateDistance() {
+// Update distance based on selected locations
+function updateDistance(autocompletePickup, autocompleteDropoff) {
     const pickupPlace = autocompletePickup.getPlace();
     const dropoffPlace = autocompleteDropoff.getPlace();
+
     if (pickupPlace.geometry && dropoffPlace.geometry) {
         calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);
     }
 }
 
+// Calculate distance using Google Maps Distance Matrix API
 function calculateDistance(pickupLocation, dropoffLocation) {
     const service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix({
@@ -334,8 +300,9 @@ function calculateDistance(pickupLocation, dropoffLocation) {
         if (status === 'OK' && response.rows.length > 0) {
             const distanceText = response.rows[0].elements[0].distance.text;
             const distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));
+
             if (!isNaN(distanceValue)) {
-                journeyDistanceInput.value = distanceValue.toFixed(2);
+                document.getElementById('journeyDistance').value = distanceValue.toFixed(2);
                 updateJourneyFare(distanceValue);
             } else {
                 console.error('Invalid distance value:', distanceText);
@@ -346,172 +313,201 @@ function calculateDistance(pickupLocation, dropoffLocation) {
     });
 }
 
-    // Event listeners for booking type and client selection
-    document.addEventListener('DOMContentLoaded', () => {
-        const bookingTypeSelect = document.getElementById('bookingType');
-        const clientSelect = document.getElementById('clientSelect');
-        const clientNameInput = document.getElementById('clientName');
-        const customerPhoneInput = document.getElementById('customerPhone');
-        const customerEmailInput = document.getElementById('customerEmail');
-        const bookerCommissionField = document.getElementById("bookerCommissionField");
+// Initialize event listeners after DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initEventListeners();
+});
 
-        bookingTypeSelect.addEventListener('change', () => {
-            const selectedBookingType = bookingTypeSelect.value;
-            if (selectedBookingType == 4 || selectedBookingType == 5) {
-                clientNameInput.classList.remove('d-none');
-                clientSelect.classList.add('d-none');
-                clientSelect.required = false;
-                clientNameInput.required = true;
-                clientNameInput.value = '';
+// Set up event listeners for booking type and client selection
+function initEventListeners() {
+    const bookingTypeSelect = document.getElementById('bookingType');
+    const clientSelect = document.getElementById('clientSelect');
+    const clientNameInput = document.getElementById('clientName');
+    const customerPhoneInput = document.getElementById('customerPhone');
+    const customerEmailInput = document.getElementById('customerEmail');
+    const bookerCommissionField = document.getElementById("bookerCommissionField");
+
+    bookingTypeSelect.addEventListener('change', () => handleBookingTypeChange(bookingTypeSelect, clientNameInput, clientSelect, customerPhoneInput, customerEmailInput));
+    clientSelect.addEventListener('change', () => handleClientChange(clientSelect, bookingTypeSelect, customerPhoneInput, customerEmailInput));
+    document.getElementById('calculateFareBtn').addEventListener('click', (e) => handleCalculateFare(e));
+}
+
+// Handle booking type change
+function handleBookingTypeChange(bookingTypeSelect, clientNameInput, clientSelect, customerPhoneInput, customerEmailInput) {
+    const selectedBookingType = bookingTypeSelect.value;
+    if (selectedBookingType == 4 || selectedBookingType == 5) {
+        clientNameInput.classList.remove('d-none');
+        clientSelect.classList.add('d-none');
+        clientSelect.required = false;
+        clientNameInput.required = true;
+        clientNameInput.value = '';
+        customerPhoneInput.value = '';
+        customerEmailInput.value = '';
+    } else {
+        clientNameInput.classList.add('d-none');
+        clientSelect.classList.remove('d-none');
+        clientNameInput.required = false;
+        clientSelect.required = true;
+        fetchClients(selectedBookingType, clientSelect);
+    }
+}
+
+// Fetch clients based on selected booking type
+function fetchClients(bookingTypeId, clientSelect) {
+    $.ajax({
+        type: 'POST',
+        url: 'get_clients.php',
+        data: { b_type_id: bookingTypeId },
+        success: (response) => {
+            clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
+        },
+        error: () => {
+            console.error('Error fetching clients');
+        }
+    });
+}
+
+// Handle client selection change
+function handleClientChange(clientSelect, bookingTypeSelect, customerPhoneInput, customerEmailInput) {
+    const selectedClientId = clientSelect.value;
+    const selectedBookingType = bookingTypeSelect.value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'get_customer_details.php',
+        data: {
+            c_id: selectedClientId,
+            b_type_id: selectedBookingType
+        },
+        success: (response) => {
+            const data = JSON.parse(response);
+            if (data.error) {
+                console.error(data.error);
                 customerPhoneInput.value = '';
                 customerEmailInput.value = '';
             } else {
-                clientNameInput.classList.add('d-none');
-                clientSelect.classList.remove('d-none');
-                clientNameInput.required = false;
-                clientSelect.required = true;
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'get_clients.php',
-                    data: { b_type_id: selectedBookingType },
-                    success: (response) => {
-                        clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
-                    },
-                    error: () => {
-                        console.error('Error fetching clients');
-                    }
-                });
+                customerPhoneInput.value = data.phone;
+                customerEmailInput.value = data.email;
             }
-        });
-
-        clientSelect.addEventListener('change', () => {
-            const selectedClientId = clientSelect.value;
-            const selectedBookingType = bookingTypeSelect.value;
-
-            $.ajax({
-                type: 'POST',
-                url: 'get_customer_details.php',
-                data: {
-                    c_id: selectedClientId,
-                    b_type_id: selectedBookingType
-                },
-                success: (response) => {
-                    const data = JSON.parse(response);
-                    if (data.error) {
-                        console.error(data.error);
-                        customerPhoneInput.value = '';
-                        customerEmailInput.value = '';
-                    } else {
-                        customerPhoneInput.value = data.phone;
-                        customerEmailInput.value = data.email;
-                    }
-                },
-                error: () => {
-                    console.error('Error fetching customer details');
-                }
-            });
-        });
-
-        bookingTypeSelect.addEventListener("change", () => {
-            bookerCommissionField.style.display = this.value == 3 ? "block" : "none";
-        });
-
-        $('#calculateFareBtn').on('click', (e) => {
-            e.preventDefault(); // Prevent the form from submitting
-            const distance = parseFloat($('#journeyDistance').val());
-            const pickDate = new Date($('input[name="pick_date"]').val());
-            const pickTime = $('input[name="pick_time"]').val();
-            const vehicleId = $('#vehicleSelect').val();
-            const vehiclePricing = parseFloat(fetchVehiclePricing(vehicleId));
-            let baseFare = distance * vehiclePricing;
-
-            if (isHoliday(pickDate)) {
-                baseFare *= 1.1;
-            }
-
-            const pickHour = parseInt(pickTime.split(':')[0], 10);
-            if (pickHour < 9 || pickHour >= 20) {
-                baseFare *= 1.05;
-            }
-
-            $('#journeyFare').val(baseFare.toFixed(2));
-        });
-
-        function fetchVehiclePricing(vehicleId) {
-            $.ajax({
-                type: 'POST',
-                url: 'fetch_vehicle_pricing.php',
-                data: { vehicleId: vehicleId },
-                success: (response) => {
-                    const data = JSON.parse(response);
-                    callback(data);
-                },
-                error: () => {
-                    console.error('Error fetching vehicle pricing');
-                }
-            });
-
-            return 15.0; // Default value if fetching fails
-        }
-
-        function isHoliday(date) {
-            return false; // Implement holiday logic as needed
-        }
-
-        function validateForm() {
-            const requiredFields = [
-                "b_type_id",
-                "c_id",
-                "pickup",
-                "dropoff",
-                "pick_date",
-                "pick_time",
-                "journey_fare"
-            ];
-
-            for (const field of requiredFields) {
-                if (document.getElementsByName(field)[0].value === "") {
-                    alert("Please fill in all required fields.");
-                    return false;
-                }
-            }
-            return true;
+        },
+        error: () => {
+            console.error('Error fetching customer details');
         }
     });
+}
+	
+	// Fetch vehicle pricing with callback
+function fetchVehiclePricing(vehicleId, callback) {
+    $.ajax({
+        type: 'POST',
+        url: 'get_vehicle_pricing.php',
+        data: { vehicleId: vehicleId },
+        success: (response) => {
+            const data = JSON.parse(response);
+            callback(data.pricing); // Use the appropriate key for pricing
+        },
+        error: () => {
+            console.error('Error fetching vehicle pricing');
+            callback(15.0); // Default value if fetching fails
+        }
+    });
+}
 
-    // Check if Google Maps is already loaded
-    if (!window.google || !window.google.maps) {
-        const script = document.createElement('script');
-        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initMap";
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
+	// Example list of holiday dates (format: YYYY-MM-DD)
+const holidays = [
+    '2024-01-01', // New Year's Day
+    '2024-12-25', // Christmas Day
+    // Add more holidays as needed
+];
+
+// Check if a date is a holiday
+function isHoliday(date) {
+    const formattedDate = date.toISOString().split('T')[0]; // Convert to YYYY-MM-DD format
+    return holidays.includes(formattedDate);
+}
+
+	
+	
+// Calculate fare based on distance and other parameters
+// Calculate fare based on distance and other parameters
+function handleCalculateFare(e) {
+    e.preventDefault(); // Prevent the form from submitting
+
+    const distance = parseFloat($('#journeyDistance').val());
+    const pickDate = new Date($('input[name="pick_date"]').val());
+    const pickTime = $('input[name="pick_time"]').val();
+    const vehicleId = $('#vehicleSelect').val();
+
+    fetchVehiclePricing(vehicleId, (vehiclePricing) => {
+        let baseFare = distance * vehiclePricing;
+
+        if (isHoliday(pickDate)) {
+            baseFare *= 2; // Double the fare for holidays
+        }
+
+        const pickHour = parseInt(pickTime.split(':')[0], 10);
+        if (pickHour < 9 || pickHour >= 20) {
+            baseFare *= 1.05; // 5% increase for late night/early morning
+        }
+
+        $('#journeyFare').val(baseFare.toFixed(2));
+    });
+}
+
+// Validate form before submission
+function validateForm() {
+    const requiredFields = [
+        "b_type_id",
+        "c_id",
+        "pickup",
+        "dropoff",
+        "pick_date",
+        "pick_time",
+        "journey_fare"
+    ];
+
+    for (const field of requiredFields) {
+        if (document.getElementsByName(field)[0].value === "") {
+            alert("Please fill in all required fields.");
+            return false;
+        }
     }
+    return true;
+}
 
-    // When the modal is opened, initialize or reset the map
-    $('#mapModal').on('shown.bs.modal', () => {
-        google.maps.event.trigger(map, "resize");
-        map.setCenter(marker.getPosition());
-    });
+// Load Google Maps API
+if (!window.google || !window.google.maps) {
+    const script = document.createElement('script');
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initMap";
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+}
 
-    // When the user clicks on the map icon, store which field to populate
-    $('.ti-map').on('click', function () {
-        selectedField = $(this).data('field');
-    });
+// Map modal behavior
+$('#mapModal').on('shown.bs.modal', () => {
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(marker.getPosition());
+});
 
-    // When the user selects a location and clicks "Select Location"
-    document.getElementById("save-location").addEventListener("click", () => {
-        const position = marker.getPosition();
-        geocodePosition(position);
-        $('#mapModal').modal('hide');
-    });
+// Handle map icon click
+$('.ti-map').on('click', function () {
+    selectedField = $(this).data('field');
+});
 
-    // Initialize the map after page load
-    window.onload = () => {
+// Save selected location
+document.getElementById("save-location").addEventListener("click", () => {
+    const position = marker.getPosition();
+    geocodePosition(position);
+    $('#mapModal').modal('hide');
+});
+
+// Initialize the map and autocomplete after page load
+window.onload = () => {
     initMap();
     initAutocomplete();
 };
+
 </script>
  
 
