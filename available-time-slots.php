@@ -40,18 +40,7 @@ include('header.php');
 							<tbody>
 								<?php								
 								$n=0;								
-								$atsql=mysqli_query($connect,"SELECT 
-    time_slots.*, 
-    drivers.* 
-FROM 
-    time_slots 
-LEFT JOIN 
-    drivers ON time_slots.d_id = drivers.d_id 
-WHERE 
-    time_slots.ts_status = 0 
-    OR time_slots.ts_status = 5
-ORDER BY 
-    time_slots.ts_id DESC");
+								$atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 0 ORDER BY time_slots.ts_id DESC");
 								while($atrow = mysqli_fetch_array($atsql)){
 									$n++
 								?>			
@@ -123,7 +112,7 @@ ORDER BY
 											<span>Waiting</span>        
 										</div>    
 										<?php        
-											} else {    
+											}  elseif($atrow['ts_status']==4) {    
 										?>  
 										<div class="col-auto status">            
 											<span class="status-dot status-dot-animated bg-blue d-block"></span>            

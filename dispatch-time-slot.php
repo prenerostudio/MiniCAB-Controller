@@ -5,8 +5,8 @@ require 'vendor/autoload.php'; // Load Pusher
 
 $ts_id = $_POST['ts_id'];
 $d_id = $_POST['d_id'];
-$status = 5;
-
+$status = 5; // waiting for acception
+ 
 // Prepare and execute the job insertion
 $sql = "UPDATE `time_slots` SET `d_id`= ?, `ts_status`= ? WHERE `ts_id`=?";
 

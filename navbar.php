@@ -108,6 +108,10 @@
 								<i class="ti ti-alarm"></i>							
 								Time Slots Available						
 							</a>
+							<a class="dropdown-item" href="time-slots-waiting.php">
+								<i class="ti ti-alarm"></i>							
+								Time Slots Waiting						
+							</a>
 							<a class="dropdown-item" href="accepted-time-slots.php">
 								<i class="ti ti-clock-check"></i>
 								Time Slots Accepted

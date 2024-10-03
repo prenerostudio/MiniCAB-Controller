@@ -9,10 +9,10 @@ include("../../config.php");
 
 $ts_id = $_POST['ts_id'];
 $d_id = $_POST['d_id'];
-$status = 2;
+$status = 0;
 
 if(isset($_POST['d_id'])){ 					
-	$sql="UPDATE `time_slots` SET `d_id`='$d_id', `ts_status`='$status' WHERE `ts_id`='$ts_id'";
+	$sql="UPDATE `time_slots` SET `d_id`=0, `ts_status`='$status' WHERE `ts_id`='$ts_id'";
 	$r=mysqli_query($connect,$sql);	
 		
 	if($r){

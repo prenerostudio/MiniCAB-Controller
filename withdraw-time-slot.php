@@ -1,6 +1,7 @@
 <?php
 include('config.php');
 include('session.php'); 
+require 'vendor/autoload.php'; // Load Pusher
 	
 $ts_id = $_GET['ts_id'];
 $d_id = 0;
@@ -23,7 +24,30 @@ if($result){
 										'$user_type',
 										'$myId',
 										'$details')";	
-	$actr = mysqli_query($connect, $actsql);				
+	$actr = mysqli_query($connect, $actsql);		
+	
+	// Initialize Pusher
+    $options = [
+        'cluster' => 'ap2',
+        'useTLS' => true
+    ];
+    $pusher = new Pusher\Pusher(
+        '28691ac9c0c5ac41b64a',
+        '9b7a65fedc30abd6a530',
+        '1848550',
+        $options
+    );
+
+    // Data to send via Pusher
+    $data = [
+        'message' => "Time Slot $ts_id has been withdrawn.",
+        'd_id' => $d_id,
+        'ts_id' => $ts_id
+    ];
+
+    // Trigger the event on 'jobs-channel'
+    $pusher->trigger('times-channel', 'slot-withdrawn', $data);
+	
 	header('location: available-time-slots.php');
 } else {
 	header('location: available-time-slots.php');
