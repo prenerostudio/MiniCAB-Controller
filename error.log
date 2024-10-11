@@ -625,3 +625,31 @@ Stack trace:
 #0 C:\xampp\htdocs\MiniCAB-Controller\peak-hours-process.php(30): mysqli->prepare('INSERT INTO `ac...')
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\peak-hours-process.php on line 30
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:36:28 Europe/London] PHP Warning:  Undefined array key "ride_status" in C:\xampp\htdocs\MiniCAB-Controller\completed-booking.php on line 187
+[11-Oct-2024 11:48:19 Europe/London] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\MiniCAB-Controller\vehicle-process.php:31
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\vehicle-process.php(31): mysqli_stmt->bind_param('ssiisis', 'Saloon', '4', 1, 1, 1, 'BYD-e6.png')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\vehicle-process.php on line 31
+[11-Oct-2024 12:04:44 Europe/London] PHP Warning:  Undefined array key "w_chair" in C:\xampp\htdocs\MiniCAB-Controller\view-vehicle.php on line 45
+[11-Oct-2024 12:04:48 Europe/London] PHP Warning:  Undefined array key "vpricing" in C:\xampp\htdocs\MiniCAB-Controller\update-vehicles.php on line 12
+[11-Oct-2024 12:04:48 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'v_pricing' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\update-vehicles.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-vehicles.php(21): mysqli_query(Object(mysqli), 'UPDATE `vehicle...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-vehicles.php on line 21
+[11-Oct-2024 16:18:58 Europe/London] PHP Warning:  Undefined array key "w_chair" in C:\xampp\htdocs\MiniCAB-Controller\view-vehicle.php on line 45
+[11-Oct-2024 16:19:04 Europe/London] PHP Warning:  Undefined array key "w_chair" in C:\xampp\htdocs\MiniCAB-Controller\view-vehicle.php on line 45

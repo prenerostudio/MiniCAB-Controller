@@ -34,7 +34,7 @@ include('header.php');
 									<th>Air Bags</th>                        									
 									<th>Wheel Chair</th>
 									<th>Baby Sitter</th>
-									<th>Price</th>							
+<!--									<th>Price</th>							-->
 									<th>Actions</th>                      									
 								</tr>                   								
 							</thead>							
@@ -107,10 +107,10 @@ include('header.php');
 											}
 										?>										
 									</td>									
-									<td style="font-size: 18px;">											
+<!--									<td style="font-size: 18px;">											
 										£									
-										<?php echo $vrow['v_pricing']; ?>
-									</td>									
+										<?php // echo $vrow['v_pricing']; ?>
+									</td>									-->
 									<td> 									
 										<a href="view-vehicle.php?v_id=<?php echo $vrow['v_id']; ?>" class="btn btn-info" title="View / Edit">	
 											<i class="ti ti-eye"></i>
@@ -166,10 +166,10 @@ include('header.php');
 										<span class="form-check-label">Baby Carriers</span>
 									</label>
 								</div>
-								<div class="mb-3">
+<!--								<div class="mb-3">
 									<label class="form-label">Pricing </label>       
 									<input type="number" class="form-control" name="pricing">
-								</div>
+								</div>-->
 								<div class="mb-3">
 									<label class="form-label">Image</label>
 									<input type="file" class="form-control" name="v_img">
@@ -199,9 +199,8 @@ include('header.php');
 	
 	function validateForm() {        
         var vnameInput = document.getElementsByName("vname")[0].value;
-        var seatsInput = document.getElementsByName("seats")[0].value;
-        var pricingInput = document.getElementsByName("pricing")[0].value;				
-        if (vnameInput === "" || seatsInput === "" || pricingInput === "") {       
+        var seatsInput = document.getElementsByName("seats")[0].value;				
+        if (vnameInput === "" || seatsInput === "") {       
             alert("Please fill in all required fields.");
             return false;
         }       

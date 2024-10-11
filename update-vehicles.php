@@ -9,15 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$vchair = $_POST["vchair"];	
 	$vbaby = $_POST["vbaby"];	
 	$vbags = $_POST["vbags"];	
-	$vpricing = $_POST["vpricing"];
+	
 		
 	$sql = "UPDATE `vehicles` SET 
 								`v_name`='$vname',
 								`v_seat`='$vseat',
 								`v_airbags`='$vbags',
 								`v_wchair`='$vchair',								
-								`v_babyseat`='$vbaby',
-								`v_pricing`='$vpricing' WHERE `v_id`='$v_id'";    	
+								`v_babyseat`='$vbaby' WHERE `v_id`='$v_id'";    	
 	if (mysqli_query($connect, $sql)) {	
 		$activity_type = 'New Vehicle Added';
 		$user_type = 'user';
