@@ -51,16 +51,16 @@
 											?>										
 											<tr>														
 												<td>	
-													<?php echo $x; ?>
+													<?php echo $x;?>
 												</td>															
 												<td>
-													<?php echo $drow['special_date']; ?>
+													<?php echo $drow['special_date'];?>
 												</td>															
 												<td>
-													<?php echo $drow['event_name']; ?> 
+													<?php echo $drow['event_name'];?> 
 												</td>															
 												<td>								
-													<?php echo $drow['percent_increment']; ?>					
+													<?php echo $drow['percent_increment'];?> %					
 												</td> 												
 												<td>
 													<a href="#">

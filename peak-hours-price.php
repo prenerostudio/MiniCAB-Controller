@@ -24,31 +24,31 @@
 						<td>
 						  <p>
 						    <label>
-						      <input type="checkbox" name="days[]" value="monday">
+						      <input type="checkbox" name="days[]" value="Monday">
 						      Monday</label>
 						    <br>
 						    <label>
-						      <input type="checkbox" name="days[]" value="tuesday">
+						      <input type="checkbox" name="days[]" value="Tuesday">
 						      Tuesday</label>
 						    <br>
 						    <label>
-						      <input type="checkbox" name="days[]" value="wednesday">
+						      <input type="checkbox" name="days[]" value="Wednesday">
 						      Wednesday</label>
 						    <br>
 						    <label>
-						      <input type="checkbox" name="days[]" value="thursday">
+						      <input type="checkbox" name="days[]" value="Thursday">
 						      Thursday</label>
 						    <br>
 						    <label>
-						      <input type="checkbox" name="days[]" value="friday">
+						      <input type="checkbox" name="days[]" value="Friday">
 						      Friday</label>
 						    <br>
 						    <label>
-						      <input type="checkbox" name="days[]" value="saturday">
+						      <input type="checkbox" name="days[]" value="Saturday">
 						      Saturday</label>
 						    <br>
 						    <label>
-						      <input type="checkbox" name="days[]" value="sunday">
+						      <input type="checkbox" name="days[]" value="Sunday">
 						      Sunday</label>
 						    <br>
 				        </p></td>
@@ -76,7 +76,7 @@
 					<td>Start Time</td>												
 					<td>End Time</td>	
 					<td>Days</td>
-					<td>Price Increment</td>
+					<td>Price Increment %</td>
 					<td></td>
 				</tr>																										
 				<?php																								
@@ -87,19 +87,19 @@
 				?>
 				<tr>					
 					<td style="width: 4%;">																
-						<?php echo $n; ?>																	
+						<?php echo $n;?>																	
 					</td>					
 					<td>																
-						<?php echo $phrow['start_time'] ?>																	
+						<?php echo $phrow['start_time'];?>																	
 					</td>																
 					<td>																		
-						<?php echo $phrow['end_time'] ?>																	
+						<?php echo $phrow['end_time'];?>																	
 					</td>
 					<td>																		
-						<?php echo $phrow['peak_hours_days'] ?>																	
+						<?php echo $phrow['peak_hours_days'];?>																	
 					</td>
 					<td>																		
-						<?php echo $phrow['price_increment'] ?>																	
+						<?php echo $phrow['price_increment'];?> %																	
 					</td>
 					<td>																		
 						<a href="del-peak-hours.php?ph_id=<?php echo $phrow['ph_id'];?>">

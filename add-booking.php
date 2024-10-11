@@ -514,6 +514,7 @@ window.onload = () => {
 
 
 <!-- Map Modal -->
+<!--
 <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -531,6 +532,7 @@ window.onload = () => {
     </div>
   </div>
 </div>
+-->
 
 <?php
 include('footer.php');
