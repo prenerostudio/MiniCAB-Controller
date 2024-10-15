@@ -325,11 +325,12 @@ include('header.php');
         }
         $('#journeyFare').val(baseFare.toFixed(2));
     });
-        function fetchVehiclePricing(vehicleId) {	        	
+        function fetchVehiclePricing(vehicleId, distance) {	        	
         $.ajax({            	
             type: 'POST',            	
             url: 'fetch_vehicle_pricing.php',            	
-            data: { vehicleId: vehicleId },            	
+            data: { vehicleId: vehicleId,
+                    distance: distance},            	
             success: function(response) {			                	
         var data = JSON.parse(response);	
         callback(data);            	

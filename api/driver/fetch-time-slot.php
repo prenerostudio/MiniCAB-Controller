@@ -41,7 +41,7 @@ if(isset($_POST['d_id'])) {
         $output = mysqli_fetch_all($r, MYSQLI_ASSOC);    
         echo json_encode(array('data' => $output, 'status' => true));
     } else {    
-        echo json_encode(array('message' => 'No upcoming record found', 'status' => false));    
+        echo json_encode(array('message' => 'No upcoming time slot found', 'status' => false));    
     }
 } else {    
     echo json_encode(array('message' => 'Some fields are missing', 'status' => false));
