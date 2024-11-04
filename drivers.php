@@ -2,82 +2,76 @@
 include('header.php');
 ?>  
 <div class="page-header d-print-none page_padding">		   		
-    <div class="row g-2 align-items-center">        
-        <div class="col">            									
-            <div class="page-pretitle">                				
-                Overview                						
-            </div>                				
-            <h2 class="page-title">                				
-                Drivers Section                						
-            </h2>              			
-        </div>			
-        <div class="col-auto ms-auto d-print-none">            			
-            <div class="btn-list">                				
-                <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">		
-                    <i class="ti ti-user-plus"></i>                    							
-                    Add New Driver                  						
-                </a>			             						
-            </div>              				
-        </div>			
-    </div>	
+	<div class="row g-2 align-items-center">        	
+		<div class="col">            								
+			<div class="page-pretitle">                			
+				Overview                				
+			</div>                			
+			<h2 class="page-title">                			
+				Drivers Section                				
+			</h2>              			
+		</div>		
+		<div class="col-auto ms-auto d-print-none">            		
+			<div class="btn-list">                			
+				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">
+					<i class="ti ti-user-plus"></i>                    					
+					Add New Driver                  					
+				</a>			             				
+			</div>              			
+		</div>		
+	</div>	
 </div>
 <div class="page-body page_padding">          	
-    <div class="row row-deck row-cards">			
-        <div class="card">
-            <div class="card-header">                			
-                <h3 class="card-title">				
-                    Active Drivers List					
-                </h3>            				
-            </div>            			
-            <div class="card-body border-bottom py-3">                				
-                <div id="table-adriver" class="table-responsive">                    						
-                    <table class="table" id="table-driver">                        							
-                        <thead>                            									
-                            <tr>                                										
-                                <th>ID</th>                                												
-                                <th>Image</th>				
-                                <th>Post Code</th>				
-                                <th>Name</th>                                												
-                                <th>Email</th>                                												
-                                <th>Phone</th>                                												
-                                <th>Gender</th>												
-                                <th>Licence Authority</th>
-                                <th>Actions</th>                            												
-                            </tr>                       										
-                        </thead>                       															
-                        <tbody class="table-tbody">					
-							<?php
-							$x = 0;                   				                        
-							$adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");				                            
-							while ($adrow = mysqli_fetch_array($adsql)) :
-							$x++;                                             
-							?>
-							<tr>									                                
-								<td>									
-									<?php echo $adrow['d_id']; ?>                                
-								</td>			
-                                <td>									
-									<?php                                    
-									if (!$adrow['d_pic']) :					                                    
-									?>					                                    
-									<img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-									<?php else : ?>
+	<div class="row row-deck row-cards">			
+		<div class="card">
+			<div class="card-header">                			
+				<h3 class="card-title">				
+					Active Drivers List					
+				</h3>            				
+			</div>            			
+			<div class="card-body border-bottom py-3">                			
+				<div id="table-adriver" class="table-responsive">                    				
+					<table class="table" id="table-driver">                        					
+						<thead>                            						
+							<tr>                                							
+								<th>ID</th>                                								
+								<th>Image</th>                                								
+								<th>Name</th>                                								
+								<th>Email</th>                                								
+								<th>Phone</th>                                								
+								<th>Gender</th>
+								<th>Post Code</th>
+								<th>Licence Authority</th>                               								
+								<th>Actions</th>                            								
+							</tr>                       							
+						</thead>                       												
+						<tbody class="table-tbody">                        												
+							<?php                            													
+							$x = 0;                            													
+							$adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
+							while ($adrow = mysqli_fetch_array($adsql)) :							
+							$x++;                            													
+							?>							
+							<tr>                            														
+								<td>																
+									<?php echo $x; ?>																
+								</td>                                   														
+								<td>								
+									<?php 									
+									if (!$adrow['d_pic']) : 									
+									?>																							
+									<img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">									
+									<?php else : ?>																		
 									<img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
 									<?php endif; ?>		
-								</td>
-                                <td>
-									<?php echo $adrow['d_post_code'];?>
-								</td>
-								<td>
-									<strong style="text-transform: capitalize;">										
-										<?php echo $adrow['d_name'];?>									
-									</strong>							
+								</td>														
+								<td>								
+									<strong style="text-transform: capitalize;">									
+										<?php echo $adrow['d_name'];?>											
+									</strong>															
 								</td>                                  															
-								
 								<td>																	
-									
 									<?php echo $adrow['d_email'];?>									
-							
 								</td>
 								<td>																
 									<?php echo $adrow['d_phone'];?>																
@@ -85,24 +79,29 @@ include('header.php');
 								<td>																	
 									<?php echo $adrow['d_gender'];?>
 								</td> 
-								
+								<td>																	
+									<?php echo $adrow['d_post_code'];?>
+								</td>
 								<td>
 									<?php echo $adrow['licence_authority'];?>									
 								</td>																
 								<td>																	
-									<a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="View Driver">
-										<button class="btn btn-twitter btn-icon">										
-											<i class="ti ti-eye"></i>
+									<a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>">
+										<button class="btn btn-info">										
+											<i class="ti ti-eye"></i>											
+											View											
 										</button>  										
 									</a>									
-									<a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="Delete">
-										<button class="btn btn-youtube btn-icon">										
-											<i class="ti ti-square-rounded-x"></i>
+									<a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>">
+										<button class="btn btn-danger delete_btn">										
+											<i class="ti ti-square-rounded-x"></i>											
+											Delete											
 										</button>										
 									</a> 									
-									<a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>" title="Deactive Driver">
-										<button class="btn btn-instagram btn-icon">										
-											<i class="ti ti-user-x"></i>
+									<a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>">
+										<button class="btn btn-instagram">										
+											<i class="ti ti-user-x"></i>											
+											Make Inactive											
 										</button>
 									</a> 									
 								</td>								
@@ -110,7 +109,7 @@ include('header.php');
 							<?php endwhile; ?>                         														
 							<?php if ($x === 0) : ?>							
 							<tr>                                   														
-								<td colspan="9">																
+								<td colspan="8">																
 									<p align="center">No Driver Found!</p>
 								</td>                              															
 							</tr>                           														

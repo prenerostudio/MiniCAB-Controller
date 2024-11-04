@@ -15,7 +15,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) {  
 	$activity_type = 'New Airport Added';		
 	$user_type = 'user';        	
-	$details = "New Airport $ap_name Has been Added by Controller.";
+	$details = "New Airport " . $ap_name . " Has been Added by Controller.";
 			
 	$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 

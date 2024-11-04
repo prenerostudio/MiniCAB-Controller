@@ -45,7 +45,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) {
 	$activity_type = 'Company Info Updated';
 	$user_type = 'user';
-	$details = "Company Info $cname Has Been Updated.";
+	$details = "Company Info " . $cname . " Has Been Updated.";
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 
 										`user_type`, 

@@ -68,7 +68,7 @@ if ($phone_count > 0) {
     if ($stmt->execute()) {		
 		$activity_type = 'New Booker';			
 		$user_type = 'user';        		
-		$details = "New Booker $cname Added by Controller.";			
+		$details = "New Booker " . $cname . "  Added by Controller.";			
 	
 		$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 

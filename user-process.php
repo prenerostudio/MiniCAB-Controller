@@ -115,7 +115,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) {        
     $activity_type = 'New Admin Added';    
     $user_type = 'user';    
-    $details = "New Admin $fname Has Been Added by Controller.";
+    $details = "New Admin " . $fname . " Has Been Added by Controller.";
     
     $actsql = "INSERT INTO `activity_log`(
                                         `activity_type`, 

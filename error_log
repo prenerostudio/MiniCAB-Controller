@@ -1,0 +1,223 @@
+[22-Aug-2024 09:34:07 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[22-Aug-2024 16:07:12 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[22-Aug-2024 17:06:36 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/bid-process.php:31
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/bid-process.php(31): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/bid-process.php on line 31
+[22-Aug-2024 19:04:35 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-driver-status.php on line 7
+[23-Aug-2024 11:01:28 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[23-Aug-2024 11:01:41 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[24-Aug-2024 05:51:31 Europe/London] PHP Warning:  Undefined array key "user_id" in /home/euroqzwc/minicaboffice.com/del-driver.php on line 6
+[24-Aug-2024 05:51:40 Europe/London] PHP Warning:  Undefined array key "user_id" in /home/euroqzwc/minicaboffice.com/del-driver.php on line 6
+[24-Aug-2024 06:11:47 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[24-Aug-2024 15:14:35 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/bid-process.php:31
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/bid-process.php(31): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/bid-process.php on line 31
+[25-Aug-2024 15:13:41 Europe/London] PHP Warning:  Undefined variable $d_name in /home/euroqzwc/minicaboffice.com/update-driver.php on line 31
+[29-Aug-2024 20:34:03 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-driver-status.php on line 7
+[29-Aug-2024 20:34:24 Europe/London] PHP Warning:  Undefined variable $d_name in /home/euroqzwc/minicaboffice.com/update-driver.php on line 31
+[29-Aug-2024 20:34:44 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-driver-status.php on line 7
+[29-Aug-2024 20:35:00 Europe/London] PHP Warning:  Undefined array key "user_id" in /home/euroqzwc/minicaboffice.com/del-driver.php on line 6
+[29-Aug-2024 20:49:33 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-driver-status.php on line 7
+[29-Aug-2024 20:54:03 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[30-Aug-2024 11:10:47 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[30-Aug-2024 11:10:52 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[30-Aug-2024 11:23:46 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-driver-status.php on line 7
+[30-Aug-2024 17:41:24 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[30-Aug-2024 19:57:12 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-driver-status.php on line 7
+[30-Aug-2024 19:58:04 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-driver-status.php on line 7
+[30-Aug-2024 20:32:35 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/update-customer-status.php on line 7
+[31-Aug-2024 11:23:06 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 18
+[31-Aug-2024 11:23:10 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[31-Aug-2024 11:27:41 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[31-Aug-2024 11:27:55 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[31-Aug-2024 11:31:33 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[31-Aug-2024 11:31:37 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[01-Sep-2024 09:36:56 Europe/London] PHP Warning:  Undefined variable $x in /home/euroqzwc/minicaboffice.com/view-booker.php on line 275
+[01-Sep-2024 09:36:59 Europe/London] PHP Warning:  Undefined variable $x in /home/euroqzwc/minicaboffice.com/view-booker.php on line 275
+[02-Sep-2024 11:35:47 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[02-Sep-2024 11:35:51 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[02-Sep-2024 18:37:42 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[03-Sep-2024 16:28:02 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:29:08 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:29:25 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:29:55 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:30:11 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:30:27 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:30:35 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:30:47 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:30:57 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 16:33:48 Europe/London] PHP Warning:  Undefined array key "w_chair" in /home/euroqzwc/minicaboffice.com/view-vehicle.php on line 45
+[03-Sep-2024 20:19:33 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[03-Sep-2024 20:22:40 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[03-Sep-2024 20:47:34 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[05-Sep-2024 01:30:33 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[05-Sep-2024 01:30:43 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[06-Sep-2024 19:40:32 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 11:13:30 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 11:46:36 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 12:05:51 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[07-Sep-2024 12:39:52 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 12:53:28 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 18
+[07-Sep-2024 12:53:33 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 18
+[07-Sep-2024 12:54:01 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:00:32 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:11:56 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:12:31 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:13:08 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:19:25 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:24:03 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:39:54 Europe/London] PHP Warning:  Undefined array key "journey_type" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 39
+[07-Sep-2024 13:39:54 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[07-Sep-2024 13:39:57 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:43:33 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[07-Sep-2024 13:48:48 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[08-Sep-2024 10:51:47 Europe/London] PHP Warning:  Undefined variable $x in /home/euroqzwc/minicaboffice.com/view-booker.php on line 229
+[08-Sep-2024 11:04:45 Europe/London] PHP Warning:  Undefined variable $x in /home/euroqzwc/minicaboffice.com/view-booker.php on line 229
+[09-Sep-2024 14:23:55 Europe/London] PHP Warning:  Undefined array key 0 in /home/euroqzwc/minicaboffice.com/activity-tracker.php on line 18
+[09-Sep-2024 14:36:52 Europe/London] PHP Warning:  Undefined array key 0 in /home/euroqzwc/minicaboffice.com/activity-tracker.php on line 18
+[09-Sep-2024 22:50:45 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[09-Sep-2024 22:50:50 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[09-Sep-2024 23:07:30 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[10-Sep-2024 12:53:01 Europe/London] PHP Warning:  Undefined variable $x in /home/euroqzwc/minicaboffice.com/view-booker.php on line 229
+[10-Sep-2024 23:41:09 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[10-Sep-2024 23:41:14 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[10-Sep-2024 23:44:04 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 18
+[10-Sep-2024 23:45:16 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[10-Sep-2024 23:50:28 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[10-Sep-2024 23:51:10 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[11-Sep-2024 02:18:41 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[11-Sep-2024 02:19:08 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[11-Sep-2024 18:26:01 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[11-Sep-2024 19:09:47 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[11-Sep-2024 19:10:25 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[11-Sep-2024 19:10:33 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[11-Sep-2024 19:53:47 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[11-Sep-2024 19:54:24 Europe/London] PHP Warning:  Undefined array key "pickup" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 8
+[11-Sep-2024 19:54:24 Europe/London] PHP Warning:  Undefined array key "dropoff" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 9
+[11-Sep-2024 19:57:35 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[11-Sep-2024 19:58:50 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[12-Sep-2024 18:49:43 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[12-Sep-2024 20:33:31 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[12-Sep-2024 20:41:26 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[12-Sep-2024 20:44:42 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[12-Sep-2024 20:54:18 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[12-Sep-2024 21:15:00 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[13-Sep-2024 19:09:24 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[13-Sep-2024 19:09:27 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[17-Sep-2024 22:34:52 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/booking-process.php on line 42
+[17-Sep-2024 22:35:34 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[22-Sep-2024 14:41:02 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 14:45:54 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 14:54:48 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 14:55:10 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 15:04:20 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 15:04:24 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 15:04:36 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 15:04:40 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 15:05:39 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 15:06:10 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[22-Sep-2024 15:06:15 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/close-bid.php:27
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/close-bid.php(27): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/close-bid.php on line 27
+[26-Sep-2024 10:37:37 Europe/London] PHP Warning:  Undefined array key "pickup" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 8
+[26-Sep-2024 10:37:37 Europe/London] PHP Warning:  Undefined array key "dropoff" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 9
+[26-Sep-2024 10:37:37 Europe/London] PHP Warning:  Undefined array key "child_seat" in /home/euroqzwc/minicaboffice.com/update-booking.php on line 18
+[26-Sep-2024 20:56:50 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[26-Sep-2024 21:25:02 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[29-Sep-2024 16:29:18 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119
+[29-Sep-2024 21:05:14 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php on line 33
+[29-Sep-2024 21:05:25 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php on line 33
+[29-Sep-2024 21:06:17 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php on line 33
+[29-Sep-2024 21:08:05 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php on line 33
+[29-Sep-2024 21:09:16 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php on line 33
+[29-Sep-2024 21:13:20 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-time-slot.php on line 33
+[09-Oct-2024 13:17:14 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '')' at line 10 in /home/euroqzwc/minicaboffice.com/date-process.php:36
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/date-process.php(36): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/date-process.php on line 36
+[10-Oct-2024 20:17:40 Europe/London] Both Pusher events triggered successfully.
+[10-Oct-2024 20:27:34 Europe/London] Both Pusher events triggered successfully.
+[10-Oct-2024 20:33:11 Europe/London] Pusher 1 triggered successfully.
+[10-Oct-2024 20:33:12 Europe/London] Pusher 2 triggered successfully.
+[10-Oct-2024 20:34:27 Europe/London] Pusher 1 triggered successfully.
+[10-Oct-2024 20:34:28 Europe/London] Pusher 2 triggered successfully.
+[10-Oct-2024 20:39:44 Europe/London] Pusher 1 triggered successfully.
+[10-Oct-2024 20:39:44 Europe/London] Pusher 2 triggered successfully.
+[23-Oct-2024 19:35:52 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-job.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-job.php on line 41
+[23-Oct-2024 19:40:58 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-job.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-job.php on line 41
+[23-Oct-2024 19:42:14 Europe/London] PHP Fatal error:  Uncaught Error: Class "Pusher\Pusher" not found in /home/euroqzwc/minicaboffice.com/withdraw-job.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/withdraw-job.php on line 41
+[23-Oct-2024 20:01:51 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/euroqzwc/minicaboffice.com/dispatch-booking.php on line 119

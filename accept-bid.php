@@ -18,7 +18,7 @@ if($result){
 				
 	$activity_type = 'Bid Accepted';        		
 	$user_type = 'user';        		
-	$details = "Bid From Driver $d_name Has Been Accepted by Controller.";
+	$details = "Bid From Driver " . $d_name . " Has Been Accepted by Controller.";
 				
 	$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 

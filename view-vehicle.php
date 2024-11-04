@@ -83,7 +83,10 @@ $vrow = mysqli_fetch_array($vsql);
 								<div class="form-label">No. of Seats</div>                        						
 								<input type="text" class="form-control" value="<?php echo $vrow['v_seat']; ?>" name="vseat">  
 							</div>							
-							
+							<div class="mb-3 col-md-4">                    					
+								<div class="form-label">Pricing</div>                        						
+								<input type="text" class="form-control" value="<?php echo $vrow['v_pricing'] ?>" name="vpricing">
+							</div>
 							<div class="mb-3 col-md-4">                    						
 								<div class="form-label">Air Bags</div>   
 								<select class="form-control" name="vbags">
@@ -107,7 +110,7 @@ $vrow = mysqli_fetch_array($vsql);
 						</div>											
 						<div class="card-footer bg-transparent mt-auto">					
 							<div class="btn-list justify-content-end">						
-								<a href="vehicles.php" class="btn">							
+								<a href="vehicle.php" class="btn">							
 									Cancel						
 								</a>						
 								<button type="submit" class="btn btn-primary">							

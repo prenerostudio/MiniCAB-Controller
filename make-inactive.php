@@ -11,7 +11,7 @@ $result = $connect->query($sql);
 if($result){
 	$activity_type = 'Driver Inactive';	
 	$user_type = 'user';	
-	$details = "Driver $d_id Has Been made by Controller.";
+	$details = "Driver " . $d_id . " Has Been made by Controller.";
 	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 

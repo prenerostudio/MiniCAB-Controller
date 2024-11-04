@@ -29,7 +29,6 @@ include('header.php');
 								<tr>																	
 									<th>ID</th>
 									<th>Image</th>
-									<th>Post Code</th>
 									<th>Name</th>
 									<th>Email</th>																		
 									<th>Phone</th>																		
@@ -47,7 +46,7 @@ include('header.php');
 								?>                                
 								<tr>                                									
 									<td>
-										<?php echo $idrow['d_id']; ?>
+										<?php echo $z; ?>
 									</td>                                    
 									<td>                                       										
 										<?php if (!$idrow['d_pic']) : ?>                                           
@@ -55,11 +54,7 @@ include('header.php');
 										<?php else : ?>                                          
 										<img src="img/drivers/<?php echo $idrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                        
 										<?php endif; ?>                                   
-									</td> 
-									<td>																	
-									<?php echo $idrow['d_post_code'];?>
-								
-									</td>
+									</td>                                   
 									<td>
 										<?php echo $idrow['d_name']; ?>
 									</td>                                   
@@ -76,19 +71,22 @@ include('header.php');
 										<?php echo $idrow['licence_authority']; ?>
 									</td>                                    
 									<td>                                    
-										<a href="view-driver.php?d_id=<?php echo $idrow['d_id']; ?>" title="View">
-											<button class="btn btn-twitter btn-icon">
-												<i class="ti ti-eye"></i>												
+										<a href="view-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
+											<button class="btn btn-info">
+												<i class="ti ti-eye"></i>
+												View
 											</button>                                        
 										</a>                                 								
-										<a  href="del-driver.php?d_id=<?php echo $idrow['d_id']; ?>" title="Delete">
-											<button class="btn btn-youtube btn-icon">
+										<a  href="del-driver.php?d_id=<?php echo $idrow['d_id']; ?>">
+											<button class="btn btn-danger delete_btn">
 												<i class="ti ti-square-rounded-x"></i>
+												Delete
 											</button>										
 										</a>										
-										<a href="activate-driver.php?d_id=<?php echo $idrow['d_id']; ?>" title="Activate Driver">           
-											<button class="btn btn-success btn-icon">
+										<a href="activate-driver.php?d_id=<?php echo $idrow['d_id']; ?>">           
+											<button class="btn btn-success">
 												<i class="ti ti-user-check"></i>
+												Activate Driver
 											</button>                                       
 										</a>                                    
 									</td>                              
@@ -96,7 +94,7 @@ include('header.php');
 								<?php endwhile; ?>                           
 								<?php if ($z == 0) : ?>                              
 								<tr>                                    
-									<td colspan="9">
+									<td colspan="8">
 										<p align="center">No Driver Found!</p>
 									</td>                                
 								</tr>                           
