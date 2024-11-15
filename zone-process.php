@@ -12,7 +12,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) { 
 	$activity_type = 'New Zone Added';
 	$user_type = 'user';
-	$details = "New Zone $sp  - $ep Has Been Added by Controller.";
+	$details = "New Zone " . $sp . " - " . $ep . " Has Been Added by Controller.";
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 
 										`user_type`, 

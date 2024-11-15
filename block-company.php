@@ -11,7 +11,7 @@ $result = $connect->query($sql);
 if($result){
 	$activity_type = 'Block Company';        		
 	$user_type = 'user';        		
-	$details = "Company ID: $com_id Has Been Blocked";
+	$details = "Company ID: " . $com_id . " Has Been Blocked";
 				
 	$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 

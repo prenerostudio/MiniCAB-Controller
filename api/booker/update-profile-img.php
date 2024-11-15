@@ -30,13 +30,12 @@ function uploadImage() {
 }
 
 $c_id = $_POST['c_id'];
-$date = date("Y-m-d H:i:s");
 
 // Handle image upload
 $c_img = uploadImage();
 
 if(isset($_POST['c_id'])){ 	 	        			
-	$sql = "UPDATE `clients` SET `c_pic`='$c_img', `reg_date`='$date' WHERE `c_id`='$c_id'";
+	$sql = "UPDATE `clients` SET `c_pic`='$c_img' WHERE `c_id`='$c_id'";
 	$r = mysqli_query($connect, $sql);
 	if($r){    
 		$activity_type = 'Profile Image Updated';				

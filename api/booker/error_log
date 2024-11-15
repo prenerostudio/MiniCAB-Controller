@@ -1,0 +1,301 @@
+[15-Aug-2024 21:30:49 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:42:27 Asia/Karachi] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[17-Aug-2024 17:42:27 Asia/Karachi] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[17-Aug-2024 17:42:27 Asia/Karachi] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[17-Aug-2024 17:42:27 Asia/Karachi] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[17-Aug-2024 17:43:29 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:43:35 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:43:43 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:43:48 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:46:49 Asia/Karachi] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[17-Aug-2024 17:46:49 Asia/Karachi] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[17-Aug-2024 17:46:49 Asia/Karachi] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[17-Aug-2024 17:46:49 Asia/Karachi] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[17-Aug-2024 17:47:14 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:47:36 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:47:58 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:48:42 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:48:49 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:49:35 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 17:58:16 Asia/Karachi] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[17-Aug-2024 17:58:16 Asia/Karachi] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[17-Aug-2024 17:58:16 Asia/Karachi] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[17-Aug-2024 17:58:16 Asia/Karachi] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[17-Aug-2024 17:58:34 Asia/Karachi] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[17-Aug-2024 17:58:34 Asia/Karachi] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[17-Aug-2024 17:58:34 Asia/Karachi] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[17-Aug-2024 17:58:34 Asia/Karachi] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[17-Aug-2024 18:01:23 Asia/Karachi] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 10
+[17-Aug-2024 18:01:23 Asia/Karachi] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 11
+[17-Aug-2024 20:20:40 Asia/Karachi] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[17-Aug-2024 20:20:40 Asia/Karachi] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[17-Aug-2024 20:21:44 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 20:22:53 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 20:28:35 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 20:41:30 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 20:43:00 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 21:00:40 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 21:02:45 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[17-Aug-2024 21:03:09 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[18-Aug-2024 01:03:22 Asia/Karachi] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[25-Aug-2024 09:36:39 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 09:36:39 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 09:36:39 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 09:36:39 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:03:49 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:03:49 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:03:49 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:03:49 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:05:07 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:05:07 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:05:07 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:05:07 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:05:21 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:05:21 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:05:21 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:05:21 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:07:23 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:07:23 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:07:23 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:07:23 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:10:45 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:10:45 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:10:45 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:10:45 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:12:46 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 10
+[25-Aug-2024 13:12:46 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 11
+[25-Aug-2024 13:12:58 Europe/London] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[25-Aug-2024 13:14:22 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:14:22 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:14:22 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:14:22 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:14:37 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:14:37 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:14:37 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:14:37 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:15:13 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:16:24 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 10
+[25-Aug-2024 13:16:24 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 11
+[25-Aug-2024 13:16:29 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 11
+[25-Aug-2024 13:16:29 Europe/London] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[25-Aug-2024 13:16:38 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 10
+[25-Aug-2024 13:16:52 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 10
+[25-Aug-2024 13:16:59 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 11
+[25-Aug-2024 13:16:59 Europe/London] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/signin.php on line 30
+[25-Aug-2024 13:24:23 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:24:23 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:24:23 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:24:23 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:24:50 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:24:50 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:24:50 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:24:50 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:25:36 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:25:36 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:25:36 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:25:36 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 13:44:47 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 13:44:47 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 13:44:47 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 13:44:47 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 14:14:12 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 14:14:12 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 14:14:12 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 14:14:12 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 14:14:43 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 14:14:43 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 14:14:43 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 14:14:43 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 14:18:05 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 14:18:05 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 14:18:05 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 14:18:05 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 14:29:06 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 14:29:06 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 14:29:06 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 14:29:06 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 14:39:32 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 14:39:32 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 14:39:32 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 14:39:32 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 14:40:32 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 14:40:32 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 14:40:32 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 14:40:32 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 14:57:03 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 14:57:03 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 14:57:03 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 14:57:03 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[25-Aug-2024 15:34:05 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[25-Aug-2024 15:34:05 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[25-Aug-2024 15:34:05 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[25-Aug-2024 15:34:05 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[28-Aug-2024 06:25:51 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[28-Aug-2024 06:25:51 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[28-Aug-2024 06:25:51 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[28-Aug-2024 06:25:51 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[28-Aug-2024 06:25:52 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[28-Aug-2024 06:25:52 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[28-Aug-2024 06:25:52 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[28-Aug-2024 06:25:52 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[28-Aug-2024 06:40:57 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[28-Aug-2024 06:40:57 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[28-Aug-2024 06:40:57 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[28-Aug-2024 06:40:57 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[28-Aug-2024 06:42:56 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[28-Aug-2024 15:52:57 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[28-Aug-2024 15:52:57 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[28-Aug-2024 15:52:57 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[28-Aug-2024 15:52:57 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[28-Aug-2024 15:56:31 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[28-Aug-2024 15:56:31 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[28-Aug-2024 15:56:31 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[28-Aug-2024 15:56:31 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 06:31:58 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 06:31:58 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 06:31:58 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 06:31:58 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 07:04:29 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 07:04:29 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 07:04:29 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 07:04:29 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 07:04:58 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 07:04:58 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 07:04:58 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 07:04:58 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 07:15:58 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 07:15:58 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 07:15:58 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 07:15:58 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 07:22:01 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 07:22:01 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 07:22:01 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 07:22:01 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 07:33:51 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 07:33:51 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 07:33:51 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 07:33:51 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[29-Aug-2024 15:09:40 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 08:48:04 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 08:48:04 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 08:48:04 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 08:48:04 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 10:30:38 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 10:30:38 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 10:30:38 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 10:30:38 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 10:31:51 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 10:31:51 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 10:31:51 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 10:31:51 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 10:53:00 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 10:53:00 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 10:53:00 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 10:53:00 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 11:37:44 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 11:37:44 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 11:37:44 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 11:37:44 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 11:39:18 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 11:39:18 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 11:39:18 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 11:39:18 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 11:47:02 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 11:47:02 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 11:47:02 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 11:47:02 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 12:13:15 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 12:13:15 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 12:13:15 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 12:13:15 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 15:06:42 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 15:06:42 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 15:06:42 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 15:06:42 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 15:25:39 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 15:25:39 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 15:25:39 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 15:25:39 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[31-Aug-2024 16:12:55 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[31-Aug-2024 16:12:55 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[31-Aug-2024 16:12:55 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[31-Aug-2024 16:12:55 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[01-Sep-2024 08:30:05 Europe/London] PHP Warning:  Undefined array key "c_name" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 10
+[01-Sep-2024 08:30:05 Europe/London] PHP Warning:  Undefined array key "c_email" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 11
+[01-Sep-2024 08:30:05 Europe/London] PHP Warning:  Undefined array key "c_phone" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 12
+[01-Sep-2024 08:30:05 Europe/London] PHP Warning:  Undefined array key "c_password" in /home/euroqzwc/minicaboffice.com/api/booker/register.php on line 13
+[03-Sep-2024 13:52:30 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 13:52:38 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 13:53:52 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 13:54:02 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 13:54:17 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 16:21:29 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 16:24:22 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 16:35:19 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 16:35:30 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 16:35:50 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 16:41:16 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 26
+[03-Sep-2024 16:41:22 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 16:47:57 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 17:05:17 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[03-Sep-2024 17:42:45 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[05-Sep-2024 16:57:37 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[05-Sep-2024 17:05:23 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/api/booker/cancel-booking.php on line 16
+[05-Sep-2024 17:05:23 Europe/London] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/cancel-booking.php on line 29
+[05-Sep-2024 17:07:49 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/api/booker/cancel-booking.php on line 16
+[05-Sep-2024 17:07:49 Europe/London] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/cancel-booking.php on line 29
+[05-Sep-2024 17:09:33 Europe/London] PHP Warning:  Undefined variable $date in /home/euroqzwc/minicaboffice.com/api/booker/cancel-booking.php on line 16
+[05-Sep-2024 17:09:33 Europe/London] PHP Warning:  Undefined variable $c_id in /home/euroqzwc/minicaboffice.com/api/booker/cancel-booking.php on line 29
+[06-Sep-2024 07:05:58 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 26
+[06-Sep-2024 07:06:08 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[06-Sep-2024 07:06:15 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 26
+[06-Sep-2024 07:06:18 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[08-Sep-2024 10:46:30 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[08-Sep-2024 10:51:15 Europe/London] PHP Warning:  move_uploaded_file(../../img/customers/66dd739382e33.jpg): Failed to open stream: No such file or directory in /home/euroqzwc/minicaboffice.com/api/booker/update-profile-img.php on line 23
+[08-Sep-2024 10:51:15 Europe/London] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpGALxrB&quot; to &quot;../../img/customers/66dd739382e33.jpg&quot; in /home/euroqzwc/minicaboffice.com/api/booker/update-profile-img.php on line 23
+[08-Sep-2024 10:54:55 Europe/London] PHP Warning:  move_uploaded_file(../../img/customers/66dd746f3c2d1.jpg): Failed to open stream: No such file or directory in /home/euroqzwc/minicaboffice.com/api/booker/update-profile-img.php on line 23
+[08-Sep-2024 10:54:55 Europe/London] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpCQCiaQ&quot; to &quot;../../img/customers/66dd746f3c2d1.jpg&quot; in /home/euroqzwc/minicaboffice.com/api/booker/update-profile-img.php on line 23
+[08-Sep-2024 11:49:50 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[12-Sep-2024 18:39:02 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[14-Sep-2024 08:59:55 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ratings' in 'field list' in /home/euroqzwc/minicaboffice.com/api/booker/add-rating.php:25
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/api/booker/add-rating.php(25): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/api/booker/add-rating.php on line 25
+[14-Sep-2024 08:59:55 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ratings' in 'field list' in /home/euroqzwc/minicaboffice.com/api/booker/add-rating.php:25
+Stack trace:
+#0 /home/euroqzwc/minicaboffice.com/api/booker/add-rating.php(25): mysqli_query()
+#1 {main}
+  thrown in /home/euroqzwc/minicaboffice.com/api/booker/add-rating.php on line 25
+[19-Oct-2024 12:35:05 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[19-Oct-2024 12:35:12 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[19-Oct-2024 12:35:29 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[19-Oct-2024 12:35:33 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[19-Oct-2024 17:39:01 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[19-Oct-2024 17:57:35 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24
+[19-Oct-2024 17:59:54 Europe/London] PHP Warning:  A non-numeric value encountered in /home/euroqzwc/minicaboffice.com/api/booker/calculate-fare.php on line 24

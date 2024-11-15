@@ -1,21 +1,1637 @@
-[18-Aug-2024 15:36:43 Asia/Karachi] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'bookings.book_time' in 'field list' in C:\xampp\htdocs\MiniCAB\api\driver\fetch-reviews.php:14
-Stack trace:
-#0 C:\xampp\htdocs\MiniCAB\api\driver\fetch-reviews.php(14): mysqli_query(Object(mysqli), ' SELECT reviews...')
-#1 {main}
-  thrown in C:\xampp\htdocs\MiniCAB\api\driver\fetch-reviews.php on line 14
-[22-Aug-2024 13:12:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\minicab-controller\api\driver\complete-job.php on line 62
-[20-Sep-2024 13:37:05 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.time_slots' doesn't exist in C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php:16
-Stack trace:
-#0 C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php(16): mysqli_query(Object(mysqli), 'UPDATE `time_sl...')
-#1 {main}
-  thrown in C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php on line 16
-[20-Sep-2024 13:49:41 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'at_id' in 'where clause' in C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php:16
-Stack trace:
-#0 C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php(16): mysqli_query(Object(mysqli), 'UPDATE `time_sl...')
-#1 {main}
-  thrown in C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php on line 16
-[20-Sep-2024 13:55:10 Europe/London] PHP Warning:  Undefined array key "ts_id" in C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php on line 10
-[23-Sep-2024 11:17:09 Europe/London] PHP Warning:  Undefined array key "ts_id" in C:\xampp\htdocs\MiniCAB\api\driver\accept-time-slot.php on line 10
-[23-Sep-2024 11:29:50 Europe/London] PHP Warning:  Undefined array key "ts_id" in C:\xampp\htdocs\MiniCAB\api\driver\reject-time-slot.php on line 10
-[23-Sep-2024 12:00:01 Europe/London] PHP Warning:  Undefined array key "ts_id" in C:\xampp\htdocs\MiniCAB\api\driver\complete-time-slot.php on line 10
-[23-Sep-2024 12:00:01 Europe/London] PHP Warning:  Undefined array key "d_id" in C:\xampp\htdocs\MiniCAB\api\driver\complete-time-slot.php on line 11
+[21-Aug-2024 19:49:15 Europe/London] Received d_id: 00000002
+[21-Aug-2024 19:49:15 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 19:49:15 Europe/London] Received d_id: 00000002
+[21-Aug-2024 19:49:15 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 19:49:31 Europe/London] Received d_id: 00000002
+[21-Aug-2024 19:49:31 Europe/London] Received d_id: 00000002
+[21-Aug-2024 19:49:31 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 19:49:31 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:17:48 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:17:48 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:17:48 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:17:48 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:18:54 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:18:54 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:18:54 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:18:54 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:20:15 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:20:15 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:20:15 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:20:15 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:37:09 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:37:09 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 20:37:09 Europe/London] Received d_id: 00000002
+[21-Aug-2024 20:37:09 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:23:03 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:23:03 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:23:03 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:23:03 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:42:27 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:42:27 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:42:27 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:42:27 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:43:59 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:43:59 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:43:59 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:43:59 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:57:55 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:57:55 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 21:57:55 Europe/London] Received d_id: 00000002
+[21-Aug-2024 21:57:55 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 22:01:48 Europe/London] Received d_id: 00000002
+[21-Aug-2024 22:01:48 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 22:01:48 Europe/London] Received d_id: 00000002
+[21-Aug-2024 22:01:48 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 22:40:47 Europe/London] Received d_id: 00000002
+[21-Aug-2024 22:40:47 Europe/London] Fetched Data: Array
+(
+)
+
+[21-Aug-2024 22:40:47 Europe/London] Received d_id: 00000002
+[21-Aug-2024 22:40:47 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:08 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:08 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:08 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:08 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:09 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:09 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:09 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:09 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:09 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:09 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:09 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:09 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:14 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:14 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:22 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:22 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:30 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:30 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:38 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:38 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:32:54 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:32:54 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:02 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:02 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:10 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:10 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:13 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:13 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:18 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:18 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:26 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:26 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:34 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:34 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:42 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:42 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:50 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:50 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:33:58 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:33:58 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:34:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:34:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:34:14 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:34:14 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:34:22 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:34:22 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:34:30 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:34:30 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:34:38 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:34:38 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:34:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:34:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:34:54 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:34:54 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:02 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:02 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:10 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:10 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:18 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:18 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:26 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:26 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:34 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:34 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:42 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:42 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:50 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:50 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:35:58 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:35:58 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:36:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:36:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:36:14 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:36:14 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:36:22 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:36:22 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:36:30 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:36:30 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:36:38 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:36:38 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:36:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:36:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:36:54 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:36:54 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:02 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:02 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:10 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:10 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:18 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:18 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:26 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:26 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:34 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:34 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:42 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:42 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:50 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:50 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:37:58 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:37:58 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:38:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:38:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:38:14 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:38:14 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:38:22 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:38:22 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:38:30 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:38:30 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:38:38 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:38:38 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:38:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:38:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:38:54 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:38:54 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:02 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:02 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:10 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:10 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:18 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:18 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:26 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:26 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:34 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:34 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:42 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:42 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:50 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:50 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:39:58 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:39:58 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:40:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:40:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:40:14 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:40:14 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:40:22 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:40:22 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:40:30 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:40:30 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:40:38 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:40:38 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:40:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:40:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:40:54 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:40:54 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:02 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:02 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:10 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:10 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:18 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:18 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:26 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:26 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:34 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:34 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:42 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:42 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:50 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:50 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:41:58 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:41:58 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:42:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:42:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:42:14 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:42:14 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:42:22 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:42:22 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:42:30 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:42:30 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:42:38 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:42:38 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:42:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:42:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:42:54 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:42:54 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:03 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:03 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:10 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:10 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:18 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:18 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:26 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:26 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:34 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:34 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:42 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:42 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:50 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:50 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:43:58 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:43:58 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:44:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:44:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:44:14 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:44:14 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:44:22 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:44:22 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:44:30 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:44:30 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:44:38 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:44:38 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:44:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:44:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:44:54 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:44:54 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:06 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:06 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:10 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:10 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:18 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:18 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:26 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:26 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:34 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:34 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:41 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:41 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:41 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:41 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:42 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:42 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:46 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:46 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 04:45:50 Europe/London] Received d_id: 00000001
+[22-Aug-2024 04:45:50 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 06:17:13 Europe/London] Received d_id: 00000002
+[22-Aug-2024 06:17:13 Europe/London] Received d_id: 00000002
+[22-Aug-2024 06:17:13 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 06:17:13 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 07:54:27 Europe/London] Received d_id: 00000002
+[22-Aug-2024 07:54:27 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 07:55:05 Europe/London] Received d_id: 00000002
+[22-Aug-2024 07:55:05 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 07:55:05 Europe/London] Received d_id: 00000002
+[22-Aug-2024 07:55:05 Europe/London] Fetched Data: Array
+(
+)
+
+[22-Aug-2024 07:55:17 Europe/London] Received d_id: 00000002
+[22-Aug-2024 07:55:18 Europe/London] Fetched Data: Array
+(
+    [0] => Array
+        (
+            [job_id] => 00000159
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 02:55:15
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+)
+
+[22-Aug-2024 08:01:06 Europe/London] Received d_id: 00000002
+[22-Aug-2024 08:01:06 Europe/London] Fetched Data: Array
+(
+    [0] => Array
+        (
+            [job_id] => 00000159
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 02:55:15
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [1] => Array
+        (
+            [job_id] => 00000161
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:04
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+)
+
+[22-Aug-2024 08:01:09 Europe/London] Received d_id: 00000002
+[22-Aug-2024 08:01:09 Europe/London] Fetched Data: Array
+(
+    [0] => Array
+        (
+            [job_id] => 00000159
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 02:55:15
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [1] => Array
+        (
+            [job_id] => 00000161
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:04
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+)
+
+[22-Aug-2024 08:01:28 Europe/London] Received d_id: 00000002
+[22-Aug-2024 08:01:28 Europe/London] Fetched Data: Array
+(
+    [0] => Array
+        (
+            [job_id] => 00000159
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 02:55:15
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [1] => Array
+        (
+            [job_id] => 00000161
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:04
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [2] => Array
+        (
+            [job_id] => 00000162
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:26
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+)
+
+[22-Aug-2024 08:01:29 Europe/London] Received d_id: 00000002
+[22-Aug-2024 08:01:29 Europe/London] Fetched Data: Array
+(
+    [0] => Array
+        (
+            [job_id] => 00000159
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 02:55:15
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [1] => Array
+        (
+            [job_id] => 00000161
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:04
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [2] => Array
+        (
+            [job_id] => 00000162
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:26
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+)
+
+[22-Aug-2024 08:08:27 Europe/London] Received d_id: 00000002
+[22-Aug-2024 08:08:27 Europe/London] Fetched Data: Array
+(
+    [0] => Array
+        (
+            [job_id] => 00000159
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 02:55:15
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [1] => Array
+        (
+            [job_id] => 00000161
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:04
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [2] => Array
+        (
+            [job_id] => 00000162
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:26
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+)
+
+[22-Aug-2024 08:08:28 Europe/London] Received d_id: 00000002
+[22-Aug-2024 08:08:28 Europe/London] Fetched Data: Array
+(
+    [0] => Array
+        (
+            [job_id] => 00000159
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 02:55:15
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [1] => Array
+        (
+            [job_id] => 00000161
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:04
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+    [2] => Array
+        (
+            [job_id] => 00000162
+            [book_id] => 00000050
+            [c_id] => 00000003
+            [d_id] => 00000000002
+            [job_note] => 
+            [journey_fare] => 851
+            [booking_fee] => 0
+            [car_parking] => 0
+            [waiting] => 0
+            [tolls] => 0
+            [extra] => 0
+            [job_status] => accepted
+            [date_job_add] => 2024-08-22 03:01:26
+            [c_name] => Awaise Pasha
+            [c_email] => awaise@gmail.com
+            [c_phone] => +44256423120
+            [c_address] => 
+            [d_name] => Atiq Ramzan
+            [d_email] => admin@prenero.com
+            [d_phone] => +443157524000
+            [b_type_id] => 00000001
+            [pickup] => London, UK
+            [stops] => 
+            [destination] => Luton, UK
+            [address] => 
+            [postal_code] => N3= Finchley Central
+            [passenger] => 1
+            [pick_date] => 2024-08-22
+            [pick_time] => 10:30:00
+            [journey_type] => One Way
+            [v_id] => 00000003
+            [luggage] => 
+            [child_seat] => 
+            [flight_number] => 
+            [delay_time] => 00:00:00
+            [note] => 
+            [journey_distance] => 54
+            [booker_commission] => 0
+            [booking_status] => Booked
+            [bid_status] => 1
+            [bid_time] => 0000-00-00 00:00:00
+            [bid_note] => 
+            [payment_type] => 
+            [customer_name] => 
+            [customer_email] => awaise@gmail.com
+            [customer_phone] => +44256423120
+            [book_add_date] => 0000-00-00 00:00:00
+        )
+
+)
+

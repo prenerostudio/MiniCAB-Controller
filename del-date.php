@@ -23,8 +23,8 @@ if($result){
 										'$details')";
 	
 	$actr = mysqli_query($connect, $actsql);	
-	header('location: pricing.php');
+	header('location: special-dates.php');
 } else {
-	header('location: pricing.php');
+	header('location: special-dates.php');
 }
 ?>

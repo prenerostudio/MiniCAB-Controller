@@ -103,14 +103,16 @@ include('header.php');
 										?>									
 									</td>	
 									<td> 									
-										<a href="view-customer.php?c_id=<?php echo $crow['c_id']; ?>" title="View">
-											<button class="btn btn-twitter btn-icon">
-												<i class="ti ti-eye"></i>												
+										<a href="view-customer.php?c_id=<?php echo $crow['c_id']; ?>">
+											<button class="btn btn-info">
+												<i class="ti ti-eye"></i>
+												View
 											</button>												
 										</a>						
-										<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>" title="Delete">
-											<button class="btn btn-youtube btn-icon">
-												<i class="ti ti-square-rounded-x"></i>											
+										<a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>">
+											<button class="btn btn-danger">
+												<i class="ti ti-square-rounded-x"></i>
+												Delete
 											</button>
 										</a>
 									</td>								

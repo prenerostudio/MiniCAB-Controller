@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if ($result) { 
 				$activity_type = 'Company Profile Image Update';
 				$user_type = 'user';
-				$details = "Company Profile Image $com_id Has Been Updated by Controller.";
+				$details = "Company Profile Image " . $com_id . " Has Been Updated by Controller.";
 				$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

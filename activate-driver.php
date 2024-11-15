@@ -11,7 +11,7 @@ $result = $connect->query($sql);
 if($result){
 	$activity_type = 'Activate Driver';        		
 	$user_type = 'user';        		
-	$details = "Driver ID: $d_id Has Been Activated";
+	$details = "Driver ID: " . $d_id . " Has Been Activated";
 				
 	$actsql = "INSERT INTO `activity_log`(
 											`activity_type`, 

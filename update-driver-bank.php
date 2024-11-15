@@ -18,7 +18,7 @@ $result = mysqli_query($connect, $sql);
 if ($result) { 	
 	$activity_type = 'Driver Bank Details Updated';	
 	$user_type = 'user';	
-	$details = "Driver  $d_name Bank Details Has Been Updated by Controller.";
+	$details = "Driver  " . $d_name . " Bank Details Has Been Updated by Controller.";
 	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 

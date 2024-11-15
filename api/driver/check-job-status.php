@@ -11,7 +11,7 @@ include("../../config.php");
 $job_id=$_POST['job_id'];
 $d_id = $_POST['d_id'];
 
-if(isset($_POST['job_id'])){		
+if(isset($_POST['job_id']) && isset($_POST['d_id'])){		
 
 	$sql="SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND
     jobs.d_id = $d_id";
@@ -22,9 +22,9 @@ if(isset($_POST['job_id'])){
 	
 	if(count($output)>0){    				    		
 	
-		echo json_encode(array('data'=>$output, 'status'=>true, 'message'=>"Booking Fetch Successfully"));
+		echo json_encode(array('status'=>true, 'message'=>"Booking Found"));
 	}else{    
-		echo json_encode(array('message'=>'Booking has been recovered from you by controller','status'=>false));
+		echo json_encode(array('message'=>'Booking has been recovered from you by Controller','status'=>false));
 	}
 }else{    
 	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));

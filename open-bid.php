@@ -11,7 +11,7 @@ $result = $connect->query($sql);
 if($result){ 	
 	$activity_type = 'Bid Opened';	
 	$user_type = 'user';	
-	$details = "Bid Against Booking ID $book_id Has Been Opened by Controller.";
+	$details = "Bid Against Booking ID " . $book_id . " Has Been Opened by Controller.";
 	
 	$actsql = "INSERT INTO `activity_log`(
 										`activity_type`, 

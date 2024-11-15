@@ -2,6 +2,23 @@
 include('config.php');
 include('session.php');	
 
+function fetchVehiclePricingFromDatabase($vehicleId) {
+	//global $connect;    	    
+	$vehicleId = mysqli_real_escape_string($connect, $vehicleId);    	
+    $query = "SELECT v_pricing FROM vehicles WHERE v_id = '$vehicleId'";   	
+    $result = mysqli_query($connect, $query);   	
+    if ($result) {        		
+        $row = mysqli_fetch_assoc($result);       		
+        if ($row) {           			
+            return $row['v_pricing'];
+        } else {           			
+            return 0; 			
+        }
+    } else {       		
+        return 0; 		
+    }
+}
+
 $b_type_id = $_POST['b_type_id'];
 $c_id  = $_POST['c_id'];
 $pickup = $_POST['pickup'];
@@ -102,11 +119,13 @@ $sql = "INSERT INTO `bookings`(
 								'$cphone')";
 
 $result = mysqli_query($connect, $sql);       
-if ($result) {
+if ($result) {  
 	$book_id = mysqli_insert_id($connect);	
 	$activity_type = 'New Booking';		
 	$user_type = 'user';        	
-	$details = "Controller Has added a new booking $book_id";
+	$details = "Controller Has added a new booking " . $book_id;
+
+			
 
 	$actsql = "INSERT INTO `activity_log`(
                                     `activity_type`, 
@@ -118,7 +137,8 @@ if ($result) {
                                     '$user_type',
                                     '$myId',
                                     '$details')";
-
+		
+				
 	$actr = mysqli_query($connect, $actsql);      
 	header('Location: all-bookings.php');    
 } else {		
@@ -126,3 +146,13 @@ if ($result) {
 }
 $connect->close();
 ?>
+Request URL:
+http://localhost/minicab/booking-process.php
+Request Method:
+POST
+Status Code:
+500 Internal Server Error
+Remote Address:
+[::1]:80
+Referrer Policy:
+strict-origin-when-cross-origin

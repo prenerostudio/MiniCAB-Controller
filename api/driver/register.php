@@ -15,9 +15,6 @@ if (isset($_POST['d_phone'])) {
 	$d_password = $_POST['d_password'];    
 	$licence_authority = $_POST['licence_authority'];    
 	$acount_status = 0;	
-
-	// Hash the password before storing it
-	$hashed_password = password_hash($d_password, PASSWORD_DEFAULT);
 	         			
 	$checksql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone'";		
 	$checkr = mysqli_query($connect, $checksql);        		
@@ -37,7 +34,7 @@ if (isset($_POST['d_phone'])) {
 									'$d_name',
 									'$d_email',
 									'$d_phone',
-									'$hashed_password',
+									'$d_password',
 									'$licence_authority',
 									'$acount_status')";
                     
