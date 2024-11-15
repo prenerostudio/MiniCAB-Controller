@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2024 at 04:03 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Nov 15, 2024 at 08:26 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -2480,7 +2480,40 @@ INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user_type`,
 (00002432, 'Booker Signed-In', '2024-08-25 14:00:44', 'client', 00000002, 'Booker recently logged-In.'),
 (00002433, 'Booker Signed-In', '2024-08-25 14:01:43', 'client', 00000002, 'Booker recently logged-In.'),
 (00002434, 'Booker Signed-In', '2024-08-25 14:02:05', 'client', 00000002, 'Booker recently logged-In.'),
-(00002435, 'Booker Signed-In', '2024-08-25 14:02:22', 'client', 00000002, 'Booker recently logged-In.');
+(00002435, 'Booker Signed-In', '2024-08-25 14:02:22', 'client', 00000002, 'Booker recently logged-In.'),
+(00002436, 'Driver Verified', '2024-09-14 08:12:32', 'user', 00000001, 'Driver 00000009 Has Been verified by Controller.'),
+(00002437, 'Controller Logged-In', '2024-09-20 12:29:36', 'user', 00000001, 'Controller logged in successfully.'),
+(00002438, 'Time Slot Added', '2024-09-20 12:52:49', 'user', 00000001, 'New Time Slot Has Been Added by Controller.'),
+(00002439, 'Time slot Accepted', '2024-09-20 12:55:10', 'driver', 00000002, 'Accept Time slot.'),
+(00002440, 'Time slot Accepted', '2024-09-20 12:57:00', 'driver', 00000002, 'Accept Time slot.'),
+(00002441, 'Time Slot Withdrawn', '2024-09-20 13:05:59', 'user', 00000001, 'Time Slot Has Been Withdrawn by Controller.'),
+(00002442, 'Time slot Accepted', '2024-09-20 13:44:10', 'driver', 00000002, 'Accept Time slot.'),
+(00002443, 'Time Slot Withdrawn', '2024-09-20 13:51:19', 'user', 00000001, 'Time Slot Has Been Withdrawn by Controller.'),
+(00002444, 'Time slot Accepted', '2024-09-20 13:59:11', 'driver', 00000002, 'Accept Time slot.'),
+(00002445, 'Time Slot Withdrawn', '2024-09-20 13:59:44', 'user', 00000001, 'Time Slot Has Been Withdrawn by Controller.'),
+(00002446, 'Controller Logged-In', '2024-09-21 07:46:13', 'user', 00000001, 'Controller logged in successfully.'),
+(00002447, 'Booking Opens for Bid', '2024-09-21 08:06:50', 'user', 00000001, 'Controller has opened a bid for booking 00000047'),
+(00002448, 'Controller Logged-In', '2024-09-22 13:41:56', 'user', 00000001, 'Controller logged in successfully.'),
+(00002449, 'Bid Closed', '2024-09-22 14:08:34', 'user', 00000001, 'Bid for Booking ID 00000044 Has Been Closed by Controller'),
+(00002450, 'Bid Closed', '2024-09-22 14:08:42', 'user', 00000001, 'Bid for Booking ID 00000031 Has Been Closed by Controller'),
+(00002451, 'Controller Logged-In', '2024-09-22 17:38:13', 'user', 00000001, 'Controller logged in successfully.'),
+(00002452, 'Time Slot Deleted ', '2024-09-22 18:12:51', 'user', 00000001, 'Time Slot Has Been Deleted by Controller.'),
+(00002453, 'Time Slot Added', '2024-09-22 18:26:33', 'user', 00000001, 'New Time Slot Has Been Added by Controller.'),
+(00002454, 'Time Slot Added', '2024-09-22 18:41:36', 'user', 00000001, 'New Time Slot Has Been Added by Controller.'),
+(00002455, 'Time Slot Update', '2024-09-23 10:07:06', 'user', 00000001, 'Time Slot Has Been Updated by Controller.'),
+(00002456, 'Time slot Accepted', '2024-09-23 10:17:09', 'driver', 00000002, 'Accept Time slot.'),
+(00002457, 'Time slot Accepted', '2024-09-23 10:17:30', 'driver', 00000002, 'Accept Time slot.'),
+(00002458, 'Time slot Rejected', '2024-09-23 10:29:50', 'driver', 00000001, 'Reject Time slot.'),
+(00002459, 'Time slot Rejected', '2024-09-23 10:30:00', 'driver', 00000001, 'Reject Time slot.'),
+(00002460, 'Time slot Accepted', '2024-09-23 10:30:25', 'driver', 00000002, 'Accept Time slot.'),
+(00002461, 'Time slot Completed', '2024-09-23 11:00:52', 'driver', 00000002, 'Complete Time slot.'),
+(00002462, 'Time Slot Update', '2024-09-23 11:09:00', 'user', 00000001, 'Time Slot Has Been Updated by Controller.'),
+(00002463, 'Time Slot Update', '2024-09-23 11:09:08', 'user', 00000001, 'Time Slot Has Been Updated by Controller.'),
+(00002464, 'Time Slot Update', '2024-09-23 11:09:25', 'user', 00000001, 'Time Slot Has Been Updated by Controller.'),
+(00002465, 'Time Slot Update', '2024-09-23 11:10:06', 'user', 00000001, 'Time Slot Has Been Updated by Controller.'),
+(00002466, 'Controller Logged-In', '2024-09-23 11:13:53', 'user', 00000001, 'Controller logged in successfully.'),
+(00002467, 'New Vehicle Added', '2024-09-23 11:14:23', 'user', 00000001, 'New Vehicle Saloon Has Been updated by Controller.'),
+(00002468, 'Controller Logged-In', '2024-11-12 19:12:11', 'user', 00000001, 'Controller logged in successfully.');
 
 -- --------------------------------------------------------
 
@@ -2512,34 +2545,6 @@ INSERT INTO `airports` (`ap_id`, `ap_name`, `ap_address`, `ap_city`, `ap_code`, 
 (00000008, 'Southend Airport', 'Eastwoodbury Cres, Southend-on-Sea SS2 6YF', 'United Kingdom', 'SEN', '2023-10-27 19:00:00'),
 (00000009, 'London City Airport', 'Hartmann Rd, London E16 2PX', 'United Kingdom', 'LCY', '2023-10-27 19:00:00'),
 (00000010, 'Newcastle International Airport', 'Woolsington, Newcastle upon Tyne NE13 8BZ', 'United Kingdom', 'NCL', '2023-10-27 19:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `availability_times`
---
-
-CREATE TABLE `availability_times` (
-  `at_id` int(8) UNSIGNED ZEROFILL NOT NULL,
-  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
-  `at_date` date NOT NULL,
-  `start_time` time NOT NULL,
-  `end_time` time NOT NULL,
-  `at_status` int(11) NOT NULL DEFAULT 0,
-  `added_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `availability_times`
---
-
-INSERT INTO `availability_times` (`at_id`, `d_id`, `at_date`, `start_time`, `end_time`, `at_status`, `added_time`) VALUES
-(00000001, 00000002, '2024-08-22', '10:00:00', '13:00:00', 1, '2024-08-21 20:10:23'),
-(00000002, 00000002, '2024-08-22', '14:00:00', '16:00:00', 1, '2024-08-21 20:44:52'),
-(00000003, 00000002, '2024-08-22', '17:00:00', '19:00:00', 1, '2024-08-21 21:12:34'),
-(00000004, 00000002, '2024-08-23', '09:00:00', '11:00:00', 1, '2024-08-21 21:05:21'),
-(00000005, 00000002, '2024-08-23', '09:00:00', '11:00:00', 1, '2024-08-21 21:04:18'),
-(00000006, 00000002, '2024-08-23', '09:00:00', '11:00:00', 1, '2024-08-21 21:05:38');
 
 -- --------------------------------------------------------
 
@@ -2621,7 +2626,8 @@ CREATE TABLE `bookings` (
   `booker_commission` int(10) NOT NULL,
   `booking_status` varchar(55) NOT NULL,
   `bid_status` tinyint(1) NOT NULL DEFAULT 0,
-  `bid_time` datetime NOT NULL,
+  `bid_date` date NOT NULL,
+  `bid_time` time NOT NULL,
   `bid_note` varchar(255) NOT NULL,
   `payment_type` varchar(255) NOT NULL,
   `customer_name` varchar(255) NOT NULL,
@@ -2634,60 +2640,60 @@ CREATE TABLE `bookings` (
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booker_commission`, `booking_status`, `bid_status`, `bid_time`, `bid_note`, `payment_type`, `customer_name`, `customer_email`, `customer_phone`, `book_add_date`) VALUES
-(00000003, 00000001, 00000002, 'Manchester, UK', '', 'London, UK', '698-702 High Road', 'N12 9PY', 2, '2024-08-15', '21:00:00', 'One Way', 00000001, '2', 'Yes', '', '00:00:00', '', 5040, 336, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000005, 00000001, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'London, UK', '', 'W16', 2, '2024-07-20', '18:00:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 414, 28, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000006, 00000001, 00000002, 'Leeds, UK', '', 'Leicester, UK', '', 'N12', 2, '2024-07-09', '10:15:00', 'One Way', 00000001, '1', 'Yes', '', '00:00:00', '', 2370, 158, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000007, 00000001, 00000002, 'Leeds, UK', '', 'Luton, UK', '', 'N12 9PY', 2, '2024-07-13', '16:37:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 3975, 265, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000008, 00000001, 00000002, 'Liverpool, UK', '', 'Leeds, UK', '', 'N12 9PY', 2, '2024-07-13', '17:31:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 1755, 117, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000010, 00000001, 00000002, 'Dartford, UK', '', 'Deeside, UK', '', 'N12 9PY', 2, '2024-07-14', '23:45:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 5715, 381, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000012, 00000001, 00000002, 'London W2, UK', '', 'London W3, UK', '', 'N12 9PY', 3, '2024-07-13', '21:30:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 134, 9, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000013, 00000001, 00000002, 'Leeds, UK', '', 'Leicester, UK', 'ik', 'W12', 2, '2024-07-15', '16:12:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 2370, 158, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000014, 00000001, 00000002, 'Norwich, UK', '', 'Hastings, UK', 'uk', 'W12', 4, '2024-07-16', '17:22:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 4050, 270, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000015, 00000001, 00000002, 'Manchester, UK', '', 'Milton Keynes, UK', 'uk', 'W12', 3, '2024-07-19', '17:22:00', 'One Way', 00000006, '2', 'No', '', '00:00:00', '', 3690, 246, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000016, 00000001, 00000002, 'Farringdon, London, UK', '', 'Wales, UK', 'uk', 'W12', 3, '2024-07-15', '17:50:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 5130, 342, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000017, 00000001, 00000002, 'Edinburgh, UK', '', 'Richmond, UK', 'uk', 'W12', 9, '2024-07-15', '17:25:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 9930, 662, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000019, 00000001, 00000002, 'Wales, UK', '', 'Winchester, UK', 'ik', 'N12 9PY', 5, '2024-07-17', '02:46:00', 'One Way', 00000001, '2', 'Yes', '', '00:00:00', '', 4568, 290, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000020, 00000001, 00000002, 'Fort William, UK', '', 'Devon, UK', 'ik', 'W12', 8, '2024-07-17', '05:48:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 14553, 924, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000021, 00000001, 00000002, 'Ullapool, UK', '', 'Uxbridge, UK', '', 'N12 9PY', 2, '2024-07-17', '21:27:00', 'Return', 00000001, '2', 'No', '', '00:00:00', '', 15404, 978, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000022, 00000001, 00000002, 'Henley-on-Thames, UK', '', 'Hertfordshire, UK', '', 'N12 9PY', 6, '2024-07-17', '22:11:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 1232, 78, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000023, 00000001, 00000002, 'London W2, UK', '', 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'N12 9PY', 2, '2024-07-18', '18:30:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 387, 26, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000024, 00000001, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', ',,', 'London, UK', 'uk', 'N12 9PY', 2, '2024-07-23', '00:38:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 450, 30, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000025, 00000001, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'N12 9PY', 3, '2024-07-27', '23:30:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 360, 40, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
-(00000026, 00000001, 00000003, 'West London Studios, Fulham Road, London, UK', '', 'Central London, London, UK', 'W12', 'N12= North Finchley, Woodside Park', 2, '2024-07-30', '16:00:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 89, 6, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000027, 00000003, 00000002, 'Leadgate, Consett, UK', '', 'Airport Tavern, Bridgwater Road, Lulsgate, Felton, Bristol, UK', '', 'N17= Tottenham', 2, '2024-08-15', '22:20:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 7335, 489, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
-(00000028, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', '', 'N4= Finsbury Park, Manor House', 2, '2024-08-14', '17:29:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 413, 28, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000029, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', '', 'N7= Holloway', 2, '2024-08-13', '23:30:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 433, 28, 30, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000030, 00000003, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'East Ham, London, UK', '', 'N12= North Finchley, Woodside Park', 2, '2024-08-15', '19:30:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 1520, 97, 30, 0, 0, 0, 0, 20, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
-(00000031, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'High Road, London N12 9PY, UK', '', ' ', 1, '2024-08-13', '22:30:00', 'One Way', 00000001, '', 'No', '', '00:00:00', '', 513, 33, 0, 0, 0, 0, 0, 0, 'Pending', 1, '2024-08-26 19:14:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000032, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'East Ham, London, UK', '698-702 High Road', 'N4= Finsbury Park, Manor House', 2, '2024-08-13', '17:35:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 840, 56, 30, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'azibahmed@hotmail.co.uk', '07552834179', '0000-00-00 00:00:00'),
-(00000033, 00000001, 00000003, 'Stansted Airport, Stansted, UK', '', 'London E3 3JG, UK', '', ' ', 2, '2024-08-13', '21:30:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 795, 53, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000034, 00000003, 00000002, 'Jail Lane, Biggin Hill, Westerham, UK', '', 'Eastbourne, UK', '', 'N7= Holloway', 2, '2024-08-15', '23:34:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 1202, 76, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
-(00000035, 00000001, 00000003, 'London Luton Airport Roundabout, Luton, UK', '', 'Luton, UK', '', 'W12', 2, '2024-08-15', '18:15:00', 'One Way', 00000003, '2', 'Yes', '', '00:00:00', '', 48, 3, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000036, 00000003, 00000002, 'Jail Road, Batley, UK', '', 'Weston-super-Mare, UK', '', 'N12', 2, '2024-08-15', '23:50:00', 'One Way', 00000001, '1', 'Yes', '', '00:00:00', '', 5686, 361, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
-(00000037, 00000001, 00000003, 'Airport Way, Luton, UK', '', 'Valley Avenue, London N12 9PG, UK', '', ' ', 2, '2024-08-15', '23:07:00', 'One Way', 00000004, '', '', '', '00:00:00', '', 710, 47, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000038, 00000003, 00000002, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', '', 'Weston-super-Mare, UK', '', 'N19= Archway, Tufnell Park', 2, '2024-08-16', '20:52:00', 'One Way', 00000001, '', 'No', '', '00:00:00', '', 3060, 204, 30, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
-(00000039, 00000003, 00000002, 'Weston-super-Mare, UK', '', 'Eastbourne, UK', '', 'N8= Crouch End, Hornsey', 2, '2024-08-22', '20:30:00', 'One Way', 00000001, '', 'No', '', '00:00:00', '', 5085, 339, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
-(00000040, 00000001, 00000003, 'Faisal Food Store, Derby Street, Bolton, UK', '', 'Zamor Crescent, Thurcroft, Rotherham, UK', '', ' ', 2, '2024-08-22', '19:45:00', 'One Way', 00000004, '', '', '', '00:00:00', '', 1965, 131, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000041, 00000002, 00000001, 'Farnborough, UK', ',', 'London, UK', '', 'N2= East Finchley', 2, '2024-08-16', '19:09:00', '', 00000004, '', '', '', '00:00:00', '', 930, 62, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
-(00000042, 00000001, 00000003, 'Hertfordshire, UK', '', 'Eastbourne, UK', '', 'N12= North Finchley, Woodside Park', 2, '2024-08-22', '23:10:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 2945, 187, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000043, 00000001, 00000003, 'Jail Lane, Biggin Hill, Westerham, UK', '', 'East Ham, London, UK', '', 'N8= Crouch End, Hornsey', 2, '2024-08-22', '21:44:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 773, 49, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000044, 00000001, 00000003, 'Jail Lane, Biggin Hill, Westerham, UK', '', 'East Ham, London, UK', '', 'N8= Crouch End, Hornsey', 2, '2024-08-22', '21:36:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 773, 49, 0, 0, 0, 0, 0, 0, 'Pending', 1, '2024-08-23 21:06:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000046, 00000001, 00000003, 'London W2 2UH, UK', '', 'Westminster, London, UK', '', ' ', 2, '2024-08-22', '20:55:00', 'One Way', 00000004, '', '', '', '00:00:00', '', 68, 4, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000047, 00000001, 00000003, '736 Bath Road, Cranford, Hounslow, UK', '', 'Heathfield, UK', '', ' ', 1, '2024-08-22', '22:15:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 1875, 125, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000048, 00000001, 00000003, '736 Bath Road, Cranford, Hounslow, UK', '', 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '164-166 High Road', ' ', 1, '2024-08-22', '23:25:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 71, 5, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000049, 00000001, 00000003, 'Stansted Airport, Stansted, UK', '', 'Harlow, UK', '', ' ', 1, '2024-08-22', '23:50:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 342, 23, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000050, 00000001, 00000003, 'London, UK', '', 'Luton, UK', '', 'N3= Finchley Central', 1, '2024-08-22', '21:30:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 851, 54, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000051, 00000001, 00000003, 'Nottingham, UK', '', 'Loughborough, UK', '', ' ', 1, '2024-08-22', '21:30:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 398, 25, 0, 68, 25, 35, 5, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000052, 00000001, 00000003, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', '', 'East Ham, London, UK', '698-702 High Road', 'SE19= Crystal Palace, Upper Norwood', 2, '2024-08-21', '23:15:00', 'One Way', 00000002, '6', 'No', '', '00:00:00', '', 880, 56, 30, 25, 96, 32, 64, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'azibahmed@hotmail.co.uk', '07552834179', '0000-00-00 00:00:00'),
-(00000053, 00000001, 00000003, 'Heath and Reach, Leighton Buzzard, UK', ',', 'Eastbourne, UK', 'Muzaffar Kaloni gali Nomber 12', 'E10= Leyton', 3, '2024-08-21', '13:19:00', 'One Way', 00000002, '3', 'No', '', '00:00:00', '', 3105, 207, 20, 20, 0, 50, 50, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'sharyjagga18@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000054, 00000001, 00000003, 'Terminal 5, Wallis Road, Longford, Hounslow, UK', '', 'London NW3 2QG, UK', '', ' ', 1, '2024-08-22', '18:30:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 717, 48, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000055, 00000001, 00000003, 'Heathrow Terminal 1, Hounslow, UK', '', 'Nw3', '', ' ', 1, '2024-08-21', '23:25:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 0, 0, 0, 3, 4, 5, 2, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000056, 00000001, 00000003, 'High Road, London N12 9PY, UK', '', 'Lewes Road, London N12 9NH, UK', '', ' ', 1, '2024-08-21', '21:50:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 17, 1, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000057, 00000001, 00000003, 'Londonderry, UK', '', 'London, UK', 'Street 3 near kareem Town FSD', 'N7= Holloway', 5, '2024-08-22', '23:00:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 12915, 861, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', 'Fuy', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000058, 00000001, 00000003, 'High Road, London N12 9PY, UK', '', 'Torrington Park, London N12 9TS, UK', '', 'W12', 1, '2024-08-22', '12:55:00', 'One Way', 00000002, '1', 'Yes', '', '00:00:00', '', 17, 1, 0, 28, 0, 30, 40, 0, 'Booked', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000059, 00000001, 00000003, 'Stansted Airport, Stansted, UK', '', 'Harlow CM20, UK', '', ' ', 1, '2024-08-23', '11:45:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 363, 24, 0, 5, 5, 22, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000060, 00000001, 00000003, 'Londonderry, UK', '', 'Airport Tavern, Bridgwater Road, Lulsgate, Felton, Bristol, UK', '', ' ', 3, '2024-08-24', '10:30:00', 'One Way', 00000003, '', 'No', '', '00:00:00', '', 12210, 814, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00 00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00');
+INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booker_commission`, `booking_status`, `bid_status`, `bid_date`, `bid_time`, `bid_note`, `payment_type`, `customer_name`, `customer_email`, `customer_phone`, `book_add_date`) VALUES
+(00000003, 00000001, 00000002, 'Manchester, UK', '', 'London, UK', '698-702 High Road', 'N12 9PY', 2, '2024-11-15', '21:00:00', 'One Way', 00000001, '2', 'Yes', '', '00:00:00', '', 5040, 336, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000005, 00000001, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'London, UK', '', 'W16', 2, '2024-11-15', '18:00:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 414, 28, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000006, 00000001, 00000002, 'Leeds, UK', '', 'Leicester, UK', '', 'N12', 2, '2024-11-15', '10:15:00', 'One Way', 00000001, '1', 'Yes', '', '00:00:00', '', 2370, 158, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000007, 00000001, 00000002, 'Leeds, UK', '', 'Luton, UK', '', 'N12 9PY', 2, '2024-11-15', '16:37:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 3975, 265, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000008, 00000001, 00000002, 'Liverpool, UK', '', 'Leeds, UK', '', 'N12 9PY', 2, '2024-11-15', '17:31:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 1755, 117, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000010, 00000001, 00000002, 'Dartford, UK', '', 'Deeside, UK', '', 'N12 9PY', 2, '2024-11-15', '23:45:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 5715, 381, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000012, 00000001, 00000002, 'London W2, UK', '', 'London W3, UK', '', 'N12 9PY', 3, '2024-11-15', '21:30:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 134, 9, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000013, 00000001, 00000002, 'Leeds, UK', '', 'Leicester, UK', 'ik', 'W12', 2, '2024-11-15', '16:12:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 2370, 158, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000014, 00000001, 00000002, 'Norwich, UK', '', 'Hastings, UK', 'uk', 'W12', 4, '2024-11-15', '17:22:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 4050, 270, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000015, 00000001, 00000002, 'Manchester, UK', '', 'Milton Keynes, UK', 'uk', 'W12', 3, '2024-11-15', '17:22:00', 'One Way', 00000006, '2', 'No', '', '00:00:00', '', 3690, 246, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000016, 00000001, 00000002, 'Farringdon, London, UK', '', 'Wales, UK', 'uk', 'W12', 3, '2024-11-15', '17:50:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 5130, 342, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000017, 00000001, 00000002, 'Edinburgh, UK', '', 'Richmond, UK', 'uk', 'W12', 9, '2024-11-15', '17:25:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 9930, 662, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000019, 00000001, 00000002, 'Wales, UK', '', 'Winchester, UK', 'ik', 'N12 9PY', 5, '2024-11-15', '02:46:00', 'One Way', 00000001, '2', 'Yes', '', '00:00:00', '', 4568, 290, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000020, 00000001, 00000002, 'Fort William, UK', '', 'Devon, UK', 'ik', 'W12', 8, '2024-11-15', '05:48:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 14553, 924, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000021, 00000001, 00000002, 'Ullapool, UK', '', 'Uxbridge, UK', '', 'N12 9PY', 2, '2024-11-15', '21:27:00', 'Return', 00000001, '2', 'No', '', '00:00:00', '', 15404, 978, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000022, 00000001, 00000002, 'Henley-on-Thames, UK', '', 'Hertfordshire, UK', '', 'N12 9PY', 6, '2024-11-15', '22:11:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 1232, 78, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000023, 00000001, 00000002, 'London W2, UK', '', 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'N12 9PY', 2, '2024-11-15', '18:30:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 387, 26, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000024, 00000001, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', ',,', 'London, UK', 'uk', 'N12 9PY', 2, '2024-11-15', '00:38:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 450, 30, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000025, 00000001, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'N12 9PY', 3, '2024-11-15', '23:30:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 360, 40, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', 'Cash', 'Atiq Ramzan', 'admin@prenero.com', '+923157524000', '2024-06-12 16:06:34'),
+(00000026, 00000001, 00000003, 'West London Studios, Fulham Road, London, UK', '', 'Central London, London, UK', 'W12', 'N12= North Finchley, Woodside Park', 2, '2024-11-15', '16:00:00', 'One Way', 00000004, '2', 'No', '', '00:00:00', '', 89, 6, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000027, 00000003, 00000002, 'Leadgate, Consett, UK', '', 'Airport Tavern, Bridgwater Road, Lulsgate, Felton, Bristol, UK', '', 'N17= Tottenham', 2, '2024-11-15', '22:20:00', 'One Way', 00000003, '2', 'No', '', '00:00:00', '', 7335, 489, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
+(00000028, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', '', 'N4= Finsbury Park, Manor House', 2, '2024-11-15', '17:29:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 413, 28, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000029, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', '', 'N7= Holloway', 2, '2024-11-15', '23:30:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 433, 28, 30, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000030, 00000003, 00000002, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'East Ham, London, UK', '', 'N12= North Finchley, Woodside Park', 2, '2024-11-15', '19:30:00', 'One Way', 00000001, '2', 'No', '', '00:00:00', '', 1520, 97, 30, 0, 0, 0, 0, 20, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
+(00000031, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'High Road, London N12 9PY, UK', '', ' ', 1, '2024-11-15', '22:30:00', 'One Way', 00000001, '', 'No', '', '00:00:00', '', 513, 33, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '19:14:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000032, 00000001, 00000003, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'East Ham, London, UK', '698-702 High Road', 'N4= Finsbury Park, Manor House', 2, '2024-11-15', '17:35:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 840, 56, 30, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'azibahmed@hotmail.co.uk', '07552834179', '0000-00-00 00:00:00'),
+(00000033, 00000001, 00000003, 'Stansted Airport, Stansted, UK', '', 'London E3 3JG, UK', '', ' ', 2, '2024-11-15', '21:30:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 795, 53, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000034, 00000003, 00000002, 'Jail Lane, Biggin Hill, Westerham, UK', '', 'Eastbourne, UK', '', 'N7= Holloway', 2, '2024-11-15', '23:34:00', 'One Way', 00000002, '2', 'No', '', '00:00:00', '', 1202, 76, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
+(00000035, 00000001, 00000003, 'London Luton Airport Roundabout, Luton, UK', '', 'Luton, UK', '', 'W12', 2, '2024-11-15', '18:15:00', 'One Way', 00000003, '2', 'Yes', '', '00:00:00', '', 48, 3, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000036, 00000003, 00000002, 'Jail Road, Batley, UK', '', 'Weston-super-Mare, UK', '', 'N12', 2, '2024-11-15', '23:50:00', 'One Way', 00000001, '1', 'Yes', '', '00:00:00', '', 5686, 361, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
+(00000037, 00000001, 00000003, 'Airport Way, Luton, UK', '', 'Valley Avenue, London N12 9PG, UK', '', ' ', 2, '2024-11-15', '23:07:00', 'One Way', 00000004, '', '', '', '00:00:00', '', 710, 47, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000038, 00000003, 00000002, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', '', 'Weston-super-Mare, UK', '', 'N19= Archway, Tufnell Park', 2, '2024-11-15', '20:52:00', 'One Way', 00000001, '', 'No', '', '00:00:00', '', 3060, 204, 30, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
+(00000039, 00000003, 00000002, 'Weston-super-Mare, UK', '', 'Eastbourne, UK', '', 'N8= Crouch End, Hornsey', 2, '2024-11-15', '20:30:00', 'One Way', 00000001, '', 'No', '', '00:00:00', '', 5085, 339, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
+(00000040, 00000001, 00000003, 'Faisal Food Store, Derby Street, Bolton, UK', '', 'Zamor Crescent, Thurcroft, Rotherham, UK', '', ' ', 2, '2024-11-15', '19:45:00', 'One Way', 00000004, '', '', '', '00:00:00', '', 1965, 131, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000041, 00000002, 00000001, 'Farnborough, UK', ',', 'London, UK', '', 'N2= East Finchley', 2, '2024-11-15', '19:09:00', '', 00000004, '', '', '', '00:00:00', '', 930, 62, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'prenero12@gmail.com', '+923127346634', '0000-00-00 00:00:00'),
+(00000042, 00000001, 00000003, 'Hertfordshire, UK', '', 'Eastbourne, UK', '', 'N12= North Finchley, Woodside Park', 2, '2024-11-15', '23:10:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 2945, 187, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000043, 00000001, 00000003, 'Jail Lane, Biggin Hill, Westerham, UK', '', 'East Ham, London, UK', '', 'N8= Crouch End, Hornsey', 2, '2024-11-15', '21:44:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 773, 49, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000044, 00000001, 00000003, 'Jail Lane, Biggin Hill, Westerham, UK', '', 'East Ham, London, UK', '', 'N8= Crouch End, Hornsey', 2, '2024-11-15', '21:36:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 773, 49, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '21:06:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000046, 00000001, 00000003, 'London W2 2UH, UK', '', 'Westminster, London, UK', '', ' ', 2, '2024-11-15', '20:55:00', 'One Way', 00000004, '', '', '', '00:00:00', '', 68, 4, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000047, 00000001, 00000003, '736 Bath Road, Cranford, Hounslow, UK', '', 'Heathfield, UK', '', ' ', 1, '2024-11-15', '22:15:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 1875, 125, 0, 0, 0, 0, 0, 0, 'Pending', 0, '2024-09-22', '05:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000048, 00000001, 00000003, '736 Bath Road, Cranford, Hounslow, UK', '', 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '164-166 High Road', ' ', 1, '2024-11-15', '23:25:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 71, 5, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000049, 00000001, 00000003, 'Stansted Airport, Stansted, UK', '', 'Harlow, UK', '', ' ', 1, '2024-11-15', '23:50:00', 'One Way', 00000001, '', '', '', '00:00:00', '', 342, 23, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000050, 00000001, 00000003, 'London, UK', '', 'Luton, UK', '', 'N3= Finchley Central', 1, '2024-11-15', '21:30:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 851, 54, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000051, 00000001, 00000003, 'Nottingham, UK', '', 'Loughborough, UK', '', ' ', 1, '2024-11-15', '21:30:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 398, 25, 0, 68, 25, 35, 5, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000052, 00000001, 00000003, 'Heathrow East Terminal, Inner Ring East, Hounslow, UK', '', 'East Ham, London, UK', '698-702 High Road', 'SE19= Crystal Palace, Upper Norwood', 2, '2024-11-15', '23:15:00', 'One Way', 00000002, '6', 'No', '', '00:00:00', '', 880, 56, 30, 25, 96, 32, 64, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'azibahmed@hotmail.co.uk', '07552834179', '0000-00-00 00:00:00'),
+(00000053, 00000001, 00000003, 'Heath and Reach, Leighton Buzzard, UK', ',', 'Eastbourne, UK', 'Muzaffar Kaloni gali Nomber 12', 'E10= Leyton', 3, '2024-11-15', '13:19:00', 'One Way', 00000002, '3', 'No', '', '00:00:00', '', 3105, 207, 20, 20, 0, 50, 50, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'sharyjagga18@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000054, 00000001, 00000003, 'Terminal 5, Wallis Road, Longford, Hounslow, UK', '', 'London NW3 2QG, UK', '', ' ', 1, '2024-11-15', '18:30:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 717, 48, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000055, 00000001, 00000003, 'Heathrow Terminal 1, Hounslow, UK', '', 'Nw3', '', ' ', 1, '2024-11-15', '23:25:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 0, 0, 0, 3, 4, 5, 2, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000056, 00000001, 00000003, 'High Road, London N12 9PY, UK', '', 'Lewes Road, London N12 9NH, UK', '', ' ', 1, '2024-11-15', '21:50:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 17, 1, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000057, 00000001, 00000003, 'Londonderry, UK', '', 'London, UK', 'Street 3 near kareem Town FSD', 'N7= Holloway', 5, '2024-11-15', '23:00:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 12915, 861, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', 'Fuy', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000058, 00000001, 00000003, 'High Road, London N12 9PY, UK', '', 'Torrington Park, London N12 9TS, UK', '', 'W12', 1, '2024-11-15', '12:55:00', 'One Way', 00000002, '1', 'Yes', '', '00:00:00', '', 17, 1, 0, 28, 0, 30, 40, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000059, 00000001, 00000003, 'Stansted Airport, Stansted, UK', '', 'Harlow CM20, UK', '', ' ', 1, '2024-11-15', '11:45:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 363, 24, 0, 5, 5, 22, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
+(00000060, 00000001, 00000003, 'Londonderry, UK', '', 'Airport Tavern, Bridgwater Road, Lulsgate, Felton, Bristol, UK', '', ' ', 3, '2024-11-15', '10:30:00', 'One Way', 00000003, '', 'No', '', '00:00:00', '', 12210, 814, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -3265,8 +3271,8 @@ INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_
 (00000001, 'Azib Ahmed', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'London ', 'WJ1234', '669212c35f56b_booker_app.png', 'Male', 'English', 'Bermingham', '1234567', '31.4125294', '73.1154872', 'Offline', 1, 3, 'dfae3ecadfe24c54ea4d95424a0141fe6de6450a4ea7cba933cbed2eee596d49', '2024-08-24 19:42:19'),
 (00000002, 'Atiq Ramzan', 'admin@prenero.com', '+443157524000', '12345678', '', 'W12', '66cb30a89fb4e_IMG_web.jpg', 'Male', 'English', 'Ireland', '', '31.4416932', '73.0887596', 'online', 1, 0, NULL, '2024-08-25 13:24:56'),
 (00000003, 'Tahir ', 'mirzatahir1900@gmail.com', '+923001900228', '1234567_8', '', '', '', '', '', 'South East', '', '', '', 'Offline', 1, 0, NULL, '0000-00-00 00:00:00'),
-(00000004, 'Muhammad Abdullah Tarar ', 'abdullahtarar979@gmail.com', '+443239660455', '123456789', '', '', '', '', '', 'East of England', '', '', '', 'Offline', 1, 0, NULL, '0000-00-00 00:00:00'),
-(00000009, 'Muhammad Shaheryar', 'shary@prenero.com', '+443346452312', 'Prenero1102/*', '', '38600', '66cb31d84a668_3d-animation-character-cartoon_113255-10862.jpg', 'Male', 'English', 'London', '', '', '', '', 1, 0, '280840b42e1647a13005f59676b988a8e23c08bd4e4d5fbb6f6699889fa9df83', '2024-08-25 13:30:00');
+(00000004, 'Muhammad Abdullah Tarar ', 'abdullahtarar979@gmail.com', '+443239660455', '123456789', '', '', '', '', '', 'East of England', '', '', '', 'Offline', 0, 0, NULL, '2024-09-14 07:52:56'),
+(00000009, 'Muhammad Shaheryar', 'shary@prenero.com', '+443346452312', 'Prenero1102/*', '', '38600', '66cb31d84a668_3d-animation-character-cartoon_113255-10862.jpg', 'Male', 'English', 'London', '', '', '', '', 1, 0, '280840b42e1647a13005f59676b988a8e23c08bd4e4d5fbb6f6699889fa9df83', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -3327,10 +3333,6 @@ INSERT INTO `driver_documents` (`dd_id`, `d_id`, `d_license_front`, `d_license_b
 (00000002, 00000002, '66cb2f2600e63.jpg', '66cb2f48ab2a4.jpg', '66cb2f4d94ec4.jpg', '66cb2f52dab7c.jpg', '66cb2f5803075.jpg', '66cb2f67200e1.jpg', '66cb2f5f3f9f5.jpg', '66cb2f6dbccde.jpg', '2024-08-25 13:19:41'),
 (00000003, 00000003, '', '', '', '', '', '', '', '', '2024-08-06 17:10:11'),
 (00000004, 00000004, '', '', '', '', '', '', '', '', '2024-08-06 17:33:11'),
-(00000005, 00000005, '', '', '', '', '', '', '', '', '2024-08-17 16:16:19'),
-(00000006, 00000006, '', '', '', '', '', '', '', '', '2024-08-17 19:53:13'),
-(00000007, 00000007, '', '', '', '', '', '', '', '', '2024-08-20 15:13:25'),
-(00000008, 00000008, '', '', '', '', '', '', '', '', '2024-08-20 18:33:33'),
 (00000009, 00000009, '66cb30e07d73b.jpg', '66cb30e6492d3.jpg', '66cb30eb29c76.jpg', '66cb30ef9e48d.jpg', '66cb30f4f050b.jpg', '66cb31040c8c3.jpg', '66cb30fd4c3d3.jpg', '66cb3108f1b11.jpg', '2024-08-25 13:26:32');
 
 -- --------------------------------------------------------
@@ -11071,6 +11073,23 @@ INSERT INTO `driver_vehicle` (`dv_id`, `v_id`, `d_id`, `v_make`, `v_model`, `v_c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `driving_license`
+--
+
+CREATE TABLE `driving_license` (
+  `dl_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `dl_number` varchar(25) NOT NULL,
+  `dl_expiry` varchar(25) NOT NULL,
+  `dl_front` varchar(255) NOT NULL,
+  `dl_back` int(255) NOT NULL,
+  `dl_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `dl_updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `fares`
 --
 
@@ -11640,6 +11659,38 @@ INSERT INTO `special_dates` (`dt_id`, `special_date`, `event_name`, `percent_inc
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `time_slots`
+--
+
+CREATE TABLE `time_slots` (
+  `ts_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `ts_date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `price_hour` decimal(8,2) NOT NULL,
+  `total_pay` decimal(8,2) NOT NULL,
+  `ts_status` tinyint(4) NOT NULL DEFAULT 0,
+  `ts_added_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `time_slots`
+--
+
+INSERT INTO `time_slots` (`ts_id`, `d_id`, `ts_date`, `start_time`, `end_time`, `price_hour`, `total_pay`, `ts_status`, `ts_added_time`) VALUES
+(00000001, 00000001, '2024-09-22', '10:00:00', '13:00:00', 25.00, 75.00, 2, '2024-09-23 11:13:26'),
+(00000002, 00000000, '2024-09-22', '14:00:00', '16:00:00', 40.00, 80.00, 0, '2024-09-23 11:10:06'),
+(00000003, 00000002, '2024-09-22', '17:00:00', '19:00:00', 60.00, 120.00, 4, '2024-09-23 11:13:11'),
+(00000004, 00000000, '2024-09-22', '09:00:00', '11:00:00', 60.00, 120.00, 0, '2024-09-23 11:13:04'),
+(00000005, 00000000, '2024-09-22', '09:00:00', '11:00:00', 35.00, 70.00, 0, '2024-09-23 11:09:08'),
+(00000006, 00000000, '2024-09-22', '09:00:00', '11:00:00', 30.00, 60.00, 0, '2024-09-23 11:09:00'),
+(00000008, 00000000, '2024-09-24', '12:30:00', '15:30:00', 20.00, 60.00, 0, '2024-09-23 11:13:38'),
+(00000009, 00000000, '2024-09-27', '13:45:00', '14:15:00', 30.00, 15.00, 0, '2024-09-23 10:07:06');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -11680,7 +11731,7 @@ CREATE TABLE `vehicles` (
   `v_id` int(11) UNSIGNED ZEROFILL NOT NULL,
   `v_name` varchar(255) NOT NULL,
   `v_seat` int(55) NOT NULL,
-  `luggage` int(5) NOT NULL,
+  `v_luggage` int(5) NOT NULL,
   `v_airbags` int(55) DEFAULT 0,
   `v_wchair` int(55) DEFAULT 0,
   `v_babyseat` int(55) DEFAULT 0,
@@ -11693,8 +11744,8 @@ CREATE TABLE `vehicles` (
 -- Dumping data for table `vehicles`
 --
 
-INSERT INTO `vehicles` (`v_id`, `v_name`, `v_seat`, `luggage`, `v_airbags`, `v_wchair`, `v_babyseat`, `v_pricing`, `v_img`, `date_added`) VALUES
-(00000000001, 'Saloon', 58, 1, 0, 0, 0, 50, 'toyota-prius.png', '2024-05-10 11:54:45'),
+INSERT INTO `vehicles` (`v_id`, `v_name`, `v_seat`, `v_luggage`, `v_airbags`, `v_wchair`, `v_babyseat`, `v_pricing`, `v_img`, `date_added`) VALUES
+(00000000001, 'Saloon', 4, 1, 0, 0, 0, 50, 'toyota-prius.png', '2024-09-23 11:14:23'),
 (00000000002, 'Estate', 4, 1, 1, 1, 0, 50, 'Ford-Galaxy.png', '2023-12-25 21:15:44'),
 (00000000003, 'MPV', 4, 2, 0, 0, 0, 50, 'Ford-Galaxy.png', '2023-10-17 14:39:57'),
 (00000000004, 'Large MPV', 5, 4, 0, 0, 0, 50, 'Skoda_Octavia.png', '2023-10-17 14:39:57'),
@@ -11735,10 +11786,6 @@ INSERT INTO `vehicle_documents` (`vd_id`, `d_id`, `log_book`, `mot_certificate`,
 (00000002, 00000002, '66cb30496bc49.jpg', '66cb304eb8ea1.jpg', '66cb305334548.jpg', '66cb305805d97.jpg', '66cb306aea7ea.jpg', '66cb305f0e2e0.jpg', '66cb306450845.jpg', '66cb307034b23.jpg', '66cb307579b51.jpg', '66cb307ace11f.jpg', '2024-08-25 13:24:10'),
 (00000003, 00000003, '', '', '', '', '', '', '', '', '', '', '2024-08-06 17:10:11'),
 (00000004, 00000004, '', '', '', '', '', '', '', '', '', '', '2024-08-06 17:33:11'),
-(00000005, 00000005, '', '', '', '', '', '', '', '', '', '', '2024-08-17 16:16:19'),
-(00000006, 00000006, '', '', '', '', '', '', '', '', '', '', '2024-08-17 19:53:13'),
-(00000007, 00000007, '', '', '', '', '', '', '', '', '', '', '2024-08-20 15:13:25'),
-(00000008, 00000008, '', '', '', '', '', '', '', '', '', '', '2024-08-20 18:33:33'),
 (00000009, 00000009, '66cb3116e501b.jpg', '66cb311b5ba97.jpg', '66cb31207a755.jpg', '66cb3124b9544.jpg', '66cb3135f121e.jpg', '66cb312a13688.jpg', '66cb312f4cedf.jpg', '66cb313b35418.jpg', '66cb314105eca.jpg', '66cb31471b913.jpg', '2024-08-25 13:27:35');
 
 -- --------------------------------------------------------
@@ -12004,12 +12051,6 @@ ALTER TABLE `airports`
   ADD PRIMARY KEY (`ap_id`);
 
 --
--- Indexes for table `availability_times`
---
-ALTER TABLE `availability_times`
-  ADD PRIMARY KEY (`at_id`);
-
---
 -- Indexes for table `bids`
 --
 ALTER TABLE `bids`
@@ -12156,6 +12197,12 @@ ALTER TABLE `driver_vehicle`
   ADD PRIMARY KEY (`dv_id`);
 
 --
+-- Indexes for table `driving_license`
+--
+ALTER TABLE `driving_license`
+  ADD PRIMARY KEY (`dl_id`);
+
+--
 -- Indexes for table `fares`
 --
 ALTER TABLE `fares`
@@ -12252,6 +12299,12 @@ ALTER TABLE `special_dates`
   ADD PRIMARY KEY (`dt_id`);
 
 --
+-- Indexes for table `time_slots`
+--
+ALTER TABLE `time_slots`
+  ADD PRIMARY KEY (`ts_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -12289,19 +12342,13 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2436;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2469;
 
 --
 -- AUTO_INCREMENT for table `airports`
 --
 ALTER TABLE `airports`
   MODIFY `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `availability_times`
---
-ALTER TABLE `availability_times`
-  MODIFY `at_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `bids`
@@ -12448,6 +12495,12 @@ ALTER TABLE `driver_vehicle`
   MODIFY `dv_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `driving_license`
+--
+ALTER TABLE `driving_license`
+  MODIFY `dl_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `fares`
 --
 ALTER TABLE `fares`
@@ -12544,10 +12597,16 @@ ALTER TABLE `special_dates`
   MODIFY `dt_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `time_slots`
+--
+ALTER TABLE `time_slots`
+  MODIFY `ts_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `vehicles`

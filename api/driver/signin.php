@@ -17,6 +17,12 @@ if (isset($_POST['d_phone'])) {
     if ($r && $r->num_rows > 0) {
         $output = $r->fetch_assoc();
         $d_id = $output['d_id'];
+        
+        $docsql = "";
+        
+        $docr = mysqli_query($connect, $docsql);
+        
+        
 
         // Generate a unique token
         $token = bin2hex(random_bytes(32));
