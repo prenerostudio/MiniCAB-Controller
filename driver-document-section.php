@@ -10,10 +10,10 @@
             <div class="row align-items-center">				
                 <div class="col-auto">		
                     <h5>Image Front</h5>		
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/driving-license/<?php echo $drow['d_license_front'];?>); background-size:contain; width: 220px; height: 160px;">		
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/driving-license/<?php echo $drow['dl_front'];?>); background-size:contain; width: 220px; height: 160px;">		
                     </span>			
                     <h5>Image Back</h5>		
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/driving-license/<?php echo $drow['d_license_front'];?>); background-size:contain; width: 220px; height: 160px;">		
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/driving-license/<?php echo $drow['dl_back'];?>); background-size:contain; width: 220px; height: 160px;">		
                     </span>		
                 </div>
                 <div class="col-auto">
@@ -39,15 +39,51 @@
                     </form>							
                 </div>
             </div>	
-        </div>											
+        </div>	
+        
+            <div class="col-md-6">			
+            <h3 class="card-title">				
+                Proof of Address 1						
+            </h3>				
+            <div class="row align-items-center">				
+                <div class="col-auto">	
+                    <h5>Proof of Address 1</h5>
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/address-proof/<?php echo $drow['ap_1'];?>); background-size:contain; width: 220px; height: 160px;">					
+                    </span>
+                    <h5>Proof of Address 2</h5>
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/address-proof/<?php echo $drow['ap_2'];?>); background-size:contain; width: 220px; height: 160px;">		
+                    </span>		
+                </div>		
+                <div class="col-auto">		
+                    <form action="upload-address-proof.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('pa1')">
+                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">			                       
+                        <div class="from-group mb-3">  
+                            <label class="form-label"> Proof of Address 1 </label>                          
+                            <input type="file" id="pa1" name="pa1" accept="image/*"  class="form-control" required>                        
+                        </div>                        
+                        <div class="form-group mb-3">                        
+                            <label class="form-label"> Proof of Address 2 </label>                          
+                            <input type="file" id="pa2" name="pa2" accept="image/*"  class="form-control" required>                        
+                        </div>			
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
+                    </form>		
+                </div>		
+            </div>	
+        </div>
+	
 	        	        	
-        <div class="col-md-6">			
+              			
+    </div>			
+
+    <div class="row mb-3">				
+    
+         <div class="col-md-6">			
             <h3 class="card-title">				
                 PCO License						
             </h3>				
             <div class="row align-items-center">				
                 <div class="col-auto">						
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/pco-license/<?php echo $drow['pco_license'];?>); background-size:contain; width: 220px; height: 160px;">		
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/pco-license/<?php echo $drow['pl_img'];?>); background-size:contain; width: 220px; height: 160px;">		
                     </span>		
                 </div>		
                 <div class="col-auto">						
@@ -69,189 +105,72 @@
                     </form>							
                 </div>						
             </div>				
-        </div>		        			
-    </div>			
-
-    <div class="row mb-3">				
-        <div class="col-md-6">			
-            <h3 class="card-title">				
-                Proof of Address 1						
-            </h3>				
-            <div class="row align-items-center">				
-                <div class="col-auto">						
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/address-proof/<?php echo $drow['address_proof_1'];?>); background-size:contain; width: 220px; height: 160px;">					
-                    </span>							
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/address-proof/<?php echo $drow['address_proof_2'];?>); background-size:contain; width: 220px; height: 160px;">		
-                    </span>		
-                </div>		
-                <div class="col-auto">		
-                    <form action="upload-pa1.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('pa1')">					
-		
-                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	
-			
-                        
-                        <div class="from-group mb-3">
-  
-                            <label class="form-label"> Proof of Address 1 </label>
-                          
-                            <input type="file" id="pa1" name="pa1" accept="image/*"  class="form-control" required>
-                        
-                        </div>
-                        
-                        <div class="form-group mb-3">
-                        
-                            <label class="form-label"> Proof of Address 2 </label>
-                          
-                            <input type="file" id="pa2" name="pa2" accept="image/*"  class="form-control" required>
-                        
-                        </div>
-			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-			
-                    </form>
-		
-                </div>
-		
-            </div>
-	
-        </div>
-	
+        </div>		 
         
-	
         <div class="col-md-6">		
-	
-            <h3 class="card-title">			
-	
+            <h3 class="card-title">
                 National Insurance Number				
-		
-            </h3>			
-	
-            <div class="row align-items-center">			
-	
-                <div class="col-auto">				
-		
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/ni/<?php echo $drow['national_insurance'];?>); background-size:contain; width: 220px; height: 160px;">
-		
-                    </span>					
-		
-                </div>				
-		
-                <div class="col-auto">				
-		
-                    <form action="upload-ni.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('ni')">					
-		
-                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	
-			
-                        <div class="form-group pb-3">
-  
-                            <label class="form-label"> National Insurance Number</label>
-                                          
-
-                            <input type="text" name="licene_number" class="form-control" placeholder="Licence Number">
-                      
-                        </div>
-                        
-                        <div class="form-group mb-3">
-                        
-                            <label class="form-label"> National Insurance Image </label>
-                          
-                            <input type="file" id="ni" name="ni" accept="image/*"  class="form-control" required>
-                        
-                        </div>
-			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-			
-                    </form>
-		
-                </div>				
-		
-            </div>			
-	
-        </div>
-	
-        
-	
-    </div>
-
-    
-															
-
-    <div class="row mb-3">	
-
-        <div class="col-md-6">		
-	
-            <h3 class="card-title">			
-	
-                DVLA Check Code				
-		
-            </h3>			
-	
-            <div class="row align-items-center">			
-	
+            </h3>
+            <div class="row align-items-center">	
                 <div class="col-auto">
-		
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/dvla/<?php echo $drow['dvla_check_code'];?>); background-size:contain; width: 220px; height: 160px;">
-		
-                    </span>					
-		
-                </div>				
-		
-                <div class="col-auto">				
-		
-                    <form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">					
-		
-                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-			
-                        <div class="form-group pb-3">
-  
-                            <label class="form-label"> DVLA Check Number</label>
-                            
-                            
-                            
-                            <input type="text" name="licene_number" class="form-control" placeholder="Licence Number">
-                      
-                        </div>
-                        
-                        <div class="form-group mb-3">
-                        
-                            <label class="form-label"> DVLA Check Image </label>
-
-                            <input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
-			
-                        </div>
-			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-			
-                    </form>
-		
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/ni/<?php echo $drow['ni_img'];?>); background-size:contain; width: 220px; height: 160px;">
+                    </span>
                 </div>
-		
-            </div>
-	
-        </div>		
-	
-        <div class="col-md-6">		
-	
-            <h3 class="card-title">			
-	
-                Extra				
-		
-            </h3>			
-	
-            <div class="row align-items-center">			
-	
-                <div class="col-auto">				
-		
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/extra/<?php echo $drow['extra'];?>); background-size:contain; width: 220px; height: 160px;">
-		
-                    </span>					
-		
-                </div>				
-		
-                <div class="col-auto">				
-		
-                    <form action="upload-extra.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('extra')">					
-		
+                <div class="col-auto">
+                    <form action="upload-ni.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('ni')">
+                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
+                        <div class="form-group pb-3">
+                            <label class="form-label"> National Insurance Number</label>
+                            <input type="text" name="ni_num" class="form-control" placeholder="National Insurance Number">                      
+                        </div>                        
+                        <div class="form-group mb-3">                        
+                            <label class="form-label"> National Insurance Image </label>                          
+                            <input type="file" id="ni" name="ni" accept="image/*"  class="form-control" required>                        
+                        </div>			
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
+                    </form>		
+                </div>						
+            </div>				
+        </div>	        	
+    </div>
+    															
+    <div class="row mb-3">
+        <div class="col-md-6">	
+            <h3 class="card-title">	
+                DVLA Check Code			
+            </h3>	
+            <div class="row align-items-center">				
+                <div class="col-auto">		
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/dvla/<?php echo $drow['dvla_img'];?>); background-size:contain; width: 220px; height: 160px;">		
+                    </span>
+                </div>
+                <div class="col-auto">
+                    <form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">		
+                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">			
+                        <div class="form-group pb-3">  
+                            <label class="form-label"> DVLA Check Number</label>                                                                                    
+                            <input type="text" name="dvla_num" class="form-control" placeholder="DVLA Check Number">                      
+                        </div>                        
+                        <div class="form-group mb-3">                        
+                            <label class="form-label"> DVLA Check Image </label>
+                            <input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>			
+                        </div>			
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
+                    </form>		
+                </div>		
+            </div>	
+        </div>			
+        <div class="col-md-6">
+            <h3 class="card-title">
+                Extra
+            </h3>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/extra/<?php echo $drow['de_img'];?>); background-size:contain; width: 220px; height: 160px;">
+                    </span>
+                </div>						
+                <div class="col-auto">						
+                    <form action="upload-extra.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('extra')">
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">						
 			
                         <input type="file" id="extra" name="extra" accept="image/*"  class="form-control" required>

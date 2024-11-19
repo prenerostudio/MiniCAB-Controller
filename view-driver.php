@@ -1,7 +1,35 @@
 <?php
 include('header.php');
 $d_id = $_GET['d_id'];
-$dsql=mysqli_query($connect,"SELECT drivers.*, driver_documents.*, vehicle_documents.* FROM drivers JOIN driver_documents ON drivers.d_id = driver_documents.d_id JOIN vehicle_documents ON drivers.d_id = vehicle_documents.d_id WHERE drivers.d_id = '$d_id'");
+$dsql=mysqli_query($connect,"SELECT
+	drivers.*, 
+	vehicle_documents.*, 
+	address_proofs.*, 
+	driving_license.*, 
+	pco_license.*, 
+	national_insurance.*, 
+	dvla_check.*, 
+	driver_extras.*
+FROM
+	drivers
+	JOIN
+	vehicle_documents
+	ON 
+		drivers.d_id = vehicle_documents.d_id,
+	address_proofs,
+	driving_license,
+	pco_license,
+	national_insurance,
+	dvla_check,
+	driver_extras
+WHERE
+	drivers.d_id = '$d_id' AND
+	address_proofs.d_id = drivers.d_id AND
+	driving_license.d_id = drivers.d_id AND
+	pco_license.d_id = drivers.d_id AND
+	national_insurance.d_id = drivers.d_id AND
+	dvla_check.d_id = drivers.d_id AND
+	driver_extras.d_id = drivers.d_id ");
 $drow = mysqli_fetch_array($dsql);		
 ?>
 <div class="page-header d-print-none page_padding">		   		
