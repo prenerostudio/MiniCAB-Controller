@@ -80,323 +80,159 @@ include('header.php');
                                         if($atrow['ts_status']==0){
                                             ?> 
                                         <div class="col-auto status">     
-                                            <span class="status-dot status-dot-animated bg-orange d-block"></span>            
-					
+                                            <span class="status-dot status-dot-animated bg-orange d-block"></span>
                                             <span>Pending</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        } elseif($atrow['ts_status']==1){    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-green d-block"></span>            
-					
-                                            <span>Accepted</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        } elseif($atrow['ts_status']==2){    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-red d-block"></span>            
-					
-                                            <span>Cancelled</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        } elseif($atrow['ts_status']==3){    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-yellow d-block"></span>           
-					
-                                            <span>Withdrawn</span>        
-					
-                                        </div>    
-					
-                                        
-					
-					<?php        
-
-                                        } elseif($atrow['ts_status']==5){    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-yellow d-block"></span>           
-					
-                                            <span>Waiting</span>        
-					
-                                        </div>    
-					
-					<?php        
-
-                                        }  elseif($atrow['ts_status']==4) {    
-					
-                                            ?>  
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-blue d-block"></span>            
-					
-                                            <span>Completed</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        }    
-					
+                                        </div>
+					<?php
+                                        } elseif($atrow['ts_status']==1){
                                         ?>
-					
-                                    </td>								
-				
-                                    <td>	
-				
-                                        <form method="post" action="dispatch-time-slot.php">    
-					
-                                            <input type="hidden" value="<?php echo $atrow['ts_id']; ?>" name="ts_id">											
-					
+                                        <div class="col-auto status">
+                                            <span class="status-dot status-dot-animated bg-green d-block"></span>
+                                            <span>Accepted</span>
+                                        </div>
+					<?php
+                                        } elseif($atrow['ts_status']==2){
+                                        ?>
+                                        <div class="col-auto status">
+                                            <span class="status-dot status-dot-animated bg-red d-block"></span>
+                                            <span>Cancelled</span>
+                                        </div>
+					<?php
+                                        } elseif($atrow['ts_status']==3){
+                                        ?>
+                                        <div class="col-auto status">
+                                            <span class="status-dot status-dot-animated bg-yellow d-block"></span>
+                                            <span>Withdrawn</span>
+                                        </div>
+					<?php
+                                        } elseif($atrow['ts_status']==5){
+                                        ?>
+                                        <div class="col-auto status">
+                                            <span class="status-dot status-dot-animated bg-yellow d-block"></span>
+                                            <span>Waiting</span>
+                                        </div>
+					<?php
+                                        }  elseif($atrow['ts_status']==4) {
+                                            ?> 
+                                        <div class="col-auto status">
+                                            <span class="status-dot status-dot-animated bg-blue d-block"></span>
+                                            <span>Completed</span>
+                                        </div>
+					<?php
+                                        }					
+                                        ?>					
+                                    </td>
+                                    <td>
+                                        <form method="post" action="dispatch-time-slot.php">
+                                            <input type="hidden" value="<?php echo $atrow['ts_id']; ?>" name="ts_id">
                                             <div class="mb-3">
-					
                                                 <div class="input-group mb-2">
-						
                                                     <select class="form-control" name="d_id" required>
-						
                                                         <option value="">Select Driver</option>
-							
 							<?php
-
                                                         $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
-							
                                                         while ($drrow = mysqli_fetch_array($drsql)) {
-							
                                                             ?>
-							
                                                         <option value="<?php echo $drrow['d_id']; ?>">
-							
-								<?php echo $drrow['d_id'] ?> -
-
-															
-                                                                    <?php echo $drrow['d_name'] ?> -
-
-															
-                                                                        <?php echo $drrow['d_phone'] ?>
-
+								<?php echo $drrow['d_id']; ?> -
+                                                                    <?php echo $drrow['d_name']; ?> -
+                                                                        <?php echo $drrow['d_phone']; ?>
                                                         </option>
-									
-					
-                                                            <?php
-															
-                                                            
+                                                        <?php
                                                         }
-														
                                                         ?>
-							
-                                                    </select>		
-						
+                                                    </select>
                                                     <button class="btn btn-bitbucket" type="submit">
-						
                                                         <i class="ti ti-plane-tilt"></i>
-							
                                                     </button>
-						
                                                 </div>
-						
-                                            </div>	
-					
-                                        </form>	
-					
-                                        
-					
+                                            </div>
+                                        </form>
                                         <a href="edit-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="View / Edit">
-					
                                             <button class="btn btn-info">
-					
                                                 <i class="ti ti-eye"></i>View / Edit
-						
                                             </button>
-					
                                         </a>
-					
                                         <a href="del-time-slot.php?ts_id=<?php echo $atrow['ts_id']; ?>" title="Delete">
-					
-                                            
-					
                                             <button class="btn btn-danger">
-					
                                                 <i class="ti ti-square-rounded-x"></i>Delete
-						
                                             </button>
-					
-                                        </a>							
-					
-                                    </td>								
-				
-                                </tr>						
-				
+                                        </a>
+                                    </td>
+                                </tr>
 				<?php
-
-                                }									
-				
-                                ?>																	
-				
-                            </tbody>                    											
-			
-                        </table>               
-			
-                    </div>																	
-		
-                </div>                                                    				
-		
-            </div>              			
-	
-        </div>				
-	
-        
-        <script>					
-	
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>						
     $(document).ready(function() {    
-
-        $('#slots').DataTable();
-	
+        $('#slots').DataTable();	
     });	
-
-        </script>				
-	
-        <div class="col-4">            					
-	
-            <div class="card">                							
-	
-                <div class="card-header">                    									
-		
+        </script>					
+        <div class="col-4">
+            <div class="card">	
+                <div class="card-header">		
                     <h3 class="card-title">
-		
                         Add Time Slot
-			
-                    </h3>                  										
-		
-                </div>                  				
-		
-                <div class="card-body border-bottom py-3">					
-		
-                    <form method="post" action="time-slot-process.php" onsubmit="return validateForm();">				
-		
-                        <div class="modal-body">																		
-			
-                            <div class="row">					
-			
-                                <div class="col-lg-12">						
-				
-                                    <div class="mb-3">								
-				
+                    </h3>
+                </div>
+                <div class="card-body border-bottom py-3">
+                    <form method="post" action="time-slot-process.php" onsubmit="return validateForm();">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
                                         <label class="form-label">Select Date:</label>
-					
-                                        <input type="date" name="mdate" class="form-control" required>							
-					
-                                    </div>						
-				
-                                </div>						
-				
-                                <div class="col-lg-12">							
-				
-                                    <div class="mb-3">								
-				
-                                        <label class="form-label">Start Time:</label>								
-					
-                                        <input type="time" name="stime" class="form-control" required>							
-					
-                                    </div>						
-				
-                                </div>												
-				
-                                <div class="col-lg-12">                													
-				
-                                    <div class="mb-3">								
-				
-                                        <label class="form-label">End Time:</label>								
-					
-                                        <input type="time" name="etime" class="form-control" required>
-					
-                                    </div>						
-				
-                                </div>	
-				
-                                <div class="col-lg-12">                													
-				
-                                    <div class="mb-3">								
-				
-                                        <label class="form-label">Price Per Hour:</label>								
-					
-                                        <input type="number" name="pph" class="form-control" required>
-					
-                                    </div>						
-				
+                                        <input type="date" name="mdate" class="form-control" required>
+                                    </div>
                                 </div>
-				
-                            </div>							          				          				
-			
-                        </div>				       							
-			
-                        <div class="modal-footer">					
-			
-                            
-			
-                            <button type="submit" class="btn btn-success">												
-			
-                                <i class="ti ti-clock-plus"></i>						
-				
-                                Save Time Slot											
-				
-                            </button>       							
-			
-                        </div> 											
-			
-                    </form>									
-		
-                </div>                                                    				
-		
-            </div>              					
-	
-        </div>				
-	
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Start Time:</label>
+                                        <input type="time" name="stime" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">End Time:</label>
+                                        <input type="time" name="etime" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Price Per Hour:</label>
+                                        <input type="number" name="pph" class="form-control" required					
+                                    </div>				
+                                </div>				
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">
+                                <i class="ti ti-clock-plus"></i>
+                                Save Time Slot
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>        
 <script>
-
-    function validateForm() {       
-    
-        var dateInput = document.getElementsByName("date")[0].value;
-        
-        var stimeInput = document.getElementsByName("stime")[0].value;
-        
-        var etimeInput = document.getElementsByName("etime")[0].value;
-        
-        if (dateInput === "" || stimeInput === "" || etimeInput === "") {            
-        
-            alert("Please fill in all required fields.");
-            
+    function validateForm() {
+        var dateInput = document.getElementsByName("date")[0].value;        
+        var stimeInput = document.getElementsByName("stime")[0].value;        
+        var etimeInput = document.getElementsByName("etime")[0].value;        
+        if (dateInput === "" || stimeInput === "" || etimeInput === "") {                    
+            alert("Please fill in all required fields.");            
             return false;
-        }   
-        
-        
-        return true;
-    
+       }                
+        return true;    
     }
 </script>
 <?php

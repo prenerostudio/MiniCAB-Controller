@@ -17,7 +17,7 @@
                     </span>		
                 </div>
                 <div class="col-auto">
-                    <form action="upload-license.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">		                                                
+                    <form action="upload-license.php" method="post" enctype="multipart/form-data">		                                                
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">                        
                         <div class="form-group pb-3">                                                                                                                  
                             <label class="form-label"> License Number </label>                                                                                    
@@ -39,9 +39,8 @@
                     </form>							
                 </div>
             </div>	
-        </div>	
-        
-            <div class="col-md-6">			
+        </div>	                   
+        <div class="col-md-6">			        
             <h3 class="card-title">				
                 Proof of Address 1						
             </h3>				
@@ -55,7 +54,7 @@
                     </span>		
                 </div>		
                 <div class="col-auto">		
-                    <form action="upload-address-proof.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('pa1')">
+                    <form action="upload-address-proof.php" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">			                       
                         <div class="from-group mb-3">  
                             <label class="form-label"> Proof of Address 1 </label>                          
@@ -69,14 +68,9 @@
                     </form>		
                 </div>		
             </div>	
-        </div>
-	
-	        	        	
-              			
+        </div>		        	        	              			
     </div>			
-
-    <div class="row mb-3">				
-    
+    <div class="row mb-3">				    
          <div class="col-md-6">			
             <h3 class="card-title">				
                 PCO License						
@@ -87,7 +81,7 @@
                     </span>		
                 </div>		
                 <div class="col-auto">						
-                    <form action="upload-pco.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('pco')">							
+                    <form action="upload-pco.php" method="post" enctype="multipart/form-data">							
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">				
                         <div class="form-group pb-3">                                                          
                             <label class="form-label"> PCO License Number </label>                                                                                    
@@ -105,8 +99,7 @@
                     </form>							
                 </div>						
             </div>				
-        </div>		 
-        
+        </div>        
         <div class="col-md-6">		
             <h3 class="card-title">
                 National Insurance Number				
@@ -117,7 +110,7 @@
                     </span>
                 </div>
                 <div class="col-auto">
-                    <form action="upload-ni.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('ni')">
+                    <form action="upload-ni.php" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
                         <div class="form-group pb-3">
                             <label class="form-label"> National Insurance Number</label>
@@ -132,8 +125,7 @@
                 </div>						
             </div>				
         </div>	        	
-    </div>
-    															
+    </div>    															
     <div class="row mb-3">
         <div class="col-md-6">	
             <h3 class="card-title">	
@@ -145,7 +137,7 @@
                     </span>
                 </div>
                 <div class="col-auto">
-                    <form action="upload-dvla.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('dvla')">		
+                    <form action="upload-dvla.php" method="post" enctype="multipart/form-data">		
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">			
                         <div class="form-group pb-3">  
                             <label class="form-label"> DVLA Check Number</label>                                                                                    
@@ -170,22 +162,13 @@
                     </span>
                 </div>						
                 <div class="col-auto">						
-                    <form action="upload-extra.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm('extra')">
-                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">						
-			
+                    <form action="upload-extra.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
                         <input type="file" id="extra" name="extra" accept="image/*"  class="form-control" required>
-			
                         <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-			
                     </form>
-		
                 </div>
-		
-            </div>			
-	
-        </div>
-	
+            </div>	
+        </div>	
     </div>
-
-
 </div>
