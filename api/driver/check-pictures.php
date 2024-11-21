@@ -10,7 +10,7 @@ include("../../config.php");
 if(isset($_POST['d_id'])){	    
     $d_id = $_POST['d_id'];
     
-    $sql = "SELECT `d_license_front` FROM `driver_documents` WHERE `d_id`='$d_id'";        
+    $sql = "SELECT * FROM `vehicle_pictures` WHERE `d_id` = '$d_id'";        
     $result = mysqli_query($connect, $sql);
    
     if(mysqli_num_rows($result) > 0) {       

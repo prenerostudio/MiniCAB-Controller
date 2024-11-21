@@ -11,11 +11,44 @@ if (isset($_POST['d_id'])) {
     $d_id = $_POST['d_id']; 
     $status = $_POST['status'];  
     
-    $checksql = "SELECT * FROM `vehicle_documents` WHERE `d_id`='$d_id'";        
+    $checksql = "SELECT
+    drivers.*,
+    vehicle_log_book.lb_img,
+    vehicle_mot.mot_img,
+    vehicle_pco.vpco_img,
+    vehicle_insurance.vi_img,
+    vehicle_pictures.vp_front,
+    vehicle_pictures.vp_back,
+    vehicle_road_tax.rt_img,
+    rental_agreement.ra_img,
+    vehicle_ins_schedule.is_img,
+    vehicle_extras.ve_img
+FROM
+    drivers
+JOIN
+    vehicle_log_book ON vehicle_log_book.d_id = drivers.d_id
+JOIN
+    vehicle_mot ON vehicle_mot.d_id = drivers.d_id
+JOIN
+    vehicle_pco ON vehicle_pco.d_id = drivers.d_id
+JOIN
+    vehicle_insurance ON vehicle_insurance.d_id = drivers.d_id
+JOIN
+    vehicle_pictures ON vehicle_pictures.d_id = drivers.d_id
+JOIN
+    vehicle_road_tax ON vehicle_road_tax.d_id = drivers.d_id
+JOIN
+    rental_agreement ON rental_agreement.d_id = drivers.d_id
+JOIN
+    vehicle_ins_schedule ON vehicle_ins_schedule.d_id = drivers.d_id
+JOIN
+    vehicle_extras ON vehicle_extras.d_id = drivers.d_id
+WHERE
+    drivers.d_id = '$d_id'";        
     $checkr = mysqli_query($connect, $checksql);                
     $datacheck = mysqli_fetch_assoc($checkr);
     
-    if (empty($datacheck['log_book']) && empty($datacheck['mot_certificate']) && empty($datacheck['pco']) && empty($datacheck['insurance']) && empty($datacheck['road_tax']) && empty($datacheck['vehicle_picture_front']) && empty($datacheck['vehicle_picture_back']) ) {
+    if (empty($datacheck['mot_img']) && empty($datacheck['vpco_img']) && empty($datacheck['vi_img']) && empty($datacheck['rt_img']) && empty($datacheck['ra_img'])) {
         echo json_encode(array('message' => "You Cannot Go Online without uploading vehicle documents", 'status' => false));            
     } else {        
         $sql = "UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";                

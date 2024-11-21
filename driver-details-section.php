@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-auto">
                     <form action="update-driver-img.php" method="post" enctype="multipart/form-data">
-                        <input type="hidden" value="<?php echo $drow['d_id']; ?>" name="d_id">
+                        <input type="hidden" value="<?php echo $d_id; ?>" name="d_id">
                         <input type="file" name="fileToUpload" id="fileToUpload" class="btn">
                         <button type="submit" class="btn btn-info">Upload Image </button>
                     </form>
@@ -31,7 +31,7 @@
                 <div class="row g-3">
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Driver Name</div>
-                        <input type="hidden" class="form-control" value="<?php echo $drow['d_id']; ?>" name="d_id">
+                        <input type="hidden" class="form-control" value="<?php echo $d_id; ?>" name="d_id">
                         <input type="text" class="form-control" value="<?php echo $drow['d_name']; ?>" name="dname">
                     </div>
                     <div class="mb-3 col-md-4">
@@ -88,10 +88,7 @@
                                 ?>
                         </select>
                     </div>
-                    <div class="mb-3 col-md-4">
-                        <div class="form-label">PCO License Number </div>
-                        <input type="text" class="form-control" value="<?php echo $drow['pco_num']; ?>" name="pco_num">			
-                    </div>
+                   
                 </div>
                 <div class="card-footer bg-transparent mt-auto">
                     <div class="btn-list justify-content-end">

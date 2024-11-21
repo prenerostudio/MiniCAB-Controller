@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2024 at 08:26 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Nov 21, 2024 at 02:15 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -2513,7 +2513,91 @@ INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user_type`,
 (00002465, 'Time Slot Update', '2024-09-23 11:10:06', 'user', 00000001, 'Time Slot Has Been Updated by Controller.'),
 (00002466, 'Controller Logged-In', '2024-09-23 11:13:53', 'user', 00000001, 'Controller logged in successfully.'),
 (00002467, 'New Vehicle Added', '2024-09-23 11:14:23', 'user', 00000001, 'New Vehicle Saloon Has Been updated by Controller.'),
-(00002468, 'Controller Logged-In', '2024-11-12 19:12:11', 'user', 00000001, 'Controller logged in successfully.');
+(00002468, 'Controller Logged-In', '2024-11-12 19:12:11', 'user', 00000001, 'Controller logged in successfully.'),
+(00002469, 'Driving License Updated', '2024-11-15 19:34:32', 'user', 00000001, 'Driving License of Driver 00000002 has been uploaded by Controller.'),
+(00002470, 'Driving License Updated', '2024-11-15 19:39:56', 'user', 00000001, 'Driving License of Driver 00000002 has been uploaded by Controller.'),
+(00002471, 'Driving License Updated', '2024-11-15 19:41:51', 'user', 00000001, 'Driving License of Driver 00000002 has been uploaded by Controller.'),
+(00002472, 'Driving License Updated', '2024-11-15 19:42:42', 'user', 00000001, 'Driving License of Driver 00000002 has been uploaded by Controller.'),
+(00002473, 'PCO License Updated', '2024-11-16 06:58:19', 'user', 00000001, 'PCO License of Driver 00000002 Has Been uploaded by Controller.'),
+(00002474, 'PCO License Updated', '2024-11-16 07:08:04', 'user', 00000001, 'PCO License of Driver 00000002 has been updated by Controller.'),
+(00002475, 'PCO License Updated', '2024-11-16 07:11:44', 'user', 00000001, 'PCO License of Driver 00000002 has been updated by Controller.'),
+(00002476, 'Booking Updated', '2024-11-16 08:58:03', 'user', 00000001, 'Booking 00000060 Has Been Updated by Controller.'),
+(00002477, 'Controller Logged-In', '2024-11-18 17:08:31', 'user', 00000001, 'Controller Atiq Logged in successfully.'),
+(00002478, 'Address Proof Updated', '2024-11-18 17:49:08', 'user', 00000001, 'Address Proof of Driver 00000009 Has Been uploaded by Controller.'),
+(00002479, 'Controller Logged-In', '2024-11-18 18:10:39', 'user', 00000001, 'Controller Atiq Logged in successfully.'),
+(00002480, 'National Insurance Added', '2024-11-18 18:30:02', 'user', 00000001, 'National Insurance of Driver 00000004 has been added by Controller.'),
+(00002481, 'DVLA Check Number Added', '2024-11-18 18:49:06', 'user', 00000001, 'DVLA Check Number of Driver 00000004 has been added by Controller.'),
+(00002482, 'DVLA Check Number Updated', '2024-11-18 18:49:35', 'user', 00000001, 'DVLA Check Number of Driver 00000004 has been updated by Controller.'),
+(00002483, 'Driver Extra Document Added', '2024-11-18 19:10:29', 'user', 00000001, 'Driver Extra Document of Driver 00000004 has been added by Controller.'),
+(00002484, 'Driver Extra Document Updated', '2024-11-18 19:10:40', 'user', 00000001, 'Driver Extra Document of Driver 00000004 has been updated by Controller.'),
+(00002485, 'Vehicle Log Book Added', '2024-11-19 17:34:14', 'user', 00000001, 'Vehicle Log Book of Driver 00000004 has been added by Controller.'),
+(00002486, 'MOT Certificate Updated', '2024-11-19 17:58:39', 'user', 00000001, 'MOT Certificate of Driver 00000004 Has Been uploaded by Controller.'),
+(00002487, 'Vehicle MOT Certificate Added', '2024-11-19 17:59:58', 'user', 00000001, 'Vehicle MOT Certificate of Driver 00000004 has been added by Controller.'),
+(00002488, 'Vehicle PCO Added', '2024-11-19 18:14:43', 'user', 00000001, 'Vehicle PCO of Driver 00000004 has been added by Controller.'),
+(00002489, 'Vehicle Insurance Added', '2024-11-19 18:27:51', 'user', 00000001, 'Vehicle Insurance of Driver 00000004 has been added by Controller.'),
+(00002490, 'Vehicle Pictures Added', '2024-11-19 18:58:12', 'user', 00000001, 'Vehicle Pictures of Driver 00000004 have been added by Controller.'),
+(00002491, 'Vehicle Road Tax Updated', '2024-11-19 19:16:44', 'user', 00000001, 'Vehicle Road Tax of Driver 00000004 Has Been uploaded by Controller.'),
+(00002492, 'Vehicle Road TAX Added', '2024-11-19 19:22:19', 'user', 00000001, 'Vehicle Road TAX of Driver 00000004 has been added by Controller.'),
+(00002493, 'Vehicle Rental Agreement Added', '2024-11-19 20:25:56', 'user', 00000001, 'Vehicle Rental Agreement of Driver 00000004 has been added by Controller.'),
+(00002494, 'Vehicle Insurance Schedule Updated', '2024-11-19 20:40:05', 'user', 00000001, 'Vehicle Insurance Schedule of Driver 00000004 Has Been uploaded by Controller.'),
+(00002495, ' Insurance Schedule Updated', '2024-11-19 20:41:07', 'user', 00000001, ' Insurance Schedule of Driver 00000004 has been updated by Controller.'),
+(00002496, 'Driver Extra Document Added', '2024-11-19 21:12:07', 'user', 00000001, 'Driver Extra Document of Driver 00000004 has been added by Controller.'),
+(00002497, 'Driver Profile Updated', '2024-11-20 17:51:36', 'user', 00000001, 'Driver  Profile Has Been updated by Controller.'),
+(00002498, 'Driver Profile Updated', '2024-11-20 17:54:02', 'user', 00000001, 'Driver Atiq Ramzan profile has been updated by Controller.'),
+(00002499, 'Driver Profile Updated', '2024-11-20 17:54:53', 'user', 00000001, 'Driver Atiq Ramzan profile has been updated by Controller.'),
+(00002500, 'Driver Profile Updated', '2024-11-20 18:10:10', 'user', 00000001, 'Driver Atiq Ramzan profile has been updated by Controller.'),
+(00002501, 'Driver Profile Image Updated', '2024-11-20 18:18:17', 'user', 00000001, 'Driver Profile Image 00000002 Has Been updated by Controller.'),
+(00002502, 'Driver Profile Updated', '2024-11-20 18:18:23', 'user', 00000001, 'Driver Atiq Ramzan profile has been updated by Controller.'),
+(00002503, 'Driving License Updated', '2024-11-20 19:15:53', 'driver', 00000001, 'Driving License of Driver 1 has been updated by Controller.'),
+(00002504, 'Controller Logged-In', '2024-11-20 19:16:20', 'user', 00000001, 'Controller Atiq Logged in successfully.'),
+(00002505, 'Address Proofs Added', '2024-11-20 22:16:42', 'driver', 00000001, 'Address Proofs of Driver 1 has been added by Controller.'),
+(00002506, 'Address Proofs Updated', '2024-11-20 22:17:01', 'driver', 00000001, 'Address Proofs of Driver 1 has been updated by Controller.'),
+(00002507, 'Driver Document updated', '2024-11-20 22:29:08', 'driver', 00000001, 'You have updated PCO License Document.'),
+(00002508, 'Driver Document updated', '2024-11-20 22:29:12', 'driver', 00000001, 'You have updated PCO License Document.'),
+(00002509, 'Driver National Insurance Document updated', '2024-11-20 22:51:55', 'driver', 00000001, 'You have updated National Insurance Document.'),
+(00002510, 'Driver National Insurance Document updated', '2024-11-20 22:52:12', 'driver', 00000001, 'You have updated National Insurance Document.'),
+(00002511, 'Driver DVLA Code Document updated', '2024-11-20 23:02:25', 'driver', 00000001, 'You have updated DVLA Code Document.'),
+(00002512, 'Driver Extra Document updated', '2024-11-20 23:27:19', 'driver', 00000001, 'You have updated Extra Document.'),
+(00002513, 'Driver Extra Document updated', '2024-11-20 23:27:25', 'driver', 00000001, 'You have updated Extra Document.'),
+(00002514, 'Driver Vehicle Log Book Document updated', '2024-11-20 23:49:32', 'driver', 00000001, 'You have updated Vehicle Log Book Document.'),
+(00002515, 'Driver Vehicle MOT Certificate Document updated', '2024-11-21 00:01:10', 'driver', 00000001, 'You have updated Vehicle MOT Certificate Document.'),
+(00002516, 'Driver Vehicle MOT Certificate Document updated', '2024-11-21 00:01:22', 'driver', 00000001, 'You have updated Vehicle MOT Certificate Document.'),
+(00002517, 'Driver Vehicle PCO Document updated', '2024-11-21 00:09:14', 'driver', 00000001, 'You have updated Vehicle PCO Document.'),
+(00002518, 'Driver Vehicle Insurance Document updated', '2024-11-21 00:29:57', 'driver', 00000001, 'You have updated Vehicle Insurance Document.'),
+(00002519, 'Vehicle Pictures Added', '2024-11-21 00:37:20', 'driver', 00000001, 'Vehicle Pictures of Driver 1 has been added by Controller.'),
+(00002520, 'Vehicle Pictures Updated', '2024-11-21 00:37:24', 'driver', 00000001, 'Vehicle Pictures of Driver 1 has been updated by Controller.'),
+(00002521, 'Driver Vehicle Road TAX Document updated', '2024-11-21 00:45:08', 'driver', 00000001, 'You have updated Vehicle Road TAX Document.'),
+(00002522, 'Driver Vehicle Road TAX Document updated', '2024-11-21 00:45:13', 'driver', 00000001, 'You have updated Vehicle Road TAX Document.'),
+(00002523, 'Driver Vehicle Rental Agreement Document updated', '2024-11-21 00:56:55', 'driver', 00000001, 'You have updated Vehicle Rental Agreement Document.'),
+(00002524, 'Driver Vehicle Rental Agreement Document updated', '2024-11-21 00:57:07', 'driver', 00000001, 'You have updated Vehicle Rental Agreement Document.'),
+(00002525, 'Driver Vehicle Rental Agreement Document updated', '2024-11-21 00:57:10', 'driver', 00000001, 'You have updated Vehicle Rental Agreement Document.'),
+(00002526, 'Driver Vehicle Insurance Schedule Document updated', '2024-11-21 01:03:21', 'driver', 00000001, 'You have updated Vehicle Insurance Schedule Document.'),
+(00002527, 'Driver Vehicle Insurance Schedule Document updated', '2024-11-21 01:03:25', 'driver', 00000001, 'You have updated Vehicle Insurance Schedule Document.'),
+(00002528, 'Driver Vehicle Extra Document updated', '2024-11-21 01:07:45', 'driver', 00000001, 'You have updated Vehicle Extra Document.'),
+(00002529, 'Driver Vehicle Extra Document updated', '2024-11-21 01:07:47', 'driver', 00000001, 'You have updated Vehicle Extra Document.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `address_proofs`
+--
+
+CREATE TABLE `address_proofs` (
+  `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `ap_1` varchar(255) NOT NULL,
+  `ap_2` varchar(255) NOT NULL,
+  `ap_created_at` datetime NOT NULL,
+  `ap_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `address_proofs`
+--
+
+INSERT INTO `address_proofs` (`ap_id`, `d_id`, `ap_1`, `ap_2`, `ap_created_at`, `ap_updated_at`) VALUES
+(00000001, 00000004, '673b7e56a376f.jpg', '673b7e56a376f.jpg', '0000-00-00 00:00:00', '2024-11-18 19:25:04'),
+(00000002, 00000001, '673e5fdd70514.jpg', '673e5fdd70514.jpg', '2024-11-20 22:16:42', '2024-11-20 17:17:01');
 
 -- --------------------------------------------------------
 
@@ -2693,7 +2777,7 @@ INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `dest
 (00000057, 00000001, 00000003, 'Londonderry, UK', '', 'London, UK', 'Street 3 near kareem Town FSD', 'N7= Holloway', 5, '2024-11-15', '23:00:00', 'One Way', 00000003, '', '', '', '00:00:00', '', 12915, 861, 0, 0, 0, 0, 0, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', 'Fuy', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
 (00000058, 00000001, 00000003, 'High Road, London N12 9PY, UK', '', 'Torrington Park, London N12 9TS, UK', '', 'W12', 1, '2024-11-15', '12:55:00', 'One Way', 00000002, '1', 'Yes', '', '00:00:00', '', 17, 1, 0, 28, 0, 30, 40, 0, 'Booked', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
 (00000059, 00000001, 00000003, 'Stansted Airport, Stansted, UK', '', 'Harlow CM20, UK', '', ' ', 1, '2024-11-15', '11:45:00', 'One Way', 00000002, '', '', '', '00:00:00', '', 363, 24, 0, 5, 5, 22, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00'),
-(00000060, 00000001, 00000003, 'Londonderry, UK', '', 'Airport Tavern, Bridgwater Road, Lulsgate, Felton, Bristol, UK', '', ' ', 3, '2024-11-15', '10:30:00', 'One Way', 00000003, '', 'No', '', '00:00:00', '', 12210, 814, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00');
+(00000060, 00000001, 00000003, '', '', '', '', 'W12', 3, '2024-11-15', '10:30:00', 'One Way', 00000003, '', 'No', '', '00:00:00', '', 12210, 814, 0, 0, 0, 0, 0, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'awaise@gmail.com', '+44256423120', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -3253,7 +3337,6 @@ CREATE TABLE `drivers` (
   `d_gender` varchar(55) NOT NULL,
   `d_language` varchar(55) NOT NULL,
   `licence_authority` varchar(255) NOT NULL,
-  `pco_num` varchar(255) NOT NULL,
   `latitude` varchar(55) NOT NULL,
   `longitude` varchar(55) NOT NULL,
   `status` varchar(55) NOT NULL,
@@ -3267,12 +3350,12 @@ CREATE TABLE `drivers` (
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `pco_num`, `latitude`, `longitude`, `status`, `acount_status`, `signup_type`, `login_token`, `driver_reg_date`) VALUES
-(00000001, 'Azib Ahmed', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'London ', 'WJ1234', '669212c35f56b_booker_app.png', 'Male', 'English', 'Bermingham', '1234567', '31.4125294', '73.1154872', 'Offline', 1, 3, 'dfae3ecadfe24c54ea4d95424a0141fe6de6450a4ea7cba933cbed2eee596d49', '2024-08-24 19:42:19'),
-(00000002, 'Atiq Ramzan', 'admin@prenero.com', '+443157524000', '12345678', '', 'W12', '66cb30a89fb4e_IMG_web.jpg', 'Male', 'English', 'Ireland', '', '31.4416932', '73.0887596', 'online', 1, 0, NULL, '2024-08-25 13:24:56'),
-(00000003, 'Tahir ', 'mirzatahir1900@gmail.com', '+923001900228', '1234567_8', '', '', '', '', '', 'South East', '', '', '', 'Offline', 1, 0, NULL, '0000-00-00 00:00:00'),
-(00000004, 'Muhammad Abdullah Tarar ', 'abdullahtarar979@gmail.com', '+443239660455', '123456789', '', '', '', '', '', 'East of England', '', '', '', 'Offline', 0, 0, NULL, '2024-09-14 07:52:56'),
-(00000009, 'Muhammad Shaheryar', 'shary@prenero.com', '+443346452312', 'Prenero1102/*', '', '38600', '66cb31d84a668_3d-animation-character-cartoon_113255-10862.jpg', 'Male', 'English', 'London', '', '', '', '', 1, 0, '280840b42e1647a13005f59676b988a8e23c08bd4e4d5fbb6f6699889fa9df83', '0000-00-00 00:00:00');
+INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `latitude`, `longitude`, `status`, `acount_status`, `signup_type`, `login_token`, `driver_reg_date`) VALUES
+(00000001, 'Azib Ahmed', 'eurodatatechnology@gmail.com', '+447552834179', 'asdf1234', 'London ', 'WJ1234', '669212c35f56b_booker_app.png', 'Male', 'English', 'Bermingham', '31.4125294', '73.1154872', 'Offline', 1, 3, 'dfae3ecadfe24c54ea4d95424a0141fe6de6450a4ea7cba933cbed2eee596d49', '2024-08-24 19:42:19'),
+(00000002, 'Atiq Ramzan', 'admin@prenero.com', '+443157524000', '12345678', 'NS12 ', 'W12', '673e27e93be6b_GcleKqoXUAAE8gu.jpg', 'Male', 'English', 'London', '31.4416932', '73.0887596', 'online', 1, 0, NULL, '2024-11-20 18:18:23'),
+(00000003, 'Tahir ', 'mirzatahir1900@gmail.com', '+923001900228', '1234567_8', '', '', '', '', '', 'South East', '', '', 'Offline', 1, 0, NULL, '0000-00-00 00:00:00'),
+(00000004, 'Muhammad Abdullah Tarar ', 'abdullahtarar979@gmail.com', '+443239660455', '123456789', '', '', '', '', '', 'East of England', '', '', 'online', 0, 0, NULL, '2024-11-20 22:02:27'),
+(00000009, 'Muhammad Shaheryar', 'shary@prenero.com', '+443346452312', 'Prenero1102/*', '', '38600', '66cb31d84a668_3d-animation-character-cartoon_113255-10862.jpg', 'Male', 'English', 'London', '', '', '', 1, 0, '280840b42e1647a13005f59676b988a8e23c08bd4e4d5fbb6f6699889fa9df83', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -3307,33 +3390,24 @@ CREATE TABLE `driver_bank_details` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `driver_documents`
+-- Table structure for table `driver_extras`
 --
 
-CREATE TABLE `driver_documents` (
-  `dd_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+CREATE TABLE `driver_extras` (
+  `de_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
-  `d_license_front` varchar(255) NOT NULL,
-  `d_license_back` varchar(255) NOT NULL,
-  `pco_license` varchar(255) NOT NULL,
-  `address_proof_1` varchar(255) NOT NULL,
-  `address_proof_2` varchar(255) NOT NULL,
-  `dvla_check_code` varchar(255) NOT NULL,
-  `national_insurance` varchar(255) NOT NULL,
-  `extra` varchar(255) NOT NULL,
-  `date_upload_document` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `de_img` varchar(255) NOT NULL,
+  `de_created_at` datetime NOT NULL,
+  `de_updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `driver_documents`
+-- Dumping data for table `driver_extras`
 --
 
-INSERT INTO `driver_documents` (`dd_id`, `d_id`, `d_license_front`, `d_license_back`, `pco_license`, `address_proof_1`, `address_proof_2`, `dvla_check_code`, `national_insurance`, `extra`, `date_upload_document`) VALUES
-(00000001, 00000001, '', '', '', '', '', '', '', '', '2024-08-25 13:16:40'),
-(00000002, 00000002, '66cb2f2600e63.jpg', '66cb2f48ab2a4.jpg', '66cb2f4d94ec4.jpg', '66cb2f52dab7c.jpg', '66cb2f5803075.jpg', '66cb2f67200e1.jpg', '66cb2f5f3f9f5.jpg', '66cb2f6dbccde.jpg', '2024-08-25 13:19:41'),
-(00000003, 00000003, '', '', '', '', '', '', '', '', '2024-08-06 17:10:11'),
-(00000004, 00000004, '', '', '', '', '', '', '', '', '2024-08-06 17:33:11'),
-(00000009, 00000009, '66cb30e07d73b.jpg', '66cb30e6492d3.jpg', '66cb30eb29c76.jpg', '66cb30ef9e48d.jpg', '66cb30f4f050b.jpg', '66cb31040c8c3.jpg', '66cb30fd4c3d3.jpg', '66cb3108f1b11.jpg', '2024-08-25 13:26:32');
+INSERT INTO `driver_extras` (`de_id`, `d_id`, `de_img`, `de_created_at`, `de_updated_at`) VALUES
+(00000001, 00000004, '673b913069a07.jpg', '2024-11-18 19:10:29', '2024-11-18 19:10:40'),
+(00000002, 00000001, '673e705de87c7.jpeg', '2024-11-20 23:27:19', '2024-11-20 23:27:25');
 
 -- --------------------------------------------------------
 
@@ -11082,10 +11156,41 @@ CREATE TABLE `driving_license` (
   `dl_number` varchar(25) NOT NULL,
   `dl_expiry` varchar(25) NOT NULL,
   `dl_front` varchar(255) NOT NULL,
-  `dl_back` int(255) NOT NULL,
+  `dl_back` varchar(255) NOT NULL,
   `dl_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `dl_updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `driving_license`
+--
+
+INSERT INTO `driving_license` (`dl_id`, `d_id`, `dl_number`, `dl_expiry`, `dl_front`, `dl_back`, `dl_created_at`, `dl_updated_at`) VALUES
+(00000001, 00000004, '13245632458', '2024-11-21', '6737a432622b6.jpg', '6737a432622ba.jpg', '2024-11-15 19:42:42', '2024-11-15 19:42:42'),
+(00000002, 00000001, '1234567899', '2024-11-25', '673e35694ba10.jpg', '673e35694ba13.jpg', '2024-11-20 14:08:03', '2024-11-20 14:15:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dvla_check`
+--
+
+CREATE TABLE `dvla_check` (
+  `dvla_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `dvla_number` varchar(255) NOT NULL,
+  `dvla_img` varchar(255) NOT NULL,
+  `dvla_created_at` datetime NOT NULL,
+  `dvla_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `dvla_check`
+--
+
+INSERT INTO `dvla_check` (`dvla_id`, `d_id`, `dvla_number`, `dvla_img`, `dvla_created_at`, `dvla_updated_at`) VALUES
+(00000001, 00000004, '8956626236320', '673b8c3fafa51.jpg', '2024-11-18 18:49:06', '2024-11-18 18:49:35'),
+(00000002, 00000001, '123456789', '673e6a8150555.jpg', '2024-11-20 23:02:25', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -11191,6 +11296,7 @@ CREATE TABLE `jobs` (
   `tolls` int(55) NOT NULL,
   `extra` int(55) NOT NULL,
   `job_status` varchar(255) NOT NULL,
+  `ride_status` tinyint(5) NOT NULL DEFAULT 0,
   `date_job_add` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -11198,21 +11304,21 @@ CREATE TABLE `jobs` (
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`job_id`, `book_id`, `c_id`, `d_id`, `job_note`, `journey_fare`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `job_status`, `date_job_add`) VALUES
-(00000132, 00000000048, 00000000003, 00000000002, '', 71, 0, 0, 0, 0, 0, 'Completed', '2024-08-18 09:57:05'),
-(00000147, 00000000052, 00000000003, 00000000002, '', 880, 30, 0, 0, 0, 0, 'Completed', '2024-08-19 09:53:23'),
-(00000150, 00000000056, 00000000003, 00000000002, '', 17, 0, 0, 0, 0, 0, 'Completed', '2024-08-19 12:27:59'),
-(00000151, 00000000053, 00000000003, 00000000002, '', 3105, 20, 0, 0, 0, 0, 'completed', '2024-08-21 19:09:13'),
-(00000152, 00000000053, 00000000003, 00000000002, '', 3105, 20, 20, 0, 50, 50, 'Completed', '2024-08-21 16:35:06'),
-(00000158, 00000000055, 00000000003, 00000000002, '', 0, 0, 0, 0, 0, 0, 'Completed', '2024-08-21 14:52:39'),
-(00000167, 00000000058, 00000000003, 00000000002, '', 17, 0, 28, 0, 30, 40, 'Completed', '2024-08-22 14:30:59'),
-(00000169, 00000000051, 00000000003, 00000000002, '', 398, 0, 68, 25, 35, 5, 'Completed', '2024-08-22 07:58:06'),
-(00000171, 00000000054, 00000000003, 00000000002, '', 717, 0, 0, 0, 0, 0, 'Completed', '2024-08-22 08:15:20'),
-(00000172, 00000000057, 00000000003, 00000000002, '', 12915, 0, 0, 0, 0, 0, 'Completed', '2024-08-22 08:20:31'),
-(00000173, 00000000050, 00000000003, 00000000002, '', 851, 0, 0, 0, 0, 0, 'Completed', '2024-08-22 08:25:16'),
-(00000174, 00000000049, 00000000003, 00000000002, '', 342, 0, 0, 0, 0, 0, 'Completed', '2024-08-22 08:29:04'),
-(00000176, 00000000039, 00000000002, 00000000002, '', 5085, 0, 0, 0, 0, 0, 'Completed', '2024-08-22 08:35:14'),
-(00000177, 00000000040, 00000000003, 00000000002, '', 1965, 0, 0, 0, 0, 0, 'Completed', '2024-08-22 08:40:14');
+INSERT INTO `jobs` (`job_id`, `book_id`, `c_id`, `d_id`, `job_note`, `journey_fare`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `job_status`, `ride_status`, `date_job_add`) VALUES
+(00000132, 00000000048, 00000000003, 00000000002, '', 71, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-18 09:57:05'),
+(00000147, 00000000052, 00000000003, 00000000002, '', 880, 30, 0, 0, 0, 0, 'Completed', 0, '2024-08-19 09:53:23'),
+(00000150, 00000000056, 00000000003, 00000000002, '', 17, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-19 12:27:59'),
+(00000151, 00000000053, 00000000003, 00000000002, '', 3105, 20, 0, 0, 0, 0, 'completed', 0, '2024-08-21 19:09:13'),
+(00000152, 00000000053, 00000000003, 00000000002, '', 3105, 20, 20, 0, 50, 50, 'Completed', 0, '2024-08-21 16:35:06'),
+(00000158, 00000000055, 00000000003, 00000000002, '', 0, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-21 14:52:39'),
+(00000167, 00000000058, 00000000003, 00000000002, '', 17, 0, 28, 0, 30, 40, 'Completed', 0, '2024-08-22 14:30:59'),
+(00000169, 00000000051, 00000000003, 00000000002, '', 398, 0, 68, 25, 35, 5, 'Completed', 0, '2024-08-22 07:58:06'),
+(00000171, 00000000054, 00000000003, 00000000002, '', 717, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-22 08:15:20'),
+(00000172, 00000000057, 00000000003, 00000000002, '', 12915, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-22 08:20:31'),
+(00000173, 00000000050, 00000000003, 00000000002, '', 851, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-22 08:25:16'),
+(00000174, 00000000049, 00000000003, 00000000002, '', 342, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-22 08:29:04'),
+(00000176, 00000000039, 00000000002, 00000000002, '', 5085, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-22 08:35:14'),
+(00000177, 00000000040, 00000000003, 00000000002, '', 1965, 0, 0, 0, 0, 0, 'Completed', 0, '2024-08-22 08:40:14');
 
 -- --------------------------------------------------------
 
@@ -11309,6 +11415,29 @@ CREATE TABLE `mg_charges` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `national_insurance`
+--
+
+CREATE TABLE `national_insurance` (
+  `ni_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `ni_number` varchar(255) NOT NULL,
+  `ni_img` varchar(255) NOT NULL,
+  `ni_created_at` datetime NOT NULL,
+  `ni_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `national_insurance`
+--
+
+INSERT INTO `national_insurance` (`ni_id`, `d_id`, `ni_number`, `ni_img`, `ni_created_at`, `ni_updated_at`) VALUES
+(00000001, 00000004, '12345678', '673b87aae0721.jpg', '2024-11-18 18:30:02', '0000-00-00 00:00:00'),
+(00000002, 00000001, '123456678', '673e681cbcbb0.jpg', '2024-11-20 22:51:55', '2024-11-20 22:52:12');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payment_history`
 --
 
@@ -11319,6 +11448,30 @@ CREATE TABLE `payment_history` (
   `pay_month` date NOT NULL,
   `pay_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pco_license`
+--
+
+CREATE TABLE `pco_license` (
+  `pl_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `pl_number` varchar(25) NOT NULL,
+  `pl_exp` date NOT NULL,
+  `pl_img` varchar(255) NOT NULL,
+  `pl_created_at` datetime NOT NULL,
+  `pl_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pco_license`
+--
+
+INSERT INTO `pco_license` (`pl_id`, `d_id`, `pl_number`, `pl_exp`, `pl_img`, `pl_created_at`, `pl_updated_at`) VALUES
+(00000001, 00000004, '12345678936', '2024-12-06', '673845b0e1eee.png', '2024-11-16 11:58:19', '2024-11-16 07:11:44'),
+(00000002, 00000001, '123456789', '2024-11-25', '673e62b83e702.jpg', '2024-11-20 22:29:08', '2024-11-20 22:29:12');
 
 -- --------------------------------------------------------
 
@@ -11616,6 +11769,30 @@ INSERT INTO `railway_stations` (`rail_id`, `rail_name`, `rail_address`, `rail_ci
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rental_agreement`
+--
+
+CREATE TABLE `rental_agreement` (
+  `ra_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `ra_num` varchar(55) NOT NULL,
+  `ra_exp` date NOT NULL,
+  `ra_img` varchar(255) NOT NULL,
+  `ra_created_at` datetime NOT NULL,
+  `ra_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rental_agreement`
+--
+
+INSERT INTO `rental_agreement` (`ra_id`, `d_id`, `ra_num`, `ra_exp`, `ra_img`, `ra_created_at`, `ra_updated_at`) VALUES
+(00000001, 00000004, '12346652656', '2024-11-30', '673cf4547b1f2.jpg', '2024-11-19 20:25:56', '0000-00-00 00:00:00'),
+(00000002, 00000001, '12345678', '2024-11-25', '673e85662f1aa.jpg', '2024-11-21 00:56:55', '2024-11-21 00:57:10');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reviews`
 --
 
@@ -11758,35 +11935,189 @@ INSERT INTO `vehicles` (`v_id`, `v_name`, `v_seat`, `v_luggage`, `v_airbags`, `v
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vehicle_documents`
+-- Table structure for table `vehicle_extras`
 --
 
-CREATE TABLE `vehicle_documents` (
-  `vd_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+CREATE TABLE `vehicle_extras` (
+  `ve_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
-  `log_book` varchar(255) NOT NULL,
-  `mot_certificate` varchar(255) NOT NULL,
-  `pco` varchar(255) NOT NULL,
-  `insurance` varchar(255) NOT NULL,
-  `road_tax` varchar(255) NOT NULL,
-  `vehicle_picture_front` varchar(255) NOT NULL,
-  `vehicle_picture_back` varchar(255) NOT NULL,
-  `rental_agreement` varchar(255) NOT NULL,
-  `insurance_schedule` varchar(255) NOT NULL,
-  `extra` varchar(255) NOT NULL,
-  `date_upload` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `ve_img` varchar(255) NOT NULL,
+  `ve_created_at` datetime NOT NULL,
+  `ve_updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `vehicle_documents`
+-- Dumping data for table `vehicle_extras`
 --
 
-INSERT INTO `vehicle_documents` (`vd_id`, `d_id`, `log_book`, `mot_certificate`, `pco`, `insurance`, `road_tax`, `vehicle_picture_front`, `vehicle_picture_back`, `rental_agreement`, `insurance_schedule`, `extra`, `date_upload`) VALUES
-(00000001, 00000001, '669cb7176541d.png', '669cc22a95830.jpg', '669cc234cb970.jpg', '669cc244556bc.jpg', '669cc2713d907.jpg', '669cc25eb49ed.jpg', '669cc26847220.jpg', '669cc27bd0fb5.jpg', '669cc28cc5ced.jpg', '669cc29514170.jpg', '2024-07-21 08:11:01'),
-(00000002, 00000002, '66cb30496bc49.jpg', '66cb304eb8ea1.jpg', '66cb305334548.jpg', '66cb305805d97.jpg', '66cb306aea7ea.jpg', '66cb305f0e2e0.jpg', '66cb306450845.jpg', '66cb307034b23.jpg', '66cb307579b51.jpg', '66cb307ace11f.jpg', '2024-08-25 13:24:10'),
-(00000003, 00000003, '', '', '', '', '', '', '', '', '', '', '2024-08-06 17:10:11'),
-(00000004, 00000004, '', '', '', '', '', '', '', '', '', '', '2024-08-06 17:33:11'),
-(00000009, 00000009, '66cb3116e501b.jpg', '66cb311b5ba97.jpg', '66cb31207a755.jpg', '66cb3124b9544.jpg', '66cb3135f121e.jpg', '66cb312a13688.jpg', '66cb312f4cedf.jpg', '66cb313b35418.jpg', '66cb314105eca.jpg', '66cb31471b913.jpg', '2024-08-25 13:27:35');
+INSERT INTO `vehicle_extras` (`ve_id`, `d_id`, `ve_img`, `ve_created_at`, `ve_updated_at`) VALUES
+(00000001, 00000004, '673cff27dd64d.jpg', '2024-11-19 21:12:07', '0000-00-00 00:00:00'),
+(00000002, 00000001, '673e87e377be4.jpg', '2024-11-21 01:07:45', '2024-11-21 01:07:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_insurance`
+--
+
+CREATE TABLE `vehicle_insurance` (
+  `vi_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `vi_num` varchar(55) NOT NULL,
+  `vi_exp` date NOT NULL,
+  `vi_img` varchar(255) NOT NULL,
+  `vi_created_at` datetime NOT NULL,
+  `vi_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle_insurance`
+--
+
+INSERT INTO `vehicle_insurance` (`vi_id`, `d_id`, `vi_num`, `vi_exp`, `vi_img`, `vi_created_at`, `vi_updated_at`) VALUES
+(00000001, 00000004, '123456785966', '2024-11-29', '673cd8a70a052.jpg', '2024-11-19 18:27:51', '0000-00-00 00:00:00'),
+(00000002, 00000001, '123456789', '2024-11-25', '673e7f05ad1f8.jpg', '2024-11-21 00:29:57', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_ins_schedule`
+--
+
+CREATE TABLE `vehicle_ins_schedule` (
+  `is_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `is_num` varchar(55) NOT NULL,
+  `is_img` varchar(255) NOT NULL,
+  `is_created_at` datetime NOT NULL,
+  `is_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle_ins_schedule`
+--
+
+INSERT INTO `vehicle_ins_schedule` (`is_id`, `d_id`, `is_num`, `is_img`, `is_created_at`, `is_updated_at`) VALUES
+(00000001, 00000004, '12345678', '673cf7e3e972c.jpg', '2024-11-19 17:34:14', '2024-11-19 20:41:07'),
+(00000002, 00000001, '123456789', '673e86dd543f7.jpg', '2024-11-21 01:03:21', '2024-11-21 01:03:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_log_book`
+--
+
+CREATE TABLE `vehicle_log_book` (
+  `lb_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `lb_number` varchar(55) NOT NULL,
+  `lb_img` varchar(255) NOT NULL,
+  `lb_created_at` datetime NOT NULL,
+  `lb_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle_log_book`
+--
+
+INSERT INTO `vehicle_log_book` (`lb_id`, `d_id`, `lb_number`, `lb_img`, `lb_created_at`, `lb_updated_at`) VALUES
+(00000001, 00000004, '12345678', '673ccc16ad9ca.jpg', '2024-11-19 17:34:14', '0000-00-00 00:00:00'),
+(00000002, 00000001, '123456789', '673e758cbe558.jpg', '2024-11-20 23:49:32', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_mot`
+--
+
+CREATE TABLE `vehicle_mot` (
+  `mot_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `mot_num` varchar(55) NOT NULL,
+  `mot_expiry` date NOT NULL,
+  `mot_img` varchar(255) NOT NULL,
+  `mot_created_at` datetime NOT NULL,
+  `mot_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle_mot`
+--
+
+INSERT INTO `vehicle_mot` (`mot_id`, `d_id`, `mot_num`, `mot_expiry`, `mot_img`, `mot_created_at`, `mot_updated_at`) VALUES
+(00000001, 00000004, '1234567898', '2024-11-29', '673cd21e17847.jpg', '2024-11-19 17:59:58', '0000-00-00 00:00:00'),
+(00000002, 00000001, '13245611', '2024-11-15', '673e7852a3e53.jpg', '2024-11-21 00:01:10', '2024-11-21 00:01:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_pco`
+--
+
+CREATE TABLE `vehicle_pco` (
+  `vpco_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `vpco_num` varchar(55) NOT NULL,
+  `vpco_exp` date NOT NULL,
+  `vpco_img` varchar(255) NOT NULL,
+  `vpco_created_at` datetime NOT NULL,
+  `vpco_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle_pco`
+--
+
+INSERT INTO `vehicle_pco` (`vpco_id`, `d_id`, `vpco_num`, `vpco_exp`, `vpco_img`, `vpco_created_at`, `vpco_updated_at`) VALUES
+(00000001, 00000004, '1234668878', '2024-11-30', '673cd59312a8b.jpg', '2024-11-19 18:14:43', '0000-00-00 00:00:00'),
+(00000002, 00000001, '1233462256', '2024-11-25', '673e7a2a4cece.jpg', '2024-11-21 00:09:14', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_pictures`
+--
+
+CREATE TABLE `vehicle_pictures` (
+  `vp_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `vp_front` varchar(255) NOT NULL,
+  `vp_back` varchar(255) NOT NULL,
+  `vp_created_at` datetime NOT NULL,
+  `vp_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle_pictures`
+--
+
+INSERT INTO `vehicle_pictures` (`vp_id`, `d_id`, `vp_front`, `vp_back`, `vp_created_at`, `vp_updated_at`) VALUES
+(00000001, 00000004, '673cdfc46a356.jpg', '673cdfc46a35a.jpg', '2024-11-19 18:58:12', '0000-00-00 00:00:00'),
+(00000002, 00000001, '673e80c45bb78.jpg', '673e80c45bb78.jpg', '2024-11-21 00:37:20', '2024-11-21 00:37:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_road_tax`
+--
+
+CREATE TABLE `vehicle_road_tax` (
+  `rt_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `rt_num` varchar(55) NOT NULL,
+  `rt_exp` date NOT NULL,
+  `rt_img` varchar(255) NOT NULL,
+  `rt_created_at` datetime NOT NULL,
+  `rt_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle_road_tax`
+--
+
+INSERT INTO `vehicle_road_tax` (`rt_id`, `d_id`, `rt_num`, `rt_exp`, `rt_img`, `rt_created_at`, `rt_updated_at`) VALUES
+(00000001, 00000004, '123313165', '2024-11-22', '673ce56ba0df5.jpg', '2024-11-19 19:22:19', '0000-00-00 00:00:00'),
+(00000002, 00000001, '12345689', '2024-11-25', '673e82991dd07.jpg', '2024-11-21 00:45:08', '2024-11-21 00:45:13');
 
 -- --------------------------------------------------------
 
@@ -12045,6 +12376,12 @@ ALTER TABLE `activity_log`
   ADD KEY `user_index` (`user_type`,`user_id`);
 
 --
+-- Indexes for table `address_proofs`
+--
+ALTER TABLE `address_proofs`
+  ADD PRIMARY KEY (`ap_id`);
+
+--
 -- Indexes for table `airports`
 --
 ALTER TABLE `airports`
@@ -12173,10 +12510,10 @@ ALTER TABLE `driver_bank_details`
   ADD PRIMARY KEY (`d_bank_id`);
 
 --
--- Indexes for table `driver_documents`
+-- Indexes for table `driver_extras`
 --
-ALTER TABLE `driver_documents`
-  ADD PRIMARY KEY (`dd_id`);
+ALTER TABLE `driver_extras`
+  ADD PRIMARY KEY (`de_id`);
 
 --
 -- Indexes for table `driver_history`
@@ -12201,6 +12538,12 @@ ALTER TABLE `driver_vehicle`
 --
 ALTER TABLE `driving_license`
   ADD PRIMARY KEY (`dl_id`);
+
+--
+-- Indexes for table `dvla_check`
+--
+ALTER TABLE `dvla_check`
+  ADD PRIMARY KEY (`dvla_id`);
 
 --
 -- Indexes for table `fares`
@@ -12245,10 +12588,22 @@ ALTER TABLE `mg_charges`
   ADD PRIMARY KEY (`mg_id`);
 
 --
+-- Indexes for table `national_insurance`
+--
+ALTER TABLE `national_insurance`
+  ADD PRIMARY KEY (`ni_id`);
+
+--
 -- Indexes for table `payment_history`
 --
 ALTER TABLE `payment_history`
   ADD PRIMARY KEY (`pay_id`);
+
+--
+-- Indexes for table `pco_license`
+--
+ALTER TABLE `pco_license`
+  ADD PRIMARY KEY (`pl_id`);
 
 --
 -- Indexes for table `peak_hours`
@@ -12287,6 +12642,12 @@ ALTER TABLE `railway_stations`
   ADD PRIMARY KEY (`rail_id`) USING BTREE;
 
 --
+-- Indexes for table `rental_agreement`
+--
+ALTER TABLE `rental_agreement`
+  ADD PRIMARY KEY (`ra_id`);
+
+--
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
@@ -12317,10 +12678,52 @@ ALTER TABLE `vehicles`
   ADD PRIMARY KEY (`v_id`);
 
 --
--- Indexes for table `vehicle_documents`
+-- Indexes for table `vehicle_extras`
 --
-ALTER TABLE `vehicle_documents`
-  ADD PRIMARY KEY (`vd_id`);
+ALTER TABLE `vehicle_extras`
+  ADD PRIMARY KEY (`ve_id`);
+
+--
+-- Indexes for table `vehicle_insurance`
+--
+ALTER TABLE `vehicle_insurance`
+  ADD PRIMARY KEY (`vi_id`);
+
+--
+-- Indexes for table `vehicle_ins_schedule`
+--
+ALTER TABLE `vehicle_ins_schedule`
+  ADD PRIMARY KEY (`is_id`);
+
+--
+-- Indexes for table `vehicle_log_book`
+--
+ALTER TABLE `vehicle_log_book`
+  ADD PRIMARY KEY (`lb_id`);
+
+--
+-- Indexes for table `vehicle_mot`
+--
+ALTER TABLE `vehicle_mot`
+  ADD PRIMARY KEY (`mot_id`);
+
+--
+-- Indexes for table `vehicle_pco`
+--
+ALTER TABLE `vehicle_pco`
+  ADD PRIMARY KEY (`vpco_id`);
+
+--
+-- Indexes for table `vehicle_pictures`
+--
+ALTER TABLE `vehicle_pictures`
+  ADD PRIMARY KEY (`vp_id`);
+
+--
+-- Indexes for table `vehicle_road_tax`
+--
+ALTER TABLE `vehicle_road_tax`
+  ADD PRIMARY KEY (`rt_id`);
 
 --
 -- Indexes for table `waiting_time`
@@ -12342,7 +12745,13 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2469;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2530;
+
+--
+-- AUTO_INCREMENT for table `address_proofs`
+--
+ALTER TABLE `address_proofs`
+  MODIFY `ap_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `airports`
@@ -12471,10 +12880,10 @@ ALTER TABLE `driver_bank_details`
   MODIFY `d_bank_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `driver_documents`
+-- AUTO_INCREMENT for table `driver_extras`
 --
-ALTER TABLE `driver_documents`
-  MODIFY `dd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `driver_extras`
+  MODIFY `de_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `driver_history`
@@ -12498,7 +12907,13 @@ ALTER TABLE `driver_vehicle`
 -- AUTO_INCREMENT for table `driving_license`
 --
 ALTER TABLE `driving_license`
-  MODIFY `dl_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `dl_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `dvla_check`
+--
+ALTER TABLE `dvla_check`
+  MODIFY `dvla_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `fares`
@@ -12543,10 +12958,22 @@ ALTER TABLE `mg_charges`
   MODIFY `mg_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `national_insurance`
+--
+ALTER TABLE `national_insurance`
+  MODIFY `ni_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `payment_history`
 --
 ALTER TABLE `payment_history`
   MODIFY `pay_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pco_license`
+--
+ALTER TABLE `pco_license`
+  MODIFY `pl_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `peak_hours`
@@ -12585,6 +13012,12 @@ ALTER TABLE `railway_stations`
   MODIFY `rail_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `rental_agreement`
+--
+ALTER TABLE `rental_agreement`
+  MODIFY `ra_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
@@ -12615,10 +13048,52 @@ ALTER TABLE `vehicles`
   MODIFY `v_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `vehicle_documents`
+-- AUTO_INCREMENT for table `vehicle_extras`
 --
-ALTER TABLE `vehicle_documents`
-  MODIFY `vd_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `vehicle_extras`
+  MODIFY `ve_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vehicle_insurance`
+--
+ALTER TABLE `vehicle_insurance`
+  MODIFY `vi_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vehicle_ins_schedule`
+--
+ALTER TABLE `vehicle_ins_schedule`
+  MODIFY `is_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vehicle_log_book`
+--
+ALTER TABLE `vehicle_log_book`
+  MODIFY `lb_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vehicle_mot`
+--
+ALTER TABLE `vehicle_mot`
+  MODIFY `mot_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vehicle_pco`
+--
+ALTER TABLE `vehicle_pco`
+  MODIFY `vpco_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vehicle_pictures`
+--
+ALTER TABLE `vehicle_pictures`
+  MODIFY `vp_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vehicle_road_tax`
+--
+ALTER TABLE `vehicle_road_tax`
+  MODIFY `rt_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `waiting_time`

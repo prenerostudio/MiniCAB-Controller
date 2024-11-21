@@ -7,46 +7,55 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-if (isset($_POST['d_id'])) {
-	
-	$d_id = $_POST['d_id'];        
-	$targetDir = "../../img/drivers/vehicle/road-tax/";    
-	$fileExtension = strtolower(pathinfo($_FILES["rt"]["name"], PATHINFO_EXTENSION));    
-	$allowTypes = array('jpg', 'png', 'jpeg', 'gif');    
-	$uniqueId = uniqid();    
-	$rt = $uniqueId . "." . $fileExtension;    
-	$targetFilePath = $targetDir . $rt;
-    
-	if (in_array($fileExtension, $allowTypes)) {    
-		if (move_uploaded_file($_FILES["rt"]["tmp_name"], $targetFilePath)) {                   
-			$r = $connect->query("UPDATE `vehicle_documents` SET `road_tax`='$rt' WHERE `d_id`='$d_id'");
-			if($r){	
-				$activity_type = "Driver Vehicle Document updated";		
-				$user_type = 'driver';		
-				$details = "You have updated Vehicle Road Tax Document.";
-		
-				$actsql = "INSERT INTO `activity_log`(
-												`activity_type`, 
-												`user_type`, 
-												`user_id`, 
-												`details`
-												) VALUES (
-												'$activity_type',
-												'$user_type',
-												'$d_id',
-												'$details')";				
-				$actr = mysqli_query($connect, $actsql);
-				echo json_encode(array('message' => "Road Tax Upload Successfully", 'status' => true));            		
-			} else {        
-				echo json_encode(array('message' => "Error In Uploading Road Tax", 'status' => false));	
-			}        								
-		} else {		
-			echo json_encode(array('message' => "File upload failed, please try again.", 'status' => false));        
-		}    
-	} else {
-		echo json_encode(array('message' => "Invalid file type.", 'status' => false));                 
-	}					                    		     	   
+if (!isset($_POST['d_id']) || !isset($_POST['rt_num']) || !isset($_FILES['rt_img'])) {
+    echo json_encode(['message' => "Some fields are missing", 'status' => false]);
+    exit;
+}
+
+$d_id = $_POST['d_id'];
+$rt_num = $_POST['rt_num'];
+$rt_exp = $_POST['rt_exp']; 
+$date_update = date('Y-m-d H:i:s'); // Format: YYYY-MM-DD HH:MM:SS
+
+$targetDir = "../../img/drivers/vehicle/road-tax/";
+$fileExtension = strtolower(pathinfo($_FILES["rt_img"]["name"], PATHINFO_EXTENSION));
+$allowedTypes = ['jpg', 'png', 'jpeg', 'gif'];
+$uniqueId = uniqid();
+$rt_img = $uniqueId . "." . $fileExtension;
+$targetFilePath = $targetDir . $rt_img;
+
+if (!in_array($fileExtension, $allowedTypes)) {
+    echo json_encode(['message' => "Invalid file type.", 'status' => false]);
+    exit;
+}
+
+if (!move_uploaded_file($_FILES["rt_img"]["tmp_name"], $targetFilePath)) {
+    echo json_encode(['message' => "File upload failed, please try again.", 'status' => false]);
+    exit;
+}
+
+// Check if record exists
+$fetch = $connect->query("SELECT * FROM `vehicle_road_tax` WHERE `d_id` = '$d_id'");
+if ($fetch && $fetch->num_rows > 0) {
+    // Update existing record
+    $query = "UPDATE `vehicle_road_tax` SET `rt_num`='$rt_num',`rt_exp`='$rt_exp',`rt_img`='$rt_img',`rt_updated_at`='$date_update' WHERE `d_id` = '$d_id'";
 } else {
-	echo json_encode(array('message' => "Some Fields are missing", 'status' => false));
+    // Insert new record
+    $query = "INSERT INTO `vehicle_road_tax`(`d_id`, `rt_num`, `rt_exp`, `rt_img`, `rt_created_at`) VALUES ('$d_id','$rt_num','$rt_exp','$rt_img','$date_update')";
+}
+
+if ($connect->query($query)) {
+    // Log activity
+    $activity_type = "Driver Vehicle Road TAX Document updated";
+    $user_type = 'driver';
+    $details = "You have updated Vehicle Road TAX Document.";
+
+    $logQuery = "INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) 
+                 VALUES ('$activity_type', '$user_type', '$d_id', '$details')";
+    $connect->query($logQuery);
+
+    echo json_encode(['message' => "Vehicle Road TAX Document Upload Successfully", 'status' => true]);
+} else {
+    echo json_encode(['message' => "Error in uploading license.", 'status' => false]);
 }
 ?>

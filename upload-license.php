@@ -8,7 +8,8 @@ if (isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
     $dl_num = $_POST['licene_number'];
     $dl_expy = $_POST['licence_exp'];
-
+  
+	$date_update = date('Y-m-d H:i:s'); // Current timestamp
     // Define target directory for file upload
     $targetDir = "img/drivers/driving-license/";
 
@@ -39,30 +40,40 @@ if (isset($_POST['submit'])) {
             
             // Attempt to upload the back file
             if (move_uploaded_file($_FILES["dl_back"]["tmp_name"], $targetFilePathBack)) {
-                
-                // Insert the data into the database using prepared statements
-                $stmt = $connect->prepare("INSERT INTO `driving_license` (`d_id`, `dl_number`, `dl_expiry`, `dl_front`, `dl_back`) VALUES (?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssss", $d_id, $dl_num, $dl_expy, $dl_front, $dl_back);
+				
+				   try {
+            // Check if record exists
+            $stmt = $connect->prepare("SELECT * FROM `driving_license` WHERE `d_id` = ?");
+            $stmt->bind_param("s", $d_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-                if ($stmt->execute()) {
-                    // Log the activity
-                    $activity_type = 'Driving License Updated';
-                    $user_type = 'user';
-                    $details = "Driving License of Driver $d_id has been uploaded by Controller.";
-                    $actsql = "INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)";
-                    $actstmt = $connect->prepare($actsql);
-                    $actstmt->bind_param("ssss", $activity_type, $user_type, $myId, $details);
-                    $actstmt->execute();
+            if ($result->num_rows > 0) {
+                // Update existing record
+                $updateStmt = $connect->prepare("UPDATE `driving_license` SET `dl_number`= ?,`dl_expiry`= ?,`dl_front`= ?,`dl_back`= ?,`dl_updated_at`= ? WHERE `d_id` = ?");
+                $updateStmt->bind_param("sssss", $dl_num, $dl_expy, $dl_front, $dl_back, $date_update, $d_id);
 
-                    // Redirect to the driver details page
-                    header('Location: view-driver.php?d_id=' . $d_id . '#tabs-document');
-                    exit();
+                if ($updateStmt->execute()) {
+                    logActivity('Driving License Updated', $d_id, "Driving License of Driver $d_id has been updated by Controller.");
                 } else {
-                    // Database update failed
-                    echo "Database update failed. Please try again.";
-                    header('Location: view-driver.php?d_id=' . $d_id . '#tabs-document');
-                    exit();
+                    exit("Database update failed.");
                 }
+            } else {
+                // Insert new record
+                $insertStmt = $connect->prepare("INSERT INTO `driving_license`(`d_id`, `dl_number`, `dl_expiry`, `dl_front`, `dl_back`, `dl_created_at`)  VALUES (?, ?, ?, ?, ?, ?)");
+                $insertStmt->bind_param("ssssss", $d_id, $dl_num, $dl_expy, $dl_front, $dl_back, $date_update);
+
+                if ($insertStmt->execute()) {
+                    logActivity('Driving License Added', $d_id, "Driving License of Driver $d_id has been added by Controller.");
+                } else {
+                    exit("Database insertion failed.");
+                }
+            }
+
+            header('location: view-driver.php?d_id='.$d_id.'#tabs-document');
+        } catch (Exception $e) {
+            exit("An error occurred: " . $e->getMessage());
+        }
             } else {
                 // Back file upload failed
                 echo "Back file upload failed, please try again.";
