@@ -1,25 +1,47 @@
+
 <?php
+
 include('header.php');
+
 ?>  
+
 <div class="page-header d-print-none page_padding">		   		
-	<div class="row g-2 align-items-center">        	
-		<div class="col">            								
-			<div class="page-pretitle">                			
-				Overview                				
-			</div>                			
-			<h2 class="page-title">                			
-				Drivers Section                				
-			</h2>              			
-		</div>		
-		<div class="col-auto ms-auto d-print-none">            		
-			<div class="btn-list">                			
-				<a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">
-					<i class="ti ti-user-plus"></i>                    					
-					Add New Driver                  					
-				</a>				             				
-			</div>              			
-		</div>		
-	</div>	
+
+    <div class="row g-2 align-items-center">        	
+
+        <div class="col">            								
+	
+            <div class="page-pretitle">                			
+	
+                Overview                				
+		
+            </div>                			
+	
+            <h2 class="page-title">                			
+	
+                Drivers Section                				
+		
+            </h2>              			
+	
+        </div>		
+	
+        <div class="col-auto ms-auto d-print-none">            		
+	
+            <div class="btn-list">                			
+	
+                <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">
+		
+                    <i class="ti ti-user-plus"></i>                    					
+		
+                    Add New Driver                  					
+		
+                </a>				             				
+		
+            </div>              			
+	
+        </div>		
+	
+    </div>	
 </div>
 
 
@@ -28,147 +50,291 @@ include('header.php');
 
 
 
+
 <div class="page-body page_padding">          	
-	<div class="row row-deck row-cards">		                    						
-		<div class="col-12">
+
+    <div class="row row-deck row-cards">		                    						
+
+        <div class="col-12">
+	
+            
 			
+	
+            <div class="card">		
+	
+                <div class="card-header">			
+		
+                    <ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">				
+		
+                        <li class="nav-item">					
 			
-			<div class="card">		
-			<div class="card-header">			
-				<ul class="nav nav-tabs card-header-tabs nav-fill" data-bs-toggle="tabs">				
-					<li class="nav-item">					
-						<a href="#tabs-new" class="nav-link active" data-bs-toggle="tab">							
-							<i class="ti ti-brand-speedtest" style="font-size: 28px;"></i>
-							New Drivers						
-						</a>										
-					</li>					
+                            <a href="#tabs-new" class="nav-link active" data-bs-toggle="tab">							
+			
+                                <i class="ti ti-brand-speedtest" style="font-size: 28px;"></i>
+				
+                                New Drivers						
+				
+                            </a>										
+			
+                        </li>					
+			
+                        
+			
+                        <li class="nav-item">                       					
+			
+                            <a href="#tabs-await" class="nav-link" data-bs-toggle="tab">
+			
+                                <i class="ti ti-map-search" style="font-size: 28px;"></i>
+				
+                                Awaiting Upload Documentation					
+				
+                            </a>                     					
+			
+                        </li>  					
+			
+                        
+			
+                    </ul>
+		
+                </div>
+		
+                
+		
+                <div class="card-body">
+		
+                    <div class="tab-content">
+		
+                        <div class="tab-pane active show" id="tabs-new">					
+			
+                            <div class="card">							
+			
+                                <div class="card-header">									
+				
+                                    <h3 class="card-title">
+				
+                                        New Drivers Request List
 					
-					<li class="nav-item">                       					
-						<a href="#tabs-await" class="nav-link" data-bs-toggle="tab">
-							<i class="ti ti-map-search" style="font-size: 28px;"></i>
-							Awaiting Upload Documentation					
-						</a>                     					
-					</li>  					
+                                    </h3>									
+				
+                                </div>																
+				
+                                <div class="card-body border-bottom py-3">									
+				
+                                    <div id="table-ndriver" class="table-responsive">
+				
+                                        <table class="table" id="table-new">
 					
-				</ul>
-			</div>
-															
-			<div class="card-body">
-				<div class="tab-content">
-					<div class="tab-pane active show" id="tabs-new">					
-						<div class="card">							
-				<div class="card-header">									
-					<h3 class="card-title">
-						New Drivers Request List
-					</h3>									
-				</div>																
-				<div class="card-body border-bottom py-3">									
-					<div id="table-ndriver" class="table-responsive">
-						<table class="table" id="table-new">
-							<thead>																			
-								<tr>																						
-									<th>ID</th>
-									<th>Image</th>	
-									<th>Post Code</th>
-									<th>Name</th>																		
-									<th>Email</th>																		
-									<th>Phone</th>																		
-									<th>Gender</th>																		
-									<th>Licence Authority</th>											
-									<th>Actions</th>																	
-								</tr>															
-							</thead>														
-							<tbody class="table-tbody">                            
-								<?php                            
-								$y = 0;                            
-								$ndsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 0 ORDER BY drivers.d_id DESC");                            
-								while ($ndrow = mysqli_fetch_array($ndsql)) :                                
-								$y++;                            
-								?>                                
-								<tr>                                
-									<td>
-										<?php echo $ndrow['d_id']; ?>
-									</td>                                    
-									<td>                                        
-										<?php if (!$ndrow['d_pic']) : ?>                                          
-										<img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                       
-										<?php else : ?>                                           
-										<img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-										<?php endif; ?>                                    
-									</td>
-									<td>																	
-									<?php echo $ndrow['d_post_code'];?>
+                                            <thead>																			
+					
+                                                <tr>																						
+						
+                                                    <th>ID</th>
+						
+                                                    <th>Image</th>	
+						
+                                                    <th>Post Code</th>
+						
+                                                    <th>Name</th>																		
+						
+                                                    <th>Email</th>																		
+						
+                                                    <th>Phone</th>																		
+						
+                                                    <th>Gender</th>																		
+						
+                                                    <th>Licence Authority</th>											
+						
+                                                    <th>Actions</th>																	
+						
+                                                </tr>															
+						
+                                            </thead>														
+					
+                                            <tbody class="table-tbody">                            
+					
+			
+                                                <?php                            
+
+                        
+                                                $y = 0;                            
 								
-									</td>
-                                    <td>
-										<?php echo $ndrow['d_name']; ?>
-									</td>
-                                    <td>
-										<?php echo $ndrow['d_email']; ?>
-									</td>
-                                    <td>
-										<?php echo $ndrow['d_phone']; ?>
-									</td>
-                                    <td>
-										<?php echo $ndrow['d_gender']; ?>
-									</td>
-                                    <td>
-										<?php echo $ndrow['licence_authority']; ?>
-									</td>
-                                    <td>
-                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View">
-                                            <button class="btn btn-twitter btn-icon">
-												<i class="ti ti-eye"></i>
-											</button>
-                                        </a>							
-										<a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete">
-											<button class="btn btn-youtube btn-icon">    
-												<i class="ti ti-square-rounded-x"></i>
-											</button>	
-										</a>                                                                            
-									</td>                                
-								</tr>                            
-								<?php endwhile; ?>                            
-								<?php if ($y === 0) : ?>
-								<tr>
-									<td colspan="9">									
-										<p align="center">										
-											No Driver Found!										
-										</p>									
-									</td>                                
-								</tr>                            
-								<?php endif; ?>
-							</tbody>  
-						</table>  
-					</div>
-				</div>
-			</div>																
-					</div>
-					<div class="tab-pane" id="tabs-await">					
-						<div class="card">							
-				<div class="card-header">									
-					<h3 class="card-title">
-						Driver Waiting Upload Documents List
-					</h3>									
-				</div>																
-				<div class="card-body border-bottom py-3">									
-					<div id="table-ndriver" class="table-responsive">
-						<table class="table" id="table-new">
-							<thead>																			
-								<tr>																						
-									<th>ID</th>
-									<th>Image</th>	
-									<th>Post Code</th>
-									<th>Name</th>																		
-									<th>Email</th>																		
-									<th>Phone</th>																		
-									<th>Gender</th>																		
-									<th>Licence Authority</th>											
-									<th>Actions</th>																	
-								</tr>															
-							</thead>														
-							<tbody class="table-tbody">                            
-								<?php                            
+                                                $ndsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 0 ORDER BY drivers.d_id DESC");                            
+								
+                                                while ($ndrow = mysqli_fetch_array($ndsql)) :                                
+								
+                                                    $y++;                            
+								
+                                                ?>                                
+								
+                                                <tr>                                
+						
+                                                    <td>
+						
+				
+                                                        <?php echo $ndrow['d_id']; ?>
+
+                                                    </td>                                    
+									
+                                                    <td>                                        
+						
+				
+                                                        <?php if (!$ndrow['d_pic']) : ?>                                          
+										
+                                                        <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                       
+										
+                                                            <?php else : ?>                                           
+										
+                                                        <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
+										
+                                                            <?php endif; ?>                                    
+									
+                                                    </td>
+									
+                                                    <td>																	
+									
+                                                        <?php echo $ndrow['d_post_code'];?>
+								
+									
+                                                    </td>
+                                    
+                                                    <td>
+										
+                                                        <?php echo $ndrow['d_name']; ?>
+									
+                                                    </td>
+                                    
+                                                    <td>
+										
+                                                        <?php echo $ndrow['d_email']; ?>
+									
+                                                    </td>
+                                    
+                                                    <td>
+										
+                                                        <?php echo $ndrow['d_phone']; ?>
+									
+                                                    </td>
+                                    
+                                                    <td>
+										
+                                                        <?php echo $ndrow['d_gender']; ?>
+									
+                                                    </td>
+                                    
+                                                    <td>
+										
+                                                        <?php echo $ndrow['licence_authority']; ?>
+									
+                                                    </td>
+                                    
+                                                    <td>
+                                        
+                                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View">
+                                            
+                                                            <button class="btn btn-twitter btn-icon">
+												
+                                                                <i class="ti ti-eye"></i>
+											
+                                                            </button>
+                                        
+                                                        </a>							
+										
+                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete">
+											
+                                                            <button class="btn btn-youtube btn-icon">    
+												
+                                                                <i class="ti ti-square-rounded-x"></i>
+											
+                                                            </button>	
+										
+                                                        </a>                                                                            
+									
+                                                    </td>                                
+								
+                                                </tr>                            
+								
+                                                    <?php endwhile; ?>                            
+								
+                                                        <?php if ($y === 0) : ?>
+								
+                                                <tr>
+									
+                                                    <td colspan="9">									
+										
+                                                        <p align="center">										
+											
+                                                            No Driver Found!										
+										
+                                                        </p>									
+									
+                                                    </td>                                
+								
+                                                </tr>                            
+								
+                                                    <?php endif; ?>
+							
+                                            </tbody>  
+						
+                                        </table>  
+					
+                                    </div>
+				
+                                </div>
+			
+                            </div>																
+			
+                        </div>
+			
+                        <div class="tab-pane" id="tabs-await">					
+			
+                            <div class="card">							
+			
+                                <div class="card-header">									
+				
+                                    <h3 class="card-title">
+				
+                                        Driver Waiting Upload Documents List
+					
+                                    </h3>									
+				
+                                </div>																
+				
+                                <div class="card-body border-bottom py-3">									
+				
+                                    <div id="table-ndriver" class="table-responsive">
+				
+                                        <table class="table" id="table-new">
+					
+                                            <thead>																			
+					
+                                                <tr>																						
+						
+                                                    <th>ID</th>
+						
+                                                    <th>Image</th>	
+						
+                                                    <th>Post Code</th>
+						
+                                                    <th>Name</th>																		
+						
+                                                    <th>Email</th>																		
+						
+                                                    <th>Phone</th>																		
+						
+                                                    <th>Gender</th>																		
+						
+                                                    <th>Licence Authority</th>											
+						
+                                                    <th>Actions</th>																	
+						
+                                                </tr>															
+						
+                                            </thead>														
+					
+                                            <tbody class="table-tbody">                            
+					
+			
+                                                <?php                            
 								$y = 0;                            
 								$ndsql = mysqli_query($connect, "SELECT d.* FROM drivers d LEFT JOIN driver_documents dd ON d.d_id = dd.d_id AND (       dd.d_license_front = '' 
 								AND dd.d_license_back = '' 
