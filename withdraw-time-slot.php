@@ -10,23 +10,29 @@ $sql = "UPDATE `time_slots` SET `d_id`='$d_id', `ts_status`='$status' WHERE `ts_
 $result = $connect->query($sql);
 
 if($result){ 	
-	$activity_type = 'Time Slot Withdrawn';	
-	$user_type = 'user';	
-	$details = "Time Slot Has Been Withdrawn by Controller.";
+
+    $activity_type = 'Time Slot Withdrawn';	
+
+    $user_type = 'user';	
+
+    $details = "Time Slot Has Been Withdrawn by Controller.";
 	
-	$actsql = "INSERT INTO `activity_log`(
-										`activity_type`, 
-										`user_type`, 
-										`user_id`, 
-										`details`
-										) VALUES (
-										'$activity_type',
-										'$user_type',
-										'$myId',
-										'$details')";	
-	$actr = mysqli_query($connect, $actsql);		
+
+    $actsql = "INSERT INTO `activity_log`(
+					`activity_type`, 
+					`user_type`, 
+					`user_id`, 
+					`details`
+					) VALUES (
+					'$activity_type',
+					'$user_type',
+					'$myId',
+					'$details')";	
+
+    $actr = mysqli_query($connect, $actsql);		
 	
 	// Initialize Pusher
+    
     $options = [
         'cluster' => 'ap2',
         'useTLS' => true
@@ -46,10 +52,13 @@ if($result){
     ];
 
     // Trigger the event on 'jobs-channel'
+    
     $pusher->trigger('times-channel', 'slot-withdrawn', $data);
 	
-	header('location: available-time-slots.php');
+
+    header('location: available-time-slots.php');
 } else {
-	header('location: available-time-slots.php');
+
+    header('location: available-time-slots.php');
 }
 ?>

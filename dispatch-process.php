@@ -44,7 +44,6 @@ if ($result) {
 
     $job_id = mysqli_insert_id($connect);
     
-// Update the booking status
 
     $book_status = 'Booked';
 
@@ -56,7 +55,7 @@ if ($result) {
 
     $bstmt->execute();
 
-    // Insert into the driver history
+
 
     $historysql = "INSERT INTO `driver_history`(`d_id`, `book_id`) VALUES (?, ?)";
 
@@ -67,7 +66,7 @@ if ($result) {
     $historystmt->execute();
 
 
-    // Log the activity
+
 
     $activity_type = 'Job Dispatched';		
 
@@ -81,29 +80,35 @@ if ($result) {
                                         `user_type`, 
                                         `user_id`, 
                                         `details`
-                                        ) VALUES (
-                                        ?, ?, ?, ?)";
+                                        ) VALUES (?, ?, ?, ?)";
 
+    
     $actstmt = $connect->prepare($actsql);
 
+    
+    
     $actstmt->bind_param("ssis", $activity_type, $user_type, $myId, $details);
 
     $actstmt->execute();
 	
 
-    // Modify the SQL query to include jobs for today and future jobs
     
-    $fetchsql = "SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND
-    jobs.d_id = $d_id";
+    
+    
+    $fetchsql = "SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND jobs.d_id = $d_id";
 
     
+    
     $fetchr = mysqli_query($connect, $fetchsql);    
+    
+    
     
     $output = mysqli_fetch_all($fetchr, MYSQLI_ASSOC);  
 	
 
     
-// Initialize Pusher
+
+
 
     $options = [
         'cluster' => 'ap2',
@@ -116,14 +121,14 @@ if ($result) {
         $options
     );
 
-    // Data to send via Pusher
+    
     $data = [
         'message' => 'A new job has been dispatched',
         'details' => $output,
        
     ];
 
-    // Trigger a Pusher event
+   
     $pusher->trigger('jobs-channel', 'job-dispatched', $data);
 
     header('Location: inprocess-bookings.php');

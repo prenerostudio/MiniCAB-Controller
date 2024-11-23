@@ -13,7 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-	$allowedFormats = array('jpg', 'png', 'jpeg', 'gif', 'JPEG', 'BMP', 'PDF', 'TIFF', 'WebP', 'Raw', 'SVG', 'HEIF', 'apng', 'CR2', 'ICO', 'JPEG 2000', 'avif');
+	
+    $allowedFormats = array('jpg', 'png', 'jpeg', 'gif', 'JPEG', 'BMP', 'PDF', 'TIFF', 'WebP', 'Raw', 'SVG', 'HEIF', 'apng', 'CR2', 'ICO', 'JPEG 2000', 'avif');
     if (!in_array($imageFileType, $allowedFormats)) {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
@@ -38,20 +39,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 	
-	$activity_type = 'Booker Profile Image Updated';			
-	$user_type = 'user';			
-	$details = "Booker Profile Image Has Been Updated by Controller.";			
-	$actsql = "INSERT INTO `activity_log`(
-										`activity_type`, 
-										`user_type`, 
-										`user_id`, 
-										`details`
-										) VALUES (
-										'$activity_type',
-										'$user_type',
-										'$myId',
-										'$details')";	
-	$actr = mysqli_query($connect, $actsql);			
+	
+    $activity_type = 'Booker Profile Image Updated';			
+	
+    $user_type = 'user';			
+	
+    $details = "Booker Profile Image Has Been Updated by Controller.";			
+	
+    $actsql = "INSERT INTO `activity_log`(
+					`activity_type`, 
+					`user_type`, 
+					`user_id`, 
+					`details`
+					) VALUES (
+					'$activity_type',
+					'$user_type',
+					'$myId',
+					'$details')";	
+
+    $actr = mysqli_query($connect, $actsql);			
+    
     header('location: view-booker.php?c_id=' . $c_id);
 }
 ?>

@@ -2,16 +2,16 @@
 include('config.php');
 
 if (isset($_POST['c_id']) && isset($_POST['b_type_id'])) {
-    // Sanitize input to prevent SQL injection
+    
     $clientID = mysqli_real_escape_string($connect, $_POST['c_id']);
     $bookingTypeID = mysqli_real_escape_string($connect, $_POST['b_type_id']);
     
-    // Determine the table and columns to query based on booking type
+    
     if ($bookingTypeID == '2') {
-        // Fetch company account details
+        
         $query = "SELECT com_phone AS phone, com_email AS email FROM `companies` WHERE com_id = '$clientID'";
     } else {
-        // Fetch client details
+       
         $query = "SELECT c_phone AS phone, c_email AS email FROM clients WHERE c_id = '$clientID'";
     }
     

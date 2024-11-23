@@ -6,156 +6,309 @@ $jobsql=mysqli_query($connect,"SELECT jobs.*, bookings.*, clients.*, drivers.*, 
 $jobrow = mysqli_fetch_array($jobsql);
 ?>  
 
+
 <style>
-        #mapp {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&callback=initMap" async defer></script>
+
+    #mapp {
+    
+        height: 400px;
+
+        width: 100%;
+        
+    }
+    
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&callback=initMap" async defer></script>
+
+
 
 <div class="page-body page_padding">	
-	<form method="post" action="dispatch-process.php" id="jobform" enctype="multipart/form-data">
-		<div class="row row-deck row-cards">						
-			<div class="col-8">				
-				<div class="card">							
-					<div class="card-header">									
-						<h3 class="card-title">
-							Booking Details
-						</h3>
-					</div>								
-					<div class="card-body border-bottom py-3">												
-						<div class="modal-body">																	
-							<div class="row">				
-								<h3>Booking Type:   <?php echo $jobrow['b_type_name'];?></h3>
-								<h4>Passenger Details:</h4>							
-								<div class="mb-3 col-lg-4">																
-									<h4>Customer Name: </h4>
-									<p><?php echo $jobrow['c_name'];?></p>
-								</div>								
-								<div class="mb-3 col-lg-4">								
-									<h4>Customer Phone</h4>									
-									<p><?php echo $jobrow['c_phone'];?></p>								
-								</div>																
-								<div class="mb-3 col-lg-4">								
-									<h4>Customer Email</h4>									
-									<p><?php echo $jobrow['c_email'];?></p>								
-								</div>														
-							</div>	
-							<div class="row">								
-								<h4>Driver Details:</h4>							
-								<div class="mb-3 col-lg-4">																
-									<h4>Driver Name: </h4>
-									<p><?php echo $jobrow['d_name'];?></p>
-								</div>								
-								<div class="mb-3 col-lg-4">								
-									<h4>Driver Phone</h4>									
-									<p><?php echo $jobrow['d_phone'];?></p>								
-								</div>																
-								<div class="mb-3 col-lg-4">								
-									<h4>Driver Email</h4>									
-									<p><?php echo $jobrow['d_email'];?></p>								
-								</div>														
-							</div>	
-							<div class="row">																				
-														
-								<div class="mb-3 col-lg-12">										
-									<h4>Address:</h4>									
-									<p><?php echo $jobrow['address'] ?></p>								
-								</div>
-								<div class="mb-3 col-lg-3">										
-									<h4>Postal Code:</h4>
-									<p><?php echo $jobrow['postal_code'] ?></p>								
-								</div>
-								<div class="mb-3 col-lg-3">								
-									<h4>No. of Passenger:</h4>
-									<p><?php echo $jobrow['passenger'] ?></p>
-								</div> 
-								<div class="mb-3 col-lg-3">								
-									<h4>Pickup Date:</h4>
-									<p><?php echo $jobrow['pick_date'] ?></p>								
-								</div>								
-								<div class="mb-3 col-lg-3">								
-									<h4>Pickup Time:</h4>									
-									<p><?php echo $jobrow['pick_time'] ?></p>								
-								</div>								
-								<div class="mb-3 col-lg-3">								
-									<h4>Journey Type</h4>
-									<p><?php echo $jobrow['journey_type'] ?></p>								
-								</div>								
-								<div class="mb-3 col-lg-3">									
-									<h4>Distance</h4>									
-									<p><?php echo $jobrow['journey_distance'] ?> Miles</p>
-								</div>
-								<div class="mb-3 col-lg-3">          								
-									<h4>Flight Number </h4>								
-									<p><?php echo $jobrow['flight_number'] ?></p>
-								</div>															
-								<div class="mb-3 col-lg-3">          								
-									<h4>Delay Time </h4>								
-									<p><?php echo $jobrow['delay_time'] ?></p>							
-								</div>	
-							</div>
-						
-							<div class="row">	
-								<div class="mb-3 col-lg-3">    								
-									<h4>Vehicle Type</h4>   									
-									<p><?php echo $jobrow['v_name'] ?></p>
-								</div>															
-								<div class="mb-3 col-lg-3">				
-									<h4>Luggage</h4>								
-									<p><?php echo $jobrow['luggage'] ?></p>										
-								</div> 															
-								<div class="mb-3 col-lg-3">								
-									<h4>Child Seat</h4>																
-									<p><?php echo $jobrow['child_seat'] ?></p>                    														
-								</div>															
-																				
-							</div>
-							<div class="row">							
-								<div class="mb-3">                 															
-									<h4>Special Note</h4>								
-									<p><?php echo $jobrow['note'] ?></p>								
-								</div> 
-							</div>    												
-						</div>          										      											
-					</div>                                                    				
-				</div>              			
-			</div>	
+
+
+    <form method="post" action="dispatch-process.php" id="jobform" enctype="multipart/form-data">
+	
+    
+        <div class="row row-deck row-cards">						
+
+            <div class="col-8">				
+	
+                <div class="card">							
 		
-			<div class="col-4">				
-				<div class="card">						
-					<div class="card-header">					
-						<h3 class="card-title">
-							Journey Details:
-						</h3>				
-					</div>				
-					<div class="card-body border-bottom py-3">	
-						
-						<div class="modal-body">
-							<div class="row">		
-																
-								<div class="mb-3 col-lg-12">																
-									<h4>Pickup Location:</h4>
-									<p id="pickup"><?php echo $jobrow['pickup'];?></p>
-								</div>
-								<div class="mb-3 col-lg-12">								
-									<h4>Stops:</h4>									
-									<p id="stop"><?php echo $jobrow['stops'];?></p>								
-								</div>
-								<div class="mb-3 col-lg-12">								
-									<h4>Drop-off Location:</h4>									
-									<p id="destination"><?php echo $jobrow['destination'];?></p>								
-								</div>	
-								
-					
+                    <div class="card-header">									
+		
+                        <h3 class="card-title">
+			
+                            Booking Details
+			
+                        </h3>
+			
+                    </div>								
+		
+                    <div class="card-body border-bottom py-3">												
+		
+                        <div class="modal-body">																	
+			
+                            <div class="row">				
+			
+                                <h3>Booking Type:   <?php echo $jobrow['b_type_name'];?></h3>
+				
+                                <h4>Passenger Details:</h4>							
+				
+                                <div class="mb-3 col-lg-4">																
+				
+                                    <h4>Customer Name: </h4>
+				
+                                    <p><?php echo $jobrow['c_name'];?></p>
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Customer Phone</h4>									
+				
+                                    <p><?php echo $jobrow['c_phone'];?></p>								
+				
+                                </div>																
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Customer Email</h4>									
+				
+                                    <p><?php echo $jobrow['c_email'];?></p>								
+				
+                                </div>														
+				
+                            </div>	
+			
+                            <div class="row">								
+			
+                                <h4>Driver Details:</h4>							
+				
+                                <div class="mb-3 col-lg-4">																
+				
+                                    <h4>Driver Name: </h4>
+				
+                                    <p><?php echo $jobrow['d_name'];?></p>
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Driver Phone</h4>									
+				
+                                    <p><?php echo $jobrow['d_phone'];?></p>								
+				
+                                </div>																
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Driver Email</h4>									
+				
+                                    <p><?php echo $jobrow['d_email'];?></p>								
+				
+                                </div>														
+				
+                            </div>	
+			
+                            <div class="row">																				
+			
+                                
+				
+                                <div class="mb-3 col-lg-12">										
+				
+                                    <h4>Address:</h4>									
+				
+                                    <p><?php echo $jobrow['address'] ?></p>								
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-3">										
+				
+                                    <h4>Postal Code:</h4>
+				
+                                    <p><?php echo $jobrow['postal_code'] ?></p>								
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-3">								
+				
+                                    <h4>No. of Passenger:</h4>
+				
+                                    <p><?php echo $jobrow['passenger'] ?></p>
+				
+                                </div> 
+				
+                                <div class="mb-3 col-lg-3">								
+				
+                                    <h4>Pickup Date:</h4>
+				
+                                    <p><?php echo $jobrow['pick_date'] ?></p>								
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-3">								
+				
+                                    <h4>Pickup Time:</h4>									
+				
+                                    <p><?php echo $jobrow['pick_time'] ?></p>								
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-3">								
+				
+                                    <h4>Journey Type</h4>
+				
+                                    <p><?php echo $jobrow['journey_type'] ?></p>								
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-3">									
+				
+                                    <h4>Distance</h4>									
+				
+                                    <p><?php echo $jobrow['journey_distance'] ?> Miles</p>
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-3">          								
+				
+                                    <h4>Flight Number </h4>								
+				
+                                    <p><?php echo $jobrow['flight_number'] ?></p>
+				
+                                </div>															
+				
+                                <div class="mb-3 col-lg-3">          								
+				
+                                    <h4>Delay Time </h4>								
+				
+                                    <p><?php echo $jobrow['delay_time'] ?></p>							
+				
+                                </div>	
+				
+                            </div>
+			
+                            
+			
+                            <div class="row">	
+			
+                                <div class="mb-3 col-lg-3">    								
+				
+                                    <h4>Vehicle Type</h4>   									
+				
+                                    <p><?php echo $jobrow['v_name'] ?></p>
+				
+                                </div>															
+				
+                                <div class="mb-3 col-lg-3">				
+				
+                                    <h4>Luggage</h4>								
+				
+                                    <p><?php echo $jobrow['luggage'] ?></p>										
+				
+                                </div> 															
+				
+                                <div class="mb-3 col-lg-3">								
+				
+                                    <h4>Child Seat</h4>																
+				
+                                    <p><?php echo $jobrow['child_seat'] ?></p>                    														
+				
+                                </div>															
+				
+                                
+				
+                            </div>
+			
+                            <div class="row">							
+			
+                                <div class="mb-3">                 															
+				
+                                    <h4>Special Note</h4>								
+				
+                                    <p><?php echo $jobrow['note'] ?></p>								
+				
+                                </div> 
+				
+                            </div>    												
+			
+                        </div>          										      											
+			
+                    </div>                                                    				
+		
+                </div>              			
+		
+            </div>	
+	
+            
+	
+            <div class="col-4">				
+	
+                <div class="card">						
+		
+                    <div class="card-header">					
+		
+                        <h3 class="card-title">
+			
+                            Journey Details:
+			
+                        </h3>				
+			
+                    </div>				
+		
+                    <div class="card-body border-bottom py-3">	
+		
+                        
+			
+                        <div class="modal-body">
+			
+                            <div class="row">		
+			
+                                
+				
+                                <div class="mb-3 col-lg-12">																
+				
+                                    <h4>Pickup Location:</h4>
+				
+                                    <p id="pickup"><?php echo $jobrow['pickup'];?></p>
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-12">								
+				
+                                    <h4>Stops:</h4>									
+				
+                                    <p id="stop"><?php echo $jobrow['stops'];?></p>								
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-12">								
+				
+                                    <h4>Drop-off Location:</h4>									
+				
+                                    <p id="destination"><?php echo $jobrow['destination'];?></p>								
+				
+                                </div>	
+				
+                                
+				
+                                
 
-<div id="mapp"></div>
+                                
 
-<script>
+                                <div id="mapp"></div>
+
+
+
+                                <script>
+    
     function initMap() {
+
         const pickup = document.getElementById('pickup').innerText;
+        
         const stop = document.getElementById('stop').innerText;
+        
         const destination = document.getElementById('destination').innerText;
 
         const directionsService = new google.maps.DirectionsService();
@@ -228,25 +381,42 @@ $jobrow = mysqli_fetch_array($jobsql);
     }
 </script>
 								
-							</div>							
+							
+                            </div>							
 														
 																									
-						</div>						
-						<div class="modal-footer">							
-							<a href="#" class="btn btn-danger">								
-								<i class="ti ti-circle-x"></i>						
-								Cancel Booking           														
-							</a>  
-							<a class="btn btn-success ms-auto" href="approve-jobs.php?job_id=<?php echo $jobrow['job_id'] ?>">
-								<i class="ti ti-plane-tilt"></i>						
-								Approve Booking  																
-							</a>						
-						</div> 									
-					</div>			
-				</div>		
-			</div>															
-		</div>
-	</form>	
+			
+                        </div>						
+			
+                        <div class="modal-footer">							
+			
+                            <a href="#" class="btn btn-danger">								
+			
+                                <i class="ti ti-circle-x"></i>						
+				
+                                Cancel Booking           														
+				
+                            </a>  
+			
+                            <a class="btn btn-success ms-auto" href="approve-jobs.php?job_id=<?php echo $jobrow['job_id'] ?>">
+			
+                                <i class="ti ti-plane-tilt"></i>						
+				
+                                Approve Booking  																
+				
+                            </a>						
+			
+                        </div> 									
+			
+                    </div>			
+		
+                </div>		
+		
+            </div>															
+	
+        </div>
+	
+    </form>	
 </div>   
 <script>
     function validateForm() {        

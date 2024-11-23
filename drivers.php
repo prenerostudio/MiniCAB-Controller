@@ -159,7 +159,7 @@ include('header.php');
                             <select class="form-select" name="dauth" required>
                                 <option value="" selected>Select Authority</option>
                                 <option>London</option>
-                                <option>Bermingham</option>
+                                <option>Birmingham</option>
                                 <option>Ireland</option>
                             </select>
                         </div>

@@ -13,17 +13,17 @@ $dauth = $_POST['dauth'];
 $pc = $_POST['pc'];
 $dlang = $_POST['dlang'];
 
-// Prepare and execute the update query
+
 $sql = "UPDATE `drivers` SET 
-            `d_name` = ?, 
-            `d_email` = ?, 
-            `d_phone` = ?, 
-            `d_address` = ?, 
-            `d_post_code` = ?, 
-            `d_gender` = ?, 
-            `d_language` = ?, 
-            `licence_authority` = ? 
-        WHERE `d_id` = ?";
+                            `d_name` = ?, 
+                            `d_email` = ?, 
+                            `d_phone` = ?, 
+                            `d_address` = ?, 
+                            `d_post_code` = ?, 
+                            `d_gender` = ?, 
+                            `d_language` = ?, 
+                            `licence_authority` = ? 
+                        WHERE `d_id` = ?";
         
 $stmt = $connect->prepare($sql);
 $stmt->bind_param("sssssssss", $dname, $demail, $dphone, $daddress, $pc, $dgender, $dlang, $dauth, $d_id);

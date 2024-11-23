@@ -6,10 +6,9 @@ if (isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
     $vpco_num = $_POST['vpco_num'];
     $vpco_exp = $_POST['vpco_exp'];
-    $date_update = date('Y-m-d H:i:s'); // Current timestamp
+    $date_update = date('Y-m-d H:i:s'); 
     $targetDir = "img/drivers/vehicle/pco/";
 
-    // Validate file extension
     $fileExtension = strtolower(pathinfo($_FILES["vpco"]["name"], PATHINFO_EXTENSION));
     $allowedExtensions = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'pdf', 'tiff', 'webp', 'raw', 'svg', 'heif', 'apng', 'cr2', 'ico', 'jpeg2000', 'avif'];
 
@@ -18,22 +17,22 @@ if (isset($_POST['submit'])) {
         exit("Invalid file type.");
     }
 
-    // Generate unique filename and path
+ 
     $uniqueId = uniqid();
     $fileName = $uniqueId . "." . $fileExtension;
     $targetFilePath = $targetDir . $fileName;
 
-    // Attempt to upload the file
+    
     if (move_uploaded_file($_FILES["vpco"]["tmp_name"], $targetFilePath)) {
         try {
-            // Check if record exists
+           
             $stmt = $connect->prepare("SELECT * FROM `vehicle_pco` WHERE `d_id` = ?");
             $stmt->bind_param("s", $d_id);
             $stmt->execute();
             $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
-                // Update existing record
+               
                 $updateStmt = $connect->prepare("UPDATE `vehicle_pco` SET `vpco_num`= ?,`vpco_exp`= ?,`vpco_img`= ?,`vpco_updated_at`= ? WHERE `d_id` = ?");
                 $updateStmt->bind_param("sssss", $vpco_num, $vpco_exp, $fileName, $date_update, $d_id);
 
@@ -43,7 +42,7 @@ if (isset($_POST['submit'])) {
                     exit("Database update failed.");
                 }
             } else {
-                // Insert new record
+                
                 $insertStmt = $connect->prepare("INSERT INTO `vehicle_pco`(`d_id`, `vpco_num`, `vpco_exp`, `vpco_img`, `vpco_created_at`)  VALUES (?, ?, ?, ?, ?)");
                 $insertStmt->bind_param("sssss", $d_id, $vpco_num, $vpco_exp, $fileName, $date_update);
 
@@ -64,7 +63,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-// Function to log activities
+
 function logActivity($activityType, $driverId, $details)
 {
     global $connect, $myId;

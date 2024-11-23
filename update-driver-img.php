@@ -25,23 +25,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "UPDATE `drivers` SET  `d_pic`='$logoName' WHERE `d_id`='$d_id'";
             $result = mysqli_query($connect, $sql);
 						
-			$activity_type = 'Driver Profile Image Updated';
-			$user_type = 'user';
-			$details = "Driver Profile Image " . $d_id . " Has Been updated by Controller.";
-			$actsql = "INSERT INTO `activity_log`(
-												`activity_type`, 
-												`user_type`, 
-												`user_id`, 
-												`details`
-												) VALUES (
-												'$activity_type',
-												'$user_type',
-												'$myId',
-												'$details')";
-			$actr = mysqli_query($connect, $actsql);
+			
+            $activity_type = 'Driver Profile Image Updated';
+	
+            $user_type = 'user';
+	
+            $details = "Driver Profile Image " . $d_id . " Has Been updated by Controller.";
+	
+            $actsql = "INSERT INTO `activity_log`(
+						`activity_type`, 
+						`user_type`, 
+						`user_id`, 
+						`details`
+						) VALUES (
+						'$activity_type',
+						'$user_type',
+						'$myId',
+						'$details')";
+	
+            $actr = mysqli_query($connect, $actsql);
+            
             echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
+            
             header('Location: view-driver.php?d_id='.$d_id);
         } else {
+            
             echo "Sorry, there was an error uploading your file.";
         }
     }

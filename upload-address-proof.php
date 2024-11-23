@@ -24,7 +24,7 @@ if(isset($_POST['submit'])) {
                     $updateStmt = $connect->prepare("UPDATE `address_proofs` SET `ap_1`= ?,`ap_2`= ?,`ap_updated_at`= ? WHERE `d_id` = ?");                    
                     $updateStmt->bind_param("ssss", $pa1, $pa2, $date_update, $d_id);                                    
                     if ($updateStmt->execute()) {                    
-                        logActivity('Address Proof Updated', $d_id, "Address Proof of Driver $d_id has been updated by Controller.");
+                      //  logActivity('Address Proof Updated', $d_id, "Address Proof of Driver $d_id has been updated by Controller.");
                     } else {
                         echo "Database update failed.";
                     }
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])) {
                         $insertStmt = $connect->prepare("INSERT INTO `address_proofs`(`d_id`, `ap_1`, `ap_2`, `ap_created_at`) VALUES (?, ?, ?, ?)");                        
                         $insertStmt->bind_param("ssss", $d_id, $pa1, $pa2, $date_update); 
                         if ($insertStmt->execute()) {                            
-                            logActivity('Address Proof Added', $d_id, "Address Proof of Driver $d_id has been added by Controller.");
+                           // logActivity('Address Proof Added', $d_id, "Address Proof of Driver $d_id has been added by Controller.");
                         } else {
                             echo "Database insertion failed.";                            
                         } 

@@ -17,38 +17,48 @@ $mot = $_POST['mot'];
 $mot_exp = $_POST['mot_exp'];
          
 $sql = "UPDATE `driver_vehicle` SET 
-									`v_id`='$v_id',									
-									`v_make`='$make',
-									`v_model`='$model',
-									`v_color`='$color',
-									`v_reg_num`='$reg_num',
-									`v_phv`='$phv',
-									`v_phv_expiry`='$phv_exp',
-									`v_ti`='$taxi_ins',
-									`v_ti_expiry`='$taxi_exp',
-									`v_mot`='$mot',
-									`v_mot_expiry`='$mot_exp' WHERE `dv_id`='$dv_id'";
+				`v_id`='$v_id',									
+				`v_make`='$make',
+				`v_model`='$model',
+				`v_color`='$color',
+				`v_reg_num`='$reg_num',
+				`v_phv`='$phv',
+				`v_phv_expiry`='$phv_exp',
+				`v_ti`='$taxi_ins',
+				`v_ti_expiry`='$taxi_exp',
+				`v_mot`='$mot',
+				`v_mot_expiry`='$mot_exp' WHERE `dv_id`='$dv_id'";
          
+
 $result = mysqli_query($connect, $sql);              
+
 if ($result) { 	
-	$activity_type = 'Driver Vehicle Details Update';	
-	$user_type = 'user';	
-	$details = "Driver Vehicle Details Has Been updated by Controller.";	
-	$actsql = "INSERT INTO `activity_log`(
-										`activity_type`, 
-										`user_type`, 
-										`user_id`, 
-										`details`
-										) VALUES (
-										'$activity_type',
-										'$user_type',
-										'$myId',
-										'$details')";	
-	$actr = mysqli_query($connect, $actsql);			
-	header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
-	exit();       
+
+    $activity_type = 'Driver Vehicle Details Update';	
+
+    $user_type = 'user';	
+
+    $details = "Driver Vehicle Details Has Been updated by Controller.";	
+
+    $actsql = "INSERT INTO `activity_log`(
+					`activity_type`, 
+					`user_type`, 
+					`user_id`, 
+					`details`
+					) VALUES (
+					'$activity_type',
+					'$user_type',
+					'$myId',
+					'$details')";	
+
+    $actr = mysqli_query($connect, $actsql);			
+
+    header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
+
+    exit();       
 } else {           			
-	header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');     
+
+    header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');     
 }                   
 $connect->close();
 ?>

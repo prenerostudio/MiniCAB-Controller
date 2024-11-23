@@ -10,100 +10,191 @@ $sql = "SELECT invoice.*, jobs.book_id, jobs.job_note, jobs.job_status, clients.
 $result = $connect->query($sql);
 if ($result->num_rows > 0) {    	
 ?>     
+
 <div class="page-header d-print-none page_padding">         
-	<div class="row g-2 align-items-center">    
-		<div class="col">        
-			<h2 class="page-title">            
-				Customer Report                
-			</h2>            
-		</div>        		        
-		<div class="col-auto ms-auto d-print-none">        
-			<button type="button" class="btn btn-primary" onclick="javascript:window.print();">
-				<i class="ti ti-printer"></i>                
-				Print Report
-			</button>            
-		</div>        
-	</div>                 
+
+    <div class="row g-2 align-items-center">    
+
+        <div class="col">        
+	
+            <h2 class="page-title">            
+	
+                Customer Report                
+		
+            </h2>            
+	
+        </div>        		        
+	
+        <div class="col-auto ms-auto d-print-none">        
+	
+            <button type="button" class="btn btn-primary" onclick="javascript:window.print();">
+	
+                <i class="ti ti-printer"></i>                
+		
+                Print Report
+		
+            </button>            
+	
+        </div>        
+	
+    </div>                 
 </div>
 
 <div class="page-body page_padding">          			
-	<div class="row row-deck row-cards">							
-		<div class="col-md-12">        				
-			<div class="card">         										
-				<div class="card-body">					               
-					<h2 class="mb-4">
-						Invoices Report from 		
-						<?php echo $start_date;?> 		
-						to 		
-						<?php echo $end_date;?>
-					</h2>        										   					
-					<div class="row mb-3">											
-						<div class="card">		
-							<div class="card-body border-bottom py-3">								
-								<div id="table-adriver" class="table-responsive">
-									<table class='table table-responsive'>          
-										<tr>            
-											<th>Invoice ID</th>
-											<th>Customer</th>
-											<th>Job Details</th>              
-											<th>Driver</th>     
-											<th>Total Pay</th>               
-											<th>Driver Commission</th>               
-											<th>Invoice Status</th>                
-											<th>Invoice Date</th>            
-										</tr>
-										<?php   
-											while ($row = $result->fetch_assoc()) {		
-										?>       
-										<tr>                
-											<td>
-												<?php echo $row['invoice_id'];?>
-											</td> 
-											<td>
-												<strong style="text-transform: capitalize;">
-													<?php echo $row['c_name'];?>
-												</strong>
-											</td> 
-											<td>
-												<?php echo $row['pickup'];?> | 
+
+    <div class="row row-deck row-cards">							
+
+        <div class="col-md-12">        				
+	
+            <div class="card">         										
+	
+                <div class="card-body">					               
+		
+                    <h2 class="mb-4">
+		
+                        Invoices Report from 		
+			
+			<?php echo $start_date;?> 		
+
+                        to 		
+			
+			<?php echo $end_date;?>
+
+                    </h2>        										   					
+		
+                    <div class="row mb-3">											
+		
+                        <div class="card">		
+			
+                            <div class="card-body border-bottom py-3">								
+			
+                                <div id="table-adriver" class="table-responsive">
+				
+                                    <table class='table table-responsive'>          
+				
+                                        <tr>            
+					
+                                            <th>Invoice ID</th>
+					
+                                            <th>Customer</th>
+					
+                                            <th>Job Details</th>              
+					
+                                            <th>Driver</th>     
+					
+                                            <th>Total Pay</th>               
+					
+                                            <th>Driver Commission</th>               
+					
+                                            <th>Invoice Status</th>                
+					
+                                            <th>Invoice Date</th>            
+					
+                                        </tr>
+					
+					<?php   
+
+                                        while ($row = $result->fetch_assoc()) {		
+					
+                                            ?>       
+					
+                                        <tr>                
+					
+                                            <td>
+					
+							<?php echo $row['invoice_id'];?>
+
+                                            </td> 
+					
+                                            <td>
+					
+                                                <strong style="text-transform: capitalize;">
+						
+							<?php echo $row['c_name'];?>
+
+                                                </strong>
+						
+                                            </td> 
+					
+                                            <td>
+					
+							<?php echo $row['pickup'];?> | 
+
 												<?php echo $row['destination'];?>
-											</td>
-											<td>
-												<strong style="text-transform:capitalize;">
-													<?php echo $row['d_name'];?>
-												</strong>
-											</td>                     
-											<td>
-												<?php echo $row['total_pay'];?>
-											</td>                
-											<td>
-												<?php echo $row['driver_commission'];?>
-											</td>                
-											<td>
-												<?php echo $row['invoice_status'];?>
-											</td>               
-											<td>
-												<?php echo $row['invoice_date'];?>
-											</td>              
-										</tr>	
-										<?php    
-											}
-										?>    
-									</table>
-									<?php	
-						   				} else {    
-										echo "No Results Found!";
-										}											
-										$connect->close();
-									?>
-								</div>										
-							</div>
-						</div>		
-					</div>		
-				</div>
-			</div>
-		</div>
-	</div>	
+
+                                            </td>
+					
+                                            <td>
+					
+                                                <strong style="text-transform:capitalize;">
+						
+							<?php echo $row['d_name'];?>
+
+                                                </strong>
+						
+                                            </td>                     
+					
+                                            <td>
+					
+							<?php echo $row['total_pay'];?>
+
+                                            </td>                
+					
+                                            <td>
+					
+							<?php echo $row['driver_commission'];?>
+
+                                            </td>                
+					
+                                            <td>
+					
+							<?php echo $row['invoice_status'];?>
+
+                                            </td>               
+					
+                                            <td>
+					
+							<?php echo $row['invoice_date'];?>
+
+                                            </td>              
+					
+                                        </tr>	
+					
+					<?php    
+
+                                        }
+					
+                                        ?>    
+					
+                                    </table>
+				
+					<?php	
+
+                                        } else {    
+					
+                                            echo "No Results Found!";
+					
+                                            }											
+					
+                                            $connect->close();
+					
+                                            ?>
+					
+                                </div>										
+				
+                            </div>
+			
+                        </div>		
+			
+                    </div>		
+		
+                </div>
+		
+            </div>
+	
+        </div>
+	
+    </div>	
 </div> 
 <?php
 include('footer.php');

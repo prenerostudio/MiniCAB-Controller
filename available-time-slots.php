@@ -41,9 +41,9 @@ include('header.php');
                                 <?php
                                 $n=0;
                                 $atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 0 ORDER BY time_slots.ts_id DESC");
-                                while($atrow = mysqli_fetch_array($atsql)){
-                                    $n++
-                                            ?>
+                                while($atrow = mysqli_fetch_array($atsql)){                                   
+									$n++                                            
+                                ?>
                                 <tr>
                                     <td>
                                         <?php echo $n; ?>
@@ -65,60 +65,60 @@ include('header.php');
                                         </span>
                                     </td>
                                     <td>
-                                        <strong>£</strong> 
-                                            <?php
+                                        <strong>£</strong>                                             
+										<?php
                                             $stime = strtotime($atrow['start_time']);
-                                            $etime = strtotime($atrow['end_time']);					                                        
-                                            $pph =  $atrow['price_hour'];					                                        
-                                            $total_time = ($etime - $stime) / 3600; 					                                        
-                                            $total_pay = $pph * $total_time;					                                        
-                                            echo number_format($total_pay, 2); 					                                        
-                                            ?>					                                    
+                                            $etime = strtotime($atrow['end_time']);
+                                            $pph =  $atrow['price_hour']; 
+                                            $total_time = ($etime - $stime) / 3600;           
+                                            $total_pay = $pph * $total_time;   
+                                            echo number_format($total_pay, 2);                                       
+										?>					                                    
                                     </td>				
-                                    <td>
-                                        <?php
-                                        if($atrow['ts_status']==0){
-                                            ?> 
+                                    <td>                                        
+										<?php                                        
+											if($atrow['ts_status']==0){                                            
+										?> 
                                         <div class="col-auto status">     
                                             <span class="status-dot status-dot-animated bg-orange d-block"></span>
                                             <span>Pending</span>
-                                        </div>
-					<?php
+                                        </div>					
+										<?php
                                         } elseif($atrow['ts_status']==1){
                                         ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-green d-block"></span>
                                             <span>Accepted</span>
-                                        </div>
-					<?php
+                                        </div>					
+										<?php
                                         } elseif($atrow['ts_status']==2){
                                         ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-red d-block"></span>
                                             <span>Cancelled</span>
-                                        </div>
-					<?php
+                                        </div>					
+										<?php
                                         } elseif($atrow['ts_status']==3){
                                         ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-yellow d-block"></span>
                                             <span>Withdrawn</span>
-                                        </div>
-					<?php
+                                        </div>					
+										<?php
                                         } elseif($atrow['ts_status']==5){
                                         ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-yellow d-block"></span>
                                             <span>Waiting</span>
-                                        </div>
-					<?php
-                                        }  elseif($atrow['ts_status']==4) {
-                                            ?> 
+                                        </div>					
+										<?php
+                                        }  elseif($atrow['ts_status']==4) {                                           
+										?> 
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-blue d-block"></span>
                                             <span>Completed</span>
-                                        </div>
-					<?php
+                                        </div>					
+										<?php
                                         }					
                                         ?>					
                                     </td>
@@ -128,15 +128,15 @@ include('header.php');
                                             <div class="mb-3">
                                                 <div class="input-group mb-2">
                                                     <select class="form-control" name="d_id" required>
-                                                        <option value="">Select Driver</option>
-							<?php
+                                                        <option value="">Select Driver</option>							
+														<?php
                                                         $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
                                                         while ($drrow = mysqli_fetch_array($drsql)) {
-                                                            ?>
-                                                        <option value="<?php echo $drrow['d_id']; ?>">
-								<?php echo $drrow['d_id']; ?> -
-                                                                    <?php echo $drrow['d_name']; ?> -
-                                                                        <?php echo $drrow['d_phone']; ?>
+														?>
+                                                        <option value="<?php echo $drrow['d_id']; ?>">								
+															<?php echo $drrow['d_id']; ?> -
+															<?php echo $drrow['d_name']; ?> -
+															<?php echo $drrow['d_phone']; ?>
                                                         </option>
                                                         <?php
                                                         }
@@ -159,8 +159,8 @@ include('header.php');
                                             </button>
                                         </a>
                                     </td>
-                                </tr>
-				<?php
+                                </tr>				
+								<?php
                                 }
                                 ?>
                             </tbody>
@@ -169,10 +169,10 @@ include('header.php');
                 </div>
             </div>
         </div>
-        <script>						
-    $(document).ready(function() {    
-        $('#slots').DataTable();	
-    });	
+        <script>
+			$(document).ready(function() {           
+				$('#slots').DataTable();	   
+			});	
         </script>					
         <div class="col-4">
             <div class="card">	

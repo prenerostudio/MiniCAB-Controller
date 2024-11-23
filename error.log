@@ -126,3 +126,610 @@
 [22-Aug-2024 09:27:08 Europe/London] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/euroqzwc/minicaboffice.com/dashboard.php:1) in /home/euroqzwc/minicaboffice.com/session.php on line 16
 [22-Aug-2024 09:27:08 Europe/London] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/euroqzwc/minicaboffice.com/session.php on line 2
 [22-Aug-2024 09:27:08 Europe/London] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/euroqzwc/minicaboffice.com/dashboard.php:1) in /home/euroqzwc/minicaboffice.com/session.php on line 16
+[21-Nov-2024 20:31:13 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.driver_documents' doesn't exist in C:\xampp\htdocs\MiniCAB-Controller\new-drivers.php:341
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\new-drivers.php(341): mysqli_query(Object(mysqli), 'SELECT d.* FROM...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\new-drivers.php on line 341
+[21-Nov-2024 20:57:07 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function logActivity() in C:\xampp\htdocs\MiniCAB-Controller\upload-license.php:67
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\upload-license.php on line 67
+[21-Nov-2024 20:59:40 Europe/London] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\MiniCAB-Controller\upload-license.php:58
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\upload-license.php(58): mysqli_stmt->bind_param('sssss', '12345678', '2024-11-30', '673f9f3c26527.j...', '673f9f3c2652a.j...', '2024-11-21 20:5...', '00000002')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\upload-license.php on line 58
+[21-Nov-2024 21:04:25 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function logActivity() in C:\xampp\htdocs\MiniCAB-Controller\upload-address-proof.php:35
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\upload-address-proof.php on line 35
+[22-Nov-2024 01:02:49 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\dispatch-booking.php on line 230
+[22-Nov-2024 01:03:49 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\dispatch-booking.php on line 230
+[22-Nov-2024 01:18:21 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:18:25 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:305
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(305): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 305
+[22-Nov-2024 01:18:29 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:18:31 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:305
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(305): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 305
+[22-Nov-2024 01:19:39 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:19:44 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:305
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(305): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 305
+[22-Nov-2024 01:19:49 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:21:53 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:327
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(327): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 327
+[22-Nov-2024 01:21:56 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:327
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(327): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 327
+[22-Nov-2024 01:21:58 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:28:10 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 01:28:13 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 01:28:15 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:28:18 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 01:28:19 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:28:23 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 01:29:08 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 01:29:18 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 01:29:20 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 01:29:32 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 18:37:24 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 18:37:27 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 18:37:34 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 18:40:12 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 18:40:15 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 18:40:42 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 18:40:45 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 18:40:47 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 18:40:56 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 18:41:33 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 19:02:26 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 19:02:29 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 19:02:34 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 19:03:30 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 19:03:33 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 60)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 19:05:59 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 19:06:27 Europe/London] PHP Warning:  Undefined array key "child_seat" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 18
+[22-Nov-2024 19:06:27 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php:64
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\update-booking.php(64): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 64
+[22-Nov-2024 19:07:56 Europe/London] PHP Warning:  Undefined array key "child_seat" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 18
+[22-Nov-2024 19:07:56 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:324
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(324): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 324
+[22-Nov-2024 22:33:14 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:329
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(329): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 329
+[22-Nov-2024 22:35:24 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:357
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(357): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 357
+[22-Nov-2024 22:39:56 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:504
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(504): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 504
+[22-Nov-2024 22:41:06 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:504
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(504): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 504
+[22-Nov-2024 22:41:10 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:504
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(504): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 504
+[22-Nov-2024 22:43:48 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:504
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(504): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 504
+[22-Nov-2024 22:43:49 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:504
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(504): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 504
+[22-Nov-2024 22:43:56 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:504
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(504): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 504
+[22-Nov-2024 22:47:14 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:504
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(504): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 504
+[22-Nov-2024 22:58:39 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:511
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(511): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 511
+[22-Nov-2024 23:18:27 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:590
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(590): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 590
+[22-Nov-2024 23:20:46 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:536
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(536): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 536
+[22-Nov-2024 23:25:08 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:536
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(536): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 536
+[22-Nov-2024 23:25:17 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:536
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(536): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 536
+[22-Nov-2024 23:43:34 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:540
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(540): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 540
+[22-Nov-2024 23:49:59 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:540
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(540): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 540
+[22-Nov-2024 23:51:35 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:540
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(540): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 540
+[22-Nov-2024 23:51:43 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:540
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(540): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 540
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Undefined array key "c_id" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 18
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Undefined array key "customer_name" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 58
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Undefined array key "customer_email" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 59
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Undefined array key "customer_phone" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 60
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 85
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 85
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 87
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 87
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 88
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 88
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 113
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 113
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 117
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 117
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 192
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 192
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 205
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 205
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 209
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 209
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 213
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 213
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 217
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 217
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 234
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 238
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 248
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 248
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 249
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 249
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 265
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 265
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 271
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 275
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 282
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 282
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 286
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 286
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 292
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 292
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 299
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 299
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 303
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 303
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 307
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 307
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 311
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 311
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 315
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 315
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 323
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 323
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 327
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 327
+[22-Nov-2024 23:52:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 351
+[22-Nov-2024 23:52:19 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 351
+[22-Nov-2024 23:52:19 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:540
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(540): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 540
+[23-Nov-2024 00:56:18 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Undefined array key "c_id" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 18
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Undefined array key "customer_name" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 58
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Undefined array key "customer_email" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 59
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Undefined array key "customer_phone" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 60
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 24
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 24
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 26
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 26
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 27
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 27
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 52
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 52
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 56
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 56
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 127
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 127
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 131
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 131
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 144
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 144
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 148
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 148
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 152
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 152
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 156
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 156
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 160
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 160
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 173
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 177
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 187
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 187
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 204
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 204
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 210
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 214
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 225
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 225
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 231
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 231
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 238
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 238
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 242
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 242
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 246
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 246
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 250
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 250
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 254
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 254
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 262
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 262
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 266
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 266
+[23-Nov-2024 00:56:42 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 290
+[23-Nov-2024 00:56:42 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 290
+[23-Nov-2024 00:56:42 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 00:57:14 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 00:58:19 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Undefined array key "c_id" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 18
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Undefined array key "customer_name" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 58
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Undefined array key "customer_email" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 59
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Undefined array key "customer_phone" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 60
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 24
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 24
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 26
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 26
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 27
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 27
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 52
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 52
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 56
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 56
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 127
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 127
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 131
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 131
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 144
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 144
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 148
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 148
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 152
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 152
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 156
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 156
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 160
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 160
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 173
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 177
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 187
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 187
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 204
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 204
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 210
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 214
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 225
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 225
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 231
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 231
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 238
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 238
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 242
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 242
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 246
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 246
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 250
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 250
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 254
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 254
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 262
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 262
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 266
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 266
+[23-Nov-2024 00:58:39 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 290
+[23-Nov-2024 00:58:39 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 290
+[23-Nov-2024 00:58:39 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 00:59:07 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 01:02:39 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Undefined array key "c_id" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 18
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Undefined array key "customer_name" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 58
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Undefined array key "customer_email" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 59
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Undefined array key "customer_phone" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 60
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 24
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 24
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 26
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 26
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 27
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 27
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 52
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 52
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 56
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 56
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 127
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 127
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 131
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 131
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 144
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 144
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 148
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 148
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 152
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 152
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 156
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 156
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 160
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 160
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 173
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 177
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 187
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 187
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 188
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 204
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 204
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 210
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 214
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 221
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 225
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 225
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 231
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 231
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 238
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 238
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 242
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 242
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 246
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 246
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 250
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 250
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 254
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 254
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 262
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 262
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 266
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 266
+[23-Nov-2024 01:02:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 290
+[23-Nov-2024 01:02:48 Europe/London] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 290
+[23-Nov-2024 01:02:48 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 01:03:04 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 01:08:46 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 01:08:55 Europe/London] PHP Warning:  Undefined array key "c_id" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 18
+[23-Nov-2024 01:08:55 Europe/London] PHP Warning:  Undefined array key "customer_name" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 58
+[23-Nov-2024 01:08:55 Europe/London] PHP Warning:  Undefined array key "customer_email" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 59
+[23-Nov-2024 01:08:55 Europe/London] PHP Warning:  Undefined array key "customer_phone" in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 60
+[23-Nov-2024 01:08:55 Europe/London] PHP Warning:  Array to string conversion in C:\xampp\htdocs\MiniCAB-Controller\update-booking.php on line 71
+[23-Nov-2024 01:09:30 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479

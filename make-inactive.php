@@ -9,24 +9,32 @@ $sql = "UPDATE `drivers` SET `acount_status`='$status',`driver_reg_date`='$date'
 $result = $connect->query($sql);
 
 if($result){
-	$activity_type = 'Driver Inactive';	
-	$user_type = 'user';	
-	$details = "Driver " . $d_id . " Has Been made by Controller.";
+
+    $activity_type = 'Driver Inactive';	
+
+    $user_type = 'user';	
+
+    $details = "Driver " . $d_id . " Has Been made by Controller.";
 	
-	$actsql = "INSERT INTO `activity_log`(
-										`activity_type`, 
-										`user_type`, 
-										`user_id`, 
-										`details`
-										) VALUES (
-										'$activity_type',
-										'$user_type',
-										'$myId',
-										'$details')";	
-	$actr = mysqli_query($connect, $actsql);			
-	
-	header('location: drivers.php');	
+
+    $actsql = "INSERT INTO `activity_log`(
+					`activity_type`, 
+					`user_type`, 
+					`user_id`, 
+					`details`
+					) VALUES (
+					'$activity_type',
+					'$user_type',
+					'$myId',
+					'$details')";	
+
+    $actr = mysqli_query($connect, $actsql);			
+
+    
+
+    header('location: drivers.php');	
 } else {
-	header('location: drivers.php');	
+
+    header('location: drivers.php');	
 }
 ?>

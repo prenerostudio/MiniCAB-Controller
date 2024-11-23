@@ -9,30 +9,42 @@ $reason = $_GET['reason'];
 $sql = "UPDATE `bookings` SET `booking_status`='$status' WHERE `book_id`='$book_id'";
 $result = $connect->query($sql);
 
+
 if($result){ 		
 	
-	$csql = "INSERT INTO `cancelled_bookings`(`book_id`, `cancel_reason`) VALUES ('$book_id','$reason')";
-	$cr = $connect->query($csql);
+
+    $csql = "INSERT INTO `cancelled_bookings`(`book_id`, `cancel_reason`) VALUES ('$book_id','$reason')";
+
+    $cr = $connect->query($csql);
 	
 	
 	
-	$activity_type = 'Booking Cancelled';			
-	$user_type = 'user';        		
-	$details = "Booking ID: $book_id Has been Cancelled by Controller.";			
-	$actsql = "INSERT INTO `activity_log`(
-											`activity_type`, 
-											`user_type`, 
-											`user_id`, 
-											`details`
-											) VALUES (
-											'$activity_type',
-											'$user_type',
-											'$myId',
-											'$details')";		
+
+    $activity_type = 'Booking Cancelled';			
+
+    $user_type = 'user';        		
+
+    $details = "Booking ID: $book_id Has been Cancelled by Controller.";			
+
+    $actsql = "INSERT INTO `activity_log`(
+					`activity_type`, 
+					`user_type`, 
+					`user_id`, 
+					`details`
+					) VALUES (
+					'$activity_type',
+					'$user_type',
+					'$myId',
+					'$details')";		
 				
-	$actr = mysqli_query($connect, $actsql);
-	header('location: cancelled-booking.php');
+
+    $actr = mysqli_query($connect, $actsql);
+
+    header('location: cancelled-booking.php');
+
+    
 } else {	
-	header('location: cancelled-booking.php');
+
+    header('location: cancelled-booking.php');
 }
 ?>

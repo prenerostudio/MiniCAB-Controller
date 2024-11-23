@@ -2,6 +2,10 @@
 include('config.php');
 include('session.php');
 
+
+
+
+
 // Check if the form is submitted
 if (isset($_POST['submit'])) {
     // Collect form data
@@ -51,10 +55,10 @@ if (isset($_POST['submit'])) {
             if ($result->num_rows > 0) {
                 // Update existing record
                 $updateStmt = $connect->prepare("UPDATE `driving_license` SET `dl_number`= ?,`dl_expiry`= ?,`dl_front`= ?,`dl_back`= ?,`dl_updated_at`= ? WHERE `d_id` = ?");
-                $updateStmt->bind_param("sssss", $dl_num, $dl_expy, $dl_front, $dl_back, $date_update, $d_id);
+                $updateStmt->bind_param("ssssss", $dl_num, $dl_expy, $dl_front, $dl_back, $date_update, $d_id);
 
                 if ($updateStmt->execute()) {
-                    logActivity('Driving License Updated', $d_id, "Driving License of Driver $d_id has been updated by Controller.");
+                  //  logActivity('Driving License Updated', $d_id, "Driving License of Driver $d_id has been updated by Controller.");
                 } else {
                     exit("Database update failed.");
                 }
@@ -64,7 +68,7 @@ if (isset($_POST['submit'])) {
                 $insertStmt->bind_param("ssssss", $d_id, $dl_num, $dl_expy, $dl_front, $dl_back, $date_update);
 
                 if ($insertStmt->execute()) {
-                    logActivity('Driving License Added', $d_id, "Driving License of Driver $d_id has been added by Controller.");
+                  //  logActivity('Driving License Added', $d_id, "Driving License of Driver $d_id has been added by Controller.");
                 } else {
                     exit("Database insertion failed.");
                 }

@@ -1,13 +1,7 @@
 <?php
 include('header.php');
-
 $book_id = isset($_GET['book_id']) ? intval($_GET['book_id']) : 0; // Sanitize input
-$booksql = mysqli_prepare($connect, "SELECT bookings.*, clients.*, booking_type.*, vehicles.* 
-    FROM bookings 
-    INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id 
-    INNER JOIN clients ON bookings.c_id = clients.c_id 
-    INNER JOIN vehicles ON bookings.v_id = vehicles.v_id 
-    WHERE bookings.book_id = ?");
+$booksql = mysqli_prepare($connect, "SELECT bookings.*, clients.*, booking_type.*, vehicles.* FROM bookings INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.book_id = ?");
 mysqli_stmt_bind_param($booksql, 'i', $book_id);
 mysqli_stmt_execute($booksql);
 $result = mysqli_stmt_get_result($booksql);
@@ -49,84 +43,100 @@ $bookrow = mysqli_fetch_array($result);
                                 <h4>Passenger Details:</h4>
                                 <div class="mb-3 col-lg-4">    																	
                                     <label class="form-label">Name</label>
-                                    <select class="form-control" name="c_id" id="clientSelect">
-                                        <option value="<?php echo htmlspecialchars($bookrow['c_id']); ?>">
-                                            <?php echo htmlspecialchars($bookrow['c_name']); ?>
-                                        </option>
-                                        <?php        																			
-                                        $clsql = mysqli_query($connect, "SELECT * FROM `clients`");
-                                        while ($clrow = mysqli_fetch_array($clsql)) {
-                                        ?>           																			
-                                        <option value="<?php echo htmlspecialchars($clrow['c_id']); ?>">
-                                            <?php echo htmlspecialchars($clrow['c_name']); ?>
-                                        </option>
-                                        <?php       																			
-                                        }				
-                                        ?>    																	
-                                    </select>
-                                </div>																							
-                                <div class="mb-3 col-lg-4">  																
+									 <input type="text" class="form-control d-none" name="c_name" id="clientName" >
+                                    <select class="form-control" name="c_id" id="clientSelect" ></select>
+									
+                                </div>
+								<div class="mb-3 col-lg-3">
                                     <label class="form-label">Customer Phone</label>
-                                    <input type="text" class="form-control" name="cphone" value="<?php echo htmlspecialchars($bookrow['c_phone']); ?>" id="customerPhone" readonly>
-                                </div>				
-                                <div class="mb-3 col-lg-4">   																	
+                                    <input type="text" class="form-control" name="cphone"  value="<?php echo htmlspecialchars($bookrow['c_phone']); ?>" id="customerPhone" >
+                                </div>
+                                <div class="mb-3 col-lg-3">
                                     <label class="form-label">Customer Email</label>
-                                    <input type="text" class="form-control" name="cemail" value="<?php echo htmlspecialchars($bookrow['c_email']); ?>" id="customerEmail" readonly>
-                                </div>															
-                                <script>   																	
-                                    var bookingTypeSelect = document.getElementById('bookingType');
-                                    var clientSelect = document.getElementById('clientSelect');    
-                                    var customerPhoneInput = document.getElementById('customerPhone');
-                                    var customerEmailInput = document.getElementById('customerEmail');    
-                                    bookingTypeSelect.addEventListener('change', function () {
-                                        var selectedBookingType = bookingTypeSelect.value;        
-                                        $.ajax({            
-                                            type: 'POST',            
-                                            url: 'get_clients.php',             
-                                            data: { b_type_id: selectedBookingType },            
-                                            success: function (response) {
-                                                clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;            
-                                            },            
-                                            error: function () {
-                                                console.error('Error fetching clients');
-                                            }        
-                                        });    
-                                    });									    
-                                    clientSelect.addEventListener('change', function () {        
-                                        var selectedClientId = clientSelect.value;        
-                                        $.ajax({            
-                                            type: 'POST',            
-                                            url: 'get_customer_details.php',            
-                                            data: { c_id: selectedClientId },            
-                                            success: function (response) {                
-                                                var data = JSON.parse(response);                
-                                                customerPhoneInput.value = data.phone; 
-                                                customerEmailInput.value = data.email;            
-                                            },            
-                                            error: function () {
-                                                console.error('Error fetching customer details');
-                                            }        
-                                        });    
-                                    });																						
-                                </script>
+                                    <input type="text" class="form-control" name="cemail"  value="<?php echo htmlspecialchars($bookrow['c_email']); ?>" id="customerEmail" >
+                                </div>
+								
+								
+                                												
+                                <script>    
+								var bookingTypeSelect = document.getElementById('bookingType');    
+								var clientSelect = document.getElementById('clientSelect');            
+								var clientNameInput = document.getElementById('clientName');        
+								var customerPhoneInput = document.getElementById('customerPhone');        
+								var customerEmailInput = document.getElementById('customerEmail');        
+								bookingTypeSelect.addEventListener('change', function () {                
+									var selectedBookingType = bookingTypeSelect.value;	        
+									if (selectedBookingType == 4 || selectedBookingType == 5) {	            
+										clientNameInput.classList.remove('d-none');            	            
+										clientSelect.classList.add('d-none');            	            
+										clientSelect.required = false;             	            
+										clientNameInput.required = true;	            	            
+										clientNameInput.value = '';            	            
+										customerPhoneInput.value = '';            	            
+										customerEmailInput.value = '';        	        
+									} else {            										            	            
+										clientNameInput.classList.add('d-none');            	            
+										clientSelect.classList.remove('d-none');            	            
+										clientNameInput.required = false;             	            
+										clientSelect.required = true;   
+										$.ajax({                
+											type: 'POST',                
+											url: 'get_clients.php',                
+											data: { b_type_id: selectedBookingType },                
+											success: function (response) {        
+												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
+											},                
+											error: function () {                    		        
+												console.error('Error fetching clients');                	    
+											}                                
+										});        	        
+									}    	    
+								});								        
+								clientSelect.addEventListener('change', function () {                        
+									var selectedClientId = clientSelect.value;        	        
+									var selectedBookingType = bookingTypeSelect.value;	        
+									$.ajax({	            
+										type: 'POST',                        	            
+										url: 'get_customer_details.php',                        	            
+										data: {                 	                
+											c_id: selectedClientId,                		                
+											b_type_id: selectedBookingType // Include booking type ID            
+										},	            
+										success: function (response) {                                	        
+											var data = JSON.parse(response);	        
+											if (data.error) {                    	            
+												console.error(data.error);                    	            
+												customerPhoneInput.value = '';                    	            
+												customerEmailInput.value = '';                	        
+											} else {                    	            
+												customerPhoneInput.value = data.phone;                     	            
+												customerEmailInput.value = data.email;                	        
+											}            	    
+										},                                    
+										error: function () {                	        
+											console.error('Error fetching customer details');    
+										}        
+									});
+								});                            
+							</script>			
                             </div>																								
                             <div class="row">																				
                                 <h4>Journey Details:</h4>																	
                                 <div class="mb-3 col-lg-4">    								
                                     <label class="form-label">Pickup Location:</label>    									
-                                    <input type="text" id="pickup" name="pickup" class="form-control" value="<?php echo htmlspecialchars($bookrow['pickup']); ?>">
+                                    <input type="text" id="pickup" name="pickup" class="form-control" value="<?php echo htmlspecialchars($bookrow['pickup']); ?>" required>
                                 </div>																	
                                 <div class="mb-3 col-lg-4">    								
                                     <label class="form-label">Drop-off Location:</label>    									
-                                    <input type="text" id="dropoff" name="dropoff" class="form-control" value="<?php echo htmlspecialchars($bookrow['destination']); ?>">									
+                                    <input type="text" id="dropoff" name="dropoff" class="form-control" value="<?php echo htmlspecialchars($bookrow['destination']); ?>" required>									
                                 </div>	
                                 
                                 <div class="col-lg-4">								
                                     <div id="stops-container"></div>									
                                     <div class="mb-3 col-lg-2">																	
-                                        <button id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
+                                        <a id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
                                             <i class="ti ti-plus"></i>											
-                                        </button>																			
+                                        </a>																			
                                     </div>																		
                                 </div>								
                                 <div class="mb-3 col-lg-4">										
@@ -143,12 +153,19 @@ $bookrow = mysqli_fetch_array($result);
                                 </div> 																				
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Pickup Date</label>								
-                                    <input type="date" class="form-control" name="pick_date" value="<?php echo htmlspecialchars($bookrow['pick_date']); ?>">							
+                                    <input type="date" class="form-control" name="pick_date" id="pick_date" value="<?php echo htmlspecialchars($bookrow['pick_date']); ?>" required>							
                                 </div>														
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Pickup Time</label>								
-                                    <input type="time" class="form-control" name="pick_time" value="<?php echo htmlspecialchars($bookrow['pick_time']); ?>">							
-                                </div>																
+                                    <input type="time" class="form-control" name="pick_time" value="<?php echo htmlspecialchars($bookrow['pick_time']); ?>" required>							
+                                </div>		
+								
+								 <script>    
+									document.addEventListener("DOMContentLoaded", function() {        
+										var today = new Date().toISOString().split('T')[0];        
+										document.getElementById('pick_date').setAttribute('min', today);    
+									});    
+                                </script>	
                                 <div class="mb-3 col-lg-4">								
                                     <div class="form-label">Journey Type</div>																
                                     <div class="mb-3">
@@ -235,7 +252,11 @@ $bookrow = mysqli_fetch_array($result);
                                 <div class="mb-3 col-lg-4">          
                                     <label class="form-label">Extra </label>								
                                     <input type="text" class="form-control" name="extra" value="<?php echo htmlspecialchars($bookrow['extra']); ?>">							
-                                </div>																						 
+                                </div>	
+								 <div class="mb-3 col-lg-4" id="bookerCommissionField" style="display: none;">
+                                    <label class="form-label">Booker Commission </label>
+                                    <input type="text" class="form-control" name="booker_com">
+                                </div>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Distance (Auto-calculated)</label>                                
                                     <input type="text" class="form-control" name="journey_distance" id="journeyDistance" value="<?php echo htmlspecialchars($bookrow['journey_distance']); ?>" readonly>
@@ -271,11 +292,378 @@ $bookrow = mysqli_fetch_array($result);
                                 Dispatch Booking  																
                             </a>
                         </div> 										
-                    </form>																		
+                    </form>	
+					  <script>    
+						document.addEventListener("DOMContentLoaded", function() {         
+							var bookingTypeSelect = document.getElementById("bookingType");    	        
+							var bookerCommissionField = document.getElementById("bookerCommissionField");    	        
+							bookingTypeSelect.addEventListener("change", function() {        	        
+								if (this.value === 3) {            	            
+									bookerCommissionField.style.display = "block";        	        
+								} else {	            
+									bookerCommissionField.style.display = "none";        	        
+								}    	    
+							});    
+						});			    
+						$(document).ready(function() {                        
+							$('#calculateFareBtn').on('click', function(e) {            	        
+								e.preventDefault(); // Prevent the form from submitting	        
+								var distance = parseFloat($('#journeyDistance').val());            	        
+								var pickDate = new Date($('input[name="pick_date"]').val());	        
+								var pickTime = $('input[name="pick_time"]').val();            	        
+								var vehicleId = $('#vehicleSelect').val();            	        
+								var vehiclePricing = parseFloat(fetchVehiclePricing(vehicleId));	        
+								var baseFare = distance * vehiclePricing;		            	        
+								if (isHoliday(pickDate)) {                	            
+									baseFare *= 1.1;            	
+								}        
+								var pickHour = parseInt(pickTime.split(':')[0], 10);        
+								if (pickHour < 9 || pickHour >= 20) {            
+									baseFare *= 1.05;        
+								}        
+								$('#journeyFare').val(baseFare.toFixed(2));	    
+							});        
+							function fetchVehiclePricing(vehicleId) {        
+								$.ajax({            	            
+									type: 'POST',            	            
+									url: 'fetch_vehicle_pricing.php',            	            
+									data: { vehicleId: vehicleId },            	            
+									success: function(response) {        
+										var data = JSON.parse(response);	        
+										callback(data);            	    
+									},            
+									error: function() {	    
+									}                
+								});            	        
+								return 15.0;         	    
+							}
+							function isHoliday(date) {            								        
+								return false;        	    
+							}        
+						});        
+						function validateForm() {                        
+							var typeInput = document.getElementsByName("b_type_id")[0].value;        
+							var cidInput = document.getElementsByName("c_id")[0].value;        
+							var pickupInput = document.getElementsByName("pickup")[0].value;	        
+							var dropoffInput = document.getElementsByName("dropoff")[0].value;	        
+							var pdateInput = document.getElementsByName("pick_date")[0].value;	        
+							var ptimeInput = document.getElementsByName("pick_time")[0].value;	        
+							var fareInput = document.getElementsByName("journey_fare")[0].value;	        
+							if (typeInput === "" || cidInput === "" || pickupInput === "" || dropoffInput === "" || pdateInput === "" || ptimeInput === "" || fareInput === "") {            
+								alert("Please fill in all required fields.");            	            
+								return false;        	        
+							}	        
+							return true;    	    
+						}
+                    </script>						
+					
+					
+					
                 </div>                                                    				
             </div>              			
         </div>		
     </div>
+	
+	
+	<script>	
+    function initAutocomplete() {            
+        var pickupInput = document.getElementById('pickup');                
+        var dropoffInput = document.getElementById('dropoff');    
+        var stopInput = document.getElementById('stop');    
+        var journeyDistanceInput = document.getElementById('journeyDistance');		                
+        var autocompleteOptions = {        
+            types: ['geocode'],                            
+            componentRestrictions: {country: 'GB'}        
+        };				                
+        var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);    
+        var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);    
+        var autocompleteStop = new google.maps.places.Autocomplete(stopInput, autocompleteOptions); // Initialize autocomplete for stop field  
+        autocompletePickup.addListener('place_changed', function () { 
+        updateDistance();        
+        updateJourneyFare();    
+		});            
+        autocompleteDropoff.addListener('place_changed', function () {        
+        updateDistance();                
+        updateJourneyFare();    
+		});	    
+        autocompleteStop.addListener('place_changed', function () { // Add listener for stop input field        
+        updateDistance();                
+        updateJourneyFare();            
+		});   
+        function handleSuggestions(predictions, inputField) {                
+        var addresses = predictions.map(function(prediction) {                    
+        return prediction.description;    
+		});			                        
+        updateAutocompleteSuggestions(inputField, addresses);            
+		}				            
+        function updateAutocompleteSuggestions(inputField, suggestions) {                
+        var datalistId = inputField.id + '_datalist';        
+        var datalist = document.getElementById(datalistId);
+        if (!datalist) {                    
+            datalist = document.createElement('datalist');                                        
+            datalist.id = datalistId;                                        
+            document.body.appendChild(datalist);        
+        }                
+        datalist.innerHTML = '';			                            
+        suggestions.forEach(function(suggestion) {                    
+        var option = document.createElement('option');                                    
+        option.value = suggestion;                                    
+        datalist.appendChild(option);                    
+		});						                        
+        inputField.setAttribute('list', datalistId);        
+		}          
+        function updateDistance() {                        
+        var pickupPlace = autocompletePickup.getPlace();                            
+        var dropoffPlace = autocompleteDropoff.getPlace();			                            
+        if (pickupPlace.geometry && dropoffPlace.geometry) {                    
+            calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);        
+		}            
+		}		            
+        function calculateDistance(pickupLocation, dropoffLocation) {            
+        var service = new google.maps.DistanceMatrixService();            
+        service.getDistanceMatrix({                
+            origins: [pickupLocation],                    
+            destinations: [dropoffLocation],                    
+            travelMode: 'DRIVING',            
+        }, 
+        function(response, status) {                    
+        if (status === 'OK' && response.rows.length > 0) {                    
+            var distanceText = response.rows[0].elements[0].distance.text;                        
+            var distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));            
+            if (!isNaN(distanceValue)) {                						                            
+                journeyDistanceInput.value = distanceValue.toFixed(2);                                
+                updateJourneyFare(distanceValue);                                    
+			} else {                            
+                console.error('Invalid distance value:', distanceText);                            
+            }                   
+        } else {            					                    
+            console.error('Error calculating distance:', status);                   
+        }   
+		});	      
+		}   
+	}	    
+	google.maps.event.addDomListener(window, 'load', initAutocomplete);
+</script>	
+	
+	<div class="row row-deck row-cards">	
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">
+						Booking History			                        
+					</h3>			                    
+				</div>
+				<?php
+				$historysql = "SELECT
+	bookings_history.*, 
+	clients.*, 
+	booking_type.*, 
+	vehicles.*
+FROM
+	bookings_history
+	INNER JOIN
+	booking_type
+	ON 
+		bookings_history.b_type_id = booking_type.b_type_id
+	INNER JOIN
+	clients
+	ON 
+		bookings_history.c_id = clients.c_id
+	INNER JOIN
+	vehicles
+	ON 
+		bookings_history.v_id = vehicles.v_id
+WHERE
+	bookings_history.book_id = ?";
+				$historyresult= mysqli_prepare($connect, $historysql);
+				mysqli_stmt_bind_param($historysql, 'i', $book_id);
+
+				mysqli_stmt_execute($historysql);
+
+				$result = mysqli_stmt_get_result($historysql);
+
+				$hbookrow = mysqli_fetch_array($historyresult);
+				
+				?>
+				<div class="card-body border-bottom py-3">		                
+					<div class="modal-body">			                    
+						<div class="row">			                        
+							<h3>Booking ID:   <?php echo $bookrow['book_id'];?></h3>
+				
+                            <h3>Booking Type:   <?php echo $bookrow['b_type_name'];?></h3>
+							<h4>Passenger Details:</h4>							
+				
+                                <div class="mb-3 col-lg-4">																
+				
+                                    <h4>Customer Name: </h4>
+				
+                                    <p><?php echo $bookrow['c_name'];?></p>
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Customer Phone</h4>									
+				
+                                    <p><?php echo $bookrow['c_phone'];?></p>								
+				
+                                </div>																
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Customer Email</h4>									
+				
+                                    <p><?php echo $bookrow['c_email'];?></p>								
+				
+                                </div>														
+				
+                            </div>																								
+			
+                            <div class="row">																				
+			
+                                <h4>Journey Details:</h4>
+				
+                                <div class="mb-3 col-lg-4">																
+				
+                                    <h4>Pickup Location:</h4>
+				
+                                    <p><?php echo $bookrow['pickup'];?></p>
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Drop-off Location:</h4>									
+				
+                                    <p><?php echo $bookrow['destination'];?></p>								
+				
+                                </div>							
+				
+                                <div class="mb-3 col-lg-4">										
+				
+                                    <h4>Address:</h4>									
+				
+                                    <p><?php echo $bookrow['address'] ?></p>								
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-4">										
+				
+                                    <h4>Postal Code:</h4>
+				
+                                    <p><?php echo $bookrow['postal_code'] ?></p>								
+				
+                                </div>
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>No. of Passenger:</h4>
+				
+                                    <p><?php echo $bookrow['passenger'] ?></p>
+				
+                                </div> 
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Pickup Date:</h4>
+				
+                                    <p><?php echo $bookrow['pick_date'] ?></p>								
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Pickup Time:</h4>									
+				
+                                    <p><?php echo $bookrow['pick_time'] ?></p>								
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Journey Type</h4>
+				
+                                    <p><?php echo $bookrow['journey_type'] ?></p>								
+				
+                                </div>								
+				
+                                <div class="mb-3 col-lg-4">									
+				
+                                    <h4>Distance (Auto-calculated)</h4>									
+				
+                                    <p><?php echo $bookrow['journey_distance'] ?></p>
+				
+                                </div>
+				
+                            </div>
+			
+                            
+			
+                            <div class="row">	
+			
+                                <div class="mb-3 col-lg-4">    								
+				
+                                    <h4>Vehicle Type</h4>   									
+				
+                                    <p><?php echo $bookrow['v_name'] ?></p>
+				
+                                </div>															
+				
+                                <div class="mb-3 col-lg-4">				
+				
+                                    <h4>Luggage</h4>								
+				
+                                    <p><?php echo $bookrow['luggage'] ?></p>										
+				
+                                </div> 															
+				
+                                <div class="mb-3 col-lg-4">								
+				
+                                    <h4>Child Seat</h4>																
+				
+                                    <p><?php echo $bookrow['child_seat'] ?></p>                    														
+				
+                                </div>															
+				
+                                <div class="mb-3 col-lg-4">          								
+				
+                                    <h4>Flight Number </h4>								
+				
+                                    <p><?php echo $bookrow['flight_number'] ?></p>
+				
+                                </div>															
+				
+                                <div class="mb-3 col-lg-4">          								
+				
+                                    <h4>Delay Time </h4>								
+				
+                                    <p><?php echo $bookrow['delay_time'] ?></p>							
+				
+                                </div>													
+				
+                            </div>
+			
+                            <div class="row">							
+			
+                                <div class="mb-3">                 															
+				
+                                    <h4>Special Note</h4>								
+				
+                                    <p><?php echo $bookrow['note'] ?></p>								
+				
+                                </div> 
+				
+                            </div>    												
+			
+                        </div>          										      											
+	
+                    </div>                                                    				
+			
+                </div>              			
+		
+            </div>
+	</div>
+	
 </div>       
 
 <!-- Include the Google Maps API script -->  

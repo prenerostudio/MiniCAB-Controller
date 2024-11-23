@@ -11,24 +11,29 @@ $pph = $_POST['pph'];
 $sptime = strtotime($_POST['stime']);
 $eptime = strtotime($_POST['etime']);
 
-// Calculate total time in hours and total payment
-$total_time = ($eptime - $sptime) / 3600; // Convert seconds to hours
+
+$total_time = ($eptime - $sptime) / 3600; 
 $total_pay = $pph * $total_time;
 
-// Format total pay to 2 decimal places
+
 $total_pay_formatted = number_format($total_pay, 2);
 
+
 $sql = "UPDATE `time_slots` SET 
-							`ts_date`='$ts_date',
-							`start_time`='$stime',
-							`end_time`='$etime',
-							`price_hour`='$pph',
-							`total_pay`='$total_pay_formatted' WHERE `ts_id`='$ts_id'";                
+			`ts_date`='$ts_date',
+			`start_time`='$stime',
+			`end_time`='$etime',
+			`price_hour`='$pph',
+			`total_pay`='$total_pay_formatted' WHERE `ts_id`='$ts_id'";                
+
 
 $result = mysqli_query($connect, $sql);       
 
+
 if ($result) {     
+
     $activity_type = 'Time Slot Update';    
+
     $user_type = 'user';    
     $details = "Time Slot Has Been Updated by Controller.";
     

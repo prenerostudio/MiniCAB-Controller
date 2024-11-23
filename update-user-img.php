@@ -21,28 +21,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "UPDATE `users` SET `user_pic`='$logoName' WHERE `user_id`='$user_id'";
             $result = mysqli_query($connect, $sql);
             if ($result) {				
-				$activity_type = 'Admin Profile Image';			
-				$user_type = 'user';			
-				$details = "Admin Profile Image Has Been Updated by Controller.";
-				$actsql = "INSERT INTO `activity_log`(
-												`activity_type`, 
-												`user_type`, 
-												`user_id`, 
-												`details`
-												) VALUES (
-												'$activity_type',
-												'$user_type',
-												'$myId',
-												'$details')";			
-				$actr = mysqli_query($connect, $actsql);									
+				
+                $activity_type = 'Admin Profile Image';			
+		
+                $user_type = 'user';			
+		
+                $details = "Admin Profile Image Has Been Updated by Controller.";
+		
+                $actsql = "INSERT INTO `activity_log`(
+						`activity_type`, 
+						`user_type`, 
+						`user_id`, 
+						`details`
+						) VALUES (
+						'$activity_type',
+						'$user_type',
+						'$myId',
+						'$details')";			
+		
+                $actr = mysqli_query($connect, $actsql);									
+                
                 echo "The file " . htmlspecialchars($logoName) . " has been uploaded.";
+                
                 header('Location: profile-setting.php');
-            } else {
+           
+                } else {
+                
                 echo "Sorry, there was an error updating your file.";
-            }
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
+           
+                }
+       
+                } else {
+            
+           
+                    echo "Sorry, there was an error uploading your file.";
+       
+                    }
+   
+                    }
+
+                    
+                }
 ?>
