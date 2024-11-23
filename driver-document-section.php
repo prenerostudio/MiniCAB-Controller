@@ -17,23 +17,23 @@
                     </span>		
                 </div>
                 <div class="col-auto">
-                    <form action="upload-license.php" method="post" enctype="multipart/form-data">		                                                
+                    <form action="upload-license.php" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">                        
-                        <div class="form-group pb-3">                                                                                                                  
-                            <label class="form-label"> License Number </label>                                                                                    
-                            <input type="text" name="licene_number" class="form-control" placeholder="Licence Number">                            
+                        <div class="form-group pb-3">                                           
+                            <label class="form-label"> License Number </label>
+                            <input type="text" name="licene_number" class="form-control" placeholder="Licence Number">
                         </div>                        
                         <div class="form-group pb-3">                                                          
-                            <label class="form-label"> License Expiry Date </label>                                                                                    
+                            <label class="form-label"> License Expiry Date </label>
                             <input type="date" name="licence_exp" class="form-control">                            
                         </div>                        
                         <div class="form-group pb-3">                        
-                            <label class="form-label"> License Front Image </label>                                                                                    
+							<label class="form-label"> License Front Image </label>
                             <input type="file" id="dl_front" name="dl_front" accept="image/*" class="form-control" required>                            
                         </div>                        
                         <div class="form-group">                                                          
-                            <label class="form-label"> License Back Image </label>                                                                                    
-                            <input type="file" id="dl_back" name="dl_back" accept="image/*" class="form-control" required>                            
+                            <label class="form-label"> License Back Image </label>
+                            <input type="file" id="dl_back" name="dl_back" accept="image/*" class="form-control" required>
                         </div>			                                                
                         <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">				
                     </form>							

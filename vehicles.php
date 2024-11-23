@@ -48,16 +48,16 @@ include('header.php');
                                     <td>
                                         <?php echo $x; ?>
                                     </td>				
-                                    <td>
-                                        <?php
-                                        if (!$vrow['v_img']) {
-                                            ?>
-                                        <img src="img/car-icon.png" alt="Vehicle Img" style="width: 50px; height: 50px; border-radius: 5px;">
-					<?php
-                                        } else{
-                                            ?>
+                                    <td>                                        
+										<?php
+                                        if (!$vrow['v_img']) {                                           
+										?>
+                                        <img src="img/car-icon.png" alt="Vehicle Img" style="width: 50px; height: 50px; border-radius: 5px;">					
+										<?php
+                                        } else{                                           
+										?>
                                         <img src="img/vehicles/<?php echo $vrow['v_img'];?>" alt="Vehicle Img" style="width: 50px; height: 50px; border-radius: 5px;">
-					<?php
+										<?php
                                         }
                                         ?>
                                     </td>
@@ -69,40 +69,40 @@ include('header.php');
                                     </td> 				
                                     <td>
                                         <?php
-                                        if ($vrow['v_airbags'] == 1) {						                                                    
-                                            ?>						                                        
-                                        <p style="color: yellowgreen;">Yes</p>					
-					<?php
-                                        } else {					
-                                            ?>    					
-                                        <p style="color: red;">No</p>					
-					<?php
+                                        if ($vrow['v_airbags'] == 1) {
+										?>						                                        
+                                        <p style="color: yellowgreen;">Yes</p>
+										<?php
+                                        } else {
+										?>    					
+                                        <p style="color: red;">No</p>
+										<?php
                                         }					
                                         ?>														
                                     </td>													
                                     <td>
-                                        <?php
-                                        if ($vrow['v_wchair'] == 1) {						                                                                                                        
-                                            ?>    						
-                                        <p style="color: yellowgreen;">Yes</p>					
-					<?php									
-                                        } else {					
-                                            ?>    					
-                                        <p style="color: red;">No</p>					
-					<?php									
-                                        }					
-                                        ?>															
+										<?php
+                                        if ($vrow['v_wchair'] == 1) {                
+										?>    						
+                                        <p style="color: yellowgreen;">Yes</p>
+										<?php									
+                                        } else {
+										?>    					
+                                        <p style="color: red;">No</p>
+										<?php									
+                                        }
+										?>															
                                     </td>
                                     <td>
-                                        <?php
-                                        if ($vrow['v_babyseat'] == 1) {	
-                                            ?>						
-                                        <p style="color: yellowgreen;">Yes</p>					
-					<?php									
-                                        } else {					
-                                            ?>    					
-                                        <p style="color: red;">No</p>					
-					<?php									                                                                                                                                                                
+										<?php
+                                        if ($vrow['v_babyseat'] == 1) {
+										?>						
+                                        <p style="color: yellowgreen;">Yes</p>
+										<?php									
+                                        } else {
+										?>    					
+                                        <p style="color: red;">No</p>
+										<?php                               
                                         }					
                                         ?>															
                                     </td>
@@ -115,7 +115,7 @@ include('header.php');
                                         </a>
                                     </td>
                                 </tr>
-				<?php
+								<?php
                                 }
                                 ?>                                   
                             </tbody>  			
@@ -126,7 +126,7 @@ include('header.php');
         </div>			
         <div class="col-4">            									
             <div class="card">                											
-                <div class="card-header">                    																
+                <div class="card-header">
                     <h3 class="card-title">								
                         Add New Vehicle								
                     </h3>						
@@ -137,7 +137,7 @@ include('header.php');
                             <div class="row">
                                 <div class="mb-3">				
                                     <label class="form-label">Vehicle Name</label>				
-                                    <input type="text" class="form-control" name="vname" placeholder="Vehicle Name">				
+                                    <input type="text" class="form-control" name="vname" placeholder="Vehicle Name">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">No. of Seats</label>
@@ -183,12 +183,12 @@ include('header.php');
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function() {    
-        $('#vehicles').DataTable();
-});	
-    function validateForm() {            
-        var vnameInput = document.getElementsByName("vname")[0].value;        
+<script>    
+	$(document).ready(function() {        
+		$('#vehicles').DataTable();
+	});	    
+	function validateForm() {
+		var vnameInput = document.getElementsByName("vname")[0].value;        
         var seatsInput = document.getElementsByName("seats")[0].value;        
         var pricingInput = document.getElementsByName("pricing")[0].value;				        
         if (vnameInput === "" || seatsInput === "" || pricingInput === "") {               

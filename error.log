@@ -738,3 +738,5 @@ Stack trace:
 #0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 14:18:12 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 553
+[23-Nov-2024 14:18:14 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 553
