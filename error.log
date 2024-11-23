@@ -733,3 +733,8 @@ Stack trace:
 #0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
+[23-Nov-2024 10:31:25 Europe/London] PHP Fatal error:  Uncaught TypeError: mysqli_stmt_bind_param(): Argument #1 ($statement) must be of type mysqli_stmt, string given in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php:479
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(479): mysqli_stmt_bind_param('SELECT\r\n\tbookin...', 'i', 59)
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
