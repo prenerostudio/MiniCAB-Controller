@@ -58,11 +58,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">			                       
                         <div class="from-group mb-3">  
                             <label class="form-label"> Proof of Address 1 </label>                          
-                            <input type="file" id="pa1" name="pa1" accept="image/*"  class="form-control" required>                        
+                            <input type="file" id="pa1" name="pa1" accept="image/*"  class="form-control" required>
                         </div>                        
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Proof of Address 2 </label>                          
-                            <input type="file" id="pa2" name="pa2" accept="image/*"  class="form-control" required>                        
+                            <input type="file" id="pa2" name="pa2" accept="image/*"  class="form-control" required>
                         </div>			
                         <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
                     </form>		
@@ -84,16 +84,16 @@
                     <form action="upload-pco.php" method="post" enctype="multipart/form-data">							
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">				
                         <div class="form-group pb-3">                                                          
-                            <label class="form-label"> PCO License Number </label>                                                                                    
-                            <input type="text" name="pl_number" class="form-control" placeholder="PCO Licence Number">                      
+                            <label class="form-label"> PCO License Number </label>
+                            <input type="text" name="pl_number" class="form-control" placeholder="PCO Licence Number">
                         </div>                                              
                         <div class="form-group pb-3">                                                  
-                            <label class="form-label">PCO License Expiry Date </label>                                                                      
+                            <label class="form-label">PCO License Expiry Date </label>
                             <input type="date" name="pl_exp" class="form-control">                            
                         </div>                        
                         <div class="form-group mb-3">			                                                        
                             <label class="form-label"> PCO License Image </label>                            
-                            <input type="file" id="pco" name="pco" accept="image/*"  class="form-control" required>                      
+                            <input type="file" id="pco" name="pco" accept="image/*"  class="form-control" required>
                         </div>                        			
                         <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
                     </form>							
@@ -114,11 +114,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
                         <div class="form-group pb-3">
                             <label class="form-label"> National Insurance Number</label>
-                            <input type="text" name="ni_num" class="form-control" placeholder="National Insurance Number">                      
+                            <input type="text" name="ni_num" class="form-control" placeholder="National Insurance Number">
                         </div>                        
                         <div class="form-group mb-3">                        
                             <label class="form-label"> National Insurance Image </label>                          
-                            <input type="file" id="ni" name="ni" accept="image/*"  class="form-control" required>                        
+                            <input type="file" id="ni" name="ni" accept="image/*"  class="form-control" required>
                         </div>			
                         <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
                     </form>		
@@ -140,12 +140,12 @@
                     <form action="upload-dvla.php" method="post" enctype="multipart/form-data">		
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">			
                         <div class="form-group pb-3">  
-                            <label class="form-label"> DVLA Check Number</label>                                                                                    
-                            <input type="text" name="dvla_num" class="form-control" placeholder="DVLA Check Number">                      
+                            <label class="form-label"> DVLA Check Number</label>
+                            <input type="text" name="dvla_num" class="form-control" placeholder="DVLA Check Number">
                         </div>                        
                         <div class="form-group mb-3">                        
                             <label class="form-label"> DVLA Check Image </label>
-                            <input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>			
+                            <input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
                         </div>			
                         <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
                     </form>		

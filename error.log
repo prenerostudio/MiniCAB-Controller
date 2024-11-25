@@ -740,3 +740,4 @@ Stack trace:
   thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 479
 [23-Nov-2024 14:18:12 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 553
 [23-Nov-2024 14:18:14 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 553
+[24-Nov-2024 22:38:48 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 276
