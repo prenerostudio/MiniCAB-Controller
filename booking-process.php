@@ -152,7 +152,7 @@ function fetchVehiclePricingFromDatabase($vehicleId) {
 					'$b_type_id',
 					'$c_id',
 					'$pickup',
-					'" . implode(',', $stops) . "',
+					'" . implode(' | ', $stops) . "',
 					'$dropoff',
 					'$address',
 					'$postal_code',

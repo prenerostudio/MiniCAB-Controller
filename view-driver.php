@@ -1,42 +1,7 @@
 <?php
 include('header.php');
 $d_id = $_GET['d_id'];
-$dsql=mysqli_query($connect,"SELECT 
-    drivers.*, 
-    address_proofs.*, 
-    driving_license.*, 
-    pco_license.*, 
-    national_insurance.*, 
-    dvla_check.*, 
-    driver_extras.*, 
-    vehicle_extras.*, 
-    vehicle_ins_schedule.*, 
-    rental_agreement.*, 
-    vehicle_road_tax.*, 
-    vehicle_pictures.*, 
-    vehicle_insurance.*, 
-    vehicle_pco.*, 
-    vehicle_mot.*, 
-    vehicle_log_book.* 
-FROM 
-    drivers 
-LEFT JOIN address_proofs ON address_proofs.d_id = drivers.d_id 
-LEFT JOIN driving_license ON driving_license.d_id = drivers.d_id 
-LEFT JOIN pco_license ON pco_license.d_id = drivers.d_id 
-LEFT JOIN national_insurance ON national_insurance.d_id = drivers.d_id 
-LEFT JOIN dvla_check ON dvla_check.d_id = drivers.d_id 
-LEFT JOIN driver_extras ON driver_extras.d_id = drivers.d_id 
-LEFT JOIN vehicle_log_book ON vehicle_log_book.d_id = drivers.d_id 
-LEFT JOIN vehicle_mot ON vehicle_mot.d_id = drivers.d_id 
-LEFT JOIN vehicle_pco ON vehicle_pco.d_id = drivers.d_id 
-LEFT JOIN vehicle_insurance ON vehicle_insurance.d_id = drivers.d_id 
-LEFT JOIN vehicle_pictures ON vehicle_pictures.d_id = drivers.d_id 
-LEFT JOIN vehicle_road_tax ON vehicle_road_tax.d_id = drivers.d_id 
-LEFT JOIN rental_agreement ON rental_agreement.d_id = drivers.d_id 
-LEFT JOIN vehicle_ins_schedule ON vehicle_ins_schedule.d_id = drivers.d_id 
-LEFT JOIN vehicle_extras ON vehicle_extras.d_id = drivers.d_id 
-WHERE 
-    drivers.d_id = '$d_id'");
+$dsql=mysqli_query($connect,"SELECT drivers.*, address_proofs.*, driving_license.*, pco_license.*, national_insurance.*, dvla_check.*, driver_extras.*, vehicle_extras.*, vehicle_ins_schedule.*, rental_agreement.*, vehicle_road_tax.*, vehicle_pictures.*, vehicle_insurance.*, vehicle_pco.*, vehicle_mot.*, vehicle_log_book.* FROM drivers LEFT JOIN address_proofs ON address_proofs.d_id = drivers.d_id LEFT JOIN driving_license ON driving_license.d_id = drivers.d_id LEFT JOIN pco_license ON pco_license.d_id = drivers.d_id LEFT JOIN national_insurance ON national_insurance.d_id = drivers.d_id LEFT JOIN dvla_check ON dvla_check.d_id = drivers.d_id LEFT JOIN driver_extras ON driver_extras.d_id = drivers.d_id LEFT JOIN vehicle_log_book ON vehicle_log_book.d_id = drivers.d_id LEFT JOIN vehicle_mot ON vehicle_mot.d_id = drivers.d_id LEFT JOIN vehicle_pco ON vehicle_pco.d_id = drivers.d_id LEFT JOIN vehicle_insurance ON vehicle_insurance.d_id = drivers.d_id LEFT JOIN vehicle_pictures ON vehicle_pictures.d_id = drivers.d_id LEFT JOIN vehicle_road_tax ON vehicle_road_tax.d_id = drivers.d_id LEFT JOIN rental_agreement ON rental_agreement.d_id = drivers.d_id LEFT JOIN vehicle_ins_schedule ON vehicle_ins_schedule.d_id = drivers.d_id LEFT JOIN vehicle_extras ON vehicle_extras.d_id = drivers.d_id WHERE drivers.d_id = '$d_id'");
 $drow = mysqli_fetch_array($dsql);		
 ?>
 <div class="page-header d-print-none page_padding">
