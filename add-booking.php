@@ -17,16 +17,15 @@ include('header.php');
                                 <div class="mb-3 col-md-3">
                                     <label class="form-label">Booking Type</label>
                                     <select class="form-control" name="b_type_id" id="bookingType" required>
-                                        <option value="">Select Booking Type</option>
-					<?php
+                                        <option value="">Select Booking Type</option>					
+										<?php
                                         $btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
-                                        while ($btrow = mysqli_fetch_array($btsql)) {					
-                                            ?>
-                                        <option value="<?php echo $btrow['b_type_id'] ?>">
-                                            <?php echo $btrow['b_type_name'] ?>
+                                        while ($btrow = mysqli_fetch_array($btsql)) {
+										?>
+                                        <option value="<?php echo $btrow['b_type_id'] ?>">                                        
+											<?php echo $btrow['b_type_name'] ?>
                                         </option>
-					<?php                                        
-
+										<?php
                                         }
                                         ?>
                                     </select>
@@ -35,6 +34,9 @@ include('header.php');
                                     <label class="form-label">Name</label>
                                     <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
                                     <select class="form-control" name="c_id" id="clientSelect" required></select>
+									<a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-customer" style="margin-top: 25px; float: left;" title="Add Customers">
+										<i class="ti ti-plus"></i>										
+									</a>
                                 </div>
                                 <div class="mb-3 col-lg-3">
                                     <label class="form-label">Customer Phone</label>
@@ -43,132 +45,69 @@ include('header.php');
                                 <div class="mb-3 col-lg-3">
                                     <label class="form-label">Customer Email</label>
                                     <input type="text" class="form-control" name="cemail" id="customerEmail" required>
-                                </div>
-                            </div>
-                            <script>    
-								
-    
-    var bookingTypeSelect = document.getElementById('bookingType');    
-
-    var clientSelect = document.getElementById('clientSelect');            
-
-    var clientNameInput = document.getElementById('clientName');        
-
-    var customerPhoneInput = document.getElementById('customerPhone');        
-
-    var customerEmailInput = document.getElementById('customerEmail');        
-
-    bookingTypeSelect.addEventListener('change', function () {                
-
-        var selectedBookingType = bookingTypeSelect.value;	        
-	
-        if (selectedBookingType == 4 || selectedBookingType == 5) {	            
-	
-            clientNameInput.classList.remove('d-none');            	            
-	
-            clientSelect.classList.add('d-none');            	            
-	
-            clientSelect.required = false;             	            
-	
-            clientNameInput.required = true;	            	            
-	
-            clientNameInput.value = '';            	            
-	
-            customerPhoneInput.value = '';            	            
-	
-            customerEmailInput.value = '';        	        
-	
-        } else {            										            	            
-	
-            clientNameInput.classList.add('d-none');            	            
-	
-            clientSelect.classList.remove('d-none');            	            
-	
-            clientNameInput.required = false;             	            
-	
-            clientSelect.required = true;   
-	
-            $.ajax({                
-	
-                type: 'POST',                
-		
-                url: 'get_clients.php',                
-		
-                data: { b_type_id: selectedBookingType },                
-		
-                success: function (response) {        
-		
-        clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
-	
-    },                
-
-                error: function () {                    		        
-		
-        console.error('Error fetching clients');                	    
-	
-    }                                
-
-            });        	        
-	
-        }    	    
-	
-    });								        
-
-    clientSelect.addEventListener('change', function () {                        
-
-        var selectedClientId = clientSelect.value;        	        
-	
-        var selectedBookingType = bookingTypeSelect.value;	        
-	
-        $.ajax({	            
-	
-            type: 'POST',                        	            
-	
-            url: 'get_customer_details.php',                        	            
-	
-            data: {                 	                
-	
-                c_id: selectedClientId,                		                
-		
-                b_type_id: selectedBookingType // Include booking type ID            
-		
-            },	            
-	
-            success: function (response) {                                	        
-	
-        var data = JSON.parse(response);	        
-	
-        if (data.error) {                    	            
-	
-            console.error(data.error);                    	            
-	
-            customerPhoneInput.value = '';                    	            
-	
-            customerEmailInput.value = '';                	        
-	
-        } else {                    	            
-	
-            customerPhoneInput.value = data.phone;                     	            
-	
-            customerEmailInput.value = data.email;                	        
-	
-        }            	    
-	
-    },                                    
-
-            error: function () {                	        
-	
-        console.error('Error fetching customer details');    
-	
-    }        
-
-    
-        });
-	
-    
-    });                            
-
-                            </script>												
+                                </div>								                            
+							</div>
+                            <script>
+								var bookingTypeSelect = document.getElementById('bookingType');
+								var clientSelect = document.getElementById('clientSelect');
+								var clientNameInput = document.getElementById('clientName');           
+								var customerPhoneInput = document.getElementById('customerPhone');            
+								var customerEmailInput = document.getElementById('customerEmail');            
+								bookingTypeSelect.addEventListener('change', function () {                        
+									var selectedBookingType = bookingTypeSelect.value;
+									if (selectedBookingType == 4 || selectedBookingType == 5) {
+										clientNameInput.classList.remove('d-none');
+										clientSelect.classList.add('d-none');
+										clientSelect.required = false;
+										clientNameInput.required = true;
+										clientNameInput.value = '';
+										customerPhoneInput.value = '';
+										customerEmailInput.value = '';	        
+									} else {
+										clientNameInput.classList.add('d-none');
+										clientSelect.classList.remove('d-none');
+										clientNameInput.required = false;
+										clientSelect.required = true;
+										$.ajax({
+											type: 'POST',
+											url: 'get_clients.php',
+											data: { b_type_id: selectedBookingType },
+											success: function (response) {
+												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
+											},
+											error: function () { 
+												console.error('Error fetching clients');
+											}
+										});
+									}
+								});    
+								clientSelect.addEventListener('change', function () {
+									var selectedClientId = clientSelect.value;
+									var selectedBookingType = bookingTypeSelect.value;
+									$.ajax({
+										type: 'POST',
+										url: 'get_customer_details.php',	            
+										data: {
+											c_id: selectedClientId,
+											b_type_id: selectedBookingType // Include booking type ID
+										},
+										success: function (response) {
+											var data = JSON.parse(response);
+											if (data.error) {
+												console.error(data.error);
+												customerPhoneInput.value = '';
+												customerEmailInput.value = '';
+											} else {
+												customerPhoneInput.value = data.phone;
+												customerEmailInput.value = data.email;
+											}
+										},
+										error: function () {                	        	        
+											console.error('Error fetching customer details');
+										}
+									});	        
+								});
+							</script>												
                             <div class="row">										
                                 <h4>Journey Details:</h4>
                                 <div class="col-lg-12">	
@@ -198,25 +137,17 @@ include('header.php');
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Postal Code</label>
                                     <select class="form-control" name="postal_code" required>
-                                        <option value=" ">Search PostCode</option>				
-										
-                                            <?php
-                                        
-                                            $pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");
-                                        
-                                            while($pcrow = mysqli_fetch_array($pcsql)){                                           
-					
-                                                ?>
-                                        <option>
-                                            
-                                            <?php echo $pcrow['pc_name']; ?>
-                                        </option>					
-										
-                                            <?php
-                                       
-                                            }
-                                        
-                                            ?>
+                                        <option value=" ">Search PostCode</option>                                        
+										<?php                                        
+										$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");            
+										while($pcrow = mysqli_fetch_array($pcsql)){
+										?>
+                                        <option>                                            
+											<?php echo $pcrow['pc_name']; ?>
+                                        </option>
+										<?php
+										}
+										?>
                                     </select>
                                 </div>
                                 <div class="mb-3 col-lg-4">
@@ -226,17 +157,12 @@ include('header.php');
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Pickup Date</label>
                                     <input type="date" class="form-control" name="pick_date" id="pick_date" required>
-                                </div>
-                                <script>    
-									
-    document.addEventListener("DOMContentLoaded", function() {        
-
-        var today = new Date().toISOString().split('T')[0];        
-	
-        document.getElementById('pick_date').setAttribute('min', today);    
-	
-    });    
-    
+                                </div>                               
+								<script>
+									document.addEventListener("DOMContentLoaded", function() {
+										var today = new Date().toISOString().split('T')[0];
+										document.getElementById('pick_date').setAttribute('min', today);
+									});
                                 </script>																	
                                 <div class="mb-3 col-lg-4">				
                                     <label class="form-label">Pickup Time</label>				
@@ -260,26 +186,17 @@ include('header.php');
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Vehicle Type</label>
                                     <select class="form-control" name="v_id" id="vehicleSelect" onchange="updateJourneyFare()">
-                                        <option value="">Select Vehicle</option>					
-										
-                                            <?php
-                                        
-                                            $vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
-                                        
-                                            while ($vrow = mysqli_fetch_array($vsql)) {                                        
-										
-                                                ?>
-                                        
+                                        <option value="">Select Vehicle</option>
+										<?php
+										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
+										while ($vrow = mysqli_fetch_array($vsql)) {                       
+										?>                                        
                                         <option value="<?php echo $vrow['v_id'] ?>">
                                             <?php echo $vrow['v_name'] ?>
-                                        </option>					
-										
-                                            <?php                                        
-										
-                                            
-                                            }
-                                        
-                                            ?>
+                                        </option>
+										<?php
+										}
+										?>
                                     </select>
                                 </div>
                                 <div class="mb-3 col-lg-4">
@@ -379,31 +296,24 @@ include('header.php');
                             </button>
                         </div>
                     </form>
-                    <script>    
-						
-    document.addEventListener("DOMContentLoaded", function () {
-    var bookingTypeSelect = document.getElementById("bookingType");
-    var bookerCommissionField = document.getElementById("bookerCommissionField");
-
-    bookingTypeSelect.addEventListener("change", function () {
-        var normalizedValue = parseInt(this.value, 10); // Convert to integer to handle leading zeros
-        console.log("Normalized value:", normalizedValue);
-
-        if (normalizedValue === 3) { // Compare with number 3
-            console.log("Displaying bookerCommissionField");
-            bookerCommissionField.style.display = "block";
-        } else {
-            console.log("Hiding bookerCommissionField");
-            bookerCommissionField.style.display = "none";
-        }
-
-        console.log("bookerCommissionField style.display:", bookerCommissionField.style.display);
-    });
-});
-
-
-			    
-						$(document).ready(function() {                        
+                    <script>						    
+						document.addEventListener("DOMContentLoaded", function () {    
+							var bookingTypeSelect = document.getElementById("bookingType");    
+							var bookerCommissionField = document.getElementById("bookerCommissionField");    
+							bookingTypeSelect.addEventListener("change", function () {        
+								var normalizedValue = parseInt(this.value, 10); // Convert to integer to handle leading zeros        
+								console.log("Normalized value:", normalizedValue);        
+								if (normalizedValue === 3) { // Compare with number 3            
+									console.log("Displaying bookerCommissionField");            
+									bookerCommissionField.style.display = "block";        								
+								} else {            
+									console.log("Hiding bookerCommissionField");            
+									bookerCommissionField.style.display = "none";        
+								}        
+								console.log("bookerCommissionField style.display:", bookerCommissionField.style.display);    
+							});
+						});			    						
+						$(document).ready(function() {						
 							$('#calculateFareBtn').on('click', function(e) {            	        
 								e.preventDefault(); // Prevent the form from submitting	        
 								var distance = parseFloat($('#journeyDistance').val());            	        
@@ -537,7 +447,129 @@ include('header.php');
 		}   
 	}	    
 	google.maps.event.addDomListener(window, 'load', initAutocomplete);
-</script>	
+</script>
+
+
+
+
+<!-------------------------------
+----------Add Customer-----------
+-------------------------------->
+<div class="modal modal-blur fade" id="modal-customer" tabindex="-1" role="dialog" aria-hidden="true">	
+    <div class="modal-dialog modal-lg" role="document">    	
+        <div class="modal-content">        			
+            <div class="modal-header">            				
+                <h5 class="modal-title">Add New Customer</h5>            						
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>		
+            </div>	
+            <form method="post" action="booking-customer-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">	
+                <div class="modal-body">		
+                    <div class="row">							
+                        <div class="mb-3 col-md-4">              								
+                            <label class="form-label">Full Name</label>              								
+                            <input type="text" class="form-control" name="cname" placeholder="Customer Name" required>			
+                        </div> 						               			
+                        <div class="mb-3 col-md-4">                  			
+                            <label class="form-label">Email</label>              								
+                            <input type="email" class="form-control" name="cemail" placeholder="hello@example.com" required>
+                        </div>
+                        <div class="mb-3 col-md-4">                  									
+                            <label class="form-label">Phone</label>              								
+                            <input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>			
+                        </div>				
+                        <div class="mb-3 col-md-4">			
+                            <label class="form-label">Password</label>			
+                            <input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required>			
+                        </div> 				
+                        <div class="mb-3 col-md-4">
+                            <label class="form-label">Gender</label>			
+                            <select class="form-select" name="cgender" required>			
+                                <option value="" selected>Select Gender</option>				
+                                <option>Male</option>																				
+                                <option>Female</option>												
+                                <option>Transgender</option>											
+                            </select>             																			
+                        </div>					               															
+                        <div class="mb-3 col-md-4">                  																
+                            <label class="form-label">Language</label>										
+                            <select class="form-select" name="clang">										
+								<option value="" selected>Select Language</option>
+								<?php
+								$lsql=mysqli_query($connect,"SELECT * FROM `language`");
+								while($lrow = mysqli_fetch_array($lsql)){                   
+								?>
+								<option>       
+									<?php echo $lrow['language'] ?>
+                                </option>								
+								<?php                                
+								}
+                                ?>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-md-4">
+							<label class="form-label">Postal Code</label>
+                            <select class="form-control" name="pc">
+                                <option>Search PostCode</option>								
+								<?php 
+								$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");  
+								while($pcrow = mysqli_fetch_array($pcsql)){                       
+								?>
+								<option>
+									<?php echo $pcrow['pc_name']; ?>
+								</option>
+								<?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label class="form-label">Picture</label>
+                            <input type="file" class="form-control" name="cpic">
+                        </div>			
+                        <div class="mb-3 col-md-4">
+                            <label class="form-label">National ID</label>
+                            <input type="text" class="form-control" name="cni">
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label">Address</label>
+                                <textarea class="form-control" rows="3" name="caddress"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Others</label>
+                                <textarea class="form-control" rows="3" name="cothers"></textarea>
+                            </div>			
+                        </div>			
+                    </div>		
+                    <div class="modal-footer">		
+                        <a href="#" class="btn btn-danger" data-bs-dismiss="modal">			
+                            <i class="ti ti-circle-x"></i>			
+                            Cancel			
+                        </a>			
+                        <button type="submit" class="btn ms-auto btn-success">			
+                            <i class="ti ti-user-plus"></i>			
+                            Save Customer			
+                        </button>			
+                    </div>		
+                    <script>		    
+						function validateForm() {
+							var cnameInput = document.getElementsByName("cname")[0].value;
+							var cemailInput = document.getElementsByName("cemail")[0].value;
+							var cphoneInput = document.getElementsByName("cphone")[0].value;			        
+							var cgenderInput = document.getElementsByName("cgender")[0].value;			        
+							var pcInput = document.getElementsByName("pc")[0].value;	        	
+							if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        	            
+								alert("Please fill in all required fields.");            	            
+								return false;	        
+							}						
+							return true;    
+						}                    
+					</script>						
+                </div> 		
+            </form>	
+        </div>
+    </div>
+</div>
 <?php
 include('footer.php');
 ?>
