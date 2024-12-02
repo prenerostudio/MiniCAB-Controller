@@ -26,7 +26,7 @@ $pc = $_POST['pc'];
 $cni = $_POST['cni'];
 $caddress = $_POST['caddress'];
 $cothers = $_POST['cothers'];
-$account_type = 1;         
+$account_type = $_POST['account_type'];         
 // Check if the email already exists
 $stmt_check = $connect->prepare("SELECT COUNT(*) FROM `clients` WHERE `c_phone` = ?");
 $stmt_check->bind_param("s", $cphone);

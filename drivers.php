@@ -46,24 +46,34 @@ include('header.php');
                             </tr>
                         </thead>
                         <tbody class="table-tbody">
-				<?php
-                                $x = 0;
-                                $adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
-                                while ($adrow = mysqli_fetch_array($adsql)) :
-                                    $x++;
-                                ?>
+				
+							<?php
+                               
+							$x = 0;
+                               
+							$adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
+                               
+							while ($adrow = mysqli_fetch_array($adsql)) :
+                                   
+							$x++;
+                               
+							?>
                             <tr>
                                 <td>
                                     <?php echo $x; ?>
                                 </td>
                                 <td>
-                                    <?php
+                                   
+									<?php
                                     if (!$adrow['d_pic']) :
-                                        ?>
+                                        
+									?>
                                     <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-                                        <?php else : ?>
+                                        
+									<?php else : ?>
                                     <img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
-                                        <?php endif; ?>								
+                                       
+									<?php endif; ?>								
                                 </td>
                                 <td>
                                     <strong style="text-transform: capitalize;">
@@ -86,34 +96,40 @@ include('header.php');
                                     <?php echo $adrow['licence_authority'];?>
                                 </td>
                                 <td>
-                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>">
-                                        <button class="btn btn-info">
-                                            <i class="ti ti-eye"></i>
-                                            View
-                                        </button>
+                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="View/Edit" class="btn btn-icon btn-info">
+                                        
+                                            
+										<i class="ti ti-eye"></i>
+                                            
+                                        
                                     </a>
-                                    <a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>">
-                                        <button class="btn btn-danger delete_btn">
-                                            <i class="ti ti-square-rounded-x"></i>
-                                            Delete
-                                        </button>
+                                    <a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="Delete" class="btn btn-icon btn-danger delete_btn">
+                                       
+                                            
+										<i class="ti ti-square-rounded-x"></i>
+                                            
+                                       
                                     </a>
-                                    <a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>">
-                                        <button class="btn btn-instagram">
-                                            <i class="ti ti-user-x"></i>
-                                            Make Inactive
-                                        </button>
+                                    <a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>" title=" Make Inactive" class="btn btn-icon btn-instagram">
+                                        
+                                           
+										<i class="ti ti-user-x"></i>
+                                           
+                                       
                                     </a>
                                 </td>
                             </tr>
-				<?php endwhile; ?>
-                                    <?php if ($x === 0) : ?>
+				
+							<?php endwhile; ?>
+                                    
+							<?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">No Driver Found!</p>
                                 </td>
                             </tr>
-				<?php endif; ?>
+				
+							<?php endif; ?>
                         </tbody>
                     </table>
                 </div>

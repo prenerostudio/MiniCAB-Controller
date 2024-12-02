@@ -86,35 +86,43 @@ include('header.php');
                                     <td>									
 				
 
-						<?php echo $x; ?>										
+						
+                                        <?php echo $x; ?>										
 
                                     </td>									
 				
                                     <td>									
 				
-						<?php echo $ddrow['d_name'];?><br>
+						
+                                        <?php echo $ddrow['d_name'];?><br>
 
 										
-                                                    <?php echo $ddrow['d_email'];?><br>
+                                                    
+                                            <?php echo $ddrow['d_email'];?><br>
 
 										
-                                                        <?php echo $ddrow['d_phone'];?>
+                                                        
+                                                <?php echo $ddrow['d_phone'];?>
 									
                                     </td>									
 									
                                     <td>									
 				
-						<?php echo $ddrow['request_msg'];?>										
+						
+                                        <?php echo $ddrow['request_msg'];?>										
 
                                     </td>
 				
                                     <td>
 				
-						<?php 											
-
-                                                if($ddrow['req_status'] == 0){
 						
-                                                    ?>												
+                                        <?php 											
+
+                                               
+                                        if($ddrow['req_status'] == 0){
+						
+                                                   
+                                            ?>												
 						
                                         <div class="col-auto status">
 					
@@ -126,6 +134,7 @@ include('header.php');
 					
 					<?php									
 
+                                       
                                         } elseif($ddrow['req_status'] == 1){											
 					
                                             ?>
@@ -140,6 +149,8 @@ include('header.php');
 					
 					<?php									
 
+                                        
+                                        
                                         }else{
 					
                                             ?>
@@ -180,9 +191,11 @@ include('header.php');
 				
                                 </tr>								
 				
-				<?php endwhile; ?>								
+				
+                                    <?php endwhile; ?>								
 
-								<?php if ($x === 0) : ?>								
+								
+                                    <?php if ($x === 0) : ?>								
 
                                 <tr>
 				
@@ -211,8 +224,10 @@ include('header.php');
         
 		
 	
+        
         <script>	
 	
+    
     $(document).ready(function() {    
 
         $('#del-driver').DataTable();
@@ -226,57 +241,6 @@ include('header.php');
     </div>		
 </div>
             
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
-    async defer></script>
-<script>		   	
-
-    function validateForm() { 
-
-        var ap_nameInput = document.getElementsByName("ap_name")[0].value;        				
-	
-        var ap_addressInput = document.getElementsByName("ap_address")[0].value;        						
-	
-        if (ap_nameInput === "" || ap_addressInput === "") {				
-	
-            alert("Please fill in all required fields.");			
-	
-            return false;			
-	
-        }		
-	
-        return true;    		
-	
-    }	 
-
-    var autocompletePickup;   
-
-    function initAutocomplete() {
-    
-        var pickupInput = document.getElementById('pickup');
-        
-        var autocompleteOptions = {
-        
-            types: ['geocode'],
-            
-            componentRestrictions: {country: 'GB'}
-        
-        };
-
-        
-        autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);
-
-        
-        autocompletePickup.addListener('place_changed', function() {
-        
-        
-    });
-    
-    }
-       
-    
-    google.maps.event.addDomListener(window, 'load', initAutocomplete);
-	
-</script>
 
 <?php
 include('footer.php');

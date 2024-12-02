@@ -21,7 +21,7 @@ $bookrow = mysqli_fetch_array($result);
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Booking Type</label>
                                     <input type="hidden" class="form-control" name="book_id" value="<?php echo htmlspecialchars($bookrow['book_id']); ?>">
-                                    <input type="text" class="form-control" name="b_type_id" id="bookingType" value=" <?php echo htmlspecialchars($bookrow['b_type_id']); ?>"  readonly="">
+                                    <input type="hidden" class="form-control" name="b_type_id" id="bookingType" value=" <?php echo htmlspecialchars($bookrow['b_type_id']); ?>"  readonly="">
                                     <input type="text" class="form-control" name="b_type_name" id="bookingTypeName" value=" <?php echo htmlspecialchars($bookrow['b_type_name']); ?>"  readonly="">
                                 </div>
                             </div>
@@ -29,7 +29,7 @@ $bookrow = mysqli_fetch_array($result);
                                 <h4>Passenger Details:</h4>
                                 <div class="mb-3 col-lg-4"> 
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" name="c_id" id="clientId" value="<?php echo $bookrow['c_id']; ?>"  readonly="">
+                                    <input type="hidden" class="form-control" name="c_id" id="clientId" value="<?php echo $bookrow['c_id']; ?>"  readonly="">
                                     <input type="text" class="form-control" name="c_name" id="clientName" value="<?php echo $bookrow['c_name']; ?>"  readonly="">
                                 </div>								                                
                                 <div class="mb-3 col-lg-3">                                

@@ -106,17 +106,21 @@ include('header.php');
 				
                                     <td>
 				
-						<?php echo $crow['com_id']; ?>
+						
+                                        <?php echo $crow['com_id']; ?>
 
                                     </td>
 				
                                     <td>
 				
-						<?php
-
-                                                if (!$crow['com_pic']) {
 						
-                                                    ?>			
+                                        <?php
+
+                                                
+                                        if (!$crow['com_pic']) {
+						
+                                                    
+                                            ?>			
 						
                                         <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">	
 					
@@ -138,41 +142,49 @@ include('header.php');
 				
                                     <td>
 				
-						<?php echo $crow['com_name']; ?>
+						
+                                        <?php echo $crow['com_name']; ?>
 
                                     </td>
 				
                                     <td>
 				
-						<?php echo $crow['com_person']; ?>
+						
+                                        <?php echo $crow['com_person']; ?>
 
                                     </td>
 				
                                     <td>
 				
-						<?php echo $crow['com_email']; ?>
+						
+                                        <?php echo $crow['com_email']; ?>
 
                                     </td>
 				
                                     <td>
 				
-						<?php echo $crow['com_phone']; ?>
+						
+                                        <?php echo $crow['com_phone']; ?>
 
                                     </td>		
 				
                                     <td>
 				
-						<?php echo $crow['com_pin']; ?>
+						
+                                        <?php echo $crow['com_pin']; ?>
 
                                     </td>										
 				
                                     <td>											
 				
-						<?php 											
-
-                                                if($crow['acount_status']==0){
 						
-                                                    ?>												
+                                        <?php 											
+
+                                                
+                                        if($crow['acount_status']==0){
+						
+                                                    
+                                            ?>												
 						
                                         <div class="col-auto status">
 					
@@ -182,10 +194,14 @@ include('header.php');
 					
                                         </div>
 					
-					<?php									
+					
+                                            <?php									
 
+                                        
+                                            
                                         } else{											
 					
+                                            
                                             ?>
 					
                                         <div class="col-auto status">
@@ -206,39 +222,35 @@ include('header.php');
 				
                                     <td> 									
 				
-                                        <a href="view-company.php?com_id=<?php echo $crow['com_id']; ?>">
+                                        <a href="view-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
 					
-                                            <button class="btn btn-info">
+                                          
 					
-                                                <i class="ti ti-eye"></i>
+                                                
+                                            <i class="ti ti-eye"></i>
 						
-                                                View
-						
-                                            </button>												
+                                               										
 					
                                         </a>						
 					
-                                        <a href="del-company.php?com_id=<?php echo $crow['com_id'];?>">
+                                        <a href="del-company.php?com_id=<?php echo $crow['com_id'];?>" class="btn btn-danger btn-icon" title="Delete">
 					
-                                            <button class="btn btn-danger">
+                                           
 					
-                                                <i class="ti ti-square-rounded-x"></i>
+                                                
+                                            <i class="ti ti-square-rounded-x"></i>
 						
-                                                Delete
-						
-                                            </button>
+                                                
 					
                                         </a>
 					
-                                        <a href="activate-company.php?com_id=<?php echo $crow['com_id']; ?>">
+                                        <a href="activate-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-success btn-icon" title="Activate Company">
 					
-                                            <button class="btn btn-success">
+                                           
 					
                                                 <i class="ti ti-square-rounded-x"></i>
 						
-                                                Activate Company
-						
-                                            </button>
+                                             
 					
                                         </a>
 					

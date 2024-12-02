@@ -18,26 +18,47 @@ include('header.php');
                                     <label class="form-label">Booking Type</label>
                                     <select class="form-control" name="b_type_id" id="bookingType" required>
                                         <option value="">Select Booking Type</option>					
-										<?php
+										
+                                            <?php
                                         $btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
                                         while ($btrow = mysqli_fetch_array($btsql)) {
-										?>
+										
+                                            ?>
                                         <option value="<?php echo $btrow['b_type_id'] ?>">                                        
-											<?php echo $btrow['b_type_name'] ?>
+											
+                                            <?php echo $btrow['b_type_name'] ?>
                                         </option>
-										<?php
+										
+                                            <?php
                                         }
                                         ?>
                                     </select>
                                 </div>
+								<div class="row col-lg-3">
+									 <label class="form-label">Name</label>
+                                <div class="col">                                
+                                    <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
+                                    <select class="form-control" name="c_id" id="clientSelect" required></select>
+                                </div>
+                                <div class="col-auto">
+                                  <a href="#" class="btn btn-icon btn-info" aria-label="Button" data-bs-toggle="modal" data-bs-target="#modal-customer" title="Add Customers">
+                                    <i class="ti ti-plus"></i>
+                                  </a>
+                                </div>
+                              </div>
+<!--
                                 <div class="mb-3 col-lg-3">
                                     <label class="form-label">Name</label>
                                     <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
                                     <select class="form-control" name="c_id" id="clientSelect" required></select>
-									<a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-customer" style="margin-top: 25px; float: left;" title="Add Customers">
-										<i class="ti ti-plus"></i>										
-									</a>
+									
+                                    <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-customer" style="margin-top: 25px; float: left;" title="Add Customers">
+										
+                                        <i class="ti ti-plus"></i>										
+									
+                                    </a>
                                 </div>
+-->
                                 <div class="mb-3 col-lg-3">
                                     <label class="form-label">Customer Phone</label>
                                     <input type="text" class="form-control" name="cphone" id="customerPhone" required>
@@ -462,111 +483,146 @@ include('header.php');
                 <h5 class="modal-title">Add New Customer</h5>            						
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>		
             </div>	
-            <form method="post" action="booking-customer-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">	
-                <div class="modal-body">		
-                    <div class="row">							
-                        <div class="mb-3 col-md-4">              								
-                            <label class="form-label">Full Name</label>              								
-                            <input type="text" class="form-control" name="cname" placeholder="Customer Name" required>			
-                        </div> 						               			
-                        <div class="mb-3 col-md-4">                  			
-                            <label class="form-label">Email</label>              								
-                            <input type="email" class="form-control" name="cemail" placeholder="hello@example.com" required>
-                        </div>
-                        <div class="mb-3 col-md-4">                  									
-                            <label class="form-label">Phone</label>              								
-                            <input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>			
-                        </div>				
-                        <div class="mb-3 col-md-4">			
-                            <label class="form-label">Password</label>			
-                            <input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required>			
-                        </div> 				
-                        <div class="mb-3 col-md-4">
-                            <label class="form-label">Gender</label>			
-                            <select class="form-select" name="cgender" required>			
-                                <option value="" selected>Select Gender</option>				
-                                <option>Male</option>																				
-                                <option>Female</option>												
-                                <option>Transgender</option>											
-                            </select>             																			
-                        </div>					               															
-                        <div class="mb-3 col-md-4">                  																
-                            <label class="form-label">Language</label>										
-                            <select class="form-select" name="clang">										
-								<option value="" selected>Select Language</option>
-								<?php
-								$lsql=mysqli_query($connect,"SELECT * FROM `language`");
-								while($lrow = mysqli_fetch_array($lsql)){                   
-								?>
-								<option>       
-									<?php echo $lrow['language'] ?>
-                                </option>								
-								<?php                                
-								}
-                                ?>
-                            </select>
-                        </div>
-                        <div class="mb-3 col-md-4">
-							<label class="form-label">Postal Code</label>
-                            <select class="form-control" name="pc">
-                                <option>Search PostCode</option>								
-								<?php 
-								$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");  
-								while($pcrow = mysqli_fetch_array($pcsql)){                       
-								?>
-								<option>
-									<?php echo $pcrow['pc_name']; ?>
-								</option>
-								<?php
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="mb-3 col-md-4">
-                            <label class="form-label">Picture</label>
-                            <input type="file" class="form-control" name="cpic">
-                        </div>			
-                        <div class="mb-3 col-md-4">
-                            <label class="form-label">National ID</label>
-                            <input type="text" class="form-control" name="cni">
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="mb-3">
-                                <label class="form-label">Address</label>
-                                <textarea class="form-control" rows="3" name="caddress"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Others</label>
-                                <textarea class="form-control" rows="3" name="cothers"></textarea>
-                            </div>			
-                        </div>			
-                    </div>		
-                    <div class="modal-footer">		
-                        <a href="#" class="btn btn-danger" data-bs-dismiss="modal">			
-                            <i class="ti ti-circle-x"></i>			
-                            Cancel			
-                        </a>			
-                        <button type="submit" class="btn ms-auto btn-success">			
-                            <i class="ti ti-user-plus"></i>			
-                            Save Customer			
-                        </button>			
-                    </div>		
-                    <script>		    
-						function validateForm() {
-							var cnameInput = document.getElementsByName("cname")[0].value;
-							var cemailInput = document.getElementsByName("cemail")[0].value;
-							var cphoneInput = document.getElementsByName("cphone")[0].value;			        
-							var cgenderInput = document.getElementsByName("cgender")[0].value;			        
-							var pcInput = document.getElementsByName("pc")[0].value;	        	
-							if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        	            
-								alert("Please fill in all required fields.");            	            
-								return false;	        
-							}						
-							return true;    
-						}                    
-					</script>						
-                </div> 		
-            </form>	
+<form id="customerForm" method="post" action="booking-customer-process.php" enctype="multipart/form-data">	
+    <div class="modal-body">		
+        <div class="row">	
+            <div class="mb-3 col-md-4">              								
+                <label class="form-label">Select Customer Type</label>              								
+                <select class="form-select" name="account_type" id="account_type">			
+                    <option value="" selected>Select Customer Type</option>				
+                    <option value="1">Customer</option>			
+                    <option value="2">Booker</option>												
+                </select> 		
+            </div>
+            <div class="mb-3 col-md-4">              								
+                <label class="form-label">Full Name</label>              								
+                <input type="text" class="form-control" name="cname" id="cname" placeholder="Customer Name">			
+            </div> 						               			
+            <div class="mb-3 col-md-4">                  			
+                <label class="form-label">Email</label>              								
+                <input type="email" class="form-control" name="cemail" id="cemail" placeholder="hello@example.com">
+            </div>
+            <div class="mb-3 col-md-4">                  									
+                <label class="form-label">Phone</label>              								
+                <input type="text" class="form-control" name="cphone" id="cphone" placeholder="+44 20 7123 4567">			
+            </div>				
+            <div class="mb-3 col-md-4">			
+                <label class="form-label">Password</label>			
+                <input type="password" class="form-control" name="cpass" id="cpass" placeholder="xxxxxxxx">			
+            </div> 				
+            <div class="mb-3 col-md-4">
+                <label class="form-label">Gender</label>			
+                <select class="form-select" name="cgender" id="cgender">			
+                    <option value="" selected>Select Gender</option>				
+                    <option>Male</option>																				
+                    <option>Female</option>												
+                    <option>Transgender</option>											
+                </select>             																			
+            </div>					               															
+            <div class="mb-3 col-md-4">                  																
+                <label class="form-label">Language</label>										
+                <select class="form-select" name="clang">										
+                    <option value="" selected>Select Language</option>
+                    <?php
+                    $lsql=mysqli_query($connect,"SELECT * FROM `language`");
+                    while($lrow = mysqli_fetch_array($lsql)){                   
+                    ?>
+                    <option>       
+                        <?php echo $lrow['language'] ?>
+                    </option>								
+                    <?php                                
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label class="form-label">Postal Code</label>
+                <select class="form-control" name="pc">
+                    <option>Search PostCode</option>								
+                    <?php 
+                    $pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");  
+                    while($pcrow = mysqli_fetch_array($pcsql)){                       
+                    ?>
+                    <option>
+                        <?php echo $pcrow['pc_name']; ?>
+                    </option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label class="form-label">Picture</label>
+                <input type="file" class="form-control" name="cpic">
+            </div>			
+            <div class="mb-3 col-md-4">
+                <label class="form-label">National ID</label>
+                <input type="text" class="form-control" name="cni">
+            </div>
+            <div class="col-lg-12">
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <textarea class="form-control" rows="3" name="caddress"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Others</label>
+                    <textarea class="form-control" rows="3" name="cothers"></textarea>
+                </div>			
+            </div>	
+        </div>		
+        <div class="modal-footer">		
+            <a href="#" class="btn btn-danger" data-bs-dismiss="modal">			
+                <i class="ti ti-circle-x"></i>			
+                Cancel			
+            </a>			
+            <button type="button" id="submitBtn" class="btn ms-auto btn-success">			
+                <i class="ti ti-user-plus"></i>			
+                Save Customer			
+            </button>			
+        </div>		
+    </div> 		
+</form>	
+
+<script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        const account_type = document.getElementById('account_type').value;
+        const cname = document.getElementById('cname').value.trim();
+        const cemail = document.getElementById('cemail').value.trim();
+        const cphone = document.getElementById('cphone').value.trim();
+        const cpass = document.getElementById('cpass').value.trim();
+        const cgender = document.getElementById('cgender').value;
+
+        if (!account_type) {
+            alert('Account Type is required');
+            return false;
+        }
+        if (!cname) {
+            alert('Full Name is required');
+            return false;
+        }
+        if (!cemail) {
+            alert('Email is required');
+            return false;
+        }
+        if (!cphone) {
+            alert('Phone is required');
+            return false;
+        }
+        if (!cpass) {
+            alert('Password is required');
+            return false;
+        }
+        if (!cgender) {
+            alert('Gender is required');
+            return false;
+        }
+
+        // Submit the form if all fields are valid
+        document.getElementById('customerForm').submit();
+    });
+</script>
+
+
         </div>
     </div>
 </div>

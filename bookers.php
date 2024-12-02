@@ -110,22 +110,28 @@ include('header.php');
 				
                                     <td>
 				
-						<?php echo $x; ?>
+						
+                                        <?php echo $x; ?>
 
                                     </td>
 				
                                     <td>									
 				
-						<?php		
-
-                                                if (!$crow['c_pic']) {
 						
-                                                    ?>		
+                                        <?php		
+
+                                                
+                                        if (!$crow['c_pic']) {
+						
+                                                    
+                                            ?>		
 						
                                         <img src="img/user-1.jpg" alt="Booker Img" style="width: 50px; height: 50px; border-radius: 5px;">	
 					
 					<?php
 
+                                        
+                                        
                                         } else{		
 					
                                             ?>	
@@ -142,41 +148,49 @@ include('header.php');
 				
                                     <td>
 				
-						<?php echo $crow['postal_code']; ?>
+						
+                                        <?php echo $crow['postal_code']; ?>
 
                                     </td>
 				
                                     <td>
 				
-						<?php echo $crow['c_name']; ?>
+						
+                                        <?php echo $crow['c_name']; ?>
 
                                     </td>	
 				
                                     <td>
 				
-						<?php echo $crow['c_email']; ?>
+						
+                                        <?php echo $crow['c_email']; ?>
 
                                     </td>  										
 				
                                     <td>
 				
-						<?php echo $crow['c_phone']; ?>
+						
+                                        <?php echo $crow['c_phone']; ?>
 
                                     </td>                       										
 				
                                     <td>
 				
-						<?php echo $crow['c_gender']; ?>
+						
+                                        <?php echo $crow['c_gender']; ?>
 
                                     </td>										
 				
                                     <td>
 				
-						<?php 											
-
-                                                if($crow['acount_status']==0){
 						
-                                                    ?>												
+                                        <?php 											
+
+                                                
+                                        if($crow['acount_status']==0){
+						
+                                                    
+                                            ?>												
 						
                                         <div class="col-auto status">
 					
@@ -210,21 +224,21 @@ include('header.php');
 				
                                     <td> 									
 				
-                                        <a href="view-booker.php?c_id=<?php echo $crow['c_id']; ?>">
+                                        <a href="view-booker.php?c_id=<?php echo $crow['c_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
 					
-                                            <button class="btn btn-info">
+                                          
 					
-                                                <i class="ti ti-eye"></i>View
+                                                <i class="ti ti-eye"></i>
 						
-                                            </button>												
+                                           										
 					
                                         </a>
 					
-                                        <button class="btn btn-danger delete_btn" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-customer-delete">    
+                                        <button class="btn btn-danger delete_btn btn-icon" data-c_id="<?php echo $crow['c_id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-customer-delete" title="Delete">    
 					
                                             <i class="ti ti-square-rounded-x"></i>    
 					
-                                            Delete
+                                            
 					
                                         </button>
 					

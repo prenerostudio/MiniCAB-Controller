@@ -145,27 +145,26 @@ include('header.php');
                                     
                                     <td>
                                     
-                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>">
+                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" class="btn btn-info btn-icon" title="View">
                                         
-                                            <button class="btn btn-info">
+                                          
 					
                                                 <i class="ti ti-eye"></i>
 						
-                                                View
+                                                
 						
-                                            </button>
+                                         
                                         </a>
                                         
 					
-                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>">
+                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" class="btn btn-danger btn-icon delete_btn" title="Delete">
 					
-                                            <button class="btn btn-danger delete_btn">    
-					
+                                            
                                                 <i class="ti ti-square-rounded-x"></i>    
 						
-                                                Delete
+                                                
 						
-                                            </button>	
+                                           
 					
                                         </a>                                                                            
 					

@@ -45,7 +45,7 @@ include('header.php');
 		
                     <div id="table-customer" class="table-responsive">											
 		
-                        <table class="table" id="table-inactive">													
+                        <table class="table" id="table-old">													
 			
                             <thead>															
 			
@@ -78,7 +78,7 @@ include('header.php');
 								
                                 $z = 0;                            
 								
-                                $idsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 2 ORDER BY drivers.d_id DESC");                            
+                                $idsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 4 ORDER BY drivers.d_id DESC");                            
 								
                                 while ($idrow = mysqli_fetch_array($idsql)) :
 								
@@ -147,38 +147,16 @@ include('header.php');
 				
                                     <td>                                    
 				
-                                        <a href="view-driver.php?d_id=<?php echo $idrow['d_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
+                                        <a href="activate-driver.php?d_id=<?php echo $idrow['d_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
 					
                                                 
-                                            <i class="ti ti-eye"></i>                      
+                                             <i class="ti ti-user-check"></i>                    
 					
                                         </a>                                 								
 					
-                                        <a  href="del-driver.php?d_id=<?php echo $idrow['d_id']; ?>" class="btn btn-danger delete_btn btn-icon" title="Delete">
+                                        										
 					
-                                          
-					
-                                              
-                                            <i class="ti ti-square-rounded-x"></i>
-						
-                                              
-						
-                                            								
-					
-                                        </a>										
-					
-                                        <a href="activate-driver.php?d_id=<?php echo $idrow['d_id']; ?>" class="btn btn-success btn-icon" title="Activate Driver">           
-					
-                                           
-					
-                                               
-                                            <i class="ti ti-user-check"></i>
-						
-                                                
-						
-                                                                                
-					
-                                        </a>                                    
+                                                                      
 					
                                     </td>                              
 				
@@ -221,7 +199,7 @@ include('header.php');
 
     $(document).ready(function() {    
 
-        $('#table-inactive').DataTable();
+        $('#table-old').DataTable();
 	
     });
 </script>

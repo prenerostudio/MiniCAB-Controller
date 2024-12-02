@@ -218,39 +218,26 @@ include('header.php');
 				
                                     <td> 									
 				
-                                        <a href="view-company.php?com_id=<?php echo $crow['com_id']; ?>">
+                                        <a href="view-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
 					
-                                            <button class="btn btn-info">
-					
-                                                <i class="ti ti-eye"></i>
-						
-                                                View
-						
-                                            </button>												
+                                            <i class="ti ti-eye"></i>										
 					
                                         </a>						
 					
-                                        <a href="del-company.php?com_id=<?php echo $crow['com_id'];?>">
-					
-                                            <button class="btn btn-danger">
-					
-                                                <i class="ti ti-square-rounded-x"></i>
-						
-                                                Delete
-						
-                                            </button>
-					
+                                        <a href="del-company.php?com_id=<?php echo $crow['com_id'];?>" class="btn btn-danger btn-icon" title="Delete">
+  
+                                            <i class="ti ti-square-rounded-x"></i>
+
                                         </a>
 					
-                                        <a href="block-company.php?com_id=<?php echo $crow['com_id']; ?>">
+                                        <a href="block-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-warning btn-icon" title="Block Company">
 					
-                                            <button class="btn btn-warning">
+                                           
 					
-                                                <i class="ti ti-square-rounded-x"></i>
+                                                
+                                            <i class="ti ti-square-rounded-x"></i>
 						
-                                                Block Company
-						
-                                            </button>
+                                               
 					
                                         </a>
 					
@@ -376,7 +363,8 @@ include('header.php');
 				
                                 <option>								
 				
-					<?php echo $pcrow['pc_name'] ?>								
+					
+                                    <?php echo $pcrow['pc_name'] ?>								
 
                                 </option>
 				

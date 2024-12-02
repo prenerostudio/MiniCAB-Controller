@@ -497,6 +497,15 @@
                                 </span>
 				
                             </a>
+                            <a class="dropdown-item" href="old-drivers.php">
+			
+                                <i class="ti ti-user-shield"></i>
+				
+                                Old Drivers
+				
+                                <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">0</span>
+				
+                            </a>
 			
                             <a class="dropdown-item" href="driver-delete-request.php">
 			
