@@ -66,59 +66,74 @@ include('header.php');
                                     </td>
                                     <td>
                                         <strong>£</strong>                                             
-										<?php
+										
+                                            <?php
                                             $stime = strtotime($atrow['start_time']);
                                             $etime = strtotime($atrow['end_time']);
                                             $pph =  $atrow['price_hour']; 
                                             $total_time = ($etime - $stime) / 3600;           
                                             $total_pay = $pph * $total_time;   
                                             echo number_format($total_pay, 2);                                       
-										?>					                                    
+										
+                                            ?>					                                    
                                     </td>				
                                     <td>                                        
-										<?php                                        
-											if($atrow['ts_status']==0){                                            
-										?> 
+										
+                                        <?php                                        
+											
+                                        if($atrow['ts_status']==0){                                            
+										
+                                            ?> 
                                         <div class="col-auto status">     
                                             <span class="status-dot status-dot-animated bg-orange d-block"></span>
                                             <span>Pending</span>
                                         </div>					
-										<?php
+										
+                                            <?php
+                                        
+                                            
                                         } elseif($atrow['ts_status']==1){
-                                        ?>
+                                       
+                                            ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-green d-block"></span>
                                             <span>Accepted</span>
                                         </div>					
-										<?php
+										
+                                            <?php
                                         } elseif($atrow['ts_status']==2){
                                         ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-red d-block"></span>
                                             <span>Cancelled</span>
                                         </div>					
-										<?php
+										
+                                            <?php
                                         } elseif($atrow['ts_status']==3){
                                         ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-yellow d-block"></span>
                                             <span>Withdrawn</span>
                                         </div>					
-										<?php
+										
+                                            <?php
                                         } elseif($atrow['ts_status']==5){
                                         ?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-yellow d-block"></span>
                                             <span>Waiting</span>
                                         </div>					
-										<?php
+										
+                                            <?php
                                         }  elseif($atrow['ts_status']==4) {                                           
-										?> 
+										
+                                            ?> 
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-blue d-block"></span>
                                             <span>Completed</span>
                                         </div>					
-										<?php
+										
+                                            <?php
                                         }					
                                         ?>					
                                     </td>
@@ -129,14 +144,17 @@ include('header.php');
                                                 <div class="input-group mb-2">
                                                     <select class="form-control" name="d_id" required>
                                                         <option value="">Select Driver</option>							
-														<?php
-                                                        $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
-                                                        while ($drrow = mysqli_fetch_array($drsql)) {
-														?>
+														
+                                                            <?php
+                                                        
+                                                            $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
+                                                        
+                                                            while ($drrow = mysqli_fetch_array($drsql)) {
+														
+                                                                ?>
                                                         <option value="<?php echo $drrow['d_id']; ?>">								
-															<?php echo $drrow['d_id']; ?> -
-															<?php echo $drrow['d_name']; ?> -
-															<?php echo $drrow['d_phone']; ?>
+															
+                                                            <?php echo $drrow['d_id']; ?> - <?php echo $drrow['d_name']; ?> - <?php echo $drrow['d_phone']; ?>
                                                         </option>
                                                         <?php
                                                         }
@@ -160,9 +178,17 @@ include('header.php');
                                         </a>
                                     </td>
                                 </tr>				
-								<?php
-                                }
-                                ?>
+								
+                                    
+                                    <?php
+                                
+                                    
+                                                            
+                                    
+                                    }
+                                
+                                                            
+                                    ?>
                             </tbody>
                         </table>
                     </div>
@@ -170,9 +196,12 @@ include('header.php');
             </div>
         </div>
         <script>
-			$(document).ready(function() {           
-				$('#slots').DataTable();	   
-			});	
+			
+    $(document).ready(function() {           
+				
+        $('#slots').DataTable();	   
+			
+    });	
         </script>					
         <div class="col-4">
             <div class="card">	

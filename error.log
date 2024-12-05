@@ -255,3 +255,7 @@ Stack trace:
 #0 C:\xampp\htdocs\MiniCAB-Controller\view-booking.php(395): mysqli_stmt_bind_param('SELECT bookings...', 'i', 1)
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booking.php on line 395
+[02-Dec-2024 11:21:41 Europe/London] PHP Warning:  Undefined variable $booker_commission in C:\xampp\htdocs\MiniCAB-Controller\booking-process.php on line 172
+[02-Dec-2024 11:21:41 Europe/London] PHP Warning:  Undefined variable $customer_name in C:\xampp\htdocs\MiniCAB-Controller\booking-process.php on line 173
+[02-Dec-2024 11:21:41 Europe/London] PHP Warning:  Undefined variable $customer_email in C:\xampp\htdocs\MiniCAB-Controller\booking-process.php on line 174
+[02-Dec-2024 11:21:41 Europe/London] PHP Warning:  Undefined variable $customer_phone in C:\xampp\htdocs\MiniCAB-Controller\booking-process.php on line 175

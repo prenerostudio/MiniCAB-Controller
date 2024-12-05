@@ -59,26 +59,46 @@ include('header.php');
                     </span>
                 </span>
                 <script>    
-					$(document).ready(function() {        
-						$(".filter-item").click(function(event) {        
-							event.preventDefault();        
-							var selectedInterval = $(this).data("filter");        	        
-							console.log("Selected Interval:", selectedInterval);        
-							$.ajax({            
-								type: "GET",             
-								url: "fetch_data.php",            
-								data: { timeInterval: selectedInterval },            
-								success: function(data) {         
-									console.log("Ajax Success:", data);                	        
-									$("#tableBody").html(data);            	    
-								},                        
-								error: function(xhr, status, error) {                	        
-									console.error("Ajax Error:", error);            	    
-								}                
-							});    	    
-						});    
-					});                
-				</script>
+					
+    $(document).ready(function() {        
+
+        $(".filter-item").click(function(event) {        
+	
+        event.preventDefault();        
+	
+        var selectedInterval = $(this).data("filter");        	        
+	
+        console.log("Selected Interval:", selectedInterval);        
+	
+        $.ajax({            
+	
+            type: "GET",             
+	
+            url: "fetch_data.php",            
+	
+            data: { timeInterval: selectedInterval },            
+	
+            success: function(data) {         
+	
+        console.log("Ajax Success:", data);                	        
+	
+        $("#tableBody").html(data);            	    
+	
+    },                        
+
+            error: function(xhr, status, error) {                	        
+	
+        console.error("Ajax Error:", error);            	    
+	
+    }                
+
+        });    	    
+	
+    });    
+
+    });                
+
+                </script>
             </div>
         </div>
     </div>	
@@ -145,23 +165,28 @@ include('header.php');
                                     <td><?php echo $brow['journey_fare']; ?></td>
                                     <td><?php echo $brow['v_name']; ?></td>
                                     <td style='width: 15%; background: #FFFFFF;'>                                        
-										<?php
+										
+                                        <?php
                                         if ($brow['bid_status'] == 0) {	                                            
-										?>
+										
+                                            ?>
                                         <a href='open-bid.php?book_id=<?php echo $brow['book_id'] ?>'>
                                             <button class='btn btn-facebook btn-icon' title='Open Bid'>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
                                         </a>					
-										<?php
+										
+                                            <?php
                                         } else {                                            
-										?>
+										
+                                            ?>
                                         <a href='#'>
                                             <button class='btn btn-icon' disabled>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
                                         </a>					
-										<?php
+										
+                                            <?php
                                         }
                                         ?> 
                                         <a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
@@ -169,17 +194,21 @@ include('header.php');
                                                 <i class='ti ti-eye'></i>
                                             </button>
                                         </a>					
-										<?php
+										
+                                            <?php
                                         if ($brow['booking_status'] == 'Booked') {                                           
-										?>
+										
+                                            ?>
                                         <a href='#' >
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>					
-										<?php
+										
+                                            <?php
                                         } else {                                            
-										?>
+										
+                                            ?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
