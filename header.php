@@ -27,7 +27,7 @@ include('config.php');
         <!-- Include jQuery -->	        
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <link href="vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />	
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />					
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />	                        
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
 async defer></script>
@@ -58,19 +58,19 @@ async defer></script>
         <script src="js/demo-theme.min.js"></script> 									
         <div class="page">					
             <div class="sticky-top">      												
-                <header class="navbar navbar-expand-md d-print-none" >        							
+                <header class="navbar navbar-expand-md d-print-none">
                     <div class="container-xl">          							
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">			
                             <span class="navbar-toggler-icon"></span>			
                         </button>        								
                         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">			
-                            <a href="dashboard.php">            											
+                            <a href="dashboard.php">
                                 <img src="img/logo.png" width="110" height="32" alt="MiniCAB" class="navbar-brand-image">				
                             </a>         									
                         </h1>			
                         <div class="navbar-nav flex-row order-md-last">			
                             <div class="nav-item d-none d-md-flex me-3">			
-                                <div class="btn-list">													
+                                <div class="btn-list">
                                     <a href="new-driver-web.php" class="btn btn-github position-relative">
                                         <i class="ti ti-users-group"></i>
                                         Drivers From WEB
@@ -98,63 +98,63 @@ async defer></script>
                                         <i class="ti ti-bookmark-plus"></i>
                                         New Booking
                                     </a>
-                                </div>
-                                <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('new-drivers-count.php')            	
-                .then(response => response.json())            		
-                .then(data => {		
-                    document.querySelector('.btn-indigo .badge').textContent = data.newDriversCount;		
-        })            	
-                .catch(error => console.error('Error fetching new drivers count:', error));    		
-    });									
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('web-driver-count.php')            	
-                .then(response => response.json())            		
-                .then(data => {		
-                    document.querySelector('.btn-github .badge').textContent = data.webDriversCount;		
-        })            	
-                .catch(error => console.error('Error fetching new drivers count:', error));    		
-    });									
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('fare-count.php')            	
-                .then(response => response.json())            		
-                .then(data => {		
-                    document.querySelector('.btn-danger .badge').textContent = data.faresCount;		
-        })            	
-                .catch(error => console.error('Error fetching new drivers count:', error));    		
-    });    
-                                </script>         																		
+                                </div>                                
+								<script>    
+									document.addEventListener("DOMContentLoaded", function() {        
+										fetch('new-drivers-count.php')
+											.then(response => response.json())
+											.then(data => {
+											document.querySelector('.btn-indigo .badge').textContent = data.newDriversCount;
+										})
+											.catch(error => console.error('Error fetching new drivers count:', error));
+									});
+									document.addEventListener("DOMContentLoaded", function() {
+										fetch('web-driver-count.php')    
+											.then(response => response.json())
+											.then(data => {                    
+											document.querySelector('.btn-github .badge').textContent = data.webDriversCount;
+										})
+											.catch(error => console.error('Error fetching new drivers count:', error));
+									});
+									document.addEventListener("DOMContentLoaded", function() {
+										fetch('fare-count.php')
+											.then(response => response.json())
+											.then(data => {
+											document.querySelector('.btn-danger .badge').textContent = data.faresCount;
+										})
+											.catch(error => console.error('Error fetching new drivers count:', error));
+									});
+								</script>
                             </div>    			
                             <div class="d-none d-md-flex">			
                                 <a class="nav-link" href="#">
                                     <?php
-                                    $current_time = date("Y-m-d H:i:s");
+									$current_time = date("Y-m-d H:i:s");
                                     ?>
                                     <script>
-    var serverTime = "<?php echo $current_time; ?>";                                
+										var serverTime = "<?php echo $current_time; ?>";
                                     </script>											
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block">											
-                                        <i class="ti ti-clock"></i>												
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <i class="ti ti-clock"></i>
                                     </span>											
                                     <span class="nav-link-title" id="time">
                                     </span>
                                 </a>				
-                                <div class="server-time"></div>                                                                  				
-                                <script>            							  				
-    function formatTime(date) {        
-        let hours = date.getHours().toString().padStart(2, '0');    	
-        let minutes = date.getMinutes().toString().padStart(2, '0');            	
-        let seconds = date.getSeconds().toString().padStart(2, '0');            	
-        return `${hours}:${minutes}:${seconds}`;        	
-    }        							        
-    var serverTime = new Date("<?php echo $current_time; ?>");        							
-    function updateTime() {            
-        serverTime.setSeconds(serverTime.getSeconds() + 1);            	
-        document.getElementById('time').textContent = "  " + formatTime(serverTime);	
-    }        
-    setInterval(updateTime, 1000);    
-                                </script> 				
+                                <div class="server-time"></div>
+                                <script>
+									function formatTime(date) {
+										let hours = date.getHours().toString().padStart(2, '0');
+										let minutes = date.getMinutes().toString().padStart(2, '0');
+										let seconds = date.getSeconds().toString().padStart(2, '0');
+										return `${hours}:${minutes}:${seconds}`;
+									}
+									var serverTime = new Date("<?php echo $current_time; ?>");
+									function updateTime() {
+										serverTime.setSeconds(serverTime.getSeconds() + 1);
+										document.getElementById('time').textContent = "  " + formatTime(serverTime);	    
+									}    
+									setInterval(updateTime, 1000);                            
+								</script> 				
                             </div>			
                             <div class="d-none d-md-flex">			
                                 <a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
@@ -181,7 +181,7 @@ async defer></script>
                         </div>
                     </div>
                 </header>
-		<?php
+				<?php
                 include('navbar.php');
                 ?>
             </div>

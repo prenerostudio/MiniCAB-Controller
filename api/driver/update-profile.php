@@ -32,7 +32,8 @@ if(isset($_POST['d_id'])) {
 	$demail = $_POST['demail'];    
 	$d_address = $_POST['d_address'];    
 	$dgender = $_POST['dgender'];    
-	$dlang = $_POST['dlang'];    
+	$dlang = $_POST['dlang'];  
+        $d_post_code = $_POST['d_post_code'];
 	$d_img = uploadImage();
     
 	if ($d_img !== false) {    
@@ -40,6 +41,7 @@ if(isset($_POST['d_id'])) {
                                     `d_name`='$dname',
                                     `d_email`='$demail',
                                     `d_address`='$d_address',
+                                    `d_post_code`='$d_post_code',
                                     `d_pic`='$d_img',
                                     `d_gender`='$dgender',
                                     `d_language`='$dlang' WHERE `d_id`='$d_id'";

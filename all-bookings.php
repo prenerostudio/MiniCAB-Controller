@@ -60,45 +60,65 @@ include('header.php');
                 </span>
                 <script>    
 					
-    $(document).ready(function() {        
+    
+					$(document).ready(function() {        
 
-        $(".filter-item").click(function(event) {        
+        
+						$(".filter-item").click(function(event) {        
 	
-        event.preventDefault();        
+        
+							event.preventDefault();        
 	
-        var selectedInterval = $(this).data("filter");        	        
+        
+							var selectedInterval = $(this).data("filter");        	        
 	
-        console.log("Selected Interval:", selectedInterval);        
+        
+							console.log("Selected Interval:", selectedInterval);        
 	
-        $.ajax({            
+        
+							$.ajax({            
 	
-            type: "GET",             
+            
+								type: "GET",             
 	
-            url: "fetch_data.php",            
+            
+								url: "fetch_data.php",            
 	
-            data: { timeInterval: selectedInterval },            
+            
+								data: { timeInterval: selectedInterval },            
 	
-            success: function(data) {         
+            
+								success: function(data) {         
 	
-        console.log("Ajax Success:", data);                	        
+        
+									console.log("Ajax Success:", data);                	        
 	
-        $("#tableBody").html(data);            	    
+        
+									$("#tableBody").html(data);            	    
 	
-    },                        
+    
+								},                        
 
-            error: function(xhr, status, error) {                	        
+            
+								error: function(xhr, status, error) {                	        
 	
-        console.error("Ajax Error:", error);            	    
+        
+									console.error("Ajax Error:", error);            	    
 	
-    }                
+    
+								}                
 
-        });    	    
+        
+							});    	    
 	
-    });    
+    
+						});    
 
-    });                
+    
+					});                
 
-                </script>
+                
+				</script>
             </div>
         </div>
     </div>	
@@ -148,10 +168,8 @@ include('header.php');
                                         $row_class = ($time_diff <= 30) ? 'near-pickup-red' : 'pending-red';
                                     } elseif ($brow['booking_status'] === 'Completed') {
                                         $row_class = 'completed-green';
-                                    }
-                                   
-								
-                                    ?> 
+                                    }       
+								?> 
                                 <tr class="<?php echo $row_class; ?>">
                                     <td><?php echo $brow['book_id']; ?></td>
                                     <td><?php echo $brow['pick_date']; ?></td>
@@ -164,58 +182,82 @@ include('header.php');
                                     <td><?php echo $brow['journey_type']; ?></td>
                                     <td><?php echo $brow['journey_fare']; ?></td>
                                     <td><?php echo $brow['v_name']; ?></td>
-                                    <td style='width: 15%; background: #FFFFFF;'>                                        
-										
-                                        <?php
-                                        if ($brow['bid_status'] == 0) {	                                            
-										
-                                            ?>
+                                    <td style='width: 15%; background: #FFFFFF;'>                                   
+										<?php
+                                        if ($brow['bid_status'] == 0) {      
+										?>
                                         <a href='open-bid.php?book_id=<?php echo $brow['book_id'] ?>'>
                                             <button class='btn btn-facebook btn-icon' title='Open Bid'>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
-                                        </a>					
-										
-                                            <?php
-                                        } else {                                            
-										
-                                            ?>
+										</a>										                                            
+										<?php
+                                        } else {                           
+										?>
                                         <a href='#'>
                                             <button class='btn btn-icon' disabled>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
-                                        </a>					
-										
-                                            <?php
+										</a>
+										<?php
                                         }
                                         ?> 
                                         <a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-twitter btn-icon' title='View / Edit'>
                                                 <i class='ti ti-eye'></i>
                                             </button>
-                                        </a>					
-										
-                                            <?php
-                                        if ($brow['booking_status'] == 'Booked') {                                           
-										
-                                            ?>
+                                        </a>								                                            
+										<?php
+                                        if ($brow['booking_status'] == 'Booked') {   
+										?>
                                         <a href='#' >
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>					
 										
-                                            <?php
+                                           
+										<?php
                                         } else {                                            
 										
-                                            ?>
+                                           
+										?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>					
 					
-					<?php
+					
+										<?php
+                                        }
+                                        ?>
+										
+										<?php
+                                        if ($brow['booking_status'] == 'Open') {                                           
+										
+                                            
+										?>
+                                        <a href='#' >
+                                            <button class='btn btn-success btn-icon' title='Opened' disabled>
+                                                 <i class="ti ti-folder-open"></i>
+                                            </button>
+                                        </a>					
+										
+                                           
+										<?php
+                                        } else {                                            
+										
+                                          
+										?>
+                                        <a href='open-book.php?book_id=<?php echo $brow['book_id']; ?>'>
+                                            <button class='btn btn-success btn-icon'  title='Send to Archive'>
+                                                <i class="ti ti-folder-open"></i>
+                                            </button>
+                                        </a>					
+					
+					
+										<?php
                                         }
                                         ?>
                                        
@@ -224,12 +266,15 @@ include('header.php');
 
 
 								
-                                    <?php                                
+                                   
+								<?php                                
 								
                                     
-                                        }                                
+                                      
+								}                                
 								
-                                        ?>
+                                       
+								?>
                             </tbody>
                         </table>			
 						

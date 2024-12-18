@@ -27,20 +27,32 @@
                                 <i class="ti ti-bookmark-plus"></i>
                                 Add New Booking
                             </a>
-                            <a class="dropdown-item" href="all-bookings.php">
-                                <i class="ti ti-bookmarks"></i>
-                                All Bookings
-				<?php
+                            <a class="dropdown-item" href="open-bookings.php">
+                                <i class="ti ti-folder-open"></i>
+                                Open Bookings
+								<?php
                                 include 'count-all-bookings.php';
                                 ?>
                                 <span class="badge badge-sm bg-green-lt text-uppercase ms-auto"> 
                                     <?php echo $booking_count; ?>
                                 </span>				
-                            </a>			
+                            </a>
+							<a class="dropdown-item" href="all-bookings.php">
+                                <i class="ti ti-bookmarks"></i>
+                                All Bookings
+				
+								<?php
+                                include 'count-all-bookings.php';
+                                ?>
+                                <span class="badge badge-sm bg-green-lt text-uppercase ms-auto"> 
+                                    <?php echo $booking_count; ?>
+                                </span>				
+                            </a>
                             <a class="dropdown-item" href="upcoming-bookings.php">			
                                 <i class="ti ti-alarm-plus"></i>				
                                 Upcoming Bookings				
-				<?php
+				
+								<?php
                                 include 'count-upcoming-booking.php';    				
                                 ?>				
                                 <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">
@@ -174,7 +186,7 @@
                                 Delete Accounts Requests				
                                 <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">0</span>				
                             </a>			
-                        </div>` 			
+                        </div>			
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#navbar-client" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">

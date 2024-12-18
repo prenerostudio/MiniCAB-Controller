@@ -8,35 +8,11 @@ include('header.php');
                 Overview
             </div>
             <h2 class="page-title">
-                Upcoming Bookings List
+                Open Bookings List
             </h2>
         </div>
         <div class="col-auto ms-auto d-print-none">
-            <div class="btn-list">
-                <span class="d-none d-sm-inline">
-                    <a href="upcoming-bookings.php" class="btn">
-                        <i class="ti ti-user-search"></i>
-                        Upcoming Booking
-                    </a>
-                </span>
-                <span class="d-none d-sm-inline">
-                    <a href="inprocess-bookings.php" class="btn btn-instagram">
-                        <i class="ti ti-user-search"></i>
-                        Bookings InProcess			
-                    </a>
-                </span>		
-                <span class="d-none d-sm-inline">		
-                    <a href="completed-booking.php" class="btn btn-success">
-                        <i class="ti ti-user-search"></i>
-                        Completed Bookings			
-                    </a>
-                </span>		
-                <span class="d-none d-sm-inline">
-                    <a href="cancelled-booking.php" class="btn btn-danger">
-                        <i class="ti ti-user-search"></i>
-                        Cancelled Bookings
-                    </a>		
-                </span>		
+            <div class="btn-list">      	
                 <span class="d-none d-sm-inline">		
                     <span class="dropdown">		
                         <button class="btn dropdown-toggle align-text-top" id="filterDropdown" data-bs-boundary="viewport" data-bs-toggle="dropdown">			
@@ -113,13 +89,13 @@ include('header.php');
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">		
-                        Upcoming Bookings		
+                        Open Bookings		
                     </h3>                  		
                 </div>
                 <div class="card-body border-bottom py-3">
                     <div id="table-default">
                         <?php
-                        $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id =  booking_type.b_type_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status <> 'Booked' ORDER BY bookings.book_id DESC");
+                        $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id =  booking_type.b_type_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status = 'Open' ORDER BY bookings.book_id DESC");
                         if (mysqli_num_rows($bsql) > 0) {                            
 						?>
                         <table class="table" id="table-upcoming">
@@ -147,7 +123,7 @@ include('header.php');
                                     $pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);
                                     $current_datetime = time();
                                     $time_diff = ($pickup_datetime - $current_datetime) / 60;
-                                    $row_class = ($time_diff <= 30) ? 'near-pickup' : '';                                    
+                                    $row_class = ($time_diff <= 90) ? 'near-pickup' : '';                                    
 								?>
                                 <tr class="<?php echo $row_class; ?>">
                                     <td>
@@ -189,6 +165,13 @@ include('header.php');
                                                 <i class='ti ti-eye'></i>
                                             </button>
                                         </a>
+<!--
+										<a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
+                                            <button class='btn btn-twitter btn-icon' title='Close Booking'>
+                                               <i class="ti ti-calendar-x"></i>
+                                            </button>
+                                        </a>
+-->
 										<?php
 									if ($brow['booking_status'] == 'Booked') {
 										?>

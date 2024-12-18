@@ -166,3 +166,11 @@
 )
 
 [01-Dec-2024 22:01:08 Europe/London] All fields empty: No
+[11-Dec-2024 17:23:41 Europe/London] PHP Warning:  Undefined array key "d_img" in C:\xampp\htdocs\MiniCAB-Controller\api\driver\update-profile.php on line 12
+[11-Dec-2024 17:23:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\update-profile.php on line 12
+[11-Dec-2024 17:23:41 Europe/London] PHP Deprecated:  pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in C:\xampp\htdocs\MiniCAB-Controller\api\driver\update-profile.php on line 13
+[11-Dec-2024 17:24:37 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.driver_documents' doesn't exist in C:\xampp\htdocs\MiniCAB-Controller\api\driver\register.php:45
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\api\driver\register.php(45): mysqli_query(Object(mysqli), 'INSERT INTO `dr...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\register.php on line 45
