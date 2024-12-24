@@ -151,37 +151,49 @@ include('header.php');
 								?>
                                 <tr class="<?php echo $row_class; ?>">
                                     <td>
-										<?php echo $brow['book_id']; ?>
+										
+                                        
+                                        <?php echo $brow['book_id']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['pick_date']; ?>
+										
+                                        <?php echo $brow['pick_date']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['pick_time']; ?>
+										
+                                        <?php echo $brow['pick_time']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['postal_code']; ?>
+										
+                                        <?php echo $brow['postal_code']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['pickup']; ?>
+										
+                                        <?php echo $brow['pickup']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['stops']; ?>
+										
+                                        <?php echo $brow['stops']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['destination']; ?>
+										
+                                        <?php echo $brow['destination']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['passenger']; ?>
+										
+                                        <?php echo $brow['passenger']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['journey_type']; ?>
+										
+                                        <?php echo $brow['journey_type']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['journey_fare']; ?>
+										
+                                        <?php echo $brow['journey_fare']; ?>
                                     </td>
                                     <td>
-										<?php echo $brow['v_name']; ?>
+										
+                                        <?php echo $brow['v_name']; ?>
                                     </td>
                                     <td style="width: 13%;">
                                         <a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
@@ -189,55 +201,92 @@ include('header.php');
                                                 <i class='ti ti-eye'></i>
                                             </button>
                                         </a>
-										<?php
-									if ($brow['booking_status'] == 'Booked') {
-										?>
+										
+                                            <?php
+									
+                                            if ($brow['booking_status'] == 'Booked') {
+										
+                                                ?>
                                         <a href='#'>
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
-												<i class='ti ti-plane-tilt'></i>
+												
+                                                <i class='ti ti-plane-tilt'></i>
                                             </button>
-										</a>
-										<?php
-									} else {
-										?>
+										
+                                        </a>
+										
+                                            <?php
+									
+                                            
+                                            } else {
+										
+                                                ?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>
-										<?php
-											}
-										?>
+										
+                                            <?php
+											
+                                            
+                                            }
+										
+                                            ?>
                                         <a href="javascript:void(0);" onclick="cancelBooking(<?php echo $brow['book_id']; ?>);">					
                                             <button class='btn btn-youtube btn-icon' title="Delete">					
-												<i class='ti ti-square-rounded-x'></i>
+												
+                                                <i class='ti ti-square-rounded-x'></i>
                                             </button>
+                                            
                                         </a>
-										<script>					    
-											function cancelBooking(bookId) {        
-												let confirmation = confirm("Are you sure you want to cancel this booking?");
-												if (confirmation) {	            
-													let reason = prompt("Please provide a reason for canceling this booking:");
-													if (reason) {
-														window.location.href = `cancel-booking.php?book_id=${bookId}&reason=${encodeURIComponent(reason)}`;
-													} else {
-														alert("You must provide a reason for cancellation.");
-													}    	        
-												}	    
-											}      
-										</script>
+										
+                                        <script>					    
+					
+    function cancelBooking(bookId) {        
+
+        let confirmation = confirm("Are you sure you want to cancel this booking?");
+	
+        if (confirmation) {	            
+	
+            let reason = prompt("Please provide a reason for canceling this booking:");
+	
+            if (reason) {
+	
+                window.location.href = `cancel-booking.php?book_id=${bookId}&reason=${encodeURIComponent(reason)}`;
+		
+            } else {
+	
+                alert("You must provide a reason for cancellation.");
+		
+            }    	        
+	
+        }	    
+	
+    }      
+
+                                        </script>
                                     </td>
                                 </tr>
-								<?php
-                                }
-                                ?>
+								
+                                    <?php
+                                
+                                    
+                                            }
+                                
+                                            ?>
                             </tbody>           			
                         </table>
-						<?php
-						} else {
-							echo '<p>No booking found.</p>';
+						
+                            <?php
+			
+                            } else {
+			
+                                echo '<p>No booking found.</p>';
                             }
-						?> 
+                            
+			
+                            ?> 
                     </div>
                 </div>
             </div>

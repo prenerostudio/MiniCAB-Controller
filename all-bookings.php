@@ -168,6 +168,8 @@ include('header.php');
                                         $row_class = ($time_diff <= 30) ? 'near-pickup-red' : 'pending-red';
                                     } elseif ($brow['booking_status'] === 'Completed') {
                                         $row_class = 'completed-green';
+                                    }  elseif ($brow['booking_status'] === 'Booked') {
+                                        $row_class = 'completed-green';
                                     }       
 								?> 
                                 <tr class="<?php echo $row_class; ?>">
