@@ -58,66 +58,26 @@ include('header.php');
                         </div>
                     </span>
                 </span>
-                <script>    
-					
-    
-					$(document).ready(function() {        
-
-        
-						$(".filter-item").click(function(event) {        
-	
-        
-							event.preventDefault();        
-	
-        
-							var selectedInterval = $(this).data("filter");        	        
-	
-        
-							console.log("Selected Interval:", selectedInterval);        
-	
-        
-							$.ajax({            
-	
-            
-								type: "GET",             
-	
-            
-								url: "fetch_data.php",            
-	
-            
-								data: { timeInterval: selectedInterval },            
-	
-            
-								success: function(data) {         
-	
-        
-									console.log("Ajax Success:", data);                	        
-	
-        
-									$("#tableBody").html(data);            	    
-	
-    
-								},                        
-
-            
-								error: function(xhr, status, error) {                	        
-	
-        
-									console.error("Ajax Error:", error);            	    
-	
-    
-								}                
-
-        
-							});    	    
-	
-    
-						});    
-
-    
-					});                
-
-                
+                <script>					    					    
+					$(document).ready(function() {                						        
+						$(".filter-item").click(function(event) {        							        
+							event.preventDefault();        							        
+							var selectedInterval = $(this).data("filter");
+							console.log("Selected Interval:", selectedInterval);
+							$.ajax({
+								type: "GET",
+								url: "fetch_data.php",
+								data: { timeInterval: selectedInterval },
+								success: function(data) {
+									console.log("Ajax Success:", data);
+									$("#tableBody").html(data);
+								},
+								error: function(xhr, status, error) {
+									console.error("Ajax Error:", error);
+								}
+							});
+						});
+					});
 				</script>
             </div>
         </div>
@@ -184,113 +144,79 @@ include('header.php');
                                     <td><?php echo $brow['journey_type']; ?></td>
                                     <td><?php echo $brow['journey_fare']; ?></td>
                                     <td><?php echo $brow['v_name']; ?></td>
-                                    <td style='width: 15%; background: #FFFFFF;'>                                   
-										<?php
-                                        if ($brow['bid_status'] == 0) {      
+                                    <td style='width: 15%; background: #FFFFFF;'>
+                                        <?php
+                                        if ($brow['bid_status'] == 0) {
 										?>
                                         <a href='open-bid.php?book_id=<?php echo $brow['book_id'] ?>'>
                                             <button class='btn btn-facebook btn-icon' title='Open Bid'>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
-										</a>										                                            
+                                        </a>
 										<?php
-                                        } else {                           
+										} else {
 										?>
                                         <a href='#'>
                                             <button class='btn btn-icon' disabled>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
-										</a>
+                                        </a>
 										<?php
-                                        }
-                                        ?> 
+										}
+										?>
                                         <a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-twitter btn-icon' title='View / Edit'>
                                                 <i class='ti ti-eye'></i>
                                             </button>
-                                        </a>								                                            
+                                        </a>
 										<?php
-                                        if ($brow['booking_status'] == 'Booked') {   
+										if ($brow['booking_status'] == 'Booked') {
 										?>
-                                        <a href='#' >
+                                        <a href='#'>
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
-                                        </a>					
-										
-                                           
+										</a>
 										<?php
-                                        } else {                                            
-										
-                                           
+										} else {
 										?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
-                                        </a>					
-					
-					
+                                        </a>
 										<?php
-                                        }
-                                        ?>
-										
-										<?php
-                                        if ($brow['booking_status'] == 'Open') {                                           
-										
-                                            
+										}
+										if ($brow['booking_status'] == 'Open') {		
 										?>
                                         <a href='#' >
                                             <button class='btn btn-success btn-icon' title='Opened' disabled>
                                                  <i class="ti ti-folder-open"></i>
                                             </button>
-                                        </a>					
-										
-                                           
-										<?php
-                                        } else {                                            
-										
-                                          
+                                        </a>
+										<?php                                                                              
+										} else {
 										?>
                                         <a href='open-book.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-success btn-icon'  title='Send to Archive'>
                                                 <i class="ti ti-folder-open"></i>
                                             </button>
-                                        </a>					
-					
-					
+                                        </a>
 										<?php
-                                        }
-                                        ?>
-                                       
+										}
+										?>
                                     </td>
-                                </tr>				
-
-
-								
-                                   
-								<?php                                
-								
-                                    
-                                      
-								}                                
-								
-                                       
+                                </tr>
+								<?php
+								}
 								?>
                             </tbody>
-                        </table>			
-						
-                            <?php                        
-						
-                            
-                                        } else {                        
-							
-                                            echo '<p>No booking found.</p>';                            
-						
-                                            
-                                        }                        
-						
-                                        ?>
+						</table>
+						<?php
+						} else {
+							echo '<p>No booking found.</p>';
+						}
+						?>
                     </div>
                 </div>
             </div>

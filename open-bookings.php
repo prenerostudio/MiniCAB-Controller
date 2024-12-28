@@ -95,7 +95,7 @@ include('header.php');
                 <div class="card-body border-bottom py-3">
                     <div id="table-default">
                         <?php
-                        $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id =  booking_type.b_type_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status = 'Open' ORDER BY bookings.book_id DESC");
+                        $bsql = mysqli_query($connect, "SELECT `open-bookings`.*, bookings.*, booking_type.*, clients.*, vehicles.*,  drivers.* FROM `open-bookings` JOIN bookings ON `open-bookings`.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON bookings.c_id = clients.c_id JOIN vehicles ON  bookings.v_id = vehicles.v_id LEFT JOIN drivers ON `open-bookings`.d_id = drivers.d_id ORDER BY `open-bookings`.ob_id DESC");
                         if (mysqli_num_rows($bsql) > 0) {                            
 						?>
                         <table class="table" id="table-upcoming">
@@ -112,68 +112,69 @@ include('header.php');
                                     <th>Journey Type</th>
                                     <th>Fare</th>
                                     <th>Vehicle</th>
+                                    <th>Status</th>
+                                    <th>Driver</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody class="table-tbody" id="tableBody">                                
-								<?php				
+                            <tbody class="table-tbody" id="tableBody">
+                                <?php
                                 $y = 0;
                                 while ($brow = mysqli_fetch_array($bsql)){
-									$y++; 
+                                    $y++;                                    
                                     $pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);
                                     $current_datetime = time();
                                     $time_diff = ($pickup_datetime - $current_datetime) / 60;
-                                    $row_class = ($time_diff <= 90) ? 'near-pickup' : '';                                    
-								?>
-                                <tr class="<?php echo $row_class; ?>">
-                                    <td>
-										<?php echo $brow['book_id']; ?>
+                                    $row_class = ($time_diff <= 90) ? 'near-pickup' : '';
+                                    ?>
+                                <tr class="<?php echo $row_class; ?>">                                
+                                    <td>										
+                                        <?php echo $brow['book_id']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['pick_date']; ?>
+                                    <td>										
+                                        <?php echo $brow['pick_date']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['pick_time']; ?>
+                                    <td>										
+                                        <?php echo $brow['pick_time']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['postal_code']; ?>
+                                    <td>										
+                                        <?php echo $brow['postal_code']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['pickup']; ?>
+                                    <td>										
+                                        <?php echo $brow['pickup']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['stops']; ?>
+                                    <td>										
+                                        <?php echo $brow['stops']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['destination']; ?>
+                                    <td>										
+                                        <?php echo $brow['destination']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['passenger']; ?>
+                                    <td>										
+                                        <?php echo $brow['passenger']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['journey_type']; ?>
+                                    <td>										
+                                        <?php echo $brow['journey_type']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['journey_fare']; ?>
+                                    <td>										
+                                        <?php echo $brow['journey_fare']; ?>
                                     </td>
-                                    <td>
-										<?php echo $brow['v_name']; ?>
+                                    <td>										
+                                        <?php echo $brow['v_name']; ?>
+                                    </td>
+                                    <td>										
+                                        <?php echo $brow['ob_status']; ?>
+                                    </td>
+                                    <td>										
+                                        <?php echo $brow['d_name']; ?>
                                     </td>
                                     <td style="width: 13%;">
                                         <a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-twitter btn-icon' title='View / Edit'>
                                                 <i class='ti ti-eye'></i>
                                             </button>
-                                        </a>
-<!--
-										<a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
-                                            <button class='btn btn-twitter btn-icon' title='Close Booking'>
-                                               <i class="ti ti-calendar-x"></i>
-                                            </button>
-                                        </a>
--->
-										<?php
-									if ($brow['booking_status'] == 'Booked') {
+                                        </a>										
+										<?php									
+											if ($brow['booking_status'] == 'Booked') {
 										?>
                                         <a href='#'>
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
@@ -181,17 +182,17 @@ include('header.php');
                                             </button>
 										</a>
 										<?php
-									} else {
+											} else {
 										?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>
-										<?php
+										<?php											
 											}
 										?>
-                                        <a href="javascript:void(0);" onclick="cancelBooking(<?php echo $brow['book_id']; ?>);">					
+                                        <a href="javascript:void(0);" onclick="cancelBooking(<?php echo $brow['book_id']; ?>);">
                                             <button class='btn btn-youtube btn-icon' title="Delete">					
 												<i class='ti ti-square-rounded-x'></i>
                                             </button>
