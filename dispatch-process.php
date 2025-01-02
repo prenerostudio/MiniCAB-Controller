@@ -1,27 +1,15 @@
 <?php
-
 include('config.php');
-
 include('session.php');
-
 require 'vendor/autoload.php'; // Load Pusher
 
-
-
 $book_id = $_POST['book_id'];
-
 $c_id  = $_POST['c_id'];
-
 $d_id = $_POST['d_id'];
-
 $journey_fare = $_POST['journey_fare'];
-
 $booking_fee = $_POST['booking_fee'];
-
 $job_status = 'waiting';
-
 // Prepare and execute the job insertion
-
 $sql = "INSERT INTO `jobs`(
                         `book_id`, 
                         `c_id`, 
@@ -30,86 +18,36 @@ $sql = "INSERT INTO `jobs`(
                         `booking_fee`,                  
                         `job_status`
                         ) VALUES (?, ?, ?, ?, ?, ?)";
-
-
 $stmt = $connect->prepare($sql);
-
 $stmt->bind_param("iiisss", $book_id, $c_id, $d_id, $journey_fare, $booking_fee, $job_status);
-
 $result = $stmt->execute();
-
-
 if ($result) {
-	
-
-    $job_id = mysqli_insert_id($connect);
-    
-
+    $job_id = mysqli_insert_id($connect);   
     $book_status = 'Booked';
-
     $bsql = "UPDATE `bookings` SET `booking_status` = ? WHERE `book_id` = ?";
-
     $bstmt = $connect->prepare($bsql);
-
     $bstmt->bind_param("si", $book_status, $book_id);
-
     $bstmt->execute();
-
-
-
     $historysql = "INSERT INTO `driver_history`(`d_id`, `book_id`) VALUES (?, ?)";
-
     $historystmt = $connect->prepare($historysql);
-
     $historystmt->bind_param("ii", $d_id, $book_id);
-
     $historystmt->execute();
-
-
-
-
     $activity_type = 'Job Dispatched';		
-
     $user_type = 'user';		
-
-    $details = "Job has been dispatched to driver by Controller.";
-	
-
+    $details = "Job has been dispatched to driver by Controller.";	
     $actsql = "INSERT INTO `activity_log`(
                                         `activity_type`, 
                                         `user_type`, 
                                         `user_id`, 
                                         `details`
-                                        ) VALUES (?, ?, ?, ?)";
-
-    
-    $actstmt = $connect->prepare($actsql);
-
-    
-    
+                                        ) VALUES (?, ?, ?, ?)"; 
+    $actstmt = $connect->prepare($actsql);        
     $actstmt->bind_param("ssis", $activity_type, $user_type, $myId, $details);
-
-    $actstmt->execute();
-	
-
-    
-    
-    
-    $fetchsql = "SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND jobs.d_id = $d_id";
-
-    
-    
-    $fetchr = mysqli_query($connect, $fetchsql);    
-    
-    
-    
+    $actstmt->execute();	           
+    $fetchsql = "SELECT jobs.*, bookings.*, clients.*, drivers.*, booking_type.* FROM jobs JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN clients ON jobs.c_id = clients.c_id JOIN drivers ON jobs.d_id = drivers.d_id WHERE jobs.job_id = '$job_id' AND jobs.d_id = $d_id";        
+    $fetchr = mysqli_query($connect, $fetchsql);                
     $output = mysqli_fetch_all($fetchr, MYSQLI_ASSOC);  
-	
-
-    
-
-
-
+	   
     $options = [
         'cluster' => 'ap2',
         'useTLS' => true
@@ -119,24 +57,17 @@ if ($result) {
         '9b7a65fedc30abd6a530',
         '1848550',
         $options
-    );
-
-    
+    );   
     $data = [
         'message' => 'A new job has been dispatched',
-        'details' => $output,
-       
-    ];
-
-   
+        'details' => $output,       
+    ];  
     $pusher->trigger('jobs-channel', 'job-dispatched', $data);
-
     header('Location: inprocess-bookings.php');
     exit();
 } else {
     header('Location: dashboard.php');
     exit();
 }
-
 $connect->close();
 ?>
