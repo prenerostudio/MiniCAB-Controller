@@ -259,3 +259,8 @@ Stack trace:
 [02-Dec-2024 11:21:41 Europe/London] PHP Warning:  Undefined variable $customer_name in C:\xampp\htdocs\MiniCAB-Controller\booking-process.php on line 173
 [02-Dec-2024 11:21:41 Europe/London] PHP Warning:  Undefined variable $customer_email in C:\xampp\htdocs\MiniCAB-Controller\booking-process.php on line 174
 [02-Dec-2024 11:21:41 Europe/London] PHP Warning:  Undefined variable $customer_phone in C:\xampp\htdocs\MiniCAB-Controller\booking-process.php on line 175
+[04-Jan-2025 07:50:21 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.open-bookings' doesn't exist in C:\xampp\htdocs\MiniCAB-Controller\open-bookings.php:98
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\open-bookings.php(98): mysqli_query(Object(mysqli), 'SELECT `open-bo...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\open-bookings.php on line 98

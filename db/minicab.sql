@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2024 at 08:33 PM
+-- Generation Time: Jan 04, 2025 at 08:57 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,7 +42,21 @@ CREATE TABLE `activity_log` (
 
 INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user_type`, `user_id`, `details`) VALUES
 (00000001, 'New Booker', '2024-11-23 14:17:27', 'user', 00000001, 'New Booker Umar Atiq  Added by Controller.'),
-(00000002, 'Booker Verified', '2024-11-23 14:18:14', 'user', 00000001, 'Booker 00000001 Has Been Verified by Controller.');
+(00000002, 'Booker Verified', '2024-11-23 14:18:14', 'user', 00000001, 'Booker 00000001 Has Been Verified by Controller.'),
+(00000003, 'New Booking', '2024-11-27 19:39:01', 'user', 00000001, 'Controller Has added a new booking 1'),
+(00000004, 'New Booking', '2024-11-27 23:11:35', 'user', 00000001, 'Controller Has added a new booking 2'),
+(00000005, 'Booking Updated', '2024-11-27 23:37:05', 'user', 00000001, 'Booking 00000002 Has Been Updated by Controller.'),
+(00000006, 'Booking Updated', '2024-11-27 23:41:05', 'user', 00000001, 'Booking 00000002 Has Been Updated by Controller.'),
+(00000007, 'Booking Updated', '2024-11-27 23:45:16', 'user', 00000001, 'Booking 00000001 Has Been Updated by Controller.'),
+(00000008, 'Booking Updated', '2024-11-27 23:57:19', 'user', 00000001, 'Booking 00000001 Has Been Updated by Controller.'),
+(00000009, 'Booking Updated', '2024-11-28 00:03:44', 'user', 00000001, 'Booking 00000001 Has Been Updated by Controller.'),
+(00000010, 'Booking Updated', '2024-11-28 00:13:10', 'user', 00000001, 'Booking 00000001 Has Been Updated by Controller.'),
+(00000011, 'Booking Updated', '2024-11-28 00:24:53', 'user', 00000001, 'Booking 00000001 Has Been Updated by Controller.'),
+(00000012, 'New Booking', '2024-12-02 11:21:41', 'user', 00000001, 'Controller Has added a new booking 3'),
+(00000013, 'Admin Profile Image', '2024-12-02 11:23:14', 'user', 00000001, 'Admin Profile Image Has Been Updated by Controller.'),
+(00000014, 'Controller Logged-In', '2024-12-02 11:23:31', 'user', 00000001, 'Controller Atiq Logged in successfully.'),
+(00000015, 'Controller Logged-In', '2025-01-02 07:33:41', 'user', 00000001, 'Controller Atiq Logged in successfully.'),
+(00000016, 'Controller Logged-In', '2025-01-02 15:27:11', 'user', 00000001, 'Controller Atiq Logged in successfully.');
 
 -- --------------------------------------------------------
 
@@ -165,6 +179,15 @@ CREATE TABLE `bookings` (
   `book_add_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booker_commission`, `booking_status`, `bid_status`, `bid_date`, `bid_time`, `bid_note`, `payment_type`, `customer_name`, `customer_email`, `customer_phone`, `book_add_date`) VALUES
+(00000001, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', 'Londonderry, UK', 'Northampton, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-29', '05:40:00', 'One Way', 00000001, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 1780, 113, 30, 10, 20, 10, 20, 0, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000002, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-30', '08:15:00', 'One Way', 00000002, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 433, 28, 30, 10, 20, 10, 20, 20, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000003, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', 'NS12 London', 'N8= Crouch End, Hornsey', 2, '2024-12-03', '19:30:00', 'One Way', 00000002, '2', 'Yes', '', '00:00:00', '', 413, 28, 0, 0, 0, 0, 0, 10, 'Pending', 0, '0000-00-00', '00:00:00', '', '', '', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -210,6 +233,20 @@ CREATE TABLE `bookings_history` (
   `customer_phone` varchar(255) NOT NULL,
   `book_history_created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bookings_history`
+--
+
+INSERT INTO `bookings_history` (`book_history_id`, `book_id`, `b_type_id`, `c_id`, `pickup`, `stops`, `destination`, `address`, `postal_code`, `passenger`, `pick_date`, `pick_time`, `journey_type`, `v_id`, `luggage`, `child_seat`, `flight_number`, `delay_time`, `note`, `journey_fare`, `journey_distance`, `booking_fee`, `car_parking`, `waiting`, `tolls`, `extra`, `booker_commission`, `booking_status`, `bid_status`, `bid_date`, `bid_time`, `bid_note`, `payment_type`, `customer_name`, `customer_email`, `customer_phone`, `book_history_created_at`) VALUES
+(00000001, 00000002, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', 'Northampton, UK', 'Central London, London, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-30', '08:15:00', 'One Way', 00000002, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 433, 28, 30, 10, 20, 10, 20, 20, '', 0, '0000-00-00', '00:00:00', '', '', 'Umar Atiq', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000002, 00000002, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-30', '08:15:00', 'One Way', 00000002, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 433, 28, 30, 10, 20, 10, 20, 20, '', 0, '0000-00-00', '00:00:00', '', '', 'Umar Atiq', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000003, 00000001, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', 'Nottingham, UK', 'Northampton, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-29', '05:40:00', 'One Way', 00000001, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 1780, 113, 30, 10, 20, 10, 20, 0, '', 0, '0000-00-00', '00:00:00', '', '', 'Umar Atiq', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000004, 00000001, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', 'London, UK', 'Northampton, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-29', '05:40:00', 'One Way', 00000001, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 1780, 113, 30, 10, 20, 10, 20, 0, '', 0, '0000-00-00', '00:00:00', '', '', 'Umar Atiq', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000005, 00000001, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', 'Array', 'Northampton, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-29', '05:40:00', 'One Way', 00000001, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 1780, 113, 30, 10, 20, 10, 20, 0, '', 0, '0000-00-00', '00:00:00', '', '', 'Umar Atiq', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000006, 00000001, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', 'Array', 'Northampton, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-29', '05:40:00', 'One Way', 00000001, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 1780, 113, 30, 10, 20, 10, 20, 0, '', 0, '0000-00-00', '00:00:00', '', '', 'Umar Atiq', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000007, 00000001, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', 'Londonderry, UK', 'Northampton, UK', 'NS12 London', 'N3= Finchley Central', 2, '2024-11-29', '05:40:00', 'One Way', 00000001, '2', 'No', 'ANR 7361', '00:00:20', 'N/A', 1780, 113, 30, 10, 20, 10, 20, 0, '', 0, '0000-00-00', '00:00:00', '', '', 'Umar Atiq', 'umar@prenero.com', '+443346452312', '0000-00-00 00:00:00'),
+(00000008, 00000003, 00000003, 00000001, 'Heathrow Long Stay Terminal 5, Northern Perimeter Road, Hounslow, UK', '', 'Central London, London, UK', 'NS12 London', 'N8= Crouch End, Hornsey', 2, '2024-12-03', '19:30:00', 'One Way', 00000002, '2', 'Yes', '', '00:00:00', '', 413, 28, 0, 0, 0, 0, 0, 0, '', 0, '0000-00-00', '00:00:00', '', '', '', '', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1015,6 +1052,28 @@ CREATE TABLE `national_insurance` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `open-bookings`
+--
+
+CREATE TABLE `open-bookings` (
+  `ob_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `book_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `d_id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `ob_status` varchar(15) NOT NULL,
+  `ob_created_at` datetime NOT NULL,
+  `ob_updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `open-bookings`
+--
+
+INSERT INTO `open-bookings` (`ob_id`, `book_id`, `d_id`, `ob_status`, `ob_created_at`, `ob_updated_at`) VALUES
+(00000001, 00000003, 00000000, 'Open', '2024-12-23 21:14:14', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payment_history`
 --
 
@@ -1435,7 +1494,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `user_email`, `user_password`, `user_phone`, `user_gender`, `designation`, `address`, `city`, `state`, `country_id`, `pc`, `nid`, `user_pic`, `reg_date`) VALUES
-(00000001, 'Atiq', 'Ramzan', 'admin@prenero.com', '2c29030971430433fc33d0ab2f9658a2', '+923157524000', 'Male', 'Owner', 'Shop # 24, Hamza Market, Sargodha Road', 'Faisalabad', 'Punjab', 134, 38000, '33102-1457353-9', '6692115e98268_1720848734.jpg', '2024-07-19 11:29:25'),
+(00000001, 'Atiq', 'Ramzan', 'admin@prenero.com', '2c29030971430433fc33d0ab2f9658a2', '+923157524000', 'Male', 'Owner', 'Shop # 24, Hamza Market, Sargodha Road', 'Faisalabad', 'Punjab', 134, 38000, '33102-1457353-9', '674d98a2346da_1733138594.jpg', '2024-12-02 11:23:14'),
 (00000002, 'Azib ', 'Ali Butt', 'eurodatatechnology@gmail.com', '25d55ad283aa400af464c76d713c07ad', '+447552834179', 'Male', 'Administrator', 'London, United Kingdom.', 'London', '', 186, 0, '', '669210dd613b8_1720848605.jpg', '2024-07-13 05:30:05');
 
 -- --------------------------------------------------------
@@ -2021,6 +2080,12 @@ ALTER TABLE `national_insurance`
   ADD PRIMARY KEY (`ni_id`);
 
 --
+-- Indexes for table `open-bookings`
+--
+ALTER TABLE `open-bookings`
+  ADD PRIMARY KEY (`ob_id`);
+
+--
 -- Indexes for table `payment_history`
 --
 ALTER TABLE `payment_history`
@@ -2172,7 +2237,7 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `address_proofs`
@@ -2202,13 +2267,13 @@ ALTER TABLE `booker_account`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `book_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `bookings_history`
 --
 ALTER TABLE `bookings_history`
-  MODIFY `book_history_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `book_history_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `booking_type`
@@ -2395,6 +2460,12 @@ ALTER TABLE `mg_charges`
 --
 ALTER TABLE `national_insurance`
   MODIFY `ni_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `open-bookings`
+--
+ALTER TABLE `open-bookings`
+  MODIFY `ob_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `payment_history`
