@@ -264,3 +264,7 @@ Stack trace:
 #0 C:\xampp\htdocs\MiniCAB-Controller\open-bookings.php(98): mysqli_query(Object(mysqli), 'SELECT `open-bo...')
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\open-bookings.php on line 98
+[04-Jan-2025 10:26:55 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\dispatch-booking.php on line 116
+[04-Jan-2025 11:53:16 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\dispatch-booking.php on line 116
+[04-Jan-2025 11:53:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\get-driver-details.php on line 9
+[04-Jan-2025 11:53:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\get-driver-details.php on line 10

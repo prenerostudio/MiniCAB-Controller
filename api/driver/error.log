@@ -174,3 +174,5 @@ Stack trace:
 #0 C:\xampp\htdocs\MiniCAB-Controller\api\driver\register.php(45): mysqli_query(Object(mysqli), 'INSERT INTO `dr...')
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\register.php on line 45
+[04-Jan-2025 17:06:53 Europe/London] PHP Warning:  Undefined array key "ob_id" in C:\xampp\htdocs\MiniCAB-Controller\api\driver\select-booking.php on line 10
+[04-Jan-2025 17:06:53 Europe/London] PHP Warning:  Undefined array key "d_id" in C:\xampp\htdocs\MiniCAB-Controller\api\driver\select-booking.php on line 11

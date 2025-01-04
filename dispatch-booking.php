@@ -18,7 +18,7 @@ $bookrow = mysqli_fetch_array($booksql);
                     <div class="card-body border-bottom py-3">
                         <div class="modal-body">
                             <div class="row">
-								<h3>Booking Type:   <?php echo $bookrow['b_type_name'];?></h3>
+                                <h3>Booking Type:   <?php echo $bookrow['b_type_name'];?></h3>
                                 <h4>Passenger Details:</h4>
                                 <div class="mb-3 col-lg-4">
                                     <h4>Customer Name: </h4>
@@ -36,8 +36,8 @@ $bookrow = mysqli_fetch_array($booksql);
                             <div class="row">
                                 <h4>Journey Details:</h4>
                                 <div class="mb-3 col-lg-4">	
-                                    <h4>Pickup Location:</h4>
-									<p><?php echo $bookrow['pickup'];?></p>
+                                    <h4>Pickup Location:</h4>									
+                                    <p><?php echo $bookrow['pickup'];?></p>
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <h4>Drop-off Location:</h4>
@@ -96,8 +96,8 @@ $bookrow = mysqli_fetch_array($booksql);
                             </div>
                             <div class="row">
                                 <div class="mb-3">
-                                    <h4>Special Note</h4>
-									<p><?php echo $bookrow['note'] ?></p>
+                                    <h4>Special Note</h4>									
+                                    <p><?php echo $bookrow['note'] ?></p>
                                 </div>				
                             </div>
                         </div>
@@ -111,8 +111,8 @@ $bookrow = mysqli_fetch_array($booksql);
                             Driver Details
                         </h3>
                     </div>
-                    <div class="card-body border-bottom py-3">
-						<?php
+                    <div class="card-body border-bottom py-3">						
+                        <?php
                         session_start();
                         if(isset($_SESSION['success_msg'])){
                             echo '<h4 style="color:red; margin-top: 10px; font-size: 18px;" align="center">'.$_SESSION['success_msg'].' </h4>';
@@ -127,16 +127,23 @@ $bookrow = mysqli_fetch_array($booksql);
                                     <label class="form-label">Driver Name</label>
                                     <select class="form-control" name="d_id" id="driverSelect" required>
                                         <option value="">Select Driver</option>
-										<?php
-										$drsql = mysqli_query($connect, "SELECT * FROM `drivers`");
-										while ($drrow = mysqli_fetch_array($drsql)) {
-										?>
+										
+                                            <?php
+										
+                                            $drsql = mysqli_query($connect, "SELECT * FROM `drivers`");
+										
+                                            while ($drrow = mysqli_fetch_array($drsql)) {
+										
+                                                ?>
                                         <option value="<?php echo $drrow['d_id'] ?>">
-											<?php echo $drrow['d_name'] ?> - <?php echo $drrow['d_phone'] ?>
+											
+                                            <?php echo $drrow['d_name'] ?> - <?php echo $drrow['d_phone'] ?>
                                         </option>
-										<?php
+										
+                                            <?php
                                         }
                                         ?>
+                                        <option value="0">All Drivers</option>
                                     </select>
 								</div>
                                 <div class="mb-3 col-lg-12">
