@@ -16,6 +16,15 @@ $waiting = $_POST['waiting'];
 $tolls = $_POST['tolls'];
 $extra = $_POST['extra'];
 $status = 'unpaid';
+
+$job_accepted_time = $_POST['job_accepted_time'];
+$job_started_time = $_POST['job_started_time'];
+$way_to_pickup_time = $_POST['way_to_pickup_time'];
+$arrived_at_pickup_time = $_POST['arrived_at_pickup_time'];
+$pob_time = $_POST['pob_time'];
+$dropoff_time = $_POST['dropoff_time'];
+$job_completed_time = $_POST['job_completed_time'];
+
 $date = date("Y-m-d h:i:s");
 
 if(isset($_POST['job_id'])){ 	
@@ -57,7 +66,13 @@ if(isset($_POST['job_id'])){
 			$job_status = 'Completed';
 			$usql="UPDATE `jobs` SET 
 									`job_status`='$job_status',
-									`date_job_add`='$date' WHERE `job_id`='$job_id'";
+									`job_accepted_time`='$job_accepted_time',
+									`job_started_time`='$job_started_time',
+									`way_to_pickup_time`='$way_to_pickup_time',
+									`arrived_at_pickup_time`='$arrived_at_pickup_time',
+									`pob_time`='$pob_time',
+									`dropoff_time`='$dropoff_time',
+									`job_completed_time`='$job_completed_time' WHERE `job_id`='$job_id'";
 			$ur=mysqli_query($connect,$usql);
 			
 			$activity_type = 'Job Completed';        

@@ -176,3 +176,40 @@ Stack trace:
   thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\register.php on line 45
 [04-Jan-2025 17:06:53 Europe/London] PHP Warning:  Undefined array key "ob_id" in C:\xampp\htdocs\MiniCAB-Controller\api\driver\select-booking.php on line 10
 [04-Jan-2025 17:06:53 Europe/London] PHP Warning:  Undefined array key "d_id" in C:\xampp\htdocs\MiniCAB-Controller\api\driver\select-booking.php on line 11
+[05-Jan-2025 17:58:45 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'booking_fee' cannot be null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php:29
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php(29): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php on line 29
+[05-Jan-2025 17:59:25 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'booking_fee' cannot be null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php:29
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php(29): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php on line 29
+[05-Jan-2025 17:59:46 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'booking_fee' cannot be null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php:29
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php(29): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php on line 29
+[05-Jan-2025 18:00:46 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'booking_fee' cannot be null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php:29
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php(29): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\assign-job.php on line 29
+[05-Jan-2025 18:18:34 Europe/London] PHP Warning:  Undefined array key "book_id" in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 17
+[05-Jan-2025 18:18:34 Europe/London] PHP Warning:  Undefined array key "job_id" in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 18
+[05-Jan-2025 18:18:34 Europe/London] PHP Warning:  Undefined variable $stmt in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 25
+[05-Jan-2025 18:18:34 Europe/London] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php:25
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 25
+[05-Jan-2025 18:19:34 Europe/London] PHP Warning:  Undefined variable $stmt in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 25
+[05-Jan-2025 18:19:34 Europe/London] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php:25
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 25
+[05-Jan-2025 18:19:36 Europe/London] PHP Warning:  Undefined variable $stmt in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 25
+[05-Jan-2025 18:19:36 Europe/London] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php:25
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\api\driver\unassign-job.php on line 25

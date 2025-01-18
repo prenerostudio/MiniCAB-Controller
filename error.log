@@ -268,3 +268,31 @@ Stack trace:
 [04-Jan-2025 11:53:16 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\dispatch-booking.php on line 116
 [04-Jan-2025 11:53:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\get-driver-details.php on line 9
 [04-Jan-2025 11:53:19 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\get-driver-details.php on line 10
+[05-Jan-2025 01:31:14 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\dispatch-booking.php on line 116
+[05-Jan-2025 01:32:52 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.driver_documents' doesn't exist in C:\xampp\htdocs\MiniCAB-Controller\driver-process.php:119
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\driver-process.php(119): mysqli_query(Object(mysqli), 'INSERT INTO `dr...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\driver-process.php on line 119
+[05-Jan-2025 01:37:49 Europe/London] PHP Warning:  Undefined variable $date in C:\xampp\htdocs\MiniCAB-Controller\update-driver-status.php on line 7
+[05-Jan-2025 01:51:20 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\dispatch-booking.php on line 116
+[05-Jan-2025 01:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\get-driver-details.php on line 9
+[05-Jan-2025 01:51:27 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\get-driver-details.php on line 10
+[05-Jan-2025 08:39:12 Europe/London] PHP Warning:  include(count-open-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:39:12 Europe/London] PHP Warning:  include(): Failed opening 'count-open-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:39:12 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 38
+[05-Jan-2025 08:39:16 Europe/London] PHP Warning:  include(count-open-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:39:16 Europe/London] PHP Warning:  include(): Failed opening 'count-open-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:39:16 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 38
+[05-Jan-2025 08:40:01 Europe/London] PHP Warning:  include(count-open-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:01 Europe/London] PHP Warning:  include(): Failed opening 'count-open-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:01 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 38
+[05-Jan-2025 08:40:04 Europe/London] PHP Warning:  include(count-open-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:04 Europe/London] PHP Warning:  include(): Failed opening 'count-open-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:04 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 38
+[05-Jan-2025 08:40:06 Europe/London] PHP Warning:  include(count-open-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:06 Europe/London] PHP Warning:  include(): Failed opening 'count-open-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:06 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 38
+[05-Jan-2025 08:40:40 Europe/London] PHP Warning:  include(count-open-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:40 Europe/London] PHP Warning:  include(): Failed opening 'count-open-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
+[05-Jan-2025 08:40:40 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 38

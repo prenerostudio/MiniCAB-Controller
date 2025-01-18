@@ -78,7 +78,8 @@ include('header.php');
 							});
 						});
 					});
-				</script>
+				
+                </script>
             </div>
         </div>
     </div>	

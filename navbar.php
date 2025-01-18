@@ -30,11 +30,12 @@
                             <a class="dropdown-item" href="open-bookings.php">
                                 <i class="ti ti-folder-open"></i>
                                 Open Bookings
-								<?php
-                                include 'count-all-bookings.php';
+								
+                                    <?php
+                                include 'count-open-booking.php';
                                 ?>
                                 <span class="badge badge-sm bg-green-lt text-uppercase ms-auto"> 
-                                    <?php echo $booking_count; ?>
+                                    <?php echo $open_booking_count; ?>
                                 </span>				
                             </a>
 							<a class="dropdown-item" href="all-bookings.php">
