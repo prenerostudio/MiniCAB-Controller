@@ -296,3 +296,11 @@ Stack trace:
 [05-Jan-2025 08:40:40 Europe/London] PHP Warning:  include(count-open-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
 [05-Jan-2025 08:40:40 Europe/London] PHP Warning:  include(): Failed opening 'count-open-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 35
 [05-Jan-2025 08:40:40 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 38
+[18-Jan-2025 18:38:20 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.open-bookings' doesn't exist in C:\xampp\htdocs\MiniCAB-Controller\count-open-booking.php:6
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\count-open-booking.php(6): mysqli->query('SELECT COUNT(*)...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\navbar.php(35): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\MiniCAB-Controller\header.php(185): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\MiniCAB-Controller\all-bookings.php(2): include('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\count-open-booking.php on line 6

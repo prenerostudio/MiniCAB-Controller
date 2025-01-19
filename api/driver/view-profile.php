@@ -8,16 +8,28 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 $d_id=$_POST['d_id'];
+
 if(isset($_POST['d_id'])){		
-	$sql="SELECT drivers.* FROM drivers WHERE drivers.d_id = '$d_id'";	
-	$r=mysqli_query($connect,$sql);
-	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-	if(count($output)>0){    				    		
-		echo json_encode(array('data'=>$output, 'status'=>true,));
-	}else{    
-		echo json_encode(array('message'=>'Driver Does Not Exist','status'=>false));
-	}
+
+    $sql="SELECT drivers.* FROM drivers WHERE drivers.d_id = '$d_id'";	
+
+    $r=mysqli_query($connect,$sql);
+
+    $output=mysqli_fetch_all($r,MYSQLI_ASSOC);
+
+    if(count($output)>0){    				    		
+
+        echo json_encode(array('data'=>$output, 'status'=>true,));
+	
+        
+    }else{    
+	
+        echo json_encode(array('message'=>'Driver Does Not Exist','status'=>false));
+	
+        
+    }
 }else{    
-	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
+	
+    echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

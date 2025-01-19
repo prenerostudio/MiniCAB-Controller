@@ -12,7 +12,7 @@ $driver_list_html .= '</thead>';
 $driver_list_html .= '<tbody>'; 
 
 $n = 0;
-$drsql = mysqli_query($connect, "SELECT * FROM `drivers` WHERE `status`='pob'");
+$drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.`status` = 'pob' OR drivers.`status` = 'On Ride' OR drivers.`status` = 'Reached on Dropoff' OR drivers.`status` = 'Way to Pickup'");
 while ($drrow = mysqli_fetch_array($drsql)) {
     $n++;
     $driver_list_html .= '<tr>'; 

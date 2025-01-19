@@ -10,9 +10,9 @@ include("../../config.php");
 $sql="SELECT * FROM `zones`";	
 $r=mysqli_query($connect,$sql);
 $output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-if(count($output)>0){    				    		
-	echo json_encode(array('data'=>$output, 'status'=>true));
+if(count($output)>0){
+    echo json_encode(array('data'=>$output, 'status'=>true));
 }else{    
-	echo json_encode(array('message'=>'Bid Rides Does Not Exist','status'=>false));
+    echo json_encode(array('message'=>'Bid Rides Does Not Exist','status'=>false));
 }
 ?>

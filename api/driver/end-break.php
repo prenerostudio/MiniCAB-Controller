@@ -15,35 +15,55 @@ $total_time = $_POST['total_time'];
 $status = 1;
 
 if(isset($_POST['bt_id'])){ 	
-	$sql="UPDATE `break_time` SET `end_time`='$date',`total_time`='$total_time',`break_status`='$status' WHERE `bt_id`='$bt_id'";	
-	$r=mysqli_query($connect,$sql);
+
+    $sql="UPDATE `break_time` SET `end_time`='$date',`total_time`='$total_time',`break_status`='$status' WHERE `bt_id`='$bt_id'";	
+
+    $r=mysqli_query($connect,$sql);
 	
-	if($r){   	
-		$dsql="UPDATE `drivers` SET  `status`='online' WHERE `d_id`='$d_id'";		
-		$dr=mysqli_query($connect,$dsql);
-				
-		$activity_type = 'Break Time Ends';        			
-		$user_type = 'driver';
-		$details = "Break Time Ends and back to online";
+
+    if($r){   	
+
+        $dsql="UPDATE `drivers` SET  `status`='online' WHERE `d_id`='$d_id'";		
+	
+        $dr=mysqli_query($connect,$dsql);
+	
+        
+	
+        $activity_type = 'Break Time Ends';        			
 		
-		$actsql = "INSERT INTO `activity_log`(
-												`activity_type`, 
-												`user_type`, 
-												`user_id`, 
-												`details`
-												) VALUES (
-												'$activity_type',
-												'$user_type',
-												'$d_id',
-												'$details')";		
+        $user_type = 'driver';
+	
+        
+        $details = "Break Time Ends and back to online";
+		
+
+        $actsql = "INSERT INTO `activity_log`(
+					`activity_type`, 
+					`user_type`, 
+					`user_id`, 
+					`details`
+					) VALUES (
+					'$activity_type',
+					'$user_type',
+					'$d_id',
+					'$details')";		
 					
-		$actr = mysqli_query($connect, $actsql);	
-											
-		echo json_encode(array('message'=>"Driver is Back to Online",'status'=>true));		
-	}else{    	
-		echo json_encode(array('message'=>"Error In fetching status",'status'=>false));		
-	}	       
+	
+        $actr = mysqli_query($connect, $actsql);	
+	
+        
+	
+        echo json_encode(array('message'=>"Driver is Back to Online",'status'=>true));		
+	
+        
+    }else{    	
+	
+        echo json_encode(array('message'=>"Error In fetching status",'status'=>false));		
+	
+        
+    }	       
 }else{   
-	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
+	
+    echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

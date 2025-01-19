@@ -11,8 +11,10 @@ $sql="SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehic
 $r=mysqli_query($connect,$sql);
 $output=mysqli_fetch_all($r,MYSQLI_ASSOC);
 if(count($output)>0){    				    		
-	echo json_encode(array('data'=>$output, 'status'=>true));
+	
+    echo json_encode(array('data'=>$output, 'status'=>true));
 }else{    
-	echo json_encode(array('message'=>'No Bid Found','status'=>false));
+	
+    echo json_encode(array('message'=>'No Bid Found','status'=>false));
 }
 ?>

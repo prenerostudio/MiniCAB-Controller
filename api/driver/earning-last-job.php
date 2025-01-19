@@ -11,16 +11,7 @@ if (isset($_POST['d_id'])) {
     $d_id = intval($_POST['d_id']);  // Ensure 'd_id' is an integer
 
     // Prepare SQL statement
-    $stmt = $connect->prepare("SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.*
-                               FROM invoice
-                               JOIN jobs ON invoice.job_id = jobs.job_id
-                               JOIN drivers ON invoice.d_id = drivers.d_id
-                               JOIN bookings ON jobs.book_id = bookings.book_id
-                               JOIN clients ON jobs.c_id = clients.c_id
-                               JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id
-                               WHERE invoice.d_id = ?
-                               ORDER BY invoice.invoice_date DESC
-                               LIMIT 1");
+    $stmt = $connect->prepare("SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice JOIN jobs ON invoice.job_id = jobs.job_id JOIN drivers ON invoice.d_id = drivers.d_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN clients ON jobs.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE invoice.d_id = ? ORDER BY invoice.invoice_date DESC LIMIT 1");
 
     if (!$stmt) {
         // Log error if statement preparation fails
