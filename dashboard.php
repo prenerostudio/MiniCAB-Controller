@@ -20,40 +20,43 @@ include('header.php');
                 <div class="card-body">
                     <h3 class="card-title">
                         Locations
-					</h3>
-                    <div>                        
-						<table class="table scrollable-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 14%;">ID</th>
-									<th>Zone Address</th>
-                                </tr>
-							</thead>
-                            <tbody class="table-tbody">
-								<?php
-                                $x = 0;
-                                $zsql = mysqli_query($connect, "SELECT * FROM `zones`");
-                                while ($zrow = mysqli_fetch_array($zsql)) :
-                                    $x++;
-                                ?>
-                                <tr>
-                                    <td style="width: 14%;">
-                                        <?php echo $x; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $zrow['zone_name'];?>
-                                    </td>
-                                </tr>
-								<?php endwhile; ?>
-								<?php if ($x === 0) : ?>
-                                <tr>
-                                    <td colspan="2">
-                                        <p align="center">No Zone Found!</p>
-                                    </td>
-                                </tr>
-								<?php endif; ?>
-							</tbody>
-						</table>
+					</h3>                    
+					<div>           
+						<?php
+						// Fetch all zones
+						$zonesQuery = "SELECT * FROM zones";
+						$zonesResult = $connect->query($zonesQuery);
+						// Fetch the latest driver locations
+						$driversQuery = "SELECT dl.d_id, dl.latitude, dl.longitude FROM driver_location dl INNER JOIN (SELECT d_id, MAX(time) AS latest_timestamp FROM driver_location GROUP BY d_id) latest ON dl.d_id = latest.d_id AND dl.time = latest.latest_timestamp";
+						$driversResult = $connect->query($driversQuery);
+						$drivers = [];
+						while ($row = $driversResult->fetch_assoc()) {    
+							$drivers[] = $row;
+						}
+						// Display zone table
+						echo "<table class='table scrollable-table'>";
+						echo "<tr><th>Zone</th><th>Number of Drivers</th><th>Drivers ID</th></tr>";
+						while ($zone = $zonesResult->fetch_assoc()) {    
+							$driverCount = 0;    
+							$driversInZone = [];    
+							foreach ($drivers as $driver) {        
+								if (            
+									$driver['latitude'] >= $zone['lat_min'] && $driver['latitude'] <= $zone['lat_max'] &&            
+									$driver['longitude'] >= $zone['lng_min'] && $driver['longitude'] <= $zone['lng_max']        
+								) {            
+									$driverCount++;            
+									$driversInZone[] = $driver['d_id'];        
+								}    
+							}    
+							$driverList = implode(', ', $driversInZone);    
+							echo "<tr>            			
+								<td>{$zone['zone_name']}</td>
+            					<td>{$driverCount}</td>
+            					<td>{$driverList}</td>
+          						</tr>";
+						}
+						echo "</table>";
+						?>
                     </div>
 				</div>
             </div>

@@ -1,34 +1,23 @@
 <?php
 include('header.php');
 ?>  
-
 <div class="page-header d-print-none page_padding">		   		
-
     <div class="row g-2 align-items-center">        	
-
-        <div class="col">		
-	
-            <div class="page-pretitle"> 			
-	
-                Overview			
-		
-            </div>                						
-	
-            <h2 class="page-title">                						
-	
-                Zones Section                				
-		
-            </h2>              					
-	
-        </div>					
-	
+        <div class="col">			
+            <div class="page-pretitle"> 				
+                Overview					
+            </div>                							
+            <h2 class="page-title">                							
+                Zones Section                						
+            </h2>              						
+        </div>						
     </div>	
 </div>
 <div class="page-body page_padding">          		
 
     <div class="row row-deck row-cards">					  									
 
-        <div class="col-6">       				
+        <div class="col-8">       				
 	
             <div class="card">            						
 	
@@ -56,7 +45,10 @@ include('header.php');
 				
                                     <th>ID</th>									
 				
-                                    <th>Zone Address</th>									
+                                    <th>Zone Address</th>
+                                     <th>Latitude Range</th>
+                                      <th>Longitude Range</th>
+                                      
 				
                                     <th>Actions</th>
 				
@@ -90,7 +82,19 @@ include('header.php');
 				
 						<?php echo $zrow['zone_name'];?>
 
-                                    </td>									               									
+                                    </td>
+                                    
+                                     <td>
+				
+						<?php echo $zrow['lat_min'];?> ---> <?php echo $zrow['lat_max'];?>
+
+                                    </td>
+                                    
+                                     <td>
+				
+						<?php echo $zrow['lng_min'];?> ---> <?php echo $zrow['lng_max'];?>
+
+                                    </td>
 				
                                     <td>										
 				
@@ -142,7 +146,7 @@ include('header.php');
 
         </script>
 	
-        <div class="col-6">       				
+        <div class="col-4">       				
 	
             <div class="card">            						
 	
