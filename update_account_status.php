@@ -4,8 +4,7 @@ include('config.php');
 $ten_days_from_today = date('Y-m-d', strtotime('+10 days'));
 
 // SQL query to update account_status
-$sql = "
-    UPDATE drivers d
+$sql = "UPDATE drivers d
     JOIN driver_vehicle dv ON d.d_id = dv.d_id
     SET d.account_status = 2
     WHERE

@@ -2,64 +2,43 @@
 include('config.php');
 include('session.php');
 
-// Check if the form is submitted
-if (isset($_POST['submit'])) {
-    // Collect form data
-    $d_id = $_POST['d_id'];
+if (isset($_POST['submit'])) {      
+	$d_id = $_POST['d_id'];
     $date_update = date('Y-m-d H:i:s'); // Current timestamp
-    $targetDir = "img/drivers/vehicle/picture/";
-
-    // Allowed file types
-    $allowTypes = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'pdf', 'tiff', 'webp', 'raw', 'svg', 'heif', 'apng', 'cr2', 'ico', 'jpeg2000', 'avif'];
-
-    // Process file extensions
+    $targetDir = "img/drivers/vehicle/picture/";   
+    $allowTypes = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'pdf', 'tiff', 'webp', 'raw', 'svg', 'heif', 'apng', 'cr2', 'ico', 'jpeg2000', 'avif'];    
     $fileExtensionFront = strtolower(pathinfo($_FILES["pic1"]["name"], PATHINFO_EXTENSION));
-    $fileExtensionBack = strtolower(pathinfo($_FILES["pic2"]["name"], PATHINFO_EXTENSION));
-
-    // Validate file types
+    $fileExtensionBack = strtolower(pathinfo($_FILES["pic2"]["name"], PATHINFO_EXTENSION));    
     if (!in_array($fileExtensionFront, $allowTypes) || !in_array($fileExtensionBack, $allowTypes)) {
         echo "Invalid file type. Allowed types are: " . implode(", ", $allowTypes);
         header('Location: view-driver.php?d_id=' . $d_id . '#tabs-vdocument');
         exit();
-    }
-
-    // Generate unique file names
+    }   
     $vp_front = uniqid() . "." . $fileExtensionFront;
-    $vp_back = uniqid() . "." . $fileExtensionBack;
-
-    // Define file paths
+    $vp_back = uniqid() . "." . $fileExtensionBack;   
     $targetFilePathFront = $targetDir . $vp_front;
-    $targetFilePathBack = $targetDir . $vp_back;
-
-    // Upload files
+    $targetFilePathBack = $targetDir . $vp_back;    
     if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $targetFilePathFront) && move_uploaded_file($_FILES["pic2"]["tmp_name"], $targetFilePathBack)) {
-        try {
-            // Check if record exists
+        try {           
             $stmt = $connect->prepare("SELECT * FROM `vehicle_pictures` WHERE `d_id` = ?");
             $stmt->bind_param("s", $d_id);
             $stmt->execute();
             $result = $stmt->get_result();
-
-            if ($result->num_rows > 0) {
-                // Update existing record
+            if ($result->num_rows > 0) {                
                 $updateStmt = $connect->prepare("UPDATE `vehicle_pictures` SET `vp_front`= ?, `vp_back`= ?, `vp_updated_at`= ? WHERE `d_id` = ?");
                 $updateStmt->bind_param("ssss", $vp_front, $vp_back, $date_update, $d_id);
-
                 if (!$updateStmt->execute()) {
                     exit("Database update failed.");
                 }
                 logActivity('Vehicle Pictures Updated', $d_id, "Vehicle Pictures of Driver $d_id have been updated by Controller.");
-            } else {
-                // Insert new record
+            } else {               
                 $insertStmt = $connect->prepare("INSERT INTO `vehicle_pictures`(`d_id`, `vp_front`, `vp_back`, `vp_created_at`) VALUES (?, ?, ?, ?)");
                 $insertStmt->bind_param("ssss", $d_id, $vp_front, $vp_back, $date_update);
-
                 if (!$insertStmt->execute()) {
                     exit("Database insertion failed.");
                 }
                 logActivity('Vehicle Pictures Added', $d_id, "Vehicle Pictures of Driver $d_id have been added by Controller.");
             }
-
             header('Location: view-driver.php?d_id=' . $d_id . '#tabs-vdocument');
             exit();
         } catch (Exception $e) {
@@ -71,8 +50,6 @@ if (isset($_POST['submit'])) {
         exit();
     }
 }
-
-// Function to log activities
 function logActivity($activityType, $driverId, $details)
 {
     global $connect, $myId;

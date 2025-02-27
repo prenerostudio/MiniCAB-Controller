@@ -166,118 +166,52 @@ $crow = mysqli_fetch_array($csql);
                                                             </td>	
                                                             <td class="sort-date">
 																<?php echo $irow['invoice_date'];?>
-
-                                                            </td>
-							
-                                                            <td>				
-							
-                                                               
+                                                            </td>							
+                                                            <td>
 																Booking ID: <?php echo $irow['book_id'];?><br>
-								
-								
-																<?php echo $irow['pickup'];?> - 
-
-																
-                                                                    
+																<?php echo $irow['pickup'];?> -
 																<?php echo $irow['destination'];?>
-
-                                                                
-                                                            </td>															
-							
+															</td>							
                                                             <td class="sort-pay">
-							
-								
-	
-                                                                
 																<?php echo $irow['total_pay'];?>
-								
-                                                            </td> 															
-							
-                                                            <td class="sort-status">
-							
-									
-																<?php echo $irow['invoice_status'];?>
-
-                                                            </td>					
-							
-                                                            <td>			
-							
-                                                                <a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
-								
-                                                                    <button class="btn btn-info">
-								
-                                                                        <i class="ti ti-eye"></i>
-									
-                                                                        View Invoice
-									
-                                                                    </button>
-								
-                                                                </a>
-								
-                                                            </td>														
-							
-                                                        </tr>
-							
-							
-														<?php endwhile; ?>
-
-														
-                                                            
-														<?php if ($x === 0) : ?>
-
-                                                        <tr>
-							
-                                                            <td colspan="8">
-							
-                                                                <p align="center">No Invoice Found!</p>	
-								
                                                             </td>
-							
-                                                        </tr>
-							
-							
+                                                            <td class="sort-status">				
+																<?php echo $irow['invoice_status'];?>
+                                                            </td>
+                                                            <td>
+                                                                <a href="invoice.php?invoice_id=<?php echo $irow['invoice_id']; ?>">
+                                                                    <button class="btn btn-info">								
+                                                                        <i class="ti ti-eye"></i>									
+                                                                        View Invoice									
+                                                                    </button>								
+                                                                </a>								
+                                                            </td>
+                                                        </tr>														
+														<?php endwhile; ?>
+														<?php if ($x === 0) : ?>
+                                                        <tr>							
+                                                            <td colspan="8">							
+                                                                <p align="center">No Invoice Found!</p>
+                                                            </td>							
+                                                        </tr>														
 														<?php  endif; ?>
-
-                                                    </tbody>				
-						
-                                                </table>												
-						
-                                            </div>					
-					
-                                        </div>	
-					
-                                    </div>					
-				
-                                </div>
-				
-                            </div>  							
-			
-                            <script>		
-			
-   
-								$(document).ready(function() {    
-
-      
-									$('#cstate').DataTable();
-	
-    
-								});
-
-                        
-                            </script>						
-			
-                        
-                        </div>    
-						
-			
-                    </div>                 										
-		
-                </div>             
-		
-            </div>
-	
-        </div>
-	
+                                                    </tbody>										
+                                                </table>																		
+                                            </div>										
+                                        </div>						
+                                    </div>									
+                                </div>				
+                            </div>  										
+                            <script>			   
+								$(document).ready(function() {          
+									$('#cstate').DataTable();	    
+								});                        
+                            </script>									                        
+                        </div>    									
+                    </div>                 												
+                </div>             		
+            </div>	
+        </div>	
     </div>
 </div>   
 <?php

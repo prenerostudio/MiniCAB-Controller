@@ -49,5 +49,5 @@ foreach ($zones as $zone) {
     sleep(1); // Prevent API rate limit issues
 }
 
-$conn->close();
+$connect->close();
 ?>

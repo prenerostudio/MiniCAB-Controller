@@ -7,13 +7,9 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     if (isset($_POST['d_id'])) {
-
-        $d_id = $_POST['d_id'];
-        
+        $d_id = $_POST['d_id'];        
         $latitude = $_POST['latitude'];
         $longitude = $_POST['longitude'];       
         $date = date("Y-m-d h:i:s");       
@@ -28,10 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					'$longitude',												
 					'$date')";
         $result = mysqli_query($connect, $sql);
-        if ($result) {  
-	
-            $updatesql="UPDATE `drivers` SET `latitude`='$latitude',`longitude`='$longitude' WHERE `d_id`='$d_id'";
-	
+        if ($result) {	
+            $updatesql="UPDATE `drivers` SET `latitude`='$latitude',`longitude`='$longitude' WHERE `d_id`='$d_id'";	
             $uresult = mysqli_query($connect, $updatesql);
             $response = array('message' => "Location Updated Successfully", 'status' => true);
             echo json_encode($response);
