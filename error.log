@@ -75,3 +75,1159 @@ Stack trace:
 [16-Feb-2025 17:35:05 Europe/London] PHP Warning:  Undefined array key "d_name" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 66
 [18-Feb-2025 13:28:31 Europe/London] PHP Warning:  Undefined array key "lng_min" in C:\xampp\htdocs\MiniCAB-Controller\zone-process.php on line 8
 [18-Feb-2025 13:30:03 Europe/London] PHP Warning:  Undefined array key "lng_min" in C:\xampp\htdocs\MiniCAB-Controller\zone-process.php on line 8
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_min" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:07:46 Europe/London] PHP Warning:  Undefined array key "lat_max" in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 65
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 12
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 12
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 16
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 22
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 34
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 35
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 35
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 39
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 39
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 43
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 43
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 48
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 48
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 56
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 56
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 62
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 62
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 71
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 71
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 77
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 77
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 13
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 13
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 16
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 16
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 21
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 50
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 50
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 53
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 53
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 58
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 80
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 80
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 85
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 109
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 109
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 114
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 136
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 136
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 141
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 161
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 161
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 166
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 12
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 12
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 16
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 36
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 36
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 40
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 66
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 66
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 70
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 94
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 94
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 98
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 125
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 125
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 129
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 129
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 133
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 155
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 155
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 159
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 183
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 183
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 187
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 213
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 213
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 217
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 237
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 237
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 241
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php on line 10
+[28-Feb-2025 20:19:26 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php on line 34
+[28-Feb-2025 20:19:26 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(101): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php on line 34
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 12
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 12
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 16
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 22
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 34
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 35
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 35
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 39
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 39
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 43
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 43
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 48
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 48
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 56
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 56
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 62
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 62
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 71
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 71
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 77
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-details-section.php on line 77
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 13
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 13
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 16
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 16
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 21
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 50
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 50
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 53
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 53
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 58
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 80
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 80
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 85
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 109
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 109
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 114
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 136
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 136
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 141
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 161
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 161
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 166
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 12
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 12
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 16
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 36
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 36
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 40
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 66
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 66
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 70
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 94
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 94
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 98
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 125
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 125
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 129
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 129
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 133
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 155
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 155
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 159
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 183
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 183
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 187
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 213
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 213
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 217
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 237
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 237
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-document-section.php on line 241
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php on line 10
+[02-Mar-2025 17:21:30 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php on line 34
+[02-Mar-2025 17:21:30 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(101): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\driver-vehicle-section.php on line 34
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 13
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 13
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 16
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 16
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 21
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 50
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 50
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 53
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 53
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 58
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 80
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 80
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 85
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 109
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 109
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 114
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 136
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 136
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 141
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $drow in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 161
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 161
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-document-section.php on line 166
+[02-Mar-2025 17:27:43 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php on line 21
+[02-Mar-2025 17:27:43 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(68): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php on line 21
+[02-Mar-2025 17:31:23 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php on line 21
+[02-Mar-2025 17:31:23 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(68): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\driver-activity-logs.php on line 21
+[02-Mar-2025 17:35:24 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[02-Mar-2025 17:35:24 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(121): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[02-Mar-2025 17:35:28 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[02-Mar-2025 17:35:28 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(121): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[02-Mar-2025 17:36:05 Europe/London] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), '')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(121): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[03-Mar-2025 08:28:01 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'lat_min' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php:38
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php(38): mysqli->prepare('INSERT INTO `zo...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php on line 38
+[03-Mar-2025 08:28:28 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'lat_min' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php:38
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php(38): mysqli->prepare('INSERT INTO `zo...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php on line 38
