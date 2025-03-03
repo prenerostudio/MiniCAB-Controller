@@ -99,7 +99,8 @@ async defer></script>
                                         New Booking
                                     </a>
                                 </div>                                
-								<script>    
+								
+                                <script>    
 									document.addEventListener("DOMContentLoaded", function() {        
 										fetch('new-drivers-count.php')
 											.then(response => response.json())
@@ -129,10 +130,12 @@ async defer></script>
                             <div class="d-none d-md-flex">			
                                 <a class="nav-link" href="#">
                                     <?php
-									$current_time = date("Y-m-d H:i:s");
+									
+                                    $current_time = date("Y-m-d H:i:s");
                                     ?>
                                     <script>
-										var serverTime = "<?php echo $current_time; ?>";
+										
+                                        var serverTime = "<?php echo $current_time; ?>";
                                     </script>											
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                                         <i class="ti ti-clock"></i>
@@ -154,7 +157,8 @@ async defer></script>
 										document.getElementById('time').textContent = "  " + formatTime(serverTime);	    
 									}    
 									setInterval(updateTime, 1000);                            
-								</script> 				
+								
+                                </script> 				
                             </div>			
                             <div class="d-none d-md-flex">			
                                 <a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">

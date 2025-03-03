@@ -388,6 +388,7 @@
                             </span>
                         </a>
                     </li>
+                      <?php if ($designation === 'admin'): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="activity_log.php">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -398,6 +399,7 @@
                             </span>
                         </a>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
