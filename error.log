@@ -2174,3 +2174,241 @@ Stack trace:
 #1 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\update_driver_list.php on line 15
 >>>>>>> Stashed changes
+[04-Mar-2025 15:03:51 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'lat_min' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php:38
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php(38): mysqli->prepare('INSERT INTO `zo...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php on line 38
+[04-Mar-2025 15:07:35 Europe/London] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\MiniCAB-Controller\zones-coordinates.php on line 32
+[05-Mar-2025 17:36:18 Europe/London] PHP Warning:  Undefined variable $user_id in C:\xampp\htdocs\MiniCAB-Controller\grant-permissions.php on line 85
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 11:00:47 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 11:00:47 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 15:28:54 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 15:28:54 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 15:29:36 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 15:29:36 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 15:30:07 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 15:30:07 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 15:30:18 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 15:30:18 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 15:32:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 15:32:45 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 15:32:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 15:32:48 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 15:39:20 Europe/London] PHP Warning:  Undefined array key "add_booking" in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[06-Mar-2025 15:39:23 Europe/London] PHP Warning:  Undefined array key "add_booking" in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[06-Mar-2025 15:39:50 Europe/London] PHP Warning:  Undefined array key "add_booking" in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[06-Mar-2025 15:40:32 Europe/London] PHP Warning:  Undefined array key "add_booking" in C:\xampp\htdocs\MiniCAB-Controller\header.php on line 213
+[06-Mar-2025 15:40:36 Europe/London] PHP Warning:  Undefined array key "add_booking" in C:\xampp\htdocs\MiniCAB-Controller\header.php on line 213
+[06-Mar-2025 17:46:45 Europe/London] PHP Warning:  Undefined array key "add-booking" in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 44
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Undefined array key "user_id" in C:\xampp\htdocs\MiniCAB-Controller\view-user.php on line 3
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 13
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 23
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 35
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 59
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 61
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 69
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 77
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 89
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 97
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 112
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 124
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 132
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 140
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 154
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 157
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-profile-section.php on line 191
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 17
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 28
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 39
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 50
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 61
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 76
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 98
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 134
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 156
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 178
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 202
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 225
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 247
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 283
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 307
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 330
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 363
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 385
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 409
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 446
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 468
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 490
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 523
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 546
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 568
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 590
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 626
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 649
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 672
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 695
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 717
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 739
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 772
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 807
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 839
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 872
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 894
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 916
+[06-Mar-2025 18:09:41 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\user-permissions.php on line 948
+[06-Mar-2025 18:09:41 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php:21
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php(21): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-user.php(60): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\user-activity-logs.php on line 21
+[06-Mar-2025 18:10:03 Europe/London] PHP Warning:  Undefined array key "uemail" in C:\xampp\htdocs\MiniCAB-Controller\update-user.php on line 8
+[06-Mar-2025 18:17:18 Europe/London] PHP Warning:  Undefined array key "uemail" in C:\xampp\htdocs\MiniCAB-Controller\update-user-details.php on line 8

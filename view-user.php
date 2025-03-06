@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 $user_id = $_GET['user_id'];
-$usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users JOIN countries ON users.country_id = countries.country_id WHERE users.user_id = '$user_id'");											
+$usql=mysqli_query($connect,"SELECT users.*, countries.*, user_page_access.* FROM users JOIN countries ON users.country_id = countries.country_id JOIN user_page_access ON user_page_access.user_id = users.user_id WHERE users.user_id = '$user_id'");											
 $urow = mysqli_fetch_array($usql);	
 ?>
 <div class="page-header d-print-none">
