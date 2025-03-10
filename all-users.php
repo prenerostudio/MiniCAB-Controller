@@ -47,10 +47,8 @@ include('header.php');
                                 <?php
                                 $x=0;
                                 $usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users JOIN countries ON users.country_id = countries.country_id WHERE users.designation <> 'Owner'");
-                                while($urow = mysqli_fetch_array($usql)){                                   
-									
-                                    $x++;                                
-								
+                                while($urow = mysqli_fetch_array($usql)){
+                                    $x++;
                                     ?>
                                 <tr>
                                     <td>
@@ -61,16 +59,11 @@ include('header.php');
                                         if (!$urow['user_pic']) {
                                         ?>
                                         <img src="img/user-1.jpg" alt="User Img" style="width: 80px; height: 80px; border-radius: 5px;">
-										
-                                            <?php
-                                        
-                                            
-                                        } else{
-                                        
-                                            ?>
-                                        <img src="img/users/<?php echo $urow['user_pic'];?>" alt="User Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">
-										
-                                            <?php
+										<?php
+                                        } else{                   
+										?>
+                                        <img src="img/users/<?php echo $urow['user_pic'];?>" alt="User Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">             
+										<?php
                                         }
                                         ?>
                                     </td>
@@ -99,9 +92,8 @@ include('header.php');
                                             Delete
                                         </a>
                                     </td>
-                                </tr>				
-								
-                                    <?php
+                                </tr>                 
+								<?php
                                 }
                                 ?>
                             </tbody>
