@@ -41,11 +41,36 @@ if ($phone_count > 0) {
 	// Handle image upload        
 	$cpic = uploadImage();          
 	if ($cpic !== false) {                                
-		$sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";                
+		$sql = "INSERT INTO `clients`(
+								`c_name`,
+								`c_email`,
+								`c_phone`, 
+								`c_password`,  
+								`c_address`, 
+								`c_gender`, 
+								`c_language`, 
+								`c_pic`, 
+								`postal_code`, 
+								`others`, 
+								`c_ni`, 
+								`account_type`
+								)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";                
 		$stmt = $connect->prepare($sql);        
 		$stmt->bind_param("ssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type);                                
 	} else {                               
-		$sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";                
+		$sql = "INSERT INTO `clients`(
+								`c_name`, 
+								`c_email`, 
+								`c_phone`, 
+								`c_password`,  
+								`c_address`, 
+								`c_gender`, 
+								`c_language`, 
+								`postal_code`,
+								`others`, 
+								`c_ni`, 
+								`account_type`
+								)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";                
 		$stmt = $connect->prepare($sql);                
 		$stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type);                                
 	}        

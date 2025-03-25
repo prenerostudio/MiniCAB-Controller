@@ -42,10 +42,10 @@
                                 <td>
                                     <?php echo $vhrow['v_name']; ?>
                                 </td>
-                                <td>
-                                    <?php echo $vhrow['v_make']; ?> -
-                                        <?php echo $vhrow['v_model']; ?> -
-                                            <?php echo $vhrow['v_color']; ?>
+                                <td>                                   
+									<?php echo $vhrow['v_make']; ?> -                                       
+									<?php echo $vhrow['v_model']; ?> -                                           
+									<?php echo $vhrow['v_color']; ?>
                                 </td>
                                 <td>
                                     <?php echo $vhrow['v_reg_num']; ?>
@@ -58,17 +58,17 @@
                                         </button>
                                     </a>
                                 </td>
-                            </tr>
-				<?php endwhile; ?>
-                                    <?php if ($x === 0) : ?>
+                            </tr>				
+							<?php endwhile; ?>                                    
+							<?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">
                                         No Vehicle Found!
                                     </p>
                                 </td>
-                            </tr>
-				<?php endif; ?>
+                            </tr>				
+							<?php endif; ?>
                         </tbody>
                     </table>
                 </div>           				

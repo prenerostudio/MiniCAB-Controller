@@ -12,48 +12,33 @@ $lmpv = $_POST['lmpv'];
 $empv = $_POST['empv'];
 $minibus = $_POST['minibus'];
 $delivery = $_POST['delivery'];
-
-
 $sql = "INSERT INTO `price_postcode`(
-				`pickup`, 
-				`dropoff`, 
-				`saloon`, 
-				`estate`, 
-				`mpv`, 
-				`esaloon`, 
-				`lmpv`, 
-				`empv`, 
-				`minibus`, 
-				`delivery`
-				) VALUES (
-				'$pickup',
-				'$dropoff',
-				'$salon',
-				'$estate',
-				'$mpv',
-				'$esalon',
-				'$lmpv',
-				'$empv',
-				'$minibus',
-				'$delivery')";
-
-
+								`pickup`, 
+								`dropoff`, 
+								`saloon`, 
+								`estate`, 
+								`mpv`, 
+								`esaloon`, 
+								`lmpv`, 
+								`empv`, 
+								`minibus`, 
+								`delivery`
+								) VALUES (
+								'$pickup',
+								'$dropoff',
+								'$salon',
+								'$estate',
+								'$mpv',
+								'$esalon',
+								'$lmpv',
+								'$empv',
+								'$minibus',
+								'$delivery')";
 $result = $connect->query($sql);
-
-
 if($result){
-	
-
     header('location: pricing.php');
-}else{
-	
-
+}else{	
     echo 'error';
-
     header('location: pricing.php');
 }
-
-
-
-
 ?>

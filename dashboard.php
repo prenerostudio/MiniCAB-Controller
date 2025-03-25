@@ -1,10 +1,10 @@
 <?php
 include('header.php');
-?>     
+?>
 <div class="page-header d-print-none page_padding">
-    <div class="row g-2 align-items-center">
-        <div class="col">
-            <div class="page-pretitle">
+	<div class="row g-2 align-items-center">    
+		<div class="col">        
+			<div class="page-pretitle">
                 Overview
             </div>
             <h2 class="page-title">
@@ -15,118 +15,69 @@ include('header.php');
 </div>          
 <div class="page-body page_padding">
     <div class="row row-deck row-cards">
-        <div class="col-lg-6">
-			<div class="card">	
-                <div class="card-body">
-                    <h3 class="card-title">                       
-                        Locations			
-                    </h3>
-                    <div>
+        <div class="col-lg-6">			
+            <div class="card">            
+               <?php
+               include('count-online-drivers.php');               
+               include('count-offline-drivers.php');               
+               include('count-pob-drivers.php');                                               
+               ?>               
+                <div class="card-body">                
+                    <h3 class="card-title">                                           
+                        Zones List:  (Online Drivers:  <?php echo $online_driver_count; ?>)  | (Onboard Drivers: <?php echo $pob_driver_count; ?>) | (Inactive Drivers: <?php echo $offline_driver_count; ?>)
+                    </h3>		
+                    <div>					
 						<?php
-$zonesQuery = "SELECT * FROM zones";			
-$zonesResult = $connect->query($zonesQuery);
-
-// Fetch latest driver locations along with driver names and their vehicles
-$driversQuery = "
-    SELECT dl.d_id, dl.latitude, dl.longitude, d.d_name, dv.v_make
-    FROM driver_location dl
-    INNER JOIN (
-        SELECT d_id, MAX(time) AS latest_timestamp 
-        FROM driver_location 
-        GROUP BY d_id
-    ) latest 
-    ON dl.d_id = latest.d_id AND dl.time = latest.latest_timestamp
-    INNER JOIN drivers d ON dl.d_id = d.d_id
-    LEFT JOIN driver_vehicle dv ON dl.d_id = dv.d_id";
-$driversResult = $connect->query($driversQuery);
-
-// Store drivers' data in an array
-$drivers = [];
-while ($row = $driversResult->fetch_assoc()) {
-    $drivers[$row['d_id']] = [
-        'latitude' => $row['latitude'],
-        'longitude' => $row['longitude'],
-        'name' => $row['d_name'],
-        'vehicle' => $row['v_make'] ?? 'Unknown' // Handle null values
-    ];
-}
-
-// Display zone table
-echo "<table class='table scrollable-table'>";
-echo "<tr><th>Zone</th><th>Number of Drivers</th><th>Drivers List</th><th>Vehicles in Zone</th></tr>";
-
-while ($zone = $zonesResult->fetch_assoc()) {
-    $driverCount = 0;
-    $driversInZone = [];
-    $vehiclesInZone = [];
-
-    foreach ($drivers as $d_id => $driver) {
-        if (
-            $driver['latitude'] >= $zone['lat_min'] && $driver['latitude'] <= $zone['lat_max'] &&
-            $driver['longitude'] >= $zone['lng_min'] && $driver['longitude'] <= $zone['lng_max']
-        ) {
-            $driverCount++;
-            $driversInZone[] = "{$driver['name']}";
-            $vehiclesInZone[] = "{$driver['vehicle']}";
-        }
-    }
-
-    $driverList = $driverCount > 0 ? implode(', ', $driversInZone) : 'None';
-    $vehicleList = $driverCount > 0 ? implode(', ', $vehiclesInZone) : 'None';
-
-    echo "<tr>
-        <td>{$zone['zone_name']}</td>
-        <td>{$driverCount}</td>
-        <td>{$driverList}</td>
-        <td>{$vehicleList}</td>
-    </tr>";
-}
-
-echo "</table>";
-?>
-
-
-						<?php                                				                                                        
-//						$zonesQuery = "SELECT * FROM zones";			
-//                        $zonesResult = $connect->query($zonesQuery);
-//                        $driversQuery = "SELECT dl.d_id, dl.latitude, dl.longitude FROM driver_location dl INNER JOIN (SELECT d_id, MAX(time) AS latest_timestamp FROM driver_location GROUP BY d_id) latest ON dl.d_id = latest.d_id AND dl.time = latest.latest_timestamp";			
-//                        $driversResult = $connect->query($driversQuery);			
-//                        $drivers = [];			
-//                        while ($row = $driversResult->fetch_assoc()) {    			
-//                            $drivers[] = $row;			                            
-//						}			                            
-//						// Display zone table			                           
-//						echo "<table class='table scrollable-table'>";			                        
-//						echo "<tr><th>Zone</th><th>Number of Drivers</th><th>Drivers ID</th></tr>";			                        
-//						while ($zone = $zonesResult->fetch_assoc()) {   
-//							$driverCount = 0;				                            
-//							$driversInZone = [];				                            
-//							foreach ($drivers as $driver) {				                            
-//								if (
-//									$driver['latitude'] >= $zone['lat_min'] && $driver['latitude'] <= $zone['lat_max'] &&
-//									$driver['longitude'] >= $zone['lng_min'] && $driver['longitude'] <= $zone['lng_max']
-//								) {					                                
-//									$driverCount++;
-//									$driversInZone[] = $driver['d_id'];
-//								} 
-//							}					                            
-//							$driverList = implode(', ', $driversInZone); 					                            
-//							echo "<tr>					
-//							<td>{$zone['zone_name']}</td>
-//							<td>{$driverCount}</td>
-//							<td>{$driverList}</td>
-//							</tr>";                            
-//						}					                        
-//						echo "</table>";					                        
-						?>                    
-					</div>                                    
-				</div>                            
-			</div>        
-		</div>
-        
+                        $zonesQuery = "SELECT * FROM zones";			
+                        $zonesResult = $connect->query($zonesQuery);			
+                        // Fetch latest driver locations along with driver names and their vehicles			
+                        $driversQuery = "SELECT dl.d_id, dl.latitude, dl.longitude, d.d_name, dv.v_make FROM driver_location dl INNER JOIN (SELECT d_id, MAX(time) AS latest_timestamp FROM driver_location GROUP BY d_id) latest ON dl.d_id = latest.d_id AND dl.time = latest.latest_timestamp INNER JOIN drivers d ON dl.d_id = d.d_id LEFT JOIN driver_vehicle dv ON dl.d_id = dv.d_id";			
+                        $driversResult = $connect->query($driversQuery);			
+                        // Store drivers' data in an array			
+                        $drivers = [];			
+                        while ($row = $driversResult->fetch_assoc()) {    
+							$drivers[$row['d_id']] = [        
+								'latit`ude' => $row['latitude'],        
+								'longitude' => $row['longitude'],        
+								'name' => $row['d_name'],        
+								'vehicle' => $row['v_make'] ?? 'Unknown' // Handle null values    
+							];
+						}
+						// Display zone table
+						echo "<table class='table scrollable-table'>";
+						echo "<tr><th>Zone</th><th>Number of Drivers</th><th>Drivers List</th><th>Vehicles in Zone</th></tr>";
+						while ($zone = $zonesResult->fetch_assoc()) {    
+							$driverCount = 0;    
+							$driversInZone = [];    
+							$vehiclesInZone = [];							    
+							foreach ($drivers as $d_id => $driver) {        
+								if (            
+									$driver['latitude'] >= $zone['lat_min'] && $driver['latitude'] <= $zone['lat_max'] &&            
+									$driver['longitude'] >= $zone['lng_min'] && $driver['longitude'] <= $zone['lng_max']        
+								) {            
+									$driverCount++;            
+									$driversInZone[] = "{$driver['name']}";            
+									$vehiclesInZone[] = "{$driver['vehicle']}";        
+								}    
+							}    
+							$driverList = $driverCount > 0 ? implode(', ', $driversInZone) : 'None';    
+							$vehicleList = $driverCount > 0 ? implode(', ', $vehiclesInZone) : 'None';    
+							echo "<tr>
+									<td>{$zone['zone_name']}</td>
+									<td>{$driverCount}</td>
+									<td>{$driverList}</td>
+									<td>{$vehicleList}</td>
+								</tr>";
+						}
+						echo "</table>";
+						?>							                  	
+					</div>                                    				
+				</div>                            			
+			</div>        		
+		</div>        
 		<div class="col-sm-6 col-lg-3">
-            <div class="card">
-                <div class="card-body">
+            <div class="card">              
+				<div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="subheader">
                             Driver Onboard
@@ -371,22 +322,22 @@ echo "</table>";
                                     <td><?php echo $brow['passenger']; ?></td>                				
                                     <td><?php echo $brow['journey_type']; ?></td>             				
                                     <td><?php echo $brow['journey_fare']; ?></td>                				
-                                    <td><?php echo $brow['v_name']; ?></td>                													
+                                    <td><?php echo $brow['v_name']; ?></td>
                                     <td style="width: 12%;">				
                                         <form method="post" action="dispatch-process.php">    					
-                                            <input type="hidden" value="<?php echo $brow['book_id']; ?>" name="book_id">					
+                                            <input type="hidden" value="<?php echo $brow['book_id']; ?>" name="book_id">
                                             <input type="hidden" value="<?php echo $brow['c_id']; ?>" name="c_id">					
-                                            <input type="hidden" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">					
-                                            <input type="hidden" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">					
+                                            <input type="hidden" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">
+                                            <input type="hidden" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">
                                             <div class="mb-3">					
                                                 <div class="input-group mb-2">						
                                                     <select class="form-control" name="d_id" required>						
-                                                        <option value="">Select Driver</option>														
+                                                        <option value="">Select Driver</option>
 														<?php
                                                         $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");
                                                         while ($drrow = mysqli_fetch_array($drsql)) {                   
 														?>							
-                                                        <option value="<?php echo $drrow['d_id']; ?>">															
+                                                        <option value="<?php echo $drrow['d_id']; ?>">
 															<?php echo $drrow['d_id'] ?> - 
 															<?php echo $drrow['d_name'] ?> - 
 															<?php echo $drrow['d_phone'] ?>

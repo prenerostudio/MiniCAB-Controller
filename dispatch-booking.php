@@ -1,6 +1,5 @@
 <?php
 include('header.php');
-
 $book_id = $_GET['book_id'];
 $booksql=mysqli_query($connect,"SELECT bookings.*, clients.*, booking_type.*, vehicles.* FROM bookings INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.book_id = '$book_id'");
 $bookrow = mysqli_fetch_array($booksql);
@@ -127,20 +126,14 @@ $bookrow = mysqli_fetch_array($booksql);
                                     <label class="form-label">Driver Name</label>
                                     <select class="form-control" name="d_id" id="driverSelect" required>
                                         <option value="">Select Driver</option>
-										
-                                            <?php
-										
-                                            $drsql = mysqli_query($connect, "SELECT * FROM `drivers`");
-										
-                                            while ($drrow = mysqli_fetch_array($drsql)) {
-										
-                                                ?>
+										<?php										                                           
+										$drsql = mysqli_query($connect, "SELECT * FROM `drivers`");
+										while ($drrow = mysqli_fetch_array($drsql)) {
+										?>
                                         <option value="<?php echo $drrow['d_id'] ?>">
-											
-                                            <?php echo $drrow['d_name'] ?> - <?php echo $drrow['d_phone'] ?>
-                                        </option>
-										
-                                            <?php
+											<?php echo $drrow['d_name'] ?> - <?php echo $drrow['d_phone'] ?>
+                                        </option>  
+										<?php
                                         }
                                         ?>
                                         <option value="0">All Drivers</option>

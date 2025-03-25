@@ -46,115 +46,72 @@ include('header.php');
                                     <th>Actions</th>				
                                 </tr>				
                             </thead>			
-                            <tbody class="table-tbody">
-								
-                                <?php
-				
-                                $csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 ORDER BY clients.c_id DESC");
-				
-                                while($crow = mysqli_fetch_array($csql)){
-				
-                                    ?>
-				
-                                <tr>
-				
-                                    <td>
-				
-						<?php echo $crow['c_id']; ?>
-
+                            <tbody class="table-tbody">								
+                                <?php                                
+								$csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 ORDER BY clients.c_id DESC");				
+                                while($crow = mysqli_fetch_array($csql)){				                                   
+								?>				
+                                <tr>				
+                                    <td>										
+										<?php echo $crow['c_id']; ?>
                                     </td>
-
-                                    <td>
-				
-						<?php 
-
-                                                if (!$crow['c_pic']) {     
-						
-                                                    ?>
-						
-                                        <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">					
-					
-					<?php
-
-                                        } else{
-
-                                            ?>
-                                        
+                                    <td>						
+										<?php                                                
+										if (!$crow['c_pic']) {						                                        
+										?>						
+                                        <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">										
+										<?php
+                                        } else{                                            
+										?>                                        
                                         <img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
-					
-					<?php
+										<?php
                                         }
                                         ?>
-
-                                    </td>
-                                    <td>
-										
-                                        <?php echo $crow['postal_code']; ?>
                                     </td>
                                     <td>										
-										
-                                        <?php echo $crow['c_name']; ?>
+                                        <?php echo $crow['postal_code']; ?>
                                     </td>
                                     <td>
-										
+                                        <?php echo $crow['c_name']; ?>
+                                    </td>
+                                    <td>										
                                         <?php echo $crow['c_email']; ?>
                                     </td>  										
-                                    <td>
-										
+                                    <td>										
                                         <?php echo $crow['c_phone']; ?>
                                     </td>				
                                     <td>										
-										
                                         <?php echo $crow['c_gender']; ?>
                                     </td>
-                                    <td>
-										
-                                        <?php
-											
-                                        if($crow['acount_status']==0){
-										
-                                            ?>
+                                    <td>                                        
+										<?php											
+                                        if($crow['acount_status']==0){                   
+										?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-red d-block"></span>
                                             <span>Unverified</span>
-                                        </div>
-										
-                                            <?php
-											
-                                            
-                                        } else{                       
-										
-                                            ?>					
+                                        </div>										                                            
+										<?php											                                            
+                                        } else{                                           
+										?>					
                                         <div class="col-auto status">					
                                             <span class="status-dot status-dot-animated bg-green d-block"></span>					
                                             <span>Verified</span>																
-                                        </div>	
-										
-                                            <?php											
-											
-                                            
-                                        }
-										
+                                        </div>										                                            
+										<?php
+                                        }										
                                         ?>					
                                     </td>				
                                     <td>				
-                                        <a href="view-customer.php?c_id=<?php echo $crow['c_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
-                                           
-                                                
-                                            <i class="ti ti-eye"></i>
-                                                
-                                           
+                                        <a href="view-customer.php?c_id=<?php echo $crow['c_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">                                                
+                                            <i class="ti ti-eye"></i>                          
                                         </a>
-                                        <a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>" class="btn btn-danger btn-icon" title="Delete">
-                                            
-                                                <i class="ti ti-square-rounded-x"></i>
-                                               
-                                            
+                                        <a href="del-customer.php?c_id=<?php echo $crow['c_id']; ?>" class="btn btn-danger btn-icon" title="Delete">         
+											<i class="ti ti-square-rounded-x"></i>                                            
                                         </a>
                                     </td>
-                                </tr>
-								
-                                    <?php
+                                </tr>								                                    
+								<?php
                                 }
                                 ?>
                             </tbody>			
@@ -204,64 +161,44 @@ include('header.php');
                             <select class="form-select" name="cgender" required>			
                                 <option value="" selected>Select Gender</option>				
                                 <option>Male</option>				
-                                <option>Female</option>
-								
+                                <option>Female</option>								
                                 <option>Transgender</option>				
                             </select>			
 						
                         </div>			
                         <div class="mb-3 col-md-4">			
                             <label class="form-label">Language</label>
-                            <select class="form-select" name="clang">
-								
-                                <option value="" selected>Select Language</option>						
-								
-                                    <?php
-                                
-                                    $lsql=mysqli_query($connect,"SELECT * FROM `language`");	
-                                
-                                    while($lrow = mysqli_fetch_array($lsql)){
-								
-                                        ?>
-                                <option>
-									
+                            <select class="form-select" name="clang">								
+                                <option value="" selected>Select Language</option>               
+								<?php                                                                   
+								$lsql=mysqli_query($connect,"SELECT * FROM `language`");                           
+								while($lrow = mysqli_fetch_array($lsql)){                                       
+								?>
+                                <option>									
                                     <?php echo $lrow['language']; ?>
-                                </option>
-								
-                                    <?php
-								
-                                    
-                                    }
+                                </option>								                                    
+								<?php      
+								}
                                 ?>
                             </select> 
                         </div>
-                        <div class="mb-3 col-md-4">	
-							
+                        <div class="mb-3 col-md-4">							
                             <label class="form-label">Postal Code</label>
                             <select class="form-control" name="pc">
-                                <option>Search PostCode</option>
-								
-                                    <?php
-								
-                                    $pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");   
-								
-                                    while($pcrow = mysqli_fetch_array($pcsql)){                       
-								
-                                        ?>
-                                <option>
-									
+                                <option>Search PostCode</option>								                                    
+								<?php								                                    
+								$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");
+								while($pcrow = mysqli_fetch_array($pcsql)){                                   
+								?>
+                                <option>									
                                     <?php echo $pcrow['pc_name']; ?>
-                                </option>								
-								
-                                    <?php
-                               
-                                    }
-                               
-                                    ?>				
+                                </option>                                    
+								<?php                                    
+								}                                                                   
+								?>				
                             </select>
                         </div> 
-                        <div class="mb-3 col-md-4">
-							
+                        <div class="mb-3 col-md-4">							
                             <label class="form-label">Picture</label>
                             <input type="file" class="form-control" name="cpic">
                         </div>
@@ -290,33 +227,20 @@ include('header.php');
                             Save Customer			
                         </button>			
                     </div>		
-                    <script>		    
-						
-    function validateForm() {        							                
-
-        var cnameInput = document.getElementsByName("cname")[0].value;                
-	
-        var cemailInput = document.getElementsByName("cemail")[0].value;        	        
-	
-        var cphoneInput = document.getElementsByName("cphone")[0].value;			        
-	
-        var cgenderInput = document.getElementsByName("cgender")[0].value;			        
-	
-        var pcInput = document.getElementsByName("pc")[0].value;									       
-	
-        if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        	           
-	
-            alert("Please fill in all required fields.");            	            
-	
-            return false;        	       
-	
-        }
-	
-        return true;    	   
-	
-    }
-    
-                    </script>						
+                    <script>						    
+						function validateForm() {
+							var cnameInput = document.getElementsByName("cname")[0].value;	        
+							var cemailInput = document.getElementsByName("cemail")[0].value;        		        
+							var cphoneInput = document.getElementsByName("cphone")[0].value;        
+							var cgenderInput = document.getElementsByName("cgender")[0].value;	        
+							var pcInput = document.getElementsByName("pc")[0].value;
+							if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {            
+								alert("Please fill in all required fields.");
+								return false;	        
+							}	        
+							return true;    
+						}
+					</script>						
                 </div> 		
             </form>			
         </div>    		

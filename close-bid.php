@@ -8,15 +8,10 @@ $status = 0;
 $book_id = mysqli_real_escape_string($connect, $book_id);
 $sql = "UPDATE `bookings` SET `bid_status`='$status' WHERE `book_id`='$book_id'";
 $result = $connect->query($sql);
-
 if ($result) { 
-
     $activity_type = 'Bid Closed';	
-
     $user_type = 'user';	
-
     $details = "Bid for Booking ID $book_id Has Been Closed by Controller";	
-
     $actsql = "INSERT INTO `activity_log`(
 					`activity_type`, 
 					`user_type`, 
@@ -27,30 +22,15 @@ if ($result) {
 					'$user_type',
 					'$myId',
 					'$details')";	
-
     $actr = mysqli_query($connect, $actsql);	
-
     if ($actr) {	
-
-        header('location: bid-bookings.php');	
-	
-        
-    } else {					
-	
-        error_log("Error inserting activity log: " . mysqli_error($connect));		
-	
-        header('location: bid-bookings.php');	
-	
-        
-    }
-
-    
+        header('location: bid-bookings.php');        
+    } else {						
+        error_log("Error inserting activity log: " . mysqli_error($connect));			
+        header('location: bid-bookings.php');		        
+    }    
     } else {		
-
-        error_log("Error updating booking: " . mysqli_error($connect));	
-	
-        header('location: bid-bookings.php');
-
-        
+        error_log("Error updating booking: " . mysqli_error($connect));		
+        header('location: bid-bookings.php');        
     }
 ?>

@@ -68,8 +68,8 @@ include('header.php');
                         include('meet-greet-price.php');
                         ?>
                     </div>
-                    <div class="tab-pane" id="tabs-dates">
-                        <?php
+                    <div class="tab-pane" id="tabs-dates">                        
+						<?php
                         include('special-date-price.php');
                         ?>
                     </div>
