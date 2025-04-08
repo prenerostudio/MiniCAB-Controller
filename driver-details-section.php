@@ -75,20 +75,19 @@
                         <select class="form-select" name="dlang">
                             <option>
                                 <?php echo $drow['d_language'];?>
-                            </option>
-				<?php
-                                $lsql=mysqli_query($connect,"SELECT * FROM `language`");
-                                while($lrow = mysqli_fetch_array($lsql)){
-                                    ?>
+                            </option>				
+							<?php                               
+							$lsql=mysqli_query($connect,"SELECT * FROM `language`");                            
+							while($lrow = mysqli_fetch_array($lsql)){                            
+							?>
                             <option>
                                 <?php echo $lrow['language'] ?>
-                            </option>
-				<?php
-                                }
-                                ?>
+                            </option>				
+							<?php                            
+							}                            
+							?>
                         </select>
-                    </div>
-                   
+                    </div>                   
                 </div>
                 <div class="card-footer bg-transparent mt-auto">
                     <div class="btn-list justify-content-end">

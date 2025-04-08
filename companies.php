@@ -57,14 +57,14 @@ include('header.php');
                                     </td>
                                     <td>
                                         <?php
-                                        if (!$crow['com_pic']) {
-                                            ?>
-                                        <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">
-					<?php
-                                        } else{
-                                            ?>
-                                        <img src="img/companies/<?php echo $crow['com_pic'];?>" alt="Company Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
-					<?php
+                                        if (!$crow['com_pic']) {                                            
+										?>
+                                        <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">					
+										<?php
+                                        } else{                                            
+										?>
+                                        <img src="img/companies/<?php echo $crow['com_pic'];?>" alt="Company Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">					
+										<?php
                                         }
                                         ?>
                                     </td>
@@ -85,20 +85,20 @@ include('header.php');
                                     </td>
                                     <td>
                                         <?php
-                                        if($crow['acount_status']==0){
-                                            ?>
+                                        if($crow['acount_status']==0){                                            
+										?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-red d-block"></span>
                                             <span>Unverified</span>
-                                        </div>
-					<?php
-                                        } else{
-                                            ?>
+                                        </div>					
+										<?php
+                                        } else{                                            
+										?>
                                         <div class="col-auto status">
                                             <span class="status-dot status-dot-animated bg-green d-block"></span>
                                             <span>Verified</span>
-                                        </div>
-					<?php
+                                        </div>					
+										<?php
                                         }
                                         ?>
                                     </td>
@@ -113,8 +113,8 @@ include('header.php');
                                             <i class="ti ti-square-rounded-x"></i>
                                         </a>
                                     </td>
-                                </tr>
-				<?php
+                                </tr>				
+								<?php
                                 }
                                 ?>
                             </tbody>
@@ -170,15 +170,15 @@ include('header.php');
                         <div class="mb-3 col-md-6">
                             <label class="form-label">Postal Code</label>
                             <select class="form-control" name="pc">
-                                <option>Select PostCode</option>
-				<?php
+                                <option>Select PostCode</option>				
+								<?php
                                 $pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");
-                                while($pcrow = mysqli_fetch_array($pcsql)){
-                                    ?>
+                                while($pcrow = mysqli_fetch_array($pcsql)){                                    
+								?>
                                 <option>
                                     <?php echo $pcrow['pc_name']; ?>
-                                </option>
-				<?php
+                                </option>				
+								<?php
                                 }
                                 ?>
                             </select>
@@ -204,20 +204,20 @@ include('header.php');
                             Save Company
                         </button>
                     </div>                   
-                    <script>		
-    function validateForm() {
-        var cnameInput = document.getElementsByName("cname")[0].value;
-        var cemailInput = document.getElementsByName("cemail")[0].value;
-        var cphoneInput = document.getElementsByName("cphone")[0].value;	
-        var cgenderInput = document.getElementsByName("cgender")[0].value;	
-        var pcInput = document.getElementsByName("pc")[0].value;	        	
-        if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        	
-            alert("Please fill in all required fields.");            	
-            return false;        	
-        }							        							        	
-        return true;    	
-    }
-                    </script>						
+                    <script>    
+						function validateForm() {        
+							var cnameInput = document.getElementsByName("cname")[0].value;        
+							var cemailInput = document.getElementsByName("cemail")[0].value;        
+							var cphoneInput = document.getElementsByName("cphone")[0].value;	        
+							var cgenderInput = document.getElementsByName("cgender")[0].value;	        
+							var pcInput = document.getElementsByName("pc")[0].value;	        	        
+							if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        	            
+								alert("Please fill in all required fields.");            	            
+								return false;        	        
+							}							        							        	        
+							return true;    	    
+						}                    
+					</script>						
                 </div> 		
             </form>			
         </div>    		

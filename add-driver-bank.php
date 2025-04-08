@@ -41,17 +41,17 @@ $d_id = $_GET['d_id'];
                             </button>
                         </div>
                     </form>
-                    <script>    
-						function validateForm() {        
-							var bankInput = document.getElementsByName("bank_name")[0].value;        
-							var accInput = document.getElementsByName("acc_num")[0].value;        
-							var sortInput = document.getElementsByName("sort_code")[0].value;        
-							if (bankInput === "" || accInput === "" || sortInput === "") {            
-								alert("Please fill in all required fields.");            
-								return false;        
-							}        
-							return true;    
-						}                    
+                    <script>			
+						function validateForm() {				
+							var bankInput = document.getElementsByName("bank_name")[0].value;				
+							var accInput = document.getElementsByName("acc_num")[0].value;
+							var sortInput = document.getElementsByName("sort_code")[0].value;
+							if (bankInput === "" || accInput === "" || sortInput === "") {
+								alert("Please fill in all required fields.");
+								return false;
+							}
+							return true;
+						}
 					</script>						
                 </div>
             </div>

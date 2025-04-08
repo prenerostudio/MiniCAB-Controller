@@ -132,7 +132,7 @@ include('header.php');
                                     }  elseif ($brow['booking_status'] === 'Booked') {
                                         $row_class = 'completed-green';
                                     }       
-								?> 
+				?> 
                                 <tr class="<?php echo $row_class; ?>">
                                     <td><?php echo $brow['book_id']; ?></td>
                                     <td><?php echo $brow['pick_date']; ?></td>
@@ -146,96 +146,95 @@ include('header.php');
                                     <td><?php echo $brow['journey_fare']; ?></td>
                                     <td><?php echo $brow['v_name']; ?></td>
                                     <td style='width: 16%; background: #FFFFFF;'>
-										<?php                                        
-									if ($brow['bid_status'] == 0) {
-										?>                                        
-										<a href='open-bid.php?book_id=<?php echo $brow['book_id'] ?>'>
+					<?php                                        
+					if ($brow['bid_status'] == 0) {
+					?>                                        
+					<a href='open-bid.php?book_id=<?php echo $brow['book_id'] ?>'>
                                             <button class='btn btn-facebook btn-icon' title='Open Bid'>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
                                         </a>										                                            
-										<?php
-									} else {										                                    
-										?>
+					<?php
+					} else {										                                    
+					?>
                                         <a href='#'>
                                             <button class='btn btn-icon' disabled>
                                                 <i class='ti ti-aspect-ratio'></i>
                                             </button>
                                         </a>										                                           
-										<?php
-									}
-										?>
+					<?php
+					}
+					?>
                                         <a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-twitter btn-icon' title='View / Edit'>
                                                 <i class='ti ti-eye'></i>
                                             </button>
                                         </a>										                                           
-										<?php										                                            
-									if ($brow['booking_status'] == 'Booked') {
-										?>
+					<?php										                                            
+					if ($brow['booking_status'] == 'Booked') {
+					?>
                                         <a href='#'>
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>										
                                         </a>										                                           
-										<?php
-									} else {
-										?>
+					<?php
+					} else {
+					?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>										                                            
-										<?php
-									}										                                           
-									if ($brow['booking_status'] == 'Open') {
-										?>
+					<?php
+					}										                                           
+					if ($brow['booking_status'] == 'Open') {
+					?>
                                         <a href='#' >
                                             <button class='btn btn-success btn-icon' title='Opened' disabled>
                                                  <i class="ti ti-folder-open"></i>
                                             </button>
                                         </a>										                                           
-										<?php
-									} else {
-										?>
+					<?php
+					} else {
+					?>
                                         <a href='open-book.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-success btn-icon'  title='Send to Archive'>
                                                 <i class="ti ti-folder-open"></i>
                                             </button>
                                         </a>										                                           
-										<?php
-									}
-																			                                            
-									if ($brow['booking_status'] == 'Booked') {
-										?>
+					<?php
+					}
+					if ($brow['booking_status'] == 'Booked') {
+					?>
                                         <a href='#'>
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>										
                                         </a>										                                           
-										<?php
-									} else {
-										?>
+					<?php
+					} else {
+					?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-pinterest btn-icon'  title='Dispatch to All'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>										                                            
-										<?php
-									}				
-									?>
+					<?php
+					}				
+					?>
                                     </td>
                                 </tr>								                                   
-								<?php              
-								}
-								?>
+				<?php              
+				}
+				?>
                             </tbody>						
                         </table>
-						<?php              
-						} else {                     
-							echo '<p>No booking found.</p>';
-						}                      
-						?>
+			<?php              
+			} else {                     
+			echo '<p>No booking found.</p>';
+			}                      
+			?>
                     </div>
                 </div>
             </div>

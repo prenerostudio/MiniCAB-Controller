@@ -52,15 +52,15 @@
                                         </button>
                                     </a>
                                 </td>
-                            </tr>
-				<?php endwhile; ?>
-                                    <?php if ($x === 0) : ?>
+                            </tr>				
+							<?php endwhile; ?>                                    
+							<?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">No Booking Found!</p>
                                 </td>
-                            </tr>
-				<?php endif; ?>
+                            </tr>				
+							<?php endif; ?>
                         </tbody>
                     </table>
                 </div>

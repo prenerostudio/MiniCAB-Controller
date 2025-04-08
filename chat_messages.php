@@ -14,12 +14,6 @@ function getMessages($connect, $user_id, $receiver_id) {
     $messages = $result->fetch_all(MYSQLI_ASSOC);
     return $messages;
 }
-
-
-
-
-
-
 // Example usage:
 if (isset($_GET['receiver_id'])) {
     $receiver_id = $_GET['receiver_id'];

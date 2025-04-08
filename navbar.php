@@ -68,8 +68,8 @@
                             <?php if ($inprocess_booking != 0): ?>
                             <a class="dropdown-item" href="inprocess-bookings.php">			
                                 <i class="ti ti-address-book"></i>				
-                                Booking In-Process				
-				<?php
+                                Booking In-Process
+								<?php
                                 include('count-inprocess.php');				
                                 ?>				
                                 <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">

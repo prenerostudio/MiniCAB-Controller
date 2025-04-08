@@ -29,13 +29,13 @@
                         </div>                        
                         <div class="form-group pb-3">                        
 							<label class="form-label"> License Front Image </label>
-                            <input type="file" id="dl_front" name="dl_front" accept="image/*" class="form-control" required>                            
+                            <input type="file" id="dl_front" name="dl_front" accept="image/*" class="form-control" required>
                         </div>                        
                         <div class="form-group">                                                          
                             <label class="form-label"> License Back Image </label>
                             <input type="file" id="dl_back" name="dl_back" accept="image/*" class="form-control" required>
                         </div>			                                                
-                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">				
+                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
                     </form>							
                 </div>
             </div>	
@@ -64,7 +64,7 @@
                             <label class="form-label"> Proof of Address 2 </label>                          
                             <input type="file" id="pa2" name="pa2" accept="image/*"  class="form-control" required>
                         </div>			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
                     </form>		
                 </div>		
             </div>	
@@ -95,7 +95,7 @@
                             <label class="form-label"> PCO License Image </label>                            
                             <input type="file" id="pco" name="pco" accept="image/*"  class="form-control" required>
                         </div>                        			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
                     </form>							
                 </div>						
             </div>				
@@ -120,7 +120,7 @@
                             <label class="form-label"> National Insurance Image </label>                          
                             <input type="file" id="ni" name="ni" accept="image/*"  class="form-control" required>
                         </div>			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
                     </form>		
                 </div>						
             </div>				
@@ -147,7 +147,7 @@
                             <label class="form-label"> DVLA Check Image </label>
                             <input type="file" id="dvla" name="dvla" accept="image/*"  class="form-control" required>
                         </div>			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
                     </form>		
                 </div>		
             </div>	

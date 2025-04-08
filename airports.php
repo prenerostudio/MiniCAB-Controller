@@ -38,7 +38,7 @@ include('header.php');
                                 $x = 0;
                                 $asql = mysqli_query($connect, "SELECT * FROM `airports`");
                                 while ($arow = mysqli_fetch_array($asql)) :                                   
-								$x++;
+                                    $x++;
                                 ?>
                                 <tr>
                                     <td>
@@ -56,14 +56,14 @@ include('header.php');
                                         </a>
                                     </td>
                                 </tr>				
-								<?php endwhile; ?>                                    
-								<?php if ($x === 0) : ?>
+				<?php endwhile; ?>                                    
+				<?php if ($x === 0) : ?>
                                 <tr>
                                     <td colspan="8">
                                         <p align="center">No Airport Found!</p>
                                     </td>
                                 </tr>				
-								<?php endif; ?>
+				<?php endif; ?>
                             </tbody>
                         </table>
                     </div>

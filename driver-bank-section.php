@@ -50,9 +50,9 @@
                                         </button>
                                     </a>
                                 </td>
-                            </tr>
-				<?php endwhile; ?>
-                                    <?php if ($x === 0) : ?>
+                            </tr>				
+							<?php endwhile; ?>                                    
+							<?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">
@@ -63,7 +63,7 @@
                                     </p>
                                 </td>
                             </tr>
-				<?php endif; ?>	
+							<?php endif; ?>	
                         </tbody>
                     </table>
                 </div>

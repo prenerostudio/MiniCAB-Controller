@@ -104,14 +104,11 @@ include('header.php');
     </div>
 </div>        
 <script>    
-    var bookingData = <?php echo json_encode($bookingData); ?>;
-
-    function updateRemainingTime() {
-        var currentTime = Math.floor(Date.now() / 1000); // Current time in seconds since Unix Epoch
-
-        bookingData.forEach(function(booking) {
-            var remainingTimeElement = document.getElementById("remainingTime_" + booking.id);
-
+	var bookingData = <?php echo json_encode($bookingData); ?>;    
+	function updateRemainingTime() {    
+		var currentTime = Math.floor(Date.now() / 1000); // Current time in seconds since Unix Epoch        
+		bookingData.forEach(function(booking) {        
+			var remainingTimeElement = document.getElementById("remainingTime_" + booking.id);
             if (remainingTimeElement) {
                 if (booking.bid_time < currentTime) {
                     remainingTimeElement.innerHTML = "Remaining Time: Due time passed";
@@ -120,13 +117,11 @@ include('header.php');
                     var hours = Math.floor(remainingTimeSeconds / 3600);
                     var minutes = Math.floor((remainingTimeSeconds % 3600) / 60);
                     var seconds = remainingTimeSeconds % 60;
-
                     remainingTimeElement.innerHTML = "Remaining Time: " + hours.toString().padStart(2, '0') + ":" + minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
                 }
             }
         });
     }
-
     setInterval(updateRemainingTime, 1000);  
 </script>
 <?php

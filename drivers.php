@@ -45,34 +45,24 @@ include('header.php');
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="table-tbody">
-				
-							<?php
-                               
-							$x = 0;
-                               
-							$adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
-                               
-							while ($adrow = mysqli_fetch_array($adsql)) :
-                                   
-							$x++;
-                               
+                        <tbody class="table-tbody">				
+							<?php                               
+							$x = 0;                               
+							$adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");                               
+							while ($adrow = mysqli_fetch_array($adsql)) :                                   
+							$x++;                               
 							?>
                             <tr>
                                 <td>
                                     <?php echo $x; ?>
                                 </td>
-                                <td>
-                                   
+                                <td>                                   
 									<?php
-                                    if (!$adrow['d_pic']) :
-                                        
+                                    if (!$adrow['d_pic']) :                                        
 									?>
-                                    <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-                                        
+                                    <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                        
 									<?php else : ?>
                                     <img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
-                                       
 									<?php endif; ?>								
                                 </td>
                                 <td>
@@ -96,39 +86,24 @@ include('header.php');
                                     <?php echo $adrow['licence_authority'];?>
                                 </td>
                                 <td>
-                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="View/Edit" class="btn btn-icon btn-info">
-                                        
-                                            
-										<i class="ti ti-eye"></i>
-                                            
-                                        
+                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="View/Edit" class="btn btn-icon btn-info"> 
+										<i class="ti ti-eye"></i>               
                                     </a>
-                                    <a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="Delete" class="btn btn-icon btn-danger delete_btn">
-                                       
-                                            
-										<i class="ti ti-square-rounded-x"></i>
-                                            
-                                       
+                                    <a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="Delete" class="btn btn-icon btn-danger delete_btn">        
+										<i class="ti ti-square-rounded-x"></i>                            
                                     </a>
-                                    <a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>" title=" Make Inactive" class="btn btn-icon btn-instagram">
-                                        
-                                           
-										<i class="ti ti-user-x"></i>
-                                           
-                                       
+                                    <a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>" title=" Make Inactive" class="btn btn-icon btn-instagram">                                           
+										<i class="ti ti-user-x"></i>                 
                                     </a>
                                 </td>
                             </tr>
-				
-							<?php endwhile; ?>
-                                    
+							<?php endwhile; ?>                                 
 							<?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">No Driver Found!</p>
                                 </td>
-                            </tr>
-				
+                            </tr>				
 							<?php endif; ?>
                         </tbody>
                     </table>
@@ -191,13 +166,13 @@ include('header.php');
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Language</label>
                             <select class="form-select" name="dlang">
-                                <option value="" selected>Select Language</option>
-				<?php
+                                <option value="" selected>Select Language</option>			
+								<?php
                                 $lsql=mysqli_query($connect,"SELECT * FROM `language`");
-                                while($lrow = mysqli_fetch_array($lsql)){
-                                    ?>
-                                <option><?php echo $lrow['language'] ?></option>
-				<?php
+                                while($lrow = mysqli_fetch_array($lsql)){                                    
+								?>
+                                <option><?php echo $lrow['language'] ?></option>				
+								<?php
                                 }
                                 ?>
                             </select>
@@ -227,19 +202,19 @@ include('header.php');
                     </button>
                 </div>
             </form>
-            <script>
-    function validateForm() {
-        var dnameInput = document.getElementsByName("dname")[0].value;	
-        var demailInput = document.getElementsByName("demail")[0].value;        	
-        var dphoneInput = document.getElementsByName("dphone")[0].value;			
-        var dauthInput = document.getElementsByName("dauth")[0].value;		      	
-        if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	
-            alert("Please fill in all required fields.");           	
-            return false;	
-        }
-        return true;
-    }
-            </script>
+            <script>    
+				function validateForm() {        
+					var dnameInput = document.getElementsByName("dname")[0].value;	        
+					var demailInput = document.getElementsByName("demail")[0].value;        	        
+					var dphoneInput = document.getElementsByName("dphone")[0].value;			        
+					var dauthInput = document.getElementsByName("dauth")[0].value;		      	        
+					if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	            
+						alert("Please fill in all required fields.");           	            
+						return false;	        
+					}        
+					return true;    
+				}            
+			</script>
         </div>
     </div>
 </div>

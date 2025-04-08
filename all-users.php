@@ -59,11 +59,11 @@ include('header.php');
                                         if (!$urow['user_pic']) {
                                         ?>
                                         <img src="img/user-1.jpg" alt="User Img" style="width: 80px; height: 80px; border-radius: 5px;">
-										<?php
+					<?php
                                         } else{                   
-										?>
+					?>
                                         <img src="img/users/<?php echo $urow['user_pic'];?>" alt="User Img" style="width: 80px; height: 80px; background-size: 100% 100%; border-radius: 5px;">             
-										<?php
+					<?php
                                         }
                                         ?>
                                     </td>
@@ -93,7 +93,7 @@ include('header.php');
                                         </a>
                                     </td>
                                 </tr>                 
-								<?php
+				<?php
                                 }
                                 ?>
                             </tbody>
@@ -175,20 +175,15 @@ include('header.php');
                         <div class="mb-3 col-md-4">
                             <label class="form-label">Country</label>
                             <select class="form-select" name="country_id" required>
-                                <option value="" selected>Select Country</option>				
-								
+                                <option value="" selected>Select Country</option>
                                     <?php
-                                
-                                    $lsql=mysqli_query($connect,"SELECT * FROM `countries`");
-                                
-                                    while($lrow = mysqli_fetch_array($lsql)){                            
-								
+                                    $lsql=mysqli_query($connect,"SELECT * FROM `countries`");                                
+                                    while($lrow = mysqli_fetch_array($lsql)){
                                     ?>
                                 <option value="<?php echo $lrow['country_id'] ?>">
                                     <?php echo $lrow['country_name']; ?>
-                                </option>
-								
-                                    <?php
+                                </option>								
+                                <?php
                                 }
                                 ?>
                             </select>
@@ -218,37 +213,21 @@ include('header.php');
                     </div>
                 </div> 
             </form>
-            <script>    
-				
-    function validateForm() {        
-
-        var fnameInput = document.getElementsByName("fname")[0].value;        
-	
-        var lnameInput = document.getElementsByName("lname")[0].value;        
-	
-        var uemailInput = document.getElementsByName("uemail")[0].value;        
-	
-        var upassInput = document.getElementsByName("upass")[0].value;        
-	
-        var uphoneInput = document.getElementsByName("uphone")[0].value;        
-	
-        var ugenderInput = document.getElementsByName("ugender")[0].value;        
-	
-        var pcInput = document.getElementsByName("pc")[0].value;        
-	
-        if (fnameInput === "" || lnameInput === "" || uphoneInput === "" || uemailInput === "" || upassInput === "" || ugenderInput === "" || pcInput === "") {            
-	
-            alert("Please fill in all required fields.");            
-	
-            return false;        
-	
-        }        
-	
-        return true;    
-	
-    }            
-			
-    
+            <script> 				
+    function validateForm() {
+        var fnameInput = document.getElementsByName("fname")[0].value;
+        var lnameInput = document.getElementsByName("lname")[0].value;
+        var uemailInput = document.getElementsByName("uemail")[0].value;
+        var upassInput = document.getElementsByName("upass")[0].value;
+        var uphoneInput = document.getElementsByName("uphone")[0].value;
+        var ugenderInput = document.getElementsByName("ugender")[0].value;
+        var pcInput = document.getElementsByName("pc")[0].value;
+        if (fnameInput === "" || lnameInput === "" || uphoneInput === "" || uemailInput === "" || upassInput === "" || ugenderInput === "" || pcInput === "") {
+            alert("Please fill in all required fields.");
+            return false;
+        }
+        return true;
+    }
             </script>
         </div>
     </div>		
