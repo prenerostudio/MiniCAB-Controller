@@ -58,55 +58,111 @@ include('header.php');
                                 <?php			    
                                 $y=0;									
                                 $bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.v_name FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.booking_status = 'Booked' AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");
+								
                                 while($brow = mysqli_fetch_array($bsql)){
-                                    $y++;
-                                    ?>
-                                <tr>
-                                    <td>										
+									
+                                    $y++;									
+				
+                                    ?>        									
+								
+                                <tr>                        									
+				
+                                
+                                    <td>
+
+				
+						
                                         <?php echo $y; ?>
+
                                     </td>	
-                                    <td>										
+
+                                    <td>
+				
+						
                                         <?php echo $brow['pick_date'] ?>
-                                    </td>														
-                                    <td>										
+
+                                    </td>										
+				
+                                    <td>
+				
+						
                                         <?php echo $brow['pick_time'] ?>
-                                    </td>														
-                                    <td>										
+
+                                    </td>										
+				
+                                    <td>
+				
+						
                                         <?php echo $brow['passenger'] ?>
-                                    </td>  														
-                                    <td style="width: 15%;">										
+
+                                    </td>  										
+				
+                                    <td style="width: 15%;">
+				
+						
                                         <?php echo $brow['pickup'] ?>
-                                    </td>					
-                                    <td style="width: 15%;">						
+
+                                    </td>	
+				
+                                    <td style="width: 15%;">
+				
+						
                                         <?php echo $brow['destination'] ?>
-                                    </td>														
-                                    <td> 										
+
+                                    </td>										
+				
+                                    <td> 
+				
+						
                                         <?php echo $brow['journey_fare'] ?>
-                                    </td>				
-                                    <td> 										
+
+                                    </td>										
+				
+                                    <td> 
+				
+						
                                         <?php echo $brow['v_name'] ?> 
+
+                                    </td>					
+				
+                                    <td> 		
+				
+                                        <button class="btn btn-info" disabled>
+					
+                                            <i class="ti ti-eye"></i>Booked					
+					
+                                        </button>
+					
                                     </td>									
-                                    <td> 						
-                                        <button class="btn btn-info" disabled>					
-                                            <i class="ti ti-eye"></i>Booked										
-                                        </button>					
-                                    </td>													
-                                </tr>								
-								<?php									
-                                }
-                                ?>				
-                            </tbody>
-                        </table>			
-                    </div>                  							
-                </div>                                                    						
-            </div>              				
-        </div>			
+				
+                                </tr>			
+				
+				<?php									
+
+                                }								
+				
+                                ?>	
+				
+                            </tbody>                 							
+			
+                        </table>                						
+			
+                    </div>                  					
+		
+                </div>                                                    				
+		
+            </div>              			
+	
+        </div>		
+	
     </div>
 </div>        
 <script>	
-    $(document).ready(function() {    
+
+    $(document).ready(function() {
+    
         $('#table-history').DataTable();
-	});
+});
 </script>
 <?php
 include('footer.php');

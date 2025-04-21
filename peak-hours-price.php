@@ -85,36 +85,36 @@
                      <td>Days</td>
                      <td>Price Increment</td>
                      <td></td>
-                 </tr>		
-				 <?php                
-				 $n=0;                
-				 $phsql=mysqli_query($connect,"SELECT * FROM `peak_hours`");                
-				 while($phrow = mysqli_fetch_array($phsql)){                    
-					 $n++;                   
-				 ?>
+                 </tr>
+		<?php
+                $n=0;
+                $phsql=mysqli_query($connect,"SELECT * FROM `peak_hours`");
+                while($phrow = mysqli_fetch_array($phsql)){
+                    $n++;
+                    ?>
                  <tr>
-                     <td style="width: 4%;">			
-						 <?php echo $n; ?>
+                     <td style="width: 4%;">
+			<?php echo $n; ?>
                      </td>
-                     <td>			
-						 <?php echo $phrow['start_time'] ?>
+                     <td>
+			<?php echo $phrow['start_time'] ?>
                      </td>
-                     <td>			
-						 <?php echo $phrow['end_time'] ?>
+                     <td>
+			<?php echo $phrow['end_time'] ?>
                      </td>
-                     <td>			
-						 <?php echo $phrow['peak_hours_days'] ?>
+                     <td>
+			<?php echo $phrow['peak_hours_days'] ?>
                      </td>
-                     <td>			
-						 <?php echo $phrow['price_increment'] ?>
+                     <td>
+			<?php echo $phrow['price_increment'] ?>
                      </td>
                      <td>
                          <a href="del-peak-hours.php?ph_id=<?php echo $phrow['ph_id'];?>">
                              <button class="btn btn-danger">Delete</button>
                          </a>
                      </td>
-                 </tr>		
-				 <?php
+                 </tr>
+		<?php
                 }
                 ?>
              </tbody>

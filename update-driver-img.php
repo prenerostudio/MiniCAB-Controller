@@ -4,6 +4,8 @@ include('session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $d_id = $_POST['d_id'];	
+	
+
     $targetDir = "img/drivers/"; 
     $uniqueID = uniqid();    
     $targetFile = $targetDir . $uniqueID . '_' . basename($_FILES["fileToUpload"]["name"]);
@@ -21,10 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {          
             $logoName = $uniqueID . '_' . basename($_FILES["fileToUpload"]["name"]);
             $sql = "UPDATE `drivers` SET  `d_pic`='$logoName' WHERE `d_id`='$d_id'";
-            $result = mysqli_query($connect, $sql);									
-            $activity_type = 'Driver Profile Image Updated';	
-            $user_type = 'user';	
-            $details = "Driver Profile Image " . $d_id . " Has Been updated by Controller.";	
+            $result = mysqli_query($connect, $sql);
+						
+			
+            $activity_type = 'Driver Profile Image Updated';
+	
+            $user_type = 'user';
+	
+            $details = "Driver Profile Image " . $d_id . " Has Been updated by Controller.";
+	
             $actsql = "INSERT INTO `activity_log`(
 						`activity_type`, 
 						`user_type`, 
@@ -34,11 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						'$activity_type',
 						'$user_type',
 						'$myId',
-						'$details')";	
-            $actr = mysqli_query($connect, $actsql);            
-            echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";            
+						'$details')";
+	
+            $actr = mysqli_query($connect, $actsql);
+            
+            echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
+            
             header('Location: view-driver.php?d_id='.$d_id);
-        } else {            
+        } else {
+            
             echo "Sorry, there was an error uploading your file.";
         }
     }

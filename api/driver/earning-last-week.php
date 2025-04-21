@@ -13,15 +13,34 @@ if (isset($_POST['d_id'])) {
     $start_date = date('Y-m-d', strtotime('-7 days'));
     $end_date = date('Y-m-d');
 
-    $sql = "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice JOIN jobs ON invoice.job_id = jobs.job_id JOIN drivers ON invoice.d_id = drivers.d_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN clients ON jobs.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE invoice.d_id = '$d_id' AND invoice.invoice_date BETWEEN '$start_date 00:00:00' AND '$end_date 23:59:59'";
+    $sql = "SELECT 
+    invoice.*, 
+    jobs.book_id, 
+    drivers.*, 
+    bookings.*, 
+    booking_type.*, 
+    clients.* 
+FROM 
+    invoice 
+JOIN 
+    jobs ON invoice.job_id = jobs.job_id 
+JOIN 
+    drivers ON invoice.d_id = drivers.d_id 
+JOIN 
+    bookings ON jobs.book_id = bookings.book_id 
+JOIN 
+    clients ON jobs.c_id = clients.c_id 
+JOIN 
+    booking_type ON bookings.b_type_id = booking_type.b_type_id 
+WHERE 
+    invoice.d_id = '$d_id' 
+    AND invoice.invoice_date BETWEEN '$start_date 00:00:00' AND '$end_date 23:59:59'";
 
     $result = mysqli_query($connect, $sql);
     
     if (!$result) {
-    
         echo json_encode(array('message' => 'Error executing query: ' . mysqli_error($connect), 'status' => false));
     } else {
-        
         $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
         if ($output) {
             echo json_encode(array('data' => $output, 'status' => true, 'message' => "Invoices for the last week fetched successfully"));

@@ -186,8 +186,8 @@
                     <tbody>
                         <?php
                         $pmsql=mysqli_query($connect,"SELECT * FROM `price_mile`");
-                        while($pmrow = mysqli_fetch_array($pmsql)){      
-						?>
+                        while($pmrow = mysqli_fetch_array($pmsql)){				                                   
+                            ?>
                         <tr align="center">
                             <td><?php echo $pmrow['start_from'];?> Miles</td>
                             <td><?php echo $pmrow['end_to'];?> Miles</td>
@@ -201,14 +201,14 @@
                             <td>£ <?php echo $pmrow['delivery'];?></td>	
                             <td>			
                                 <a class="btn btn-info button_padding" href="del-price-by-mile.php?pm_id=<?php echo $pmrow['pm_id'] ?>" title="Edit">
-									<i class="ti ti-pencil"></i>
+                                    <i class="ti ti-pencil"></i>				                                    				                                    				
                                 </a>
                                 <a class="btn btn-danger button_padding" href="del-price-by-mile.php?pm_id=<?php echo $pmrow['pm_id'] ?>" title="Cancel">
                                     <i class="ti ti-square-rounded-x"></i>
                                 </a>
                             </td>
-                        </tr>			
-						<?php
+                        </tr>
+			<?php
                         }
                         ?>
                     </tbody>

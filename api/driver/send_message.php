@@ -13,24 +13,14 @@ $message = $_POST['message'];
 $date = date("Y-m-d h:i:s");
 
 if(isset($_POST['d_id'])){ 					
-
-    $sql="INSERT INTO `messages`( `sender_id`, `receiver_id`, `message`, `sent_at`) VALUES ('$d_id','$admin_id','$message','$date')";	
-
-    $r=mysqli_query($connect,$sql);			
-
-    if($r){    				
-
-        echo json_encode(array('message'=>"Message Sent Successfully",'status'=>true));				
-	
-        
-    }else{    			
-	
-        echo json_encode(array('message'=>"Error In Sending Message",'status'=>false));				
-	
-        
-    }						
+	$sql="INSERT INTO `messages`( `sender_id`, `receiver_id`, `message`, `sent_at`) VALUES ('$d_id','$admin_id','$message','$date')";	
+	$r=mysqli_query($connect,$sql);			
+	if($r){    				
+		echo json_encode(array('message'=>"Message Sent Successfully",'status'=>true));				
+	}else{    			
+		echo json_encode(array('message'=>"Error In Sending Message",'status'=>false));				
+	}						
 }else{   
-	
-    echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
+	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

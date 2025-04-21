@@ -20,9 +20,9 @@
                         </div>                
                         <div class="form-group mb-3"> 
                             <label class="form-label"> Log Book Image </label>                        
-                            <input type="file" id="log-book" name="log_book" accept="image/*" class="form-control" required>
+                            <input type="file" id="log-book" name="log_book" accept="image/*" class="form-control" required>			
                         </div>
-                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">			                    
                     </form>
                 </div>
             </div>
@@ -47,10 +47,10 @@
                             <input type="date" name="mot_exp" class="form-control">
                         </div>			 
                         <div class="form-group mb-3">
-                            <label class="form-label"> MOT Certificate Image </label>
-                            <input type="file" id="mot" name="mot" accept="image/*" class="form-control" required>
+                            <label class="form-label"> MOT Certificate Image </label>                                                   
+                            <input type="file" id="mot" name="mot" accept="image/*" class="form-control" required>                                                  
                         </div>                        
-                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">					
                     </form>		
                 </div>		
             </div>	
@@ -66,11 +66,11 @@
                     <span class="avatar avatar-xl" style="background-image: url(img/drivers/vehicle/pco/<?php echo $drow['vpco_img'];?>); background-size:contain; width: 220px; height: 160px;"></span>							
                 </div>						
                 <div class="col-auto">					           
-                    <form action="upload-vpco.php" method="post" enctype="multipart/form-data">
+                    <form action="upload-vpco.php" method="post" enctype="multipart/form-data">		                                        
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">                        
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle PCO Number </label>                            
-                            <input type="text" name="vpco_num" placeholder="Vehicle PCO Number" class="form-control">
+                            <input type="text" name="vpco_num" placeholder="Vehicle PCO Number" class="form-control">                        
                         </div>                                                    
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle PCO Expiry </label>                            
@@ -78,9 +78,9 @@
                         </div>    			
                         <div class="form-group mb-3">                         
                             <label class="form-label"> Vehicle PCO Image </label>                        
-                            <input type="file" id="vpco" name="vpco" accept="image/*"  class="form-control" required>
+                            <input type="file" id="vpco" name="vpco" accept="image/*"  class="form-control" required>                         
                         </div>                        
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">                                            
                     </form>                                   
                 </div>		
             </div>
@@ -98,7 +98,7 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	 
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle Insurance Number </label>                            
-                            <input type="text" name="vi_num" placeholder="Vehicle Insurance Number" class="form-control">
+                            <input type="text" name="vi_num" placeholder="Vehicle Insurance Number" class="form-control">                        
                         </div>                            
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle Insurance Expiry </label>                            
@@ -106,9 +106,9 @@
                         </div>    			
                         <div class="form-group mb-3">                         
                             <label class="form-label">   Vehicle Insurance Image </label>								
-                            <input type="file" id="ins" name="ins" accept="image/*"  class="form-control" required>
+                            <input type="file" id="ins" name="ins" accept="image/*"  class="form-control" required>                         
                         </div>			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
                     </form>		
                 </div>		
             </div>	
@@ -133,13 +133,13 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">                         
                         <div class="form-group mb-3">                                                 
                             <label class="form-label">Vehicle Image Front</label>				                        
-                            <input type="file" id="pic1" name="pic1" accept="image/*"  class="form-control" required>
+                            <input type="file" id="pic1" name="pic1" accept="image/*"  class="form-control" required>                            
                         </div>                        
                         <div class="form-group mb-3">
                             <label class="form-label">Vehicle Image Back</label>
                             <input type="file" id="pic2" name="pic2" accept="image/*"  class="form-control" required>
                         </div>                        
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			                    
                     </form>		
                 </div>		
             </div> 	
@@ -155,21 +155,21 @@
                     <span class="avatar avatar-xl" style="background-image: url(img/drivers/vehicle/road-tax/<?php echo $drow['rt_img'];?>); background-size:contain; width: 220px; height: 160px;"></span>
 				</div>
                 <div class="col-auto">
-                    <form action="upload-road-tax.php" method="post" enctype="multipart/form-data">
+                    <form action="upload-road-tax.php" method="post" enctype="multipart/form-data">			                            
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
                         <div class="form-group mb-3">                                                
-                            <label class="form-label"> Road TAX Number </label>
-                            <input type="text" name="rt_num" placeholder="Road TAX Number" class="form-control">
+                            <label class="form-label"> Road TAX Number </label>                                                        
+                            <input type="text" name="rt_num" placeholder="Road TAX Number" class="form-control">                                                
                         </div>                                                    
                         <div class="form-group mb-3">                                                
-                            <label class="form-label"> Road TAX Expiry </label>
+                            <label class="form-label"> Road TAX Expiry </label>                                                        
                             <input type="date" name="rt_exp" class="form-control">                                                
                         </div>    			                        
                         <div class="form-group mb-3">                                                 
                             <label class="form-label">  Road TAX Image </label>	                            
-                            <input type="file" id="rt" name="rt" accept="image/*"  class="form-control" required>
+                            <input type="file" id="rt" name="rt" accept="image/*"  class="form-control" required>                            
                         </div>                        
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			                        
                     </form>								                    
                 </div>						                
             </div> 					            
@@ -183,21 +183,21 @@
                     <span class="avatar avatar-xl" style="background-image: url(img/drivers/vehicle/rental-agreement/<?php echo $drow['ra_img'];?>); background-size:contain; width: 220px; height: 160px;"></span>			                    
                 </div>			                
                 <div class="col-auto">						                                    
-                    <form action="upload-rental-agreement.php" method="post" enctype="multipart/form-data">
+                    <form action="upload-rental-agreement.php" method="post" enctype="multipart/form-data">								                    
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	                        
                         <div class="form-group mb-3">                                                
-                            <label class="form-label"> Vehicle Rental Agreement Number </label>
-                            <input type="text" name="ra_num" placeholder="Vehicle Rental Agreement Number" class="form-control">
+                            <label class="form-label"> Vehicle Rental Agreement Number </label>                                                        
+                            <input type="text" name="ra_num" placeholder="Vehicle Rental Agreement Number" class="form-control">                                                
                         </div>                                                    
                         <div class="form-group mb-3">                                                
-                            <label class="form-label"> Vehicle Rental Agreement Expiry </label>
+                            <label class="form-label"> Vehicle Rental Agreement Expiry </label>                                                        
                             <input type="date" name="ra_exp" class="form-control">                                                
                         </div>    			                        
                         <div class="form-group mb-3">                                                 
                             <label class="form-label">  Vehicle Rental Agreement Image </label>			                            
                             <input type="file" id="ra" name="ra" accept="image/*"  class="form-control" required>
                         </div>			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			                        
                     </form>
                 </div>
             </div>
@@ -217,13 +217,13 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	                        
                         <div class="form-group">                        
                             <label class="form-label">Insurance Schedule Number</label>                            
-                            <input type="text" class="form-control" name="is_num" placeholder="Insurance Schedule Number">
+                            <input type="text" class="form-control" name="is_num" placeholder="Insurance Schedule Number">                                                
                         </div>			
                         <div class="form-group">                        
                             <label class="form-label">Insurance Schedule Number</label>                        
-                            <input type="file" id="sche" name="sche" accept="image/*"  class="form-control" required>
+                            <input type="file" id="sche" name="sche" accept="image/*"  class="form-control" required>                         
                         </div>
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
                     </form>		
                 </div>		
             </div>	
@@ -234,13 +234,13 @@
             </h3>				
             <div class="row align-items-center">				
                 <div class="col-auto">						
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/vehicle/extra/<?php echo $drow['ve_img'];?>); background-size:contain; width: 220px; height: 160px;"></span>
+                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/vehicle/extra/<?php echo $drow['ve_img'];?>); background-size:contain; width: 220px; height: 160px;"></span>								
                 </div>						
                 <div class="col-auto">						
                     <form action="vehicle-extra.php" method="post" enctype="multipart/form-data">							
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">									
                         <input type="file" id="vextra" name="vextra" accept="image/*"  class="form-control" required>			
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
+                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">			
                     </form>		
                 </div>		
             </div>	

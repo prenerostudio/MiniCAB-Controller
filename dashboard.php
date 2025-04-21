@@ -15,24 +15,29 @@ include('header.php');
 </div>          
 <div class="page-body page_padding">
     <div class="row row-deck row-cards">
-        <div class="col-lg-6">
-			<div class="card">	
-                <div class="card-body">
-                    <h3 class="card-title">                       
-                        Locations			
-                    </h3>            
-					<div>					
+        <div class="col-lg-6">			
+            <div class="card">            
+               <?php
+               include('count-online-drivers.php');               
+               include('count-offline-drivers.php');               
+               include('count-pob-drivers.php');                                               
+               ?>               
+                <div class="card-body">                
+                    <h3 class="card-title">                                           
+                        Zones List:  (Online Drivers:  <?php echo $online_driver_count; ?>)  | (Onboard Drivers: <?php echo $pob_driver_count; ?>) | (Inactive Drivers: <?php echo $offline_driver_count; ?>)
+                    </h3>		
+                    <div>					
 						<?php
-						$zonesQuery = "SELECT * FROM zones";
-						$zonesResult = $connect->query($zonesQuery);
-						// Fetch latest driver locations along with driver names and their vehicles
-						$driversQuery = "SELECT dl.d_id, dl.latitude, dl.longitude, d.d_name, dv.v_make FROM driver_location dl INNER JOIN (SELECT d_id, MAX(time) AS latest_timestamp FROM driver_location GROUP BY d_id) latest ON dl.d_id = latest.d_id AND dl.time = latest.latest_timestamp INNER JOIN drivers d ON dl.d_id = d.d_id LEFT JOIN driver_vehicle dv ON dl.d_id = dv.d_id";
-						$driversResult = $connect->query($driversQuery);
-						// Store drivers' data in an array
-						$drivers = [];
-						while ($row = $driversResult->fetch_assoc()) {    
+                        $zonesQuery = "SELECT * FROM zones";			
+                        $zonesResult = $connect->query($zonesQuery);			
+                        // Fetch latest driver locations along with driver names and their vehicles			
+                        $driversQuery = "SELECT dl.d_id, dl.latitude, dl.longitude, d.d_name, dv.v_make FROM driver_location dl INNER JOIN (SELECT d_id, MAX(time) AS latest_timestamp FROM driver_location GROUP BY d_id) latest ON dl.d_id = latest.d_id AND dl.time = latest.latest_timestamp INNER JOIN drivers d ON dl.d_id = d.d_id LEFT JOIN driver_vehicle dv ON dl.d_id = dv.d_id";			
+                        $driversResult = $connect->query($driversQuery);			
+                        // Store drivers' data in an array			
+                        $drivers = [];			
+                        while ($row = $driversResult->fetch_assoc()) {    
 							$drivers[$row['d_id']] = [        
-								'latitude' => $row['latitude'],        
+								'latit`ude' => $row['latitude'],        
 								'longitude' => $row['longitude'],        
 								'name' => $row['d_name'],        
 								'vehicle' => $row['v_make'] ?? 'Unknown' // Handle null values    

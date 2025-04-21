@@ -8,7 +8,6 @@ header('Cache-Control: max-age=3600');
 include("../../config.php");
 
 if(isset($_POST['d_id'])){	    
-
     $d_id = $_POST['d_id'];
     
     $sql = "SELECT * FROM `vehicle_extras` WHERE `d_id` = '$d_id'";        

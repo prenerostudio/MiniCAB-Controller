@@ -25,12 +25,18 @@ $sql = "UPDATE `users` SET
 			`state`='$state',
 			`country_id`='$country',
 			`pc`='$pc',
-			`nid`='$nid' WHERE `user_id`='$user_id'";
+			`nid`='$nid' WHERE `user_id`='$user_id'";        
+
 $result = mysqli_query($connect, $sql);       
+
 if ($result) {
+
     $activity_type = 'Admin Profile Updated';	
+
     $user_type = 'user';
+
     $details = "Admin Profile Has Been updated by Controller.";
+
     $actsql = "INSERT INTO `activity_log`(
 					`activity_type`, 
 					`user_type`, 
@@ -41,10 +47,14 @@ if ($result) {
 					'$user_type',
 					'$myId',
 					'$details')";	
+
     $actr = mysqli_query($connect, $actsql);	
+
     header('location: profile-setting.php');    
+
     exit();    
 } else {           
+
     header('location: profile-setting.php');    
 }
 $connect->close();

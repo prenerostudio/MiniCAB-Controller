@@ -13,20 +13,14 @@ $status = 'accepted';
 
 if ($job_id) {
    
-
     $stmt = $connect->prepare("UPDATE `jobs` SET `job_status` = ? WHERE `job_id` = ?");
-
     $stmt->bind_param("si", $status, $job_id);
-
 
     if ($stmt->execute()) {
 		
-
-        $fetch_sql = "SELECT jobs.*, bookings.*, clients.*, drivers.* FROM jobs, clients, drivers, bookings WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_id = '$job_id'";
-	
-        $fetch_r = $connect->query($fetch_sql);
-	
-        $output = mysqli_fetch_all($fetch_r, MYSQLI_ASSOC);
+		$fetch_sql = "SELECT jobs.*, bookings.*, clients.*, drivers.* FROM jobs, clients, drivers, bookings WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_id = '$job_id'";
+		$fetch_r = $connect->query($fetch_sql);
+		$output = mysqli_fetch_all($fetch_r, MYSQLI_ASSOC);
 		
 		
 		

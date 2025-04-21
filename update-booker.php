@@ -13,7 +13,8 @@ $cni = $_POST['cni'];
 $com_name = $_POST['com_name'];
 $com_type = $_POST['com_type'];
 $percent = $_POST['percent'];
-$fixed = $_POST['fixed'];           
+$fixed = $_POST['fixed'];
+           
 $sql = "UPDATE `clients` SET 
 			`c_name`='$cname',
 			`c_email`='$cemail',
@@ -26,11 +27,17 @@ $sql = "UPDATE `clients` SET
 			`commission_type`='$com_type',
 			`percentage`='$percent',
 			`fixed`='$fixed' WHERE `c_id`='$c_id'";
+
 $result = mysqli_query($connect, $sql);
+
 if ($result) {	
+
     $activity_type = 'Booker Profile Updated';		
+
     $user_type = 'user';		
+
     $details = "Booker Profile " . $c_id . " Has Been Updated by Controller.";		
+
     $actsql = "INSERT INTO `activity_log`(
 					`activity_type`, 
 					`user_type`, 
@@ -41,10 +48,14 @@ if ($result) {
 					'$user_type',
 					'$myId',
 					'$details')";
+
     $actr = mysqli_query($connect, $actsql);		
+
     header('location: view-booker.php?c_id='.$c_id);    
+
     exit();    
 } else {		
+
     header('location: view-booker.php?c_id='.$c_id);    
 }
 $connect->close();

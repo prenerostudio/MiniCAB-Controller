@@ -11,43 +11,30 @@ $d_id = $_POST['d_id'];
 $status = 'On Ride';
 
 if(isset($_POST['d_id'])){ 
-
-    $sql="UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";
-
-    $r=mysqli_query($connect,$sql);
-
-    if($r){    	
-
-        $activity_type = 'Go on ride';		
-	
-        $user_type = 'driver';		
-	
-        $details = "You go on ride";
+		$sql="UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";
+		$r=mysqli_query($connect,$sql);
+		if($r){    	
+			$activity_type = 'Go on ride';		
+			$user_type = 'driver';		
+			$details = "You go on ride";
 				
-	
-        $actsql = "INSERT INTO `activity_log`(
-					`activity_type`, 
-					`user_type`, 
-					`user_id`, 
-					`details`
-					) VALUES (
-					'$activity_type',
-					'$user_type',
-					'$d_id',
-					'$details')";		
+			$actsql = "INSERT INTO `activity_log`(
+												`activity_type`, 
+												`user_type`, 
+												`user_id`, 
+												`details`
+												) VALUES (
+												'$activity_type',
+												'$user_type',
+												'$d_id',
+												'$details')";		
 							
-	
-        $actr = mysqli_query($connect, $actsql);			
-	
-        echo json_encode(array('message'=>"Driver is on ride",'status'=>true));
-	
-        }else{    
-	
-            echo json_encode(array('message'=>"Error In fetching status",'status'=>false));
-	
-            }	       
+			$actr = mysqli_query($connect, $actsql);			
+			echo json_encode(array('message'=>"Driver is on ride",'status'=>true));
+		}else{    
+			echo json_encode(array('message'=>"Error In fetching status",'status'=>false));
+		}	       
 }else{   
-	
-    echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
+	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

@@ -65,7 +65,7 @@ async defer></script>
                         </button>        								
                         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">			
                             <a href="dashboard.php">
-                                <img src="img/logo.png" width="110" height="32" alt="MiniCAB" class="navbar-brand-image">
+                                <img src="img/logo.png" width="110" height="32" alt="MiniCAB" class="navbar-brand-image">				
                             </a>         									
                         </h1>			
                         <div class="navbar-nav flex-row order-md-last">			
@@ -98,7 +98,8 @@ async defer></script>
                                         <i class="ti ti-bookmark-plus"></i>
                                         New Booking
                                     </a>
-                                </div>								
+                                </div>                                
+								
                                 <script>    
 									document.addEventListener("DOMContentLoaded", function() {        
 										fetch('new-drivers-count.php')
@@ -128,16 +129,19 @@ async defer></script>
                             </div>    			
                             <div class="d-none d-md-flex">			
                                 <a class="nav-link" href="#">
-                                    <?php									
+                                    <?php
+									
                                     $current_time = date("Y-m-d H:i:s");
                                     ?>
-                                    <script>										
+                                    <script>
+										
                                         var serverTime = "<?php echo $current_time; ?>";
                                     </script>											
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                                         <i class="ti ti-clock"></i>
                                     </span>											
-                                    <span class="nav-link-title" id="time"></span>
+                                    <span class="nav-link-title" id="time">
+                                    </span>
                                 </a>				
                                 <div class="server-time"></div>
                                 <script>

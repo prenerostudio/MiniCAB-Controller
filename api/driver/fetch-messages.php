@@ -10,26 +10,15 @@ include("../../config.php");
 $d_id=$_POST['d_id'];
 
 if(isset($_POST['d_id'])){		
-	
-    $sql=" SELECT * FROM `messages` WHERE `sender_id` = '$d_id'";
-
-    $r=mysqli_query($connect,$sql);
-
-    $output=mysqli_fetch_all($r,MYSQLI_ASSOC);
-
-    if(count($output)>0){    				    		
-
-        echo json_encode(array('data'=>$output, 'status'=>true, 'message'=>"Reviews List Fetch Successfully"));
-	
-        
-    }else{    
-	
-        echo json_encode(array('message'=>'No Message Found','status'=>false));
-	
-        
-    }
+	 $sql=" SELECT * FROM `messages` WHERE `sender_id` = '$d_id'";
+	$r=mysqli_query($connect,$sql);
+	$output=mysqli_fetch_all($r,MYSQLI_ASSOC);
+	if(count($output)>0){    				    		
+		echo json_encode(array('data'=>$output, 'status'=>true, 'message'=>"Reviews List Fetch Successfully"));
+	}else{    
+		echo json_encode(array('message'=>'No Message Found','status'=>false));
+	}
 }else{    
-	
-    echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
+	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>

@@ -17,31 +17,48 @@ include('header.php');
                                 <div class="mb-3 col-md-3">
                                     <label class="form-label">Booking Type</label>
                                     <select class="form-control" name="b_type_id" id="bookingType" required>
-                                        <option value="">Select Booking Type</option>
-                                        <?php
+                                        <option value="">Select Booking Type</option>					
+										
+                                            <?php
                                         $btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
-                                        while ($btrow = mysqli_fetch_array($btsql)) {										
-                                        ?>
-                                        <option value="<?php echo $btrow['b_type_id'] ?>">
+                                        while ($btrow = mysqli_fetch_array($btsql)) {
+										
+                                            ?>
+                                        <option value="<?php echo $btrow['b_type_id'] ?>">                                        
+											
                                             <?php echo $btrow['b_type_name'] ?>
-                                        </option>										
-                                        <?php
+                                        </option>
+										
+                                            <?php
                                         }
                                         ?>
                                     </select>
-                                </div>						
-                                <div class="row col-lg-3">				
-                                    <label class="form-label">Name</label>                                
-                                    <div class="col">                                
-                                        <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
-                                        <select class="form-control" name="c_id" id="clientSelect" required></select>
-                                    </div>
-                                    <div class="col-auto">                                  
-                                        <a href="#" class="btn btn-icon btn-info" aria-label="Button" data-bs-toggle="modal" data-bs-target="#modal-customer" title="Add Customers">                                    
-                                            <i class="ti ti-plus"></i>                                  
-                                        </a>                                
-                                    </div>                              
-                                </div>                                
+                                </div>
+								<div class="row col-lg-3">
+									 <label class="form-label">Name</label>
+                                <div class="col">                                
+                                    <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
+                                    <select class="form-control" name="c_id" id="clientSelect" required></select>
+                                </div>
+                                <div class="col-auto">
+                                  <a href="#" class="btn btn-icon btn-info" aria-label="Button" data-bs-toggle="modal" data-bs-target="#modal-customer" title="Add Customers">
+                                    <i class="ti ti-plus"></i>
+                                  </a>
+                                </div>
+                              </div>
+<!--
+                                <div class="mb-3 col-lg-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
+                                    <select class="form-control" name="c_id" id="clientSelect" required></select>
+									
+                                    <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-customer" style="margin-top: 25px; float: left;" title="Add Customers">
+										
+                                        <i class="ti ti-plus"></i>										
+									
+                                    </a>
+                                </div>
+-->
                                 <div class="mb-3 col-lg-3">
                                     <label class="form-label">Customer Phone</label>
                                     <input type="text" class="form-control" name="cphone" id="customerPhone" required>
@@ -50,70 +67,69 @@ include('header.php');
                                     <label class="form-label">Customer Email</label>
                                     <input type="text" class="form-control" name="cemail" id="customerEmail" required>
                                 </div>								                            
-							
-                            </div>
-                            <script>				
-								var bookingTypeSelect = document.getElementById('bookingType');				
-								var clientSelect = document.getElementById('clientSelect');				
-								var clientNameInput = document.getElementById('clientName');           				
-								var customerPhoneInput = document.getElementById('customerPhone');            				
-								var customerEmailInput = document.getElementById('customerEmail');            				
-								bookingTypeSelect.addEventListener('change', function () {                        					
-									var selectedBookingType = bookingTypeSelect.value;					
-									if (selectedBookingType == 4 || selectedBookingType == 5) {						
-										clientNameInput.classList.remove('d-none');						
-										clientSelect.classList.add('d-none');						
-										clientSelect.required = false;						
-										clientNameInput.required = true;						
-										clientNameInput.value = '';						
-										customerPhoneInput.value = '';						
-										customerEmailInput.value = '';	        						
-									} else {						
-										clientNameInput.classList.add('d-none');						
-										clientSelect.classList.remove('d-none');						
-										clientNameInput.required = false;						
-										clientSelect.required = true;								
-										$.ajax({								
-											type: 'POST',								
-											url: 'get_clients.php',								
-											data: { b_type_id: selectedBookingType },								
-											success: function (response) {								
-												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
-											},								
-											error: function () { 								
-												console.error('Error fetching clients');								
-											}							
-										});						
-									}					
-								});    					
-								clientSelect.addEventListener('change', function () {					
-									var selectedClientId = clientSelect.value;					
+							</div>
+                            <script>
+								var bookingTypeSelect = document.getElementById('bookingType');
+								var clientSelect = document.getElementById('clientSelect');
+								var clientNameInput = document.getElementById('clientName');           
+								var customerPhoneInput = document.getElementById('customerPhone');            
+								var customerEmailInput = document.getElementById('customerEmail');            
+								bookingTypeSelect.addEventListener('change', function () {                        
 									var selectedBookingType = bookingTypeSelect.value;
-									$.ajax({								
-										type: 'POST',								
-										url: 'get_customer_details.php',	            								
-										data: {									
-											c_id: selectedClientId,									
-											b_type_id: selectedBookingType // Include booking type ID								
-										},								
-										success: function (response) {								
-											var data = JSON.parse(response);								
-											if (data.error) {									
-												console.error(data.error);									
-												customerPhoneInput.value = '';									
-												customerEmailInput.value = '';								
-											} else {									
-												customerPhoneInput.value = data.phone;									
-												customerEmailInput.value = data.email;								
-											}							
-										},							
-										error: function () {                	        	        							
-											console.error('Error fetching customer details');							
-										}						
-									});	        					
-								});					
-							</script>
-                            <div class="row">
+									if (selectedBookingType == 4 || selectedBookingType == 5) {
+										clientNameInput.classList.remove('d-none');
+										clientSelect.classList.add('d-none');
+										clientSelect.required = false;
+										clientNameInput.required = true;
+										clientNameInput.value = '';
+										customerPhoneInput.value = '';
+										customerEmailInput.value = '';	        
+									} else {
+										clientNameInput.classList.add('d-none');
+										clientSelect.classList.remove('d-none');
+										clientNameInput.required = false;
+										clientSelect.required = true;
+										$.ajax({
+											type: 'POST',
+											url: 'get_clients.php',
+											data: { b_type_id: selectedBookingType },
+											success: function (response) {
+												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
+											},
+											error: function () { 
+												console.error('Error fetching clients');
+											}
+										});
+									}
+								});    
+								clientSelect.addEventListener('change', function () {
+									var selectedClientId = clientSelect.value;
+									var selectedBookingType = bookingTypeSelect.value;
+									$.ajax({
+										type: 'POST',
+										url: 'get_customer_details.php',	            
+										data: {
+											c_id: selectedClientId,
+											b_type_id: selectedBookingType // Include booking type ID
+										},
+										success: function (response) {
+											var data = JSON.parse(response);
+											if (data.error) {
+												console.error(data.error);
+												customerPhoneInput.value = '';
+												customerEmailInput.value = '';
+											} else {
+												customerPhoneInput.value = data.phone;
+												customerEmailInput.value = data.email;
+											}
+										},
+										error: function () {                	        	        
+											console.error('Error fetching customer details');
+										}
+									});	        
+								});
+							</script>												
+                            <div class="row">										
                                 <h4>Journey Details:</h4>
                                 <div class="col-lg-12">	
                                     <div class="row">
@@ -142,16 +158,16 @@ include('header.php');
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Postal Code</label>
                                     <select class="form-control" name="postal_code" required>
-										<option value=" ">Search PostCode</option>
-										<?php                                        					
-										$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");            					
-										while($pcrow = mysqli_fetch_array($pcsql)){					
-										?>                                        
-										<option>                                            						
+                                        <option value=" ">Search PostCode</option>                                        
+										<?php                                        
+										$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");            
+										while($pcrow = mysqli_fetch_array($pcsql)){
+										?>
+                                        <option>                                            
 											<?php echo $pcrow['pc_name']; ?>
-                                        </option>					
-										<?php					
-										}					
+                                        </option>
+										<?php
+										}
 										?>
                                     </select>
                                 </div>
@@ -162,12 +178,12 @@ include('header.php');
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Pickup Date</label>
                                     <input type="date" class="form-control" name="pick_date" id="pick_date" required>
-                                </div>
-                                <script>									
-                                    document.addEventListener("DOMContentLoaded", function() {
-                                    var today = new Date().toISOString().split('T')[0];
-                                    document.getElementById('pick_date').setAttribute('min', today);
-                                    });
+                                </div>                               
+								<script>
+									document.addEventListener("DOMContentLoaded", function() {
+										var today = new Date().toISOString().split('T')[0];
+										document.getElementById('pick_date').setAttribute('min', today);
+									});
                                 </script>																	
                                 <div class="mb-3 col-lg-4">				
                                     <label class="form-label">Pickup Time</label>				
@@ -191,16 +207,16 @@ include('header.php');
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Vehicle Type</label>
                                     <select class="form-control" name="v_id" id="vehicleSelect" onchange="updateJourneyFare()">
-                                        <option value="">Select Vehicle</option>					
-										<?php					
-										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");					
-										while ($vrow = mysqli_fetch_array($vsql)) {                       					
+                                        <option value="">Select Vehicle</option>
+										<?php
+										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
+										while ($vrow = mysqli_fetch_array($vsql)) {                       
 										?>                                        
                                         <option value="<?php echo $vrow['v_id'] ?>">
                                             <?php echo $vrow['v_name'] ?>
-                                        </option>					
-										<?php					
-										}					
+                                        </option>
+										<?php
+										}
 										?>
                                     </select>
                                 </div>
@@ -301,22 +317,22 @@ include('header.php');
                             </button>
                         </div>
                     </form>
-                    <script>
-						document.addEventListener("DOMContentLoaded", function () {    				
-							var bookingTypeSelect = document.getElementById("bookingType");    				
-							var bookerCommissionField = document.getElementById("bookerCommissionField");    				
-							bookingTypeSelect.addEventListener("change", function () {        					
-								var normalizedValue = parseInt(this.value, 10); // Convert to integer to handle leading zero
-								console.log("Normalized value:", normalizedValue);
-								if (normalizedValue === 3) { // Compare with number 3            						
-									console.log("Displaying bookerCommissionField");            						
-									bookerCommissionField.style.display = "block";		
-								} else {
-									console.log("Hiding bookerCommissionField");            						
-									bookerCommissionField.style.display = "none";        					
-								}        					
-								console.log("bookerCommissionField style.display:", bookerCommissionField.style.display);
-							});			
+                    <script>						    
+						document.addEventListener("DOMContentLoaded", function () {    
+							var bookingTypeSelect = document.getElementById("bookingType");    
+							var bookerCommissionField = document.getElementById("bookerCommissionField");    
+							bookingTypeSelect.addEventListener("change", function () {        
+								var normalizedValue = parseInt(this.value, 10); // Convert to integer to handle leading zeros        
+								console.log("Normalized value:", normalizedValue);        
+								if (normalizedValue === 3) { // Compare with number 3            
+									console.log("Displaying bookerCommissionField");            
+									bookerCommissionField.style.display = "block";        								
+								} else {            
+									console.log("Hiding bookerCommissionField");            
+									bookerCommissionField.style.display = "none";        
+								}        
+								console.log("bookerCommissionField style.display:", bookerCommissionField.style.display);    
+							});
 						});			    						
 						$(document).ready(function() {						
 							$('#calculateFareBtn').on('click', function(e) {            	        
@@ -326,9 +342,9 @@ include('header.php');
 								var pickTime = $('input[name="pick_time"]').val();            	        
 								var vehicleId = $('#vehicleSelect').val();            	        
 								var vehiclePricing = parseFloat(fetchVehiclePricing(vehicleId));	        
-								var baseFare = distance * vehiclePricing;
-								if (isHoliday(pickDate)) { 
-									baseFare *= 1.1;
+								var baseFare = distance * vehiclePricing;		            	        
+								if (isHoliday(pickDate)) {                	            
+									baseFare *= 1.1;            	
 								}        
 								var pickHour = parseInt(pickTime.split(':')[0], 10);        
 								if (pickHour < 9 || pickHour >= 20) {            

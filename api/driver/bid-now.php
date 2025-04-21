@@ -9,43 +9,37 @@ include("../../config.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['d_id'])) {
-
-        $d_id = $_POST['d_id'];
+		$d_id = $_POST['d_id'];
         $book_id = $_POST['book_id'];
         $bid_amount = $_POST['bid_amount']; 
         
        
         $sql = "INSERT INTO `bids`(
-				`book_id`, 
-				`d_id`, 
-				`bid_amount`									
-				) VALUES (
-				'$book_id',
-				'$d_id',
-				'$bid_amount')";
+									`book_id`, 
+									`d_id`, 
+									`bid_amount`									
+									) VALUES (
+									'$book_id',
+									'$d_id',
+									'$bid_amount')";
         
         $result = mysqli_query($connect, $sql);
         if ($result) {   			
-	
-            $activity_type = 'Bid Placed';
-	
-            $user_type = 'driver';
-	
-            $details = "Bid of Amount $bid_amount has been placed against Booking # $book_id";
-	
-            $actsql = "INSERT INTO `activity_log`(
-						`activity_type`, 
-						`user_type`, 
-						`user_id`, 
-						`details`
-						) VALUES (
-						'$activity_type',
-						'$user_type',
-						'$d_id',
-						'$details')";		
+			$activity_type = 'Bid Placed';
+			$user_type = 'driver';
+			$details = "Bid of Amount $bid_amount has been placed against Booking # $book_id";
+			$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$d_id',
+											'$details')";		
 		
-	
-            $actr = mysqli_query($connect, $actsql);
+			$actr = mysqli_query($connect, $actsql);
 			
             $response = array('message' => "Bid Placed Successfully", 'status' => true);
             echo json_encode($response);

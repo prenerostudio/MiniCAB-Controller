@@ -1,135 +1,292 @@
 <?php
 include('header.php');
-?>
+?>  
+
 <div class="page-header d-print-none page_padding">		   		
+
     <div class="row g-2 align-items-center">        	
-        <div class="col">            									
-            <div class="page-pretitle">                				
-                Overview                						
-            </div>                				
-            <h2 class="page-title">                				
-                Companies Section                						
-            </h2>              				
-        </div>			
-        <div class="col-auto ms-auto d-print-none">            			
-            <div class="btn-list">                				
+
+        <div class="col">            								
+	
+            <div class="page-pretitle">                			
+	
+                Overview                				
+		
+            </div>                			
+	
+            <h2 class="page-title">                			
+	
+                Companies Section                				
+		
+            </h2>              			
+	
+        </div>		
+	
+        <div class="col-auto ms-auto d-print-none">            		
+	
+            <div class="btn-list">                			
+	
                 <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-customer">
-                    <i class="ti ti-user-plus"></i>                    							
-                    Add New Company                  							
-                </a>				              						
-            </div>              				
-        </div>			
+		
+                    <i class="ti ti-user-plus"></i>                    					
+		
+                    Add New Company                  					
+		
+                </a>				              				
+		
+            </div>              			
+	
+        </div>		
+	
     </div>	
 </div>
 <div class="page-body page_padding">          
+
     <div class="row row-deck row-cards">			      	
-        <div class="col-12">            						
-            <div class="card">                								
-                <div class="card-header">                    											
-                    <h3 class="card-title">		
-                        All Companies List			
-                    </h3>		
-                </div>                  						
-                <div class="card-body border-bottom py-3">						
-                    <div id="table-customer" class="table-responsive">		
-                        <table class="table" id="customers">			
-                            <thead>			
-                                <tr>				
-                                    <th>ID</th>				
-                                    <th>Image</th>				
-                                    <th>Company Name</th>				
-                                    <th>Person Name</th>				
-                                    <th>Email</th>				
-                                    <th>Phone</th>				
-                                    <th>PIN</th>				
-                                    <th>Status</th>				
-                                    <th>Actions</th>				
-                                </tr>				
-                            </thead>			
-                            <tbody class="table-tbody">								
-                                <?php                                                                        
-								$csql=mysqli_query($connect,"SELECT companies.* FROM companies WHERE companies.acount_status = 0 ORDER BY companies.com_id DESC");
+
+        <div class="col-12">            					
+	
+            <div class="card">                							
+	
+                <div class="card-header">                    									
+		
+                    <h3 class="card-title">
+		
+                        All Companies List
+			
+                    </h3>
+		
+                </div>                  				
+		
+                <div class="card-body border-bottom py-3">				
+		
+                    <div id="table-customer" class="table-responsive">
+		
+                        <table class="table" id="customers">
+			
+                            <thead>
+			
+                                <tr>
+				
+                                    <th>ID</th>
+				
+                                    <th>Image</th>
+				
+                                    <th>Company Name</th>
+				
+                                    <th>Person Name</th>
+				
+                                    <th>Email</th>
+				
+                                    <th>Phone</th>
+				
+                                    <th>PIN</th>
+				
+                                    <th>Status</th>
+				
+                                    <th>Actions</th>
+				
+                                </tr>
+				
+                            </thead>
+			
+                            <tbody class="table-tbody">
+			
+					
+                                <?php
+
+                                        
+                                $csql=mysqli_query($connect,"SELECT companies.* FROM companies WHERE companies.acount_status = 0 ORDER BY companies.com_id DESC");
+								
                                 while($crow = mysqli_fetch_array($csql)){
-								?>								
-                                <tr>				
-                                    <td>										
+								
+                                    ?>
+								
+                                <tr>
+				
+                                    <td>
+				
+						
                                         <?php echo $crow['com_id']; ?>
-                                    </td>				
-                                    <td>										
-                                        <?php                                                
-                                        if (!$crow['com_pic']) {
-										?>
-                                        <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">											
-										<?php									
-                                        } else{								                                            
-										?>					
-                                        <img src="img/companies/<?php echo $crow['com_pic'];?>" alt="Company Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
-										<?php
-                                        }								
-                                        ?>																
-                                    </td> 				
-                                    <td>										
-                                        <?php echo $crow['com_name']; ?>
-                                    </td>				
-                                    <td>										
-                                        <?php echo $crow['com_person']; ?>
-                                    </td>				
-                                    <td>										
-                                        <?php echo $crow['com_email']; ?>
-                                    </td>				
-                                    <td>										
-                                        <?php echo $crow['com_phone']; ?>
-                                    </td>						
-                                    <td>										
-                                        <?php echo $crow['com_pin']; ?>
-                                    </td>														
-                                    <td>                              
-										<?php                                           
-										if($crow['acount_status']==0){                         
-										?>
-                                        <div class="col-auto status">					
-                                            <span class="status-dot status-dot-animated bg-red d-block"></span>					
-                                            <span>Unverified</span>														
-                                        </div>										                                            
-										<?php                                            
-                                        } else{                                                               
-										?>					
-                                        <div class="col-auto status">					
-                                            <span class="status-dot status-dot-animated bg-green d-block"></span>					
-                                            <span>Verified</span>																
-                                        </div>													
-										<?php									
-                                        }					
-                                        ?>														
-                                    </td>					
-                                    <td> 													
-                                        <a href="view-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
-                                            <i class="ti ti-eye"></i>
-										</a>
-                                        <a href="del-company.php?com_id=<?php echo $crow['com_id'];?>" class="btn btn-danger btn-icon" title="Delete">
-											<i class="ti ti-square-rounded-x"></i>
-                                        </a>					
-                                        <a href="activate-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-success btn-icon" title="Activate Company">          
-											<i class="ti ti-square-rounded-x"></i>
-										</a>
+
                                     </td>
-                                </tr>								
-								<?php
-                                }				
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>					
-            </div>			
-        </div>		
+				
+                                    <td>
+				
+						
+                                        <?php
+
+                                                
+                                        if (!$crow['com_pic']) {
+						
+                                                    
+                                            ?>			
+						
+                                        <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">	
+					
+					<?php									
+
+                                        } else{			
+					
+                                            ?>										
+					
+                                        <img src="img/companies/<?php echo $crow['com_pic'];?>" alt="Company Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
+					
+					<?php									
+
+                                        }			
+					
+                                        ?>											
+					
+                                    </td> 		
+				
+                                    <td>
+				
+						
+                                        <?php echo $crow['com_name']; ?>
+
+                                    </td>
+				
+                                    <td>
+				
+						
+                                        <?php echo $crow['com_person']; ?>
+
+                                    </td>
+				
+                                    <td>
+				
+						
+                                        <?php echo $crow['com_email']; ?>
+
+                                    </td>
+				
+                                    <td>
+				
+						
+                                        <?php echo $crow['com_phone']; ?>
+
+                                    </td>		
+				
+                                    <td>
+				
+						
+                                        <?php echo $crow['com_pin']; ?>
+
+                                    </td>										
+				
+                                    <td>											
+				
+						
+                                        <?php 											
+
+                                                
+                                        if($crow['acount_status']==0){
+						
+                                                    
+                                            ?>												
+						
+                                        <div class="col-auto status">
+					
+                                            <span class="status-dot status-dot-animated bg-red d-block"></span>
+					
+                                            <span>Unverified</span>									
+					
+                                        </div>
+					
+					
+                                            <?php									
+
+                                        
+                                            
+                                        } else{											
+					
+                                            
+                                            ?>
+					
+                                        <div class="col-auto status">
+					
+                                            <span class="status-dot status-dot-animated bg-green d-block"></span>
+					
+                                            <span>Verified</span>											
+					
+                                        </div>			
+					
+					<?php									
+
+                                        }
+					
+                                        ?>									
+					
+                                    </td>	
+				
+                                    <td> 									
+				
+                                        <a href="view-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">
+					
+                                          
+					
+                                                
+                                            <i class="ti ti-eye"></i>
+						
+                                               										
+					
+                                        </a>						
+					
+                                        <a href="del-company.php?com_id=<?php echo $crow['com_id'];?>" class="btn btn-danger btn-icon" title="Delete">
+					
+                                           
+					
+                                                
+                                            <i class="ti ti-square-rounded-x"></i>
+						
+                                                
+					
+                                        </a>
+					
+                                        <a href="activate-company.php?com_id=<?php echo $crow['com_id']; ?>" class="btn btn-success btn-icon" title="Activate Company">
+					
+                                           
+					
+                                                <i class="ti ti-square-rounded-x"></i>
+						
+                                             
+					
+                                        </a>
+					
+                                    </td>								
+				
+                                </tr>
+				
+				<?php								
+
+                                }								
+				
+                                ?>							
+				
+                            </tbody>						
+			
+                        </table>					
+			
+                    </div>				
+		
+                </div>			
+		
+            </div>		
+	
+        </div>	
+	
     </div>
 </div>        
-<script>	    
-	$(document).ready(function() {        
-		$('#customers').DataTable();
-	});
+<script>	
+
+    $(document).ready(function() {
+    
+        $('#customers').DataTable();
+});
 </script>
+
+
 <!-------------------------------
 ----------Add Customer-----------
 -------------------------------->
@@ -209,25 +366,21 @@ include('header.php');
 			
                                 <option>Select PostCode</option>								
 				
-				
-								<?php
+				<?php
 
                                 $pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");
 				
                                 while($pcrow = mysqli_fetch_array($pcsql)){								
 				
-                                    
-								?>			
+                                    ?>			
 				
                                 <option>								
 				
-					
-									<?php echo $pcrow['pc_name'] ?>								
+					<?php echo $pcrow['pc_name'] ?>								
 
                                 </option>
 				
-				
-								<?php
+				<?php
 
                                 }																		
 				
@@ -282,46 +435,33 @@ include('header.php');
 		
                     <script>    
 		
-    
-						function validateForm() {        							        
+    function validateForm() {        							        
 
-        
-							var cnameInput = document.getElementsByName("cname")[0].value;        
+        var cnameInput = document.getElementsByName("cname")[0].value;        
 	
-        
-							var cemailInput = document.getElementsByName("cemail")[0].value;
+        var cemailInput = document.getElementsByName("cemail")[0].value;
 	
-        
-							var cphoneInput = document.getElementsByName("cphone")[0].value;
+        var cphoneInput = document.getElementsByName("cphone")[0].value;
 	
-        
-							var cgenderInput = document.getElementsByName("cgender")[0].value;
+        var cgenderInput = document.getElementsByName("cgender")[0].value;
 	
-        
-							var pcInput = document.getElementsByName("pc")[0].value;
+        var pcInput = document.getElementsByName("pc")[0].value;
 	
         
 	
-        
-							if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        
+        if (cnameInput === "" || cemailInput === "" || cphoneInput === "" || cgenderInput === "" || pcInput === "") {                        
 	
-            
-								alert("Please fill in all required fields.");            
+            alert("Please fill in all required fields.");            
 	
-            
-								return false;        
+            return false;        
 	
-        
-							}							        							        
+        }							        							        
 	
-        
-							return true;    
+        return true;    
 	
-    
-						}
+    }
 
-                    
-					</script>				
+                    </script>				
 		
                 </div> 
 		

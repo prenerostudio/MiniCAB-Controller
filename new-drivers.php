@@ -151,6 +151,7 @@ include('header.php');
                                                     <th>Phone</th>
                                                     <th>Gender</th>
                                                     <th>Licence Authority</th>
+													
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -192,15 +193,23 @@ include('header.php');
                                                     </td>
                                                     <td>
                                                         <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View" class="btn btn-twitter btn-icon">
+                                                           
+																
                                                             <i class="ti ti-eye"></i>
+                                                           
                                                         </a>
-                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete" class="btn btn-youtube btn-icon">                                 
-															<i class="ti ti-square-rounded-x"></i>                         
+                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete" class="btn btn-youtube btn-icon">
+                                                           
+                                                                <i class="ti ti-square-rounded-x"></i>
+                                                            
                                                         </a>
                                                     </td>
-                                                </tr>                   
-												<?php endwhile; ?>
-												<?php if ($y === 0) : ?>												
+                                                </tr>
+												
+                                                    <?php endwhile; ?>   
+												
+                                                        <?php if ($y === 0) : ?>
+												
                                                 <tr>
                                                     <td colspan="9">
                                                         <p align="center">
@@ -208,7 +217,8 @@ include('header.php');
                                                         </p>
                                                     </td>
                                                 </tr>
-												<?php endif; ?>
+												
+                                                    <?php endif; ?>
                                             </tbody> 
                                         </table>
                                     </div>

@@ -12,43 +12,30 @@ $d_id = $_POST['d_id'];
 $status = 1;
 
 if(isset($_POST['d_id'])){
-
-    $sql="UPDATE `time_slots` SET `d_id`='$d_id', `ts_status`='$status' WHERE `ts_id`='$ts_id'";
-
-    $r=mysqli_query($connect,$sql);
-
-    if($r){				
-
-        $activity_type = 'Time slot Accepted';        
-	
-        $user_type = 'driver';        
-	
-        $details = "Accept Time slot.";
+	$sql="UPDATE `time_slots` SET `d_id`='$d_id', `ts_status`='$status' WHERE `ts_id`='$ts_id'";
+	$r=mysqli_query($connect,$sql);
+	if($r){				
+		$activity_type = 'Time slot Accepted';        
+		$user_type = 'driver';        
+		$details = "Accept Time slot.";
 		
-	
-        $actsql = "INSERT INTO `activity_log`(
-					`activity_type`, 
-					`user_type`, 
-					`user_id`, 
-					`details`
-					) VALUES (
-					'$activity_type',
-					'$user_type',
-					'$d_id',
-					'$details')";		
+		$actsql = "INSERT INTO `activity_log`(
+											`activity_type`, 
+											`user_type`, 
+											`user_id`, 
+											`details`
+											) VALUES (
+											'$activity_type',
+											'$user_type',
+											'$d_id',
+											'$details')";		
 			
-	
-        $actr = mysqli_query($connect, $actsql);								
-	
-        echo json_encode(array('message'=>"Time Slot Accepted Successfully",'status'=>true));				
-	
-        
-    }else{
-	
-        echo json_encode(array('message'=>"Error In Adding Time Slot",'status'=>false));
+		$actr = mysqli_query($connect, $actsql);								
+		echo json_encode(array('message'=>"Time Slot Accepted Successfully",'status'=>true));				
+	}else{
+		echo json_encode(array('message'=>"Error In Adding Time Slot",'status'=>false));
 	}
 }else{
-	
-    echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
+	echo json_encode(array('message'=>"Some Fileds are missing",'status'=>false));
 }
 ?>
