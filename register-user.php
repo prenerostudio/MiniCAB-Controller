@@ -8,7 +8,7 @@ include('config.php');
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>	
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     	
-        <title>Sign in - MiniCAB Taxi Booking Service.</title>
+        <title>Create New User - MiniCAB Taxi Booking Service.</title>
             		
         <script defer data-api="/stats/api/event" data-domain="MiniCAB Taxi Booking Service" src="stats/js/script.js"></script>
         <!-- CSS files -->    
@@ -36,7 +36,7 @@ include('config.php');
                                     <h2 class="h2 text-center mb-4">				
                                         Login to your Account					
                                     </h2>                  				
-                                    <form action="functions.php" method="post" autocomplete="off" novalidate>
+                                    <form action="functions.php" method="post">
 										<div class="row">
 										<div class="mb-3 col-md-6">                      					
                                             <label class="form-label">First Name</label>                      					

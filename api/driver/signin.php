@@ -7,47 +7,59 @@ header('Cache-Control: max-age=3600');
 
 include("../../config.php");
 
-$d_phone = $_POST['d_phone'];
-$d_password = $_POST['d_password'];
+$d_phone    = $_POST['d_phone'] ?? '';
+$d_password = $_POST['d_password'] ?? '';
 
-if (isset($_POST['d_phone'])) {
-    $sql = "SELECT * FROM `drivers` WHERE `d_phone`='$d_phone' AND `d_password`='$d_password'";
-    $r = mysqli_query($connect, $sql);
+if (!empty($d_phone) && !empty($d_password)) {
 
-    if ($r && $r->num_rows > 0) {
-        $output = $r->fetch_assoc();
-        $d_id = $output['d_id'];
-        
-        // Generate a unique token
-        $token = bin2hex(random_bytes(32));
+    // Fetch user by phone
+    $stmt = $connect->prepare("SELECT * FROM `drivers` WHERE `d_phone` = ?");
+    $stmt->bind_param("s", $d_phone);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        // Update the token in the database
-        $updateTokenSql = "UPDATE `drivers` SET `login_token`='$token' WHERE `d_id`='$d_id'";
-        mysqli_query($connect, $updateTokenSql);
+    if ($result && $result->num_rows > 0) {
+        $user = $result->fetch_assoc();
 
-        // Log the activity
-        $activity_type = 'Account Logged In';
-        $user_type = 'driver';
-        $details = "You have logged in to your account.";
-        $actsql = "INSERT INTO `activity_log`(
-                            `activity_type`, 
-                            `user_type`, 
-                            `user_id`, 
-                            `details`
-                            ) VALUES (
-                            '$activity_type',
-                            '$user_type',
-                            '$d_id',
-                            '$details'
-                            )";		
-        mysqli_query($connect, $actsql);
+        // Verify password
+        if (password_verify($d_password, $user['d_password'])) {
+            $d_id = $user['d_id'];
+            $token = bin2hex(random_bytes(32)); // Secure token
 
-        // Respond with the token
-        echo json_encode(array('data' => array('user' => $output, 'token' => $token), 'message' => 'User Logged in Successfully', 'status' => true));
+            // Update token in DB
+            $updateStmt = $connect->prepare("UPDATE `drivers` SET `login_token` = ? WHERE `d_id` = ?");
+            $updateStmt->bind_param("si", $token, $d_id);
+            $updateStmt->execute();
+            $updateStmt->close();
+
+            // Log activity
+            $activity_type = 'Account Logged In';
+            $user_type = 'driver';
+            $details = 'You have logged in to your account.';
+
+            $logStmt = $connect->prepare("INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)");
+            $logStmt->bind_param("ssis", $activity_type, $user_type, $d_id, $details);
+            $logStmt->execute();
+            $logStmt->close();
+
+            unset($user['d_password']); // Don’t expose password hash
+
+            echo json_encode([
+                'data' => ['user' => $user, 'token' => $token],
+                'message' => 'User Logged in Successfully',
+                'status' => true
+            ]);
+        } else {
+            echo json_encode(['message' => 'Incorrect password', 'status' => false]);
+        }
     } else {
-        echo json_encode(array('message' => 'User Does Not Exist', 'status' => false));
+        echo json_encode(['message' => 'User does not exist', 'status' => false]);
     }
+
+    $stmt->close();
 } else {
-    echo json_encode(array('message' => "Some Fields are missing", 'status' => false));
+    echo json_encode(['message' => 'Some fields are missing', 'status' => false]);
 }
+
+$connect->close();
 ?>

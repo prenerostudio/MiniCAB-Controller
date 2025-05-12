@@ -3,7 +3,7 @@
         Driver Vehicle Document Section
     </h2>	
     <div class="row mb-3">	
-        <div class="col-md-6">		
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">		
             <h3 class="card-title">
                 Vehicle Log Book
             </h3>
@@ -16,7 +16,7 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
                         <div class="form-group mb-3">
                             <label class="form-label"> Log Book Number </label>
-                            <input type="text" name="lb_num" placeholder="Log Book Number" class="form-control">
+                            <input type="text" name="lb_num" placeholder="Log Book Number" class="form-control" value="<?php echo $drow['lb_number'];?>">
                         </div>                
                         <div class="form-group mb-3"> 
                             <label class="form-label"> Log Book Image </label>                        
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>			
-        <div class="col-md-6">			
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			
             <h3 class="card-title">			
                 Vehicle MOT Certificate						
             </h3>				
@@ -40,24 +40,24 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">                       
                         <div class="form-group mb-3">
                             <label class="form-label"> MOT Certificate Number </label>
-                            <input type="text" name="mot_num" placeholder="MOT Certificate Number" class="form-control">
+                            <input type="text" name="mot_num" placeholder="MOT Certificate Number" class="form-control" value="<?php echo $drow['mot_num'];?>">
                         </div>    
                         <div class="form-group mb-3">
                             <label class="form-label"> MOT Certificate Expiry </label>
-                            <input type="date" name="mot_exp" class="form-control">
+                            <input type="date" name="mot_exp" class="form-control" value="<?php echo $drow['mot_expiry'];?>">
                         </div>			 
                         <div class="form-group mb-3">
-                            <label class="form-label"> MOT Certificate Image </label>                                                   
-                            <input type="file" id="mot" name="mot" accept="image/*" class="form-control" required>                                                  
+                            <label class="form-label"> MOT Certificate Image </label>
+                            <input type="file" id="mot" name="mot" accept="image/*" class="form-control" required>
                         </div>                        
-                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">					
+                        <input type="submit" value="Upload Image" name="submit" class="btn btn-info" style="margin-top: 25px;">
                     </form>		
                 </div>		
             </div>	
         </div>			
     </div>						
     <div class="row mb-3">
-        <div class="col-md-6">	
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">	
             <h3 class="card-title">	
                 Vehicle PCO		
             </h3>
@@ -70,11 +70,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">                        
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle PCO Number </label>                            
-                            <input type="text" name="vpco_num" placeholder="Vehicle PCO Number" class="form-control">                        
+                            <input type="text" name="vpco_num" placeholder="Vehicle PCO Number" class="form-control" value="<?php echo $drow['vpco_num'];?>">                        
                         </div>                                                    
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle PCO Expiry </label>                            
-                            <input type="date" name="vpco_exp" class="form-control">                        
+                            <input type="date" name="vpco_exp" class="form-control" value="<?php echo $drow['vpco_exp'];?>">                        
                         </div>    			
                         <div class="form-group mb-3">                         
                             <label class="form-label"> Vehicle PCO Image </label>                        
@@ -85,7 +85,7 @@
                 </div>		
             </div>
         </div>	
-        <div class="col-md-6">	
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">	
             <h3 class="card-title">				
                 Vehicle Insurance						
             </h3>				
@@ -98,11 +98,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	 
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle Insurance Number </label>                            
-                            <input type="text" name="vi_num" placeholder="Vehicle Insurance Number" class="form-control">                        
+                            <input type="text" name="vi_num" placeholder="Vehicle Insurance Number" class="form-control" value="<?php echo $drow['vi_num'];?>">                        
                         </div>                            
                         <div class="form-group mb-3">                        
                             <label class="form-label"> Vehicle Insurance Expiry </label>                            
-                            <input type="date" name="vi_exp" class="form-control">                        
+                            <input type="date" name="vi_exp" class="form-control" value="<?php echo $drow['vi_exp'];?>">                        
                         </div>    			
                         <div class="form-group mb-3">                         
                             <label class="form-label">   Vehicle Insurance Image </label>								
@@ -115,7 +115,7 @@
         </div>	
     </div>
     <div class="row mb-3">
-        <div class="col-md-12">	
+        <div class="col-md-12" style="border: 1px solid #6c7a91; padding: 30px;">	
             <h3 class="card-title">	
                 Vehicle Picture (Front)		
             </h3>	
@@ -146,7 +146,7 @@
         </div>	     	   
     </div>      
     <div class="row mb-3">	    
-        <div class="col-md-6">	
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">	
             <h3 class="card-title">		            
                 Vehicle Road TAX		                
             </h3>		            
@@ -159,11 +159,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
                         <div class="form-group mb-3">                                                
                             <label class="form-label"> Road TAX Number </label>                                                        
-                            <input type="text" name="rt_num" placeholder="Road TAX Number" class="form-control">                                                
+                            <input type="text" name="rt_num" placeholder="Road TAX Number" class="form-control" value="<?php echo $drow['rt_num'];?>">                                                
                         </div>                                                    
                         <div class="form-group mb-3">                                                
                             <label class="form-label"> Road TAX Expiry </label>                                                        
-                            <input type="date" name="rt_exp" class="form-control">                                                
+                            <input type="date" name="rt_exp" class="form-control" value="<?php echo $drow['rt_exp'];?>">                                                
                         </div>    			                        
                         <div class="form-group mb-3">                                                 
                             <label class="form-label">  Road TAX Image </label>	                            
@@ -174,7 +174,7 @@
                 </div>						                
             </div> 					            
         </div>			        
-        <div class="col-md-6">			        
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			        
             <h3 class="card-title">					            
                 Vehicle Rental Agreement						                
             </h3>					            
@@ -187,11 +187,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	                        
                         <div class="form-group mb-3">                                                
                             <label class="form-label"> Vehicle Rental Agreement Number </label>                                                        
-                            <input type="text" name="ra_num" placeholder="Vehicle Rental Agreement Number" class="form-control">                                                
+                            <input type="text" name="ra_num" placeholder="Vehicle Rental Agreement Number" value="<?php echo $drow['ra_num'];?>" class="form-control">                                                
                         </div>                                                    
                         <div class="form-group mb-3">                                                
-                            <label class="form-label"> Vehicle Rental Agreement Expiry </label>                                                        
-                            <input type="date" name="ra_exp" class="form-control">                                                
+                            <label class="form-label"> Vehicle Rental Agreement Expiry </label>
+                            <input type="date" name="ra_exp" class="form-control" value="<?php echo $drow['ra_exp'];?>">
                         </div>    			                        
                         <div class="form-group mb-3">                                                 
                             <label class="form-label">  Vehicle Rental Agreement Image </label>			                            
@@ -204,7 +204,7 @@
         </div>
     </div>
     <div class="row mb-3">
-        <div class="col-md-6">		
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">		
             <h3 class="card-title">				
                 Insurance Schedule						
             </h3>				
@@ -217,7 +217,7 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">	                        
                         <div class="form-group">                        
                             <label class="form-label">Insurance Schedule Number</label>                            
-                            <input type="text" class="form-control" name="is_num" placeholder="Insurance Schedule Number">                                                
+                            <input type="text" class="form-control" name="is_num" value="<?php echo $drow['is_num'];?>" placeholder="Insurance Schedule Number">                                                
                         </div>			
                         <div class="form-group">                        
                             <label class="form-label">Insurance Schedule Number</label>                        
@@ -228,7 +228,7 @@
                 </div>		
             </div>	
         </div>		
-        <div class="col-md-6">			
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			
             <h3 class="card-title">				
                 Extra						
             </h3>				

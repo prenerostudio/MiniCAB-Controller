@@ -10,14 +10,27 @@ include("../../config.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['d_id'])) {
 		$d_id = $_POST['d_id'];
-        $status = $_POST['status'];                              
+        $status = $_POST['status']; 
+		$date = date('Y-m-d H:i:s');
         $sql = "UPDATE `drivers` SET `status`='$status' WHERE `d_id`='$d_id'";        		
         $result = mysqli_query($connect, $sql);
-        if ($result) {  	
+        if ($result) {  
+			
+		
+			if ($status == 'online') {
+    
+				$osql = "INSERT INTO `driver_sessions`(`d_id`, `driver_online_at`) VALUES ('$d_id','$date')";
+
+			} else {
+    
+				$osql = "UPDATE `driver_sessions` SET `driver_offline_at`='$date' WHERE `d_id`='$d_id'";
+
+			}
+ 
+			$r = mysqli_query($connect, $osql);												
 			$activity_type = 'Status Updated';		
 			$user_type = 'driver';		
-			$details = "Your Status recently Updated";
-				
+			$details = "Your Status recently Updated";				
 			$actsql = "INSERT INTO `activity_log`(
 												`activity_type`, 
 												`user_type`, 

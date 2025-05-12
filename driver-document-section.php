@@ -3,7 +3,7 @@
         Driver Document Section	
     </h2>	
     <div class="row mb-3">	
-        <div class="col-md-6">			
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			
             <h3 class="card-title">            
                 Driver License Photo Card (Front & Back)
             </h3>				
@@ -21,11 +21,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">                        
                         <div class="form-group pb-3">                                           
                             <label class="form-label"> License Number </label>
-                            <input type="text" name="licene_number" class="form-control" placeholder="Licence Number">
+                            <input type="text" name="licene_number" class="form-control" value="<?php echo $drow['dl_number'];?>" placeholder="Licence Number">
                         </div>                        
                         <div class="form-group pb-3">                                                          
                             <label class="form-label"> License Expiry Date </label>
-                            <input type="date" name="licence_exp" class="form-control">                            
+                            <input type="date" name="licence_exp" class="form-control" value="<?php echo $drow['dl_expiry'];?>">                            
                         </div>                        
                         <div class="form-group pb-3">                        
 							<label class="form-label"> License Front Image </label>
@@ -40,7 +40,7 @@
                 </div>
             </div>	
         </div>	                   
-        <div class="col-md-6">			        
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			        
             <h3 class="card-title">				
                 Proof of Address 1						
             </h3>				
@@ -71,7 +71,7 @@
         </div>		        	        	              			
     </div>			
     <div class="row mb-3">				    
-         <div class="col-md-6">			
+         <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			
             <h3 class="card-title">				
                 PCO License						
             </h3>				
@@ -85,11 +85,11 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">				
                         <div class="form-group pb-3">                                                          
                             <label class="form-label"> PCO License Number </label>
-                            <input type="text" name="pl_number" class="form-control" placeholder="PCO Licence Number">
+                            <input type="text" name="pl_number" class="form-control" value="<?php echo $drow['pl_number'];?>" placeholder="PCO Licence Number">
                         </div>                                              
                         <div class="form-group pb-3">                                                  
                             <label class="form-label">PCO License Expiry Date </label>
-                            <input type="date" name="pl_exp" class="form-control">                            
+                            <input type="date" name="pl_exp" class="form-control" value="<?php echo $drow['pl_exp'];?>">                            
                         </div>                        
                         <div class="form-group mb-3">			                                                        
                             <label class="form-label"> PCO License Image </label>                            
@@ -100,7 +100,7 @@
                 </div>						
             </div>				
         </div>        
-        <div class="col-md-6">		
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">		
             <h3 class="card-title">
                 National Insurance Number				
             </h3>
@@ -114,7 +114,7 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
                         <div class="form-group pb-3">
                             <label class="form-label"> National Insurance Number</label>
-                            <input type="text" name="ni_num" class="form-control" placeholder="National Insurance Number">
+                            <input type="text" name="ni_num" class="form-control" placeholder="National Insurance Number" value="<?php echo $drow['ni_number'];?>">
                         </div>                        
                         <div class="form-group mb-3">                        
                             <label class="form-label"> National Insurance Image </label>                          
@@ -127,7 +127,7 @@
         </div>	        	
     </div>    															
     <div class="row mb-3">
-        <div class="col-md-6">	
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">	
             <h3 class="card-title">	
                 DVLA Check Code			
             </h3>	
@@ -141,7 +141,7 @@
                         <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">			
                         <div class="form-group pb-3">  
                             <label class="form-label"> DVLA Check Number</label>
-                            <input type="text" name="dvla_num" class="form-control" placeholder="DVLA Check Number">
+                            <input type="text" name="dvla_num" class="form-control" placeholder="DVLA Check Number" value="<?php echo $drow['dvla_number'];?>">
                         </div>                        
                         <div class="form-group mb-3">                        
                             <label class="form-label"> DVLA Check Image </label>
@@ -152,7 +152,7 @@
                 </div>		
             </div>	
         </div>			
-        <div class="col-md-6">
+        <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">
             <h3 class="card-title">
                 Extra
             </h3>

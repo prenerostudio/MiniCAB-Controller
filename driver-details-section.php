@@ -42,6 +42,10 @@
                         <div class="form-label">Phone</div>
                         <input type="text" class="form-control" value="<?php echo $drow['d_phone']; ?>" name="dphone" readonly>
                     </div>
+					<div class="mb-3 col-md-4">
+                        <div class="form-label">Whatsapp</div>
+                        <input type="text" class="form-control" value="<?php echo $drow['d_whatsapp']; ?>" name="dwa">
+                    </div>
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Gender</div>
                         <select class="form-select" name="dgender">
@@ -51,10 +55,7 @@
                             <option>Transgender</option>
                         </select>
                     </div>
-                    <div class="mb-3 col-md-4">
-                        <div class="form-label">Address</div>
-                        <input type="text" class="form-control" value="<?php echo $drow['d_address'] ?>" name="daddress">
-                    </div>
+                    
                     <div class="mb-3 col-md-4">
                         <div class="form-label">License Authority</div>
                         <select class="form-select" name="dauth">
@@ -66,27 +67,79 @@
                             <option>Ireland</option>			
                         </select>
                     </div>
+					<div class="mb-3 col-md-4">
+                        <div class="form-label">Address</div>
+                        <input type="text" class="form-control" value="<?php echo $drow['d_address'] ?>" name="daddress">
+                    </div>
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Post Code </div>
-                        <input type="text" class="form-control" value="<?php echo $drow['d_post_code']; ?>" name="pc">
+						 <select class="form-select" name="pc">
+                            <option>
+                                <?php echo $drow['d_post_code'];?>
+                            </option>
+							 
+							<?php                               
+							$psql=mysqli_query($connect,"SELECT * FROM `post_codes`");                               
+							while($prow = mysqli_fetch_array($psql)){                                   
+							?>
+                            <option>
+                                <?php echo $prow['pc_name'] ?>
+                            </option>				
+							<?php                              
+							}                               
+							?>
+                        </select>                        
                     </div>
+					<div class="mb-3 col-md-4">
+                        <div class="form-label">Vehicle</div>
+					<select class="form-control" name="v_id">
+                                        <option value="<?php echo $drow['v_id'] ?>">
+                                            <?php echo $drow['v_name'] ?>
+                                        </option>
+										<?php
+                                        $vhcsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
+                                        while ($vhcrow = mysqli_fetch_array($vhcsql)) {
+										?>
+                                        <option value="<?php echo $vhcrow['v_id'] ?>">
+                                            <?php echo $vhcrow['v_name'] ?>
+                                        </option>
+										<?php
+										}
+										?>
+                                    </select>
+						 </div>
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Language</div>
                         <select class="form-select" name="dlang">
                             <option>
                                 <?php echo $drow['d_language'];?>
-                            </option>
-				<?php
-                                $lsql=mysqli_query($connect,"SELECT * FROM `language`");
-                                while($lrow = mysqli_fetch_array($lsql)){
-                                    ?>
+                            </option>				
+							<?php                               
+							$lsql=mysqli_query($connect,"SELECT * FROM `language`");                               
+							while($lrow = mysqli_fetch_array($lsql)){                                   
+							?>
                             <option>
                                 <?php echo $lrow['language'] ?>
-                            </option>
-				<?php
-                                }
-                                ?>
+                            </option>				
+							<?php                              
+							}                               
+							?>
                         </select>
+                    </div>
+					<div class="mb-3 col-md-4">
+                        <div class="form-label">Shift Timing</div>
+                        <select class="form-select" name="dshift">
+                            <option>
+                                <?php echo $drow['d_shift'];?>
+                            </option>							
+                            <option>Day Shift</option>				
+							<option>Afternoon Shift</option>				
+							<option>Night Shift</option>							
+                        </select>
+                    </div>
+					<div class="mb-3 col-md-4">
+                        <div class="form-label">TFL PCO Number: </div>
+                        <input type="text" class="form-control" value="<?php echo $drow['d_pco']; ?>" name="dpco">
                     </div>
                    
                 </div>

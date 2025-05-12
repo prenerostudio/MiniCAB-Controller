@@ -146,61 +146,54 @@ include('header.php');
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="subheader">Active users</div>
-                    </div>
-                    <div id="driverList">
-                        <table class="table" id="table-active">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Driver</th>
-                                    <th>Status</th>
-                                </tr>
-							</thead>
-                            <tbody>
-                                <?php
-                                $x=0;
-                                $drvsql=mysqli_query($connect,"SELECT * FROM `drivers` WHERE `status`='online'");
-                                while($drvrow = mysqli_fetch_array($drvsql)){
-                                    $x++;
-                                    ?>
-                                <tr>
-                                    <td>
-										<?php echo $x; ?>
-                                    </td>
-                                    <td>
-                                        <span class="text-secondary">
-											<?php echo $drvrow['d_name']; ?>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success me-1"></span>
-										<?php echo $drvrow['status']; ?>
-                                    </td>
-                                </tr>
-								<?php
-								}
-                                ?>
-                            </tbody>
-						</table>
-                    </div>
-                    <script> 
-						$(document).ready(function() {
-							$('#table-active').DataTable();
-						}); 
-						function loadDriverList() {
-							var xhttp = new XMLHttpRequest();
-							xhttp.onreadystatechange = function() {
-								if (this.readyState == 4 && this.status == 200) {
-									document.getElementById("driverList").innerHTML = this.responseText;
-								}
-							};
-							xhttp.open("GET", "update_driver_list.php", true);
+                    </div>                  
+					<div id="driverList">    
+						<?php include('update_driver_list.php'); ?>
+					</div>
+					<script>
+						function updateTimers() {    
+							const timers = document.querySelectorAll('.timer');    
+							timers.forEach(timer => {        
+								const startTime = parseInt(timer.dataset.start);        
+								const now = Date.now();        
+								const diff = now - startTime;								        
+								const hours = Math.floor(diff / (1000 * 60 * 60));        
+								const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));        
+								const seconds = Math.floor((diff % (1000 * 60)) / 1000);        
+								timer.textContent =            
+									`${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+							});
+						}						
+						setInterval(updateTimers, 1000);						
+						function loadDriverList() {    
+							const xhttp = new XMLHttpRequest();    
+							xhttp.onreadystatechange = function () {        
+								if (this.readyState === 4 && this.status === 200) {            
+									const container = document.getElementById("driverList");            
+									container.style.opacity = 0.5;            
+									setTimeout(() => {                
+										container.innerHTML = this.responseText;                
+										container.style.opacity = 1;                
+										updateTimers();                
+										if (typeof $ !== 'undefined' && $.fn.DataTable) {                    
+											$('#table-active').DataTable();                 
+										}            
+									}, 100);         
+								}    
+							};    
+							xhttp.open("GET", "update_driver_list.php", true);    
 							xhttp.send();
+						}						
+						function scheduleDriverListUpdate() {    
+							loadDriverList();    
+							setTimeout(scheduleDriverListUpdate, 5000);
 						}
-						loadDriverList();
-						setInterval(loadDriverList, 1000);
-					</script>
-                </div>
+						window.onload = () => {    
+							updateTimers();    
+							scheduleDriverListUpdate();
+						};
+					</script>                
+				</div>
             </div>
         </div>
         <div class="col-12">

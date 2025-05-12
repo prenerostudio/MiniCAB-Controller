@@ -1,0 +1,5 @@
+[05-May-2025 14:57:21 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'user' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\register-driver\register-process.php:53
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\register-driver\register-process.php(53): mysqli->prepare('INSERT INTO act...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\register-driver\register-process.php on line 53

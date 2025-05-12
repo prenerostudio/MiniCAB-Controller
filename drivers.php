@@ -28,7 +28,129 @@ include('header.php');
                 <h3 class="card-title">
                     Active Drivers List
                 </h3>
+				
+				
+				<div class="col-auto ms-auto d-print-none">
+            
+					<div class="btn-list">
+				
+						<select class="form-select" id="shift-filter">
+    
+							<option value="">Search By Shift Timing</option>
+    
+							<option value="Day Shift">Day Shift</option>
+    
+							<option value="Afternoon Shift">Afternoon Shift</option>
+    
+							<option value="Night Shift">Night Shift</option>
+
+						</select>
+
+               
+            
+					</div>
+        
+				</div>
+				
+				
+				<div class="col-auto" style="margin-left: 25px;">
+            
+					<div class="btn-indigo">
+				
+						
+						<select class="form-select" name="v_id" id="vehicle-filter">
+    
+							<option value="">Search By Vehicle</option>
+   
+							<?php
+   
+							$vsql = mysqli_query($connect, "SELECT * FROM vehicles");
+   
+							while ($vrow = mysqli_fetch_array($vsql)) {
+       
+								echo '<option value="' . $vrow['v_id'] . '">' . $vrow['v_name'] . '</option>';
+   
+							}
+   
+							?>
+
+						</select>
+
+
+						
+            
+					</div>
+        
+				</div>
+				
+				
+				<div class="col-auto" style="margin-left: 25px;">
+            <div class="btn-list">
+				<select class="form-select" id="postcode-filter">
+    <option value="">Search by PostCode</option>
+    <?php
+    $psql = mysqli_query($connect, "SELECT DISTINCT pc_name FROM post_codes");
+    while ($prow = mysqli_fetch_array($psql)) {
+        echo '<option value="' . $prow['pc_name'] . '">' . $prow['pc_name'] . '</option>';
+    }
+    ?>
+</select>
+
+               
             </div>
+        </div>
+
+				
+            
+			</div>
+			<script>
+$(document).ready(function () {
+    $('#table-driver').DataTable();
+
+    $('#shift-filter').on('change', function () {
+        var selectedShift = $(this).val();
+
+        $.ajax({
+            url: 'fetch-driver-shiftwise.php',
+            type: 'POST',
+            data: { shift: selectedShift },
+            success: function (data) {
+                $('.table-tbody').html(data);
+            }
+        });
+    });
+});
+				
+				$(document).ready(function () {
+    $('#vehicle-filter').on('change', function () {
+        var v_id = $(this).val();
+        $.ajax({
+            url: 'fetch-drivers-by-vehicle.php',
+            type: 'POST',
+            data: { v_id: v_id },
+            success: function (data) {
+                $('.table-tbody').html(data);
+            }
+        });
+    });
+});
+				$(document).ready(function () {
+    $('#postcode-filter').on('change', function () {
+        var pc_name = $(this).val();
+        $.ajax({
+            url: 'fetch-drivers-by-postcode.php',
+            type: 'POST',
+            data: { pc_name: pc_name },
+            success: function (data) {
+                $('.table-tbody').html(data);
+            }
+        });
+    });
+});
+</script>
+
+			
+			
             <div class="card-body border-bottom py-3">
                 <div id="table-adriver" class="table-responsive">
                     <table class="table" id="table-driver">
@@ -39,9 +161,9 @@ include('header.php');
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>Gender</th>
+                                <th>Vehicle</th>
                                 <th>Post Code</th>
-                                <th>License Authority</th>
+                                <th>Shift Timing</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -51,7 +173,22 @@ include('header.php');
                                
 							$x = 0;
                                
-							$adsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
+							$adsql = mysqli_query($connect, "SELECT
+	drivers.*, 
+	driver_vehicle.*, 
+	vehicles.*
+FROM
+	drivers
+	INNER JOIN
+	driver_vehicle
+	ON 
+		driver_vehicle.d_id = drivers.d_id
+	INNER JOIN
+	vehicles
+	ON 
+		driver_vehicle.v_id = vehicles.v_id
+WHERE
+	drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
                                
 							while ($adrow = mysqli_fetch_array($adsql)) :
                                    
@@ -87,48 +224,33 @@ include('header.php');
                                     <?php echo $adrow['d_phone'];?>
                                 </td>
                                 <td>
-                                    <?php echo $adrow['d_gender'];?>
+                                    <?php echo $adrow['v_name'];?>
                                 </td>
                                 <td>
                                     <?php echo $adrow['d_post_code'];?>
                                 </td>
                                 <td>									
-                                    <?php echo $adrow['licence_authority'];?>
+                                    <?php echo $adrow['d_shift'];?>
                                 </td>
                                 <td>
-                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="View/Edit" class="btn btn-icon btn-info">
-                                        
-                                            
+                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id'];?>" title="View/Edit" class="btn btn-icon btn-info"> 
 										<i class="ti ti-eye"></i>
-                                            
-                                        
                                     </a>
-                                    <a href="del-driver.php?d_id=<?php echo $adrow['d_id']; ?>" title="Delete" class="btn btn-icon btn-danger delete_btn">
-                                       
-                                            
+                                    <a href="del-driver.php?d_id=<?php echo $adrow['d_id'];?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">
 										<i class="ti ti-square-rounded-x"></i>
-                                            
-                                       
-                                    </a>
-                                    <a href="make-inactive.php?d_id=<?php echo $adrow['d_id']; ?>" title=" Make Inactive" class="btn btn-icon btn-instagram">
-                                        
-                                           
-										<i class="ti ti-user-x"></i>
-                                           
-                                       
+									</a>
+                                    <a href="make-inactive.php?d_id=<?php echo $adrow['d_id'];?>" title="Make Inactive" class="btn btn-icon btn-instagram">          
+										<i class="ti ti-user-x"></i>                 
                                     </a>
                                 </td>
-                            </tr>
-				
-							<?php endwhile; ?>
-                                    
+                            </tr>				
+							<?php endwhile; ?>                                    
 							<?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">No Driver Found!</p>
                                 </td>
-                            </tr>
-				
+                            </tr>				
 							<?php endif; ?>
                         </tbody>
                     </table>
@@ -191,13 +313,13 @@ include('header.php');
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Language</label>
                             <select class="form-select" name="dlang">
-                                <option value="" selected>Select Language</option>
-				<?php
+                                <option value="" selected>Select Language</option>				
+								<?php
                                 $lsql=mysqli_query($connect,"SELECT * FROM `language`");
-                                while($lrow = mysqli_fetch_array($lsql)){
-                                    ?>
-                                <option><?php echo $lrow['language'] ?></option>
-				<?php
+                                while($lrow = mysqli_fetch_array($lsql)){                                   
+								?>
+                                <option><?php echo $lrow['language'] ?></option>				
+								<?php
                                 }
                                 ?>
                             </select>
@@ -208,7 +330,35 @@ include('header.php');
                         </div>
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Post Code</label>
-                            <input type="text" class="form-control" name="post_code" placeholder="xxxxx">
+							<select class="form-select" name="post_code">
+							
+								
+								<option>Select PostCode</option>
+                        
+								<?php                               
+							
+								$psql=mysqli_query($connect,"SELECT * FROM `post_codes`");                               
+							
+								while($prow = mysqli_fetch_array($psql)){                                   
+							
+								?>
+                            
+								<option>
+                               
+									<?php echo $prow['pc_name'] ?>
+                          
+								</option>				
+							
+								<?php                              
+							
+								}                               
+							
+								?>
+							
+							
+							</select>
+							
+                            
                         </div>
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Address</label>
@@ -227,19 +377,19 @@ include('header.php');
                     </button>
                 </div>
             </form>
-            <script>
-    function validateForm() {
-        var dnameInput = document.getElementsByName("dname")[0].value;	
-        var demailInput = document.getElementsByName("demail")[0].value;        	
-        var dphoneInput = document.getElementsByName("dphone")[0].value;			
-        var dauthInput = document.getElementsByName("dauth")[0].value;		      	
-        if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	
-            alert("Please fill in all required fields.");           	
-            return false;	
-        }
-        return true;
-    }
-            </script>
+            <script>    
+				function validateForm() {        
+					var dnameInput = document.getElementsByName("dname")[0].value;	        
+					var demailInput = document.getElementsByName("demail")[0].value;        	        
+					var dphoneInput = document.getElementsByName("dphone")[0].value;			        
+					var dauthInput = document.getElementsByName("dauth")[0].value;		      	        
+					if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	            
+						alert("Please fill in all required fields.");           	            
+						return false;	        
+					}        
+					return true;    
+				}            
+			</script>
         </div>
     </div>
 </div>

@@ -1,28 +1,39 @@
 <?php
-include('config.php'); 
+include('config.php');
 
-$driver_list_html = '<table class="table table-responsive">'; 
-$driver_list_html .= '<thead>'; 
-$driver_list_html .= '<tr>'; 
-$driver_list_html .= '<th class="w-1">ID</th>'; 
-$driver_list_html .= '<th>Driver</th>'; 
-$driver_list_html .= '<th>Status</th>'; 
-$driver_list_html .= '</tr>'; 
-$driver_list_html .= '</thead>'; 
-$driver_list_html .= '<tbody>'; 
+echo '<table class="table" id="table-active">';
+echo '<thead>
+        <tr>
+            <th>ID</th>
+            <th>Driver</th>
+            <th>Online Time</th>
+            <th>Status</th>
+        </tr>
+      </thead>';
+echo '<tbody>';
 
 $x = 0;
-$drvsql = mysqli_query($connect, "SELECT * FROM `drivers` WHERE `status`='online'");
-while ($drvrow = mysqli_fetch_array($drvsql)) {
+
+$query = "
+    SELECT d.d_id, d.d_name, d.status, s.driver_online_at
+    FROM drivers d
+    JOIN driver_sessions s ON d.d_id = s.d_id
+    WHERE d.status = 'online' AND s.driver_offline_at IS NULL
+    GROUP BY d.d_id
+";
+$drvsql = mysqli_query($connect, $query);
+
+while ($drvrow = mysqli_fetch_assoc($drvsql)) {
     $x++;
-    $driver_list_html .= '<tr>'; 
-    $driver_list_html .= '<td>' . $x . '</td>'; 
-    $driver_list_html .= '<td><span class="text-secondary">' . $drvrow['d_name'] . '</span></td>'; 
-    $driver_list_html .= '<td><span class="badge bg-success me-1"></span> ' . $drvrow['status'] . '</td>'; 
-    $driver_list_html .= '</tr>'; 
+    $timestamp = strtotime($drvrow['driver_online_at']) * 1000;
+
+    echo '<tr>';
+    echo '<td>' . $x . '</td>';
+    echo '<td><span class="text-secondary">' . htmlspecialchars($drvrow['d_name']) . '</span></td>';
+    echo '<td><span class="timer" data-start="' . $timestamp . '"></span></td>';
+    echo '<td><span class="badge bg-success me-1"></span>' . htmlspecialchars($drvrow['status']) . '</td>';
+    echo '</tr>';
 }
 
-$driver_list_html .= '</tbody>'; 
-$driver_list_html .= '</table>'; 
-echo $driver_list_html;
+echo '</tbody></table>';
 ?>

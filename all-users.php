@@ -132,7 +132,7 @@ include('header.php');
                         </div>
                         <div class="mb-3 col-md-4">
                             <label class="form-label">Phone</label>
-                            <input type="text" class="form-control" name="uphone" placeholder="+44 20 7123 4567" required>
+                            <input type="text" class="form-control" name="uphone" placeholder="+44 xx xxxx xxxx" required>
                         </div>
                         <div class="mb-3 col-md-6">
                             <label class="form-label">Email</label>
@@ -155,7 +155,7 @@ include('header.php');
                             <label class="form-label">Designation</label>
                             <select class="form-select" name="udesig" required>
                                 <option value="" selected>Select Designation</option>
-                                <option>Administrator</option>
+                                <option>Controller</option>
                                 <option>Account Manager</option>
                                 <option>Accountant</option>
                             </select>

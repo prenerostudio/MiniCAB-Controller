@@ -154,19 +154,10 @@ include('header.php');
 					
                                         </a>                                 								
 					
-                                        <a  href="del-driver.php?d_id=<?php echo $idrow['d_id']; ?>" class="btn btn-danger delete_btn btn-icon" title="Delete">
-					
-                                          
-					
-                                              
-                                            <i class="ti ti-square-rounded-x"></i>
-						
-                                              
-						
-                                            								
-					
-                                        </a>										
-					
+                                        <a href="del-driver.php?d_id=<?php echo $idrow['d_id']; ?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">
+										   <i class="ti ti-square-rounded-x"></i>
+
+										</a>
                                         <a href="activate-driver.php?d_id=<?php echo $idrow['d_id']; ?>" class="btn btn-success btn-icon" title="Activate Driver">           
 					
                                            

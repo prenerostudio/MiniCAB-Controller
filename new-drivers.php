@@ -81,7 +81,7 @@ include('header.php');
 														<?php if (!$ndrow['d_pic']) : ?>
                                                         <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
 														<?php else : ?>
-                                                        <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                                            
+                                                        <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">        
 														<?php endif; ?>
 													</td>
                                                     <td>
@@ -108,11 +108,9 @@ include('header.php');
 																<i class="ti ti-eye"></i>
 															</button>
                                                         </a>
-                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete">
-                                                            <button class="btn btn-youtube btn-icon">
-                                                                <i class="ti ti-square-rounded-x"></i>
-															</button>
-                                                        </a>
+                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">
+															<i class="ti ti-square-rounded-x"></i>
+														</a>
                                                     </td>
                                                 </tr>                                                    
 												<?php endwhile; ?>   
@@ -151,7 +149,6 @@ include('header.php');
                                                     <th>Phone</th>
                                                     <th>Gender</th>
                                                     <th>Licence Authority</th>
-													
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -192,33 +189,24 @@ include('header.php');
                                                         <?php echo $ndrow['licence_authority']; ?>
                                                     </td>
                                                     <td>
-                                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View" class="btn btn-twitter btn-icon">
-                                                           
-																
-                                                            <i class="ti ti-eye"></i>
-                                                           
+                                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View" class="btn btn-twitter btn-icon">									
+                                                            <i class="ti ti-eye"></i>          
                                                         </a>
-                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete" class="btn btn-youtube btn-icon">
-                                                           
-                                                                <i class="ti ti-square-rounded-x"></i>
-                                                            
+                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete" class="btn btn-youtube btn-icon">                   
+															<i class="ti ti-square-rounded-x"></i>
                                                         </a>
                                                     </td>
-                                                </tr>
-												
-                                                    <?php endwhile; ?>   
-												
-                                                        <?php if ($y === 0) : ?>
-												
+                                                </tr>                   
+												<?php endwhile; ?>
+												<?php if ($y === 0) : ?>												
                                                 <tr>
                                                     <td colspan="9">
                                                         <p align="center">
                                                             No Driver Found!
                                                         </p>
                                                     </td>
-                                                </tr>
-												
-                                                    <?php endif; ?>
+												</tr>              
+												<?php endif; ?>
                                             </tbody> 
                                         </table>
                                     </div>

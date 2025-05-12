@@ -59,8 +59,10 @@
                                     </a>
                                 </td>
                             </tr>
-				<?php endwhile; ?>
-                                    <?php if ($x === 0) : ?>
+				
+							<?php endwhile; ?>
+                                    
+							<?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">
