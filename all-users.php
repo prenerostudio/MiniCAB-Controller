@@ -46,7 +46,7 @@ include('header.php');
                             <tbody class="table-tbody">
                                 <?php
                                 $x=0;
-                                $usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users JOIN countries ON users.country_id = countries.country_id WHERE users.designation <> 'Owner'");
+                                $usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users JOIN countries ON users.country_id = countries.country_id");
                                 while($urow = mysqli_fetch_array($usql)){                                   
 									$x++;                                
 								?>
@@ -87,10 +87,26 @@ include('header.php');
                                             <i class="ti ti-eye"></i>
                                             View
                                         </a>
-                                        <a class="btn btn-danger delete_btn" href="#">
+                                        
+                                        <?php
+                                        if($urow['designation']=='Super-admin'){
+                                            ?>
+                                        
+                                        <?php
+                                        } else {
+                                        ?>
+                                         <a class="btn btn-danger delete_btn" href="del-user.php?user_id=<?php echo $urow['user_id']; ?>" onclick="return confirm('Are you sure you want to delete this User?');">
                                             <i class="ti ti-square-rounded-x"></i>
                                             Delete
                                         </a>
+                                        <?php
+                                        }
+                                        ?>
+                                        
+                                       
+                                        
+                                        
+                                        
                                     </td>
                                 </tr>				
 								<?php

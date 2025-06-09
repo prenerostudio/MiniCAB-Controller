@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$dname = $_POST['dname'];   	    
 	$demail = $_POST['demail'];    	    
 	$dphone = $_POST['dphone'];        
-	$dpass = $_POST['dpass'];        
+	$dpass = password_hash($_POST['dpass'], PASSWORD_DEFAULT);        
 	$dauth = $_POST['dauth'];        
 	$dlang = $_POST['dlang'];        
 	$dgender = $_POST['dgender'];        
@@ -46,7 +46,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$stmt = $connect->prepare($sql);                          
 			$stmt->bind_param("sssssssssi", $dname, $demail, $dphone, $dpass, $address, $post_code, $dgender, $dlang, $dauth, $status);
 		}                        
-		if ($stmt->execute()) {					                       						            	        
+		if ($stmt->execute()) {	
+			 $d_id = mysqli_insert_id($connect);
+
+       
+			// Link driver to vehicle
+        
+			$vsql = "INSERT INTO `driver_vehicle`(`v_id`, `d_id`) VALUES ('$v_id', '$d_id')";
+        
+			$vr = mysqli_query($connect, $vsql);
+			
+			
+			
+			
 			$activity_type = 'New Driver Added';			            
 			$user_type = 'user';			            
 			$details = "New Driver " . $dname . " Has been Added by Controller.";			            

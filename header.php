@@ -29,8 +29,7 @@ include('config.php');
         <link href="vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />	
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />	                        
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete"
-async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>
 <script>			
     document.addEventListener("DOMContentLoaded", function() {    			
         const addStopButton = document.getElementById('add-stop-btn');	
@@ -71,11 +70,21 @@ async defer></script>
                         <div class="navbar-nav flex-row order-md-last">			
                             <div class="nav-item d-none d-md-flex me-3">			
                                 <div class="btn-list">
+                                     <a href="expired-documents.php" class="btn btn-github position-relative">
+                                        <i class="ti ti-users-group"></i>
+                                        Expired Documents
+                                        <span class="badge bg-orange text-orange-fg badge-notification badge-pill">0</span>
+                                    </a>
+                                    
+                                   <?php if ($web_driver != 0): ?>
                                     <a href="new-driver-web.php" class="btn btn-github position-relative">
                                         <i class="ti ti-users-group"></i>
                                         Drivers From WEB
                                         <span class="badge bg-orange text-orange-fg badge-notification badge-pill">0</span>
                                     </a>
+                                    
+                                    <?php endif; ?>
+                                     <?php if ($new_driver != 0): ?>
                                     <a href="new-drivers.php" class="btn btn-indigo position-relative">
                                         <i class="ti ti-users-group"></i>
                                         New Drivers
@@ -83,6 +92,8 @@ async defer></script>
                                             0
                                         </span>
                                     </a>
+                                     <?php endif; ?>	
+                                    <?php if ($fare_corrections != 0): ?>
                                     <a href="fare-corrections.php" class="btn btn-danger position-relative">
                                         <i class="ti ti-receipt-pound"></i>
                                         Fare Corrections
@@ -90,14 +101,20 @@ async defer></script>
                                             0
                                         </span>
                                     </a>
+                                     <?php endif; ?>
+                                    <?php if ($driver_tracker != 0): ?>
                                     <a href="driver-tracker.php" class="btn btn-cyan">
                                         <i class="ti ti-user-search"></i>
                                         Driver Tracker 
-                                    </a>				
+                                    </a>
+                                     <?php endif; ?>
+                                     <?php if ($add_booking != 0): ?> 
                                     <a href="add-booking.php" class="btn btn-indigo">
                                         <i class="ti ti-bookmark-plus"></i>
                                         New Booking
                                     </a>
+                                     <?php endif; ?>	
+                                    
                                 </div>                                
 								
                                 <script>    
@@ -168,6 +185,77 @@ async defer></script>
                                     <i class="ti ti-sun"></i>
                                 </a>
                             </div>
+							
+							<div class="nav-item dropdown d-none d-md-flex me-3">
+               
+								<a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
+                 
+									<i class="ti ti-bell"></i>
+                 
+									<span class="badge bg-red"></span>
+               
+								</a>
+               
+								<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
+                
+									<div class="card">
+                 
+										<div class="card-header">
+                 
+											<h3 class="card-title">Last updates</h3>
+                 
+										</div>
+                    
+										
+										<div class="list-group list-group-flush list-group-hoverable">
+                      
+											<div class="list-group-item">
+                       
+												<div class="row align-items-center">
+                       
+													<div class="col-auto">
+														<span class="status-dot status-dot-animated bg-red d-block"></span>
+													</div>
+                        
+													<div class="col text-truncate">
+                            
+														<a href="#" class="text-body d-block">Example 1</a>
+                            
+														<div class="d-block text-secondary text-truncate mt-n1">
+                             
+															Change deprecated html tags to text decoration classes (#29604)
+                            
+														</div>
+                          
+													</div>
+                          
+													<div class="col-auto">
+                           
+														<a href="#" class="list-group-item-actions">
+                              
+															<i class="ti ti-star"></i>
+                            
+														</a>
+                          
+													</div>
+                        
+												</div>
+                      
+											</div>
+                   
+											
+											
+											
+											
+                   
+										</div>
+                 
+									</div>
+               
+								</div>
+             
+							
+							</div>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
                                     <span class="avatar avatar-sm" style="background-image: url(img/users/<?php echo $user_pic;?>)"></span>
@@ -177,7 +265,10 @@ async defer></script>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                     <?php if ($all_users_list != 0): ?>
                                     <a href="all-users.php" class="dropdown-item">All Users</a>
+                                  <?php endif; ?>	  
+                                    
                                     <a href="profile-setting.php" class="dropdown-item">Settings</a>
                                     <a href="logout.php" class="dropdown-item">Logout</a>
                                 </div>
@@ -185,8 +276,17 @@ async defer></script>
                         </div>
                     </div>
                 </header>
+				
+                   
 				<?php
-                include('navbar.php');
-                ?>
+                
+                    
+				include('navbar.php');
+                
+                    
+				?>
+            
+            
             </div>
+            
             <div class="page-wrapper">

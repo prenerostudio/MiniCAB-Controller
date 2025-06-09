@@ -6,6 +6,8 @@ if (isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
     $mot_num = $_POST['mot_num'];
     $mot_exp = $_POST['mot_exp'];
+	$mot_exp_time = $_POST['mot_exp_time'];
+	
     $date_update = date('Y-m-d H:i:s'); // Current timestamp
     $targetDir = "img/drivers/vehicle/mot-certificate/";
 
@@ -34,8 +36,8 @@ if (isset($_POST['submit'])) {
 
             if ($result->num_rows > 0) {
                 // Update existing record
-                $updateStmt = $connect->prepare("UPDATE `vehicle_mot` SET `mot_num`= ?,`mot_expiry`= ?,`mot_img`= ?,`mot_updated_at`= ? WHERE `d_id`= ?");
-                $updateStmt->bind_param("sssss", $mot_num, $mot_exp, $fileName, $date_update, $d_id);
+                $updateStmt = $connect->prepare("UPDATE `vehicle_mot` SET `mot_num`= ?,`mot_expiry`= ?,`mot_exp_time`= ?,`mot_img`= ?,`mot_updated_at`= ? WHERE `d_id`= ?");
+                $updateStmt->bind_param("ssssss", $mot_num, $mot_exp, $mot_exp_time, $fileName, $date_update, $d_id);
 
                 if ($updateStmt->execute()) {
                     logActivity('Vehicle MOT Certificate Updated', $d_id, "Vehicle MOT Certificate of Driver $d_id has been updated by Controller.");
@@ -44,8 +46,8 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 // Insert new record
-                $insertStmt = $connect->prepare("INSERT INTO `vehicle_mot`( `d_id`, `mot_num`, `mot_expiry`, `mot_img`, `mot_created_at`)  VALUES (?, ?, ?, ?, ?)");
-                $insertStmt->bind_param("sssss", $d_id, $mot_num, $mot_exp, $fileName, $date_update);
+                $insertStmt = $connect->prepare("INSERT INTO `vehicle_mot`(`d_id`, `mot_num`, `mot_expiry`, `mot_exp_time`, `mot_img`, `mot_created_at`) VALUES (?, ?, ?, ?, ?, ?)");
+                $insertStmt->bind_param("ssssss", $d_id, $mot_num, $mot_exp, $mot_exp_time, $fileName, $date_update);
 
                 if ($insertStmt->execute()) {
                     logActivity('Vehicle MOT Certificate Added', $d_id, "Vehicle MOT Certificate of Driver $d_id has been added by Controller.");

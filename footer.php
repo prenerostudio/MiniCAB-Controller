@@ -68,7 +68,31 @@
 <script src="js/tabler.min.js" defer></script>
 <script src="js/demo.min.js" defer></script>
 <script src="libs/list.js/dist/list.min.js" defer></script>
+ <script>
+	
+    $(document).ready(function() {    
 
+        $('.toggle-password').click(function() {        
+	
+        $(this).toggleClass('active');        
+	
+        var input = $($(this).closest('.input-group').find('input'));        
+	
+        if (input.attr('type') == 'password') {            
+	
+            input.attr('type', 'text');        
+	
+        } else {            
+	
+            input.attr('type', 'password');        
+	
+        }    
+	
+    });
+
+    });
+
+        </script>  
 
 </body>
 </html>

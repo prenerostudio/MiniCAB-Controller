@@ -1,11 +1,11 @@
 <div class="card-body">							
     <h2 class="mb-4">
-        Driver Document Section	
+        Driver Document Section	(All Documents with <span style="color:red;">*</span> are required.)
     </h2>	
     <div class="row mb-3">	
         <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			
             <h3 class="card-title">            
-                Driver License Photo Card (Front & Back)
+                Driver License Photo Card (Front & Back) <span style="color:red; font-size: 24px; font-weight: bold;">*</span> 
             </h3>				
             <div class="row align-items-center">				
                 <div class="col-auto">		
@@ -25,8 +25,12 @@
                         </div>                        
                         <div class="form-group pb-3">                                                          
                             <label class="form-label"> License Expiry Date </label>
-                            <input type="date" name="licence_exp" class="form-control" value="<?php echo $drow['dl_expiry'];?>">                            
-                        </div>                        
+                            <input type="date" name="licence_exp" class="form-control" value="<?php echo $drow['dl_expiry'];?>">
+                        </div> 
+						<div class="form-group pb-3">                                                          
+                            <label class="form-label"> License Expiry Time </label>
+                            <input type="time" name="li_exp_time" class="form-control" value="<?php echo $drow['dl_expiry_time'];?>">
+                        </div>
                         <div class="form-group pb-3">                        
 							<label class="form-label"> License Front Image </label>
                             <input type="file" id="dl_front" name="dl_front" accept="image/*" class="form-control" required>                            
@@ -73,7 +77,7 @@
     <div class="row mb-3">				    
          <div class="col-md-6" style="border: 1px solid #6c7a91; padding: 30px;">			
             <h3 class="card-title">				
-                PCO License						
+                PCO License <span style="color:red; font-size: 24px; font-weight: bold;">*</span> 						
             </h3>				
             <div class="row align-items-center">				
                 <div class="col-auto">						
@@ -90,7 +94,11 @@
                         <div class="form-group pb-3">                                                  
                             <label class="form-label">PCO License Expiry Date </label>
                             <input type="date" name="pl_exp" class="form-control" value="<?php echo $drow['pl_exp'];?>">                            
-                        </div>                        
+                        </div>  
+						<div class="form-group pb-3">                                                  
+                            <label class="form-label">PCO License Expiry Time </label>
+                            <input type="time" name="pl_exp_time" class="form-control" value="<?php echo $drow['pl_exp_time'];?>">                            
+                        </div> 
                         <div class="form-group mb-3">			                                                        
                             <label class="form-label"> PCO License Image </label>                            
                             <input type="file" id="pco" name="pco" accept="image/*"  class="form-control" required>

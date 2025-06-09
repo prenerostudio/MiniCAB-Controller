@@ -14,8 +14,30 @@ include('header.php');
     </div>	
 </div>          
 <div class="page-body page_padding">
+	
+	<div class="alert alert-important alert-danger alert-dismissible" role="alert">
+    
+		<div class="d-flex">
+        
+			<div>
+            
+				<i class="ti ti-alert-circle" style="padding-right: 10px;"></i>
+                
+			</div>
+            
+			<div>
+            
+				I'm so sorry…
+                
+			</div>
+            
+		</div>
+        
+		<a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+        
+	</div>
     <div class="row row-deck row-cards">
-        <div class="col-lg-6">			
+        <div class="col-lg-5">			
             <div class="card">            
                <?php
                include('count-online-drivers.php');               
@@ -102,21 +124,30 @@ include('header.php');
                                         ?>
                                     <tr>
                                         <td>
-											<?php echo $n; ?>
-										</td>
+											
+                                            <?php echo $n; ?>
+										
+                                        </td>
                                         <td>
                                             <span class="text-secondary">
-												<?php echo $drrow['d_name']; ?>
+												
+                                                <?php echo $drrow['d_name']; ?>
                                             </span>
-										</td>
+										
+                                        </td>
                                         <td>					
                                             <span class="badge bg-success me-1"></span>
-											<?php echo $drrow['status']; ?>
+											
+                                                <?php echo $drrow['status']; ?>
                                         </td>
                                     </tr>
-									<?php
-									}
-									?>
+									
+                                        <?php
+									
+                                        
+                                    }
+									
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -141,59 +172,134 @@ include('header.php');
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="subheader">Active users</div>
                     </div>                  
-					<div id="driverList">    
-						<?php include('update_driver_list.php'); ?>
-					</div>
-					<script>
-						function updateTimers() {    
-							const timers = document.querySelectorAll('.timer');    
-							timers.forEach(timer => {        
-								const startTime = parseInt(timer.dataset.start);        
-								const now = Date.now();        
-								const diff = now - startTime;								        
-								const hours = Math.floor(diff / (1000 * 60 * 60));        
-								const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));        
-								const seconds = Math.floor((diff % (1000 * 60)) / 1000);        
-								timer.textContent =            
-									`${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-							});
-						}						
-						setInterval(updateTimers, 1000);						
-						function loadDriverList() {    
-							const xhttp = new XMLHttpRequest();    
-							xhttp.onreadystatechange = function () {        
-								if (this.readyState === 4 && this.status === 200) {            
-									const container = document.getElementById("driverList");            
-									container.style.opacity = 0.5;            
-									setTimeout(() => {                
-										container.innerHTML = this.responseText;                
-										container.style.opacity = 1;                
-										updateTimers();                
-										if (typeof $ !== 'undefined' && $.fn.DataTable) {                    
-											$('#table-active').DataTable();                 
-										}            
-									}, 100);         
-								}    
-							};    
-							xhttp.open("GET", "update_driver_list.php", true);    
-							xhttp.send();
-						}						
-						function scheduleDriverListUpdate() {    
-							loadDriverList();    
-							setTimeout(scheduleDriverListUpdate, 5000);
-						}
-						window.onload = () => {    
-							updateTimers();    
-							scheduleDriverListUpdate();
-						};
-					</script>                
-				</div>
+					
+                    <div id="driverList">    
+						
+                        <?php include('update_driver_list.php'); ?>
+					
+                    </div>
+					
+                    <script>
+						
+    function updateTimers() {    
+							
+        const timers = document.querySelectorAll('.timer');    
+							
+        timers.forEach(timer => {        
+								
+            const startTime = parseInt(timer.dataset.start);        
+	
+            const now = Date.now();        
+	
+            const diff = now - startTime;								        
+	
+            const hours = Math.floor(diff / (1000 * 60 * 60));        
+	
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));        
+	
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);        
+	
+            timer.textContent =            
+	
+                    `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+		
+        });
+	
+    }	
+    
+      function updateavTimers() {    
+							
+        const avtimers = document.querySelectorAll('.avtimer');    
+							
+        avtimers.forEach(avtimer => {        
+								
+            const startTime = parseInt(avtimer.dataset.start);        
+	
+            const now = Date.now();        
+	
+            const diff = now - startTime;								        
+	
+            const hours = Math.floor(diff / (1000 * 60 * 60));        
+	
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));        
+	
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);        
+	
+            avtimer.textContent =            
+	
+                    `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+		
+        });
+	
+    }	
+    setInterval(updateavTimers, 1000);
+
+    setInterval(updateTimers, 1000);						
+
+    function loadDriverList() {    
+
+        const xhttp = new XMLHttpRequest();    
+	
+        xhttp.onreadystatechange = function () {        
+	
+        if (this.readyState === 4 && this.status === 200) {            
+	
+            const container = document.getElementById("driverList");            
+	
+            container.style.opacity = 0.5;            
+	
+            setTimeout(() => {                
+	
+                container.innerHTML = this.responseText;                
+		
+                container.style.opacity = 1;                
+		
+                updateTimers();  
+                updateavTimers();
+		
+                if (typeof $ !== 'undefined' && $.fn.DataTable) {                    
+		
+                    $('#table-active').DataTable();                 
+		
+                }            
+		
+            }, 100);         
+	
+        }    
+	
+    };    
+
+        xhttp.open("GET", "update_driver_list.php", true);    
+	
+        xhttp.send();
+	
+    }						
+
+    function scheduleDriverListUpdate() {    
+
+        loadDriverList();    
+	
+        setTimeout(scheduleDriverListUpdate, 5000);
+	
+    }
+
+    window.onload = () => {    
+
+        updateTimers();    
+	
+        scheduleDriverListUpdate();
+	
+    };
+
+                    </script>                
+		
+                </div>
             </div>
         </div>
         <div class="col-12">

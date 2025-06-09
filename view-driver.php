@@ -86,7 +86,7 @@ FROM
 	driver_vehicle
 	ON 
 		driver_vehicle.d_id = drivers.d_id
-	INNER JOIN
+	LEFT JOIN
 	vehicles
 	ON 
 		driver_vehicle.v_id = vehicles.v_id
@@ -107,16 +107,27 @@ $drow = mysqli_fetch_array($dsql);
         <div class="col-auto ms-auto d-print-none">
             <div class="btn-list">
                <?php if ($drow['acount_status'] == 1): ?> 
-				<button class="btn btn-disable d-none d-sm-inline-block" disabled>       
-					<i class="ti ti-checks"></i>       
-					Verified Driver    
-				</button>
-				<?php else: ?>   
-				<button class="btn btn-primary d-none d-sm-inline-block" id="approveDriverBtn" data-did="<?= $d_id ?>">        
-					<i class="ti ti-checks"></i>        
-					Approve Driver    
-				</button>
-				<?php endif; ?>
+				
+                <button class="btn btn-disable d-none d-sm-inline-block" disabled>       
+		
+                    <i class="ti ti-checks"></i>       
+		
+                    Verified Driver    
+		
+                </button>
+		
+		<?php else: ?>   
+
+                <button class="btn btn-primary d-none d-sm-inline-block" id="approveDriverBtn" data-did="<?= $d_id ?>">        
+		
+                    <i class="ti ti-checks"></i>        
+		
+                    Approve Driver    
+		
+                </button>
+		
+		<?php endif; ?>
+
             </div>
         </div>
     </div>
@@ -210,8 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane active show" id="tabs-profile">
-                            <?php                        
-							include('driver-details-section.php');
+                            <?php							
+                            include('driver-details-section.php');
                             ?>
                         </div>
                         <div class="tab-pane" id="tabs-document">

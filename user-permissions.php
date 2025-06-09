@@ -4,9 +4,9 @@
         <form method="post" action="grant-permissions.php">        			
             <input type="hidden" class="form-control" name="user_id" value="<?php echo $user_id;  ?>">	
             <div class="row g-3">            	
-                <div class="col-md-4">                		
+                <div class="col-md-4" style="border: 1px solid #31708f; padding: 25px;">                		
                     <div class="mb-3">                                        		
-                        <label class="form-label h3">Bookings Section</label>                                                			
+                        <label class="form-label h3" style="padding-bottom: 20px;">Bookings Section</label>
                         <div class="divide-y">                                                			
                             <div>                                                        			
                                 <label class="row">                                                                				
@@ -88,9 +88,9 @@
                         </div>                                          
                     </div>                                                    
                 </div>                                                 
-                <div class="col-md-4">                
+                <div class="col-md-4" style="border: 1px solid #31708f; padding: 25px;">                
                     <div class="mb-3">                                        
-                        <label class="form-label h3">TimeSlot Section</label>                                                
+                        <label class="form-label h3" style="padding-bottom: 20px;">TimeSlot Section</label>                                                
                         <div class="divide-y">                                                
                             <div>                                                        
                                 <label class="row">                                                                
@@ -161,9 +161,9 @@
                         </div>                                            
                     </div>                                    
                 </div>                                                               
-                <div class="col-md-4">                              
+                <div class="col-md-4" style="border: 1px solid #31708f; padding: 25px;">                              
                     <div class="mb-3">                                        
-                        <label class="form-label h3">Bids Section</label>                                                
+                        <label class="form-label h3" style="padding-bottom: 20px;">Bids Section</label>                                                
                         <div class="divide-y">                                                
                             <div>                                                        
                                 <label class="row">                                                                
@@ -201,7 +201,7 @@
                         </div>                    
                     </div>
                     <div class="mb-3">                                                                
-                        <label class="form-label h3">Companies Section</label>                                                
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">Companies Section</label>                                                
                         <div class="divide-y">                                                                            
                             <div>                                                        
                                 <label class="row">                                                                                                    
@@ -237,11 +237,12 @@
                                 </label>                                                                                      
                             </div>                                                
                         </div>                                        
-                    </div>                                
+                    </div> 
+                      
                 </div>                 						                
-                <div class="col-md-4">                                
+                <div class="col-md-4" style="border: 1px solid #31708f; padding: 25px;">                                
                     <div class="mb-3">                                                            
-                        <label class="form-label h3">Customers Section</label>                                                                        
+                        <label class="form-label h3" style="padding-bottom: 20px;">Customers Section</label>
                         <div class="divide-y">                                                                        
                             <div>                                                                                    
                                 <label class="row">                                                                                                
@@ -279,7 +280,7 @@
                         </div>                                                                
                     </div>                     
                     <div class="mb-3">                                        
-                        <label class="form-label h3">Destinations Section</label>			
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">Destinations Section</label>			
                         <div class="divide-y">                                            			
                             <div>                                                    			
                                 <label class="row">                                                            				
@@ -328,9 +329,9 @@
                         </div>                                                                    			                    
                     </div>		                                                    
                 </div>								                
-                <div class="col-md-4">                                
+                <div class="col-md-4" style="border: 1px solid #31708f; padding: 25px;">                                
                     <div class="mb-3">                                                            
-                        <label class="form-label h3">Drivers Section</label>                                                                        
+                        <label class="form-label h3" style="padding-bottom: 20px;">Drivers Section</label>                                                                        
                         <div class="divide-y">                                                                        
                             <div>                                                                                    
                                 <label class="row">                                                                                                
@@ -397,11 +398,23 @@
                                         </label>                                                                                                          
                                     </span>                                                                                                
                                 </label>                                                                                      
-                            </div>                                                                         
+                            </div> 
+                            <div>                                                                
+                                <label class="row">                                                                  
+                                    <span class="col">Drivers Tracking</span>                                                                      
+                                    <span class="col-auto">                                        
+                                        <label class="form-check form-check-single form-switch">                                                    
+                                            <input type="hidden" name="driver-tracker" value="0">                                                                                     
+                                            <input class="form-check-input" type="checkbox" name="driver-tracker" value="1" <?php echo ($urow['driver_tracker'] == 1) ? 'checked' : ''; ?>>                                                                                                                    
+                                        </label>                                                                                                          
+                                    </span>                                                                                                
+                                </label>                                                                                      
+                            </div> 
+                            
                         </div>                                                                                    
                     </div>   					
                     <div class="mb-3">                                                            
-                        <label class="form-label h3">Company Profile</label>                                                                        
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">Company Profile</label>                                                                        
                         <div class="divide-y">                                                
                             <div>                                                        
                                 <label class="row">                                                                
@@ -415,11 +428,30 @@
                                 </label>                                                                                      
                             </div>                                                                                               
                         </div>                                                                
-                    </div>                                
+                    </div> 
+                  
+                     <div class="mb-3">                                                                
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">Fare Correction</label>                                                
+                        <div class="divide-y">                                                                            
+                            <div>                                                        
+                                <label class="row">                                                                
+                                    <span class="col">Fare Correction</span>                                                                      
+                                    <span class="col-auto">                                                                        
+                                        <label class="form-check form-check-single form-switch">                                                
+                                            <input type="hidden" name="fare-correction" value="0">                                           
+                                            <input class="form-check-input" type="checkbox" name="fare-correction" value="1" <?php echo ($urow['fare_corrections'] == 1) ? 'checked' : ''; ?>>                                                                                                                    
+                                        </label>                                                                                                          
+                                    </span>                                                                                                
+                                </label>                                                                                      
+                            </div>                                                                                               
+                        </div>                                                                
+                    </div>
+                    
+                    
                 </div>               
-                <div class="col-md-4">                   		
+                <div class="col-md-4" style="border: 1px solid #31708f; padding: 25px;">                   		
                     <div class="mb-3">                                                                
-                        <label class="form-label h3">Vehicles Section</label>                                                
+                        <label class="form-label h3" style="padding-bottom: 20px;">Vehicles Section</label>                                                
                         <div class="divide-y">                                                                            
                             <div>                                                                                    
                                 <label class="row">                                                                
@@ -435,7 +467,7 @@
                         </div>                                                                
                     </div>
                     <div class="mb-3">                    
-                        <label class="form-label h3">Pricing Section</label>                                                
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">Pricing Section</label>                                                
                         <div class="divide-y">                        
                             <div>                                                            
                                 <label class="row">                                
@@ -451,7 +483,7 @@
                         </div>                                                                
                     </div>                    		                    
                     <div class="mb-3">                                                            
-                        <label class="form-label h3">Accounts Section</label>                                                                        
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">Accounts Section</label>                                                                        
                         <div class="divide-y">                                                                        
                             <div>                                                                                    
                                 <label class="row">                                                                                                
@@ -489,7 +521,7 @@
                         </div>                                            
                     </div>                    	
                     <div class="mb-3">                                                                
-                        <label class="form-label h3">Activity Section</label>                                                
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">Activity Section</label>                                                
                         <div class="divide-y">                                                                            
                             <div>                                                        
                                 <label class="row">                                                                
@@ -503,7 +535,28 @@
                                 </label>                                                                                      
                             </div>                                                                                               
                         </div>                                                                
-                    </div>					 					 					                                 
+                    </div>
+                    
+                    
+                    
+                   
+                    
+                    <div class="mb-3">                                                                
+                        <label class="form-label h3" style="padding-bottom: 20px; padding-top: 20px;">All Users List</label>                                                
+                        <div class="divide-y">                                                                            
+                            <div>                                                        
+                                <label class="row">                                                                
+                                    <span class="col">All Users List</span>                                                                      
+                                    <span class="col-auto">                                                                        
+                                        <label class="form-check form-check-single form-switch">                                                
+                                            <input type="hidden" name="all-user-list" value="0">                                           
+                                            <input class="form-check-input" type="checkbox" name="all-user-list" value="1" <?php echo ($urow['activity_logs'] == 1) ? 'checked' : ''; ?>>                                                                                                                    
+                                        </label>                                                                                                          
+                                    </span>                                                                                                
+                                </label>                                                                                      
+                            </div>                                                                                               
+                        </div>                                                                
+                    </div>
                 </div> 				                        
             </div>												          
             <div class="card-footer bg-transparent mt-auto">            

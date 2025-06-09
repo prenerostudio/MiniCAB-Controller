@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
     $vpco_num = $_POST['vpco_num'];
     $vpco_exp = $_POST['vpco_exp'];
+	$vpco_exp_time = $_POST['vpco_exp_time'];
     $date_update = date('Y-m-d H:i:s'); 
     $targetDir = "img/drivers/vehicle/pco/";
 
@@ -33,8 +34,8 @@ if (isset($_POST['submit'])) {
 
             if ($result->num_rows > 0) {
                
-                $updateStmt = $connect->prepare("UPDATE `vehicle_pco` SET `vpco_num`= ?,`vpco_exp`= ?,`vpco_img`= ?,`vpco_updated_at`= ? WHERE `d_id` = ?");
-                $updateStmt->bind_param("sssss", $vpco_num, $vpco_exp, $fileName, $date_update, $d_id);
+                $updateStmt = $connect->prepare("UPDATE `vehicle_pco` SET `vpco_num`= ?,`vpco_exp`= ?,`vpco_exp_time`= ?,`vpco_img`= ?,`vpco_updated_at`= ? WHERE `d_id` = ?");
+                $updateStmt->bind_param("ssssss", $vpco_num, $vpco_exp, $vpco_exp_time, $fileName, $date_update, $d_id);
 
                 if ($updateStmt->execute()) {
                     logActivity('Vehicle PCO Updated', $d_id, "Vehicle PCO of Driver $d_id has been updated by Controller.");
@@ -43,8 +44,8 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 
-                $insertStmt = $connect->prepare("INSERT INTO `vehicle_pco`(`d_id`, `vpco_num`, `vpco_exp`, `vpco_img`, `vpco_created_at`)  VALUES (?, ?, ?, ?, ?)");
-                $insertStmt->bind_param("sssss", $d_id, $vpco_num, $vpco_exp, $fileName, $date_update);
+                $insertStmt = $connect->prepare("INSERT INTO `vehicle_pco`(`d_id`, `vpco_num`, `vpco_exp`, `vpco_exp_time`, `vpco_img`, `vpco_created_at`) VALUES (?, ?, ?, ?, ?, ?)");
+                $insertStmt->bind_param("ssssss", $d_id, $vpco_num, $vpco_exp, $vpco_exp_time, $fileName, $date_update);
 
                 if ($insertStmt->execute()) {
                     logActivity('Vehicle PCO Added', $d_id, "Vehicle PCO of Driver $d_id has been added by Controller.");

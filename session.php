@@ -55,4 +55,10 @@ $driver_reports = $_SESSION['driver_reports'] ?? '';
 $customer_reports = $_SESSION['customer_reports'] ?? '';
 $booker_reports = $_SESSION['booker_reports'] ?? '';
 $activity_logs = $_SESSION['activity_logs'] ?? '';
+
+$driver_tracker = $_SESSION['driver_tracker'] ?? '';
+$fare_corrections = $_SESSION['fare_corrections'] ?? '';
+$all_users_list = $_SESSION['all_users_list'] ?? '';
+
+
 ?>

@@ -95,7 +95,29 @@ include('header.php');
                 <div class="card-body border-bottom py-3">						
                     <div class="table-responsive">
                         <?php
-                        $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC");  
+                        $bsql = mysqli_query($connect, "SELECT
+	bookings.*, 
+	clients.c_name, 
+	clients.c_email, 
+	clients.c_phone, 
+	booking_type.*, 
+	vehicles.*
+FROM
+	bookings
+	LEFT JOIN
+	clients
+	ON 
+		bookings.c_id = clients.c_id
+	INNER JOIN
+	booking_type
+	ON 
+		bookings.b_type_id = booking_type.b_type_id
+	LEFT JOIN
+	vehicles
+	ON 
+		bookings.v_id = vehicles.v_id
+ORDER BY
+	bookings.book_id DESC ");  
                         if (mysqli_num_rows($bsql) > 0) {
                         ?>
                         <table class="table" id="table-booking">

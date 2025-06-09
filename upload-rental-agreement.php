@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
     $ra_num = $_POST['ra_num'];
     $ra_exp = $_POST['ra_exp'];
+	$ra_exp_time = $_POST['ra_exp_time'];
     $date_update = date('Y-m-d H:i:s'); // Current timestamp
     $targetDir = "img/drivers/vehicle/rental-agreement/";
 
@@ -34,8 +35,8 @@ if (isset($_POST['submit'])) {
 
             if ($result->num_rows > 0) {
                 // Update existing record
-                $updateStmt = $connect->prepare("UPDATE `rental_agreement` SET `ra_num`= ?,`ra_exp`= ?,`ra_img`= ?,`ra_updated_at`= ? WHERE `d_id` = ?");
-                $updateStmt->bind_param("sssss", $ra_num, $ra_exp, $fileName, $date_update, $d_id);
+                $updateStmt = $connect->prepare("UPDATE `rental_agreement` SET `ra_num`= ?,`ra_exp`= ?,`ra_exp_time`= ?,`ra_img`= ?,`ra_updated_at`= ? WHERE `d_id` = ?");
+                $updateStmt->bind_param("ssssss", $ra_num, $ra_exp, $ra_exp_time, $fileName, $date_update, $d_id);
 
                 if ($updateStmt->execute()) {
                     logActivity('Vehicle Rental Agreement Updated', $d_id, "Vehicle Rental Agreement of Driver $d_id has been updated by Controller.");
@@ -44,8 +45,8 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 // Insert new record
-                $insertStmt = $connect->prepare("INSERT INTO `rental_agreement`(`d_id`, `ra_num`, `ra_exp`, `ra_img`, `ra_created_at`) VALUES (?, ?, ?, ?, ?)");
-                $insertStmt->bind_param("sssss", $d_id, $ra_num, $ra_exp, $fileName, $date_update);
+                $insertStmt = $connect->prepare("INSERT INTO `rental_agreement`(`d_id`, `ra_num`, `ra_exp`, `ra_exp_time`, `ra_img`, `ra_created_at`) VALUES (?, ?, ?, ?, ?, ?)");
+                $insertStmt->bind_param("ssssss", $d_id, $ra_num, $ra_exp, $ra_exp_time, $fileName, $date_update);
 
                 if ($insertStmt->execute()) {
                     logActivity('Vehicle Rental Agreement Added', $d_id, "Vehicle Rental Agreement of Driver $d_id has been added by Controller.");

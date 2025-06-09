@@ -60,8 +60,8 @@ if (isset($_POST['create_user'])) {
                 active_companies, blocked_companies, deleted_companies, customer_accounts, booker_accounts,
                 deleted_accounts, web_driver, new_driver, active_driver, inactive_driver, old_driver,
                 deleted_drivers, zones_list, airports_list, destinations_list, railways_list, company_profile,
-                vehicles_list, pricing_models, driver_reports, customer_reports, booker_reports, activity_logs
-            ) VALUES (?, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+                vehicles_list, pricing_models, driver_reports, customer_reports, booker_reports, activity_logs, driver_tracker, fare_corrections, all_users_list
+            ) VALUES (?, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
         ";
         $stmt = mysqli_prepare($connect, $access_query);
         mysqli_stmt_bind_param($stmt, "i", $user_id);
@@ -126,7 +126,7 @@ if (isset($_POST['create_user'])) {
                     'active_driver', 'inactive_driver', 'old_driver', 'deleted_drivers',
                     'zones_list', 'airports_list', 'destinations_list', 'railways_list',
                     'company_profile', 'vehicles_list', 'pricing_models', 'driver_reports',
-                    'customer_reports', 'booker_reports', 'activity_logs'
+                    'customer_reports', 'booker_reports', 'activity_logs', 'driver_tracker', 'fare_corrections', 'all_users_list'
                 ];
                 foreach ($permissions as $perm) {
                     $_SESSION[$perm] = $urow[$perm] ?? 0;

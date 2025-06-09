@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
     $vi_num = $_POST['vi_num'];
     $vi_exp = $_POST['vi_exp'];
+	$vi_exp_time = $_POST['vi_exp_time'];
     $date_update = date('Y-m-d H:i:s'); // Current timestamp
     $targetDir = "img/drivers/vehicle/insurance/";
 
@@ -34,8 +35,13 @@ if (isset($_POST['submit'])) {
 
             if ($result->num_rows > 0) {
                 // Update existing record
-                $updateStmt = $connect->prepare("UPDATE `vehicle_insurance` SET `vi_num`= ?,`vi_exp`= ?,`vi_img`= ?,`vi_updated_at`= ? WHERE `d_id` = ?");
-                $updateStmt->bind_param("sssss", $vi_num, $vi_exp, $fileName, $date_update, $d_id);
+                $updateStmt = $connect->prepare("UPDATE `vehicle_insurance` SET 
+																	`vi_num`= ?,
+																	`vi_exp`= ?,
+																	`vi_exp_time`= ?,
+																	`vi_img`= ?,
+																	`vi_updated_at`= ? WHERE `d_id` = ?");
+                $updateStmt->bind_param("ssssss", $vi_num, $vi_exp, $vi_exp_time, $fileName, $date_update, $d_id);
 
                 if ($updateStmt->execute()) {
                     logActivity('Vehicle Insurance Updated', $d_id, "Vehicle Insurance of Driver $d_id has been updated by Controller.");
@@ -44,8 +50,8 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 // Insert new record
-                $insertStmt = $connect->prepare("INSERT INTO `vehicle_insurance`(`d_id`, `vi_num`, `vi_exp`, `vi_img`, `vi_created_at`) VALUES (?, ?, ?, ?, ?)");
-                $insertStmt->bind_param("sssss", $d_id, $vi_num, $vi_exp, $fileName, $date_update);
+                $insertStmt = $connect->prepare("INSERT INTO `vehicle_insurance`(`d_id`, `vi_num`, `vi_exp`, `vi_exp_time`, `vi_img`, `vi_created_at`) VALUES (?, ?, ?, ?, ?, ?)");
+                $insertStmt->bind_param("ssssss", $d_id, $vi_num, $vi_exp, $vi_exp_time, $fileName, $date_update);
 
                 if ($insertStmt->execute()) {
                     logActivity('Vehicle Insurance Added', $d_id, "Vehicle Insurance of Driver $d_id has been added by Controller.");

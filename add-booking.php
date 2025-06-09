@@ -17,8 +17,7 @@ include('header.php');
                                 <div class="mb-3 col-md-3">
                                     <label class="form-label">Booking Type</label>
                                     <select class="form-control" name="b_type_id" id="bookingType" required>
-                                        <option value="">Select Booking Type</option>					
-										
+                                        <option value="">Select Booking Type</option>
                                             <?php
                                         $btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
                                         while ($btrow = mysqli_fetch_array($btsql)) {
@@ -41,9 +40,9 @@ include('header.php');
                                     <select class="form-control" name="c_id" id="clientSelect" required></select>
                                 </div>
                                 <div class="col-auto">
-                                  <a href="#" class="btn btn-icon btn-info" aria-label="Button" data-bs-toggle="modal" data-bs-target="#modal-customer" title="Add Customers">
-                                    <i class="ti ti-plus"></i>
-                                  </a>
+                                  <a href="#" class="btn btn-icon btn-info" id="addCustomerBtn" aria-label="Button" data-bs-toggle="modal" data-bs-target="#modal-customer" title="Add Customers">
+    <i class="ti ti-plus"></i>
+</a>
                                 </div>
                               </div>
 <!--
@@ -74,34 +73,50 @@ include('header.php');
 								var clientNameInput = document.getElementById('clientName');           
 								var customerPhoneInput = document.getElementById('customerPhone');            
 								var customerEmailInput = document.getElementById('customerEmail');            
-								bookingTypeSelect.addEventListener('change', function () {                        
-									var selectedBookingType = bookingTypeSelect.value;
-									if (selectedBookingType == 4 || selectedBookingType == 5) {
-										clientNameInput.classList.remove('d-none');
-										clientSelect.classList.add('d-none');
-										clientSelect.required = false;
-										clientNameInput.required = true;
-										clientNameInput.value = '';
-										customerPhoneInput.value = '';
-										customerEmailInput.value = '';	        
-									} else {
-										clientNameInput.classList.add('d-none');
-										clientSelect.classList.remove('d-none');
-										clientNameInput.required = false;
-										clientSelect.required = true;
-										$.ajax({
-											type: 'POST',
-											url: 'get_clients.php',
-											data: { b_type_id: selectedBookingType },
-											success: function (response) {
-												clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
-											},
-											error: function () { 
-												console.error('Error fetching clients');
-											}
-										});
-									}
-								});    
+								var addCustomerBtn = document.getElementById('addCustomerBtn');
+
+bookingTypeSelect.addEventListener('change', function () {
+	var selectedBookingType = bookingTypeSelect.value;
+	if (selectedBookingType == 4 || selectedBookingType == 5 || selectedBookingType == 6) {
+		clientNameInput.classList.remove('d-none');
+		clientSelect.classList.add('d-none');
+		clientSelect.required = false;
+		clientNameInput.required = true;
+		clientNameInput.value = '';
+		customerPhoneInput.value = '';
+		customerEmailInput.value = '';
+
+		// Disable modal button
+		addCustomerBtn.classList.add('disabled');
+		addCustomerBtn.setAttribute('aria-disabled', 'true');
+		addCustomerBtn.removeAttribute('data-bs-toggle');
+		addCustomerBtn.removeAttribute('data-bs-target');
+	} else {
+		clientNameInput.classList.add('d-none');
+		clientSelect.classList.remove('d-none');
+		clientNameInput.required = false;
+		clientSelect.required = true;
+
+		// Enable modal button
+		addCustomerBtn.classList.remove('disabled');
+		addCustomerBtn.setAttribute('aria-disabled', 'false');
+		addCustomerBtn.setAttribute('data-bs-toggle', 'modal');
+		addCustomerBtn.setAttribute('data-bs-target', '#modal-customer');
+
+		$.ajax({
+			type: 'POST',
+			url: 'get_clients.php',
+			data: { b_type_id: selectedBookingType },
+			success: function (response) {
+				clientSelect.innerHTML = '<option value="">Select Customer</option>' + response;
+			},
+			error: function () {
+				console.error('Error fetching clients');
+			}
+		});
+	}
+});
+  
 								clientSelect.addEventListener('change', function () {
 									var selectedClientId = clientSelect.value;
 									var selectedBookingType = bookingTypeSelect.value;
@@ -134,11 +149,11 @@ include('header.php');
                                 <div class="col-lg-12">	
                                     <div class="row">
                                         <div class="mb-3 col-lg-4">
-                                            <label class="form-label">Pickup Location:</label>
+                                            <label class="form-label">Pickup Location (Full Address):</label>
                                             <input type="text" id="pickup" name="pickup" class="form-control" placeholder="Select pickup location" required>
                                         </div>
                                         <div class="mb-3 col-lg-4">
-                                            <label class="form-label">Drop-off Location:</label>
+                                            <label class="form-label">Drop-off Location (Full Address):</label>
                                             <input type="text" id="dropoff" name="dropoff" class="form-control" placeholder="Select drop-off location" required>
                                         </div>
                                         <div class="col-lg-4">
@@ -153,23 +168,12 @@ include('header.php');
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Address</label>
-                                    <input type="text" class="form-control" name="address">
+                                    <input type="text" class="form-control" id="add" name="address">
                                 </div>
                                 <div class="mb-3 col-lg-4">
-                                    <label class="form-label">Postal Code</label>
-                                    <select class="form-control" name="postal_code" required>
-                                        <option value=" ">Search PostCode</option>                                        
-										<?php                                        
-										$pcsql=mysqli_query($connect,"SELECT * FROM `post_codes`");            
-										while($pcrow = mysqli_fetch_array($pcsql)){
-										?>
-                                        <option>                                            
-											<?php echo $pcrow['pc_name']; ?>
-                                        </option>
-										<?php
-										}
-										?>
-                                    </select>
+                                    <label class="form-label">Zones</label>
+									<input type="text" class="form-control" id="pc" name="postal_code">
+                                    
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">No. of Passenger</label>
@@ -187,8 +191,19 @@ include('header.php');
                                 </script>																	
                                 <div class="mb-3 col-lg-4">				
                                     <label class="form-label">Pickup Time</label>				
-                                    <input type="time" class="form-control" name="pick_time" required>				
+                                    <input type="time" class="form-control" name="pick_time" required>
+			
                                 </div>
+								<script> 
+									document.querySelector('form').addEventListener('submit', function (e) {
+    const timeInput = document.querySelector('input[name="pick_time"]');
+    const timeValue = timeInput.value; // This is in "HH:MM" 24-hour format
+    console.log("Pickup Time (24h):", timeValue);
+});
+
+									
+								</script>
+								
                                 <div class="mb-3 col-lg-4">
                                     <div class="form-label">Journey Type</div>
                                     <div class="mb-3">
@@ -372,7 +387,7 @@ include('header.php');
 						});        
 						function validateForm() {                        
 							var typeInput = document.getElementsByName("b_type_id")[0].value;        
-							var cidInput = document.getElementsByName("c_id")[0].value;        
+							        
 							var pickupInput = document.getElementsByName("pickup")[0].value;	        
 							var dropoffInput = document.getElementsByName("dropoff")[0].value;	        
 							var pdateInput = document.getElementsByName("pick_date")[0].value;	        
@@ -394,7 +409,10 @@ include('header.php');
     function initAutocomplete() {            
         var pickupInput = document.getElementById('pickup');                
         var dropoffInput = document.getElementById('dropoff');    
-        var stopInput = document.getElementById('stop');    
+        var stopInput = document.getElementById('stop');   
+		var addInput = document.getElementById('add'); 
+		var pcInput = document.getElementById('pc'); 
+		
         var journeyDistanceInput = document.getElementById('journeyDistance');		                
         var autocompleteOptions = {        
             types: ['geocode'],                            
@@ -403,6 +421,9 @@ include('header.php');
         var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);    
         var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);    
         var autocompleteStop = new google.maps.places.Autocomplete(stopInput, autocompleteOptions); // Initialize autocomplete for stop field  
+		
+		var autocompleteadd = new google.maps.places.Autocomplete(addInput, autocompleteOptions); // Initialize autocomplete 
+		var autocompletepc = new google.maps.places.Autocomplete(pcInput, autocompleteOptions); // Initialize autocomplete 
         autocompletePickup.addListener('place_changed', function () { 
         updateDistance();        
         updateJourneyFare();    

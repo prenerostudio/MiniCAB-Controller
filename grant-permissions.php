@@ -43,8 +43,10 @@ $driver_reports = $_POST['generate-driver-reports'];
 $customer_reports = $_POST['export-customer-reports'];
 $booker_analytics = $_POST['access-booker-analytics'];
 $activity_logs = $_POST['audit-activity-logs'];
-	
-	
+$driver_tracker = $_POST['driver-tracker'];
+$fare_correction = $_POST['fare-correction'];
+$all_user_list = $_POST['all-user-list'];
+
 $sql = "UPDATE `user_page_access` SET 
 							`add_booking`='$add_booking',
 							`open_booking`='$open_bookings',
@@ -84,7 +86,11 @@ $sql = "UPDATE `user_page_access` SET
 							`driver_reports`='$driver_reports',
 							`customer_reports`='$customer_reports',
 							`booker_reports`='$booker_analytics',
-							`activity_logs`='$activity_logs' WHERE `user_id` = '$user_id'";
+							`activity_logs`='$activity_logs',
+							`driver_tracker`='$driver_tracker',
+							`fare_corrections`='$fare_correction',
+							`all_users_list`='$all_user_list' WHERE `user_id` = '$user_id'";
+
 $result = mysqli_query($connect, $sql);       
 if ($result) {
     $activity_type = 'Admin Updated User Permissions';	

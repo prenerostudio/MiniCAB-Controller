@@ -27,127 +27,160 @@ include('header.php');
             <div class="card-header">
                 <h3 class="card-title">
                     Active Drivers List
-                </h3>
-				
-				
-				<div class="col-auto ms-auto d-print-none">
+                </h3>								
+				<div class="col-auto ms-auto d-print-none">            
+					<div class="btn-list">				
+						<select class="form-select" id="shift-filter">    
+							<option value="">Search By Shift Timing</option>    
+							<option value="Day Shift">Day Shift</option>    
+							<option value="Afternoon Shift">Afternoon Shift</option>    
+							<option value="Night Shift">Night Shift</option>
+						</select>                           
+					</div>        
+				</div>							
+				<div class="col-auto" style="margin-left: 25px;">            
+					<div class="btn-indigo">						
+						<select class="form-select" name="v_id" id="vehicle-filter">    
+							<option value="">Search By Vehicle</option>   
+							<?php   
+							$vsql = mysqli_query($connect, "SELECT * FROM vehicles");   
+							while ($vrow = mysqli_fetch_array($vsql)) {       
+								echo '<option value="' . $vrow['v_id'] . '">' . $vrow['v_name'] . '</option>';   
+							}   
+							?>
+						</select>						            
+					</div>        
+				</div>						
+				<div class="col-auto" style="margin-left: 25px;">
             
 					<div class="btn-list">
 				
-						<select class="form-select" id="shift-filter">
-    
-							<option value="">Search By Shift Timing</option>
-    
-							<option value="Day Shift">Day Shift</option>
-    
-							<option value="Afternoon Shift">Afternoon Shift</option>
-    
-							<option value="Night Shift">Night Shift</option>
-
-						</select>
+						 <input type="text" class="form-control" id="pc" name="pc" placeholder="Enter Postcode" required>
 
                
-            
+           
 					</div>
         
 				</div>
-				
-				
-				<div class="col-auto" style="margin-left: 25px;">
-            
-					<div class="btn-indigo">
-				
-						
-						<select class="form-select" name="v_id" id="vehicle-filter">
-    
-							<option value="">Search By Vehicle</option>
-   
-							<?php
-   
-							$vsql = mysqli_query($connect, "SELECT * FROM vehicles");
-   
-							while ($vrow = mysqli_fetch_array($vsql)) {
-       
-								echo '<option value="' . $vrow['v_id'] . '">' . $vrow['v_name'] . '</option>';
-   
-							}
-   
-							?>
-
-						</select>
-
-
-						
-            
-					</div>
-        
-				</div>
-				
-				
-				<div class="col-auto" style="margin-left: 25px;">
-            <div class="btn-list">
-				<select class="form-select" id="postcode-filter">
-    <option value="">Search by PostCode</option>
-    <?php
-    $psql = mysqli_query($connect, "SELECT DISTINCT pc_name FROM post_codes");
-    while ($prow = mysqli_fetch_array($psql)) {
-        echo '<option value="' . $prow['pc_name'] . '">' . $prow['pc_name'] . '</option>';
-    }
-    ?>
-</select>
-
-               
-            </div>
-        </div>
 
 				
             
+			
 			</div>
+			
 			<script>
-$(document).ready(function () {
-    $('#table-driver').DataTable();
+			
+   
+   
+				var autocompletePickup;    
+  
+   
+				function initAutocomplete() {
+     
+					var pcInput = document.getElementById('pc');      
+      
+					var autocompleteOptions = {
+         
+						types: ['geocode'],
+            
+						componentRestrictions: {country: 'GB'}
+       
+					};
+       
+					autocompletepc = new google.maps.places.Autocomplete(pcInput, autocompleteOptions);
+        
+      
+   
+				}    
 
-    $('#shift-filter').on('change', function () {
-        var selectedShift = $(this).val();
+    
+				google.maps.event.addDomListener(window, 'load', initAutocomplete);
 
-        $.ajax({
-            url: 'fetch-driver-shiftwise.php',
-            type: 'POST',
-            data: { shift: selectedShift },
-            success: function (data) {
-                $('.table-tbody').html(data);
-            }
-        });
-    });
-});
+
+				$(document).ready(function () {
+   
+					$('#table-driver').DataTable();
+
+   
+					$('#shift-filter').on('change', function () {
+    
+						var selectedShift = $(this).val();
+
+      
+						$.ajax({
+            
+							url: 'fetch-driver-shiftwise.php',
+            
+							type: 'POST',
+            
+							data: { shift: selectedShift },
+            
+							success: function (data) {
+              
+								$('.table-tbody').html(data);
+          
+							}
+     
+						});
+   
+					});
+
+				});
+				
 				
 				$(document).ready(function () {
-    $('#vehicle-filter').on('change', function () {
-        var v_id = $(this).val();
-        $.ajax({
-            url: 'fetch-drivers-by-vehicle.php',
-            type: 'POST',
-            data: { v_id: v_id },
-            success: function (data) {
-                $('.table-tbody').html(data);
-            }
-        });
-    });
-});
+    
+					$('#vehicle-filter').on('change', function () {
+        
+						var v_id = $(this).val();
+        
+						$.ajax({
+            
+							url: 'fetch-drivers-by-vehicle.php',
+            
+							type: 'POST',
+            
+							data: { v_id: v_id },
+            
+							success: function (data) {
+                
+								$('.table-tbody').html(data);
+            
+							}
+        
+						});
+    
+					});
+
+				});
+
 				$(document).ready(function () {
-    $('#postcode-filter').on('change', function () {
-        var pc_name = $(this).val();
-        $.ajax({
-            url: 'fetch-drivers-by-postcode.php',
-            type: 'POST',
-            data: { pc_name: pc_name },
-            success: function (data) {
-                $('.table-tbody').html(data);
-            }
-        });
-    });
-});
-</script>
+    
+					$('#postcode-filter').on('change', function () {
+        
+						var pc_name = $(this).val();
+        
+						$.ajax({
+            
+							url: 'fetch-drivers-by-postcode.php',
+            
+							type: 'POST',
+            
+							data: { pc_name: pc_name },
+            
+							success: function (data) {
+                
+								$('.table-tbody').html(data);
+            
+							}
+        
+						});
+    
+					});
+
+				});
+
+			</script>
 
 			
 			
@@ -173,22 +206,7 @@ $(document).ready(function () {
                                
 							$x = 0;
                                
-							$adsql = mysqli_query($connect, "SELECT
-	drivers.*, 
-	driver_vehicle.*, 
-	vehicles.*
-FROM
-	drivers
-	INNER JOIN
-	driver_vehicle
-	ON 
-		driver_vehicle.d_id = drivers.d_id
-	INNER JOIN
-	vehicles
-	ON 
-		driver_vehicle.v_id = vehicles.v_id
-WHERE
-	drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
+							$adsql = mysqli_query($connect, "SELECT drivers.*, driver_vehicle.*, vehicles.* FROM drivers LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
                                
 							while ($adrow = mysqli_fetch_array($adsql)) :
                                    
@@ -197,7 +215,7 @@ WHERE
 							?>
                             <tr>
                                 <td>
-                                    <?php echo $x; ?>
+                                    <?php echo $adrow['d_id']; ?>
                                 </td>
                                 <td>
                                    
@@ -288,9 +306,17 @@ WHERE
                             <label class="form-label">Phone</label>
                             <input type="text" class="form-control" name="dphone" placeholder="+44 xx xxxx xxxx" required>
                         </div> 
-                        <div class="mb-3 col-lg-6">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" required>
+                        <div class="mb-3 col-lg-6">							 
+							<label class="form-label">Password</label>							
+							<div class="input-group input-group-flat">    					                            
+								<input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" autocomplete="off" required>    						                                
+								<span class="input-group-text">        						                                
+									<a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">            						                                    
+										<i class="ti ti-eye"></i>
+									</a>						                                    
+							
+								</span>						                                
+							</div>           
                         </div>
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">License Authority</label>

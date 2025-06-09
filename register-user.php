@@ -37,67 +37,131 @@ include('config.php');
                                         Login to your Account					
                                     </h2>                  				
                                     <form action="functions.php" method="post">
-										<div class="row">
-										<div class="mb-3 col-md-6">                      					
-                                            <label class="form-label">First Name</label>                      					
-                                            <input type="text" class="form-control" placeholder="Enter Your First Name" name="fname" autocomplete="off" required>                    					
-                                        </div>
-										<div class="mb-3 col-md-6">                      					
-                                            <label class="form-label">Last Name</label>                      					
-                                            <input type="text" class="form-control" placeholder="Enter Your Last Name" name="lname" autocomplete="off" required>                    					
-                                        </div>
-										<div class="mb-3">                      					
-                                            <label class="form-label">Phone Number</label>                      					
-                                            <input type="text" class="form-control" placeholder="+xx xxx xxx xxxx" name="uphone" autocomplete="off" required>                    					
-                                        </div>
-                                        <div class="mb-3">                      					
-                                            <label class="form-label">Email address</label>                      					
-                                            <input type="email" class="form-control" placeholder="your@email.com" name="uemail" autocomplete="off" required>                    					
-                                        </div>					
-                                        <div class="mb-2">					
-                                            <label class="form-label">                        					
-                                                Password                        						
-                                                <span class="form-label-description">                          						
-                                                    <a href="#">I forgot password</a>                        						
-                                                </span>                      						
-                                            </label>                      					
-                                            <div class="input-group input-group-flat">    					
-                                                <input type="password" class="form-control" placeholder="Your password" name="upass" autocomplete="off" required>    						
-                                                <span class="input-group-text">        						
-                                                    <a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">            						
-                                                        <i class="ti ti-eye"></i>        							
-                                                    </a>    						
-                                                </span>						
+										
+                                        <div class="row">
+					
+                                            <div class="mb-3 col-md-6">                      					
+                                            
+                                                <label class="form-label">First Name</label>                      					
+                                            
+                                                <input type="text" class="form-control" placeholder="Enter Your First Name" name="fname" autocomplete="off" required>                    					
+                                        
+                                            </div>
+										
+                                            <div class="mb-3 col-md-6">                      					
+                                            
+                                            
+                                                <label class="form-label">Last Name</label>                      					
+                                            
+                                                <input type="text" class="form-control" placeholder="Enter Your Last Name" name="lname" autocomplete="off" required>                    					
+                                        
+                                            </div>
+
+                                            <div class="mb-3">                      					
+
+                                                <label class="form-label">Phone Number</label>                      					
+                                            
+                                                <input type="text" class="form-control" placeholder="+xx xxx xxx xxxx" name="uphone" autocomplete="off" required>                    					
+                                        
+                                            </div>
+                                        
+                                            <div class="mb-3">                      					
+
+                                                <label class="form-label">Email address</label>                      					
+                                            
+                                                <input type="email" class="form-control" placeholder="your@email.com" name="uemail" autocomplete="off" required>                    					
+                                        
                                             </div>					
-                                        </div> 										
-										<div class="mb-3">                            
-											<label class="form-label">Country</label>                            
-											<select class="form-select" name="country_id" required>                                
-												<option value="" selected>Select Country</option>
-												<?php                                
-												$lsql=mysqli_query($connect,"SELECT * FROM `countries`");
-												while($lrow = mysqli_fetch_array($lsql)){			
-												?>                                
-												<option value="<?php echo $lrow['country_id'] ?>">
-													<?php echo $lrow['country_name']; ?>                                
-												</option>								
-												<?php                                
-												}                                
-												?>                            
-											</select>                        
-										</div>					
-										<div class="mb-2">                      					
-                                            <label class="form-check">                        					
-                                                <input type="checkbox" class="form-check-input"/>
-                                                <span class="form-check-label">Remember me on this device</span>
-                                            </label>             					
-                                        </div>  
-											</div>
+                                        
+                                            <div class="mb-2">					
+
+                                                <label class="form-label">                        					
+
+                                                    Password                        						
+                                                
+                                                    <span class="form-label-description">                          						
+
+                                                        <a href="#">I forgot password</a>                        						
+                                                
+                                                    </span>                      						
+                                            
+                                                </label>                      					
+                                            
+                                                <div class="input-group input-group-flat">    					
+
+                                                    <input type="password" class="form-control" placeholder="Your password" name="upass" autocomplete="off" required>    						
+                                                
+                                                    <span class="input-group-text">        						
+
+                                                        <a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">            						
+
+                                                            <i class="ti ti-eye"></i>        							
+                                                    
+                                                        </a>    						
+                                                
+                                                    </span>						
+                                            
+                                                </div>					
+                                        
+                                            </div> 										
+
+                                            
+                                            <div class="mb-3">                            
+											
+                                                <label class="form-label">Country</label>                            
+						
+                                                <select class="form-select" name="country_id" required>                                
+						
+                                                    <option value="" selected>Select Country</option>
+						
+						<?php                                
+
+                                                $lsql=mysqli_query($connect,"SELECT * FROM `countries`");
+						
+                                                while($lrow = mysqli_fetch_array($lsql)){			
+						
+                                                    ?>                                
+						
+                                                    <option value="<?php echo $lrow['country_id'] ?>">
+						
+							<?php echo $lrow['country_name']; ?>                                
+
+                                                    </option>								
+						
+						<?php                                
+
+                                                }                                
+						
+                                                ?>                            
+						
+                                                </select>                        
+						
+                                            </div>					
+					
+                                            <div class="mb-2">                      					
+                                            
+                                                <label class="form-check">                        					
+                                                
+                                                    <input type="checkbox" class="form-check-input"/>
+                                                
+                                                    <span class="form-check-label">Remember me on this device</span>
+                                            
+                                                </label>             					
+                                        
+                                            </div>  
+
+                                        </div>
+                                        
                                         <div class="form-footer">                      					
+                                        
                                             <button type="submit" name="create_user" class="btn btn-primary w-100">					
+                                            
                                                 Create Account					
+                                            
                                             </button>					
+                                        
                                         </div>                  					
+                                    
                                     </form>                				
                                 </div>                				
                                 <div class="hr-text">or</div>                				

@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     $d_id = $_POST['d_id'];
     $rt_num = $_POST['rt_num'];
     $rt_exp = $_POST['rt_exp'];
+	$rt_exp_time = $_POST['rt_exp_time'];
     $date_update = date('Y-m-d H:i:s'); // Current timestamp
     $targetDir = "img/drivers/vehicle/road-tax/";
 
@@ -34,8 +35,8 @@ if (isset($_POST['submit'])) {
 
             if ($result->num_rows > 0) {
                 // Update existing record
-                $updateStmt = $connect->prepare("UPDATE `vehicle_road_tax` SET `rt_num`= ?,`rt_exp`= ?,`rt_img`= ?,`rt_updated_at`= ? WHERE `d_id` = ?");
-                $updateStmt->bind_param("sssss", $rt_num, $rt_exp, $fileName, $date_update, $d_id);
+                $updateStmt = $connect->prepare("UPDATE `vehicle_road_tax` SET `rt_num`= ?,`rt_exp`= ?,`rt_exp_time`= ?,`rt_img`= ?,`rt_updated_at`= ? WHERE `d_id` = ?");
+                $updateStmt->bind_param("ssssss", $rt_num, $rt_exp, $rt_exp_time, $fileName, $date_update, $d_id);
 
                 if ($updateStmt->execute()) {
                     logActivity('Vehicle Road TAX Updated', $d_id, "Vehicle Road TAX of Driver $d_id has been updated by Controller.");
@@ -44,8 +45,8 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 // Insert new record
-                $insertStmt = $connect->prepare("INSERT INTO `vehicle_road_tax`(`d_id`, `rt_num`, `rt_exp`, `rt_img`, `rt_created_at`) VALUES (?, ?, ?, ?, ?)");
-                $insertStmt->bind_param("sssss", $d_id, $rt_num, $rt_exp, $fileName, $date_update);
+                $insertStmt = $connect->prepare("INSERT INTO `vehicle_road_tax`(`d_id`, `rt_num`, `rt_exp`, `rt_exp_time`, `rt_img`, `rt_created_at`) VALUES (?, ?, ?, ?, ?, ?)");
+                $insertStmt->bind_param("ssssss", $d_id, $rt_num, $rt_exp, $rt_exp_time, $fileName, $date_update);
 
                 if ($insertStmt->execute()) {
                     logActivity('Vehicle Road TAX Added', $d_id, "Vehicle Road TAX of Driver $d_id has been added by Controller.");

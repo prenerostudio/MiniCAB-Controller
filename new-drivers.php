@@ -57,58 +57,68 @@ include('header.php');
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Image</th>
-                                                    <th>Post Code</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Phone</th>
-                                                    <th>Gender</th>
-                                                    <th>Licence Authority</th>
-                                                    <th>Actions</th>
+                                
+													<th>Name</th>
+                                
+													<th>Email</th>
+                                
+													<th>Phone</th>
+                                
+													<th>Vehicle</th>
+                                
+													<th>Post Code</th>
+                                
+													<th>Shift Timing</th>
+                                
+													<th>Actions</th>
                                                 </tr>
 											</thead>
                                             <tbody class="table-tbody">
                                                 <?php 
                                                 $y = 0;
-                                                $ndsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 0 ORDER BY drivers.d_id DESC");
-                                                while ($ndrow = mysqli_fetch_array($ndsql)) :
+                                                $newsql = mysqli_query($connect, "SELECT drivers.*, driver_vehicle.*, vehicles.* FROM drivers LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE drivers.acount_status = 0 ORDER BY drivers.d_id DESC");
+                                                while ($newrow = mysqli_fetch_array($newsql)) :
                                                     $y++;
                                                 ?> 
                                                 <tr>
                                                     <td>
-                                                        <?php echo $ndrow['d_id']; ?>
+                                                        <?php echo $newrow['d_id']; ?>
                                                     </td>
                                                     <td>                                                        
-														<?php if (!$ndrow['d_pic']) : ?>
+														<?php if (!$newrow['d_pic']) : ?>
                                                         <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
 														<?php else : ?>
-                                                        <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">        
+                                                        <img src="img/drivers/<?php echo $newrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">        
 														<?php endif; ?>
 													</td>
+                                                    
                                                     <td>
-                                                        <?php echo $ndrow['d_post_code'];?>
+                                                        <?php echo $newrow['d_name']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $ndrow['d_name']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $ndrow['d_email']; ?>
+                                                        <?php echo $newrow['d_email']; ?>
                                                     </td>                                    
                                                     <td>										
-                                                        <?php echo $ndrow['d_phone']; ?>									
+                                                        <?php echo $newrow['d_phone']; ?>									
+                                                    </td>
+													
+                                                    <td>
+                                                        <?php echo $newrow['v_name']; ?>
+                                                    </td>
+													
+													<td>
+                                                        <?php echo $newrow['d_post_code'];?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $ndrow['d_gender']; ?>
+                                                        <?php echo $newrow['d_shift']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $ndrow['licence_authority']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View">
+                                                        <a href="view-driver.php?d_id=<?php echo $newrow['d_id']; ?>" title="View">
                                                             <button class="btn btn-twitter btn-icon">
 																<i class="ti ti-eye"></i>
 															</button>
                                                         </a>
-                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">
+                                                        <a href="del-driver.php?d_id=<?php echo $newrow['d_id']; ?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">
 															<i class="ti ti-square-rounded-x"></i>
 														</a>
                                                     </td>
@@ -248,9 +258,17 @@ include('header.php');
                             <label class="form-label">Phone</label>
                             <input type="text" class="form-control" name="dphone" placeholder="+44 xx xxxx xxxx" required>
                         </div> 
-                        <div class="mb-3 col-lg-6">
-							<label class="form-label">Password</label>
-                            <input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" required>
+                        <div class="mb-3 col-lg-6">							 
+							<label class="form-label">Password</label>							
+							<div class="input-group input-group-flat">    					                            
+								<input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" autocomplete="off" required>    						                                
+								<span class="input-group-text">        						                                
+									<a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">            						                                    
+										<i class="ti ti-eye"></i>
+									</a>						                                    
+							
+								</span>						                                
+							</div>           
                         </div> 
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Licence Authority</label>

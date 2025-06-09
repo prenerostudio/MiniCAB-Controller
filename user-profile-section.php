@@ -46,7 +46,11 @@
                     <select class="form-control" name="desig">
                         <option><?php echo $urow['designation']; ?></option>
                         <option>Admin</option>
-                        <option>Controller</option>                                                                        
+                        <option>Controller</option>  
+						<option>Accountant</option> 
+						<option>Customer Service</option> 
+						<option>Driver Support</option> 
+						<option>User</option> 
                     </select>                                        
                 </div>                
                 <div class="col-md">

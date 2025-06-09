@@ -12,8 +12,8 @@ if (!$d_id) {
 }
 
 // Same document check logic here...
-$requiredTables = [ 'driving_license', 'adress_proofs', 'driver_extra', 'dvla_check', 'national_insurance', 'pco_license',
-    'rental_agreement', 'vehicle_extra', 'vehicle_insurance', 'vehicle_ins_schedule',
+$requiredTables = [ 'driving_license', 'address_proofs', 'driver_extras', 'dvla_check', 'national_insurance', 'pco_license',
+    'rental_agreement', 'vehicle_extras', 'vehicle_insurance', 'vehicle_ins_schedule',
     'vehicle_log_book', 'vehicle_mot', 'vehicle_pco', 'vehicle_pictures', 'vehicle_road_tax'
 ];
 
