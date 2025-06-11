@@ -38,7 +38,20 @@ include('header.php');
                             <tbody class="table-tbody">
                                 <?php    
                                 $y = 0;    
-                                $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.* FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE bookings.bid_status = 1 ORDER BY bookings.book_id DESC");    
+                                $bsql = mysqli_query($connect, "SELECT
+  bookings.*,
+  clients.c_name,
+  clients.c_email,
+  clients.c_phone,
+  booking_type.* 
+FROM
+  bookings
+  LEFT JOIN clients ON bookings.c_id = clients.c_id
+  JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id 
+WHERE
+  bookings.bid_status = 1 
+ORDER BY
+  bookings.book_id DESC");    
                                 $bookingData = [];
                                 while ($brow = mysqli_fetch_array($bsql)) {        
                                     $y++;                                 

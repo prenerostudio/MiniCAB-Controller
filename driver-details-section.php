@@ -70,34 +70,12 @@
 					
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Address</div>
-                        <input type="text" class="form-control" value="<?php echo $drow['d_address'] ?>" name="daddress">
+                        <input type="text" class="form-control" id="add" value="<?php echo $drow['d_address'] ?>" name="daddress" >
                     </div>
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Post Code </div>
-		
-                        <select class="form-select" name="pc">
-                            <option>
-                                <?php echo $drow['d_post_code'];?>
-                            </option>
-							 
-			
-				<?php                               
-
-                                $psql=mysqli_query($connect,"SELECT * FROM `post_codes`");                               
-				
-                                while($prow = mysqli_fetch_array($psql)){                                   
-				
-                                    ?>
-                            <option>
-                                <?php echo $prow['pc_name'] ?>
-                            </option>				
-				
-			<?php                              
-
-                        }                               
-			
-                        ?>
-                        </select>                        
+                        <input type="text" class="form-control" value=" <?php echo $drow['d_post_code'];?>" name="pc" id="pc">
+                                                
                     </div>
 			
                     <div class="mb-3 col-md-4">
@@ -199,3 +177,28 @@
         </div>
     </div>
 </div>
+<!-- Your Google Maps Autocomplete logic -->
+<script>
+    let autocompleteAdd, autocompletePC;
+
+    function initAutocomplete() {
+        const addInput = document.getElementById('add');
+        const pcInput = document.getElementById('pc');
+
+        const options = {
+            types: ['geocode'],
+            componentRestrictions: { country: 'GB' }
+        };
+
+        if (addInput) {
+            autocompleteAdd = new google.maps.places.Autocomplete(addInput, options);
+        }
+
+        if (pcInput) {
+            autocompletePC = new google.maps.places.Autocomplete(pcInput, options);
+        }
+    }
+</script>
+
+<!-- Load Google Maps API (NO window load, use callback only) -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>

@@ -18,11 +18,15 @@ include('header.php');
                                     <label class="form-label">Booking Type</label>
                                     <select class="form-control" name="b_type_id" id="bookingType" required>
                                         <option value="">Select Booking Type</option>
+                                            
                                             <?php
-                                        $btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
-                                        while ($btrow = mysqli_fetch_array($btsql)) {
+                                        
+                                            $btsql = mysqli_query($connect, "SELECT * FROM `booking_type`");
+                                        
+                                            while ($btrow = mysqli_fetch_array($btsql)) {
 										
-                                            ?>
+                                            
+                                                ?>
                                         <option value="<?php echo $btrow['b_type_id'] ?>">                                        
 											
                                             <?php echo $btrow['b_type_name'] ?>
@@ -33,18 +37,31 @@ include('header.php');
                                         ?>
                                     </select>
                                 </div>
-								<div class="row col-lg-3">
-									 <label class="form-label">Name</label>
-                                <div class="col">                                
-                                    <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
-                                    <select class="form-control" name="c_id" id="clientSelect" required></select>
+								
+                                <div class="row col-lg-3">
+									 
+                                    <label class="form-label">Name</label>
+                                
+                                    <div class="col">                                
+                                    
+                                        <input type="text" class="form-control d-none" name="c_name" id="clientName" required>
+                                    
+                                        <select class="form-control" name="c_id" id="clientSelect" required></select>
+                                
+                                    </div>
+                                <input type="hidden" id="client_id_hidden" name="c_id" value="">
+
+                                    <div class="col-auto">
+                                  
+                                        <a href="#" class="btn btn-icon btn-info" id="addCustomerBtn" aria-label="Button" data-bs-toggle="modal" data-bs-target="#modal-customer" title="Add Customers">
+    
+                                            <i class="ti ti-plus"></i>
+
+                                        </a>
+                                
+                                    </div>
+                              
                                 </div>
-                                <div class="col-auto">
-                                  <a href="#" class="btn btn-icon btn-info" id="addCustomerBtn" aria-label="Button" data-bs-toggle="modal" data-bs-target="#modal-customer" title="Add Customers">
-    <i class="ti ti-plus"></i>
-</a>
-                                </div>
-                              </div>
 <!--
                                 <div class="mb-3 col-lg-3">
                                     <label class="form-label">Name</label>
@@ -77,6 +94,7 @@ include('header.php');
 
 bookingTypeSelect.addEventListener('change', function () {
 	var selectedBookingType = bookingTypeSelect.value;
+
 	if (selectedBookingType == 4 || selectedBookingType == 5 || selectedBookingType == 6) {
 		clientNameInput.classList.remove('d-none');
 		clientSelect.classList.add('d-none');
@@ -85,6 +103,9 @@ bookingTypeSelect.addEventListener('change', function () {
 		clientNameInput.value = '';
 		customerPhoneInput.value = '';
 		customerEmailInput.value = '';
+
+		// Set fixed client ID to 1001
+		document.getElementById('client_id_hidden').value = '1001';
 
 		// Disable modal button
 		addCustomerBtn.classList.add('disabled');
@@ -97,12 +118,16 @@ bookingTypeSelect.addEventListener('change', function () {
 		clientNameInput.required = false;
 		clientSelect.required = true;
 
+		// Reset hidden client ID if not fixed type
+		document.getElementById('client_id_hidden').value = '';
+
 		// Enable modal button
 		addCustomerBtn.classList.remove('disabled');
 		addCustomerBtn.setAttribute('aria-disabled', 'false');
 		addCustomerBtn.setAttribute('data-bs-toggle', 'modal');
 		addCustomerBtn.setAttribute('data-bs-target', '#modal-customer');
 
+		// Load client list dynamically
 		$.ajax({
 			type: 'POST',
 			url: 'get_clients.php',

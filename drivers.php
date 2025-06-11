@@ -206,7 +206,17 @@ include('header.php');
                                
 							$x = 0;
                                
-							$adsql = mysqli_query($connect, "SELECT drivers.*, driver_vehicle.*, vehicles.* FROM drivers LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE drivers.acount_status = 1 ORDER BY drivers.d_id DESC");
+							$adsql = mysqli_query($connect, "SELECT
+  drivers.*,
+  driver_vehicle.*,
+  vehicles.* ,
+ GROUP_CONCAT(vehicles.v_name SEPARATOR ', ') AS vehicle_names
+FROM drivers
+LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id
+LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id
+WHERE drivers.acount_status = 1
+GROUP BY drivers.d_id
+ORDER BY drivers.d_id DESC");
                                
 							while ($adrow = mysqli_fetch_array($adsql)) :
                                    

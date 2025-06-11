@@ -35,8 +35,22 @@ include('header.php');
                         </thead>
                         <tbody class="table-tbody">
                             <?php
+
                             $y=0;
-                            $actsql=mysqli_query($connect,"SELECT activity_log.*, users.* FROM activity_log JOIN users ON activity_log.user_id = users.user_id WHERE activity_log.user_type = 'user' ORDER BY activity_log.log_id DESC");
+                            $actsql=mysqli_query($connect,"SELECT
+	activity_log.*, 
+	users.*
+FROM
+	activity_log
+	JOIN
+	users
+	ON 
+		activity_log.user_id = users.user_id
+WHERE
+	activity_log.user_type = 'user' AND
+	activity_log.user_id = '$myId'
+ORDER BY
+	activity_log.log_id DESC");
                             while($actrow = mysqli_fetch_array($actsql)){
                                 $y++;
                                 ?>

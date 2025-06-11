@@ -61,6 +61,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 
                     if (mysqli_stmt_execute($stmt)) {
+                        
+                                          
+                        $bid_msg = "Controller has opened a bid for booking # $book_id";
+
+    
+
+                        $bid_sql = "INSERT INTO `bids_notifications`(`book_id`, `bid_date`, `bid_time`, `bid_msg`) VALUES (?, ?, ?, ?)";
+
+                    
+                        if ($bid_stmt = mysqli_prepare($connect, $bid_sql)) {
+    
+                        
+                            mysqli_stmt_bind_param($bid_stmt, 'ssss', $book_id, $bid_date, $bid_time, $bid_msg);
+                        
+                            mysqli_stmt_execute($bid_stmt);
+                        
+                            mysqli_stmt_close($bid_stmt);
+                    
+                            
+                        } else {
+                        
+                            echo "Error preparing Notification query: " . mysqli_error($connect);
+                    
+                            
+                        }
+                        
+                        
+                        
+                        
+                        
 
                         $activity_type = 'Booking Opens for Bid';
                     

@@ -14,31 +14,56 @@ include('header.php');
     </div>	
 </div>          
 <div class="page-body page_padding">
+   
+<script>
+    function fetchExpiringDocuments() {
+    $.ajax({
+        url: 'check_expiry_alerts.php', // PHP script that runs the check
+        method: 'GET',
+        success: function(response) {
+            const alerts = JSON.parse(response);
+            const alertContainer = document.getElementById('driver-expiry-alerts');
+            alertContainer.innerHTML = ''; // Clear old alerts
+
+            alerts.forEach(alert => {
+                const message = `${alert.document_type} for driver ID ${alert.driver_id} is expiring on ${alert.expiry_date}`;
+                alertContainer.innerHTML += createAlertHtml(message);
+            });
+        }
+    });
+}
+
+function createAlertHtml(message) {
+    return `
+    <div class="alert alert-important alert-danger alert-dismissible" role="alert">
+        <div class="d-flex">
+            <div>
+                <i class="ti ti-alert-circle" style="padding-right: 10px;"></i>
+            </div>
+            <div>${message}</div>
+        </div>
+        <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+    </div>`;
+}
+
+// Check every minute (or adjust as needed)
+setInterval(fetchExpiringDocuments, 10000);
+
+// Optionally run immediately on page load
+fetchExpiringDocuments();
+
+</script>
 	
-	<div class="alert alert-important alert-danger alert-dismissible" role="alert">
+<div id="driver-expiry-alerts"></div>
+
+
+<div class="row row-deck row-cards">
+
+    <div class="col-lg-5">			
     
-		<div class="d-flex">
-        
-			<div>
-            
-				<i class="ti ti-alert-circle" style="padding-right: 10px;"></i>
-                
-			</div>
-            
-			<div>
-            
-				I'm so sorry…
-                
-			</div>
-            
-		</div>
-        
-		<a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
-        
-	</div>
-    <div class="row row-deck row-cards">
-        <div class="col-lg-5">			
-            <div class="card">            
+        <div class="card">            
+
+
                <?php
                include('count-online-drivers.php');               
                include('count-offline-drivers.php');               
@@ -380,7 +405,22 @@ include('header.php');
                 <div class="card-body border-bottom py-3">		
                     <div class="table-responsive">						
                         <?php
-                        $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings, clients, booking_type, vehicles WHERE bookings.c_id = clients.c_id AND bookings.b_type_id = booking_type.b_type_id AND bookings.v_id = vehicles.v_id AND bookings.booking_status <> 'Booked' ORDER BY bookings.book_id DESC");
+                        $bsql = mysqli_query($connect, "SELECT 
+  bookings.*,
+  clients.c_name,
+  clients.c_email,
+  clients.c_phone,
+  booking_type.*,
+  vehicles.*
+FROM 
+  bookings
+LEFT JOIN clients ON bookings.c_id = clients.c_id
+JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id
+JOIN vehicles ON bookings.v_id = vehicles.v_id
+WHERE 
+  bookings.booking_status <> 'Booked'
+ORDER BY 
+  bookings.book_id DESC");
                         if (mysqli_num_rows($bsql) > 0) {
 						?>
                         <table class="table" id="table-dashboard">

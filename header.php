@@ -29,7 +29,7 @@ include('config.php');
         <link href="vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />	
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />	                        
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>
+       
 <script>			
     document.addEventListener("DOMContentLoaded", function() {    			
         const addStopButton = document.getElementById('add-stop-btn');	
@@ -70,6 +70,11 @@ include('config.php');
                         <div class="navbar-nav flex-row order-md-last">			
                             <div class="nav-item d-none d-md-flex me-3">			
                                 <div class="btn-list">
+                                    <a href="open-bookings.php" class="btn btn-info position-relative">
+                                        <i class="ti ti-users-group"></i>
+                                        Open Bookings
+                                        <span class="badge bg-orange text-orange-fg badge-notification badge-pill">0</span>
+                                    </a>
                                      <a href="expired-documents.php" class="btn btn-github position-relative">
                                         <i class="ti ti-users-group"></i>
                                         Expired Documents

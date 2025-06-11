@@ -19,16 +19,40 @@ include('header.php');
                                         <label class="form-label">Booking Available for Bids</label>
                                         <select class="form-select" name="book_id" required>
                                             <option value="" selected>Select Bookings</option>						
-											<?php                                            
-											$bsql=mysqli_query($connect,"SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, vehicles.v_name FROM bookings JOIN clients ON bookings.c_id = clients.c_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.bid_status = 0 AND bookings.booking_status = 'Pending' ORDER BY bookings.book_id DESC ");
-											while($brow = mysqli_fetch_array($bsql)){                                            
-											?>                                            
-											<option value="<?php echo $brow['book_id'] ?>">				
-												<?php echo $brow['book_id'] ?> | <?php echo $brow['pickup'] ?> | <?php echo $brow['destination'] ?> | <?php echo $brow['pick_date'] ?> | <?php echo $brow['pick_time'] ?>											
+											
+                                                <?php                                            
+											
+                                                $bsql=mysqli_query($connect,"SELECT
+  bookings.*,
+  clients.c_name,
+  clients.c_email,
+  clients.c_phone,
+  vehicles.v_name 
+FROM
+  bookings
+  LEFT JOIN clients ON bookings.c_id = clients.c_id
+  JOIN vehicles ON bookings.v_id = vehicles.v_id 
+WHERE
+  bookings.bid_status = 0 
+  AND bookings.booking_status = 'Pending' 
+ORDER BY
+  bookings.book_id DESC");
+											
+                                                while($brow = mysqli_fetch_array($bsql)){                                            
+											
+                                                    ?>                                            
+											
+                                            <option value="<?php echo $brow['book_id'] ?>">				
+												
+                                                <?php echo $brow['book_id'] ?> | <?php echo $brow['pickup'] ?> | <?php echo $brow['destination'] ?> | <?php echo $brow['pick_date'] ?> | <?php echo $brow['pick_time'] ?>											
                                             </option>                                                
-											<?php                                            
-											}                                            
-											?>
+											
+                                                <?php                                            
+											
+                                                
+                                                }                                            
+											
+                                                ?>
                                         </select>
                                     </div>
                                 </div>
