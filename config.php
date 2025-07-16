@@ -6,9 +6,9 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
     $dbname = "minicab";
 } else { 
     $localhost = "localhost";
-    $username = "euroqzwc_prenero";
+    $username = "minicaboffice_azib";
     $password = "Prenero1102/*";
-    $dbname = "euroqzwc_minicaboffice";
+    $dbname = "minicaboffice_rides";
 }
 $connect = new mysqli($localhost, $username, $password, $dbname);
 date_default_timezone_set('Europe/London');
@@ -21,5 +21,3 @@ ini_set("error_log", "error.log");
 ini_set("display_errors", "off");
 error_reporting(E_ALL);
 ?>
-
-
