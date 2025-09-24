@@ -216,12 +216,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <div class="tab-pane" id="tabs-document">
                             <?php
-                            include('driver-document-section.php');
+                            include('templates/drivers/driver-document-section.php');
                             ?>
                         </div>
                         <div class="tab-pane" id="tabs-vdocument">
                             <?php
-                            include('driver-vehicle-document-section.php');
+                            include('templates/drivers/driver-vehicle-document-section.php');
                             ?>
                         </div>
                         <div class="tab-pane" id="tabs-vehicle">
@@ -241,12 +241,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <div class="tab-pane" id="tabs-tracker">
                             <?php
-                            include('activity-tracker.php');
+                           // include('activity-tracker.php');
                             ?>
                         </div>			
                         <div class="tab-pane" id="tabs-activity">
                             <?php
-                            include('driver-activity-logs.php');
+                           // include('driver-activity-logs.php');
                             ?>
                         </div>
                     </div>

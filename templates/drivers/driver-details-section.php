@@ -19,7 +19,7 @@
                     </form>
                 </div>
                 <div class="col-auto">
-                    <a href="del-driver-img.php?d_id=<?php echo $d_id; ?>" class="btn btn-ghost-danger">
+                    <a href="includes/drivers/del-driver-img.php?d_id=<?php echo $d_id; ?>" class="btn btn-ghost-danger">
                         Delete avatar
                     </a>
                 </div>
@@ -27,7 +27,7 @@
             <h3 class="card-title mt-4">
                 Personal Information
             </h3>
-            <form method="post" action="update-driver.php" enctype="multipart/form-data">
+            <form method="post" action="includes/drivers/update-driver.php" enctype="multipart/form-data">
                 <div class="row g-3">
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Driver Name</div>
@@ -74,93 +74,59 @@
                     </div>
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Post Code </div>
-                        <input type="text" class="form-control" value=" <?php echo $drow['d_post_code'];?>" name="pc" id="pc">
-                                                
-                    </div>
-			
-                    <div class="mb-3 col-md-4">
-                    
-                        <div class="form-label">Vehicle</div>
-			
-                        <select class="form-control" name="v_id">
-                        
-                            <option value="<?php echo $drow['v_id'] ?>">
-                            
-
-                
+                        <input type="text" class="form-control" value=" <?php echo $drow['d_post_code'];?>" name="pc" id="pc">                                                
+                    </div>			
+                    <div class="mb-3 col-md-4">                    
+                        <div class="form-label">Vehicle</div>			
+                        <select class="form-control" name="v_id">                        
+                            <option value="<?php echo $drow['v_id'] ?>">                                           
                                 <?php echo $drow['v_name'] ?>
-
-                            </option>
-										
-                                <?php
-                                
-                                $vhcsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
-                                
-                                while ($vhcrow = mysqli_fetch_array($vhcsql)) {
-				
-                                    ?>
-                                    
-                            <option value="<?php echo $vhcrow['v_id'] ?>">
-                            
-                
+                            </option>										
+                            <?php                                                            
+                            $vhcsql = mysqli_query($connect, "SELECT * FROM `vehicles`");                                                            
+                            while ($vhcrow = mysqli_fetch_array($vhcsql)) {				                            
+                            ?>                                    
+                            <option value="<?php echo $vhcrow['v_id'] ?>">                                            
                                 <?php echo $vhcrow['v_name'] ?>
-
-                            </option>
-			
-							
-                                <?php
-										
-                                
-                                }
-										
-                                ?>
-                                    
-                        </select>
-						 
+                            </option>										
+                            <?php										                                                            
+                            }										
+                            ?>                                    
+                        </select>						 
                     </div>
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Language</div>
                         <select class="form-select" name="dlang">
                             <option>
                                 <?php echo $drow['d_language'];?>
-                            </option>				
-							
-                                <?php                               
-							
-                                $lsql=mysqli_query($connect,"SELECT * FROM `language`");                               
-							
-                                while($lrow = mysqli_fetch_array($lsql)){                                   
-							
-                                    ?>
+                            </option>							
+                            <?php							                            
+                            $lsql=mysqli_query($connect,"SELECT * FROM `language`");
+                            while($lrow = mysqli_fetch_array($lsql)){                            
+                            ?>
                             <option>
                                 <?php echo $lrow['language'] ?>
-                            </option>				
-							
-                                <?php                              
-							
-                                
-                                }                               
-							
-                                ?>
+                            </option>							
+                            <?php							                                                            
+                            }							
+                            ?>
                         </select>
-                    </div>
-					
+                    </div>					
                     <div class="mb-3 col-md-4">
                         <div class="form-label">Shift Timing</div>
                         <select class="form-select" name="dshift">
                             <option>
                                 <?php echo $drow['d_shift'];?>
                             </option>							
-                            <option>Day Shift</option>				
-							<option>Afternoon Shift</option>				
-							<option>Night Shift</option>							
+                            <option>Day Shift</option>							
+                            <option>Afternoon Shift</option>			
+                            <option>Night Shift</option>							
                         </select>
-                    </div>
-					<div class="mb-3 col-md-4">
+                    </div>					
+                    <div class="mb-3 col-md-4">
                         <div class="form-label">TFL PCO Number: </div>
                         <input type="text" class="form-control" value="<?php echo $drow['d_pco']; ?>" name="dpco">
-                    </div>
-                   
+                    </div>                   
                 </div>
                 <div class="card-footer bg-transparent mt-auto">
                     <div class="btn-list justify-content-end">
@@ -169,7 +135,7 @@
                         </a>
                         <button type="submit" class="btn btn-success">
                             <i class="ti ti-360"></i>
-                            Update
+                            Update Driver
                         </button>
                     </div>
                 </div>
@@ -180,25 +146,20 @@
 <!-- Your Google Maps Autocomplete logic -->
 <script>
     let autocompleteAdd, autocompletePC;
-
     function initAutocomplete() {
         const addInput = document.getElementById('add');
         const pcInput = document.getElementById('pc');
-
         const options = {
             types: ['geocode'],
             componentRestrictions: { country: 'GB' }
         };
-
         if (addInput) {
             autocompleteAdd = new google.maps.places.Autocomplete(addInput, options);
         }
-
         if (pcInput) {
             autocompletePC = new google.maps.places.Autocomplete(pcInput, options);
         }
     }
 </script>
-
 <!-- Load Google Maps API (NO window load, use callback only) -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>

@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body border-bottom py-3">
                 <div id="table-adriver" class="table-responsive">
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU"></script>			
+<!--                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU"></script>			-->
 					<?php
 
 
