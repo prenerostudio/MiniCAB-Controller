@@ -38,6 +38,13 @@ if (isset($_POST['d_name'], $_POST['d_email'], $_POST['d_phone'], $_POST['d_pass
 
     if ($stmt->execute()) {
         $d_id = $stmt->insert_id;
+        
+        $vsql = "INSERT INTO `driver_vehicle`(`d_id`) VALUES ('$d_id')";
+        
+			
+        $vr = mysqli_query($connect, $vsql);
+        
+        
         $stmt->close();
       
         // Log activity

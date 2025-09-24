@@ -27,20 +27,20 @@ $urow = mysqli_fetch_array($usql);
                                 </span>																			
                             </div>			
                             <div class="col-auto">																	
-                                <form action="update-user-img.php" method="post" enctype="multipart/form-data">				
+                                <form action="includes/authentication/update-user-img.php" method="post" enctype="multipart/form-data">				
                                     <input type="hidden" value="<?php echo $urow['user_id']; ?>" name="user_id">				
                                     <input type="file" name="fileToUpload" id="fileToUpload" class="btn btn-outline">
                                     <button type="submit" class="btn btn-info">Upload Image </button>
                                 </form>
                             </div>
                             <div class="col-auto">
-                                <a href="del-user-img.php?user_id=<?php echo $urow['user_id'] ?>" class="btn btn-ghost-danger">
+                                <a href="includes/authentication/del-user-img.php?user_id=<?php echo $urow['user_id'] ?>" class="btn btn-ghost-danger">
                                     Delete avatar
                                 </a>
                             </div>	                    	
                         </div>			
                         <h3 class="card-title mt-4">Business Profile</h3>			
-                        <form method="post" action="update-user.php">			
+                        <form method="post" action="includes/authentication/update-user.php">			
                             <div class="row g-3">			
                                 <div class="col-md">				
                                     <div class="form-label">First Name</div>  				
@@ -61,20 +61,20 @@ $urow = mysqli_fetch_array($usql);
                                     <div class="form-label">Phone Number</div>                        				
                                     <input type="text" class="form-control" value="<?php echo $urow['user_phone'] ?>" name="uphone">				
                                 </div>                      				
-                                <div class="col-md">				
-									<div class="form-label">Designation</div>
-									<select class="form-control" name="desig">                        
-										<option>
-											<?php echo $urow['designation']; ?>
-										</option>                        
-										<option>Admin</option>                        
-										<option>Controller</option>  						
-										<option>Accountant</option> 						
-										<option>Customer Service</option> 						
-										<option>Driver Support</option> 						
-										<option>User</option>                     
-									</select>
-								</div>				
+                                <div class="col-md">									
+                                    <div class="form-label">Designation</div>				
+                                    <select class="form-control" name="desig">				
+                                        <option>											
+                                            <?php echo $urow['designation']; ?>
+                                        </option>                        					
+                                        <option>Admin</option>                        					
+                                        <option>Controller</option>  											
+                                        <option>Accountant</option> 											
+                                        <option>Customer Service</option> 											
+                                        <option>Driver Support</option> 											
+                                        <option>User</option>                     					
+                                    </select>				
+                                </div>				
                                 <div class="col-md">				
                                     <div class="form-label">National ID</div>				
                                     <input type="text" class="form-control" value="<?php echo $urow['nid'] ?>" name="nid">
@@ -94,21 +94,21 @@ $urow = mysqli_fetch_array($usql);
                                     <input type="text" class="form-control" value="<?php echo $urow['state'] ?>" name="state">
                                 </div>				
                             </div>			
-                            <div class="row g-3" style="padding-top: 20px;">			
+                            <div class="row g-3" style="padding-top: 20px; padding-bottom: 20px;">			
                                 <div class="col-md-4">                        				
                                     <div class="form-label">Country</div>                        				
                                     <select class="form-select" id="country" name="country">				
                                         <option value="<?php echo $urow['country_id'] ?>">
                                             <?php echo $urow['country_name'] ?>
-                                        </option>					
-										<?php
+                                        </option>										                                                                                        
+                                        <?php
                                         $lsql=mysqli_query($connect,"SELECT * FROM `countries`");					
-                                        while($lrow = mysqli_fetch_array($lsql)){
-										?>					
+                                        while($lrow = mysqli_fetch_array($lsql)){										
+                                        ?>					
                                         <option value="<?php echo $lrow['country_id']; ?>">
                                             <?php echo $lrow['country_name']; ?>
-                                        </option>										
-										<?php
+                                        </option>										                                            
+                                        <?php
                                         }																					
                                         ?>																	
                                     </select>                      								
@@ -124,7 +124,7 @@ $urow = mysqli_fetch_array($usql);
                                         Cancel
                                     </a>
                                     <button class="btn btn-primary" type="submit">
-                                        Update
+                                        Update Profile
                                     </button>
                                 </div>
                             </div>			
@@ -133,72 +133,74 @@ $urow = mysqli_fetch_array($usql);
                 </div>                  														
             </div>	
         </div>		
-		  
-		<div class="card">        
-			<div class="card-body">            
-				<h2 class="mb-4">Change Password</h2>            
-				<form method="post" action="update-password.php" onsubmit="return validatePassword()">                
-					<input type="hidden" name="user_id" value="<?php echo $urow['user_id']; ?>">  
-					
-					<div class="row">
-						
-						<div class="mb-3 input-group input-group-flat">    
-					<label class="form-label">New Password</label>
-                                                <input type="password" class="form-control" placeholder="Your password" name="password" id="password" required>    
-						
-                                                <span class="input-group-text">        
-						
-                                                    <a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">            
-						
-                                                        <i class="ti ti-eye"></i>        
-							
-                                                    </a>    
-						
-                                                </span>
-						
-                                            </div>
-						
-					
-						<div class=" password-toggle">
-                    <label class="form-label">New Password</label>
-                    <input type="password" class="form-control" name="password" id="password" required>
-                    <i class="fa-solid fa-eye toggle-icon" onclick="togglePassword('password', this)"></i>
-                </div>
+		  		
+      <div class="card mt-3">
+    <div class="card-body">
+        <h2 class="mb-4">Change Password</h2>
+        <form id="passwordForm">
+            <input type="hidden" name="user_id" value="<?php echo $urow['user_id']; ?>">
 
-                <div class="mb-3 password-toggle">
-                    <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" name="confirm-password" id="confirm-password" required>
-                    <i class="fa-solid fa-eye toggle-icon" onclick="togglePassword('confirm-password', this)"></i>
-                </div>
-					
-					</div>
-					<div class="d-flex justify-content-between">
-						<a href="#" class="btn btn-secondary">Cancel</a>                    
-						<button class="btn btn-primary" type="submit">Update Password</button>                
-					</div>            
-				</form>        
-			</div>    
-		</div>				
-		<script>
-			function validatePassword() {    
-				const password = document.getElementById("password").value;    
-				const confirmPassword = document.getElementById("confirm-password").value;				    
-				if (password !== confirmPassword) {        
-					alert("Passwords do not match.");        
-					return false;    
-				}    
-				return true;
-			}
-			
-			function togglePassword(id, icon) {
+            <div class="mb-3 password-toggle">
+                <label class="form-label">New Password</label>
+                <input type="password" class="form-control" name="password" id="password" required>
+                <i class="fa-solid fa-eye toggle-icon" onclick="togglePassword('password', this)"></i>
+            </div>
+
+            <div class="mb-3 password-toggle">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" name="confirm_password" id="confirm-password" required>
+                <i class="fa-solid fa-eye toggle-icon" onclick="togglePassword('confirm-password', this)"></i>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a href="profile.php" class="btn btn-secondary">Cancel</a>
+                <button class="btn btn-primary" type="submit">Update Password</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function togglePassword(id, icon) {
     const input = document.getElementById(id);
     const isPassword = input.type === "password";
     input.type = isPassword ? "text" : "password";
     icon.classList.toggle("fa-eye");
     icon.classList.toggle("fa-eye-slash");
 }
-		</script>			    
-	</div>
+
+// Handle form submission with AJAX
+document.getElementById("passwordForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("includes/authentication/update-password.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        Swal.fire({
+            icon: data.status,
+            title: data.title,
+            text: data.message
+        }).then(() => {
+            if (data.status === "success") {
+                // Redirect after success
+                window.location.href = "profile-setting.php";
+            }
+        });
+    })
+    .catch(err => {
+        Swal.fire("Error", "Something went wrong. Try again.", "error");
+    });
+});
+</script>
+
+    </div>
 </div>       
 <?php
 include('footer.php')

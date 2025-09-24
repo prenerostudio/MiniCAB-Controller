@@ -47,17 +47,17 @@ $urow = mysqli_fetch_array($usql);
                             <div class="tab-content">                        
                                 <div class="tab-pane active show" id="tabs-profile">                            
                                     <?php                            
-                                    include('user-profile-section.php');                            
+                                    include('templates/users/user-profile-section.php');                            
                                     ?>                        
                                 </div>                        
                                 <div class="tab-pane" id="tabs-document">                            
                                     <?php                            
-                                    include('user-permissions.php');                            
+                                    include('templates/users/user-permissions.php');                            
                                     ?>                        
                                 </div>                                                       		
                                 <div class="tab-pane" id="tabs-activity">                            
                                     <?php                            
-                                    include('user-activity-logs.php');                            
+                                    include('templates/users/user-activity-logs.php');                            
                                     ?>                        
                                 </div>                    
                             </div>                

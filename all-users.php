@@ -95,7 +95,7 @@ include('header.php');
                                         <?php
                                         } else {
                                         ?>
-                                         <a class="btn btn-danger delete_btn" href="del-user.php?user_id=<?php echo $urow['user_id']; ?>" onclick="return confirm('Are you sure you want to delete this User?');">
+                                         <a class="btn btn-danger delete_btn" href="includes/users/del-user.php?user_id=<?php echo $urow['user_id']; ?>" onclick="return confirm('Are you sure you want to delete this User?');">
                                             <i class="ti ti-square-rounded-x"></i>
                                             Delete
                                         </a>
@@ -109,7 +109,8 @@ include('header.php');
                                         
                                     </td>
                                 </tr>				
-								<?php
+								
+                                <?php
                                 }
                                 ?>
                             </tbody>
@@ -135,7 +136,7 @@ include('header.php');
                 <h5 class="modal-title">Add New User</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" action="user-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
+            <form method="post" action="includes/users/user-process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
                 <div class="modal-body">
                     <div class="row">
                         <div class="mb-3 col-md-4">
