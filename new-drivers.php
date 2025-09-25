@@ -15,10 +15,10 @@ include('header.php');
             <div class="btn-list">
                 <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-driver">
                     <i class="ti ti-user-plus"></i>
-                    Add New Driver
-				</a>
-            </div> 
-		</div>
+                    Add New Driver				
+                </a>
+            </div> 		
+        </div>
     </div>	
 </div>
 <div class="page-body page_padding"> 
@@ -56,23 +56,16 @@ include('header.php');
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Image</th>
-                                
-													<th>Name</th>
-                                
-													<th>Email</th>
-                                
-													<th>Phone</th>
-                                
-													<th>Vehicle</th>
-                                
-													<th>Post Code</th>
-                                
-													<th>Shift Timing</th>
-                                
-													<th>Actions</th>
-                                                </tr>
-											</thead>
+                                                    <th>Image</th>                                						
+                                                    <th>Name</th>                                						
+                                                    <th>Email</th>                                						
+                                                    <th>Phone</th>                                						
+                                                    <th>Vehicle</th>                                						
+                                                    <th>Post Code</th>                                						
+                                                    <th>Shift Timing</th>                                						
+                                                    <th>Actions</th>
+                                                </tr>						
+                                            </thead>
                                             <tbody class="table-tbody">
                                                 <?php 
                                                 $y = 0;
@@ -84,14 +77,13 @@ include('header.php');
                                                     <td>
                                                         <?php echo $newrow['d_id']; ?>
                                                     </td>
-                                                    <td>                                                        
-														<?php if (!$newrow['d_pic']) : ?>
+                                                    <td>                                                        														
+                                                        <?php if (!$newrow['d_pic']) : ?>
                                                         <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-														<?php else : ?>
-                                                        <img src="img/drivers/<?php echo $newrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">        
-														<?php endif; ?>
-													</td>
-                                                    
+                                                        <?php else : ?>
+                                                        <img src="img/drivers/<?php echo $newrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
+                                                        <?php endif; ?>													
+                                                    </td>                                                    
                                                     <td>
                                                         <?php echo $newrow['d_name']; ?>
                                                     </td>
@@ -104,9 +96,8 @@ include('header.php');
 													
                                                     <td>
                                                         <?php echo $newrow['v_name']; ?>
-                                                    </td>
-													
-													<td>
+                                                    </td>																										
+                                                    <td>
                                                         <?php echo $newrow['d_post_code'];?>
                                                     </td>
                                                     <td>
@@ -114,30 +105,30 @@ include('header.php');
                                                     </td>
                                                     <td>
                                                         <a href="view-driver.php?d_id=<?php echo $newrow['d_id']; ?>" title="View">
-                                                            <button class="btn btn-twitter btn-icon">
-																<i class="ti ti-eye"></i>
-															</button>
+                                                            <button class="btn btn-twitter btn-icon">																
+                                                                <i class="ti ti-eye"></i>															
+                                                            </button>
                                                         </a>
-                                                        <a href="del-driver.php?d_id=<?php echo $newrow['d_id']; ?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">
-															<i class="ti ti-square-rounded-x"></i>
-														</a>
+                                                        <a href="includes/drivers/del-driver.php?d_id=<?php echo $newrow['d_id']; ?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">											
+                                                            <i class="ti ti-square-rounded-x"></i>							
+                                                        </a>
                                                     </td>
-                                                </tr>                                                    
-												<?php endwhile; ?>   
-												<?php if ($y === 0) : ?>
+                                                </tr>
+                                                <?php endwhile; ?> 										
+                                                <?php if ($y === 0) : ?>
                                                 <tr>
                                                     <td colspan="9">
                                                         <p align="center">
                                                             No Driver Found!
                                                         </p>
                                                     </td>
-                                                </tr>
-												<?php endif; ?>
+                                                </tr>												
+                                                <?php endif; ?>
                                             </tbody> 
                                         </table>
                                     </div>
-                                </div>
-							</div>
+                                </div>						
+                            </div>
                         </div>			
                         <div class="tab-pane" id="tabs-await">
                             <div class="card">
@@ -176,9 +167,9 @@ include('header.php');
                                                     <td>
                                                         <?php if (!$ndrow['d_pic']) : ?>
                                                         <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-														<?php else : ?>
+                                                        <?php else : ?>
                                                         <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-														<?php endif; ?>
+                                                        <?php endif; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $ndrow['d_post_code'];?>
@@ -202,21 +193,21 @@ include('header.php');
                                                         <a href="view-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" title="View" class="btn btn-twitter btn-icon">									
                                                             <i class="ti ti-eye"></i>          
                                                         </a>
-                                                        <a href="del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete" class="btn btn-youtube btn-icon">                   
-															<i class="ti ti-square-rounded-x"></i>
+                                                        <a href="includes/drivers/del-driver.php?d_id=<?php echo $ndrow['d_id'];?>" title="Delete" class="btn btn-youtube btn-icon">															
+                                                            <i class="ti ti-square-rounded-x"></i>
                                                         </a>
                                                     </td>
-                                                </tr>                   
-												<?php endwhile; ?>
-												<?php if ($y === 0) : ?>												
+                                                </tr>												
+                                                <?php endwhile; ?>												
+                                                <?php if ($y === 0) : ?>												
                                                 <tr>
                                                     <td colspan="9">
                                                         <p align="center">
                                                             No Driver Found!
                                                         </p>
-                                                    </td>
-												</tr>              
-												<?php endif; ?>
+                                                    </td>								
+                                                </tr>              					
+						<?php endif; ?>
                                             </tbody> 
                                         </table>
                                     </div>
@@ -243,7 +234,7 @@ include('header.php');
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="driver-process.php" onsubmit="return validateForm();">
+            <form method="post" enctype="multipart/form-data" action="includes/drivers/driver-process.php" onsubmit="return validateForm();">
                 <div class="modal-body">
                     <div class="row">
                         <div class="mb-3 col-lg-6">
@@ -258,31 +249,30 @@ include('header.php');
                             <label class="form-label">Phone</label>
                             <input type="text" class="form-control" name="dphone" placeholder="+44 xx xxxx xxxx" required>
                         </div> 
-                        <div class="mb-3 col-lg-6">							 
-							<label class="form-label">Password</label>							
-							<div class="input-group input-group-flat">    					                            
-								<input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" autocomplete="off" required>    						                                
-								<span class="input-group-text">        						                                
-									<a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">            						                                    
-										<i class="ti ti-eye"></i>
-									</a>						                                    
-							
-								</span>						                                
-							</div>           
+                        <div class="mb-3 col-lg-6">
+                            <label class="form-label">Password</label>
+                            <div class="input-group input-group-flat">
+                                <input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" autocomplete="off" required>
+                                <span class="input-group-text">
+                                    <a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">
+                                        <i class="ti ti-eye"></i>					
+                                    </a>
+                                </span>
+                            </div>           
                         </div> 
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Licence Authority</label>
                             <select class="form-select" name="dauth" required>
                                 <option value="" selected>Select Authority</option>
                                 <option>England</option>
-                                <option>Scotland</option>
-								<option>Wales</option>
+                                <option>Scotland</option>					
+                                <option>Wales</option>
                             </select>
                         </div>
-                        <div class="mb-3 col-lg-6">
-							<label class="form-label">Gender</label>
-                            <select class="form-select" name="dgender">
-								<option value="" selected>Select Gender</option>
+                        <div class="mb-3 col-lg-6">						
+                            <label class="form-label">Gender</label>
+                            <select class="form-select" name="dgender">								
+                                <option value="" selected>Select Gender</option>
                                 <option>Male</option>
                                 <option>Female</option>
                                 <option>Transgender</option>
@@ -291,13 +281,15 @@ include('header.php');
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Language</label>
                             <select class="form-select" name="dlang">
-                                <option value="" selected>Select Language</option>
-								<?php
+                                <option value="" selected>Select Language</option>								
+                                <?php
                                 $lsql=mysqli_query($connect,"SELECT * FROM `language`");
                                 while($lrow = mysqli_fetch_array($lsql)){
-								?>
-                                <option><?php echo $lrow['language'] ?></option>
-								<?php
+                                ?>
+                                <option>
+                                    <?php echo $lrow['language']; ?>
+                                </option>								
+                                <?php
                                 }
                                 ?>
                             </select>
@@ -306,15 +298,15 @@ include('header.php');
                             <label class="form-label">Picture</label>
                             <input type="file" class="form-control" name="dpic">
                         </div>
-                        <div class="mb-3 col-lg-6">
-							<label class="form-label">Post Code</label>
+                        <div class="mb-3 col-lg-6">							
+                            <label class="form-label">Post Code</label>
                             <input type="text" class="form-control" name="post_code" placeholder="xxxxx">
                         </div>
                         <div class="mb-3 col-lg-6">	
                             <label class="form-label">Address</label>
-                            <textarea class="form-control" rows="3" name="address"></textarea>
-						</div>
-					</div>
+                            <textarea class="form-control" rows="3" name="address"></textarea>						
+                        </div>					
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-danger" data-bs-dismiss="modal">
@@ -327,19 +319,20 @@ include('header.php');
                     </button>
                 </div>
             </form>
-			<script>
-				function validateForm() {
-					var dnameInput = document.getElementsByName("dname")[0].value;
-					var demailInput = document.getElementsByName("demail")[0].value;
-					var dphoneInput = document.getElementsByName("dphone")[0].value;
-					var dauthInput = document.getElementsByName("dauth")[0].value;
-					if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {
-						alert("Please fill in all required fields.");
-						return false;
-					}
-					return true;
-				}
-			</script>
+			
+            <script>	
+                function validateForm() {
+                    var dnameInput = document.getElementsByName("dname")[0].value;	
+                    var demailInput = document.getElementsByName("demail")[0].value;	
+                    var dphoneInput = document.getElementsByName("dphone")[0].value;	
+                    var dauthInput = document.getElementsByName("dauth")[0].value;	
+                    if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	
+                        alert("Please fill in all required fields.");	
+                        return false;	
+                    }	
+                    return true;	
+                }
+            </script>
         </div>
     </div>    
 </div>

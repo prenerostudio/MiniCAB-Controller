@@ -1,35 +1,19 @@
-
 <?php
-
-require 'config.php';
-
-include('session.php');
-
+require '../../config.php';
+include('../../session.php');
 
 $v_id = $_POST['v_id'];
-
 $d_id = $_POST['d_id'];
-
 $make = $_POST['make'];
-
 $model = $_POST['model'];
-
 $color = $_POST['color'];
-
 $reg_num = $_POST['reg_num'];
-
 $phv = $_POST['phv'];
-
 $phv_exp = $_POST['phv_exp'];
-
 $taxi_ins = $_POST['taxi_ins'];
-
 $taxi_exp = $_POST['taxi_exp'];
-
 $mot = $_POST['mot'];
-
 $mot_exp = $_POST['mot_exp'];
-
 
 $sql = "INSERT INTO `driver_vehicle`(
 				`v_id`, 
@@ -58,18 +42,11 @@ $sql = "INSERT INTO `driver_vehicle`(
 				'$mot',
 				'$mot_exp')";
          
-
 $result = mysqli_query($connect, $sql);              
-
 if ($result) {   	
-
     $activity_type = 'Vehicle Added';	
-
     $user_type = 'user';	
-
     $details = "A new vehicle added by driver " . $d_id. ".";
-	
-
     $actsql = "INSERT INTO `activity_log`(
 					`activity_type`, 
 					`user_type`, 
@@ -80,18 +57,11 @@ if ($result) {
 					'$user_type',
 					'$myId',
 					'$details')";	
-
     $actr = mysqli_query($connect, $actsql);				
-
-    header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
-
-    exit();       
-
-    
+    header('Location: ../../view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
+    exit();          
 } else {           			
-
-    header('Location: view-driver.php?d_id='.$d_id.'#tabs-vehicle');     
+    header('Location: ../../view-driver.php?d_id='.$d_id.'#tabs-vehicle');     
 }                   
-
 $connect->close();
 ?>

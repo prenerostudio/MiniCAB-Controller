@@ -226,17 +226,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <div class="tab-pane" id="tabs-vehicle">
                             <?php
-                            include('driver-vehicle-section.php');
+                            include('templates/drivers/driver-vehicle-section.php');
                             ?>
                         </div>
                         <div class="tab-pane" id="tabs-statement">
                             <?php
-                            include('driver-booking-statement-section.php');
+                            include('templates/drivers/driver-booking-statement-section.php');
                             ?>
                         </div>
                         <div class="tab-pane" id="tabs-bank">
                             <?php
-                            include('driver-bank-section.php');
+                            include('templates/drivers/driver-bank-section.php');
                             ?>
                         </div>
                         <div class="tab-pane" id="tabs-tracker">
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>			
                         <div class="tab-pane" id="tabs-activity">
                             <?php
-                           // include('driver-activity-logs.php');
+                            include('templates/drivers/driver-activity-logs.php');
                             ?>
                         </div>
                     </div>

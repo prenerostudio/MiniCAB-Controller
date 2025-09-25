@@ -1,6 +1,6 @@
 <?php
-include('config.php');
-include('session.php');
+include('../../config.php');
+include('../../session.php');
 $d_id = $_GET['d_id'];
 $status = 1;
 $sql = "UPDATE `drivers` SET `acount_status`='$status' WHERE `d_id`='$d_id'";
@@ -20,8 +20,8 @@ if($result){
 					'$myId',
 					'$details')";
     $actr = mysqli_query($connect, $actsql);
-    header('location: drivers.php');	
+    header('location: ../../drivers.php');	
 } else {	
-    header('location: drivers.php');	
+    header('location: ../../drivers.php');	
 }
 ?>

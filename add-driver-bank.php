@@ -12,7 +12,7 @@ $d_id = $_GET['d_id'];
                     </h3>
                 </div>
                 <div class="card-body border-bottom py-3">
-                    <form method="post" action="db_process.php" onsubmit="return validateForm();">
+                    <form method="post" action="includes/drivers/db_process.php" onsubmit="return validateForm();">
                         <div class="modal-body">
                             <div class="row">
                                 <div class="mb-3 col-lg-4">

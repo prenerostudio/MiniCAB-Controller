@@ -28,159 +28,244 @@ include('header.php');
                 <h3 class="card-title">
                     Active Drivers List
                 </h3>								
-				<div class="col-auto ms-auto d-print-none">            
-					<div class="btn-list">				
-						<select class="form-select" id="shift-filter">    
-							<option value="">Search By Shift Timing</option>    
-							<option value="Day Shift">Day Shift</option>    
-							<option value="Afternoon Shift">Afternoon Shift</option>    
-							<option value="Night Shift">Night Shift</option>
-						</select>                           
-					</div>        
-				</div>							
-				<div class="col-auto" style="margin-left: 25px;">            
-					<div class="btn-indigo">						
-						<select class="form-select" name="v_id" id="vehicle-filter">    
-							<option value="">Search By Vehicle</option>   
-							<?php   
-							$vsql = mysqli_query($connect, "SELECT * FROM vehicles");   
-							while ($vrow = mysqli_fetch_array($vsql)) {       
-								echo '<option value="' . $vrow['v_id'] . '">' . $vrow['v_name'] . '</option>';   
-							}   
-							?>
-						</select>						            
-					</div>        
-				</div>						
-				<div class="col-auto" style="margin-left: 25px;">
-            
-					<div class="btn-list">
 				
-						 <input type="text" class="form-control" id="pc" name="pc" placeholder="Enter Postcode" required>
+                <div class="col-auto ms-auto d-print-none">            
+		
+                    <div class="btn-list">				
+		
+                        <select class="form-select" id="shift-filter">    
+			
+                            <option value="">Search By Shift Timing</option>    
+			
+                            <option value="Day Shift">Day Shift</option>    
+			
+                            <option value="Afternoon Shift">Afternoon Shift</option>    
+			
+                            <option value="Night Shift">Night Shift</option>
+			
+                        </select>                           
+			
+                    </div>        
+		
+                </div>							
+		
+                <div class="col-auto" style="margin-left: 25px;">            
+		
+                    <div class="btn-indigo">						
+		
+                        <select class="form-select" name="v_id" id="vehicle-filter">    
+			
+                            <option value="">Search By Vehicle</option>   
+			
+				<?php   
+
+                                $vsql = mysqli_query($connect, "SELECT * FROM vehicles");   
+				
+                                while ($vrow = mysqli_fetch_array($vsql)) {       
+				
+                                    echo '<option value="' . $vrow['v_id'] . '">' . $vrow['v_name'] . '</option>';   
+				
+                                    }   
+				
+                                    ?>
+				
+                        </select>						            
+			
+                    </div>        
+		
+                </div>						
+		
+                <div class="col-auto" style="margin-left: 25px;">
+            
+                    
+		
+                    <div class="btn-list">
+		
+                        
+			
+                        <input type="text" class="form-control" id="pc" name="pc" placeholder="Enter Postcode" required>
 
                
            
-					</div>
+			
+                    </div>
         
-				</div>
+		
+                </div>
 
 				
             
 			
-			</div>
+		
+            </div>
 			
-			<script>
+	
+            <script>
 			
    
    
-				var autocompletePickup;    
+	
+    var autocompletePickup;    
   
    
-				function initAutocomplete() {
+
+    function initAutocomplete() {
      
-					var pcInput = document.getElementById('pc');      
+
+        var pcInput = document.getElementById('pc');      
       
-					var autocompleteOptions = {
+	
+        var autocompleteOptions = {
          
-						types: ['geocode'],
+	
+            types: ['geocode'],
             
-						componentRestrictions: {country: 'GB'}
+	
+            componentRestrictions: {country: 'GB'}
        
-					};
+	
+        };
        
-					autocompletepc = new google.maps.places.Autocomplete(pcInput, autocompleteOptions);
+	
+        autocompletepc = new google.maps.places.Autocomplete(pcInput, autocompleteOptions);
         
       
    
-				}    
+	
+    }    
 
     
-				google.maps.event.addDomListener(window, 'load', initAutocomplete);
+
+    google.maps.event.addDomListener(window, 'load', initAutocomplete);
 
 
-				$(document).ready(function () {
+
+    $(document).ready(function () {
    
-					$('#table-driver').DataTable();
+
+        $('#table-driver').DataTable();
 
    
-					$('#shift-filter').on('change', function () {
+	
+        $('#shift-filter').on('change', function () {
     
-						var selectedShift = $(this).val();
+	
+        var selectedShift = $(this).val();
 
       
-						$.ajax({
+	
+        $.ajax({
             
-							url: 'fetch-driver-shiftwise.php',
+	
+            url: 'fetch-driver-shiftwise.php',
             
-							type: 'POST',
+	
+            type: 'POST',
             
-							data: { shift: selectedShift },
+	
+            data: { shift: selectedShift },
             
-							success: function (data) {
+	
+            success: function (data) {
               
-								$('.table-tbody').html(data);
+	
+        $('.table-tbody').html(data);
           
-							}
+	
+    }
      
-						});
+
+        });
    
-					});
+	
+    });
 
-				});
+
+    });
 				
 				
-				$(document).ready(function () {
+
+    $(document).ready(function () {
     
-					$('#vehicle-filter').on('change', function () {
+
+        $('#vehicle-filter').on('change', function () {
         
-						var v_id = $(this).val();
+	
+        var v_id = $(this).val();
         
-						$.ajax({
+	
+        $.ajax({
             
-							url: 'fetch-drivers-by-vehicle.php',
+	
+            url: 'fetch-drivers-by-vehicle.php',
             
-							type: 'POST',
+	
+            type: 'POST',
             
-							data: { v_id: v_id },
+	
+            data: { v_id: v_id },
             
-							success: function (data) {
+	
+            success: function (data) {
                 
-								$('.table-tbody').html(data);
+	
+        $('.table-tbody').html(data);
             
-							}
-        
-						});
+	
+    }
     
-					});
-
-				});
-
-				$(document).ready(function () {
     
-					$('#postcode-filter').on('change', function () {
+
+        });
+    
+    
+	
+    });
+
+
+    });
+
+
+    $(document).ready(function () {
+    
+
+        $('#postcode-filter').on('change', function () {
         
-						var pc_name = $(this).val();
+	
+        var pc_name = $(this).val();
         
-						$.ajax({
+	
+        $.ajax({
             
-							url: 'fetch-drivers-by-postcode.php',
+	
+            url: 'fetch-drivers-by-postcode.php',
             
-							type: 'POST',
+	
+            type: 'POST',
             
-							data: { pc_name: pc_name },
+	
+            data: { pc_name: pc_name },
             
-							success: function (data) {
+	
+            success: function (data) {
                 
-								$('.table-tbody').html(data);
+	
+        $('.table-tbody').html(data);
             
-							}
+	
+    }
         
-						});
+
+        });
     
-					});
+	
+    });
 
-				});
 
-			</script>
+    });
+
+
+            </script>
 
 			
 			
@@ -202,43 +287,54 @@ include('header.php');
                         </thead>
                         <tbody class="table-tbody">
 				
-							<?php
+							
+                            <?php
                                
-							$x = 0;
+							
+                            $x = 0;
                                
-							$adsql = mysqli_query($connect, "SELECT
-  drivers.*,
-  driver_vehicle.*,
-  vehicles.* ,
- GROUP_CONCAT(vehicles.v_name SEPARATOR ', ') AS vehicle_names
-FROM drivers
-LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id
-LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id
-WHERE drivers.acount_status = 1
-GROUP BY drivers.d_id
-ORDER BY drivers.d_id DESC");
+							
+                            $adsql = mysqli_query($connect, "SELECT
+                                                                drivers.*,
+                                                                driver_vehicle.*,
+                                                                vehicles.* ,
+                                                               GROUP_CONCAT(vehicles.v_name SEPARATOR ', ') AS vehicle_names
+                                                              FROM drivers
+                                                              LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id
+                                                              LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id
+                                                              WHERE drivers.acount_status = 1
+                                                              GROUP BY drivers.d_id
+                                                              ORDER BY drivers.d_id DESC");
                                
-							while ($adrow = mysqli_fetch_array($adsql)) :
-                                   
-							$x++;
+							
+                            while ($adrow = mysqli_fetch_array($adsql)) :
+                            
+                                
+				
+                                $x++;
                                
-							?>
+				
+                            ?>
                             <tr>
                                 <td>
                                     <?php echo $adrow['d_id']; ?>
                                 </td>
                                 <td>
                                    
-									<?php
+									
+                                    <?php
                                     if (!$adrow['d_pic']) :
                                         
-									?>
+									
+                                        ?>
                                     <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
                                         
-									<?php else : ?>
+									
+                                        <?php else : ?>
                                     <img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
                                        
-									<?php endif; ?>								
+									
+                                        <?php endif; ?>								
                                 </td>
                                 <td>
                                     <strong style="text-transform: capitalize;">
@@ -261,25 +357,25 @@ ORDER BY drivers.d_id DESC");
                                     <?php echo $adrow['d_shift'];?>
                                 </td>
                                 <td>
-                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id'];?>" title="View/Edit" class="btn btn-icon btn-info"> 
-										<i class="ti ti-eye"></i>
+                                    <a href="view-driver.php?d_id=<?php echo $adrow['d_id'];?>" title="View/Edit" class="btn btn-icon btn-info">										
+                                        <i class="ti ti-eye"></i>
                                     </a>
-                                    <a href="del-driver.php?d_id=<?php echo $adrow['d_id'];?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">
-										<i class="ti ti-square-rounded-x"></i>
-									</a>
-                                    <a href="make-inactive.php?d_id=<?php echo $adrow['d_id'];?>" title="Make Inactive" class="btn btn-icon btn-instagram">          
-										<i class="ti ti-user-x"></i>                 
+                                    <a href="includes/drivers/del-driver.php?d_id=<?php echo $adrow['d_id'];?>" class="btn btn-danger btn-icon delete_btn" title="Delete" onclick="return confirm('Are you sure you want to delete this driver?');">										
+                                        <i class="ti ti-square-rounded-x"></i>									
+                                    </a>
+                                    <a href="includes/drivers/make-inactive.php?d_id=<?php echo $adrow['d_id'];?>" title="Make Inactive" class="btn btn-icon btn-instagram">										
+                                        <i class="ti ti-user-x"></i>                 
                                     </a>
                                 </td>
-                            </tr>				
-							<?php endwhile; ?>                                    
-							<?php if ($x === 0) : ?>
+                            </tr>											
+                            <?php endwhile; ?>                                    							
+                            <?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">No Driver Found!</p>
                                 </td>
-                            </tr>				
-							<?php endif; ?>
+                            </tr>											
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -301,7 +397,7 @@ ORDER BY drivers.d_id DESC");
                 </h5>            										
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>		
             </div> 				
-            <form method="post" enctype="multipart/form-data" action="driver-process.php" onsubmit="return validateForm();">
+            <form method="post" enctype="multipart/form-data" action="includes/drivers/driver-process.php" onsubmit="return validateForm();">
                 <div class="modal-body">
                     <div class="row">
                         <div class="mb-3 col-lg-6">
@@ -316,17 +412,16 @@ ORDER BY drivers.d_id DESC");
                             <label class="form-label">Phone</label>
                             <input type="text" class="form-control" name="dphone" placeholder="+44 xx xxxx xxxx" required>
                         </div> 
-                        <div class="mb-3 col-lg-6">							 
-							<label class="form-label">Password</label>							
-							<div class="input-group input-group-flat">    					                            
-								<input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" autocomplete="off" required>    						                                
-								<span class="input-group-text">        						                                
-									<a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">            						                                    
-										<i class="ti ti-eye"></i>
-									</a>						                                    
-							
-								</span>						                                
-							</div>           
+                        <div class="mb-3 col-lg-6">							
+                            <label class="form-label">Password</label>										
+                            <div class="input-group input-group-flat">
+                                <input type="password" class="form-control" name="dpass" placeholder="xxxxxxxx" autocomplete="off" required>
+                                <span class="input-group-text">
+                                    <a href="#" class="link-secondary toggle-password" title="Show password" data-bs-toggle="tooltip">
+                                        <i class="ti ti-eye"></i>
+                                    </a>										
+                                </span>				
+                            </div>           
                         </div>
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">License Authority</label>
@@ -349,13 +444,15 @@ ORDER BY drivers.d_id DESC");
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Language</label>
                             <select class="form-select" name="dlang">
-                                <option value="" selected>Select Language</option>				
-								<?php
+                                <option value="" selected>Select Language</option>								
+                                <?php
                                 $lsql=mysqli_query($connect,"SELECT * FROM `language`");
-                                while($lrow = mysqli_fetch_array($lsql)){                                   
-								?>
-                                <option><?php echo $lrow['language'] ?></option>				
-								<?php
+                                while($lrow = mysqli_fetch_array($lsql)){								
+                                ?>
+                                <option>
+                                    <?php echo $lrow['language']; ?>
+                                </option>								
+                                <?php
                                 }
                                 ?>
                             </select>
@@ -365,36 +462,20 @@ ORDER BY drivers.d_id DESC");
                             <input type="file" class="form-control" name="dpic">
                         </div>
                         <div class="mb-3 col-lg-6">
-                            <label class="form-label">Post Code</label>
-							<select class="form-select" name="post_code">
-							
-								
-								<option>Select PostCode</option>
-                        
-								<?php                               
-							
-								$psql=mysqli_query($connect,"SELECT * FROM `post_codes`");                               
-							
-								while($prow = mysqli_fetch_array($psql)){                                   
-							
-								?>
-                            
-								<option>
-                               
-									<?php echo $prow['pc_name'] ?>
-                          
-								</option>				
-							
-								<?php                              
-							
-								}                               
-							
-								?>
-							
-							
-							</select>
-							
-                            
+                            <label class="form-label">Post Code</label>							
+                            <select class="form-select" name="post_code">																		
+                                <option>Select PostCode</option>                        				
+				<?php                               							
+                                $psql=mysqli_query($connect,"SELECT * FROM `post_codes`");                               											
+                                while($prow = mysqli_fetch_array($psql)){											
+                                ?>                            				
+                                <option>                               									
+                                    <?php echo $prow['pc_name'] ?>                          								
+                                </option>																			
+                                <?php															                                    
+                                }															
+                                ?>																		
+                            </select>							                            
                         </div>
                         <div class="mb-3 col-lg-6">
                             <label class="form-label">Address</label>
@@ -413,19 +494,19 @@ ORDER BY drivers.d_id DESC");
                     </button>
                 </div>
             </form>
-            <script>    
-				function validateForm() {        
-					var dnameInput = document.getElementsByName("dname")[0].value;	        
-					var demailInput = document.getElementsByName("demail")[0].value;        	        
-					var dphoneInput = document.getElementsByName("dphone")[0].value;			        
-					var dauthInput = document.getElementsByName("dauth")[0].value;		      	        
-					if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	            
-						alert("Please fill in all required fields.");           	            
-						return false;	        
-					}        
-					return true;    
-				}            
-			</script>
+            <script>				
+                function validateForm() {        
+                    var dnameInput = document.getElementsByName("dname")[0].value;	        	
+                    var demailInput = document.getElementsByName("demail")[0].value;        	        	
+                    var dphoneInput = document.getElementsByName("dphone")[0].value;			        	
+                    var dauthInput = document.getElementsByName("dauth")[0].value;		      	        	
+                    if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	            	
+                        alert("Please fill in all required fields.");           	            	
+                        return false;	        	
+                    }        	
+                    return true;    	
+                }            
+            </script>
         </div>
     </div>
 </div>

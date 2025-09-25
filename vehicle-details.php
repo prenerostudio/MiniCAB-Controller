@@ -14,7 +14,7 @@ $vhrow = mysqli_fetch_array($vhsql);
                     </h3>
                 </div>
                 <div class="card-body border-bottom py-3">
-                    <form method="post" action="update-dv.php" enctype="multipart/form-data">
+                    <form method="post" action="includes/drivers/update-dv.php" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="row">
                                 <div class="mb-3 col-lg-4">
@@ -24,29 +24,29 @@ $vhrow = mysqli_fetch_array($vhsql);
                                     <select class="form-control" name="v_id">
                                         <option value="<?php echo $vhrow['v_id'] ?>">
                                             <?php echo $vhrow['v_name'] ?>
-                                        </option>
-										<?php
+                                        </option>										                                            
+                                        <?php
                                         $vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
                                         while ($vrow = mysqli_fetch_array($vsql)) {
-										?>
+					?>
                                         <option value="<?php echo $vrow['v_id'] ?>">
                                             <?php echo $vrow['v_name'] ?>
-                                        </option>
-										<?php
-										}
-										?>
+                                        </option>										
+                                        <?php										                                            
+                                        }										
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Make</label>
                                     <input type="text" class="form-control" name="make" value="<?php echo $vhrow['v_make'] ?>">
                                 </div>
-                                <div class="mb-3 col-lg-4">
-									<label class="form-label">Model </label>
+                                <div class="mb-3 col-lg-4">					
+                                    <label class="form-label">Model </label>
                                     <input type="text" class="form-control" name="model" value="<?php echo $vhrow['v_model'] ?>">
                                 </div>
-                                <div class="mb-3 col-lg-4">
-									<label class="form-label">Color </label>
+                                <div class="mb-3 col-lg-4">				
+                                    <label class="form-label">Color </label>
                                     <input type="text" class="form-control" name="color" value="<?php echo $vhrow['v_color'] ?>">
                                 </div>
                                 <div class="mb-3 col-lg-4">
@@ -65,16 +65,16 @@ $vhrow = mysqli_fetch_array($vhsql);
                                     <label class="form-label">Taxi Insurance  </label>
                                     <input type="text" class="form-control" name="taxi_ins" value="<?php echo $vhrow['v_ti'] ?>">
                                 </div>
-                                <div class="mb-3 col-lg-4">
-									<label class="form-label">Taxi Insurance Expiry </label>
+                                <div class="mb-3 col-lg-4">									
+                                    <label class="form-label">Taxi Insurance Expiry </label>
                                     <input type="text" class="form-control" name="taxi_exp" value="<?php echo $vhrow['v_ti_expiry'] ?>">
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">MOT Number </label>
                                     <input type="text" class="form-control" name="mot" value="<?php echo $vhrow['v_mot'] ?>">
                                 </div>
-                                <div class="mb-3 col-lg-4">
-									<label class="form-label">MOT Expiry </label>
+                                <div class="mb-3 col-lg-4">									
+                                    <label class="form-label">MOT Expiry </label>
                                     <input type="text" class="form-control" name="mot_exp" value="<?php echo $vhrow['v_mot_expiry'] ?>">
                                 </div>
                             </div>
@@ -92,7 +92,8 @@ $vhrow = mysqli_fetch_array($vhsql);
                     </form>
                 </div>
             </div>
-		</div>
+		
+        </div>
     </div>
 </div>
 <?php

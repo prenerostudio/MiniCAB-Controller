@@ -1,6 +1,6 @@
 <?php
-include('config.php');
-include('session.php');
+include('../../config.php');
+include('../../session.php');
 $del_d_id = $_GET['del_d_id'];
 $status = 1;
 $dstatus = 3;
@@ -27,8 +27,8 @@ if ($update_result) {
     $actstmt = $connect->prepare($actsql);
     $actstmt->bind_param('ssis', $activity_type, $user_type, $myId, $details);
     $actstmt->execute();
-    header('Location: driver-delete-request.php');
+    header('Location: ../../driver-delete-request.php');
 } else {
-    header('Location: driver-delete-request.php');
+    header('Location: ../../driver-delete-request.php');
 }
 ?>

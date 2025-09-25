@@ -1,6 +1,6 @@
 <?php
-include('config.php');
-include('session.php');
+include('../../config.php');
+include('../../session.php');
 
 $d_id = $_GET['d_id'];
 $status = 2;
@@ -21,8 +21,8 @@ if($result){
 					'$myId',
 					'$details')";	
     $actr = mysqli_query($connect, $actsql);		
-    header('location: view-driver.php?d_id='.$d_id);	
+    header('location: ../../view-driver.php?d_id='.$d_id);	
 } else {		
-    header('location: view-driver.php?d_id='.$d_id);	
+    header('location: ../../view-driver.php?d_id='.$d_id);	
 }
 ?>

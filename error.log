@@ -17523,3 +17523,9 @@ Stack trace:
 [24-Sep-2025 18:57:42 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
 [24-Sep-2025 18:58:02 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
 [24-Sep-2025 18:59:56 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[25-Sep-2025 11:43:02 Europe/London] PHP Warning:  include(driver-booking-statement-section.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 234
+[25-Sep-2025 11:43:02 Europe/London] PHP Warning:  include(): Failed opening 'driver-booking-statement-section.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 234
+[25-Sep-2025 11:47:42 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\edit-driver-bank.php on line 67
+[25-Sep-2025 12:45:40 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\edit-driver-bank.php on line 37
+[25-Sep-2025 12:45:41 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\edit-driver-bank.php on line 37
+[25-Sep-2025 12:45:42 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\edit-driver-bank.php on line 37

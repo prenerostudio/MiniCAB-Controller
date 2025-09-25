@@ -12,22 +12,22 @@ $d_id = $_GET['d_id'];
                     </h3>
                 </div>
                 <div class="card-body border-bottom py-3">
-                    <form method="post" action="dv_process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
+                    <form method="post" action="includes/drivers/dv_process.php" enctype="multipart/form-data" onsubmit="return validateForm();">
                         <div class="modal-body">
                             <div class="row">
                                 <div class="mb-3 col-lg-4">
                                     <input type="hidden" class="form-control" name="d_id" value="<?php echo $d_id; ?>">
                                     <label class="form-label">Vehicle Type</label>
                                     <select class="form-control" name="v_id">
-                                        <option value="">Select Vehicle</option>					
-										<?php
-                                        $vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
-                                        while ($vrow = mysqli_fetch_array($vsql)) {                                            
-										?>
+                                        <option value="">Select Vehicle</option>															
+                                        <?php                                        
+                                            $vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");                                        
+                                            while ($vrow = mysqli_fetch_array($vsql)) {										
+                                        ?>                                        
                                         <option value="<?php echo $vrow['v_id']; ?>">						
                                             <?php echo $vrow['v_name']; ?>
-                                        </option>					
-										<?php
+                                        </option>										
+                                        <?php
                                         }
                                         ?>
                                     </select>
@@ -85,19 +85,19 @@ $d_id = $_GET['d_id'];
                             </button>
                         </div>
                     </form>
-                    <script>						
-						function validateForm() {						
-							var vidInput = document.getElementsByName("v_id")[0].value;							
-							var makeInput = document.getElementsByName("make")[0].value;							
-							var modelInput = document.getElementsByName("model")[0].value;							
-							var colorInput = document.getElementsByName("color")[0].value;							
-							var regInput = document.getElementsByName("reg_num")[0].value;							
-							if (vidInput === "" || makeInput === "" || modelInput === "" || colorInput === "" || regInput === "" ) {
-								alert("Please fill in all required fields.");								
-								return false;							
-							}							
-							return true;						
-						}
+                    <script>    
+                        function validateForm() {						
+                            var vidInput = document.getElementsByName("v_id")[0].value;								
+                            var makeInput = document.getElementsByName("make")[0].value;								
+                            var modelInput = document.getElementsByName("model")[0].value;								
+                            var colorInput = document.getElementsByName("color")[0].value;								
+                            var regInput = document.getElementsByName("reg_num")[0].value;								
+                            if (vidInput === "" || makeInput === "" || modelInput === "" || colorInput === "" || regInput === "" ) {	
+                                alert("Please fill in all required fields.");									
+                                return false;								
+                            }								
+                            return true;							
+                        }                        
                     </script>
                 </div>
             </div>

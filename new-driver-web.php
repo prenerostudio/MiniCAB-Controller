@@ -50,10 +50,10 @@ include('header.php');
                                     </td>                                    									
                                     <td>                                        										
                                         <?php if (!$ndrow['d_pic']) : ?>
-                                        <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                            
-										<?php else : ?>										
-                                        <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                       
-										<?php endif; ?>									
+                                        <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">										
+                                        <?php else : ?>										
+                                        <img src="img/drivers/<?php echo $ndrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
+                                        <?php endif; ?>									
                                     </td>                                    
                                     <td>										
                                         <?php echo $ndrow['d_name']; ?>
@@ -71,22 +71,21 @@ include('header.php');
                                         <?php echo $ndrow['d_shift']; ?>
                                     </td>                                    
                                     <td>                                    
-                                        <a href="accept-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" class="btn btn-success" title="Accept Driver">		
-                                                <i class="ti ti-checks"></i> Accept Driver
-										</a>
-                                       
+                                        <a href="includes/drivers/accept-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" class="btn btn-success" title="Accept Driver">                                                
+                                            <i class="ti ti-checks"></i> Accept Driver										
+                                        </a>                                       
                                     </td>
                                 </tr>								
-								<?php endwhile; ?>								                                
-								<?php if ($y === 0) : ?>
+                                <?php endwhile; ?>								                                								
+                                <?php if ($y === 0) : ?>
                                 <tr>				
                                     <td colspan="8">													
                                         <p align="center">															
                                             No Driver Found!															
                                         </p>														
                                     </td>                                				
-                                </tr>				
-								<?php endif; ?>
+                                </tr>								
+                                <?php endif; ?>
                             </tbody>  			
                         </table>  			
                     </div>		

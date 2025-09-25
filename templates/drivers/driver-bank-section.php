@@ -43,7 +43,7 @@
                                             Edit
                                         </button>
                                     </a>
-                                    <a href="del-driver-bank.php?d_bank_id=<?php echo $brow['d_bank_id'];?>& d_id=<?php echo $brow['d_id'];?>">
+                                    <a href="includes/drivers/del-driver-bank.php?d_bank_id=<?php echo $brow['d_bank_id'];?>& d_id=<?php echo $brow['d_id'];?>">
                                         <button class="btn btn-danger">
                                             <i class="ti ti-basket"></i>
                                             Delete
