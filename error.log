@@ -17529,3 +17529,74 @@ Stack trace:
 [25-Sep-2025 12:45:40 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\edit-driver-bank.php on line 37
 [25-Sep-2025 12:45:41 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\edit-driver-bank.php on line 37
 [25-Sep-2025 12:45:42 Europe/London] PHP Warning:  Undefined variable $d_id in C:\xampp\htdocs\MiniCAB-Controller\edit-driver-bank.php on line 37
+[30-Sep-2025 09:32:45 Europe/London] PHP Warning:  include(customer-activity-log.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 09:32:45 Europe/London] PHP Warning:  include(): Failed opening 'customer-activity-log.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 09:32:57 Europe/London] PHP Warning:  include(customer-activity-log.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 09:32:57 Europe/London] PHP Warning:  include(): Failed opening 'customer-activity-log.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 09:34:38 Europe/London] PHP Warning:  include(customer-activity-log.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 09:34:38 Europe/London] PHP Warning:  include(): Failed opening 'customer-activity-log.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 09:34:49 Europe/London] PHP Warning:  include(customer-activity-log.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 09:34:49 Europe/London] PHP Warning:  include(): Failed opening 'customer-activity-log.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\view-customer.php on line 92
+[30-Sep-2025 12:05:51 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 276
+[30-Sep-2025 12:05:59 Europe/London] PHP Warning:  move_uploaded_file(img/bookers/68dbb997b5d46_23754970_1626130610784651_3422355630783723154_n.png): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\update-booker-img.php on line 26
+[30-Sep-2025 12:05:59 Europe/London] PHP Warning:  move_uploaded_file(): Unable to move &quot;C:\xampp\tmp\phpBD2E.tmp&quot; to &quot;img/bookers/68dbb997b5d46_23754970_1626130610784651_3422355630783723154_n.png&quot; in C:\xampp\htdocs\MiniCAB-Controller\update-booker-img.php on line 26
+[30-Sep-2025 12:05:59 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 276
+[30-Sep-2025 12:10:16 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 276
+[30-Sep-2025 12:10:18 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 276
+[30-Sep-2025 12:16:31 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:16:41 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:19:23 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Undefined array key "c_id" in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 3
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 20
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 8
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 12
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 38
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 40
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 48
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 56
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 66
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 87
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 125
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 133
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 141
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 152
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 178
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 180
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-profile-section.php on line 220
+[30-Sep-2025 12:19:30 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:19:30 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php:281
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\view-booker.php(281): mysqli_query(Object(mysqli), 'SELECT activity...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 281
+[30-Sep-2025 12:19:53 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:19:56 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:20:03 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:20:08 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:32:27 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:32:30 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:33:49 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:35:07 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:35:13 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:37:10 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:37:16 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:37:21 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:38:06 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:38:07 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:38:15 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:38:44 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:38:48 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:41:45 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:42:33 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:42:38 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:42:42 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:43:22 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:44:24 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:45:12 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:45:19 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:45:39 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:45:43 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:45:48 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:46:22 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 12:46:28 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\view-booker.php on line 149
+[30-Sep-2025 13:05:14 Europe/London] PHP Warning:  Undefined variable $x in C:\xampp\htdocs\MiniCAB-Controller\templates\booker\booker-booking-statement.php on line 70

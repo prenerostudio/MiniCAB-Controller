@@ -1,18 +1,16 @@
 <?php
-include('config.php');
-include('session.php');
+include('../../config.php');
+include('../../session.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $c_id = $_POST['c_id'];
-    
-    $targetDir = "img/bookers/";
+    $targetDir = "../../img/bookers/";
     $originalFileName = $_FILES["fileToUpload"]["name"];        
     $uniqueIdentifier = uniqid();
     $uniqueFileName = $uniqueIdentifier . "_" . $originalFileName;
     $targetFile = $targetDir . $uniqueFileName;    
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-
 	
     $allowedFormats = array('jpg', 'png', 'jpeg', 'gif', 'JPEG', 'BMP', 'PDF', 'TIFF', 'WebP', 'Raw', 'SVG', 'HEIF', 'apng', 'CR2', 'ICO', 'JPEG 2000', 'avif');
     if (!in_array($imageFileType, $allowedFormats)) {
@@ -37,15 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
-    }
-	
-	
-    $activity_type = 'Booker Profile Image Updated';			
-	
-    $user_type = 'user';			
-	
-    $details = "Booker Profile Image Has Been Updated by Controller.";			
-	
+    }		
+    $activity_type = 'Booker Profile Image Updated';				
+    $user_type = 'user';				
+    $details = "Booker Profile Image Has Been Updated by Controller.";				
     $actsql = "INSERT INTO `activity_log`(
 					`activity_type`, 
 					`user_type`, 
@@ -56,9 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					'$user_type',
 					'$myId',
 					'$details')";	
-
-    $actr = mysqli_query($connect, $actsql);			
-    
-    header('location: view-booker.php?c_id=' . $c_id);
+    $actr = mysqli_query($connect, $actsql);			    
+    header('location: ../../view-booker.php?c_id=' . $c_id);
 }
 ?>
