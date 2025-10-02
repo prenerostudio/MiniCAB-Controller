@@ -37,6 +37,9 @@ $stmt_check->bind_result($phone_count);
 $stmt_check->fetch();
 $stmt_check->close();
 
+// ✅ Hash the password securely
+$hashedPassword = password_hash($cpass, PASSWORD_DEFAULT);
+
 if ($phone_count > 0) {	
     echo '<script>alert("Phone already exists. Please use a different Phone Number.");';        	
     echo 'window.location.href = "../../customers.php";</script>';
@@ -45,11 +48,11 @@ if ($phone_count > 0) {
     if ($cpic !== false) {                                
         $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `account_type`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";                	
         $stmt = $connect->prepare($sql);        	
-        $stmt->bind_param("ssssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type);                   
+        $stmt->bind_param("ssssssssssss", $cname, $cemail, $cphone, $hashedPassword, $caddress, $cgender, $clang, $cpic, $pc, $cothers, $cni, $account_type);                   
     } else {	
         $sql = "INSERT INTO `clients`(`c_name`, `c_email`, `c_phone`, `c_password`,  `c_address`, `c_gender`, `c_language`, `postal_code`, `others`, `c_ni`, `account_type`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";                	
         $stmt = $connect->prepare($sql);                	
-        $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $cpass, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type);        
+        $stmt->bind_param("sssssssssss", $cname, $cemail, $cphone, $hashedPassword, $caddress, $cgender, $clang, $pc, $cothers, $cni, $account_type);        
     }	
     if ($stmt->execute()) {						    
         $activity_type = 'New Customer Added';					        	

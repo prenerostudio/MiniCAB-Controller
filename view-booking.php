@@ -53,17 +53,24 @@ $bookrow = mysqli_fetch_array($result);
                                 </div>
                                 <div class="col-lg-4">
                                     <div id="stops-container">                                        
-										<?php if (!empty($bookrow['stops'])): ?>
-										<?php
-										$stops = explode(' | ', $bookrow['stops']);
-										?>
-										<?php foreach ($stops as $index => $stop): ?>
+										
+                                        <?php if (!empty($bookrow['stops'])): ?>
+										
+                                            <?php
+										
+                                            $stops = explode(' | ', $bookrow['stops']);
+										
+                                            ?>
+										
+                                                <?php foreach ($stops as $index => $stop): ?>
                                         <div class="mb-3">
                                             <label class="form-label">Stop <?php echo $index + 1; ?></label>
                                             <input type="text" class="form-control" name="stops[]" value="<?php echo htmlspecialchars(trim($stop)); ?>">
                                         </div>
-										<?php endforeach; ?>
-										<?php endif; ?>
+										
+                                            <?php endforeach; ?>
+										
+                                                <?php endif; ?>
                                     </div>
                                     <div class="mb-3 col-lg-2">
                                         <a id="add-stop-btn" class="btn btn-info" style="margin-top: 25px;" title="Add Stop">
@@ -90,13 +97,10 @@ $bookrow = mysqli_fetch_array($result);
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Pickup Time</label>
                                     <input type="time" class="form-control" name="pick_time" value="<?php echo htmlspecialchars($bookrow['pick_time']); ?>" required>
-								</div>
-								<script>
-									document.addEventListener("DOMContentLoaded", function() {
-										var today = new Date().toISOString().split('T')[0];
-										document.getElementById('pick_date').setAttribute('min', today);    
-									});
-								</script>                                
+								
+                                </div>
+								
+                                                               
                                 <div class="mb-3 col-lg-4">
                                     <div class="form-label">Journey Type</div>
                                     <div class="mb-3">
@@ -118,17 +122,27 @@ $bookrow = mysqli_fetch_array($result);
                                         <option value="<?php echo htmlspecialchars($bookrow['v_id']); ?>">
                                             <?php echo htmlspecialchars($bookrow['v_name']); ?>
                                         </option>
-										<?php
-										$vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
-										while ($vrow = mysqli_fetch_array($vsql)) {                                        
-										?>
-										<option value="<?php echo htmlspecialchars($vrow['v_id']); ?>">
+										
+                                            <?php
+										
+                                            $vsql = mysqli_query($connect, "SELECT * FROM `vehicles`");
+										
+                                            while ($vrow = mysqli_fetch_array($vsql)) {                                        
+										
+                                                ?>
+										
+                                        <option value="<?php echo htmlspecialchars($vrow['v_id']); ?>">
                                             <?php echo htmlspecialchars($vrow['v_name']); ?>
                                         </option>
-										<?php                                             
-										}
-										?>
-									</select>
+										
+                                            <?php                                             
+										
+                                            
+                                            }
+										
+                                            ?>
+									
+                                    </select>
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Luggage</label>
@@ -148,7 +162,8 @@ $bookrow = mysqli_fetch_array($result);
                                     </div>
                                 </div>
                                 <div class="mb-3 col-lg-4">
-									<label class="form-label">Flight Number </label>
+									
+                                    <label class="form-label">Flight Number </label>
                                     <input type="text" class="form-control" name="flight_number" value="<?php echo htmlspecialchars($bookrow['flight_number']); ?>">
                                 </div>
                                 <div class="mb-3 col-lg-4">
@@ -163,7 +178,8 @@ $bookrow = mysqli_fetch_array($result);
                                 </div> 
                             </div>
                             <div class="row">
-								<h4>Pricing Section</h4>
+								
+                                <h4>Pricing Section</h4>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Booking Fee </label>
                                     <input type="text" class="form-control" name="booking_fee" value="<?php echo htmlspecialchars($bookrow['booking_fee']); ?>">
@@ -184,17 +200,22 @@ $bookrow = mysqli_fetch_array($result);
                                     <label class="form-label">Extra </label>
                                     <input type="text" class="form-control" name="extra" value="<?php echo htmlspecialchars($bookrow['extra']); ?>">
                                 </div>
-                                <?php                               
-								if( !empty($bookrow['booker_commission'])){                                
-								?>				                                                              
+                                <?php								
+                                if( !empty($bookrow['booker_commission'])){                             								
+                                ?>				                                                              
                                 <div class="mb-3 col-lg-4" id="bookerCommissionField">                                
                                     <label class="form-label">Booker Commission </label>
                                     <input type="text" class="form-control" name="booker_com" value="<?php echo htmlspecialchars($bookrow['booker_commission']); ?>">                            
-                                </div>                                    
-								<?php   
-								} else {
-								}
-								?>
+                                </div>								
+                                <?php   
+								
+                                    
+                                } else {
+								
+                                    
+                                }
+								
+                                ?>
                                 <div class="mb-3 col-lg-4">
                                     <label class="form-label">Distance (Auto-calculated)</label>
                                     <input type="text" class="form-control" name="journey_distance" id="journeyDistance" value="<?php echo htmlspecialchars($bookrow['journey_distance']); ?>" readonly>
@@ -214,7 +235,8 @@ $bookrow = mysqli_fetch_array($result);
                                         <label>
                                             <input type="checkbox" name="Payment Link[]" value="email">
                                             Email Address
-										</label>                                 
+										
+                                        </label>                                 
                                         <br>
                                     </p>
                                 </div>
@@ -233,87 +255,14 @@ $bookrow = mysqli_fetch_array($result);
                                 <i class='ti ti-square-rounded-x'></i>
                                 Cancel Booking
                             </a>
-                            <script>
-								function cancelBooking(bookId) {
-									let confirmation = confirm("Are you sure you want to cancel this booking?");
-									if (confirmation) {
-										let reason = prompt("Please provide a reason for canceling this booking:");
-										if (reason) {
-											window.location.href = `cancel-booking.php?book_id=${bookId}&reason=${encodeURIComponent(reason)}`;
-										} else {     
-											alert("You must provide a reason for cancellation.");
-										}
-									}
-								}
-							</script>
+                           
                         </div> 
                     </form>
-                    <script>
-						document.addEventListener("DOMContentLoaded", function() {
-							var bookingTypeSelect = document.getElementById("bookingType");
-							var bookerCommissionField = document.getElementById("bookerCommissionField");
-							bookingTypeSelect.addEventListener("change", function() {
-								if (this.value === 3) {
-									bookerCommissionField.style.display = "block";
-								} else {
-									bookerCommissionField.style.display = "none";
-								}
-							});
-						});
-						$(document).ready(function() {
-							$('#calculateFareBtn').on('click', function(e) {
-								e.preventDefault(); // Prevent the form from submitting
-								var distance = parseFloat($('#journeyDistance').val());
-								var pickDate = new Date($('input[name="pick_date"]').val());
-								var pickTime = $('input[name="pick_time"]').val();
-								var vehicleId = $('#vehicleSelect').val();
-								var vehiclePricing = parseFloat(fetchVehiclePricing(vehicleId));
-								var baseFare = distance * vehiclePricing;
-								if (isHoliday(pickDate)) {
-									baseFare *= 1.1;
-								}
-								var pickHour = parseInt(pickTime.split(':')[0], 10);
-								if (pickHour < 9 || pickHour >= 20) {
-									baseFare *= 1.05;
-								}
-								$('#journeyFare').val(baseFare.toFixed(2));
-							});
-							function fetchVehiclePricing(vehicleId) {
-								$.ajax({
-									type: 'POST',
-									url: 'fetch_vehicle_pricing.php',
-									data: { vehicleId: vehicleId },
-									success: function(response) {
-										var data = JSON.parse(response);
-										callback(data);
-									},            
-									error: function() {
-									}
-								});
-								return 15.0;
-							}
-							function isHoliday(date) {
-								return false;
-							}
-						});    
-						function validateForm() {
-							var typeInput = document.getElementsByName("b_type_id")[0].value;
-							var cidInput = document.getElementsByName("c_id")[0].value;
-							var pickupInput = document.getElementsByName("pickup")[0].value;
-							var dropoffInput = document.getElementsByName("dropoff")[0].value;	        	        
-							var pdateInput = document.getElementsByName("pick_date")[0].value;	        	        
-							var ptimeInput = document.getElementsByName("pick_time")[0].value;	        	        
-							var fareInput = document.getElementsByName("journey_fare")[0].value;	        	        
-							if (typeInput === "" || cidInput === "" || pickupInput === "" || dropoffInput === "" || pdateInput === "" || ptimeInput === "" || fareInput === "") {            	            
-								alert("Please fill in all required fields.");            	            	            
-								return false;        	        	        
-							}	        							        
-							return true;    	    	    
-						}                        
-					</script>		                    										                
+                    	                    										                
                 </div>
             </div>
-		</div>
+		
+        </div>
     </div>
 
     <div class="row row-deck row-cards">    
@@ -460,7 +409,8 @@ $bookrow = mysqli_fetch_array($result);
                                         <strong>
                                             Child Seat:
                                         </strong>
-									</td>              
+									
+                                    </td>              
                                 </tr>                                                       
                                 <tr>
                                     <td>
@@ -517,7 +467,8 @@ $bookrow = mysqli_fetch_array($result);
                                         <strong>
                                             Special Note:
                                         </strong>
-									</td>
+									
+                                    </td>
                                 </tr>                                    
                                 <tr>                                
                                     <td colspan="4">
@@ -597,85 +548,9 @@ $bookrow = mysqli_fetch_array($result);
         </div>
     </div>	              
 </div>       
-<script>	
-    function initAutocomplete() {                
-        var pickupInput = document.getElementById('pickup');                        
-        var dropoffInput = document.getElementById('dropoff');            
-        var stopInput = document.getElementById('stop');    
-        var journeyDistanceInput = document.getElementById('journeyDistance');		                
-        var autocompleteOptions = {        
-            types: ['geocode'],                            
-            componentRestrictions: {country: 'GB'}        
-        };				                
-        var autocompletePickup = new google.maps.places.Autocomplete(pickupInput, autocompleteOptions);    
-        var autocompleteDropoff = new google.maps.places.Autocomplete(dropoffInput, autocompleteOptions);    
-        var autocompleteStop = new google.maps.places.Autocomplete(stopInput, autocompleteOptions); // Initialize autocomplete for stop field  
-        autocompletePickup.addListener('place_changed', function () { 
-        updateDistance();        
-        updateJourneyFare();    
-		});            
-        autocompleteDropoff.addListener('place_changed', function () {        
-        updateDistance();                
-        updateJourneyFare();    
-		});	    
-        autocompleteStop.addListener('place_changed', function () { // Add listener for stop input field        
-        updateDistance();                
-        updateJourneyFare();            
-		});   
-        function handleSuggestions(predictions, inputField) {                
-        var addresses = predictions.map(function(prediction) {                    
-        return prediction.description;    
-		});			                        
-        updateAutocompleteSuggestions(inputField, addresses);            
-		}				            
-        function updateAutocompleteSuggestions(inputField, suggestions) {                
-        var datalistId = inputField.id + '_datalist';        
-        var datalist = document.getElementById(datalistId);
-        if (!datalist) {                    
-            datalist = document.createElement('datalist');                                        
-            datalist.id = datalistId;                                        
-            document.body.appendChild(datalist);        
-        }                
-        datalist.innerHTML = '';			                            
-        suggestions.forEach(function(suggestion) {                    
-        var option = document.createElement('option');                                    
-        option.value = suggestion;                                    
-        datalist.appendChild(option);                    
-		});						                        
-        inputField.setAttribute('list', datalistId);        
-		}          
-        function updateDistance() {                        
-        var pickupPlace = autocompletePickup.getPlace();                            
-        var dropoffPlace = autocompleteDropoff.getPlace();			                            
-        if (pickupPlace.geometry && dropoffPlace.geometry) {                    
-            calculateDistance(pickupPlace.geometry.location, dropoffPlace.geometry.location);        
-		}            
-		}		            
-        function calculateDistance(pickupLocation, dropoffLocation) {            
-        var service = new google.maps.DistanceMatrixService();            
-        service.getDistanceMatrix({                
-            origins: [pickupLocation],                    
-            destinations: [dropoffLocation],                    
-            travelMode: 'DRIVING',            
-        }, 
-        function(response, status) {                    
-        if (status === 'OK' && response.rows.length > 0) {                    
-            var distanceText = response.rows[0].elements[0].distance.text;                        
-            var distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ''));            
-            if (!isNaN(distanceValue)) {                						                            
-                journeyDistanceInput.value = distanceValue.toFixed(2);                                
-                updateJourneyFare(distanceValue);                                    
-			} else {                            
-                console.error('Invalid distance value:', distanceText);                            
-            }                   
-        } else {            					                    
-            console.error('Error calculating distance:', status);                   
-        }   
-		});	      
-		}   
-	}	    
-	google.maps.event.addDomListener(window, 'load', initAutocomplete);
-</script>	
+	
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete" async defer></script>
+<script src="js/update-booking.js"></script>
 <?php
 include('footer.php');
 ?>
