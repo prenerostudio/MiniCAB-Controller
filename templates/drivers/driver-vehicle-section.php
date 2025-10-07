@@ -17,8 +17,8 @@
     <div class="row mb-3">
         <div class="card">
             <div class="card-body border-bottom py-3">
-                <div id="table-adriver" class="table-responsive">
-                    <table class="table" id="table-vehicle">
+                <div class="table-responsive">
+                    <table class="table table-responsive" id="table-vehicle" style="width:100%;">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -44,8 +44,8 @@
                                 </td>
                                 <td>
                                     <?php echo $vhrow['v_make']; ?> -
-                                        <?php echo $vhrow['v_model']; ?> -
-                                            <?php echo $vhrow['v_color']; ?>
+                                    <?php echo $vhrow['v_model']; ?> -
+                                    <?php echo $vhrow['v_color']; ?>
                                 </td>
                                 <td>
                                     <?php echo $vhrow['v_reg_num']; ?>
@@ -58,13 +58,9 @@
                                         </button>
                                     </a>
                                 </td>
-                            </tr>
-				
-							
-                                <?php endwhile; ?>
-                                    
-							
-                                    <?php if ($x === 0) : ?>
+                            </tr>											
+                            <?php endwhile; ?>                                    							
+                            <?php if ($x === 0) : ?>
                             <tr>
                                 <td colspan="8">
                                     <p align="center">
@@ -72,7 +68,7 @@
                                     </p>
                                 </td>
                             </tr>
-				<?php endif; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>           				
@@ -81,7 +77,12 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {
-        $('#table-vehicle').DataTable();
+$(document).ready(function() {
+  $('#table-vehicle').DataTable({
+    responsive: true,
+    fixedHeader: true,
+    dom: 'Bfrtip',
+    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+  });
 });
 </script>

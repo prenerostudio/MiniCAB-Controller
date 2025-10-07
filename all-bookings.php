@@ -57,28 +57,28 @@ include('header.php');
                             </a>
                         </div>
                     </span>
-                </span>
-                <script>					    					    
-					$(document).ready(function() {                						        
-						$(".filter-item").click(function(event) {        							        
-							event.preventDefault();        							        
-							var selectedInterval = $(this).data("filter");
-							console.log("Selected Interval:", selectedInterval);
-							$.ajax({
-								type: "GET",
-								url: "fetch_data.php",
-								data: { timeInterval: selectedInterval },
-								success: function(data) {
-									console.log("Ajax Success:", data);
-									$("#tableBody").html(data);
-								},
-								error: function(xhr, status, error) {
-									console.error("Ajax Error:", error);
-								}
-							});
-						});
-					});
-				</script>
+                </span>               
+                <script>					    					    		
+                    $(document).ready(function() {                						        
+                        $(".filter-item").click(function(event) {        							        	
+                        event.preventDefault();        							        	
+                        var selectedInterval = $(this).data("filter");	
+                        console.log("Selected Interval:", selectedInterval);	
+                        $.ajax({	
+                            type: "GET",	
+                            url: "includes/bookings/fetch_data.php",	
+                            data: { timeInterval: selectedInterval },	
+                            success: function(data) {	
+                        console.log("Ajax Success:", data);	
+                        $("#tableBody").html(data);	
+                    },
+                            error: function(xhr, status, error) {	
+                        console.error("Ajax Error:", error);	
+                    }
+                        });	
+                    });
+                    });
+                </script>
             </div>
         </div>
     </div>	
@@ -95,30 +95,8 @@ include('header.php');
                 <div class="card-body border-bottom py-3">						
                     <div class="table-responsive">
                         <?php
-                        $bsql = mysqli_query($connect, "SELECT
-	bookings.*, 
-	clients.c_name, 
-	clients.c_email, 
-	clients.c_phone, 
-	booking_type.*, 
-	vehicles.*
-FROM
-	bookings
-	LEFT JOIN
-	clients
-	ON 
-		bookings.c_id = clients.c_id
-	INNER JOIN
-	booking_type
-	ON 
-		bookings.b_type_id = booking_type.b_type_id
-	LEFT JOIN
-	vehicles
-	ON 
-		bookings.v_id = vehicles.v_id
-ORDER BY
-	bookings.book_id DESC ");  
-                        if (mysqli_num_rows($bsql) > 0) {
+                            $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings LEFT JOIN clients ON bookings.c_id = clients.c_id INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id LEFT JOIN vehicles ON bookings.v_id = vehicles.v_id ORDER BY bookings.book_id DESC ");
+                                if (mysqli_num_rows($bsql) > 0) {
                         ?>
                         <table class="table" id="table-booking">
                             <thead>
@@ -151,85 +129,110 @@ ORDER BY
                                     } elseif ($brow['booking_status'] === 'Completed') {
                                         $row_class = 'completed-green';
                                     }       
-								?> 
-                                <tr class="<?php echo $row_class; ?>">
-                                    <td><?php echo $brow['book_id']; ?></td>
-                                    <td><?php echo $brow['pick_date']; ?></td>
-                                    <td><?php echo $brow['pick_time']; ?></td>
-                                    <td><?php echo $brow['postal_code']; ?></td>
-                                    <td><?php echo $brow['pickup']; ?></td>
-                                    <td><?php echo $brow['stops']; ?></td>
-                                    <td><?php echo $brow['destination']; ?></td>
-                                    <td><?php echo $brow['passenger']; ?></td>
-                                    <td><?php echo $brow['journey_type']; ?></td>
-                                    <td><?php echo $brow['journey_fare']; ?></td>
-                                    <td><?php echo $brow['v_name']; ?></td>
-                                    <td style='width: 15%; background: #FFFFFF;'>
-                                        
+								
+                                ?> 
+                                <tr class="<?php echo $row_class;?>">
+                                    <td>
+                                        <?php echo $brow['book_id'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['pick_date'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['pick_time'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['postal_code'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['pickup'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['stops'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['destination'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['passenger'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['journey_type'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['journey_fare'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $brow['v_name'];?>
+                                    </td>
+                                    <td style='width: 15%; background: #FFFFFF;'>                                        
                                         <a href='view-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-twitter btn-icon' title='View / Edit'>
                                                 <i class='ti ti-eye'></i>
                                             </button>
-                                        </a>
-										<?php
-										if ($brow['booking_status'] == 'Booked') {
-										?>
+                                        </a>										
+                                        <?php					
+                                        if ($brow['booking_status'] == 'Booked') {					
+                                        ?>
                                         <a href='#'>
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
                                                 <i class='ti ti-plane-tilt'></i>
-                                            </button>
-										</a>
-										<?php
-										} else {
-										?>
+                                            </button>										
+                                        </a>					
+					<?php
+                                        } else {					
+                                        ?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
-                                        </a>
-										<?php
-										}
-										if ($brow['booking_status'] == 'Open') {		
-										?>
+                                        </a>										
+                                        <?php					
+                                        }					
+                                        if ($brow['booking_status'] == 'Open') {							
+                                        ?>
                                         <a href='#' >
                                             <button class='btn btn-success btn-icon' title='Opened' disabled>
                                                  <i class="ti ti-folder-open"></i>
                                             </button>
-                                        </a>
-										<?php                                                                              
-										} else {
-										?>
+                                        </a>									                                            
+                                        <?php
+                                        } else {					
+                                        ?>
                                         <a href='open-book.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-success btn-icon'  title='Send to Archive'>
                                                 <i class="ti ti-folder-open"></i>
                                             </button>
-                                        </a>
-										<?php
-										}
-										?>
+                                        </a>										
+                                        <?php		
+                                        }				
+                                        ?>
                                     </td>
-                                </tr>
-								<?php
-								}
-								?>
-                            </tbody>
-						</table>
-						<?php
-						} else {
-							echo '<p>No booking found.</p>';
-						}
-						?>
+                                </tr>				
+                                <?php							
+                                }							
+                                ?>                         
+                            </tbody>			
+                        </table>			
+			<?php
+                        } else {			
+                            echo '<p>No booking found.</p>';			
+                        }			
+                        ?>
                     </div>
                 </div>
             </div>
         </div>	
     </div>
 </div>
-<script>	
-    $(document).ready(function() {    
-        $('#table-booking').DataTable({        
-            "order": [[ 0, "desc" ]]     
-        });		
+<script>
+$(document).ready(function() {
+  $('#table-booking').DataTable({
+    responsive: true,
+    fixedHeader: true,
+    dom: 'Bfrtip',
+    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+  });
 });
 </script>
 <?php

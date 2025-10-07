@@ -1,30 +1,24 @@
 <?php
-include('config.php'); 
-$pc_name = $_POST['pc_name'];
+include('../../config.php'); 
+
+$shift = $_POST['shift'];
 $x = 0;
-
-$query = "SELECT drivers.*, driver_vehicle.*, vehicles.* 
-          FROM drivers 
-          INNER JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id 
-          INNER JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id 
-          WHERE drivers.acount_status = 1";
-
-if (!empty($pc_name)) {
-    $query .= " AND drivers.d_post_code = '" . mysqli_real_escape_string($connect, $pc_name) . "'";
+$query = "SELECT drivers.*, driver_vehicle.*, vehicles.* FROM drivers INNER JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id INNER JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE drivers.acount_status = 1";
+if (!empty($shift)) {
+    $query .= " AND drivers.d_shift = '" . mysqli_real_escape_string($connect, $shift) . "'";
 }
-
 $query .= " ORDER BY drivers.d_id DESC";
-
 $result = mysqli_query($connect, $query);
-
 while ($row = mysqli_fetch_array($result)) {
     $x++;
     echo '<tr>
         <td>' . $x . '</td>
         <td>';
-    echo (!$row['d_pic']) 
-        ? '<img src="img/user-1.jpg" style="width: 50px; height: 50px; border-radius: 5px;">' 
-        : '<img src="img/drivers/' . $row['d_pic'] . '" style="width: 50px; height: 50px; border-radius: 5px;">';
+    if (!$row['d_pic']) {
+        echo '<img src="img/user-1.jpg" style="width: 50px; height: 50px; border-radius: 5px;">';
+    } else {
+        echo '<img src="img/drivers/' . $row['d_pic'] . '" style="width: 50px; height: 50px; border-radius: 5px;">';
+    }
     echo '</td>
         <td><strong style="text-transform: capitalize;">' . $row['d_name'] . '</strong></td>
         <td>' . $row['d_email'] . '</td>
@@ -39,7 +33,6 @@ while ($row = mysqli_fetch_array($result)) {
         </td>
     </tr>';
 }
-
 if ($x == 0) {
     echo '<tr><td colspan="9" align="center">No Driver Found!</td></tr>';
 }

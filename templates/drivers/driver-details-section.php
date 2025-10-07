@@ -143,23 +143,36 @@
         </div>
     </div>
 </div>
-<!-- Your Google Maps Autocomplete logic -->
-<script>
-    let autocompleteAdd, autocompletePC;
-    function initAutocomplete() {
-        const addInput = document.getElementById('add');
-        const pcInput = document.getElementById('pc');
-        const options = {
-            types: ['geocode'],
-            componentRestrictions: { country: 'GB' }
-        };
-        if (addInput) {
-            autocompleteAdd = new google.maps.places.Autocomplete(addInput, options);
+ 
+
+<script>  
+  document.addEventListener("DOMContentLoaded", async () => {
+    await google.maps.importLibrary("places");
+    const { Autocomplete } = await google.maps.importLibrary("places");
+    const options = { componentRestrictions: { country: "GB" } };
+    const addInput = document.getElementById("add");
+    const pcInput  = document.getElementById("pc");
+    if (addInput) {
+      const autoAdd = new Autocomplete(addInput, options);
+      autoAdd.addListener("place_changed", () => {
+        const place = autoAdd.getPlace();
+        console.log(place);
+        if (place.address_components) {
+          let postalCode = "";
+          place.address_components.forEach(c => {
+            if (c.types.includes("postal_code")) {
+              postalCode = c.long_name;
+            }
+          });
+          if (postalCode && pcInput) {
+            pcInput.value = postalCode;
+          }
         }
-        if (pcInput) {
-            autocompletePC = new google.maps.places.Autocomplete(pcInput, options);
-        }
+      });
     }
+    if (pcInput) {
+      // If you want postcode autocomplete too (optional)
+      const autoPC = new Autocomplete(pcInput, { types: ["(regions)"], componentRestrictions: { country: "GB" } });
+    }
+  });
 </script>
-<!-- Load Google Maps API (NO window load, use callback only) -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIXJnumkmR2VgtJxN3v7zws24IwvpRrsI&libraries=places&callback=initAutocomplete" async defer></script>

@@ -43,58 +43,52 @@
 </footer>      
 </div>  
 </div>
-<!-- Libs JS -->
-<script src="libs/apexcharts/dist/apexcharts.min.js" defer></script>
-<script src="libs/jsvectormap/dist/js/jsvectormap.min.js" defer></script>
-<script src="libs/jsvectormap/dist/maps/world.js" defer></script>
-<script src="libs/jsvectormap/dist/maps/world-merc.js" defer></script>
 
-<script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-<script src="vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-
-<!-- Datatables js -->
-<script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-<script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-
-<!-- Datatable Init js -->
+<!-- DataTables Core + Bootstrap 5 Integration -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<!-- DataTables Responsive Extension -->
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+<!-- DataTables Buttons Extension -->
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.flash.min.js"></script>
+<!-- FixedHeader Extension -->
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+<!-- Export Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<!-- DataTables Initialization -->
 <script src="js/demo.datatable-init.js"></script>
-
-<!-- Tabler Core -->
-<script src="js/tabler.min.js" defer></script>
-<script src="js/demo.min.js" defer></script>
-<script src="libs/list.js/dist/list.min.js" defer></script>
- <script>
-	
-    $(document).ready(function() {    
-
-        $('.toggle-password').click(function() {        
-	
-        $(this).toggleClass('active');        
-	
-        var input = $($(this).closest('.input-group').find('input'));        
-	
-        if (input.attr('type') == 'password') {            
-	
-            input.attr('type', 'text');        
-	
-        } else {            
-	
-            input.attr('type', 'password');        
-	
-        }    
-	
+<!-- Tabler + Other Libraries -->
+<script src="libs/apexcharts/dist/apexcharts.min.js"></script>
+<script src="libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+<script src="libs/jsvectormap/dist/maps/world.js"></script>
+<script src="libs/jsvectormap/dist/maps/world-merc.js"></script>
+<script src="libs/list.js/dist/list.min.js"></script>
+<!-- Tabler Core JS -->
+<script src="js/tabler.min.js"></script>
+<script src="js/demo.min.js"></script>
+<script>
+    $(document).ready(function() {        
+        $('.toggle-password').click(function() {        	        
+        $(this).toggleClass('active');        	
+        var input = $($(this).closest('.input-group').find('input'));        	
+        if (input.attr('type') == 'password') {            	
+            input.attr('type', 'text');        	
+        } else {            	
+            input.attr('type', 'password');        	
+        }    	
     });
-
-    });
-
-        </script>  
-        
-         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkPNpPhCg1hVZ14GUWeGpxpSaIL-qPdbU&libraries=places&callback=initAutocomplete" async defer></script>
-
+    });       
+</script>             
 </body>
 </html>

@@ -1,22 +1,13 @@
 <?php
-include('config.php'); 
+include('../../config.php'); 
 $v_id = $_POST['v_id'];
 $x = 0;
-
-$query = "SELECT drivers.*, driver_vehicle.*, vehicles.* 
-          FROM drivers 
-          INNER JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id 
-          INNER JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id 
-          WHERE drivers.acount_status = 1";
-
+$query = "SELECT drivers.*, driver_vehicle.*, vehicles.* FROM drivers INNER JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id INNER JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE drivers.acount_status = 1";
 if (!empty($v_id)) {
     $query .= " AND vehicles.v_id = '" . mysqli_real_escape_string($connect, $v_id) . "'";
 }
-
 $query .= " ORDER BY drivers.d_id DESC";
-
 $result = mysqli_query($connect, $query);
-
 while ($row = mysqli_fetch_array($result)) {
     $x++;
     echo '<tr>

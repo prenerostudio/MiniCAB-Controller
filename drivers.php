@@ -27,248 +27,92 @@ include('header.php');
             <div class="card-header">
                 <h3 class="card-title">
                     Active Drivers List
-                </h3>								
-				
-                <div class="col-auto ms-auto d-print-none">            
-		
-                    <div class="btn-list">				
-		
-                        <select class="form-select" id="shift-filter">    
-			
-                            <option value="">Search By Shift Timing</option>    
-			
-                            <option value="Day Shift">Day Shift</option>    
-			
-                            <option value="Afternoon Shift">Afternoon Shift</option>    
-			
-                            <option value="Night Shift">Night Shift</option>
-			
-                        </select>                           
-			
-                    </div>        
-		
-                </div>							
-		
-                <div class="col-auto" style="margin-left: 25px;">            
-		
-                    <div class="btn-indigo">						
-		
-                        <select class="form-select" name="v_id" id="vehicle-filter">    
-			
-                            <option value="">Search By Vehicle</option>   
-			
+                </h3>												
+                <div class="col-auto ms-auto d-print-none">            		
+                    <div class="btn-list">						
+                        <select class="form-select" id="shift-filter">    			
+                            <option value="">Search By Shift Timing</option>    			
+                            <option value="Day Shift">Day Shift</option>    			
+                            <option value="Afternoon Shift">Afternoon Shift</option>    			
+                            <option value="Night Shift">Night Shift</option>			
+                        </select>                           			
+                    </div>        		
+                </div>									
+                <div class="col-auto" style="margin-left: 25px;">            		
+                    <div class="btn-indigo">								
+                        <select class="form-select" name="v_id" id="vehicle-filter">    			
+                            <option value="">Search By Vehicle</option>   			
 				<?php   
-
-                                $vsql = mysqli_query($connect, "SELECT * FROM vehicles");   
+                                $vsql = mysqli_query($connect, "SELECT * FROM vehicles");   				
+                                while ($vrow = mysqli_fetch_array($vsql)) {       				
+                                    echo '<option value="' . $vrow['v_id'] . '">' . $vrow['v_name'] . '</option>';   				
+                                }   
 				
-                                while ($vrow = mysqli_fetch_array($vsql)) {       
-				
-                                    echo '<option value="' . $vrow['v_id'] . '">' . $vrow['v_name'] . '</option>';   
-				
-                                    }   
-				
-                                    ?>
-				
-                        </select>						            
-			
-                    </div>        
-		
-                </div>						
-		
-                <div class="col-auto" style="margin-left: 25px;">
-            
-                    
-		
-                    <div class="btn-list">
-		
-                        
-			
-                        <input type="text" class="form-control" id="pc" name="pc" placeholder="Enter Postcode" required>
+                                ?>				
+                        </select>						            			
+                    </div>        		
+                </div>								
+                <div class="col-auto" style="margin-left: 25px;">                                		
+                    <div class="btn-list">		                        			
+                        <input type="text" class="form-control" id="pc" name="pc" placeholder="Enter Postcode" required>                          		
+                    </div>        		
+                </div>				            				
+            </div>				
+            <script>			      	
+                var autocompletePickup;         
+                function initAutocomplete() {     
+                    var pcInput = document.getElementById('pc');            	
+                    var autocompleteOptions = {         	
+                        types: ['geocode'],            	
+                        componentRestrictions: {country: 'GB'}       	
+                    };       	
+                    autocompletepc = new google.maps.places.Autocomplete(pcInput, autocompleteOptions);                 	
+                }       
+                google.maps.event.addDomListener(window, 'load', initAutocomplete);
 
-               
-           
-			
-                    </div>
-        
-		
-                </div>
+                $(document).ready(function () {   
+                    $('#table-driver').DataTable();   
+                    $('#shift-filter').on('change', function () {    	
+                    var selectedShift = $(this).val();      
+                        $.ajax({            	
+                            url: 'includes/drivers/fetch-driver-shiftwise.php',            	
+                            type: 'POST',            	
+                            data: { shift: selectedShift },            	
+                            success: function (data) {              	
+                                $('.table-tbody').html(data);          	
+                            }     
+                        });   	
+                    });
+                });
 
-				
-            
-			
-		
-            </div>
-			
-	
-            <script>
-			
-   
-   
-	
-    var autocompletePickup;    
-  
-   
+                $(document).ready(function () {    
+                    $('#vehicle-filter').on('change', function () {        	
+                        var v_id = $(this).val();        	
+                        $.ajax({            	
+                            url: 'includes/drivers/fetch-drivers-by-vehicle.php',            	
+                            type: 'POST',            	
+                            data: { v_id: v_id },            	
+                            success: function (data) {                	
+                                $('.table-tbody').html(data);            	
+                             }        
+                        });        	
+                    });
+                });
 
-    function initAutocomplete() {
-     
-
-        var pcInput = document.getElementById('pc');      
-      
-	
-        var autocompleteOptions = {
-         
-	
-            types: ['geocode'],
-            
-	
-            componentRestrictions: {country: 'GB'}
-       
-	
-        };
-       
-	
-        autocompletepc = new google.maps.places.Autocomplete(pcInput, autocompleteOptions);
-        
-      
-   
-	
-    }    
-
-    
-
-    google.maps.event.addDomListener(window, 'load', initAutocomplete);
-
-
-
-    $(document).ready(function () {
-   
-
-        $('#table-driver').DataTable();
-
-   
-	
-        $('#shift-filter').on('change', function () {
-    
-	
-        var selectedShift = $(this).val();
-
-      
-	
-        $.ajax({
-            
-	
-            url: 'fetch-driver-shiftwise.php',
-            
-	
-            type: 'POST',
-            
-	
-            data: { shift: selectedShift },
-            
-	
-            success: function (data) {
-              
-	
-        $('.table-tbody').html(data);
-          
-	
-    }
-     
-
-        });
-   
-	
-    });
-
-
-    });
-				
-				
-
-    $(document).ready(function () {
-    
-
-        $('#vehicle-filter').on('change', function () {
-        
-	
-        var v_id = $(this).val();
-        
-	
-        $.ajax({
-            
-	
-            url: 'fetch-drivers-by-vehicle.php',
-            
-	
-            type: 'POST',
-            
-	
-            data: { v_id: v_id },
-            
-	
-            success: function (data) {
-                
-	
-        $('.table-tbody').html(data);
-            
-	
-    }
-    
-    
-
-        });
-    
-    
-	
-    });
-
-
-    });
-
-
-    $(document).ready(function () {
-    
-
-        $('#postcode-filter').on('change', function () {
-        
-	
-        var pc_name = $(this).val();
-        
-	
-        $.ajax({
-            
-	
-            url: 'fetch-drivers-by-postcode.php',
-            
-	
-            type: 'POST',
-            
-	
-            data: { pc_name: pc_name },
-            
-	
-            success: function (data) {
-                
-	
-        $('.table-tbody').html(data);
-            
-	
-    }
-        
-
-        });
-    
-	
-    });
-
-
-    });
-
-
-            </script>
-
-			
-			
+                $(document).ready(function () {    
+                    $('#postcode-filter').on('change', function () {        	
+                    var pc_name = $(this).val();        	
+                        $.ajax({            	
+                            url: 'fetch-drivers-by-postcode.php',            	
+                            type: 'POST',            	
+                            data: { pc_name: pc_name },            	
+                            success: function (data) {                	
+                                $('.table-tbody').html(data);            	
+                            }        
+                        });    	
+                    });
+                });          
+            </script>					
             <div class="card-body border-bottom py-3">
                 <div id="table-adriver" class="table-responsive">
                     <table class="table" id="table-driver">
@@ -285,56 +129,25 @@ include('header.php');
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="table-tbody">
-				
-							
-                            <?php
-                               
-							
-                            $x = 0;
-                               
-							
-                            $adsql = mysqli_query($connect, "SELECT
-                                                                drivers.*,
-                                                                driver_vehicle.*,
-                                                                vehicles.* ,
-                                                               GROUP_CONCAT(vehicles.v_name SEPARATOR ', ') AS vehicle_names
-                                                              FROM drivers
-                                                              LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id
-                                                              LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id
-                                                              WHERE drivers.acount_status = 1
-                                                              GROUP BY drivers.d_id
-                                                              ORDER BY drivers.d_id DESC");
-                               
-							
-                            while ($adrow = mysqli_fetch_array($adsql)) :
-                            
-                                
-				
-                                $x++;
-                               
-				
+                        <tbody class="table-tbody">											
+                            <?php                               							
+                            $x = 0;                               							
+                            $adsql = mysqli_query($connect, "SELECT drivers.*, driver_vehicle.*, vehicles.*, GROUP_CONCAT(vehicles.v_name SEPARATOR ', ') AS vehicle_names FROM drivers LEFT JOIN driver_vehicle ON driver_vehicle.d_id = drivers.d_id LEFT JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id WHERE drivers.acount_status = 1 GROUP BY drivers.d_id ORDER BY drivers.d_id DESC");                               						
+                            while ($adrow = mysqli_fetch_array($adsql)) :                                                            				
+                                $x++;                               				
                             ?>
                             <tr>
                                 <td>
                                     <?php echo $adrow['d_id']; ?>
                                 </td>
-                                <td>
-                                   
-									
+                                <td>                                   									
                                     <?php
-                                    if (!$adrow['d_pic']) :
-                                        
-									
-                                        ?>
-                                    <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">
-                                        
-									
-                                        <?php else : ?>
-                                    <img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">
-                                       
-									
-                                        <?php endif; ?>								
+                                        if (!$adrow['d_pic']) :                                        									
+                                    ?>
+                                    <img src="img/user-1.jpg" alt="Driver Img" style="width: 50px; height: 50px; border-radius: 5px;">                                        									
+                                    <?php else : ?>
+                                    <img src="img/drivers/<?php echo $adrow['d_pic']; ?>" alt="Driver Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">                                       									
+                                    <?php endif; ?>								
                                 </td>
                                 <td>
                                     <strong style="text-transform: capitalize;">
@@ -383,9 +196,14 @@ include('header.php');
         </div>
     </div>
 </div>        
-<script>			
-    $(document).ready(function() {   	
-        $('#table-driver').DataTable();	
+<script>    
+    $(document).ready(function() {  
+        $('#table-driver').DataTable({    
+            responsive: true,    
+            fixedHeader: true,    
+            dom: 'Bfrtip',    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']  
+        });
     });
 </script>
 <div class="modal modal-blur fade" id="modal-driver" tabindex="-1" role="dialog" aria-hidden="true">

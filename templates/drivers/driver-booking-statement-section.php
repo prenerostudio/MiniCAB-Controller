@@ -5,8 +5,8 @@
     <div class="row mb-3">
         <div class="card">
             <div class="card-body border-bottom py-3">
-                <div id="table-adriver" class="table-responsive">
-                    <table class="table" id="table-statement">
+                <div class="table-responsive">
+                    <table class="table" id="table-statement" style="width: 100%;">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -17,7 +17,7 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="table-tbody">
+                        <tbody>
                             <?php
                             $x = 0;
                             $isql = mysqli_query($connect, "SELECT invoice.*, jobs.book_id, drivers.*, bookings.*, booking_type.*, clients.* FROM invoice JOIN jobs ON invoice.job_id = jobs.job_id JOIN drivers ON invoice.d_id = drivers.d_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN clients ON jobs.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE invoice.d_id = $d_id");
@@ -53,14 +53,14 @@
                                     </a>
                                 </td>
                             </tr>
-				<?php endwhile; ?>
-                                    <?php if ($x === 0) : ?>
-                            <tr>
-                                <td colspan="8">
-                                    <p align="center">No Booking Found!</p>
+				<?php endwhile; ?>                                    
+                                <?php if ($x === 0) : ?>
+                            <tr>  
+                                <td colspan="6" align="center">    
+                                    No Booking Found!  
                                 </td>
                             </tr>
-				<?php endif; ?>
+                                <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -69,7 +69,15 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {
-        $('#table-statement').DataTable();
+$(document).ready(function() {
+  $('#table-statement').DataTable({
+    responsive: true,
+    fixedHeader: true,
+    dom: 'Bfrtip',
+    buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+    columnDefs: [
+      { targets: '_all', defaultContent: '' }
+    ]
+  });
 });
 </script>

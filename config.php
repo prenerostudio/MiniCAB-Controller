@@ -16,6 +16,7 @@ if($connect->connect_error) {
     die("Connection Failed : " . $connect->connect_error);
 } else {
 }
+$google_maps_key = "AIzaSyDIXJnumkmR2VgtJxN3v7zws24IwvpRrsI";
 ini_set("log_errors", 1); 
 ini_set("error_log", "error.log");
 ini_set("display_errors", "off");

@@ -5,7 +5,7 @@
     <div class="row mb-3">
         <div class="card">
             <div class="card-body border-bottom py-3">
-                <div id="table-adriver" class="table-responsive">
+                <div class="table-responsive">
                     <table class="table" id="table-logs">
                         <thead>
                             <tr>
@@ -15,7 +15,7 @@
                                 <th>Time</th>
                             </tr>
                         </thead>
-                        <tbody class="table-tbody">
+                        <tbody>
                             <?php
                             $x = 0;
                             $acsql = mysqli_query($connect, "SELECT activity_log.* FROM activity_log WHERE  activity_log.user_type = 'driver' AND activity_log.user_id = $d_id");
@@ -39,7 +39,7 @@
 				<?php endwhile; ?>
                                 <?php if ($x === 0) : ?>
                             <tr>
-                                <td colspan="8">
+                                <td colspan="4">
                                     <p align="center">
                                         No Log Found!
                                     </p>
@@ -54,7 +54,15 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {    
-        $('#table-logs').DataTable();
+$(document).ready(function() {
+  $('#table-logs').DataTable({
+    responsive: true,
+    fixedHeader: true,
+    dom: 'Bfrtip',
+    buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+    columnDefs: [
+      { targets: '_all', defaultContent: '' }
+    ]
+  });
 });
 </script>
