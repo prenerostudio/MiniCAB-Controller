@@ -52,7 +52,6 @@
                             const currentPos = marker.getPosition();
                             const deltaLat = (newPosition.lat() - currentPos.lat()) / 20;
                             const deltaLng = (newPosition.lng() - currentPos.lng()) / 20;
-
                             let i = 0;
                             const interval = setInterval(() => {
                                 i++;
