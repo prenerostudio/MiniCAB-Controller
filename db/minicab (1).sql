@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2025 at 03:43 PM
+-- Generation Time: Oct 29, 2025 at 10:00 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,66 +41,29 @@ CREATE TABLE `activity_log` (
 --
 
 INSERT INTO `activity_log` (`log_id`, `activity_type`, `timestamp`, `user_type`, `user_id`, `details`) VALUES
-(00000001, 'New Driver Added', '2025-09-24 15:51:40', 'user', 00000001, 'New Driver Atiq Ramzan Has been Added by Controller.'),
-(00000002, 'Driver Profile Image Updated', '2025-09-24 15:52:39', 'user', 00000001, 'Driver Profile Image 00000001 Has Been updated by Controller.'),
-(00000003, 'Driver Profile Image Deleted', '2025-09-24 15:55:16', 'user', 00000001, 'Driver Profile Image Has Been Deleted by Controller.'),
-(00000004, 'Driver Profile Image Updated', '2025-09-24 15:55:24', 'user', 00000001, 'Driver Profile Image 00000001 Has Been updated by Controller.'),
-(00000005, 'Driver Profile Updated', '2025-09-24 15:57:20', 'user', 00000001, 'Driver Atiq Ramzan profile has been updated by Controller.'),
-(00000006, 'PCO License Added', '2025-09-24 16:36:42', 'user', 00000001, 'PCO License of Driver 00000001 has been added by Controller.'),
-(00000007, 'National Insurance Added', '2025-09-24 16:48:54', 'user', 00000001, 'National Insurance of Driver 00000001 has been added by Controller.'),
-(00000008, 'DVLA Check Number Added', '2025-09-24 16:51:50', 'user', 00000001, 'DVLA Check Number of Driver 00000001 has been added by Controller.'),
-(00000009, 'Driver Extra Document Added', '2025-09-24 16:55:03', 'user', 00000001, 'Driver Extra Document of Driver 00000001 has been added by Controller.'),
-(00000010, 'Vehicle Log Book Added', '2025-09-24 17:03:10', 'user', 00000001, 'Vehicle Log Book of Driver 00000001 has been added by Controller.'),
-(00000011, 'Vehicle MOT Certificate Added', '2025-09-24 17:23:27', 'user', 00000001, 'Vehicle MOT Certificate of Driver 00000001 has been added by Controller.'),
-(00000012, 'Vehicle PCO Added', '2025-09-24 17:42:41', 'user', 00000001, 'Vehicle PCO of Driver 00000001 has been added by Controller.'),
-(00000013, 'Vehicle Insurance Added', '2025-09-24 17:48:16', 'user', 00000001, 'Vehicle Insurance of Driver 00000001 has been added by Controller.'),
-(00000014, 'Vehicle Pictures Added', '2025-09-24 17:51:35', 'user', 00000001, 'Vehicle Pictures of Driver 00000001 have been added by Controller.'),
-(00000015, 'Vehicle Road TAX Added', '2025-09-24 17:58:02', 'user', 00000001, 'Vehicle Road TAX of Driver 00000001 has been added by Controller.'),
-(00000016, 'Vehicle Rental Agreement Added', '2025-09-24 18:08:08', 'user', 00000001, 'Vehicle Rental Agreement of Driver 00000001 has been added by Controller.'),
-(00000017, ' Insurance Schedule Added', '2025-09-24 18:11:53', 'user', 00000001, ' Insurance Schedule of Driver 00000001 has been added by Controller.'),
-(00000018, 'Driver Extra Document Added', '2025-09-24 18:13:49', 'user', 00000001, 'Driver Extra Document of Driver 00000001 has been added by Controller.'),
-(00000019, 'Driver Verified', '2025-09-24 18:14:06', 'user', 00000001, 'Driver 00000001 has been verified by Controller.'),
-(00000020, 'Admin Profile Image', '2025-09-24 18:14:31', 'user', 00000001, 'Admin Profile Image Has Been Updated by Controller.'),
-(00000021, 'Controller Logged-In', '2025-09-24 18:14:51', 'user', 00000001, 'Controller Atiq logged in successfully.'),
-(00000022, 'Controller Logged-In', '2025-09-25 07:51:38', 'user', 00000001, 'Controller Atiq logged in successfully.'),
-(00000023, 'Controller Logged-In', '2025-09-25 10:31:34', 'user', 00000001, 'Controller Atiq logged in successfully.'),
-(00000024, 'Driver Vehicle Details Update', '2025-09-25 10:34:01', 'user', 00000001, 'Driver Vehicle Details Has Been updated by Controller.'),
-(00000025, 'Driver Vehicle Details Update', '2025-09-25 10:34:46', 'user', 00000001, 'Driver Vehicle Details Has Been updated by Controller.'),
-(00000026, 'Driver Vehicle Details Update', '2025-09-25 10:35:25', 'user', 00000001, 'Driver Vehicle Details Has Been updated by Controller.'),
-(00000027, 'Bank Account Added ', '2025-09-25 10:47:13', 'user', 00000001, 'A bank acount to driver ID:  Has Been Added by Controller.'),
-(00000028, 'Driver Bank Details Updated', '2025-09-25 11:45:49', 'user', 00000001, 'Driver   Bank Details Has Been Updated by Controller.'),
-(00000029, 'Driver Inactive', '2025-09-25 13:28:45', 'user', 00000001, 'Driver 00000001 Has Been made by Controller.'),
-(00000030, 'Activate Driver', '2025-09-25 13:37:57', 'user', 00000001, 'Driver ID: 00000001 Has Been Activated'),
-(00000031, 'Controller Logged-In', '2025-09-26 07:46:19', 'user', 00000001, 'Controller Atiq logged in successfully.'),
-(00000032, 'New Customer Added', '2025-09-26 08:08:23', 'user', 00000001, 'New Customer Atiq Ramzan Has been Added by Controller.'),
-(00000033, 'Customer Profile Deleted', '2025-09-26 08:12:20', 'user', 00000001, 'Customer Profile Has Been Deleted by Controller.'),
-(00000034, 'New Customer Added', '2025-09-26 08:13:42', 'user', 00000001, 'New Customer Atiq Ramzan Has been Added by Controller.'),
-(00000035, 'Controller Logged-In', '2025-09-30 07:47:49', 'user', 00000001, 'Controller Atiq logged in successfully.'),
-(00000036, 'Customer Profile Image Update', '2025-09-30 08:32:56', 'user', 00000001, 'Customer Profile Image 00000002 Has Been Updated by Controller.'),
-(00000037, 'Customer Verified', '2025-09-30 08:34:40', 'user', 00000001, 'Customer 00000002 Has Been Verified by Controller.'),
-(00000038, 'Customer Profile Updated', '2025-09-30 09:31:04', 'user', 00000001, 'Customer 00000002 Has Been Updated by Controller.'),
-(00000039, 'Customer Image Deleted', '2025-09-30 09:34:30', 'user', 00000001, 'Customer Image Has Been Deleted by Controller.'),
-(00000040, 'New Booker', '2025-09-30 10:53:59', 'user', 00000001, 'New Booker Atiq Ramzan  Added by Controller.'),
-(00000041, 'New Booker', '2025-09-30 10:58:10', 'user', 00000001, 'New Booker Atiq Ramzan  Added by Controller.'),
-(00000042, 'New Booker', '2025-09-30 11:05:22', 'user', 00000001, 'New Booker Atiq Ramzan Added by Controller.'),
-(00000043, 'Booker Profile Image Updated', '2025-09-30 11:05:59', 'user', 00000001, 'Booker Profile Image Has Been Updated by Controller.'),
-(00000044, 'Booker Verified', '2025-09-30 11:10:18', 'user', 00000001, 'Booker 00000001 Has Been Verified by Controller.'),
-(00000045, 'Booker Profile Image Updated', '2025-09-30 11:16:41', 'user', 00000001, 'Booker Profile Image Has Been Updated by Controller.'),
-(00000046, 'Booker Image Deleted', '2025-09-30 11:19:30', 'user', 00000001, 'Booker Image Has Been Deleted by Controller.'),
-(00000047, 'Booker Profile Image Updated', '2025-09-30 11:20:03', 'user', 00000001, 'Booker Profile Image Has Been Updated by Controller.'),
-(00000048, 'Booker Image Deleted', '2025-09-30 11:20:08', 'user', 00000001, 'Booker Image Has Been Deleted by Controller.'),
-(00000049, 'Booker Profile Updated', '2025-09-30 11:35:13', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000050, 'Booker Profile Updated', '2025-09-30 11:37:16', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000051, 'Booker Profile Updated', '2025-09-30 11:38:15', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000052, 'Booker Profile Updated', '2025-09-30 11:38:48', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000053, 'Booker Profile Updated', '2025-09-30 11:42:38', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000054, 'Booker Profile Updated', '2025-09-30 11:45:18', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000055, 'Booker Profile Updated', '2025-09-30 11:45:43', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000056, 'Booker Profile Updated', '2025-09-30 11:45:48', 'user', 00000001, 'Booker Profile 00000001 Has Been Updated by Controller.'),
-(00000057, 'Booker Profile Image Updated', '2025-09-30 11:46:28', 'user', 00000001, 'Booker Profile Image Has Been Updated by Controller.'),
-(00000058, 'Customer Profile Deleted', '2025-09-30 12:12:27', 'user', 00000001, 'Customer Profile Has Been Deleted by Controller.'),
-(00000059, 'New Customer Added', '2025-09-30 12:49:51', 'user', 00000001, 'New Customer Atiq Ramzan Has been Added by Controller.'),
-(00000060, 'Customer Verified', '2025-09-30 12:51:59', 'user', 00000001, 'Customer 00000002 Has Been Verified by Controller.');
+(00000001, 'New Driver Profile Registered', '2025-10-28 05:13:19', 'driver', 00000001, 'New Driver Account Created by Atiq Ramzan'),
+(00000002, 'New Driver Profile Registered', '2025-10-28 07:14:51', 'driver', 00000001, 'New Driver Account Created by Atiq Ramzan'),
+(00000003, 'Account Logged In', '2025-10-28 07:17:27', 'driver', 00000001, 'You have logged in to your account.'),
+(00000004, 'Account Logged In', '2025-10-28 07:17:34', 'driver', 00000001, 'You have logged in to your account.'),
+(00000005, 'Account Logged In', '2025-10-28 07:22:19', 'driver', 00000001, 'You have logged in to your account.'),
+(00000006, 'New Driver Profile Registered', '2025-10-28 07:28:13', 'driver', 00000001, 'New Driver Account Created by Atiq Ramzan'),
+(00000007, 'Controller Logged-In', '2025-10-28 08:41:04', 'user', 00000001, 'Controller Atiq logged in successfully.'),
+(00000008, 'Driving License Added', '2025-10-28 08:56:43', 'driver', 00000001, 'License added for Driver 1.'),
+(00000009, 'Address Proofs Added', '2025-10-28 11:16:09', 'driver', 00000001, 'Address Proofs of Driver 1 have been added by Controller.'),
+(00000010, 'Driver Document updated', '2025-10-28 11:40:41', 'driver', 00000001, 'You have updated PCO License Document.'),
+(00000011, 'Driver National Insurance Document updated', '2025-10-28 11:52:32', 'driver', 00000001, 'You have updated National Insurance Document.'),
+(00000012, 'Driver DVLA Code Document updated', '2025-10-28 11:58:14', 'driver', 00000001, 'You have updated DVLA Code Document.'),
+(00000013, 'Driver Extra Document updated', '2025-10-28 12:05:40', 'driver', 00000001, 'You have updated Extra Document.'),
+(00000014, 'Driver Vehicle Log Book Document updated', '2025-10-28 12:43:25', 'driver', 00000001, 'You have updated Vehicle Log Book Document.'),
+(00000015, 'Driver Vehicle MOT Certificate Document updated', '2025-10-28 13:04:30', 'driver', 00000001, 'You have updated Vehicle MOT Certificate Document.'),
+(00000016, 'Driver Vehicle PCO Document updated', '2025-10-28 13:13:05', 'driver', 00000001, 'You have updated Vehicle PCO Document.'),
+(00000017, 'Driver Vehicle Insurance Document updated', '2025-10-28 13:24:04', 'driver', 00000001, 'You have updated Vehicle Insurance Document.'),
+(00000018, 'Vehicle Pictures Added', '2025-10-28 13:35:14', 'driver', 00000001, 'Vehicle Pictures of Driver 1 has been added by Controller.'),
+(00000019, 'Driver Vehicle Road TAX Document updated', '2025-10-28 13:40:31', 'driver', 00000001, 'You have updated Vehicle Road TAX Document.'),
+(00000020, 'Driver Vehicle Rental Agreement Document updated', '2025-10-28 13:48:17', 'driver', 00000001, 'You have updated Vehicle Rental Agreement Document.'),
+(00000021, 'Driver Vehicle Insurance Schedule Document updated', '2025-10-28 13:50:33', 'driver', 00000001, 'You have updated Vehicle Insurance Schedule Document.'),
+(00000022, 'Driver Vehicle Extra Document updated', '2025-10-28 13:53:55', 'driver', 00000001, 'You have updated Vehicle Extra Document.'),
+(00000023, 'Driver Vehicle Extra Document updated', '2025-10-28 15:03:31', 'driver', 00000001, 'You have updated Vehicle Extra Document.');
 
 -- --------------------------------------------------------
 
@@ -122,7 +85,7 @@ CREATE TABLE `address_proofs` (
 --
 
 INSERT INTO `address_proofs` (`ap_id`, `d_id`, `ap_1`, `ap_2`, `ap_created_at`, `ap_updated_at`) VALUES
-(00000001, 00000001, 'pa1_68d41ca9c2696.jpg', 'pa2_68d41ca9c269a.jpg', '2025-09-24 17:30:33', '2025-09-24 16:30:33');
+(00000001, 00000001, 'pa1_6900a5f907194.png', 'pa2_6900a5f90719a.png', '2025-10-28 11:16:09', '2025-10-28 11:16:09');
 
 -- --------------------------------------------------------
 
@@ -354,16 +317,8 @@ CREATE TABLE `clients` (
   `acount_status` tinyint(2) NOT NULL,
   `account_type` tinyint(2) NOT NULL,
   `login_token` varchar(255) NOT NULL,
-  `client_reg_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `client_update_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `reg_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `clients`
---
-
-INSERT INTO `clients` (`c_id`, `c_name`, `c_email`, `c_phone`, `c_password`, `c_address`, `c_gender`, `c_language`, `c_pic`, `postal_code`, `others`, `c_ni`, `status`, `company_name`, `commission_type`, `percentage`, `fixed`, `acount_status`, `account_type`, `login_token`, `client_reg_at`, `client_update_at`) VALUES
-(00000002, 'Atiq Ramzan', 'hello@prenerostudio.com', '+443157524000', 'asdf1234', '', 'Male', 'English', '', 'SE13= Hither Green, Lewisham', '', '', 0, '', '', 0, 0, 1, 1, '', '2025-09-30 12:51:59', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -789,8 +744,8 @@ CREATE TABLE `drivers` (
   `acount_status` int(10) NOT NULL,
   `signup_type` tinyint(5) NOT NULL,
   `login_token` varchar(255) DEFAULT NULL,
-  `driver_reg_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `driver_update_at` datetime DEFAULT NULL
+  `driver_reg_date` datetime NOT NULL,
+  `driver_update_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -798,7 +753,7 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`d_id`, `d_name`, `d_email`, `d_phone`, `d_password`, `d_address`, `d_post_code`, `d_pic`, `d_gender`, `d_language`, `licence_authority`, `d_whatsapp`, `d_shift`, `d_pco`, `latitude`, `longitude`, `status`, `acount_status`, `signup_type`, `login_token`, `driver_reg_date`, `driver_update_at`) VALUES
-(00000001, 'Atiq Ramzan', 'hello@prenerostudio.com', '+443157524000', '$2y$10$v3r4Ij3jru30svylEZD8uO6JM3GXViwk8E9OUKeBqe2/5gvnWLpSG', '698-702 High Road', ' N12 9PY', '68d4146c223b6_23754970_1626130610784651_3422355630783723154_n.png', 'Male', 'English', 'England', '+443157524000', 'Afternoon Shift', '', '', '', '', 1, 0, NULL, '2025-09-25 13:37:57', '2025-09-24 16:57:20');
+(00000001, 'Atiq Ramzan', 'prenero123@gmail.com', '+923390752400', '$2y$10$u.fDC6VFQo9UEbJjahQtSOjCQmAB0GQHcqvHksD5Z/N/Ho1acdKPe', '', '', '', '', '', '', '', 'Morning Shift', '123458965', '', '', '', 0, 2, NULL, '2025-10-28 07:28:13', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -830,13 +785,6 @@ CREATE TABLE `driver_bank_details` (
   `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `driver_bank_details`
---
-
-INSERT INTO `driver_bank_details` (`d_bank_id`, `d_id`, `bank_name`, `account_number`, `sort_code`, `date_added`) VALUES
-(00000001, 00000001, 'Meezan Bank', '04108106577563', 'MZ0418010', '2025-09-25 06:47:13');
-
 -- --------------------------------------------------------
 
 --
@@ -856,7 +804,7 @@ CREATE TABLE `driver_extras` (
 --
 
 INSERT INTO `driver_extras` (`de_id`, `d_id`, `de_img`, `de_created_at`, `de_updated_at`) VALUES
-(00000001, 00000001, '68d4226707ace.jpg', '2025-09-24 17:55:03', '0000-00-00 00:00:00');
+(00000001, 00000001, '6900b1947f4c8.jpg', '2025-10-28 12:05:40', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -870,164 +818,6 @@ CREATE TABLE `driver_history` (
   `book_id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `date_assigned` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `driver_history`
---
-
-INSERT INTO `driver_history` (`history_id`, `d_id`, `book_id`, `date_assigned`) VALUES
-(00000001, 00000002, 00000001, '2024-11-24 23:10:46'),
-(00000002, 00000002, 00000002, '2024-11-24 23:26:30'),
-(00000003, 00000003, 00000003, '2024-11-30 10:13:38'),
-(00000004, 00000003, 00000004, '2024-11-30 10:52:29'),
-(00000005, 00000003, 00000006, '2024-11-30 10:55:01'),
-(00000006, 00000003, 00000008, '2024-12-01 10:06:55'),
-(00000007, 00000003, 00000009, '2024-12-01 10:07:28'),
-(00000008, 00000003, 00000010, '2024-12-01 15:02:27'),
-(00000009, 00000003, 00000011, '2024-12-01 15:23:00'),
-(00000010, 00000003, 00000012, '2024-12-01 16:05:09'),
-(00000011, 00000003, 00000013, '2024-12-01 16:47:25'),
-(00000012, 00000002, 00000018, '2024-12-02 14:44:15'),
-(00000013, 00000002, 00000018, '2024-12-02 14:45:16'),
-(00000014, 00000003, 00000019, '2024-12-04 17:24:00'),
-(00000015, 00000001, 00000020, '2024-12-06 16:36:15'),
-(00000016, 00000002, 00000021, '2024-12-06 21:01:22'),
-(00000017, 00000002, 00000022, '2024-12-09 10:00:15'),
-(00000018, 00000003, 00000023, '2024-12-11 18:00:56'),
-(00000019, 00000002, 00000027, '2024-12-12 19:24:33'),
-(00000020, 00000002, 00000026, '2024-12-13 05:40:14'),
-(00000021, 00000002, 00000025, '2024-12-13 05:50:51'),
-(00000022, 00000002, 00000025, '2024-12-13 05:50:52'),
-(00000023, 00000002, 00000025, '2024-12-13 05:54:37'),
-(00000024, 00000002, 00000025, '2024-12-13 05:55:48'),
-(00000025, 00000003, 00000028, '2024-12-15 08:42:35'),
-(00000026, 00000003, 00000043, '2024-12-16 16:39:06'),
-(00000027, 00000002, 00000042, '2024-12-17 15:09:19'),
-(00000028, 00000002, 00000041, '2024-12-17 15:14:17'),
-(00000029, 00000003, 00000051, '2024-12-17 16:23:34'),
-(00000030, 00000003, 00000050, '2024-12-17 16:49:32'),
-(00000031, 00000003, 00000049, '2024-12-17 19:01:35'),
-(00000032, 00000002, 00000048, '2024-12-17 20:22:39'),
-(00000033, 00000003, 00000052, '2024-12-18 15:06:06'),
-(00000034, 00000003, 00000053, '2024-12-18 15:33:42'),
-(00000035, 00000002, 00000047, '2024-12-18 16:07:04'),
-(00000036, 00000002, 00000047, '2024-12-18 16:08:37'),
-(00000037, 00000003, 00000058, '2024-12-18 16:17:33'),
-(00000038, 00000003, 00000057, '2024-12-18 17:13:44'),
-(00000039, 00000002, 00000057, '2024-12-19 17:54:18'),
-(00000040, 00000002, 00000056, '2024-12-19 18:03:44'),
-(00000041, 00000002, 00000056, '2024-12-19 18:05:10'),
-(00000042, 00000002, 00000056, '2024-12-19 18:07:03'),
-(00000043, 00000003, 00000065, '2024-12-24 17:11:25'),
-(00000044, 00000003, 00000064, '2024-12-24 18:21:21'),
-(00000045, 00000003, 00000063, '2024-12-24 18:43:19'),
-(00000046, 00000003, 00000070, '2024-12-25 17:03:30'),
-(00000047, 00000003, 00000069, '2024-12-25 18:35:35'),
-(00000048, 00000003, 00000069, '2024-12-25 18:42:12'),
-(00000049, 00000003, 00000068, '2024-12-25 18:48:27'),
-(00000050, 00000003, 00000068, '2024-12-25 18:49:44'),
-(00000051, 00000003, 00000067, '2024-12-25 18:52:58'),
-(00000052, 00000003, 00000074, '2024-12-26 17:47:04'),
-(00000053, 00000003, 00000074, '2024-12-26 18:04:48'),
-(00000054, 00000003, 00000073, '2024-12-26 18:05:23'),
-(00000055, 00000003, 00000074, '2024-12-26 18:20:38'),
-(00000056, 00000003, 00000074, '2024-12-26 18:26:16'),
-(00000057, 00000003, 00000074, '2024-12-26 18:27:49'),
-(00000058, 00000003, 00000074, '2024-12-26 18:29:12'),
-(00000059, 00000003, 00000074, '2024-12-26 18:31:14'),
-(00000060, 00000003, 00000074, '2024-12-26 18:33:44'),
-(00000061, 00000003, 00000074, '2024-12-26 18:35:45'),
-(00000062, 00000003, 00000074, '2024-12-26 18:36:29'),
-(00000063, 00000003, 00000074, '2024-12-26 18:37:08'),
-(00000064, 00000003, 00000074, '2024-12-26 18:52:41'),
-(00000065, 00000003, 00000074, '2024-12-26 18:53:38'),
-(00000066, 00000003, 00000074, '2024-12-26 18:55:03'),
-(00000067, 00000003, 00000074, '2024-12-26 18:55:32'),
-(00000068, 00000003, 00000074, '2024-12-26 19:00:04'),
-(00000069, 00000003, 00000074, '2024-12-26 19:00:44'),
-(00000070, 00000003, 00000074, '2024-12-26 19:01:52'),
-(00000071, 00000002, 00000003, '2025-01-01 17:37:28'),
-(00000072, 00000002, 00000075, '2025-01-01 17:44:52'),
-(00000073, 00000003, 00000076, '2025-01-01 18:05:49'),
-(00000074, 00000003, 00000080, '2025-01-02 16:41:31'),
-(00000075, 00000003, 00000079, '2025-01-02 18:20:19'),
-(00000076, 00000003, 00000079, '2025-01-02 18:33:47'),
-(00000077, 00000003, 00000079, '2025-01-02 18:36:18'),
-(00000078, 00000003, 00000079, '2025-01-02 18:36:41'),
-(00000079, 00000003, 00000079, '2025-01-02 18:37:41'),
-(00000080, 00000003, 00000079, '2025-01-02 18:45:49'),
-(00000081, 00000003, 00000079, '2025-01-02 18:52:04'),
-(00000082, 00000003, 00000079, '2025-01-02 18:54:24'),
-(00000083, 00000003, 00000079, '2025-01-02 18:57:30'),
-(00000084, 00000003, 00000079, '2025-01-02 18:58:05'),
-(00000085, 00000003, 00000079, '2025-01-02 19:09:07'),
-(00000086, 00000003, 00000079, '2025-01-02 19:11:03'),
-(00000087, 00000003, 00000079, '2025-01-02 19:11:37'),
-(00000088, 00000003, 00000079, '2025-01-02 19:14:31'),
-(00000089, 00000003, 00000079, '2025-01-02 19:14:59'),
-(00000090, 00000003, 00000079, '2025-01-02 19:16:15'),
-(00000091, 00000003, 00000079, '2025-01-02 19:17:43'),
-(00000092, 00000003, 00000079, '2025-01-02 19:18:36'),
-(00000093, 00000003, 00000086, '2025-01-05 11:09:01'),
-(00000094, 00000003, 00000085, '2025-01-05 16:31:03'),
-(00000095, 00000003, 00000084, '2025-01-05 16:35:20'),
-(00000096, 00000003, 00000087, '2025-01-05 16:36:35'),
-(00000097, 00000001, 00000003, '2025-01-05 18:09:59'),
-(00000098, 00000003, 00000003, '2025-01-05 18:35:31'),
-(00000099, 00000003, 00000003, '2025-01-05 19:08:45'),
-(00000100, 00000003, 00000003, '2025-01-05 19:26:44'),
-(00000101, 00000003, 00000089, '2025-01-10 17:16:38'),
-(00000102, 00000003, 00000093, '2025-01-12 11:52:38'),
-(00000103, 00000003, 00000096, '2025-01-12 12:29:26'),
-(00000104, 00000003, 00000099, '2025-01-12 12:32:40'),
-(00000105, 00000000, 00000098, '2025-01-12 15:37:22'),
-(00000106, 00000003, 00000100, '2025-01-12 15:39:15'),
-(00000107, 00000003, 00000103, '2025-01-12 16:13:30'),
-(00000108, 00000003, 00000105, '2025-01-15 18:54:49'),
-(00000109, 00000003, 00000106, '2025-01-15 19:05:52'),
-(00000110, 00000003, 00000109, '2025-01-16 16:32:47'),
-(00000111, 00000003, 00000110, '2025-01-16 21:41:58'),
-(00000112, 00000003, 00000111, '2025-01-16 21:48:54'),
-(00000113, 00000003, 00000114, '2025-01-16 21:52:56'),
-(00000114, 00000002, 00000115, '2025-01-17 09:22:24'),
-(00000115, 00000003, 00000118, '2025-01-21 16:27:01'),
-(00000116, 00000002, 00000120, '2025-01-22 07:13:43'),
-(00000117, 00000002, 00000088, '2025-01-22 09:29:37'),
-(00000118, 00000003, 00000121, '2025-01-27 16:39:59'),
-(00000119, 00000003, 00000121, '2025-01-27 16:52:11'),
-(00000120, 00000003, 00000121, '2025-01-27 16:54:43'),
-(00000121, 00000003, 00000121, '2025-01-27 17:03:20'),
-(00000122, 00000002, 00000056, '2025-01-27 17:55:24'),
-(00000123, 00000002, 00000122, '2025-01-27 18:21:00'),
-(00000124, 00000003, 00000125, '2025-01-28 17:27:23'),
-(00000125, 00000003, 00000125, '2025-01-28 17:27:24'),
-(00000126, 00000003, 00000125, '2025-01-28 17:48:58'),
-(00000127, 00000002, 00000122, '2025-01-28 20:40:11'),
-(00000128, 00000002, 00000126, '2025-01-29 08:06:52'),
-(00000129, 00000002, 00000126, '2025-01-29 08:08:25'),
-(00000130, 00000002, 00000127, '2025-01-29 08:59:49'),
-(00000131, 00000003, 00000131, '2025-01-29 17:52:53'),
-(00000132, 00000003, 00000134, '2025-01-30 17:02:14'),
-(00000133, 00000003, 00000133, '2025-01-30 17:05:35'),
-(00000134, 00000003, 00000134, '2025-01-30 18:25:06'),
-(00000135, 00000003, 00000135, '2025-01-30 19:11:19'),
-(00000136, 00000003, 00000141, '2025-02-01 09:07:20'),
-(00000137, 00000003, 00000146, '2025-02-17 17:05:50'),
-(00000138, 00000003, 00000145, '2025-02-17 19:25:50'),
-(00000139, 00000002, 00000144, '2025-02-17 20:32:31'),
-(00000140, 00000002, 00000147, '2025-02-17 20:38:09'),
-(00000141, 00000002, 00000147, '2025-02-17 20:40:44'),
-(00000142, 00000002, 00000148, '2025-02-17 21:01:34'),
-(00000143, 00000003, 00000153, '2025-02-18 16:19:33'),
-(00000144, 00000003, 00000153, '2025-02-18 17:15:03'),
-(00000145, 00000003, 00000153, '2025-02-18 17:19:15'),
-(00000146, 00000003, 00000153, '2025-02-18 17:22:58'),
-(00000147, 00000003, 00000153, '2025-02-18 17:49:36'),
-(00000148, 00000003, 00000154, '2025-02-20 17:37:11'),
-(00000149, 00000002, 00000155, '2025-04-22 17:09:33'),
-(00000150, 00000003, 00000156, '2025-05-01 17:47:47'),
-(00000151, 00000002, 00000155, '2025-05-04 16:37:40'),
-(00000152, 00000002, 00000157, '2025-05-29 18:49:02');
 
 -- --------------------------------------------------------
 
@@ -1099,7 +889,8 @@ CREATE TABLE `driver_vehicle` (
 --
 
 INSERT INTO `driver_vehicle` (`dv_id`, `v_id`, `d_id`, `v_make`, `v_model`, `v_color`, `v_reg_num`, `v_phv`, `v_phv_expiry`, `v_ti`, `v_ti_expiry`, `v_mot`, `v_mot_expiry`, `date_v_add`) VALUES
-(00000001, 00000004, 00000001, 'Changan', 'VX', 'Silver Grey', 'LE685', '123456', '', '', '', '', '', '2025-09-25 10:35:25');
+(00000001, 00000000, 00000001, '', '', '', '', '', '', '', '', '', '', '2025-10-28 07:14:51'),
+(00000002, 00000000, 00000001, '', '', '', '', '', '', '', '', '', '', '2025-10-28 07:28:13');
 
 -- --------------------------------------------------------
 
@@ -1124,7 +915,7 @@ CREATE TABLE `driving_license` (
 --
 
 INSERT INTO `driving_license` (`dl_id`, `d_id`, `dl_number`, `dl_expiry`, `dl_expiry_time`, `dl_front`, `dl_back`, `dl_created_at`, `dl_updated_at`) VALUES
-(00000001, 00000001, '137286320', '2025-10-11', '13:30:00', '68d41bc07074c.jpg', '68d41bc07074f.jpg', '2025-09-24 12:26:40', '2025-09-24 16:26:40');
+(00000001, 00000001, 'ZA0000125', '2025-12-12', '10:30:00', 'front_6900854b483ff.png', 'back_6900854b48403.png', '2025-10-28 03:56:43', '2025-10-28 08:56:43');
 
 -- --------------------------------------------------------
 
@@ -1146,7 +937,7 @@ CREATE TABLE `dvla_check` (
 --
 
 INSERT INTO `dvla_check` (`dvla_id`, `d_id`, `dvla_number`, `dvla_img`, `dvla_created_at`, `dvla_updated_at`) VALUES
-(00000001, 00000001, '137286320', '68d421a6497c4.jpg', '2025-09-24 17:51:50', '0000-00-00 00:00:00');
+(00000001, 00000001, '12345678', '6900afd621559.png', '2025-10-28 11:58:14', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1324,7 +1115,7 @@ CREATE TABLE `national_insurance` (
 --
 
 INSERT INTO `national_insurance` (`ni_id`, `d_id`, `ni_number`, `ni_img`, `ni_created_at`, `ni_updated_at`) VALUES
-(00000001, 00000001, '137286320', '68d420f6e32c4.jpg', '2025-09-24 17:48:54', '0000-00-00 00:00:00');
+(00000001, 00000001, 'PAZ52315222', '6900ae803de20.jpg', '2025-10-28 11:52:32', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1377,7 +1168,7 @@ CREATE TABLE `pco_license` (
 --
 
 INSERT INTO `pco_license` (`pl_id`, `d_id`, `pl_number`, `pl_exp`, `pl_exp_time`, `pl_img`, `pl_created_at`, `pl_updated_at`) VALUES
-(00000001, 00000001, '137286320', '2025-10-25', '12:40:00', '68d41e1a74a37.jpg', '2025-09-24 17:36:42', '0000-00-00 00:00:00');
+(00000001, 00000001, 'PAZ00012', '2025-12-12', '11:00:00', '6900abb99f6f5.jpg', '2025-10-28 11:40:41', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1679,7 +1470,7 @@ CREATE TABLE `rental_agreement` (
 --
 
 INSERT INTO `rental_agreement` (`ra_id`, `d_id`, `ra_num`, `ra_exp`, `ra_exp_time`, `ra_img`, `ra_created_at`, `ra_updated_at`) VALUES
-(00000001, 00000001, '137286320', '2025-10-10', '16:15:00', '68d433885c370.jpg', '2025-09-24 19:08:08', '0000-00-00 00:00:00');
+(00000001, 00000001, '112434232', '2025-12-26', '16:00:00', '6900c9a16b48a.jpg', '2025-10-28 13:48:17', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1747,7 +1538,7 @@ CREATE TABLE `users` (
   `city` varchar(255) NOT NULL,
   `state` varchar(255) NOT NULL,
   `country_id` int(11) NOT NULL,
-  `pc` varchar(11) NOT NULL,
+  `pc` int(11) NOT NULL,
   `nid` varchar(255) NOT NULL,
   `user_pic` varchar(255) NOT NULL,
   `reg_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -1758,9 +1549,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `user_email`, `user_password`, `user_phone`, `user_gender`, `designation`, `address`, `city`, `state`, `country_id`, `pc`, `nid`, `user_pic`, `reg_date`) VALUES
-(00000001, 'Atiq', 'Ramzan', 'hello@prenerostudio.com', '$2y$10$TTNf4uW5y3J30j9IvfGDyeT1kuq8Wumuz.MZc7goviKbjn9yAMftK', '+923157524000', '', 'Super-admin', 'Shop # 24, Hamza Market, Sargodha Road', 'Faisalabad', 'Punjab', 134, '38000', '', '68d435074eba6_1758737671.png', '2025-09-24 18:14:31'),
-(00000002, 'Azib', 'Ali Butt', 'eurodatatechnology@gmail.com', '$2y$10$AWFd8I5yDq3c.FPpvw2tiOQVBG1yI/USMVDc0Sbk8J1jjI7pASzh6', '+44 7550 482970', 'Male', 'Controller', 'Western London', 'London', 'London', 186, 'WJ123', '', '68d3e5302c057_1758717232.jpg', '2025-09-24 12:37:29'),
-(00000004, 'Haider', 'Ali', 'hello@haider.com', '$2y$10$R1uVHHUnrG76l85nF0tRKOfL7PKC8uVnNglOl7kDFnQunH2e8xt2q', '+443346452312', 'Male', 'Controller', '', 'London', 'London', 186, 'WJ123', '', '', '2025-09-24 12:46:54');
+(00000001, 'Atiq', 'Ramzan', 'hello@prenerostudio.com', '$2y$10$k5Nu/poCw68omzTXF9TAdOMeRCVBQaeEJGljpnfZQkOTsEcazkb4K', '+923157524000', '', 'Super-admin', 'Shop # 24, Hamza Market', 'Faisalabad', 'Punjab', 134, 38000, '', '68120c1dadc46_1746013213.jpg', '2025-04-30 11:40:13'),
+(00000002, 'Azib', 'Ali Butt', 'eurodatatechnology@gmail.com', '$2y$10$AWFd8I5yDq3c.FPpvw2tiOQVBG1yI/USMVDc0Sbk8J1jjI7pASzh6', '+44 7550 482970', 'Male', 'Controller', 'London', 'London', 'London', 186, 154, '', '', '2025-04-30 11:53:11'),
+(00000003, 'New ', '04May25', 'socialnetworking@hotmail.co.uk', '$2y$10$FrVSf36ThX7p4XYLHTNPHuKZay/ngJ8jldORbUenjTVmv4wvGAdoC', '07552834179', 'Male', 'Controller', 'Highroad', 'London', 'England', 186, 0, 'Ushjsu38', '', '2025-05-04 20:32:33');
 
 -- --------------------------------------------------------
 
@@ -1810,9 +1601,6 @@ CREATE TABLE `user_page_access` (
   `customer_reports` tinyint(5) NOT NULL DEFAULT 0,
   `booker_reports` tinyint(5) NOT NULL DEFAULT 0,
   `activity_logs` tinyint(5) NOT NULL DEFAULT 0,
-  `driver_tracker` tinyint(5) NOT NULL,
-  `fare_corrections` tinyint(5) NOT NULL,
-  `all_users_list` tinyint(5) NOT NULL,
   `access_created_at` timestamp NULL DEFAULT current_timestamp(),
   `access_updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -1821,11 +1609,10 @@ CREATE TABLE `user_page_access` (
 -- Dumping data for table `user_page_access`
 --
 
-INSERT INTO `user_page_access` (`access_id`, `user_id`, `add_booking`, `open_booking`, `all_booking`, `upcoming_booking`, `inprocess_booking`, `completed_booking`, `cancelled_booking`, `available_timeslot`, `waiting_timeslot`, `accepted_timeslot`, `cancelled_timeslot`, `withdrawn_timeslot`, `completed_timeslot`, `new_bid`, `bid_booking`, `accepted_bids`, `active_companies`, `blocked_companies`, `deleted_companies`, `customer_accounts`, `booker_accounts`, `deleted_accounts`, `web_driver`, `new_driver`, `active_driver`, `inactive_driver`, `old_driver`, `deleted_drivers`, `zones_list`, `airports_list`, `destinations_list`, `railways_list`, `company_profile`, `vehicles_list`, `pricing_models`, `driver_reports`, `customer_reports`, `booker_reports`, `activity_logs`, `driver_tracker`, `fare_corrections`, `all_users_list`, `access_created_at`, `access_updated_at`) VALUES
-(00000001, 00000001, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2025-04-30 11:38:33', '2025-04-30 11:38:33'),
-(00000002, 00000002, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, '2025-04-30 11:50:07', '2025-04-30 11:50:07'),
-(00000003, 00000003, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2025-05-04 20:32:33', '2025-05-04 20:32:33'),
-(00000004, 00000004, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2025-09-24 12:46:54', '2025-09-24 12:46:54');
+INSERT INTO `user_page_access` (`access_id`, `user_id`, `add_booking`, `open_booking`, `all_booking`, `upcoming_booking`, `inprocess_booking`, `completed_booking`, `cancelled_booking`, `available_timeslot`, `waiting_timeslot`, `accepted_timeslot`, `cancelled_timeslot`, `withdrawn_timeslot`, `completed_timeslot`, `new_bid`, `bid_booking`, `accepted_bids`, `active_companies`, `blocked_companies`, `deleted_companies`, `customer_accounts`, `booker_accounts`, `deleted_accounts`, `web_driver`, `new_driver`, `active_driver`, `inactive_driver`, `old_driver`, `deleted_drivers`, `zones_list`, `airports_list`, `destinations_list`, `railways_list`, `company_profile`, `vehicles_list`, `pricing_models`, `driver_reports`, `customer_reports`, `booker_reports`, `activity_logs`, `access_created_at`, `access_updated_at`) VALUES
+(00000001, 00000001, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2025-04-30 11:38:33', '2025-04-30 11:38:33'),
+(00000002, 00000002, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2025-04-30 11:50:07', '2025-04-30 11:50:07'),
+(00000003, 00000003, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2025-05-04 20:32:33', '2025-05-04 20:32:33');
 
 -- --------------------------------------------------------
 
@@ -1846,21 +1633,6 @@ CREATE TABLE `vehicles` (
   `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `vehicles`
---
-
-INSERT INTO `vehicles` (`v_id`, `v_name`, `v_seat`, `v_luggage`, `v_airbags`, `v_wchair`, `v_babyseat`, `v_pricing`, `v_img`, `date_added`) VALUES
-(00000000001, 'Saloon', 4, 1, 0, 0, 0, 50, 'toyota-prius.png', '2024-09-23 11:14:23'),
-(00000000002, 'Estate', 4, 1, 1, 1, 0, 50, 'Ford-Galaxy.png', '2023-12-25 21:15:44'),
-(00000000003, 'MPV (6 Seater)', 6, 2, 0, 0, 0, 50, 'Ford-Galaxy.png', '2025-05-07 15:44:24'),
-(00000000004, 'Large MPV (7 Seater)', 7, 4, 0, 0, 0, 50, 'Skoda_Octavia.png', '2025-05-07 15:45:36'),
-(00000000005, 'Minibus (8 Seater)', 8, 6, 0, 0, 0, 50, 'Ford-Crown-Victoria.png', '2025-05-07 15:45:57'),
-(00000000006, 'Executive', 7, 6, 0, 0, 0, 50, 'Ford-Mondeo.png', '2023-10-17 14:39:57'),
-(00000000007, 'Executive Minibus', 8, 6, 0, 0, 0, 50, 'Ford-Mondeo.png', '2023-10-17 14:39:57'),
-(00000000008, '10 - 14 Passenger', 10, 10, 0, 0, 0, 40, 'Toyota-Camry.png', '2023-10-17 14:39:57'),
-(00000000009, '15 - 16 Passenger', 15, 14, 0, 0, 0, 50, 'Citroen-Berlingo.png', '2023-10-17 14:39:57');
-
 -- --------------------------------------------------------
 
 --
@@ -1880,7 +1652,7 @@ CREATE TABLE `vehicle_extras` (
 --
 
 INSERT INTO `vehicle_extras` (`ve_id`, `d_id`, `ve_img`, `ve_created_at`, `ve_updated_at`) VALUES
-(00000001, 00000001, '68d434ddc167c.jpg', '2025-09-24 19:13:49', '0000-00-00 00:00:00');
+(00000001, 00000001, '6900db42eaae8.jpg', '2025-10-28 13:53:55', '2025-10-28 15:03:30');
 
 -- --------------------------------------------------------
 
@@ -1904,7 +1676,7 @@ CREATE TABLE `vehicle_insurance` (
 --
 
 INSERT INTO `vehicle_insurance` (`vi_id`, `d_id`, `vi_num`, `vi_exp`, `vi_exp_time`, `vi_img`, `vi_created_at`, `vi_updated_at`) VALUES
-(00000001, 00000001, '137286320', '2025-10-11', '12:50:00', '68d42ee066ae9.jpg', '2025-09-24 18:48:16', '0000-00-00 00:00:00');
+(00000001, 00000001, '1234567', '2025-12-25', '17:00:00', '6900c3f4d44c8.jpg', '2025-10-28 13:24:04', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1926,7 +1698,7 @@ CREATE TABLE `vehicle_ins_schedule` (
 --
 
 INSERT INTO `vehicle_ins_schedule` (`is_id`, `d_id`, `is_num`, `is_img`, `is_created_at`, `is_updated_at`) VALUES
-(00000001, 00000001, '137286320', '68d4346918428.jpg', '2025-09-24 19:11:53', '0000-00-00 00:00:00');
+(00000001, 00000001, '342423234', '6900ca29e6d1d.jpg', '2025-10-28 13:50:33', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1948,7 +1720,7 @@ CREATE TABLE `vehicle_log_book` (
 --
 
 INSERT INTO `vehicle_log_book` (`lb_id`, `d_id`, `lb_number`, `lb_img`, `lb_created_at`, `lb_updated_at`) VALUES
-(00000001, 00000001, '137286320', '68d4244e83eab.jpg', '2025-09-24 18:03:10', '0000-00-00 00:00:00');
+(00000001, 00000001, '12345678', '6900ba6d16f50.jpg', '2025-10-28 12:43:25', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1972,7 +1744,7 @@ CREATE TABLE `vehicle_mot` (
 --
 
 INSERT INTO `vehicle_mot` (`mot_id`, `d_id`, `mot_num`, `mot_expiry`, `mot_exp_time`, `mot_img`, `mot_created_at`, `mot_updated_at`) VALUES
-(00000001, 00000001, '137286320', '2026-01-23', '13:30:00', '68d4290f0104f.jpg', '2025-09-24 18:23:27', '0000-00-00 00:00:00');
+(00000001, 00000001, '12334465', '2025-12-25', '10:00:00', '6900bf5e68cd3.jpg', '2025-10-28 13:04:30', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1996,7 +1768,7 @@ CREATE TABLE `vehicle_pco` (
 --
 
 INSERT INTO `vehicle_pco` (`vpco_id`, `d_id`, `vpco_num`, `vpco_exp`, `vpco_exp_time`, `vpco_img`, `vpco_created_at`, `vpco_updated_at`) VALUES
-(00000001, 00000001, '137286320', '2025-10-08', '15:48:00', '68d42d916f08b.jpg', '2025-09-24 18:42:41', '0000-00-00 00:00:00');
+(00000001, 00000001, '12345678', '2025-12-25', '14:00:00', '6900c1610e7f4.jpg', '2025-10-28 13:13:05', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2018,7 +1790,7 @@ CREATE TABLE `vehicle_pictures` (
 --
 
 INSERT INTO `vehicle_pictures` (`vp_id`, `d_id`, `vp_front`, `vp_back`, `vp_created_at`, `vp_updated_at`) VALUES
-(00000001, 00000001, '68d42fa6d92ad.jpg', '68d42fa6d92b2.jpg', '2025-09-24 18:51:34', '0000-00-00 00:00:00');
+(00000001, 00000001, '6900c692689e8.jpg', '6900c692689e8.webp', '2025-10-28 13:35:14', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2042,7 +1814,7 @@ CREATE TABLE `vehicle_road_tax` (
 --
 
 INSERT INTO `vehicle_road_tax` (`rt_id`, `d_id`, `rt_num`, `rt_exp`, `rt_exp_time`, `rt_img`, `rt_created_at`, `rt_updated_at`) VALUES
-(00000001, 00000001, '137286320', '2025-10-02', '15:00:00', '68d4312a05e14.jpg', '2025-09-24 18:58:02', '0000-00-00 00:00:00');
+(00000001, 00000001, '4423535345', '2025-12-26', '15:00:00', '6900c7cf6fda9.jpg', '2025-10-28 13:40:31', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2898,7 +2670,7 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `log_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `address_proofs`
@@ -2958,7 +2730,7 @@ ALTER TABLE `cancelled_bookings`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `c_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `c_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `companies`
@@ -3036,7 +2808,7 @@ ALTER TABLE `driver_accounts`
 -- AUTO_INCREMENT for table `driver_bank_details`
 --
 ALTER TABLE `driver_bank_details`
-  MODIFY `d_bank_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `d_bank_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `driver_extras`
@@ -3048,7 +2820,7 @@ ALTER TABLE `driver_extras`
 -- AUTO_INCREMENT for table `driver_history`
 --
 ALTER TABLE `driver_history`
-  MODIFY `history_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `history_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `driver_location`
@@ -3072,7 +2844,7 @@ ALTER TABLE `driver_sessions`
 -- AUTO_INCREMENT for table `driver_vehicle`
 --
 ALTER TABLE `driver_vehicle`
-  MODIFY `dv_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `dv_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `driving_license`
@@ -3216,19 +2988,19 @@ ALTER TABLE `time_slots`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_page_access`
 --
 ALTER TABLE `user_page_access`
-  MODIFY `access_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `access_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `v_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `v_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `vehicle_extras`

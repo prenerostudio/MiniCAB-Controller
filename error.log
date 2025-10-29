@@ -4714,3 +4714,790 @@ Stack trace:
 [27-Oct-2025 09:48:26 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-pob-drivers.php on line 2
 [27-Oct-2025 09:48:26 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
 [27-Oct-2025 09:48:26 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[27-Oct-2025 15:04:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[27-Oct-2025 15:04:44 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[27-Oct-2025 15:04:56 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[27-Oct-2025 15:04:56 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[27-Oct-2025 15:05:09 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[27-Oct-2025 15:05:09 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'last_reset' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php:9
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php(9): mysqli->query('SELECT status, ...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(154): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php on line 9
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[27-Oct-2025 15:05:21 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[27-Oct-2025 15:05:21 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'last_reset' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php:9
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php(9): mysqli->query('SELECT status, ...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(154): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php on line 9
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[27-Oct-2025 15:06:00 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[27-Oct-2025 15:06:00 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[28-Oct-2025 04:46:34 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[28-Oct-2025 04:46:34 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[28-Oct-2025 04:55:43 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[28-Oct-2025 04:55:43 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[28-Oct-2025 04:55:44 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[28-Oct-2025 04:55:44 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[28-Oct-2025 04:55:45 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[28-Oct-2025 04:55:45 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[28-Oct-2025 04:55:46 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[28-Oct-2025 04:55:46 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\view-driver.php on line 19
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 12
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 35
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 39
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 43
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 47
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 52
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 63
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 73
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 77
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 82
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 83
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 101
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 119
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-details-section.php on line 128
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 16
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 19
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 27
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 31
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 57
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 60
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 87
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 95
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 99
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 120
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 128
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 147
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 155
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 172
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 14
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 21
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 38
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 45
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 49
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 72
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 79
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 83
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 105
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 112
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 116
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 141
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 145
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 171
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 178
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 182
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 203
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 210
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 214
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 237
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 244
+[28-Oct-2025 04:55:48 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 261
+[28-Oct-2025 04:55:48 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php:34
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php(34): mysqli_query(Object(mysqli), 'SELECT driver_v...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(139): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-section.php on line 34
+[28-Oct-2025 05:14:05 Europe/London] PHP Warning:  Undefined array key "dl_expiry_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 05:14:05 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 05:14:05 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 05:14:05 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 05:14:05 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 05:14:05 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 05:14:05 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 05:14:05 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'last_reset' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php:9
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php(9): mysqli->query('SELECT status, ...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(154): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php on line 9
+[28-Oct-2025 05:26:42 Europe/London] PHP Warning:  Undefined array key "dl_expiry_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 05:26:42 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 05:26:42 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 05:26:42 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 05:26:42 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 05:26:42 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 05:26:42 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 05:26:42 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'last_reset' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php:9
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php(9): mysqli->query('SELECT status, ...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(154): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php on line 9
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-online-drivers.php on line 2
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-online-drivers.php on line 2
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-offline-drivers.php on line 2
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-offline-drivers.php on line 2
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-pob-drivers.php on line 2
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-pob-drivers.php on line 2
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
+[28-Oct-2025 05:28:33 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-online-drivers.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-online-drivers.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-offline-drivers.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-offline-drivers.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-pob-drivers.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-pob-drivers.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
+[28-Oct-2025 05:28:42 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-online-drivers.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-online-drivers.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-offline-drivers.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-offline-drivers.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\count-pob-drivers.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\count-pob-drivers.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(../config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
+[28-Oct-2025 08:41:04 Europe/London] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\includes\update_driver_list.php on line 2
+[28-Oct-2025 08:41:11 Europe/London] PHP Warning:  Undefined array key "dl_expiry_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 08:41:11 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 08:41:11 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 08:41:11 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 08:41:11 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 08:41:11 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 08:41:11 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 08:41:11 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'last_reset' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php:9
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php(9): mysqli->query('SELECT status, ...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(154): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php on line 9
+[28-Oct-2025 08:41:29 Europe/London] PHP Warning:  Undefined array key "dl_expiry_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 08:41:29 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 08:41:29 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 08:41:29 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 08:41:29 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 08:41:29 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 08:41:29 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[28-Oct-2025 08:41:29 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'last_reset' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php:9
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php(9): mysqli->query('SELECT status, ...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\view-driver.php(154): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\activity-tracker.php on line 9
+[28-Oct-2025 08:43:15 Europe/London] PHP Warning:  Undefined array key "dl_expiry_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 35
+[28-Oct-2025 08:43:15 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 103
+[28-Oct-2025 08:43:15 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[28-Oct-2025 08:43:15 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[28-Oct-2025 08:43:15 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[28-Oct-2025 08:43:15 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[28-Oct-2025 08:43:15 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218

@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <div class="tab-pane" id="tabs-tracker">
                             <?php
-                            include('templates/drivers/activity-tracker.php');
+                            //include('templates/drivers/activity-tracker.php');
                             ?>
                         </div>			
                         <div class="tab-pane" id="tabs-activity">
