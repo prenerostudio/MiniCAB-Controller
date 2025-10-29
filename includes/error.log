@@ -292,3 +292,21 @@ Stack trace:
 #1 C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php(49): checkExpiringDocuments(Object(mysqli))
 #2 {main}
   thrown in C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php on line 29
+[27-Oct-2025 11:25:28 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'dl_expiry_time' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php:29
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php(29): mysqli_query(Object(mysqli), '\r\n            S...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php(49): checkExpiringDocuments(Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php on line 29
+[27-Oct-2025 11:25:38 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'dl_expiry_time' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php:29
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php(29): mysqli_query(Object(mysqli), '\r\n            S...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php(49): checkExpiringDocuments(Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php on line 29
+[27-Oct-2025 11:26:09 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'dl_expiry_time' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php:29
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php(29): mysqli_query(Object(mysqli), '\r\n            S...')
+#1 C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php(49): checkExpiringDocuments(Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\includes\check_expiry_alerts.php on line 29
