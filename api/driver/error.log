@@ -1,0 +1,15 @@
+[31-Oct-2025 12:25:03 Europe/London] PHP Warning:  Undefined array key "d_id" in C:\xampp\htdocs\minicab\api\driver\fetch-documents.php on line 10
+[01-Nov-2025 12:28:05 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS dl_*,
+            address_proofs.* AS ap_*,
+            pco_license.* AS p...' at line 3 in C:\xampp\htdocs\minicab\api\driver\fetch-documents.php:52
+Stack trace:
+#0 C:\xampp\htdocs\minicab\api\driver\fetch-documents.php(52): mysqli->prepare('\n        SELECT...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\api\driver\fetch-documents.php on line 52
+[01-Nov-2025 12:29:58 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS dl_*,
+            address_proofs.* AS ap_*,
+            pco_license.* AS p...' at line 3 in C:\xampp\htdocs\minicab\api\driver\fetch-documents.php:52
+Stack trace:
+#0 C:\xampp\htdocs\minicab\api\driver\fetch-documents.php(52): mysqli->prepare('\n        SELECT...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\api\driver\fetch-documents.php on line 52
