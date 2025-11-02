@@ -6340,3 +6340,522 @@ Stack trace:
 [01-Nov-2025 15:27:08 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\minicab\templates\drivers\driver-vehicle-document-section.php on line 121
 [01-Nov-2025 15:27:08 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\minicab\templates\drivers\driver-vehicle-document-section.php on line 186
 [01-Nov-2025 15:27:08 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\minicab\templates\drivers\driver-vehicle-document-section.php on line 218
+[01-Nov-2025 17:38:45 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(includes/count-online-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 56
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'includes/count-online-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 56
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(includes/count-offline-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 57
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'includes/count-offline-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 57
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(includes/count-pob-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 58
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'includes/count-pob-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 58
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $online_driver_count in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 62
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $pob_driver_count in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 62
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  Undefined variable $offline_driver_count in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 62
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(includes/update_driver_list.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 186
+[01-Nov-2025 17:38:45 Europe/London] PHP Warning:  include(): Failed opening 'includes/update_driver_list.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\dashboard.php on line 186
+[01-Nov-2025 17:39:05 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:39:05 Europe/London] PHP Warning:  Undefined array key "v_name" in C:\xampp\htdocs\MiniCAB-Controller\new-drivers.php on line 152
+[01-Nov-2025 17:39:14 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 222
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[01-Nov-2025 17:39:14 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[01-Nov-2025 17:40:14 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 222
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[01-Nov-2025 17:40:14 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[01-Nov-2025 17:40:53 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:40:53 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:40:54 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 222
+[01-Nov-2025 17:40:54 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[01-Nov-2025 17:40:54 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[01-Nov-2025 17:40:54 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[01-Nov-2025 17:40:54 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[01-Nov-2025 17:40:54 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[01-Nov-2025 17:54:32 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined array key "pl_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-document-section.php on line 283
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[01-Nov-2025 17:54:32 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[01-Nov-2025 17:58:02 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[01-Nov-2025 17:58:02 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[01-Nov-2025 18:00:33 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[01-Nov-2025 18:00:33 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218
+[01-Nov-2025 18:06:29 Europe/London] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\MiniCAB-Controller\session.php on line 2
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-open-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-open-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $open_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 26
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-all-bookings.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-all-bookings.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 27
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-upcoming-booking.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-upcoming-booking.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $upcoming_booking_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 28
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-inprocess.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-inprocess.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $inprocess_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 29
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-completed.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-completed.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $completed_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 30
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-cancelled.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-cancelled.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $cancel_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 31
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-active-companies.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-active-companies.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $active_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 77
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-block-company.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-block-company.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $block_company_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 78
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-customers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-customers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $customer_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 92
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-bookers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-bookers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $booker_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 93
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-new-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-new-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $new_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 108
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-active-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-active-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $active_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 109
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-inactive-drivers.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-inactive-drivers.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $inactive_driver_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 110
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-zones.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-zones.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $zone_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 125
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-airports.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-airports.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $ap_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 126
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-dest.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-dest.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $des_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 127
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(count-rs.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  include(): Failed opening 'count-rs.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined variable $rs_count in C:\xampp\htdocs\MiniCAB-Controller\navbar.php on line 128
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined array key "mot_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 53
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined array key "vpco_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 88
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined array key "vi_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 121
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined array key "rt_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 186
+[01-Nov-2025 18:06:29 Europe/London] PHP Warning:  Undefined array key "ra_exp_time" in C:\xampp\htdocs\MiniCAB-Controller\templates\drivers\driver-vehicle-document-section.php on line 218

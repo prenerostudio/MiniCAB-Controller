@@ -1,5 +1,5 @@
 <?php
-include('../../config.php');
+include('../../configuration.php');
 include('../../session.php');
 
 header('Content-Type: application/json')
@@ -25,7 +25,7 @@ foreach ($requiredTables as $table) {
 if ($allDocumentsUploaded) {
     $status = 1;
     $date = date("Y-m-d H:i:s");
-    $sql = "UPDATE `drivers` SET `acount_status`='$status', `driver_reg_date`='$date' WHERE `d_id`='$d_id'";
+    $sql = "UPDATE `drivers` SET `acount_status`='$status', `driver_update_at`='$date' WHERE `d_id`='$d_id'";
     $result = $connect->query($sql);
     if ($result) {
         $activity_type = 'Driver Verified';

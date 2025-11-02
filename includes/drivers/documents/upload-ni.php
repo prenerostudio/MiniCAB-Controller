@@ -1,75 +1,61 @@
 <?php
-include('../../../config.php');
+include('../../../configuration.php');
 include('../../../session.php');
+header('Content-Type: application/json');
 
-if (isset($_POST['submit'])) {
-    $d_id = $_POST['d_id'];
-    $ni_num = $_POST['ni_num'];
-    $date_update = date('Y-m-d H:i:s'); // Current timestamp
-    $targetDir = "../../../img/drivers/ni/";
+$response = ["status" => "error", "message" => "Unknown error"];
 
-    // Validate file extension
-    $fileExtension = strtolower(pathinfo($_FILES["ni"]["name"], PATHINFO_EXTENSION));
-    $allowedExtensions = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'pdf', 'tiff', 'webp', 'raw', 'svg', 'heif', 'apng', 'cr2', 'ico', 'jpeg2000', 'avif'];
+if (!isset($_POST['d_id'])) {
+    echo json_encode(["status" => "error", "message" => "Missing Driver ID"]);
+    exit;
+}
 
-    if (!in_array($fileExtension, $allowedExtensions)) {
-        header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-        exit("Invalid file type.");
-    }
+$d_id = $_POST['d_id'];
+$ni_num = $_POST['ni_num'] ?? '';
+$date_update = date('Y-m-d H:i:s');
+$targetDir = "../../../img/drivers/ni/";
 
-    // Generate unique filename and path
-    $uniqueId = uniqid();
-    $fileName = $uniqueId . "." . $fileExtension;
-    $targetFilePath = $targetDir . $fileName;
+$file = $_FILES["ni"];
+$fileExtension = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
+$allowed = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'webp', 'svg', 'pdf'];
 
-    // Attempt to upload the file
-    if (move_uploaded_file($_FILES["ni"]["tmp_name"], $targetFilePath)) {
-        try {
-            // Check if record exists
-            $stmt = $connect->prepare("SELECT * FROM `national_insurance` WHERE `d_id` = ?");
-            $stmt->bind_param("s", $d_id);
-            $stmt->execute();
-            $result = $stmt->get_result();
+if (!in_array($fileExtension, $allowed)) {
+    echo json_encode(["status" => "error", "message" => "Invalid file type"]);
+    exit;
+}
 
-            if ($result->num_rows > 0) {
-                // Update existing record
-                $updateStmt = $connect->prepare("UPDATE `national_insurance` SET `ni_number` = ?, `ni_img` = ?, `ni_updated_at` = ? WHERE `d_id` = ?");
-                $updateStmt->bind_param("ssss", $ni_num, $fileName, $date_update, $d_id);
+$fileName = uniqid("ni_") . "." . $fileExtension;
+$targetFilePath = $targetDir . $fileName;
 
-                if ($updateStmt->execute()) {
-                    logActivity('National Insurance Updated', $d_id, "National Insurance of Driver $d_id has been updated by Controller.");
-                } else {
-                    exit("Database update failed.");
-                }
-            } else {
-                // Insert new record
-                $insertStmt = $connect->prepare("INSERT INTO `national_insurance` (`d_id`, `ni_number`, `ni_img`, `ni_created_at`) VALUES (?, ?, ?, ?)");
-                $insertStmt->bind_param("ssss", $d_id, $ni_num, $fileName, $date_update);
+if (move_uploaded_file($file["tmp_name"], $targetFilePath)) {
+    $stmt = $connect->prepare("SELECT * FROM national_insurance WHERE d_id = ?");
+    $stmt->bind_param("s", $d_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-                if ($insertStmt->execute()) {
-                    logActivity('National Insurance Added', $d_id, "National Insurance of Driver $d_id has been added by Controller.");
-                } else {
-                    exit("Database insertion failed.");
-                }
-            }
-
-            header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-        } catch (Exception $e) {
-            exit("An error occurred: " . $e->getMessage());
-        }
+    if ($result->num_rows > 0) {
+        $update = $connect->prepare("UPDATE national_insurance SET ni_number=?, ni_img=?, ni_updated_at=? WHERE d_id=?");
+        $update->bind_param("ssss", $ni_num, $fileName, $date_update, $d_id);
+        $success = $update->execute();
     } else {
-        header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-        exit("File upload failed, please try again.");
+        $insert = $connect->prepare("INSERT INTO national_insurance (d_id, ni_number, ni_img, ni_created_at) VALUES (?, ?, ?, ?)");
+        $insert->bind_param("ssss", $d_id, $ni_num, $fileName, $date_update);
+        $success = $insert->execute();
     }
+
+    if ($success) {
+        $response = [
+            "status" => "success",
+            "message" => "National Insurance updated successfully!",
+            "image" => "img/drivers/ni/" . $fileName
+        ];
+    } else {
+        $response = ["status" => "error", "message" => "Database update failed"];
+    }
+} else {
+    $response = ["status" => "error", "message" => "File upload failed"];
 }
 
-// Function to log activities
-function logActivity($activityType, $driverId, $details)
-{
-    global $connect, $myId;
-    $userType = 'user';
-    $activityStmt = $connect->prepare("INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)");
-    $activityStmt->bind_param("ssss", $activityType, $userType, $myId, $details);
-    $activityStmt->execute();
-}
+echo json_encode($response);
+exit;
 ?>
