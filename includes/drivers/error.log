@@ -1,0 +1,5 @@
+[03-Nov-2025 05:00:03 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'vehicle_image' in 'field list' in C:\xampp\htdocs\minicab\includes\drivers\update-dv.php:44
+Stack trace:
+#0 C:\xampp\htdocs\minicab\includes\drivers\update-dv.php(44): mysqli_query(Object(mysqli), 'SELECT vehicle_...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\includes\drivers\update-dv.php on line 44

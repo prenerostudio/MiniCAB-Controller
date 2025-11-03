@@ -53,9 +53,7 @@
                                     </a>
                                 </td>
                             </tr>
-				<?php endwhile; ?>                                    
-                                
-                            
+				<?php endwhile; ?>                                                                                                
                         </tbody>
                     </table>
                 </div>
@@ -70,11 +68,9 @@ $(document).ready(function() {
     fixedHeader: true,
     dom: 'Bfrtip',
     buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-    language: {
-                            
-                emptyTable: "No Booking Found!" // ✅ Handles empty table cleanly        
-                
-            }
+    language: {                                            
+        emptyTable: "No Booking Found!" // ✅ Handles empty table cleanly                                   
+    }
   });
 });
 </script>

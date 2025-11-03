@@ -17,13 +17,7 @@
                         <tbody class="table-tbody">
                             <?php
                             $x = 0;
-                            $bsql = mysqli_query($connect, "
-                                SELECT drivers.*, driver_bank_details.* 
-                                FROM drivers 
-                                JOIN driver_bank_details 
-                                ON drivers.d_id = driver_bank_details.d_id 
-                                WHERE drivers.d_id = $d_id
-                            ");
+                            $bsql = mysqli_query($connect, "SELECT drivers.*, driver_bank_details.* FROM drivers JOIN driver_bank_details ON drivers.d_id = driver_bank_details.d_id WHERE drivers.d_id = $d_id");
                             while ($brow = mysqli_fetch_array($bsql)):
                                 $x++;
                             ?>

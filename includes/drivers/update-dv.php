@@ -1,5 +1,5 @@
 <?php
-require '../../config.php';
+require '../../configuration.php';
 include('../../session.php');
 
 $dv_id = $_POST['dv_id'];
@@ -15,40 +15,45 @@ $taxi_ins = $_POST['taxi_ins'];
 $taxi_exp = $_POST['taxi_exp'];
 $mot = $_POST['mot'];
 $mot_exp = $_POST['mot_exp'];
-         
+
+$response = [];
+
 $sql = "UPDATE `driver_vehicle` SET 
-				`v_id`='$v_id',									
-				`v_make`='$make',
-				`v_model`='$model',
-				`v_color`='$color',
-				`v_reg_num`='$reg_num',
-				`v_phv`='$phv',
-				`v_phv_expiry`='$phv_exp',
-				`v_ti`='$taxi_ins',
-				`v_ti_expiry`='$taxi_exp',
-				`v_mot`='$mot',
-				`v_mot_expiry`='$mot_exp' WHERE `dv_id`='$dv_id'";
-         
-$result = mysqli_query($connect, $sql);              
-if ($result) { 	
-    $activity_type = 'Driver Vehicle Details Update';	
-    $user_type = 'user';	
-    $details = "Driver Vehicle Details Has Been updated by Controller.";	
-    $actsql = "INSERT INTO `activity_log`(
-					`activity_type`, 
-					`user_type`, 
-					`user_id`, 
-					`details`
-					) VALUES (
-					'$activity_type',
-					'$user_type',
-					'$myId',
-					'$details')";	
-    $actr = mysqli_query($connect, $actsql);			
-    header('Location: ../../view-driver.php?d_id='.$d_id.'#tabs-vehicle');          
-    exit();       
-} else {           			
-    header('Location: ../../view-driver.php?d_id='.$d_id.'#tabs-vehicle');         
-}                   
+    `v_id`='$v_id',
+    `v_make`='$make',
+    `v_model`='$model',
+    `v_color`='$color',
+    `v_reg_num`='$reg_num',
+    `v_phv`='$phv',
+    `v_phv_expiry`='$phv_exp',
+    `v_ti`='$taxi_ins',
+    `v_ti_expiry`='$taxi_exp',
+    `v_mot`='$mot',
+    `v_mot_expiry`='$mot_exp'
+    WHERE `dv_id`='$dv_id'";
+
+if (mysqli_query($connect, $sql)) {
+    // Log activity
+    $activity_type = 'Driver Vehicle Details Update';
+    $user_type = 'user';
+    $details = 'Driver Vehicle Details has been updated by Controller.';
+    mysqli_query($connect, "INSERT INTO activity_log (activity_type, user_type, user_id, details)
+                            VALUES ('$activity_type', '$user_type', '$myId', '$details')");
+
+    
+
+    $response = [
+        'status' => 'success',
+        'message' => 'Vehicle details updated successfully!'
+    ];
+} else {
+    $response = [
+        'status' => 'error',
+        'message' => 'Error updating vehicle details.'
+    ];
+}
+
+header('Content-Type: application/json');
+echo json_encode($response);
 $connect->close();
 ?>

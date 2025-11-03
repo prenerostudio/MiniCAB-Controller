@@ -346,8 +346,7 @@
                         );
                     }
 
-                    // ✅ Reset file input
-                    $("#pco").val("");
+                  
                 } else {
                     Swal.fire({
                         title: "Error!",
@@ -436,8 +435,7 @@ $(document).ready(function() {
                     // Update preview image dynamically
                     $('#niPreview').css('background-image', 'url(' + response.image + '?v=' + new Date().getTime() + ')');
                     
-                    // Clear the form
-                    $('#uploadNiForm')[0].reset();
+                   
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -548,18 +546,82 @@ document.getElementById('dvlaForm').addEventListener('submit', function(e) {
                 Extra
             </h3>
             <div class="row align-items-center">
-                <div class="col-auto">
-                    <span class="avatar avatar-xl" style="background-image: url(img/drivers/extra/<?php echo $drow['de_img'];?>); background-size:contain; width: 220px; height: 160px;">
-                    </span>
-                </div>						
-                <div class="col-auto">						
-                    <form action="includes/drivers/documents/upload-extra.php" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
-                        <input type="file" id="extra" name="extra" accept="image/*"  class="form-control" required>
-                        <input type="submit" value="Upload Image" name="submit"  class="btn btn-info" style="margin-top: 25px;">
-                    </form>
-                </div>
-            </div>	
+    <div class="col-auto">
+        <span id="extraPreview" class="avatar avatar-xl" 
+            style="background-image: url(img/drivers/extra/<?php echo $drow['de_img'];?>); 
+                   background-size: contain; 
+                   width: 220px; 
+                   height: 160px;">
+        </span>
+    </div>						
+    <div class="col-auto">						
+        <form id="extraForm" enctype="multipart/form-data">
+            <input type="hidden" name="d_id" value="<?php echo $d_id; ?>">
+            <input type="file" id="extra" name="extra" accept="image/*" class="form-control" required>
+            <button type="submit" class="btn btn-info" style="margin-top: 25px;">Upload Image</button>
+        </form>
+    </div>
+</div>
+            <script>
+$(document).ready(function() {
+    $('#extraForm').on('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        var formData = new FormData(this);
+        formData.append('submit', true); // Mimic your PHP POST check
+
+        $.ajax({
+            url: 'includes/drivers/documents/upload-extra.php',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            beforeSend: function() {
+                Swal.fire({
+                    title: 'Uploading...',
+                    text: 'Please wait while your image is being uploaded.',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+            },
+            success: function(response) {
+                Swal.close();
+
+                if (response.status === 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Uploaded!',
+                        text: response.message,
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+
+                    // Update image preview
+                    $('#extraPreview').css('background-image', 'url("img/drivers/extra/' + response.fileName + '")');
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.message
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                Swal.close();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Upload Failed',
+                    text: 'An unexpected error occurred: ' + error
+                });
+            }
+        });
+    });
+});
+</script>
+
         </div>	
     </div>
 </div>

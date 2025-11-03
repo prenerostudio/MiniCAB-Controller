@@ -1,79 +1,72 @@
 <?php
-include('../../../config.php');
+ob_start();
+error_reporting(0);
+header('Content-Type: application/json');
+
+include('../../../configuration.php');
 include('../../../session.php');
 
-if (isset($_POST['submit'])) {
+if (isset($_FILES['rt'], $_POST['d_id'])) {
+
     $d_id = $_POST['d_id'];
-    $rt_num = $_POST['rt_num'];
-    $rt_exp = $_POST['rt_exp'];
-	
-    $rt_exp_time = $_POST['rt_exp_time'];
-    $date_update = date('Y-m-d H:i:s'); // Current timestamp
+    $rt_num = $_POST['rt_num'] ?? '';
+    $rt_exp = $_POST['rt_exp'] ?? '';
+    $rt_exp_time = $_POST['rt_exp_time'] ?? '';
+    $date_update = date('Y-m-d H:i:s');
     $targetDir = "../../../img/drivers/vehicle/road-tax/";
 
-    // Validate file extension
     $fileExtension = strtolower(pathinfo($_FILES["rt"]["name"], PATHINFO_EXTENSION));
-    $allowedExtensions = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'pdf', 'tiff', 'webp', 'raw', 'svg', 'heif', 'apng', 'cr2', 'ico', 'jpeg2000', 'avif'];
+    $allowedExtensions = ['jpg','png','jpeg','gif','bmp','pdf','tiff','webp','raw','svg','heif','apng','cr2','ico','jpeg2000','avif'];
 
     if (!in_array($fileExtension, $allowedExtensions)) {
-        header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-        exit("Invalid file type.");
+        echo json_encode(["status" => "error", "message" => "Invalid file type."]);
+        exit();
     }
 
-    // Generate unique filename and path
-    $uniqueId = uniqid();
-    $fileName = $uniqueId . "." . $fileExtension;
+    $fileName = uniqid("roadtax_") . "." . $fileExtension;
     $targetFilePath = $targetDir . $fileName;
 
-    // Attempt to upload the file
     if (move_uploaded_file($_FILES["rt"]["tmp_name"], $targetFilePath)) {
         try {
-            // Check if record exists
             $stmt = $connect->prepare("SELECT * FROM `vehicle_road_tax` WHERE `d_id` = ?");
             $stmt->bind_param("s", $d_id);
             $stmt->execute();
             $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
-                // Update existing record
-                $updateStmt = $connect->prepare("UPDATE `vehicle_road_tax` SET `rt_num`= ?,`rt_exp`= ?,`rt_exp_time`= ?,`rt_img`= ?,`rt_updated_at`= ? WHERE `d_id` = ?");
+                $updateStmt = $connect->prepare("UPDATE `vehicle_road_tax` SET `rt_num`=?,`rt_exp`=?,`rt_exp_time`=?,`rt_img`=?,`rt_updated_at`=? WHERE `d_id`=?");
                 $updateStmt->bind_param("ssssss", $rt_num, $rt_exp, $rt_exp_time, $fileName, $date_update, $d_id);
-
-                if ($updateStmt->execute()) {
-                    logActivity('Vehicle Road TAX Updated', $d_id, "Vehicle Road TAX of Driver $d_id has been updated by Controller.");
-                } else {
-                    exit("Database update failed.");
-                }
+                $updateStmt->execute();
+                logActivity('Vehicle Road TAX Updated', $d_id, "Vehicle Road TAX of Driver $d_id has been updated by Controller.");
             } else {
-                // Insert new record
-                $insertStmt = $connect->prepare("INSERT INTO `vehicle_road_tax`(`d_id`, `rt_num`, `rt_exp`, `rt_exp_time`, `rt_img`, `rt_created_at`) VALUES (?, ?, ?, ?, ?, ?)");
+                $insertStmt = $connect->prepare("INSERT INTO `vehicle_road_tax`(`d_id`,`rt_num`,`rt_exp`,`rt_exp_time`,`rt_img`,`rt_created_at`) VALUES (?, ?, ?, ?, ?, ?)");
                 $insertStmt->bind_param("ssssss", $d_id, $rt_num, $rt_exp, $rt_exp_time, $fileName, $date_update);
-
-                if ($insertStmt->execute()) {
-                    logActivity('Vehicle Road TAX Added', $d_id, "Vehicle Road TAX of Driver $d_id has been added by Controller.");
-                } else {
-                    exit("Database insertion failed.");
-                }
+                $insertStmt->execute();
+                logActivity('Vehicle Road TAX Added', $d_id, "Vehicle Road TAX of Driver $d_id has been added by Controller.");
             }
 
-            header('location: ../../../view-driver.php?d_id='.$d_id.'#tabs-vdocument');
+            echo json_encode([
+                "status" => "success",
+                "message" => "Road TAX document uploaded successfully.",
+                "rt_img" => $fileName
+            ]);
         } catch (Exception $e) {
-            exit("An error occurred: " . $e->getMessage());
+            echo json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);
         }
     } else {
-        header('location: ../../../view-driver.php?d_id='.$d_id.'#tabs-vdocument');
-        exit("File upload failed, please try again.");
+        echo json_encode(["status" => "error", "message" => "File upload failed, please try again."]);
     }
+
+} else {
+    echo json_encode(["status" => "error", "message" => "Missing required data."]);
 }
 
-// Function to log activities
 function logActivity($activityType, $driverId, $details)
 {
     global $connect, $myId;
     $userType = 'user';
-    $activityStmt = $connect->prepare("INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)");
-    $activityStmt->bind_param("ssss", $activityType, $userType, $myId, $details);
-    $activityStmt->execute();
+    $stmt = $connect->prepare("INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $activityType, $userType, $myId, $details);
+    $stmt->execute();
 }
 ?>
-

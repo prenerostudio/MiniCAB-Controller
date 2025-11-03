@@ -1,75 +1,69 @@
 <?php
-include('../../../config.php');
+include('../../../configuration.php');
 include('../../../session.php');
 
+header('Content-Type: application/json');
+
+$response = [];
+
 if (isset($_POST['submit'])) {
-    $d_id = $_POST['d_id'];
-    $date_update = date('Y-m-d H:i:s'); // Current timestamp
+    $d_id = $_POST['d_id'] ?? '';
+    $date_update = date('Y-m-d H:i:s');
     $targetDir = "../../../img/drivers/extra/";
+    $allowedExtensions = ['jpg','png','jpeg','gif','bmp','pdf','tiff','webp','raw','svg','heif','apng','cr2','ico','jpeg2000','avif'];
 
-    // Allowed file extensions
-    $allowedExtensions = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'pdf', 'tiff', 'webp', 'raw', 'svg', 'heif', 'apng', 'cr2', 'ico', 'jpeg2000', 'avif'];
+    if (!isset($_FILES["extra"]["name"]) || $_FILES["extra"]["name"] === '') {
+        echo json_encode(["status" => "error", "message" => "No file selected for upload."]);
+        exit;
+    }
 
-    // Validate and handle file upload
-    if (isset($_FILES["extra"]["name"]) && $_FILES["extra"]["name"] !== '') {
-        $fileExtension = strtolower(pathinfo($_FILES["extra"]["name"], PATHINFO_EXTENSION));
-        
-        if (!in_array($fileExtension, $allowedExtensions)) {
-            header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-            exit("Invalid file type.");
-        }
+    $fileExtension = strtolower(pathinfo($_FILES["extra"]["name"], PATHINFO_EXTENSION));
+    if (!in_array($fileExtension, $allowedExtensions)) {
+        echo json_encode(["status" => "error", "message" => "Invalid file type."]);
+        exit;
+    }
 
-        // Generate unique filename
-        $fileName = uniqid() . "." . $fileExtension;
-        $targetFilePath = $targetDir . $fileName;
+    $fileName = uniqid() . "." . $fileExtension;
+    $targetFilePath = $targetDir . $fileName;
 
-        // Attempt to upload the file
-        if (move_uploaded_file($_FILES["extra"]["tmp_name"], $targetFilePath)) {
-            try {
-                // Check if record exists
-                $stmt = $connect->prepare("SELECT * FROM `driver_extras` WHERE `d_id` = ?");
-                $stmt->bind_param("s", $d_id);
-                $stmt->execute();
-                $result = $stmt->get_result();
+    if (move_uploaded_file($_FILES["extra"]["tmp_name"], $targetFilePath)) {
+        try {
+            $stmt = $connect->prepare("SELECT * FROM `driver_extras` WHERE `d_id` = ?");
+            $stmt->bind_param("s", $d_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-                if ($result->num_rows > 0) {
-                    // Update existing record
-                    $updateStmt = $connect->prepare("UPDATE `driver_extras` SET `de_img`= ?, `de_updated_at`= ? WHERE `d_id` = ?");
-                    $updateStmt->bind_param("sss", $fileName, $date_update, $d_id);
+            if ($result->num_rows > 0) {
+                $updateStmt = $connect->prepare("UPDATE `driver_extras` SET `de_img`= ?, `de_updated_at`= ? WHERE `d_id` = ?");
+                $updateStmt->bind_param("sss", $fileName, $date_update, $d_id);
+                $updateStmt->execute();
 
-                    if (!$updateStmt->execute()) {
-                        exit("Database update failed.");
-                    }
+                logActivity('Driver Extra Document Updated', $d_id, "Driver Extra Document of Driver $d_id has been updated by Controller.");
+            } else {
+                $insertStmt = $connect->prepare("INSERT INTO `driver_extras`(`d_id`, `de_img`, `de_created_at`) VALUES (?, ?, ?)");
+                $insertStmt->bind_param("sss", $d_id, $fileName, $date_update);
+                $insertStmt->execute();
 
-                    logActivity('Driver Extra Document Updated', $d_id, "Driver Extra Document of Driver $d_id has been updated by Controller.");
-                } else {
-                    // Insert new record
-                    $insertStmt = $connect->prepare("INSERT INTO `driver_extras`(`d_id`, `de_img`, `de_created_at`) VALUES (?, ?, ?)");
-                    $insertStmt->bind_param("sss", $d_id, $fileName, $date_update);
-
-                    if (!$insertStmt->execute()) {
-                        exit("Database insertion failed.");
-                    }
-
-                    logActivity('Driver Extra Document Added', $d_id, "Driver Extra Document of Driver $d_id has been added by Controller.");
-                }
-
-                header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-                exit;
-            } catch (Exception $e) {
-                exit("An error occurred: " . $e->getMessage());
+                logActivity('Driver Extra Document Added', $d_id, "Driver Extra Document of Driver $d_id has been added by Controller.");
             }
-        } else {
-            header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-            exit("File upload failed, please try again.");
+
+            echo json_encode([
+                "status" => "success",
+                "message" => "Image uploaded successfully.",
+                "fileName" => $fileName
+            ]);
+            exit;
+        } catch (Exception $e) {
+            echo json_encode(["status" => "error", "message" => "Error: " . $e->getMessage()]);
+            exit;
         }
     } else {
-        header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-        exit("No file selected for upload.");
+        echo json_encode(["status" => "error", "message" => "File upload failed, please try again."]);
+        exit;
     }
 }
 
-// Function to log activities
+// Log activity function
 function logActivity($activityType, $driverId, $details)
 {
     global $connect, $myId;

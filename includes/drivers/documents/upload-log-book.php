@@ -1,28 +1,32 @@
 <?php
-include('../../../config.php');
+include('../../../configuration.php');
 include('../../../session.php');
 
+header('Content-Type: application/json');
+
 if (isset($_POST['submit'])) {
-    $d_id = $_POST['d_id'];
-    $lb_num = $_POST['lb_num'];
-    $date_update = date('Y-m-d H:i:s'); // Current timestamp
+    $d_id = $_POST['d_id'] ?? '';
+    $lb_num = $_POST['lb_num'] ?? '';
+    $date_update = date('Y-m-d H:i:s');
     $targetDir = "../../../img/drivers/vehicle/log-book/";
 
-    // Validate file extension
-    $fileExtension = strtolower(pathinfo($_FILES["log_book"]["name"], PATHINFO_EXTENSION));
-    $allowedExtensions = ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'pdf', 'tiff', 'webp', 'raw', 'svg', 'heif', 'apng', 'cr2', 'ico', 'jpeg2000', 'avif'];
+    // Allowed file extensions
+    $allowedExtensions = ['jpg','png','jpeg','gif','bmp','pdf','tiff','webp','raw','svg','heif','apng','cr2','ico','jpeg2000','avif'];
 
-    if (!in_array($fileExtension, $allowedExtensions)) {
-        header("Location: ../../../view-driver.php?d_id=$d_id#tabs-document");
-        exit("Invalid file type.");
+    if (!isset($_FILES["log_book"]["name"]) || $_FILES["log_book"]["name"] === '') {
+        echo json_encode(["status" => "error", "message" => "No file selected for upload."]);
+        exit;
     }
 
-    // Generate unique filename and path
-    $uniqueId = uniqid();
-    $fileName = $uniqueId . "." . $fileExtension;
+    $fileExtension = strtolower(pathinfo($_FILES["log_book"]["name"], PATHINFO_EXTENSION));
+    if (!in_array($fileExtension, $allowedExtensions)) {
+        echo json_encode(["status" => "error", "message" => "Invalid file type."]);
+        exit;
+    }
+
+    $fileName = uniqid() . "." . $fileExtension;
     $targetFilePath = $targetDir . $fileName;
 
-    // Attempt to upload the file
     if (move_uploaded_file($_FILES["log_book"]["tmp_name"], $targetFilePath)) {
         try {
             // Check if record exists
@@ -32,44 +36,44 @@ if (isset($_POST['submit'])) {
             $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
-                // Update existing record
-                $updateStmt = $connect->prepare("UPDATE `vehicle_log_book` SET `lb_number`= ?,`lb_img`= ?,`lb_updated_at`= ? WHERE `d_id` = ?");
+                // Update
+                $updateStmt = $connect->prepare("UPDATE `vehicle_log_book` SET `lb_number`=?, `lb_img`=?, `lb_updated_at`=? WHERE `d_id`=?");
                 $updateStmt->bind_param("ssss", $lb_num, $fileName, $date_update, $d_id);
+                $updateStmt->execute();
 
-                if ($updateStmt->execute()) {
-                    logActivity('Vehicle Log Book Updated', $d_id, "Vehicle Log Book of Driver $d_id has been updated by Controller.");
-                } else {
-                    exit("Database update failed.");
-                }
+                logActivity('Vehicle Log Book Updated', $d_id, "Vehicle Log Book of Driver $d_id updated by Controller.");
             } else {
-                // Insert new record
-                $insertStmt = $connect->prepare("INSERT INTO `vehicle_log_book`(`d_id`, `lb_number`, `lb_img`, `lb_created_at`)  VALUES (?, ?, ?, ?)");
+                // Insert
+                $insertStmt = $connect->prepare("INSERT INTO `vehicle_log_book`(`d_id`, `lb_number`, `lb_img`, `lb_created_at`) VALUES (?, ?, ?, ?)");
                 $insertStmt->bind_param("ssss", $d_id, $lb_num, $fileName, $date_update);
+                $insertStmt->execute();
 
-                if ($insertStmt->execute()) {
-                    logActivity('Vehicle Log Book Added', $d_id, "Vehicle Log Book of Driver $d_id has been added by Controller.");
-                } else {
-                    exit("Database insertion failed.");
-                }
+                logActivity('Vehicle Log Book Added', $d_id, "Vehicle Log Book of Driver $d_id added by Controller.");
             }
 
-            header('location: ../../../view-driver.php?d_id='.$d_id.'#tabs-vdocument');
+            echo json_encode([
+                "status" => "success",
+                "message" => "Log Book uploaded successfully.",
+                "fileName" => $fileName
+            ]);
+            exit;
         } catch (Exception $e) {
-            exit("An error occurred: " . $e->getMessage());
+            echo json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);
+            exit;
         }
     } else {
-        header('location: ../../../view-driver.php?d_id='.$d_id.'#tabs-vdocument');
-        exit("File upload failed, please try again.");
+        echo json_encode(["status" => "error", "message" => "File upload failed."]);
+        exit;
     }
 }
 
-// Function to log activities
+// Function to log user activity
 function logActivity($activityType, $driverId, $details)
 {
     global $connect, $myId;
     $userType = 'user';
-    $activityStmt = $connect->prepare("INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)");
-    $activityStmt->bind_param("ssss", $activityType, $userType, $myId, $details);
-    $activityStmt->execute();
+    $stmt = $connect->prepare("INSERT INTO `activity_log` (`activity_type`, `user_type`, `user_id`, `details`) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $activityType, $userType, $myId, $details);
+    $stmt->execute();
 }
 ?>

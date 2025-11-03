@@ -34,33 +34,89 @@ $drow = mysqli_fetch_array($dsql);
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const approveBtn = document.getElementById('approveDriverBtn');
-    if (approveBtn) {
-        approveBtn.addEventListener('click', function () {
-            const driverId = this.dataset.did;
-            if (confirm('Are you sure you want to approve this driver?')) {
-                fetch('includes/drivers/update-driver-status.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: 'd_id=' + encodeURIComponent(driverId)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(data.message);
+    if (!approveBtn) return;
+
+    approveBtn.addEventListener('click', function () {
+        const driverId = this.dataset.did;
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'Do you really want to approve this driver?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, approve it!'
+        }).then((result) => {
+            if (!result.isConfirmed) return;
+
+            // show loading
+            Swal.fire({
+                title: 'Processing...',
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading()
+            });
+
+            fetch('includes/drivers/update-driver-status.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                },
+                body: 'd_id=' + encodeURIComponent(driverId)
+            })
+            .then(response => response.text())
+            .then(text => {
+                // try parse JSON, but handle HTML/errors gracefully
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (err) {
+                    // close loader and show raw server response for debugging
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid JSON response',
+                        html: `<div style="text-align:left;max-height:300px;overflow:auto;"><pre>${escapeHtml(text)}</pre></div>`,
+                        width: '800px'
+                    });
+                    console.error('Server response (not JSON):', text);
+                    return;
+                }
+
+                // handle JSON response
+                Swal.fire({
+                    icon: data.status === 'success' ? 'success' : 'error',
+                    title: data.status === 'success' ? 'Approved!' : 'Error!',
+                    text: data.message,
+                    confirmButtonColor: '#3085d6'
+                }).then(() => {
                     if (data.status === 'success') {
-                        // Optionally reload or update UI
+                        // reload or update UI without reload
                         location.reload();
                     }
-                })
-                .catch(error => {
-                    alert('An error occurred: ' + error);
                 });
-            }
+
+            })
+            .catch(fetchErr => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Network error',
+                    text: 'An error occurred: ' + fetchErr
+                });
+                console.error(fetchErr);
+            });
         });
+    });
+
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
     }
 });
 </script>
+
+
 <div class="page-body page_padding">          		
     <div class="row row-deck row-cards">
         <div class="col-md-12">

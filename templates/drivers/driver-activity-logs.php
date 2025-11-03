@@ -5,8 +5,8 @@
     <div class="row mb-3">
         <div class="card">
             <div class="card-body border-bottom py-3">
-                <div class="table-responsive">
-                    <table class="table" id="table-logs">
+                <div>
+                    <table class="table table-responsive" id="table-logs">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -37,15 +37,8 @@
                                 </td>
                             </tr>
 				<?php endwhile; ?>
-                                <?php if ($x === 0) : ?>
-                            <tr>
-                                <td colspan="4">
-                                    <p align="center">
-                                        No Log Found!
-                                    </p>
-                                </td>
-                            </tr>
-				<?php endif; ?>
+                                
+                            
                         </tbody>
                     </table>
                 </div>
@@ -60,9 +53,9 @@ $(document).ready(function() {
     fixedHeader: true,
     dom: 'Bfrtip',
     buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-    columnDefs: [
-      { targets: '_all', defaultContent: '' }
-    ]
+    language: {                                            
+        emptyTable: "No Log Found!" // ✅ Handles empty table cleanly                                   
+    }
   });
 });
 </script>
