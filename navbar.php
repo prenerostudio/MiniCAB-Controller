@@ -18,17 +18,77 @@
                     <?php if ($add_booking || $open_booking || $all_booking || $upcoming_booking || $inprocess_booking || $completed_booking || $cancelled_booking): ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#navbar-booking" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="ti ti-book"></i></span>
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-book"></i></span>
                             <span class="nav-link-title">Bookings</span>
                         </a>
                         <div class="dropdown-menu">
-                            <?php if ($add_booking): ?><a class="dropdown-item" href="add-booking.php"><i class="ti ti-bookmark-plus"></i> Add New Booking</a><?php endif; ?>
-                            <?php if ($open_booking): ?><a class="dropdown-item" href="open-bookings.php"><i class="ti ti-folder-open"></i> Open Bookings <?php include 'count-open-booking.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $open_booking_count; ?></span></a><?php endif; ?>
-                            <?php if ($all_booking): ?><a class="dropdown-item" href="all-bookings.php"><i class="ti ti-bookmarks"></i> All Bookings <?php include 'count-all-bookings.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $booking_count; ?></span></a><?php endif; ?>
-                            <?php if ($upcoming_booking): ?><a class="dropdown-item" href="upcoming-bookings.php"><i class="ti ti-alarm-plus"></i> Upcoming Bookings <?php include 'count-upcoming-booking.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $upcoming_booking_count; ?></span></a><?php endif; ?>
-                            <?php if ($inprocess_booking): ?><a class="dropdown-item" href="inprocess-bookings.php"><i class="ti ti-address-book"></i> Booking In-Process <?php include 'count-inprocess.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $inprocess_count; ?></span></a><?php endif; ?>
-                            <?php if ($completed_booking): ?><a class="dropdown-item" href="completed-booking.php"><i class="ti ti-bookmarks-filled"></i> Completed Bookings <?php include 'count-completed.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $completed_count; ?></span></a><?php endif; ?>
-                            <?php if ($cancelled_booking): ?><a class="dropdown-item" href="cancelled-booking.php"><i class="ti ti-bookmarks-off"></i> Cancelled Bookings <?php include 'count-cancelled.php'; ?><span class="badge bg-red-lt ms-auto"><?php echo $cancel_count; ?></span></a><?php endif; ?>
+                            <?php if ($add_booking): ?>
+                            <a class="dropdown-item" href="add-booking.php">
+                                <i class="ti ti-bookmark-plus"></i> 
+                                Add New Booking
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($open_booking): ?>
+                            <a class="dropdown-item" href="open-bookings.php">
+                                <i class="ti ti-folder-open"></i> 
+                                Open Bookings 
+                                    <?php include 'includes/bookings/count-open-booking.php'; ?>
+                                <span class="badge bg-green-lt ms-auto">
+                                    <?php echo $open_booking_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($all_booking): ?>
+                            <a class="dropdown-item" href="all-bookings.php">
+                                <i class="ti ti-bookmarks"></i> 
+                                All Bookings 
+                                    <?php include 'includes/bookings/count-all-bookings.php'; ?>
+                                <span class="badge bg-green-lt ms-auto">
+                                    <?php echo $booking_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($upcoming_booking): ?>
+                            <a class="dropdown-item" href="upcoming-bookings.php">
+                                <i class="ti ti-alarm-plus"></i> 
+                                Upcoming Bookings 
+                                    <?php include 'includes/bookings/count-upcoming-booking.php'; ?>
+                                <span class="badge bg-green-lt ms-auto">
+                                    <?php echo $upcoming_booking_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($inprocess_booking): ?>
+                            <a class="dropdown-item" href="inprocess-bookings.php">
+                                <i class="ti ti-address-book"></i> 
+                                Booking In-Process 
+                                    <?php include 'includes/bookings/count-inprocess.php'; ?>
+                                <span class="badge bg-green-lt ms-auto">
+                                    <?php echo $inprocess_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($completed_booking): ?>
+                            <a class="dropdown-item" href="completed-booking.php">
+                                <i class="ti ti-bookmarks-filled"></i> 
+                                Completed Bookings 
+                                    <?php include 'includes/bookings/count-completed.php'; ?>
+                                <span class="badge bg-green-lt ms-auto">
+                                    <?php echo $completed_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($cancelled_booking): ?>
+                            <a class="dropdown-item" href="cancelled-booking.php">
+                                <i class="ti ti-bookmarks-off"></i> 
+                                Cancelled Bookings 
+                                    <?php include 'includes/bookings/count-cancelled.php'; ?>
+                                <span class="badge bg-red-lt ms-auto">
+                                    <?php echo $cancel_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
                         </div>
                     </li>
                     <?php endif; ?>
@@ -37,13 +97,30 @@
                     <?php if ($new_bid || $bid_booking || $accepted_bids): ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="ti ti-gavel"></i></span>
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-gavel"></i>
+                            </span>
                             <span class="nav-link-title">Bids</span>
                         </a>
                         <div class="dropdown-menu">
-                            <?php if ($new_bid): ?><a class="dropdown-item" href="add-bid.php"><i class="ti ti-file-plus"></i> Add New Bid</a><?php endif; ?>
-                            <?php if ($bid_booking): ?><a class="dropdown-item" href="bid-bookings.php"><i class="ti ti-file-check"></i> Bookings on Bid</a><?php endif; ?>
-                            <?php if ($accepted_bids): ?><a class="dropdown-item" href="accepted-bids.php"><i class="ti ti-users"></i> Accepted Bids</a><?php endif; ?>
+                            <?php if ($new_bid): ?>
+                            <a class="dropdown-item" href="add-bid.php">
+                                <i class="ti ti-file-plus"></i> 
+                                Add New Bid
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($bid_booking): ?>
+                            <a class="dropdown-item" href="bid-bookings.php">
+                                <i class="ti ti-file-check"></i> 
+                                Bookings on Bid
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($accepted_bids): ?>
+                            <a class="dropdown-item" href="accepted-bids.php">
+                                <i class="ti ti-users"></i> 
+                                Accepted Bids
+                            </a>
+                                <?php endif; ?>
                         </div>
                     </li>
                     <?php endif; ?>
@@ -85,13 +162,41 @@
                     <?php if ($customer_accounts || $booker_accounts || $deleted_accounts): ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="ti ti-user-shield"></i></span>
-                            <span class="nav-link-title">Customers</span>
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-user-shield"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                Customers
+                            </span>
                         </a>
                         <div class="dropdown-menu">
-                            <?php if ($customer_accounts): ?><a class="dropdown-item" href="customers.php"><i class="ti ti-users-group"></i> Customers <?php include 'count-customers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $customer_count; ?></span></a><?php endif; ?>
-                            <?php if ($booker_accounts): ?><a class="dropdown-item" href="bookers.php"><i class="ti ti-users-group"></i> Bookers <?php include 'count-bookers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $booker_count; ?></span></a><?php endif; ?>
-                            <?php if ($deleted_accounts): ?><a class="dropdown-item" href="#"><i class="ti ti-users-group"></i> Delete Requests <span class="badge bg-green-lt ms-auto">0</span></a><?php endif; ?>
+                            <?php if ($customer_accounts): ?>
+                            <a class="dropdown-item" href="customers.php">
+                                <i class="ti ti-users-group"></i> 
+                                Customers 
+                                    <?php include 'includes/customer/count-customers.php'; ?>
+                                <span class="badge bg-green-lt ms-auto">
+                                    <?php echo $customer_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($booker_accounts): ?>
+                            <a class="dropdown-item" href="bookers.php">
+                                <i class="ti ti-users-group"></i> 
+                                Bookers 
+                                    <?php include 'includes/booker/count-bookers.php'; ?>
+                                <span class="badge bg-green-lt ms-auto">
+                                    <?php echo $booker_count; ?>
+                                </span>
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($deleted_accounts): ?>
+                            <a class="dropdown-item" href="deleted-customers.php">
+                                <i class="ti ti-users-group"></i> 
+                                Delete Requests 
+                                <span class="badge bg-green-lt ms-auto">0</span>
+                            </a>
+                                <?php endif; ?>
                         </div>
                     </li>
                     <?php endif; ?>
@@ -104,12 +209,22 @@
                             <span class="nav-link-title">Drivers</span>
                         </a>
                         <div class="dropdown-menu">
-                            <?php if ($web_driver): ?><a class="dropdown-item" href="new-driver-web.php"><i class="ti ti-user-shield"></i> New Drivers (Web)</a><?php endif; ?>
-                            <?php if ($new_driver): ?><a class="dropdown-item" href="new-drivers.php"><i class="ti ti-user-shield"></i> New Drivers <?php include 'count-new-drivers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $new_driver_count; ?></span></a><?php endif; ?>
-                            <?php if ($active_driver): ?><a class="dropdown-item" href="drivers.php"><i class="ti ti-steering-wheel"></i> Active Drivers <?php include 'count-active-drivers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $active_driver_count; ?></span></a><?php endif; ?>
-                            <?php if ($inactive_driver): ?><a class="dropdown-item" href="inactive-drivers.php"><i class="ti ti-car-off"></i> Inactive Drivers <?php include 'count-inactive-drivers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $inactive_driver_count; ?></span></a><?php endif; ?>
-                            <?php if ($old_driver): ?><a class="dropdown-item" href="old-drivers.php"><i class="ti ti-user-shield"></i> Old Drivers</a><?php endif; ?>
-                            <?php if ($deleted_drivers): ?><a class="dropdown-item" href="driver-delete-request.php"><i class="ti ti-user-shield"></i> Delete Requests</a><?php endif; ?>
+                            <?php if ($web_driver): ?>
+                            <a class="dropdown-item" href="new-driver-web.php">
+                                <i class="ti ti-user-shield"></i> 
+                                New Drivers (Web)
+                            </a>
+                                <?php endif; ?>
+                            <?php if ($new_driver): ?>
+                            <a class="dropdown-item" href="new-drivers.php"><i class="ti ti-user-shield"></i> New Drivers <?php include 'count-new-drivers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $new_driver_count; ?></span></a><?php endif; ?>
+                            <?php if ($active_driver): ?>
+                            <a class="dropdown-item" href="active-drivers.php"><i class="ti ti-steering-wheel"></i> Active Drivers <?php include 'count-active-drivers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $active_driver_count; ?></span></a><?php endif; ?>
+                            <?php if ($inactive_driver): ?>
+                            <a class="dropdown-item" href="inactive-drivers.php"><i class="ti ti-car-off"></i> Inactive Drivers <?php include 'count-inactive-drivers.php'; ?><span class="badge bg-green-lt ms-auto"><?php echo $inactive_driver_count; ?></span></a><?php endif; ?>
+                            <?php if ($old_driver): ?>
+                            <a class="dropdown-item" href="old-drivers.php"><i class="ti ti-user-shield"></i> Old Drivers</a><?php endif; ?>
+                            <?php if ($deleted_drivers): ?>
+                            <a class="dropdown-item" href="driver-delete-request.php"><i class="ti ti-user-shield"></i> Delete Requests</a><?php endif; ?>
                         </div>
                     </li>
                     <?php endif; ?>

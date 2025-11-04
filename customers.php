@@ -1,0 +1,348 @@
+<?php
+include('header.php');
+?>  
+<div class="page-header d-print-none page_padding">
+    <div class="row g-2 align-items-center">
+        <div class="col">	
+            <div class="page-pretitle">	
+                Overview 
+            </div>    
+            <h2 class="page-title">
+                Customers Section
+            </h2>
+        </div>
+        <div class="col-auto ms-auto d-print-none">
+            <div class="btn-list">
+                <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-customer">
+                    <i class="ti ti-user-plus"></i> 
+                    Add New Customer				
+                </a>
+            </div>		
+        </div>	
+    </div>	
+</div>
+<div class="page-body page_padding"> 
+    <div class="row row-deck row-cards">			      	
+        <div class="col-12">            						
+            <div class="card">                								
+                <div class="card-header">                    											
+                    <h3 class="card-title">		
+                        All Customers List			
+                    </h3>		
+                </div>                  						
+                <div class="card-body border-bottom py-3">						
+                    <div id="table-customer" class="table-responsive">                  							
+                        <table class="table" id="customers">                    									
+                            <thead>			
+                                <tr>				
+                                    <th>ID</th>				
+                                    <th>Image</th>				
+                                    <th>PostCode</th>				
+                                    <th>Name</th>				
+                                    <th>Email</th>				
+                                    <th>Phone</th>				
+                                    <th>Gender</th>				
+                                    <th>Status</th>				
+                                    <th>Actions</th>				
+                                </tr>				
+                            </thead>			
+                            <tbody class="table-tbody">								
+                                <?php				
+                                $csql=mysqli_query($connect,"SELECT clients.* FROM clients WHERE clients.account_type = 1 AND clients.acount_status <> 2 ORDER BY clients.c_id DESC");				
+                                while($crow = mysqli_fetch_array($csql)){				
+                                ?>				
+                                <tr>				
+                                    <td>										
+                                        <?php echo $crow['c_id']; ?>
+                                    </td>
+                                    <td>										
+                                        <?php                                                
+                                        if (!$crow['c_pic']) {     						                                                    
+                                        ?>						
+                                        <img src="img/user-1.jpg" alt="Customer Img" style="width: 50px; height: 50px; border-radius: 5px;">										
+					<?php
+                                        } else{
+                                        ?>                                        
+                                        <img src="img/customers/<?php echo $crow['c_pic'];?>" alt="Customer Img" style="width: 50px; height: 50px; background-size: 100% 100%; border-radius: 5px;">					
+					<?php
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>										
+                                        <?php echo $crow['postal_code']; ?>
+                                    </td>
+                                    <td>																				
+                                        <?php echo $crow['c_name']; ?>
+                                    </td>
+                                    <td>										
+                                        <?php echo $crow['c_email']; ?>
+                                    </td>  										
+                                    <td>										
+                                        <?php echo $crow['c_phone']; ?>
+                                    </td>				
+                                    <td>																				
+                                        <?php echo $crow['c_gender']; ?>
+                                    </td>
+                                    <td>										
+                                        <?php											
+                                        if($crow['acount_status']==0){										
+                                        ?>
+                                        <div class="col-auto status">
+                                            <span class="status-dot status-dot-animated bg-red d-block"></span>
+                                            <span>Unverified</span>
+                                        </div>										
+                                        <?php											                                            
+                                        } elseif($crow['acount_status']==1){                       										
+                                        ?>					
+                                        <div class="col-auto status">					
+                                            <span class="status-dot status-dot-animated bg-green d-block"></span>					
+                                            <span>Verified</span>																
+                                        </div>										
+                                        <?php																						                                            
+                                        }										
+                                        ?>					
+                                    </td>				
+                                    <td>				
+                                        <a href="view-customer.php?c_id=<?php echo $crow['c_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">                                                                                           
+                                            <i class="ti ti-eye"></i>                                                                                           
+                                        </a>                                       
+                                        <a href="javascript:void(0);" class="btn btn-danger btn-icon deleteCustomer" data-id="<?php echo $crow['c_id']; ?>" title="Delete">   
+                                            <i class="ti ti-square-rounded-x"></i>
+                                        </a>
+                                        <script>
+                                            document.querySelectorAll('.deleteCustomer').forEach(button => {
+                                                button.addEventListener('click', function() {
+                                                    const c_id = this.getAttribute('data-id');
+                                                    Swal.fire({
+                                                        title: "Are you sure?",
+                                                        text: "This action will deactivate the customer profile!",
+                                                        icon: "warning",
+                                                        showCancelButton: true,
+                                                        confirmButtonColor: "#d33",
+                                                        cancelButtonColor: "#3085d6",
+                                                        confirmButtonText: "Yes, delete it!"
+                                                    }).then((result) => {
+                                                        if (result.isConfirmed) {
+                                                            // Show loading alert
+                                                            Swal.fire({
+                                                                title: "Deleting...",
+                                                                text: "Please wait while we remove the customer.",
+                                                                didOpen: () => {
+                                                                    Swal.showLoading();
+                                                                }
+                                                            });
+
+                                                            fetch('includes/customer/del-customer.php', {
+                                                                method: 'POST',
+                                                                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                                                body: 'c_id=' + encodeURIComponent(c_id)
+                                                            })
+                                                            .then(response => response.json())
+                                                            .then(data => {
+                                                                Swal.close();
+                                                                if (data.status === "success") {
+                                                                    Swal.fire({
+                                                                        icon: "success",
+                                                                        title: "Deleted!",
+                                                                        text: data.message,
+                                                                        timer: 1500,
+                                                                        showConfirmButton: false
+                                                                    }).then(() => {
+                                                                        location.reload();
+                                                                    });
+                                                                } else {
+                                                                    Swal.fire({
+                                                                        icon: "error",
+                                                                        title: "Error",
+                                                                        text: data.message
+                                                                    });
+                                                                }
+                                                            })
+                                                            .catch(error => {
+                                                                Swal.fire({
+                                                                    icon: "error",
+                                                                    title: "Unexpected Error",
+                                                                    text: "Something went wrong. Please try again."
+                                                                });
+                                                                console.error(error);
+                                                            });
+                                                        }
+                                                    });
+                                                });
+                                            });
+                                        </script>
+                                    </td>
+                                </tr>								
+                                <?php
+                                }
+                                ?>
+                            </tbody>			
+                        </table>			
+                    </div>		
+                </div>		
+            </div>	        
+        </div>    
+    </div>
+</div>        
+<script>	
+$(document).ready(function() {      
+        $('#customers').DataTable({                                      
+            dom: 'Bfrtip',                    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
+            language: {            
+                emptyTable: "No Customer Found!" // ✅ Handles empty table cleanly                        
+            }                
+        });        
+    });
+</script>
+<!-------------------------------
+----------Add Customer-----------
+-------------------------------->
+<div class="modal modal-blur fade" id="modal-customer" tabindex="-1" role="dialog" aria-hidden="true">	
+    <div class="modal-dialog modal-lg" role="document">    	
+        <div class="modal-content">        			
+            <div class="modal-header">            				
+                <h5 class="modal-title">Add New Customer</h5>            						
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>		
+            </div> 				            
+            <form id="customerForm" enctype="multipart/form-data">    
+                <div class="modal-body">        
+                    <div class="row">            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Full Name</label>                
+                            <input type="text" class="form-control" name="cname" placeholder="Customer Name" required>            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Email</label>                
+                            <input type="email" class="form-control" name="cemail" placeholder="hello@example.com" required>            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Phone</label>                
+                            <input type="text" class="form-control" name="cphone" placeholder="+44 20 7123 4567" required>            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Password</label>                
+                            <input type="password" class="form-control" name="cpass" placeholder="xxxxxxxx" required>            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Gender</label>                
+                            <select class="form-select" name="cgender" required>                    
+                                <option value="" selected>Select Gender</option>                    
+                                <option>Male</option>                    
+                                <option>Female</option>                    
+                                <option>Transgender</option>                
+                            </select>            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Language</label>                
+                            <select class="form-select" name="clang">                    
+                                <option value="" selected>Select Language</option>                    
+                                    <?php                    
+                                    $lsql = mysqli_query($connect, "SELECT * FROM `language`");                    
+                                    while ($lrow = mysqli_fetch_array($lsql)) {                    
+                                    ?>                        
+                                <option>
+                                    <?php echo $lrow['language']; ?>
+                                </option>                    
+                                <?php } ?>                
+                            </select>            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Postal Code</label>                
+                            <select class="form-control" name="pc">                    
+                                <option>Search PostCode</option>                    
+                                    <?php                    
+                                    $pcsql = mysqli_query($connect, "SELECT * FROM `post_codes`");                    
+                                    while ($pcrow = mysqli_fetch_array($pcsql)) {                    
+                                    ?>                        
+                                <option><?php echo $pcrow['pc_name']; ?></option>                    
+                                    <?php } ?>                
+                            </select>            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">Picture</label>                
+                            <input type="file" class="form-control" name="cpic">            
+                        </div>            
+                        <div class="mb-3 col-md-4">                
+                            <label class="form-label">National ID</label>                
+                            <input type="text" class="form-control" name="cni">            
+                        </div>            
+                        <div class="col-lg-12">                
+                            <div class="mb-3">                    
+                                <label class="form-label">Address</label>                    
+                                <textarea class="form-control" rows="3" name="caddress"></textarea>                
+                            </div>                
+                            <div class="mb-3">                    
+                                <label class="form-label">Others</label>                    
+                                <textarea class="form-control" rows="3" name="cothers"></textarea>                
+                            </div>            
+                        </div>        
+                    </div>                          
+                    <div class="modal-footer">            
+                        <a href="#" class="btn btn-danger" data-bs-dismiss="modal">                
+                            <i class="ti ti-circle-x"></i> Cancel            
+                        </a>            
+                        <button type="submit" class="btn ms-auto btn-success">                
+                            <i class="ti ti-user-plus"></i> Save Customer            
+                        </button>        
+                    </div>    
+                </div>
+            </form>
+            <script>
+                document.getElementById("customerForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    // Basic validation
+                    var cname = document.getElementsByName("cname")[0].value.trim();
+                    var cemail = document.getElementsByName("cemail")[0].value.trim();
+                    var cphone = document.getElementsByName("cphone")[0].value.trim();
+                    var cgender = document.getElementsByName("cgender")[0].value;
+                    var pc = document.getElementsByName("pc")[0].value;
+                    if (!cname || !cemail || !cphone || !cgender || !pc) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Missing Fields",
+                            text: "Please fill in all required fields."
+                        });
+                        return;
+                    }
+                    let formData = new FormData(this);
+                    fetch("includes/customer/customer-process.php", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Customer Added",
+                                text: data.message,
+                                timer: 2000,
+                                showConfirmButton: false
+                            }).then(() => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: data.message
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Unexpected Error",
+                            text: "Something went wrong. Please try again."
+                        });
+                        console.error(error);
+                    });
+                });
+            </script>
+        </div>    		
+    </div>
+</div>	
+<?php
+include('footer.php');
+?>

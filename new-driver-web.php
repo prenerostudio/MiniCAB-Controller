@@ -19,7 +19,7 @@ include('header.php');
             <div class="card">								                
                 <div class="card-header">											
                     <h3 class="card-title">		
-                        New Drivers Request List			
+                        New Drivers Request List From Web Link			
                     </h3>											
                 </div>																		
                 <div class="card-body border-bottom py-3">											
@@ -71,21 +71,14 @@ include('header.php');
                                         <?php echo $ndrow['d_shift']; ?>
                                     </td>                                    
                                     <td>                                    
-                                        <a href="includes/drivers/accept-driver.php?d_id=<?php echo $ndrow['d_id']; ?>" class="btn btn-success" title="Accept Driver">                                                
-                                            <i class="ti ti-checks"></i> Accept Driver										
-                                        </a>                                       
+                                       <a href="javascript:void(0);" class="btn btn-success acceptDriverBtn" data-did="<?php echo $ndrow['d_id']; ?>" title="Accept Driver">
+                                           <i class="ti ti-checks"></i> 
+                                           Accept Driver 
+                                       </a>                                      
                                     </td>
                                 </tr>								
                                 <?php endwhile; ?>								                                								
-                                <?php if ($y === 0) : ?>
-                                <tr>				
-                                    <td colspan="8">													
-                                        <p align="center">															
-                                            No Driver Found!															
-                                        </p>														
-                                    </td>                                				
-                                </tr>								
-                                <?php endif; ?>
+                               
                             </tbody>  			
                         </table>  			
                     </div>		
@@ -94,10 +87,75 @@ include('header.php');
         </div>		
     </div>
 </div>   
-<script>	
-    $(document).ready(function() {			
-        $('#table-new').DataTable();	
-    });	
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Attach event listener to all Accept buttons
+        document.querySelectorAll('.acceptDriverBtn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const driverId = this.dataset.did;
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You want to approve this driver?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#28a745',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Approve!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Send AJAX request
+                        fetch('includes/drivers/accept-driver.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            },
+                            body: 'd_id=' + encodeURIComponent(driverId)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Driver Approved!',
+                                    text: data.message,
+                                    timer: 2000,
+                                    showConfirmButton: false
+                                });
+                                // Optional: remove the driver row dynamically
+                                const row = button.closest('tr');
+                                if (row) row.remove();
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error!',
+                                    text: data.message
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Server Error',
+                                text: 'Something went wrong. Please try again later.'
+                            });
+                            console.error('Error:', error);
+                        });
+                    }
+                });
+            });
+        });
+    });
+    $(document).ready(function() {      
+        $('#table-new').DataTable({        
+            responsive: true,                    
+            dom: 'Bfrtip',                    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
+            language: {            
+                emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly                        
+            }                
+        });        
+    });
 </script>
 <?php
 include('footer.php');

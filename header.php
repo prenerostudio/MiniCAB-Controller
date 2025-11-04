@@ -146,7 +146,6 @@ include('configuration.php');
                                             })
                                             .catch(error => console.error('Error fetching new drivers count:', error));
                                     });
-
                                     document.addEventListener("DOMContentLoaded", function() {
                                         fetch('includes/drivers/web-driver-count.php')
                                             .then(response => response.json())
@@ -165,32 +164,18 @@ include('configuration.php');
                                             .catch(error => console.error('Error fetching fare count:', error));
                                     });
         
-                               </script>
-    
-                           </div>
-
-    
-                            <!-- Current Server Time -->
-    
-    
-                            <div class="d-none d-md-flex">
-        
-                                <a class="nav-link" href="#">
-            
-                                    <?php $current_time = date("Y-m-d H:i:s"); ?>
-            
-                                    <script> var serverTime = "<?php echo $current_time; ?>"; </script>
-            
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                
-                                        <i class="ti ti-clock"></i>
-            
-                                    </span>
-            
-                                    <span class="nav-link-title" id="time"></span>
-        
-                                </a>
-        
+                               </script>                               
+                            </div>                               
+                            <!-- Current Server Time -->        
+                            <div class="d-none d-md-flex">        
+                                <a class="nav-link" href="#">            
+                                    <?php $current_time = date("Y-m-d H:i:s"); ?>            
+                                    <script> var serverTime = "<?php echo $current_time; ?>"; </script>            
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">                
+                                        <i class="ti ti-clock"></i>            
+                                    </span>            
+                                    <span class="nav-link-title" id="time"></span>        
+                                </a>        
                                 <script>
                                     function formatTime(date) {
                                         let h = date.getHours().toString().padStart(2, '0');
@@ -205,117 +190,104 @@ include('configuration.php');
                                     }
                                     setInterval(updateTime, 1000);
         
-                                </script>
-    
+                                </script>    
+                            </div>   
+                            <!-- Theme Toggle -->                                
+                            <div class="d-none d-md-flex">        
+                                <a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">            
+                                    <i class="ti ti-moon"></i>        
+                                </a>        
+                                <a href="dashboard.php?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip" data-bs-placement="bottom">            
+                                    <i class="ti ti-sun"></i>        
+                                </a>    
                             </div>
+                            <!-- Notifications -->    
+                            <div class="nav-item dropdown d-none d-md-flex me-3">        
+                                <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" aria-label="Show notifications">            
+                                    <i class="ti ti-bell"></i>            
+                                    <span class="badge bg-red"></span>        
+                                </a>        
+                                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">            
+                                    <div class="card">                
+                                        <div class="card-header">                    
+                                            <h3 class="card-title">Last updates</h3>                
+                                        </div>                
+                                        <div class="list-group list-group-flush list-group-hoverable">                    
+                                            <div class="list-group-item">                                                
+                                                <div id="notificationsContainer">    
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function() {
+                                                            function loadNotifications() {
+                                                                fetch('includes/notifications/fetch-logs.php')
+                                                                .then(response => response.json())
+                                                                .then(data => {
+                                                                    const container = document.getElementById('notificationsContainer');
+                                                                    container.innerHTML = '';
+                                                                    if (data.length === 0) {
+                                                                        container.innerHTML = '<p class="text-muted text-center my-3">No recent activity</p>';
+                                                                        return;
+                                                                    }
+                                                                    data.forEach(item => {
+                                                                        const html = `
+                                                                        <div class="row align-items-center py-2 border-bottom">
+                                                                            <div class="col-auto">
+                                                                                <span class="status-dot status-dot-animated bg-red d-block"></span>
+                                                                            </div>
+                                                                            <div class="col text-truncate">
+                                                                                <a href="#" class="text-body d-block">${item.activity_type}</a>
+                                                                                <div class="d-block text-secondary text-truncate mt-n1">${item.details}</div>
+                                                                                <small class="text-muted">${item.timestamp}</small>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="#" class="list-group-item-actions">
+                                                                                    <i class="ti ti-star"></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>`;
+                                                                        container.insertAdjacentHTML('beforeend', html);
+                                                                    });
+                                                                })
+                                                                .catch(error => console.error('Error fetching notifications:', error));
+                                                            }
+                                                            // Load notifications initially
+                                                            loadNotifications();
+                                                            // Optional: Refresh every 30 seconds
+                                                            setInterval(loadNotifications, 30000);
+                                                        });
 
-    
-                            <!-- Theme Toggle -->
-    
-                            
-                            <div class="d-none d-md-flex">
-        
-                                <a href="dashboard.php?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
-            
-                                    <i class="ti ti-moon"></i>
-        
-                                </a>
-        
-                                <a href="dashboard.php?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
-            
-                                    <i class="ti ti-sun"></i>
-        
-                                </a>
-    
+                                                    </script>
+                                                </div>                                                                                                       
+                                            </div>                                             
+                                        </div>            
+                                    </div>        
+                                </div>    
+                            </div>                                                           
+                            <!-- User Dropdown -->    
+                            <div class="nav-item dropdown">        
+                                <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">            
+                                    <span class="avatar avatar-sm" style="background-image: url(img/users/<?php echo htmlspecialchars($_SESSION['user_pic'] ?? 'default.png'); ?>)"></span>            
+                                    <div class="d-none d-xl-block ps-2">                
+                                        <div>
+                                            <?php echo htmlspecialchars($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?>
+                                        </div>                
+                                        <div class="mt-1 small text-secondary">
+                                            <?php echo htmlspecialchars($_SESSION['designation'] ?? ''); ?>
+                                        </div>            
+                                    </div>        
+                                </a>        
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">            
+                                    <?php if (!empty($_SESSION['all_users_list'])): ?>                
+                                    <a href="all-users.php" class="dropdown-item">All Users</a>            
+                                    <?php endif; ?>            
+                                    <a href="profile-setting.php" class="dropdown-item">Settings</a>            
+                                    <a href="logout.php" class="dropdown-item">Logout</a>        
+                                </div>    
                             </div>
-
-
-                            <!-- Notifications -->
-    
-                            <div class="nav-item dropdown d-none d-md-flex me-3">
-        <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" aria-label="Show notifications">
-            <i class="ti ti-bell"></i>
-            <span class="badge bg-red"></span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Last updates</h3>
-                </div>
-                <div class="list-group list-group-flush list-group-hoverable">
-                    <div class="list-group-item">
-                        <div class="row align-items-center">
-                            <div class="col-auto">
-                                <span class="status-dot status-dot-animated bg-red d-block"></span>
-                            </div>
-                            <div class="col text-truncate">
-                                <a href="#" class="text-body d-block">Example 1</a>
-                                <div class="d-block text-secondary text-truncate mt-n1">
-                                    Change deprecated HTML tags to text decoration classes (#29604)
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <a href="#" class="list-group-item-actions">
-                                    <i class="ti ti-star"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                            
-    
-                            <!-- User Dropdown -->
-    
-                            <div class="nav-item dropdown">
-        
-                                <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-            
-                                    <span class="avatar avatar-sm" style="background-image: url(img/users/<?php echo htmlspecialchars($_SESSION['user_pic'] ?? 'default.png'); ?>)"></span>
-            
-                                    <div class="d-none d-xl-block ps-2">
-                
-                                        <div><?php echo htmlspecialchars($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?></div>
-                
-                                        <div class="mt-1 small text-secondary"><?php echo htmlspecialchars($_SESSION['designation'] ?? ''); ?></div>
-            
-                                    </div>
-        
-                                </a>
-        
-                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-            
-                                    <?php if (!empty($_SESSION['all_users_list'])): ?>
-                
-                                    <a href="all-users.php" class="dropdown-item">All Users</a>
-            
-                                        <?php endif; ?>
-            
-                                    <a href="profile-setting.php" class="dropdown-item">Settings</a>
-            
-                                    <a href="logout.php" class="dropdown-item">Logout</a>
-        
-                                </div>
-    
-                            </div>
-
-                        </div>
-
-                        
-                    
-                    </div>
-                
-                </header>				                   				
-                
-                    <?php                                    				               
-                
-                    include('navbar.php');                                    				                
-                
-                    ?>                        
-            
+                        </div>                                           
+                    </div>                
+                </header>				                   				                
+                <?php                                    				                                              
+                include('navbar.php');                                    				                                
+                ?>                                    
             </div>            
-
             <div class="page-wrapper">

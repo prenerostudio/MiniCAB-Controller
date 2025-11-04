@@ -311,8 +311,7 @@ include('header.php');
 
                
                 $(document).ready(function() {  
-                    $('#table-new').DataTable({
-                        responsive: true,        
+                    $('#table-new').DataTable({                               
                         dom: 'Bfrtip',        
                         buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],        
                         language: {
@@ -322,8 +321,7 @@ include('header.php');
                 });	
 
                 $(document).ready(function() {
-                    $('#table-await').DataTable({
-                        responsive: true,        
+                    $('#table-await').DataTable({                            
                         dom: 'Bfrtip',        
                         buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
                         language: {

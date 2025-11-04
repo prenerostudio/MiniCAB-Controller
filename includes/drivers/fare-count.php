@@ -1,5 +1,5 @@
 <?php
-include ('../../config.php');
+include ('../../configuration.php');
 
 $sql = "SELECT COUNT(*) as fares_count FROM fares WHERE fare_status = 'Pending'";
 $result = $connect->query($sql);

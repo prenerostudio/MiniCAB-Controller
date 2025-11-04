@@ -1,5 +1,5 @@
 <?php
-include ('../../config.php');
+include ('../../configuration.php');
 
 $recent_time_frame = "7 DAY";
 $sql = "SELECT COUNT(*) as new_drivers_count FROM drivers WHERE driver_reg_date >= NOW() - INTERVAL $recent_time_frame AND acount_status = 0";

@@ -79,7 +79,7 @@ include('header.php');
                             ];
 			}			
                         // Display zone table			
-                        echo "<table class='table scrollable-table'>";			
+                        echo "<table class='table table-responsive scrollable-table'>";			
                         echo "<tr><th>Zone</th><th>Number of Drivers</th><th>Drivers List</th><th>Vehicles in Zone</th></tr>";			
                         while ($zone = $zonesResult->fetch_assoc()) {    			
                             $driverCount = 0;    			
