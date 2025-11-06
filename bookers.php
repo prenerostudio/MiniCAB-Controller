@@ -108,12 +108,9 @@ include('header.php');
                                         <a href="view-booker.php?c_id=<?php echo $crow['c_id']; ?>" class="btn btn-info btn-icon" title="View/Edit">                                                
                                             <i class="ti ti-eye"></i>						                                           														
                                         </a>					
-                                       <button class="btn btn-danger delete_btn btn-icon" 
-        data-c_id="<?php echo $crow['c_id']; ?>" 
-        title="Delete">    
-    <i class="ti ti-square-rounded-x"></i>
-</button>
-					
+                                       <button class="btn btn-danger delete_btn btn-icon" data-c_id="<?php echo $crow['c_id']; ?>" title="Delete">        
+                                           <i class="ti ti-square-rounded-x"></i>
+                                       </button>					
                                     </td>													
                                 </tr>												
 				<?php								
@@ -192,7 +189,8 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {      
+
+    $(document).ready(function() {      
         $('#table-bookers').DataTable({                                      
             dom: 'Bfrtip',                    
             buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    

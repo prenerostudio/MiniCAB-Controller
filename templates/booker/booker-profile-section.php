@@ -3,27 +3,128 @@
         <h2 class="mb-4">        
             Booker Profile            
         </h2>        
-        <div class="row align-items-center">        
-            <div class="col-auto">            
-                <span class="avatar avatar-xl" style="background-image: url(img/bookers/<?php echo $brow['c_pic'];?>); background-size:contain; width: 220px; height: 160px;"></span>                
-            </div>            
-            <div class="col-auto">            
-                <form action="includes/booker/update-booker-img.php" method="post" enctype="multipart/form-data">                
-                    <input type="hidden" value="<?php echo $brow['c_id']; ?>" name="c_id">                    
-                    <input type="file" name="fileToUpload" id="fileToUpload" class="btn">                    
-                    <button type="submit" class="btn btn-info">Upload Image </button>                    
-                </form>                
-            </div>            
-            <div class="col-auto">            
-                <a href="includes/booker/del-booker-img.php?c_id=<?php echo $c_id ?>" class="btn btn-ghost-danger">                
-                    Delete avatar                    
-                </a>                
-            </div>            
+        <div class="row align-items-center">                    
+            <div class="col-auto">    
+                <span class="avatar avatar-xl" id="bookerImage" style="background-image: url(img/bookers/<?php echo $brow['c_pic'];?>); background-size:contain; width: 220px; height: 160px;"></span>
+            </div>
+            <div class="col-auto">    
+                <form id="bookerImageForm" enctype="multipart/form-data">        
+                    <input type="hidden" name="c_id" value="<?php echo $brow['c_id']; ?>">        
+                    <input type="file" name="fileToUpload" id="fileToUpload" class="btn" required>        
+                    <button type="submit" class="btn btn-info">Upload Image</button>    
+                </form>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $('#bookerImageForm').on('submit', function (e) {
+                        e.preventDefault();
+                        var formData = new FormData(this);
+                        $.ajax({
+                            url: 'includes/booker/update-booker-img.php',
+                            type: 'POST',
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            beforeSend: function () {
+                                Swal.fire({
+                                    title: 'Uploading...',
+                                    text: 'Please wait while we upload your image.',
+                                    icon: 'info',
+                                    showConfirmButton: false,
+                                    allowOutsideClick: false,
+                                    didOpen: () => {
+                                        Swal.showLoading();
+                                    }
+                                });
+                            },
+                            success: function (response) {
+                                // Show success message
+                                Swal.fire({
+                                    title: 'Success!',
+                                    text: 'Profile image updated successfully.',
+                                    icon: 'success',
+                                    timer: 2000,
+                                    showConfirmButton: false
+                                });
+                                // Extract new image filename from response
+                                try {
+                                    var res = JSON.parse(response);
+                                    if (res.status === 'success') {
+                                        $('#bookerImage').css('background-image', 'url(img/bookers/' + res.newImage + '?v=' + new Date().getTime() + ')');
+                                    } else {
+                                        Swal.fire('Error', res.message, 'error');
+                                    }
+                                } catch (err) {
+                                    console.log(response);
+                                }
+                            },
+                            error: function () {
+                                Swal.fire('Error', 'Something went wrong during upload.', 'error');
+                            }
+                        });
+                    });
+                });
+            </script>                       
+            <div class="col-auto">    
+                <button type="button" class="btn btn-ghost-danger" id="deleteBookerImg" data-id="<?php echo $brow['c_id']; ?>">        
+                    Delete Avatar    
+                </button>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $('#deleteBookerImg').on('click', function () {
+                        var c_id = $(this).data('id');
+
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: "This will permanently remove the profile image.",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#d33',
+                            cancelButtonColor: '#3085d6',
+                            confirmButtonText: 'Yes, delete it!'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $.ajax({
+                                    url: 'includes/booker/del-booker-img.php',
+                                    type: 'POST',
+                                    data: { c_id: c_id },
+                                    success: function (response) {
+                                        try {
+                                            var res = JSON.parse(response);
+                                            if (res.status === 'success') {
+                                                Swal.fire({
+                                                    title: 'Deleted!',
+                                                    text: res.message,
+                                                    icon: 'success',
+                                                    timer: 1500,
+                                                    showConfirmButton: false
+                                                });
+
+                                                // Replace image with default avatar
+                                                $('#bookerImage').css('background-image', 'url(img/bookers/default.png)');
+                                            } else {
+                                                Swal.fire('Error', res.message, 'error');
+                                            }
+                                        } catch (err) {
+                                            console.log(response);
+                                            Swal.fire('Error', 'Unexpected response from server.', 'error');
+                                        }
+                                    },
+                                    error: function () {
+                                        Swal.fire('Error', 'Something went wrong while deleting.', 'error');
+                                    }
+                                });
+                            }
+                        });
+                    });
+                });
+            </script>           
         </div>        
         <h3 class="card-title mt-4">        
             Personal Details            
         </h3>        
-        <form method="post" action="includes/booker/update-booker.php" enctype="multipart/form-data">        
+        <form id="updateBookerForm" enctype="multipart/form-data">
             <div class="row g-3">            
                 <div class="mb-3 col-md-3">                
                     <div class="form-label">Booker Name</div>                    
@@ -127,6 +228,62 @@
                     </button>                    
                 </div>                
             </div>            
-        </form>        
+        </form>    
+        <script>
+            $(document).ready(function () {
+                $('#updateBookerForm').on('submit', function (e) {
+                    e.preventDefault();
+                    var formData = new FormData(this);
+                    $.ajax({
+                        url: 'includes/booker/update-booker.php',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        beforeSend: function () {
+                            Swal.fire({
+                                title: 'Updating...',
+                                text: 'Please wait while we update the booker information.',
+                                icon: 'info',
+                                showConfirmButton: false,
+                                allowOutsideClick: false,
+                                didOpen: () => {
+                                    Swal.showLoading();
+                                }
+                            });
+                        },
+                        success: function (response) {
+                            let res;
+                            try {
+                                if (typeof response === "string") {
+                                    res = JSON.parse(response.trim());
+                                } else {
+                                    res = response;
+                                }
+                                if (res.status === "success") {
+                                    Swal.fire({
+                                        title: 'Success!',
+                                        text: res.message,
+                                        icon: 'success',
+                                        timer: 2000,
+                                        showConfirmButton: false
+                                    }).then(() => {
+                                        location.reload();
+                                    });
+                                } else {
+                                    Swal.fire('Error', res.message, 'error');
+                                }
+                            } catch (err) {
+                                console.log("Raw Response:", response);
+                                Swal.fire('Error', 'Unexpected server response.', 'error');
+                            }
+                        },
+                        error: function () {
+                            Swal.fire('Error', 'Something went wrong while updating.', 'error');
+                        }
+                    });
+                });
+            });
+        </script>
     </div>    
 </div>

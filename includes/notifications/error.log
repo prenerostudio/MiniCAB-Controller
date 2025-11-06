@@ -1,0 +1,15 @@
+[05-Nov-2025 16:37:10 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.activity_log' doesn't exist in C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php:9
+Stack trace:
+#0 C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php(9): mysqli_query(Object(mysqli), 'SELECT * FROM a...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php on line 9
+[05-Nov-2025 16:38:10 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.activity_log' doesn't exist in C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php:9
+Stack trace:
+#0 C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php(9): mysqli_query(Object(mysqli), 'SELECT * FROM a...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php on line 9
+[05-Nov-2025 16:39:10 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'minicab.activity_log' doesn't exist in C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php:9
+Stack trace:
+#0 C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php(9): mysqli_query(Object(mysqli), 'SELECT * FROM a...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\includes\notifications\fetch-logs.php on line 9

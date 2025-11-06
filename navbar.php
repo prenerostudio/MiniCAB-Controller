@@ -134,7 +134,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <?php if ($available_timeslot): ?><a class="dropdown-item" href="available-time-slots.php"><i class="ti ti-alarm"></i> Available</a><?php endif; ?>
-                            <?php if ($waiting_timeslot): ?><a class="dropdown-item" href="time-slots-waiting.php"><i class="ti ti-alarm"></i> Waiting</a><?php endif; ?>
+                            <?php if ($waiting_timeslot): ?><a class="dropdown-item" href="waiting-time-slots.php"><i class="ti ti-alarm"></i> Waiting</a><?php endif; ?>
                             <?php if ($accepted_timeslot): ?><a class="dropdown-item" href="accepted-time-slots.php"><i class="ti ti-clock-check"></i> Accepted</a><?php endif; ?>
                             <?php if ($cancelled_timeslot): ?><a class="dropdown-item" href="cancelled-time-slots.php"><i class="ti ti-alarm-off"></i> Cancelled</a><?php endif; ?>
                             <?php if ($withdrawn_timeslot): ?><a class="dropdown-item" href="withdrawn-time-slots.php"><i class="ti ti-clock-exclamation"></i> Withdrawn</a><?php endif; ?>
