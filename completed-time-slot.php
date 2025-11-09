@@ -1,140 +1,72 @@
 <?php
 include('header.php');
 ?>  
-
 <div class="page-header d-print-none page_padding">
-
     <div class="row g-2 align-items-center">        		
-
-        <div class="col">		
-	
-            <div class="page-pretitle">			
-	
-                Overview			
-		
-            </div>
-	
-            <h2 class="page-title">
-	
-                Accepted Time Slots	
-		
-            </h2>		
-	
-        </div>		
-	
+        <div class="col">			
+            <div class="page-pretitle">				
+                Overview					
+            </div>	
+            <h2 class="page-title">	
+                Accepted Time Slots			
+            </h2>			
+        </div>			
     </div>	
 </div>
 <div class="page-body page_padding">          
-
     <div class="row row-deck row-cards">			      	
-
-        <div class="col-12">            					
-	
-            <div class="card">                							
-	
-                <div class="card-header">                    									
-		
-                    <h3 class="card-title">
-		
-                        All Accepted Time Slots From Drivers
-			
-                    </h3>                  										
-		
-                </div>                  				
-		
-                <div class="card-body border-bottom py-3">				
-		
-                    <div class="table-responsive">            										
-		
-                        <table class="table table-responsive" id="slots">						
-			
-                            <thead>	
-			
-                                <tr>						
-				
-                                    <th>ID</th>
-				
-                                    <th>Date</th>
-				
-                                    <th>Start Time</th>
-				
-                                    <th>End Date</th>
-				
-                                    <th>Price / Hour</th>
-				
-                                    <th>Total Pay</th>
-				
-                                    <th>Driver</th>
-				
-                                    <th>Status</th>	
-				
-                                    
-				
-                                </tr>		
-				
-                            </thead>	
-			
-                            <tbody>												
-			
-					
-                                <?php							
-
-                                        
-                                $n=0;
-								
-                                $atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 4 ORDER BY time_slots.ts_id DESC");
-								
-                                while($atrow = mysqli_fetch_array($atsql)){				
-									
-                                    $n++		
-								
-                                            ?>								
-								
-                                <tr>								
-					
-                                
-                                    <td>																
-
-										<?php echo $n; ?>																
-
-                                    </td>
-				
+        <div class="col-12">            						
+            <div class="card">                								
+                <div class="card-header">                    											
+                    <h3 class="card-title">		
+                        All Accepted Time Slots From Drivers			
+                    </h3>                  												
+                </div>                  						
+                <div class="card-body border-bottom py-3">						
+                    <div class="table-responsive">            												
+                        <table class="table table-responsive" id="slots">									
+                            <thead>				
+                                <tr>										
+                                    <th>ID</th>				
+                                    <th>Date</th>				
+                                    <th>Start Time</th>				
+                                    <th>End Date</th>				
+                                    <th>Price / Hour</th>				
+                                    <th>Total Pay</th>				
+                                    <th>Driver</th>				
+                                    <th>Status</th>					                                    				
+                                </tr>						
+                            </thead>				
+                            <tbody>																				
+                                <?php                                        
+                                $n=0;								
+                                $atsql=mysqli_query($connect,"SELECT time_slots.*, drivers.* FROM time_slots LEFT JOIN drivers ON time_slots.d_id = drivers.d_id WHERE time_slots.ts_status = 4 ORDER BY time_slots.ts_id DESC");								
+                                while($atrow = mysqli_fetch_array($atsql)){													
+                                    $n++										
+                                ?>															
+                                <tr>													                                
                                     <td>
-				
-						<?php echo $atrow['ts_date']; ?>								
-
-                                    </td>									
-				
+                                        <?php echo $n; ?>
+                                    </td>				
+                                    <td>										
+                                        <?php echo $atrow['ts_date']; ?>								
+                                    </td>													
+                                    <td>										
+                                        <?php echo $atrow['start_time']; ?>
+                                    </td> 													
                                     <td>
-				
-						<?php echo $atrow['start_time']; ?>
-
-                                    </td> 									
-				
-                                    <td>																				
-				
-                                        <span>												
-					
-						<?php echo $atrow['end_time']; ?>												
-
-                                        </span>										
-					
-                                    </td>
-				
-                                    <td>					
-				
-                                        <span>										
-					
-                                            <strong>£</strong> <?php echo $atrow['price_hour'];?>
-					
-                                        </span>									
-					
-                                    </td>
-				
-                                    <td>
-				
-                                        <strong>£</strong> <?php
-					
+                                        <span>
+                                            <?php echo $atrow['end_time']; ?>
+                                        </span>					
+                                    </td>				
+                                    <td>									
+                                        <span>															
+                                            <strong>£</strong> 
+                                            <?php echo $atrow['price_hour'];?>					
+                                        </span>														
+                                    </td>				
+                                    <td>				
+                                        <strong>£</strong> <?php					
                                         $stime = strtotime($atrow['start_time']);
 					
                                         $etime = strtotime($atrow['end_time']);
