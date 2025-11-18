@@ -137,10 +137,16 @@ include('header.php');
                 </div>
             </div>
         </div>					
-        <script>    
-			$(document).ready(function() {       
-				$('#slots').DataTable();   
-			});	
+        <script>    	
+            $(document).ready(function() {              
+                $('#slots').DataTable({                                              
+                    dom: 'Bfrtip',                                
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                                
+                    language: {                        
+                        emptyTable: "No Time Slot Found!" // ✅ Handles empty table cleanly                                        
+                    }                          
+                });                
+            });	
         </script>   
     </div>
 </div>

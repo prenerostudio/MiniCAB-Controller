@@ -66,146 +66,82 @@ include('header.php');
                                         </span>														
                                     </td>				
                                     <td>				
-                                        <strong>£</strong> <?php					
-                                        $stime = strtotime($atrow['start_time']);
-					
-                                        $etime = strtotime($atrow['end_time']);
-					
-                                        $pph =  $atrow['price_hour'];
-					
-                                        $total_time = ($etime - $stime) / 3600; 
-					
-                                        $total_pay = $pph * $total_time;
-					
-                                        echo number_format($total_pay, 2); 
-					
-                                        ?>
-					
-                                    </td>
-				
-                                    <td>									
-				
-						<?php echo $atrow['d_name']; ?>									
-
-                                    </td>
-				
-                                    <td>	
-				
-						<?php         
-
-                                                if($atrow['ts_status']==0){    
-						
-                                                    ?>        
-						
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-orange d-block"></span>            
-					
-                                            <span>Pending</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        } elseif($atrow['ts_status']==1){    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-green d-block"></span>            
-					
-                                            <span>Accepted</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        } elseif($atrow['ts_status']==2){    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-red d-block"></span>            
-					
-                                            <span>Cancelled</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        } elseif($atrow['ts_status']==3){    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-yellow d-block"></span>           
-					
-                                            <span>Withdrawn</span>        
-					
-                                        </div>    
-					
-					<?php        
-
-                                        } else {    
-					
-                                            ?>        
-					
-                                        <div class="col-auto status">            
-					
-                                            <span class="status-dot status-dot-animated bg-blue d-block"></span>            
-					
-                                            <span>Completed</span>
-					
-                                        </div>    
-					
-					<?php        
-
-                                        }    
-					
-                                        ?>				
-					
+                                        <strong>£</strong> 
+                                        <?php					
+                                        $stime = strtotime($atrow['start_time']);					
+                                        $etime = strtotime($atrow['end_time']);					
+                                        $pph =  $atrow['price_hour'];					
+                                        $total_time = ($etime - $stime) / 3600; 					
+                                        $total_pay = $pph * $total_time;					
+                                        echo number_format($total_pay, 2); 					
+                                        ?>					
+                                    </td>				
+                                    <td>
+                                        <?php echo $atrow['d_name']; ?>	
                                     </td>	
-				
-                                    
-				
-                                </tr>                              															
-				
+                                    <td>											                                    
+                                        <?php                                                                                
+                                        if($atrow['ts_status']==0){    						                                                                        
+                                        ?>  						                                        
+                                        <div class="col-auto status">            					
+                                            <span class="status-dot status-dot-animated bg-orange d-block"></span>            					
+                                            <span>Pending</span>					
+                                        </div>    					
+					<?php        
+                                        } elseif($atrow['ts_status']==1){    					
+                                        ?>     					
+                                        <div class="col-auto status">            					
+                                            <span class="status-dot status-dot-animated bg-green d-block"></span>            					
+                                            <span>Accepted</span>					
+                                        </div>    					
+					<?php        
+                                        } elseif($atrow['ts_status']==2){    					
+                                        ?>					
+                                        <div class="col-auto status">            					
+                                            <span class="status-dot status-dot-animated bg-red d-block"></span>            					
+                                            <span>Cancelled</span>					
+                                        </div>    					
+					<?php        
+                                        } elseif($atrow['ts_status']==3){    					
+                                        ?>					
+                                        <div class="col-auto status">            					
+                                            <span class="status-dot status-dot-animated bg-yellow d-block"></span>           					
+                                            <span>Withdrawn</span>        					
+                                        </div>    					
+					<?php        
+                                        } else {    					
+                                        ?>        					
+                                        <div class="col-auto status">            					
+                                            <span class="status-dot status-dot-animated bg-blue d-block"></span>            					
+                                            <span>Completed</span>					
+                                        </div>    					
+					<?php        
+                                        }    					
+                                        ?>									
+                                    </td>					                                    				
+                                </tr>                              																			
 				<?php
-
-                                }									
-				
-                                ?>																	
-				
-                            </tbody>                    											
-			
-                        </table>               
-			
-                    </div>																	
-		
-                </div>                                                    				
-		
-            </div>              			
-	
-        </div>				
-	
-        <script>					
-	
-    $(document).ready(function() {    
-
-        $('#slots').DataTable();
-	
-    });	
-
-        </script>				
-	
-        
-	
+                                }													
+                                ?>																					
+                            </tbody>                    														
+                        </table>               			
+                    </div>																			
+                </div>                                                    						
+            </div>              				
+        </div>					
+        <script>						
+            $(document).ready(function() {                          
+                $('#slots').DataTable({                                              
+                    dom: 'Bfrtip',                                
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                                
+                    language: {                        
+                        emptyTable: "No Time Slot Found!" // ✅ Handles empty table cleanly                                        
+                    }                            
+                });                
+            });	
+        </script>	        	
     </div>
 </div>        
-
 <?php
 include('footer.php');
 ?>
