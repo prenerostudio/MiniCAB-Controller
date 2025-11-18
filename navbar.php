@@ -244,6 +244,30 @@
                         </div>
                     </li>
                     <?php endif; ?>
+                    
+                    
+                     <!-- Vehicle List -->
+                    <?php if ($vehicles_list): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vehicles-list.php">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="ti ti-activity"></i></span>
+                            <span class="nav-link-title">Vehicle List</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                    
+                    <!-- Vehicle List -->
+                    <?php if ($pricing_models): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.php">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="ti ti-activity"></i></span>
+                            <span class="nav-link-title">Pricing</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                    
+                     
+                    
 
                     <!-- REPORTS -->
                     <?php if ($driver_reports || $customer_reports || $booker_reports): ?>
