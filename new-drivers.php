@@ -240,99 +240,95 @@ include('header.php');
                         <i class="ti ti-user-plus"></i> Save Driver        
                     </button>    
                 </div>
-            </form>            	
-            <script>
-                $('#addDriverForm').on('submit', function (e) {    
-                    e.preventDefault();    
-                    let formData = new FormData(this);   
-                        $.ajax({
-                            url: 'includes/drivers/driver-process.php',        
-                            type: 'POST',        
-                            data: formData,        
-                            contentType: false,        
-                            processData: false,        
-                            dataType: 'json',        
-                            beforeSend: function () {        
-                                Swal.fire({
-                                    title: 'Registering Driver...',
-                                    text: 'Please wait while we process the request.',
-                                    allowOutsideClick: false,
-                                    didOpen: () => {
-                                        Swal.showLoading();
-                                    }
-                                });
-                            },
-                            success: function (res) {    
-                            Swal.close();          
-                                if (res.status) {
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Driver Registered!',
-                                        text: res.message,
-                                        confirmButtonColor: '#28a745'
-                                    }).then(() => {
-                                        $('#addDriverForm')[0].reset();
-                                        // You can reload or refresh DataTable dynamically
-                                        location.reload();
-                                    });
-                                } else {
-                                    Swal.fire({
-                                        icon: 'error',
-                                        title: 'Registration Failed',
-                                        text: res.message,
-                                        confirmButtonColor: '#d33'
-                                    });
-                                }
-                            },
-                            error: function (xhr, status, error) {
-                                Swal.close();
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Server Error',
-                                    text: 'Something went wrong on the server. Please try again later.',
-                                    confirmButtonColor: '#d33'
-                                });
-                                console.error('AJAX Error:', status, error);
-                            }   
-                        });
-                });
-
-                function validateForm() {   
-                    var dnameInput = document.getElementsByName("dname")[0].value;	        
-                    var demailInput = document.getElementsByName("demail")[0].value;	        
-                    var dphoneInput = document.getElementsByName("dphone")[0].value;	        
-                    var dauthInput = document.getElementsByName("dauth")[0].value;	        
-                    if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	        
-                        alert("Please fill in all required fields.");	            
-                        return false;	            
-                    }	        
-                    return true;	        
-                }
-
-               
-                $(document).ready(function() {  
-                    $('#table-new').DataTable({                               
-                        dom: 'Bfrtip',        
-                        buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],        
-                        language: {
-                            emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly        
-                        }    
-                    });
-                });	
-
-                $(document).ready(function() {
-                    $('#table-await').DataTable({                            
-                        dom: 'Bfrtip',        
-                        buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-                        language: {
-                            emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly        
-                        }
-                    });
-                });
-            </script>        
+            </form>            	                 
         </div>    
     </div>    
 </div>
+<script>
+    $('#addDriverForm').on('submit', function (e) {        
+        e.preventDefault();            
+        let formData = new FormData(this);           
+        $.ajax({        
+            url: 'includes/drivers/driver-process.php',                    
+            type: 'POST',                    
+            data: formData,                    
+            contentType: false,                    
+            processData: false,                    
+            dataType: 'json',                    
+            beforeSend: function () {                    
+                Swal.fire({        
+                    title: 'Registering Driver...',            
+                    text: 'Please wait while we process the request.',            
+                    allowOutsideClick: false,            
+                    didOpen: () => {            
+                        Swal.showLoading();                
+                    }            
+                });            
+            },    
+            success: function (res) {                
+                Swal.close();                  
+                if (res.status) {        
+                    Swal.fire({            
+                        icon: 'success',                
+                        title: 'Driver Registered!',                
+                        text: res.message,                
+                        confirmButtonColor: '#28a745'                
+                    }).then(() => {            
+                        $('#addDriverForm')[0].reset();                
+                        // You can reload or refresh DataTable dynamically                
+                        location.reload();                
+                    });            
+                } else {        
+                    Swal.fire({            
+                        icon: 'error',                
+                        title: 'Registration Failed',                
+                        text: res.message,                
+                        confirmButtonColor: '#d33'                
+                    });            
+                }        
+            },     
+            error: function (xhr, status, error) {            
+                Swal.close();        
+                Swal.fire({        
+                    icon: 'error',            
+                    title: 'Server Error',            
+                    text: 'Something went wrong on the server. Please try again later.',            
+                    confirmButtonColor: '#d33'            
+                });        
+                console.error('AJAX Error:', status, error);        
+            }       
+        });        
+    });
+    function validateForm() {       
+        var dnameInput = document.getElementsByName("dname")[0].value;	                
+        var demailInput = document.getElementsByName("demail")[0].value;	                
+        var dphoneInput = document.getElementsByName("dphone")[0].value;	                
+        var dauthInput = document.getElementsByName("dauth")[0].value;	                
+        if (dnameInput === "" || demailInput === "" || dphoneInput === "" || dauthInput === "" ) {	                
+            alert("Please fill in all required fields.");	                        
+            return false;	                        
+        }	                
+        return true;	                
+    }
+    $(document).ready(function() {      
+        $('#table-new').DataTable({                                       
+            dom: 'Bfrtip',                    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
+            language: {            
+                emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly                        
+            }                
+        });        
+    });	
+    $(document).ready(function() {    
+        $('#table-await').DataTable({                                    
+            dom: 'Bfrtip',                    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],            
+            language: {            
+                emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly                        
+            }            
+        });        
+    });    
+</script>  
 <?php
 include('footer.php');
 ?>

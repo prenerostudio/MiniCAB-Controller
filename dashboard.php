@@ -17,7 +17,7 @@ include('header.php');
     <script>    
         function fetchExpiringDocuments() {
             $.ajax({
-                url: 'includes/check_expiry_alerts.php', // PHP script that runs the check
+                url: 'includes/cron-jobs/check_expiry_alerts.php', // PHP script that runs the check
                 method: 'GET',
                 success: function(response) {
                     const alerts = JSON.parse(response);
@@ -53,9 +53,9 @@ include('header.php');
         <div class="col-lg-5">			            
             <div class="card">                   
                 <?php               
-                include('includes/count-online-drivers.php');                              
-                include('includes/count-offline-drivers.php');                              
-                include('includes/count-pob-drivers.php');                                                              
+                include('includes/drivers/count-online-drivers.php');                              
+                include('includes/drivers/count-offline-drivers.php');                              
+                include('includes/drivers/count-pob-drivers.php');                                                              
                 ?>               
                 <div class="card-body">                
                     <h3 class="card-title">                                           
@@ -166,7 +166,7 @@ include('header.php');
                                     document.getElementById("driverListPOB").innerHTML = this.responseText;	
                                 }	    	
                             };
-                                xhttp.open("GET", "includes/update_driver_list_pob.php", true);	
+                                xhttp.open("GET", "includes/drivers/update_driver_list_pob.php", true);	
                                 xhttp.send();	
                             }    
                             loadDriverListPOB();    
@@ -183,7 +183,7 @@ include('header.php');
                         <div class="subheader">Active users</div>
                     </div>                  					
                     <div id="driverList">    						
-                        <?php include('includes/update_driver_list.php'); ?>					
+                        <?php include('includes/drivers/update_driver_list.php'); ?>					
                     </div>					
                     <script>						
                         function updateTimers() {    							
@@ -231,7 +231,7 @@ include('header.php');
                                 }, 100);         	
                             }    	
                         };    
-                            xhttp.open("GET", "includes/update_driver_list.php", true);    	
+                            xhttp.open("GET", "includes/drivers/update_driver_list.php", true);    	
                             xhttp.send();	
                         }						
                         function scheduleDriverListUpdate() {    
@@ -305,7 +305,7 @@ include('header.php');
                                     console.log("Selected Interval:", selectedInterval);					        	
                                     $.ajax({	            	
                                         type: "GET",	            	
-                                        url: "fetch-next-data.php",            									            	
+                                        url: "includes/bookings/fetch-next-data.php",            									            	
                                         data: { timeInterval: selectedInterval },		            	
                                         success: function(data) {	        	
                                     console.log("Ajax Success:", data);	        	
@@ -322,103 +322,201 @@ include('header.php');
                     </div>		
                 </div>		
                 <div class="card-body border-bottom py-3">		
-                    <div class="table-responsive">						
+                    <div class="table-responsive">
                         <?php
-                        $bsql = mysqli_query($connect, "SELECT bookings.*, clients.c_name, clients.c_email, clients.c_phone, booking_type.*, vehicles.* FROM bookings LEFT JOIN clients ON bookings.c_id = clients.c_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.booking_status <> 'Booked' ORDER BY bookings.book_id DESC");
-                        if (mysqli_num_rows($bsql) > 0) {			
+                        $bsql = mysqli_query($connect, "SELECT
+                                bookings.*,
+                                clients.*,
+                                booking_type.*,
+                                vehicles.*
+                            FROM bookings
+                            LEFT JOIN clients ON bookings.c_id = clients.c_id
+                            INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id
+                            LEFT JOIN vehicles ON bookings.v_id = vehicles.v_id
+                            WHERE bookings.booking_status <> 'Booked'
+                            ORDER BY bookings.book_id DESC");
+                        if (mysqli_num_rows($bsql) > 0) {
                         ?>
-                        <table class="table" id="table-dashboard">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Date Pickup</th>
-                                    <th>Time Pickup</th>
-                                    <th>Post Code</th>
-                                    <th>Pickup</th>				
-                                    <th>Stops</th>				
-                                    <th>Dropoff</th>				
-                                    <th>Passenger</th>				
-                                    <th>Journey Type</th>				
-                                    <th>Fare</th>				
-                                    <th>Vehicle</th>				
-                                    <th>Actions</th>				
-                                </tr>				
-                            </thead>			
-                            <tbody class="table-tbody">								
-                                <?php										
-                                $y = 0;					                                                                       				
-                                while ($brow = mysqli_fetch_array($bsql)) {										                                    				
-                                    $y++;  				                                    
-                                    $pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);				                                    
-                                    $current_datetime = time();                				                                    
-                                    $time_diff = ($pickup_datetime - $current_datetime) / 60;				                                    
-                                    $row_class = ($time_diff <= 10) ? 'near-pickup' : '';       								                                    
-                                ?>            				                                
-                                <tr class="<?php echo $row_class; ?>">                				                                
-                                    <td><?php echo $brow['book_id']; ?></td>                				
-                                    <td><?php echo $brow['pick_date']; ?></td>                				
-                                    <td><?php echo $brow['pick_time']; ?></td>                				
-                                    <td><?php echo $brow['postal_code']; ?></td>                				
-                                    <td><?php echo $brow['pickup']; ?></td>                				
-                                    <td><?php echo $brow['stops']; ?></td>                				
-                                    <td><?php echo $brow['destination']; ?></td>                				
-                                    <td><?php echo $brow['passenger']; ?></td>                				
-                                    <td><?php echo $brow['journey_type']; ?></td>             				
-                                    <td><?php echo $brow['journey_fare']; ?></td>                				
-                                    <td><?php echo $brow['v_name']; ?></td>
-                                    <td style="width: 12%;">				
-                                        <form method="post" action="dispatch-process.php">    					
-                                            <input type="hidden" value="<?php echo $brow['book_id']; ?>" name="book_id">
-                                            <input type="hidden" value="<?php echo $brow['c_id']; ?>" name="c_id">					
-                                            <input type="hidden" value="<?php echo $brow['journey_fare']; ?>" name="journey_fare">
-                                            <input type="hidden" value="<?php echo $brow['booking_fee']; ?>" name="booking_fee">
-                                            <div class="mb-3">					
-                                                <div class="input-group mb-2">						
-                                                    <select class="form-control" name="d_id" required>						
-                                                        <option value="">Select Driver</option>								                                                                                                               
-                                                            <?php                                                                                                                    
-                                                            $drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.acount_status = 1");                                                        
-                                                            while ($drrow = mysqli_fetch_array($drsql)) {                   														
-                                                            ?>							
-                                                        <option value="<?php echo $drrow['d_id']; ?>">							
-								<?php echo $drrow['d_id'] ?> -                                                                 	
-                                                                <?php echo $drrow['d_name'] ?> - 															                                                                                                                                                                                                                        
-                                                                <?php echo $drrow['d_phone'] ?>
-                                                        </option>
-                                                        <?php
-                                                        }							
-                                                        ?>							
-                                                    </select>								
-                                                    <button class="btn btn-bitbucket" type="submit">						
-                                                        <i class="ti ti-plane-tilt"></i>							
-                                                    </button>						
-                                                </div>						
-                                            </div>						
-                                        </form>					
-                                    </td>
-                                </tr>								
-                                <?php            							
-                                }
-                                ?>				
-                            </tbody>    									
-                        </table>    																	
-                            <?php    						                       						                                                                                        
-                                } else {			                           
-                                    echo '<p>No booking found.</p>';			                            
-				}    		                            
-                            ?>								
-                    </div>																								
+                        <table class="table" id="table-dashboard">    
+                            <thead>        
+                                <tr>            
+                                    <th>ID</th>            
+                                    <th>Date Pickup</th>            
+                                    <th>Time Pickup</th>            
+                                    <th>Post Code</th>            
+                                    <th>Pickup</th>            
+                                    <th>Stops</th>            
+                                    <th>Dropoff</th>            
+                                    <th>Passenger</th>            
+                                    <th>Journey Type</th>            
+                                    <th>Fare</th>            
+                                    <th>Vehicle</th>            
+                                    <th>Actions</th>        
+                                </tr>    
+                            </thead>
+                            <tbody class="table-tbody">                                        
+                                <?php 
+                                while ($brow = mysqli_fetch_assoc($bsql)) {                              
+                                    // Calculate pickup proximity            
+                                    $pickup_datetime = strtotime($brow['pick_date'] . ' ' . $brow['pick_time']);            
+                                    $time_diff = ($pickup_datetime - time()) / 60;            
+                                    $row_class = ($time_diff <= 10) ? 'near-pickup' : '';                                           
+                                ?>        
+                                <tr class="<?= $row_class ?>">                                               
+                                    <td>
+                                        <?= $brow['book_id'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['pick_date'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['pick_time'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['postal_code'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['pickup'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['stops'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['destination'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['passenger'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['journey_type'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['journey_fare'] ?>
+                                    </td>            
+                                    <td>
+                                        <?= $brow['v_name'] ?>
+                                    </td>                                               
+                                    <td style="width: 12%;">                
+                                        <form class="dispatchForm">                                                               
+                                            <input type="hidden" name="book_id" value="<?= $brow['book_id'] ?>">                    
+                                            <input type="hidden" name="c_id" value="<?= $brow['c_id'] ?>">                    
+                                            <input type="hidden" name="journey_fare" value="<?= $brow['journey_fare'] ?>">                    
+                                            <input type="hidden" name="booking_fee" value="<?= $brow['booking_fee'] ?>">                                                                
+                                            <div class="input-group mb-2">
+                                                <select class="form-control" name="d_id" required>                            
+                                                    <option value="">Select Driver</option>                                                                               
+                                                        <?php                            
+                                                        $drsql = mysqli_query($connect, "SELECT d_id, d_name, d_phone FROM drivers WHERE acount_status = 1");                            
+                                                        while ($dr = mysqli_fetch_assoc($drsql)) {                            
+                                                        ?>                                
+                                                    <option value="<?= $dr['d_id'] ?>">                                                                    
+                                                        <?= $dr['d_id'] ?> - <?= $dr['d_name'] ?> - <?= $dr['d_phone'] ?>                                
+                                                    </option>                            
+                                                        <?php } ?>                                                                           
+                                                </select>                                                                       
+                                                <button class="btn btn-bitbucket" type="submit">                            
+                                                    <i class="ti ti-plane-tilt"></i>                        
+                                                </button>                                                                   
+                                            </div>                
+                                        </form>            
+                                    </td>                                           
+                                </tr>        
+                                    <?php } ?>
+                            </tbody>
+                        </table>
+
+                        <?php                                                                                                                
+                            } else {                            
+                                echo '<p>No booking found.</p>';                                                          
+                            }                         
+                        ?>
+                    </div>									
                 </div>		
             </div>	
         </div>	
     </div>	
 </div>
+<audio id="dispatchSound">
+    <source src="sounds/dispatch_ding.mp3" type="audio/mpeg">
+</audio>
 <script>
-    $(document).ready(function() {    
-        $('#table-dashboard').DataTable({        
-            "order": [[ 0, "desc" ]]     
-        });
+$(document).on("submit", ".dispatchForm", function (e) {
+    e.preventDefault();
+    let form = this;
+    let formData = new FormData(form);
+    Swal.fire({
+        title: "Dispatching Job...",
+        text: "Please wait",
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading()
+    });
+    $.ajax({
+        url: "includes/jobs/dispatch-process.php",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function (response) {
+            if (response.status === "success") {
+                // 🔊 Play sound
+                var ding = document.getElementById("dispatchSound");
+                if (ding) ding.play();
+                Swal.fire({
+                    icon: "success",
+                    title: "Job Dispatched!",
+                    text: "Driver assigned successfully.",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+                setTimeout(() => {
+                    location.reload();
+                }, 1600);
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Failed!",
+                    text: response.message
+                });
+            }
+        },
+        error: function (xhr) {
+            Swal.fire({
+                icon: "error",
+                title: "Server Error!",
+                text: "dispatch-process.php did not return JSON"
+            });
+            console.log(xhr.responseText);
+        }
+    });
 });
+    $(document).ready(function() {      
+        $('#table-active').DataTable({                                       
+            dom: 'Bfrtip',                    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
+            language: {            
+                emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly                        
+            }                
+        });        
+    });	    
+    $(document).ready(function() {      
+        $('#table-pob').DataTable({                                       
+            dom: 'Bfrtip',                    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
+            language: {            
+                emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly                        
+            }                
+        });        
+    });    
+    $(document).ready(function() {      
+        $('#table-dashboard').DataTable({                                       
+            dom: 'Bfrtip',                    
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
+            language: {            
+                emptyTable: "No Booking Found!" // ✅ Handles empty table cleanly                        
+            }                
+        });        
+    });
 </script>
 <?php	
 include('footer.php');	

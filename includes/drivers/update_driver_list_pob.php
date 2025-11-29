@@ -1,0 +1,28 @@
+<?php
+include('../../configuration.php'); 
+
+$driver_list_html = '<table class="table table-responsive">';
+$driver_list_html .= '<thead>'; 
+$driver_list_html .= '<tr>'; 
+$driver_list_html .= '<th class="w-1">ID</th>'; 
+$driver_list_html .= '<th>Driver</th>'; 
+$driver_list_html .= '<th>Status</th>'; 
+$driver_list_html .= '</tr>'; 
+$driver_list_html .= '</thead>'; 
+$driver_list_html .= '<tbody>'; 
+
+$n = 0;
+$drsql = mysqli_query($connect, "SELECT drivers.* FROM drivers WHERE drivers.`status` = 'pob' OR drivers.`status` = 'On Ride' OR drivers.`status` = 'Reached on Dropoff' OR drivers.`status` = 'Way to Pickup'");
+while ($drrow = mysqli_fetch_array($drsql)) {
+    $n++;
+    $driver_list_html .= '<tr>'; 
+    $driver_list_html .= '<td>' . $n . '</td>'; 
+    $driver_list_html .= '<td><span class="text-secondary">' . $drrow['d_name'] . '</span></td>'; 
+    $driver_list_html .= '<td><span class="badge bg-success me-1"></span>' . $drrow['status'] . '</td>'; 
+    $driver_list_html .= '</tr>'; 
+}
+
+$driver_list_html .= '</tbody>'; 
+$driver_list_html .= '</table>'; 
+echo $driver_list_html;
+?>
