@@ -1,0 +1,12 @@
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_name" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 30
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_email" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 31
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_phone" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 32
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_gender" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 35
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_language" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 36
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "licence_authority" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 37
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_whatsapp" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 38
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_shift" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 39
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_pco" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 40
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Undefined array key "d_img" in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 12
+[06-Dec-2025 11:29:03 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 12
+[06-Dec-2025 11:29:03 Europe/London] PHP Deprecated:  pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in C:\xampp\htdocs\minicab\api\driver\authentication\update-profile.php on line 13

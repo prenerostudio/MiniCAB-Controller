@@ -1,0 +1,10 @@
+[06-Dec-2025 15:38:06 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`mot_img`='69344dde65309.jpg',`mot_updated_at`='2025-12-06 15:38:06' WHERE `d...' at line 1 in C:\xampp\htdocs\minicab\api\driver\documents\vehicle\upload-mot.php:48
+Stack trace:
+#0 C:\xampp\htdocs\minicab\api\driver\documents\vehicle\upload-mot.php(48): mysqli->query('UPDATE `vehicle...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\api\driver\documents\vehicle\upload-mot.php on line 48
+[06-Dec-2025 15:41:30 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`mot_img`='69344eaada4ba.jpg',`mot_updated_at`='2025-12-06 15:41:30' WHERE `d...' at line 1 in C:\xampp\htdocs\minicab\api\driver\documents\vehicle\upload-mot.php:48
+Stack trace:
+#0 C:\xampp\htdocs\minicab\api\driver\documents\vehicle\upload-mot.php(48): mysqli->query('UPDATE `vehicle...')
+#1 {main}
+  thrown in C:\xampp\htdocs\minicab\api\driver\documents\vehicle\upload-mot.php on line 48
