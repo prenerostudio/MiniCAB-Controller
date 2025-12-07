@@ -5,7 +5,7 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 header('Cache-Control: max-age=3600');
 
-include("../../configuration.php");
+include("../../../configuration.php");
 
 $d_id = isset($_POST['d_id']) ? $_POST['d_id'] : null;
 $job_id = isset($_POST['job_id']) ? $_POST['job_id'] : null;
@@ -14,7 +14,7 @@ if ($job_id) {
     $stmt = $connect->prepare("UPDATE `jobs` SET `job_status` = ? WHERE `job_id` = ?");
     $stmt->bind_param("si", $status, $job_id);
     if ($stmt->execute()) {        	
-        $fetch_sql = "SELECT jobs.*, bookings.*, clients.*, drivers.* FROM jobs, clients, drivers, bookings WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.job_id = '$job_id'";	
+        $fetch_sql = "SELECT j.*, b.*, c.*, d.* FROM jobs AS j JOIN bookings AS b ON j.book_id = b.book_id JOIN clients AS c ON j.c_id = c.c_id JOIN drivers AS d ON j.d_id = d.d_id WHERE j.job_id = '$job_id'";	
         $fetch_r = $connect->query($fetch_sql);	
         $output = mysqli_fetch_all($fetch_r, MYSQLI_ASSOC);
 						  

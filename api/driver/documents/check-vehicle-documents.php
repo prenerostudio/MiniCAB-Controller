@@ -5,7 +5,7 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 header('Cache-Control: max-age=3600');
 
-include("../../config.php");
+include("../../../configuration.php");
 
 // Check if required POST parameters are set and not empty
 if (isset($_POST['d_id'], $_POST['status']) && !empty(trim($_POST['d_id'])) && !empty(trim($_POST['status']))) {

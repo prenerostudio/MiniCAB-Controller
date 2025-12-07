@@ -5,7 +5,7 @@ header('Access-Control-Allow-Methods:POST');
 header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authoization, x-Requested-with');
 header('Cache-Control: max-age=3600');
 
-include("../../config.php");
+include("../../../configuration.php");
 
 $d_id = $_POST['d_id'];
 
@@ -14,7 +14,7 @@ if (isset($_POST['d_id'])) {
     $startOfWeek = date('Y-m-d', strtotime('last monday', strtotime($currentDate)));    
     $endOfWeek = date('Y-m-d', strtotime('next sunday', strtotime($currentDate)));
 
-    $sql = "SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, clients.c_address, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.* FROM jobs, drivers, clients, bookings, booking_type WHERE jobs.book_id = bookings.book_id AND jobs.c_id = clients.c_id AND jobs.d_id = drivers.d_id AND jobs.d_id = '$d_id' AND jobs.job_status = 'accepted' AND bookings.b_type_id = booking_type.b_type_id AND jobs.date_job_add BETWEEN '$startOfWeek' AND '$endOfWeek' ORDER BY jobs.job_id DESC";
+    $sql = "SELECT j.*, c.c_name, c.c_email, c.c_phone, c.c_address, d.d_name, d.d_email, d.d_phone, b.*, bt.* FROM jobs AS j JOIN bookings AS b ON j.book_id = b.book_id JOIN clients AS c ON j.c_id = c.c_id JOIN drivers AS d ON j.d_id = d.d_id JOIN booking_type AS bt ON b.b_type_id = bt.b_type_id WHERE j.d_id = '$d_id' AND j.job_status = 'accepted' AND j.date_job_add BETWEEN '$startOfWeek' AND '$endOfWeek' ORDER BY j.job_id DESC";
 
     $r = mysqli_query($connect, $sql);
     $output = mysqli_fetch_all($r, MYSQLI_ASSOC);

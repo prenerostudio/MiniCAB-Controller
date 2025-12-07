@@ -5,13 +5,16 @@ header('Access-Control-Allow-Methods:POST');
 header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authoization, x-Requested-with');
 header('Cache-Control: max-age=3600');
 
-include("../../config.php");
+include("../../../configuration.php");
 
-$d_id = $_POST['d_id'];
 if (isset($_POST['d_id'])) {   
-    $currentDate = date('Y-m-d');   
-    $nextWeekEndDate = date('Y-m-d', strtotime('+7 days', strtotime($currentDate)));    
-    $sql = "SELECT jobs.*, clients.c_name, clients.c_email, clients.c_phone, clients.c_address, drivers.d_name, drivers.d_email, drivers.d_phone, bookings.* FROM jobs JOIN drivers ON jobs.d_id = drivers.d_id JOIN clients ON jobs.c_id = clients.c_id JOIN bookings ON jobs.book_id = bookings.book_id JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id WHERE jobs.d_id = '$d_id' AND jobs.job_status != 'Completed' AND bookings.pick_date BETWEEN '$currentDate' AND '$nextWeekEndDate' ORDER BY jobs.job_id DESC";
+    $currentDate = date('Y-m-d');
+$start = $currentDate . ' 00:00:00';
+$end = date('Y-m-d 23:59:59', strtotime('+7 days'));
+	// Prevent SQL injection by using proper variable escaping if mysqli or prepared statements later
+	$d_id = mysqli_real_escape_string($connect, $_POST['d_id']);
+
+	$sql = "SELECT j.*, c.*, d.*, b.*, bt.* FROM jobs AS j JOIN drivers AS d ON j.d_id = d.d_id JOIN clients AS c ON j.c_id = c.c_id JOIN bookings AS b ON j.book_id = b.book_id JOIN booking_type AS bt ON b.b_type_id = bt.b_type_id WHERE j.d_id = '$d_id' AND j.job_status <> 'Completed' AND b.pick_date BETWEEN '$start' AND '$end' ORDER BY j.job_id DESC";
     $r = mysqli_query($connect, $sql);
     $output = mysqli_fetch_all($r, MYSQLI_ASSOC);
     if (count($output) > 0) {

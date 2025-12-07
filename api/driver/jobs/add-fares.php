@@ -5,7 +5,7 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 header('Cache-Control: max-age=3600');
 
-include("../../config.php");
+include("../../../configuration.php");
 
 $job_id = $_POST['job_id'];
 $d_id = $_POST['d_id'];
@@ -28,39 +28,14 @@ if(isset($job_id)){
         $sql = "UPDATE `fares` SET `journey_fare`='$journey_fare',`car_parking`='$car_parking',`waiting`='$waiting',`tolls`='$tolls',`extras`='$extra',`fare_status`='$fare_status'  WHERE `fare_id`='$fare_id'";
     } else {
         // Insert new fare record
-        $sql = "INSERT INTO `fares` (
-                                    `job_id`,
-                                    `d_id`, 
-                                    `journey_fare`, 
-                                    `car_parking`, 
-                                    `waiting`, 
-                                    `tolls`, 
-                                    `extras`, 
-                                    `fare_status`, 
-                                    `apply_date`
-                                    ) VALUES (
-                                    '$job_id',
-                                    '$d_id',
-                                    '$journey_fare',
-                                    '$car_parking',
-                                    '$waiting',
-                                    '$tolls',
-                                    '$extra',
-                                    '$fare_status',
-                                    '$date')";
+        $sql = "INSERT INTO `fares` (`job_id`, `d_id`, `journey_fare`, `car_parking`, `waiting`, `tolls`, `extras`, `fare_status`, `apply_date`) VALUES ('$job_id', '$d_id', '$journey_fare', '$car_parking', '$waiting', '$tolls', '$extra',  '$fare_status', '$date')";
     }
 
     $r = mysqli_query($connect, $sql);
     
     if($r){
         // Update jobs table
-        $updatejobsql = "UPDATE `jobs` SET 
-                            `journey_fare`='$journey_fare',
-                            `car_parking`='$car_parking',
-                            `waiting`='$waiting',
-                            `tolls`='$tolls',
-                            `extra`='$extra' 
-                         WHERE `job_id`='$job_id'";
+        $updatejobsql = "UPDATE `jobs` SET `journey_fare`='$journey_fare', `car_parking`='$car_parking', `waiting`='$waiting', `tolls`='$tolls', `extra`='$extra' WHERE `job_id`='$job_id'";
         $updatejobr = mysqli_query($connect, $updatejobsql);
         
         if($updatejobr){
@@ -73,29 +48,14 @@ if(isset($job_id)){
                 $book_id = $job_data['book_id'];
                 
                 // Update bookings table
-                $updatesql = "UPDATE `bookings` SET 
-                                `journey_fare`='$journey_fare',
-                                `car_parking`='$car_parking',
-                                `waiting`='$waiting',
-                                `tolls`='$tolls',
-                                `extra`='$extra' 
-                              WHERE `book_id`='$book_id'";
+                $updatesql = "UPDATE `bookings` SET `journey_fare`='$journey_fare', `car_parking`='$car_parking', `waiting`='$waiting', `tolls`='$tolls', `extra`='$extra' WHERE `book_id`='$book_id'";
                 $updater = mysqli_query($connect, $updatesql);
                 
                 // Insert activity log
                 $activity_type = 'Journey Fare Added';
                 $user_type = 'driver';
                 $details = "Journey Fare added for correction against job #: $job_id.";
-                $actsql = "INSERT INTO `activity_log`(
-                                        `activity_type`, 
-                                        `user_type`, 
-                                        `user_id`, 
-                                        `details`
-                                        ) VALUES (
-                                        '$activity_type',
-                                        '$user_type',
-                                        '$d_id',
-                                        '$details')";        
+                $actsql = "INSERT INTO `activity_log`(`activity_type`, `user_type`, `user_id`, `details`) VALUES ('$activity_type', '$user_type', '$d_id', '$details')";        
                 $actr = mysqli_query($connect, $actsql);
                 
                 if ($updater && $actr) {
