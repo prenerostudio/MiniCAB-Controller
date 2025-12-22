@@ -56,17 +56,17 @@ a:hover {
     pointer-events:none;
     background-color:transparent
 }
-.scrollable-table {
+.zones-table {
     display: block;    
     height: 260px; /* Adjust the height as necessary to fit 6 records */    
     overflow-y: scroll;    
 }       
-.scrollable-table thead, .scrollable-table tbody tr {
+.zones-table thead, .zones-table tbody tr {
     display: table;    
     width: 100%;    
     table-layout: fixed;    
 }
-.scrollable-table thead {
+.zones-table thead {
     width: calc( 100% - 1em );    
 } 
 .position-relative {

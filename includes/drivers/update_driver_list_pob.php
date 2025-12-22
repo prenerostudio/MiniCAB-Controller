@@ -1,7 +1,7 @@
 <?php
 include('../../configuration.php'); 
 
-$driver_list_html = '<table class="table table-responsive">';
+$driver_list_html = '<table class="table table-responsive" id="table-pob">';
 $driver_list_html .= '<thead>'; 
 $driver_list_html .= '<tr>'; 
 $driver_list_html .= '<th class="w-1">ID</th>'; 

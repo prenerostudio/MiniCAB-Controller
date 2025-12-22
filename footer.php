@@ -67,7 +67,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 <!-- DataTables Initialization -->
-<script src="js/demo.datatable-init.js"></script>
+<!-- comment -->
+<!--<script src="js/demo.datatable-init.js"></script>-->
+<script src="js/datatable-init.js"></script>
 <!-- Tabler + Other Libraries -->
 <script src="libs/apexcharts/dist/apexcharts.min.js"></script>
 <script src="libs/jsvectormap/dist/js/jsvectormap.min.js"></script>

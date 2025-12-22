@@ -23,7 +23,6 @@ include('header.php');
                     const alerts = JSON.parse(response);
                     const alertContainer = document.getElementById('driver-expiry-alerts');
                     alertContainer.innerHTML = ''; // Clear old alerts
-
                     alerts.forEach(alert => {
                         const message = `${alert.document_type} for driver ID ${alert.driver_id} is expiring on ${alert.expiry_date}`;
                         alertContainer.innerHTML += createAlertHtml(message);
@@ -79,7 +78,7 @@ include('header.php');
                             ];
 			}			
                         // Display zone table			
-                        echo "<table class='table table-responsive scrollable-table'>";			
+                        echo "<table class='table table-responsive zones-table'>";			
                         echo "<tr><th>Zone</th><th>Number of Drivers</th><th>Drivers List</th><th>Vehicles in Zone</th></tr>";			
                         while ($zone = $zonesResult->fetch_assoc()) {    			
                             $driverCount = 0;    			
@@ -156,9 +155,7 @@ include('header.php');
                             </table>
                         </div>                        
                         <script>			
-                            $(document).ready(function() {
-                                $('#table-pob').DataTable();	
-                            });
+                            
                             function loadDriverListPOB() {
                                 var xhttp = new XMLHttpRequest();	
                                 xhttp.onreadystatechange = function() {	        	
@@ -490,33 +487,7 @@ $(document).on("submit", ".dispatchForm", function (e) {
         }
     });
 });
-    $(document).ready(function() {      
-        $('#table-active').DataTable({                                       
-            dom: 'Bfrtip',                    
-            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
-            language: {            
-                emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly                        
-            }                
-        });        
-    });	    
-    $(document).ready(function() {      
-        $('#table-pob').DataTable({                                       
-            dom: 'Bfrtip',                    
-            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
-            language: {            
-                emptyTable: "No Driver Found!" // ✅ Handles empty table cleanly                        
-            }                
-        });        
-    });    
-    $(document).ready(function() {      
-        $('#table-dashboard').DataTable({                                       
-            dom: 'Bfrtip',                    
-            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],                    
-            language: {            
-                emptyTable: "No Booking Found!" // ✅ Handles empty table cleanly                        
-            }                
-        });        
-    });
+   
 </script>
 <?php	
 include('footer.php');	
