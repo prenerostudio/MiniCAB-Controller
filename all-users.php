@@ -47,10 +47,8 @@ include('header.php');
                                 <?php
                                 $x=0;
                                 $usql=mysqli_query($connect,"SELECT users.*, countries.* FROM users JOIN countries ON users.country_id = countries.country_id");
-                                while($urow = mysqli_fetch_array($usql)){                                   
-									
-                                    $x++;                                
-								
+                                while($urow = mysqli_fetch_array($usql)){                                   									
+                                    $x++;                                								
                                 ?>
                                 <tr>
                                     <td>
@@ -88,12 +86,10 @@ include('header.php');
                                         <a href="view-user.php?user_id=<?php echo $urow['user_id']; ?>" class="btn btn-info">
                                             <i class="ti ti-eye"></i>
                                             View
-                                        </a>
-                                        
+                                        </a>                                        
                                         <?php
                                         if($urow['designation']=='Super-admin'){
-                                        ?>
-                                        
+                                        ?>                                        
                                         <?php
                                         } else {
                                         ?>
@@ -178,7 +174,8 @@ $(document).ready(function() {
     
     
     
-$(document).ready(function() {      
+
+    $(document).ready(function() {      
         $('#table-user').DataTable({        
             responsive: true,                    
             dom: 'Bfrtip',                    

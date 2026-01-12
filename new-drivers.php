@@ -135,7 +135,47 @@ include('header.php');
                                             </thead>    
                                             <tbody class="table-tbody">        
                                                 <?php                                                               
-                                                $awsql = mysqli_query($connect, "SELECT d.* FROM drivers AS d LEFT JOIN	driving_license AS dl ON dl.d_id = d.d_id LEFT JOIN dvla_check AS dc ON dc.d_id = d.d_id LEFT JOIN address_proofs AS ap ON ap.d_id = d.d_id LEFT JOIN pco_license AS pl ON pl.d_id = d.d_id LEFT JOIN national_insurance AS ni ON ni.d_id = d.d_id LEFT JOIN driver_extras AS de ON de.d_id = d.d_id LEFT JOIN vehicle_log_book AS vlb ON vlb.d_id = d.d_id LEFT JOIN vehicle_mot AS vm ON vm.d_id = d.d_id LEFT JOIN vehicle_insurance AS vi ON vi.d_id = d.d_id LEFT JOIN vehicle_pco AS vpc ON vpc.d_id = d.d_id LEFT JOIN vehicle_pictures AS vp ON vp.d_id = d.d_id LEFT JOIN vehicle_road_tax AS vrt ON vrt.d_id = d.d_id LEFT JOIN rental_agreement AS ra ON ra.d_id = d.d_id LEFT JOIN vehicle_ins_schedule AS vis ON vis.d_id = d.d_id LEFT JOIN vehicle_extras AS ve ON ve.d_id = d.d_id WHERE dl.d_id IS NULL AND dc.d_id IS NULL AND ap.d_id IS NULL AND pl.d_id IS NULL AND ni.d_id IS NULL AND de.d_id IS NULL AND vlb.d_id IS NULL AND vm.d_id IS NULL AND vi.d_id IS NULL AND vpc.d_id IS NULL AND vp.d_id IS NULL AND vrt.d_id IS NULL AND ra.d_id IS NULL AND vis.d_id IS NULL AND ve.d_id IS NULL ORDER BY d.d_id DESC;");
+                                                $awsql = mysqli_query($connect, "SELECT
+  d.*,
+  driver_vehicle.*,
+  vehicles.v_name 
+FROM
+  drivers AS d
+  LEFT JOIN driving_license AS dl ON dl.d_id = d.d_id
+  LEFT JOIN dvla_check AS dc ON dc.d_id = d.d_id
+  LEFT JOIN address_proofs AS ap ON ap.d_id = d.d_id
+  LEFT JOIN pco_license AS pl ON pl.d_id = d.d_id
+  LEFT JOIN national_insurance AS ni ON ni.d_id = d.d_id
+  LEFT JOIN driver_extras AS de ON de.d_id = d.d_id
+  LEFT JOIN vehicle_log_book AS vlb ON vlb.d_id = d.d_id
+  LEFT JOIN vehicle_mot AS vm ON vm.d_id = d.d_id
+  LEFT JOIN vehicle_insurance AS vi ON vi.d_id = d.d_id
+  LEFT JOIN vehicle_pco AS vpc ON vpc.d_id = d.d_id
+  LEFT JOIN vehicle_pictures AS vp ON vp.d_id = d.d_id
+  LEFT JOIN vehicle_road_tax AS vrt ON vrt.d_id = d.d_id
+  LEFT JOIN rental_agreement AS ra ON ra.d_id = d.d_id
+  LEFT JOIN vehicle_ins_schedule AS vis ON vis.d_id = d.d_id
+  LEFT JOIN vehicle_extras AS ve ON ve.d_id = d.d_id
+  INNER JOIN driver_vehicle ON driver_vehicle.d_id = d.d_id
+  INNER JOIN vehicles ON driver_vehicle.v_id = vehicles.v_id 
+WHERE
+  dl.d_id IS NULL 
+  AND dc.d_id IS NULL 
+  AND ap.d_id IS NULL 
+  AND pl.d_id IS NULL 
+  AND ni.d_id IS NULL 
+  AND de.d_id IS NULL 
+  AND vlb.d_id IS NULL 
+  AND vm.d_id IS NULL 
+  AND vi.d_id IS NULL 
+  AND vpc.d_id IS NULL 
+  AND vp.d_id IS NULL 
+  AND vrt.d_id IS NULL 
+  AND ra.d_id IS NULL 
+  AND vis.d_id IS NULL 
+  AND ve.d_id IS NULL 
+ORDER BY
+  d.d_id DESC");
                                                 while ($awrow = mysqli_fetch_array($awsql)) :                                                                    
                                                 ?>        
                                                 <tr>            
