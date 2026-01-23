@@ -1,0 +1,5 @@
+[20-Jan-2026 12:49:31 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'c_address' in 'field list' in C:\xampp\htdocs\MiniCAB-Controller\includes\companies\update-company.php:32
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\includes\companies\update-company.php(32): mysqli->prepare('UPDATE companie...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\includes\companies\update-company.php on line 32

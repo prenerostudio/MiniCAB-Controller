@@ -1,165 +1,125 @@
-<?php
+<?php 
 include('header.php');
-
 $book_id = $_GET['book_id'];
 $booksql=mysqli_query($connect,"SELECT bookings.*, clients.*, booking_type.*, vehicles.* FROM bookings INNER JOIN booking_type ON bookings.b_type_id = booking_type.b_type_id INNER JOIN clients ON bookings.c_id = clients.c_id INNER JOIN vehicles ON bookings.v_id = vehicles.v_id WHERE bookings.book_id = '$book_id'");
 $bookrow = mysqli_fetch_array($booksql);
 ?>  
-<div class="page-body page_padding">
-    
-       
-    <div class="row row-deck row-cards">
-    
+<div class="page-body page_padding">           
+    <div class="row row-deck row-cards">    
         <div class="col-8">
-
-            <div class="card">
-            
-                <div class="card-header">
-                
-                    <h3 class="card-title">			
-                    
-                        Dispatch Booking			
-                        
-                    </h3>			
-                    
-                </div>										
-                
-                <div class="card-body border-bottom py-3">
-                
-                    <div class="modal-body">
-                    
-                        <div class="row">
-                        
-                            <h3>Booking Type: <?php echo $bookrow['b_type_name'];?></h3>
-                            
-                            <h4>Passenger Details:</h4>
-                            
-                            <div class="mb-3 col-lg-4">
-                            
-                                <h4>Customer Name: </h4>
-                                
-                                <p><?php echo $bookrow['c_name'];?></p>
-                                
-                            </div>
-                            
-                            <div class="mb-3 col-lg-4">
-                            
-                                <h4>Customer Phone</h4>
-                                
-                                <p><?php echo $bookrow['c_phone'];?></p>
-                                
-                            </div>
-                            
-                            <div class="mb-3 col-lg-4">
-                            
-                                <h4>Customer Email</h4>
-                                
-                                <p><?php echo $bookrow['c_email'];?></p>
-                                
-                            </div>
-                            
-                        </div>
-                          
-                        <div class="row">
-                        
-                            <h4>Journey Details:</h4>
-                            
-                            <div class="mb-3 col-lg-4">	
-                            
-                                <h4>Pickup Location:</h4>									
-                                
-                                <p><?php echo $bookrow['pickup'];?></p>
-                                
-                            </div>
-                                <div class="mb-3 col-lg-4">
-                            
-                                    <h4>Drop-off Location:</h4>
-                                    
-                                    <p><?php echo $bookrow['destination'];?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Address:</h4>
-                                    <p><?php echo $bookrow['address'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Postal Code:</h4>
-                                    <p><?php echo $bookrow['postal_code'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>No. of Passenger:</h4>
-                                    <p><?php echo $bookrow['passenger'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Pickup Date:</h4>
-                                    <p><?php echo $bookrow['pick_date'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Pickup Time:</h4>
-                                    <p><?php echo $bookrow['pick_time'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Journey Type</h4>
-                                    <p><?php echo $bookrow['journey_type'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Distance (Auto-calculated)</h4>
-                                    <p><?php echo $bookrow['journey_distance'] ?></p>
-                                </div>
-                            </div>
-                        
-                        <div class="row">
-                        
-                            <div class="mb-3 col-lg-4">
-                                    <h4>Vehicle Type</h4>
-                                    <p><?php echo $bookrow['v_name'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Luggage</h4>
-                                    <p><?php echo $bookrow['luggage'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Child Seat</h4>
-                                    <p><?php echo $bookrow['child_seat'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Flight Number </h4>
-                                    <p><?php echo $bookrow['flight_number'] ?></p>
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <h4>Delay Time </h4>
-                                    <p><?php echo $bookrow['delay_time'] ?></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="mb-3">
-                                    <h4>Special Note</h4>									
-                                    <p><?php echo $bookrow['note'] ?></p>
-                                </div>				
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            Driver Details
-                        </h3>
-                    </div>
-                    <div class="card-body border-bottom py-3">						
-                        <?php
-                        session_start();
-                        if(isset($_SESSION['success_msg'])){
-                            echo '<h4 style="color:red; margin-top: 10px; font-size: 18px;" align="center">'.$_SESSION['success_msg'].' </h4>';
-                            unset($_SESSION['success_msg']);
-                            }
-                        ?>
-                         <form method="post" action="dispatch-process.php" id="jobform" enctype="multipart/form-data">
-                        <div class="modal-body">
-                           
-                            <div class="row">
-                                
+            <div class="card">            
+                <div class="card-header">                
+                    <h3 class="card-title">			                    
+                        Dispatch Booking			                        
+                    </h3>			                    
+                </div>										                
+                <div class="card-body border-bottom py-3">                
+                    <div class="modal-body">                    
+                        <div class="row">                        
+                            <h3>Booking Type: <?php echo $bookrow['b_type_name'];?></h3>                            
+                            <h4>Passenger Details:</h4>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Customer Name: </h4>                                
+                                <p><?php echo $bookrow['c_name'];?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Customer Phone</h4>                                
+                                <p><?php echo $bookrow['c_phone'];?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Customer Email</h4>                                
+                                <p><?php echo $bookrow['c_email'];?></p>                                
+                            </div>                            
+                        </div>                          
+                        <div class="row">                                                    
+                            <h4>Journey Details:</h4>                            
+                            <div class="mb-3 col-lg-4">	                            
+                                <h4>Pickup Location:</h4>									                                
+                                <p><?php echo $bookrow['pickup'];?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                                                        
+                                <h4>Drop-off Location:</h4>                                                                    
+                                <p><?php echo $bookrow['destination'];?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Address:</h4>                                
+                                <p><?php echo $bookrow['address'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Postal Code:</h4>                                
+                                <p><?php echo $bookrow['postal_code'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>No. of Passenger:</h4>                                
+                                <p><?php echo $bookrow['passenger'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Pickup Date:</h4>                                
+                                <p><?php echo $bookrow['pick_date'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Pickup Time:</h4>                                
+                                <p><?php echo $bookrow['pick_time'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Journey Type</h4>                                
+                                <p><?php echo $bookrow['journey_type'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Distance (Auto-calculated)</h4>                                
+                                <p><?php echo $bookrow['journey_distance'] ?></p>                                
+                            </div>                                                        
+                        </div>                       
+                        <div class="row">                                                    
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Vehicle Type</h4>                                
+                                <p><?php echo $bookrow['v_name'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Luggage</h4>                                
+                                <p><?php echo $bookrow['luggage'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Child Seat</h4>                                
+                                <p><?php echo $bookrow['child_seat'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Flight Number </h4>                                
+                                <p><?php echo $bookrow['flight_number'] ?></p>                                
+                            </div>                            
+                            <div class="mb-3 col-lg-4">                            
+                                <h4>Delay Time </h4>                                
+                                <p><?php echo $bookrow['delay_time'] ?></p>                                
+                            </div>                            
+                        </div>                        
+                        <div class="row">                        
+                            <div class="mb-3">                            
+                                <h4>Special Note</h4>									                                
+                                <p><?php echo $bookrow['note'] ?></p>                                
+                            </div>				                            
+                        </div>                        
+                    </div>                    
+                </div>                
+            </div>            
+        </div>        
+        <div class="col-4">        
+            <div class="card">            
+                <div class="card-header">                
+                    <h3 class="card-title">                    
+                        Driver Details                        
+                    </h3>                    
+                </div>                
+                <div class="card-body border-bottom py-3">						                           
+                    <?php       
+                    session_start();                    
+                    if(isset($_SESSION['success_msg'])){                    
+                        echo '<h4 style="color:red; margin-top: 10px; font-size: 18px;" align="center">'.$_SESSION['success_msg'].' </h4>';                        
+                        unset($_SESSION['success_msg']);                        
+                    }                        
+                    ?>                    
+                    <form class="dispatchForm">                    
+                        <div class="modal-body">                                                    
+                            <div class="row">                                                            
                                 <input type="hidden" name="book_id" value="<?php echo $bookrow['book_id'];?>">
                                 <input type="hidden" name="c_id" value="<?php echo $bookrow['c_id'];?>">
                                 <div class="mb-3 col-lg-12">
@@ -267,8 +227,56 @@ $bookrow = mysqli_fetch_array($booksql);
         } else {           
             document.getElementById("jobform").submit();
         }
-    }
+    }        
+    $(document).on("submit", ".dispatchForm", function (e) {
+        e.preventDefault();
+        let form = this;
+        let formData = new FormData(form);
+        Swal.fire({
+            title: "Dispatching Job...",
+            text: "Please wait",
+            allowOutsideClick: false,
+            didOpen: () => Swal.showLoading()
+        });
+        $.ajax({
+            url: "includes/jobs/dispatch-process.php",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            success: function (response) {
+                if (response.status === "success") {
+                    // 🔊 Play sound
+                    var ding = document.getElementById("dispatchSound");
+                    if (ding) ding.play();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Job Dispatched!",
+                        text: "Driver assigned successfully.",
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1600);
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Failed!",
+                        text: response.message
+                    });
+                }
+            },
+            error: function (xhr) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Server Error!",
+                    text: "dispatch-process.php did not return JSON"
+                });
+                console.log(xhr.responseText);
+            }
+        });
+    });
 </script>
-<?php
-include('footer.php');
-?>
+<?php include('footer.php'); ?>

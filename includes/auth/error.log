@@ -1,0 +1,2 @@
+[20-Jan-2026 09:03:40 Europe/London] PHP Warning:  move_uploaded_file(img/companies/696f44ecd9fd1_1 (2).jpg): Failed to open stream: No such file or directory in C:\xampp\htdocs\MiniCAB-Controller\includes\auth\update-company-logo.php on line 33
+[20-Jan-2026 09:03:40 Europe/London] PHP Warning:  move_uploaded_file(): Unable to move &quot;C:\xampp\tmp\php5577.tmp&quot; to &quot;img/companies/696f44ecd9fd1_1 (2).jpg&quot; in C:\xampp\htdocs\MiniCAB-Controller\includes\auth\update-company-logo.php on line 33

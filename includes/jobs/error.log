@@ -1,0 +1,7 @@
+[17-Jan-2026 13:50:28 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\includes\jobs\get-driver-details.php on line 9
+[17-Jan-2026 13:50:28 Europe/London] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MiniCAB-Controller\includes\jobs\get-driver-details.php on line 10
+[17-Jan-2026 14:31:15 Europe/London] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\MiniCAB-Controller\includes\jobs\dispatch-process.php:28
+Stack trace:
+#0 C:\xampp\htdocs\MiniCAB-Controller\includes\jobs\dispatch-process.php(28): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\MiniCAB-Controller\includes\jobs\dispatch-process.php on line 28

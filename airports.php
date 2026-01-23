@@ -80,70 +80,68 @@ include('header.php');
                         emptyTable: "No User Found!" // ✅ Handles empty table cleanly                                    
                     }                        
                 });            
+            });            
+    document.addEventListener("click", function (e) {    
+        const btn = e.target.closest(".deleteAirportBtn");    
+        if (!btn) return;
+            const apId = btn.getAttribute("data-id");   
+            Swal.fire({
+                title: "Are you sure?",        
+                text: "This airport will be permanently deleted!",        
+                icon: "warning",        
+                showCancelButton: true,        
+                confirmButtonText: "Yes, Delete",        
+                cancelButtonText: "Cancel",        
+                confirmButtonColor: "#d33",        
+                allowOutsideClick: false    
+            }).then((result) => {       
+                if (!result.isConfirmed) return;
+                btn.style.pointerEvents = "none";
+                Swal.fire({
+                    title: "Deleting...",            
+                    text: "Please wait",            
+                    allowOutsideClick: false,            
+                    didOpen: () => Swal.showLoading()        
+                });      
+                fetch("includes/zones/del-airport.php", {
+                    method: "POST",            
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"            
+                    },            
+                    body: "ap_id=" + apId        
+                })                        
+                .then(res => res.json())        
+                .then(data => {            
+                    Swal.close();            
+                    btn.style.pointerEvents = "auto";          
+                    if (data.status === "success") {
+                        Swal.fire({
+                            icon: "success",                    
+                            title: "Deleted!",                    
+                            text: data.message                
+                        }).then(() => {
+                            window.location.reload(); // or remove row dynamically                
+                        });            
+                    } else {
+                        Swal.fire({
+                            icon: "error",                    
+                            title: "Error",                    
+                            text: data.message                
+                        });            
+                    }        
+                })        
+                .catch(() => {
+            
+                    btn.style.pointerEvents = "auto";
+            
+                    Swal.fire("Error", "Something went wrong!", "error");
+        
+                });
+    
             });
-            document.addEventListener("click", function (e) {
 
-    const btn = e.target.closest(".deleteAirportBtn");
-    if (!btn) return;
-
-    const apId = btn.getAttribute("data-id");
-
-    Swal.fire({
-        title: "Are you sure?",
-        text: "This airport will be permanently deleted!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Yes, Delete",
-        cancelButtonText: "Cancel",
-        confirmButtonColor: "#d33",
-        allowOutsideClick: false
-    }).then((result) => {
-
-        if (!result.isConfirmed) return;
-
-        btn.style.pointerEvents = "none";
-
-        Swal.fire({
-            title: "Deleting...",
-            text: "Please wait",
-            allowOutsideClick: false,
-            didOpen: () => Swal.showLoading()
-        });
-
-        fetch("includes/zones/del-airport.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: "ap_id=" + apId
-        })
-        .then(res => res.json())
-        .then(data => {
-            Swal.close();
-            btn.style.pointerEvents = "auto";
-
-            if (data.status === "success") {
-                Swal.fire({
-                    icon: "success",
-                    title: "Deleted!",
-                    text: data.message
-                }).then(() => {
-                    window.location.reload(); // or remove row dynamically
-                });
-            } else {
-                Swal.fire({
-                    icon: "error",
-                    title: "Error",
-                    text: data.message
-                });
-            }
-        })
-        .catch(() => {
-            btn.style.pointerEvents = "auto";
-            Swal.fire("Error", "Something went wrong!", "error");
-        });
     });
-});
+        
         </script>				
         <div class="col-5">							
             <div class="card">										

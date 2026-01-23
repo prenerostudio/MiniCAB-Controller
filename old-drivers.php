@@ -90,7 +90,6 @@ include('header.php');
     document.querySelectorAll('.activateDriverBtn').forEach(function(button) {
         button.addEventListener('click', function() {
             const driverId = this.dataset.did;
-
             Swal.fire({
                 title: 'Activate Driver?',
                 text: 'Are you sure you want to activate this driver?',
@@ -102,14 +101,12 @@ include('header.php');
                 cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
-
                     Swal.fire({
                         title: 'Processing...',
                         text: 'Please wait while activating driver...',
                         allowOutsideClick: false,
                         didOpen: () => Swal.showLoading()
                     });
-
                     fetch('includes/drivers/activate-driver.php', {
                         method: 'POST',
                         headers: {

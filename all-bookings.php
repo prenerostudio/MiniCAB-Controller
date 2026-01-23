@@ -171,24 +171,19 @@ include('header.php');
                                                 <i class='ti ti-eye'></i>
                                             </button>
                                         </a>										
-                                        <?php					
-                                        if ($brow['booking_status'] == 'Booked') {					
-                                        ?>
+                                        <?php if ($brow['booking_status'] == 'Booked') { ?>
                                         <a href='#'>
                                             <button class='btn btn-github btn-icon' title='Dispatched' disabled>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>										
                                         </a>					
-					<?php
-                                        } else {					
-                                        ?>
+					<?php } else { ?>
                                         <a href='dispatch-booking.php?book_id=<?php echo $brow['book_id']; ?>'>
                                             <button class='btn btn-github btn-icon'  title='Dispatch'>
                                                 <i class='ti ti-plane-tilt'></i>
                                             </button>
                                         </a>										
-                                        <?php					
-                                        }					
+                                        <?php }					
                                         if ($brow['booking_status'] == 'Open') {							
                                         ?>
                                         <a href='#' >
@@ -196,22 +191,14 @@ include('header.php');
                                                  <i class="ti ti-folder-open"></i>
                                             </button>
                                         </a>									                                            
-                                        <?php
-                                        } else {					
-                                        ?>
-                                        <a href='open-book.php?book_id=<?php echo $brow['book_id']; ?>'>
-                                            <button class='btn btn-success btn-icon'  title='Send to Archive'>
-                                                <i class="ti ti-folder-open"></i>
-                                            </button>
-                                        </a>										
-                                        <?php		
-                                        }				
-                                        ?>
+                                        <?php } else { ?>
+                                        <button class="btn btn-success btn-icon open-booking-btn" data-id="<?php echo $brow['book_id']; ?>" title="Open Booking">    
+                                            <i class="ti ti-folder-open"></i>
+                                        </button>										
+                                        <?php } ?>
                                     </td>
                                 </tr>				
-                                <?php							
-                                }							
-                                ?>                         
+                                <?php }	?>                         
                             </tbody>			
                         </table>			
 			<?php
@@ -233,6 +220,51 @@ $(document).ready(function() {
     dom: 'Bfrtip',
     buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
   });
+});
+
+$(document).on('click', '.open-booking-btn', function () {
+    let book_id = $(this).data('id');
+    Swal.fire({
+        title: 'Open Booking?',
+        text: "This booking will be marked as Open.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, Open it!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: 'includes/bookings/open-booking.php',
+                type: 'POST',
+                data: { book_id: book_id },
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status === 'success') {
+                        Swal.fire(
+                            'Opened!',
+                            response.message,
+                            'success'
+                        ).then(() => {
+                            location.reload(); // OR redirect if needed
+                        });
+                    } else {
+                        Swal.fire(
+                            'Error!',
+                            response.message,
+                            'error'
+                        );
+                    }
+                },
+                error: function () {
+                    Swal.fire(
+                        'Error!',
+                        'Something went wrong.',
+                        'error'
+                    );
+                }
+            });
+        }
+    });
 });
 </script>
 <?php

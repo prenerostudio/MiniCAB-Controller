@@ -190,7 +190,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <?php if ($active_companies): ?>
-                            <a class="dropdown-item" href="companies.php">
+                            <a class="dropdown-item" href="companies-list.php">
                                 <i class="ti ti-building-store"></i> 
                                 Active Companies 
                                     <?php include 'includes/companies/count-active-companies.php'; ?>
@@ -369,7 +369,7 @@
                             </a>
                                 <?php endif; ?>
                             <?php if ($railways_list): ?>
-                            <a class="dropdown-item" href="railway_stations.php">
+                            <a class="dropdown-item" href="railway-stations.php">
                                 <i class="ti ti-train"></i> 
                                 Railway Stations 
                                     <?php include 'includes/zones/count-rs.php'; ?>
@@ -420,19 +420,19 @@
                         </a>
                         <div class="dropdown-menu">
                             <?php if ($driver_reports): ?>
-                            <a class="dropdown-item" href="driver-reports.php">
+                            <a class="dropdown-item" href="driver-statement.php">
                                 <i class="ti ti-report"></i> 
                                 Driver Account Statement
                             </a>
                             <?php endif; ?>
                             <?php if ($customer_reports): ?>
-                            <a class="dropdown-item" href="customer-report.php">
+                            <a class="dropdown-item" href="customer-statement.php">
                                 <i class="ti ti-report"></i> 
                                 Customer Account Statement
                             </a>
                             <?php endif; ?>
                             <?php if ($booker_reports): ?>
-                            <a class="dropdown-item" href="booker-report.php">
+                            <a class="dropdown-item" href="booker-statement.php">
                                 <i class="ti ti-report"></i> 
                                 Booker Account Statement
                             </a>
@@ -443,7 +443,7 @@
                     <!-- COMPANY PROFILE -->
                     <?php if ($company_profile): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="company.php">
+                        <a class="nav-link" href="company-info.php">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <i class="ti ti-building-bank"></i>
                             </span>
@@ -456,7 +456,7 @@
                     <!-- ACTIVITY LOGS -->
                     <?php if ($activity_logs): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="activity_log.php">
+                        <a class="nav-link" href="activity-logs.php">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <i class="ti ti-activity"></i>
                             </span>

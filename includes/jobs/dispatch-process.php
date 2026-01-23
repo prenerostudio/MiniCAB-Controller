@@ -12,8 +12,7 @@ $journey_fare = $_POST['journey_fare'];
 $booking_fee = $_POST['booking_fee'];
 $job_status = 'waiting';
 
-$sql = "INSERT INTO jobs (book_id, c_id, d_id, journey_fare, booking_fee, job_status)
-        VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO jobs (book_id, c_id, d_id, journey_fare, booking_fee, job_status) VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = $connect->prepare($sql);
 $stmt->bind_param("iiisss", $book_id, $c_id, $d_id, $journey_fare, $booking_fee, $job_status);
@@ -33,8 +32,7 @@ if ($stmt->execute()) {
     $historystmt->execute();
 
     // Activity log
-    $actstmt = $connect->prepare("INSERT INTO activity_log (activity_type,user_type,user_id,details)
-                                  VALUES ('Job Dispatched','user',?, 'Dispatched by controller')");
+    $actstmt = $connect->prepare("INSERT INTO activity_log (activity_type,user_type,user_id,details) VALUES ('Job Dispatched','user',?, 'Dispatched by controller')");
     $actstmt->bind_param("i", $myId);
     $actstmt->execute();
 

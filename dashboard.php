@@ -1,15 +1,13 @@
 <?php
 include('header.php');
 ?>
-<style> 
-    
+<style>
 .table-scroll {
     max-height: 450px;        /* adjust height as needed */
     overflow-y: auto;
     overflow-x: auto;
     border: 1px solid #ddd;
 }
-
 /* Keep table header fixed while scrolling */
 .table-scroll thead th,
 .zones-table th {
@@ -18,21 +16,16 @@ include('header.php');
     background: #f8f9fa;
     z-index: 2;
 }
-
 /* Optional: smooth scrolling & cleaner look */
 .zones-table {
     width: 100%;
     border-collapse: collapse;
 }
-
 .zones-table th,
 .zones-table td {
     white-space: nowrap;
     padding: 10px;
 }
-
-
-
 </style>
 <div class="page-header d-print-none page_padding">	
     <div class="row g-2 align-items-center">    
@@ -189,8 +182,7 @@ include('header.php');
                                 </tbody>
                             </table>
                         </div>                        
-                        <script>			
-                            
+                        <script>                            
                             function loadDriverListPOB() {
                                 var xhttp = new XMLHttpRequest();	
                                 xhttp.onreadystatechange = function() {	        	
